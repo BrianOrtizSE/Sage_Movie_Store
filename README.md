@@ -1,32 +1,20 @@
-Readme.md Version# 2021.05.02<br/>
-Student Given Access on 05/29/2021
-
-Review site this before modifing you Readme.md file:
-
-https://medium.com/swlh/how-to-make-the-perfect-readme-md-on-github-92ed5771c061
-
-
-Your Project Logo/Icon: 
-
-![alt text](https://github.com/JamesFlippin/Final-Project-21SP_StudentTemplate/blob/main/OctoCat_SM.png "My Pet Octocat Logo")
-
-# Project Name (Stylized)
-Very brief and to the point project description (one sentance preferred)
+# Sages Movie Store
+![alt text](https://github.com/TSTC-CPT/SU21-OrtizB/blob/main/Images/Logo_SMS.gif "Sage's Movie Shop Logo")
+### An easy to use store system where users can view and purchase movies and merchandise.
 
 ## Detailed Description
 
-Clear semi-detailed professional description of your project. (about a paragraph or slightly more)
+Using **C#** and **SQL** this project is a _**fully functional**_ store that keeps track of merchandise and lets users create accounts to purchase merchandise.
+This project also comes with an employee and manager feature that works like a POS (Point Of Sales) system. Employees can apply discount and makes sales while also
+having the ability to edit customer information. Managers have all that power and more with being able to create discounts and edit employee information and merchandise availability. 
 
 ### Project Introduction  
 
-- Describe very briefly but clearly what the project does.
-- State if it is out-of-the-box user-friendly, so it’s clear to the user.
-- List its most useful/innovative/noteworthy features.
-- State its goals/what problem(s) it solves.
-- Note and briefly describe any key concepts (technical, philosophical, or both) important to the user’s understanding.
-- Link to any supplementary blog posts or project main pages.
-- Note its development status.
-- If possible, include screenshots and demo videos.
+- Programm connects to a database and lets customers and users to purchase store merchandise. 
+- Simple and easy to use for people of all ages. 
+- Guest checkout with easy to use layout. 
+- Many people have gotten use to the streaming services when it comes to movies but not every movie can be found in a streaming service , this program fixes the whole that streaming services make.
+- Currently still in production (Alpha Build).
 
 ### Development Environment
 
@@ -34,10 +22,10 @@ Type | Description
 -----|-------------
 Language | C#
 Development Environment | Visual Studio 2019 Community Edition
-SQL Server Type | MS SQL or MySQL (whichever you used)
+SQL Server Type | MS SQL
 Target Environment | Windows 10 Desktop
-Target Audience | Whatever your target audience is
-Help System | Describe
+Target Audience | Movie Lovers of All Ages
+Help System | Descriptive Pictures 
 Report Methods | HTML Reports
 
 ### Core Technical Concepts/Inspiration
@@ -59,11 +47,6 @@ Include any essential instructions for:
 - Common Error Messages/related details
 - Testing, validation, etc.
 
-### Videos
-- URL for your Video Resume
-- URL for your Product Overview Video
-- URL for any other specific videos for this product
-
 ### Contributing
 - Contributor Guidelines
 - Code Requirements
@@ -71,37 +54,24 @@ Include any essential instructions for:
 - Thank you (name contributors)
 
 ### TODO
-- Next steps
-- Features planned
-- Known bugs (shortlist)
+- Employee View
+- Guest Checkout
+- FIx error when creating New account if something is left blank
 
 ### Contact
 
 Contact | Information
 --------|------
-Name | Your Name
-Email | Your Email Address
-Social Media Link | Your Social Media link(s) (if applicable)
-Google Group/mailing list | Your mail distribution list (if applicable)
+Name | Brian Ortiz
+Email | brian.ojaramillo@gmail.com
+Linkedin | https://www.linkedin.com/in/brian-ortiz-jaramillo-56582a195/
 
 ### License
-Indicate your license/License model, etc.
 
-(also, review the Instructions for adding a license file:
-
-https://docs.github.com/en/github/building-a-strong-community/adding-a-license-to-a-repository)
-
-**[For the Final Project course, we will use the GNU General Public License v3.0]**
-**[When you add the License file, make sure you update the references within it to yours]**
-
-The three major licenses used are:  
-
-Apache License v2.0
-
-GNU General Public License v3.0
-
-MIT License
+*GNU General Public License v3.0*
+https://github.com/TSTC-CPT/SU21-OrtizB/blob/main/LICENSE
 
 
 
+Readme.md Version# 2021.05.02<br/>
 Permissions of this strong copyleft license are conditioned on making available complete source code of licensed works and modifications, which include larger works using a licensed work, under the same license. Copyright and license notices must be preserved. Contributors provide an express grant of patent rights.
