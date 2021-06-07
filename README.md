@@ -30,28 +30,9 @@ Report Methods | HTML Reports
 
 ### Core Technical Concepts/Inspiration
 
-- Why does this project exist?
-- Frame your project for the potential user. 
-- Compare/contrast your project with other, similar projects so the user knows how it is different from those projects.
-- Highlight the technical concepts that your project demonstrates or supports. Keep it very brief.
-
-### Getting Started/Requirements/Prerequisites/Dependencies
-Include any essential instructions for:
-- Getting your program
-- Installing your program
-- Configuring your program
-- Running your program
-
-### More Specific Topics
-- Versioning: Services, APIs, Systems
-- Common Error Messages/related details
-- Testing, validation, etc.
-
-### Contributing
-- Contributor Guidelines
-- Code Requirements
-- Format for commit messages
-- Thank you (name contributors)
+- This project exist because because every store needs a system where they can sell merchandise, this project fufills that need.
+- A movie store with a modern look but a simple and easy to use design. 
+- The use of a database keeps all the information tighty and neat while the GUI makes it so users do not have to be technicall geniuses to use it.
 
 ### TODO
 - Employee View
