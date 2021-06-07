@@ -13,7 +13,7 @@ having the ability to edit customer information. Managers have all that power an
 - Programm connects to a database and lets customers and users to purchase store merchandise. 
 - Simple and easy to use for people of all ages. 
 - Guest checkout with easy to use layout. 
-- Many people have gotten use to the streaming services when it comes to movies but not every movie can be found in a streaming service , this program fixes the whole that streaming services make.
+- Many people have gotten use to the streaming services when it comes to movies, but not every movie can be found in a streaming service , this program fixes the hole that streaming services make.
 - Currently still in production (Alpha Build).
 
 ### Development Environment
