@@ -4,11 +4,11 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("SU21-Final Project")]
-[assembly: AssemblyDescription("")]
+[assembly: AssemblyTitle("Sages Movie Store")]
+[assembly: AssemblyDescription("A movie store application where users have the ability to view and purchase merchandise that comes with a working POS system")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("TSTC")]
-[assembly: AssemblyProduct("SU21-Final Project")]
+[assembly: AssemblyCompany("Brian Ortiz")]
+[assembly: AssemblyProduct("Sages Movie Store")]
 [assembly: AssemblyCopyright("Copyright ©  2021")]
 [assembly: AssemblyTrademark("TSTC")]
 [assembly: AssemblyCulture("")]

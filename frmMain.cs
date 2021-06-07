@@ -1,11 +1,12 @@
 ﻿//ToDo: Change the entries below indicated by {} to your values
 //*******************************************
 //*******************************************
-// Programmer: {Your name goes here}
-// Course: INEW 2332.{xxxx} (Final Project)
-// Program Description: {Program Purpose Goes here}
+// Programmer: Brian Ortiz
+// Course: INEW 2332.7Z2 (Final Project)
+// Program Description: Form Purpose: To create a fully functional movie store project that comes with a employee / manager POS system 
+// and a customer friendly view and purchase merchandise function
 //*******************************************
-// Form Purpose: {What is this form used for}
+// 
 //*******************************************
 //*******************************************
 
