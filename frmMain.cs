@@ -32,10 +32,26 @@ namespace SU21_Final_Project
 
         private void frmMain_Load(object sender, EventArgs e)
         {
-
+            ProgOps.OpenDatabase();
         }
 
         private void logInToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void frmMain_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            ProgOps.CloseDatabase();
+        }
+
+        private void tsSignUp_Click(object sender, EventArgs e)
+        {
+            frmSignUp frmsingup = new frmSignUp();
+            frmsingup.ShowDialog();
+        }
+
+        private void tsLogIn_Click(object sender, EventArgs e)
         {
             frmLogIn frmlogin = new frmLogIn();
             frmlogin.ShowDialog();

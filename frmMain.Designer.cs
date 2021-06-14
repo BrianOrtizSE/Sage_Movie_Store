@@ -30,6 +30,8 @@ namespace SU21_Final_Project
         private void InitializeComponent()
         {
             this.mnsMain = new System.Windows.Forms.MenuStrip();
+            this.tsOptions = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsSignUp = new System.Windows.Forms.ToolStripMenuItem();
             this.tsLogIn = new System.Windows.Forms.ToolStripMenuItem();
             this.mnsMain.SuspendLayout();
             this.SuspendLayout();
@@ -37,20 +39,37 @@ namespace SU21_Final_Project
             // mnsMain
             // 
             this.mnsMain.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.tsLogIn});
+            this.tsOptions});
             this.mnsMain.Location = new System.Drawing.Point(0, 0);
             this.mnsMain.Name = "mnsMain";
             this.mnsMain.Size = new System.Drawing.Size(800, 24);
             this.mnsMain.TabIndex = 0;
             this.mnsMain.Text = "menuStrip1";
             // 
+            // tsOptions
+            // 
+            this.tsOptions.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
+            this.tsOptions.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.tsSignUp,
+            this.tsLogIn});
+            this.tsOptions.Name = "tsOptions";
+            this.tsOptions.Size = new System.Drawing.Size(52, 20);
+            this.tsOptions.Text = "Log In";
+            this.tsOptions.Click += new System.EventHandler(this.logInToolStripMenuItem_Click);
+            // 
+            // tsSignUp
+            // 
+            this.tsSignUp.Name = "tsSignUp";
+            this.tsSignUp.Size = new System.Drawing.Size(180, 22);
+            this.tsSignUp.Text = "Sign-Up";
+            this.tsSignUp.Click += new System.EventHandler(this.tsSignUp_Click);
+            // 
             // tsLogIn
             // 
-            this.tsLogIn.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
             this.tsLogIn.Name = "tsLogIn";
-            this.tsLogIn.Size = new System.Drawing.Size(52, 20);
+            this.tsLogIn.Size = new System.Drawing.Size(180, 22);
             this.tsLogIn.Text = "Log In";
-            this.tsLogIn.Click += new System.EventHandler(this.logInToolStripMenuItem_Click);
+            this.tsLogIn.Click += new System.EventHandler(this.tsLogIn_Click);
             // 
             // frmMain
             // 
@@ -63,6 +82,7 @@ namespace SU21_Final_Project
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Tag = "2021.05.02";
             this.Text = "Sages Movie Store";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmMain_FormClosing);
             this.Load += new System.EventHandler(this.frmMain_Load);
             this.mnsMain.ResumeLayout(false);
             this.mnsMain.PerformLayout();
@@ -74,6 +94,8 @@ namespace SU21_Final_Project
         #endregion
 
         private System.Windows.Forms.MenuStrip mnsMain;
+        private System.Windows.Forms.ToolStripMenuItem tsOptions;
+        private System.Windows.Forms.ToolStripMenuItem tsSignUp;
         private System.Windows.Forms.ToolStripMenuItem tsLogIn;
     }
 }
