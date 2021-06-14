@@ -34,5 +34,11 @@ namespace SU21_Final_Project
         {
 
         }
+
+        private void logInToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmLogIn frmlogin = new frmLogIn();
+            frmlogin.ShowDialog();
+        }
     }
 }
