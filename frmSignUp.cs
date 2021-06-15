@@ -20,7 +20,8 @@ namespace SU21_Final_Project
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            //TODO : MAKE SURE ALL THINGS THAT CANT BE NULL CANNOT BE NULL
+            strCreate.Clear();
+            bool blnPass = true;
             //Query To Add New Person To Database
             strCreate.Append("INSERT INTO OrtizB21Su2332.Person(Title , NameFirst , NameMiddle ,NameLast , Suffix , Address1 , Address2 , Address3 , City , Zipcode , State , Email , PhonePrimary , PhoneSecondary)" +
                 "Values(");
@@ -36,7 +37,17 @@ namespace SU21_Final_Project
             }
 
             //First Name
-            strCreate.Append(tbxFirstName.Text + "',");
+            if(tbxFirstName.Text == "")
+            {
+                MessageBox.Show("First Name Must Not Be Empty");
+                blnPass = false;
+            }
+            else
+            {
+                strCreate.Append(tbxFirstName.Text + "',");
+                blnPass = true;
+            }
+            
 
             //Middle Name
             if (tbxMiddleName.Text == "")
@@ -49,7 +60,16 @@ namespace SU21_Final_Project
             }
 
             //Last Name
-            strCreate.Append(tbxLastName.Text + "',");
+            if (tbxLastName.Text == "")
+            {
+                MessageBox.Show("Last Name Must Not Be Empty");
+                blnPass = false;
+            }
+            else
+            {
+                strCreate.Append(tbxLastName.Text + "',");
+                blnPass = true;
+            }
 
             //Suffix
             if (tbxSuffix.Text == "")
@@ -62,7 +82,16 @@ namespace SU21_Final_Project
             }
 
             //Address1
-            strCreate.Append(tbxAddress1.Text + "',");
+            if (tbxAddress1.Text == "")
+            {
+                MessageBox.Show("Adress1 Name Must Not Be Empty");
+                blnPass = false;
+            }
+            else
+            {
+                strCreate.Append(tbxAddress1.Text + "',");
+                blnPass = true;
+            }
 
             //Address 2
             if (tbxAddress2.Text == "")
@@ -88,16 +117,53 @@ namespace SU21_Final_Project
             strCreate.Append(tbxCity.Text + "','");
 
             //Zipcode
-            strCreate.Append(tbxZipcode.Text + "','");
+            if (tbxZipcode.Text == "")
+            {
+                MessageBox.Show("Zipcode Name Must Not Be Empty");
+                blnPass = false;
+            }
+            else
+            {
+                strCreate.Append(tbxZipcode.Text + "','"); ;
+                blnPass = true;
+            }
+
 
             //State
-            strCreate.Append(tbxState.Text + "','");
+            if (tbxState.Text == "")
+            {
+                MessageBox.Show("State Name Must Not Be Empty");
+                blnPass = false;
+            }
+            else
+            {
+                strCreate.Append(tbxState.Text + "','"); ;
+                blnPass = true;
+            }
 
             //Email
-            strCreate.Append(tbxEmail.Text + "','");
+            if (tbxEmail.Text == "")
+            {
+                MessageBox.Show("Email Must Not Be Empty");
+                blnPass = false;
+            }
+            else
+            {
+                strCreate.Append(tbxEmail.Text + "','"); ;
+                blnPass = true;
+            }
 
             //Phone 1
-            strCreate.Append(tbxPhonePrimary.Text + "',");
+            if (tbxPhonePrimary.Text == "")
+            {
+                MessageBox.Show("Phone Must Not Be Empty");
+                blnPass = false;
+            }
+            else
+            {
+                strCreate.Append(tbxPhonePrimary.Text + "','"); ;
+                blnPass = true;
+            }
 
             //Phone 2
             if (tbxPhoneSecond.Text == "")
@@ -108,9 +174,14 @@ namespace SU21_Final_Project
             {
                 strCreate.Append("'" + tbxAddress3.Text + "')");
             }
-            ProgOps.CreateNewUser(tbxTitle, tbxFirstName, tbxMiddleName, tbxLastName, tbxSuffix, tbxAddress1, tbxAddress2, tbxAddress3, tbxCity, tbxZipcode, tbxState, tbxEmail, tbxPhonePrimary, tbxPhoneSecond, strCreate.ToString());
-            frmSecurityQuestions frmquesiton = new frmSecurityQuestions();
-            frmquesiton.ShowDialog();
+            if(blnPass == true)
+            {
+                ProgOps.CreateNewUser(tbxTitle, tbxFirstName, tbxMiddleName, tbxLastName, tbxSuffix, tbxAddress1, tbxAddress2, tbxAddress3, tbxCity, tbxZipcode, tbxState, tbxEmail, tbxPhonePrimary, tbxPhoneSecond, strCreate.ToString());
+                frmSecurityQuestions frmquesiton = new frmSecurityQuestions();
+                frmquesiton.ShowDialog();
+                this.Close();
+            }
+
         }
 
         private void frmSignUp_Load(object sender, EventArgs e)

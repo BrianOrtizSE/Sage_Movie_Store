@@ -13,6 +13,7 @@ namespace SU21_Final_Project
          - SHOPP STORE FRONT
          - Get a job
          - Show up to class metting
-         */
+         - 1:35 pm
+         */ 
     }
 }
