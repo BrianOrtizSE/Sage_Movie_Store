@@ -128,5 +128,48 @@ namespace SU21_Final_Project
 
         }
 
+        public static void GrabPersonID()
+        {
+            //Grab the newst PersonID that was just creted
+            String query = "Select PersonID From OrtizB21Su2332.Person Order by PersonID desc";
+
+            _sqlResultsCommand = new SqlCommand(query, _conDatabase);
+
+            //Grab PersonID so we can cretae LogIn Info
+            intPersonID = (int)_sqlResultsCommand.ExecuteScalar();
+
+        }
+
+        public static void CreateLogIn(TextBox tbxUsername, TextBox tbxPassword, ComboBox cmbSQuestion1, TextBox SQAnswer1, ComboBox cmbSQuestion2, TextBox SQAnswer2, String strQuery)
+        {
+            try
+            {
+                //Using the Sqlcommand we execute the Query
+                _sqlResultsCommand = new SqlCommand(strQuery, _conDatabase);
+                _sqlResultsCommand.ExecuteNonQuery();
+
+                //Dispose Of Command Object
+                _sqlResultsCommand.Dispose();
+
+            }
+            catch (SqlException ex)
+            {
+                if (ex is SqlException)
+                {//handles more specific SqlException here.
+
+                    for (int i = 0; i < ex.Errors.Count; i++)
+                    {
+                        errorMessages.Append("Index #" + i + "\n" +
+                            "Message: " + ex.Errors[i].Message + "\n" +
+                            "LineNumber: " + ex.Errors[i].LineNumber + "\n" +
+                            "Source: " + ex.Errors[i].Source + "\n" +
+                            "Procedure: " + ex.Errors[i].Procedure + "\n");
+                    }
+                    MessageBox.Show(errorMessages.ToString(), "Error on DatabaseCommand", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+
+        }
+
     }
 }

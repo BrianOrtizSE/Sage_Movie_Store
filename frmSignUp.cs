@@ -109,8 +109,8 @@ namespace SU21_Final_Project
                 strCreate.Append("'" + tbxAddress3.Text + "')");
             }
             ProgOps.CreateNewUser(tbxTitle, tbxFirstName, tbxMiddleName, tbxLastName, tbxSuffix, tbxAddress1, tbxAddress2, tbxAddress3, tbxCity, tbxZipcode, tbxState, tbxEmail, tbxPhonePrimary, tbxPhoneSecond, strCreate.ToString());
-            //frmQuestions frmquesiton = new frmQuestions();
-            //frmquesiton.ShowDialog();
+            frmSecurityQuestions frmquesiton = new frmSecurityQuestions();
+            frmquesiton.ShowDialog();
         }
 
         private void frmSignUp_Load(object sender, EventArgs e)

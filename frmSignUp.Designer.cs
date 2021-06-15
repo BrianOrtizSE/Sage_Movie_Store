@@ -62,7 +62,7 @@ namespace SU21_Final_Project
             // 
             // btnAdd
             // 
-            this.btnAdd.Location = new System.Drawing.Point(612, 205);
+            this.btnAdd.Location = new System.Drawing.Point(559, 197);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(75, 23);
             this.btnAdd.TabIndex = 63;
@@ -73,7 +73,7 @@ namespace SU21_Final_Project
             // lblPhoneSecondary
             // 
             this.lblPhoneSecondary.AutoSize = true;
-            this.lblPhoneSecondary.Location = new System.Drawing.Point(285, 266);
+            this.lblPhoneSecondary.Location = new System.Drawing.Point(232, 258);
             this.lblPhoneSecondary.Name = "lblPhoneSecondary";
             this.lblPhoneSecondary.Size = new System.Drawing.Size(92, 13);
             this.lblPhoneSecondary.TabIndex = 61;
@@ -82,7 +82,7 @@ namespace SU21_Final_Project
             // lblPhonePrimary
             // 
             this.lblPhonePrimary.AutoSize = true;
-            this.lblPhonePrimary.Location = new System.Drawing.Point(293, 231);
+            this.lblPhonePrimary.Location = new System.Drawing.Point(240, 223);
             this.lblPhonePrimary.Name = "lblPhonePrimary";
             this.lblPhonePrimary.Size = new System.Drawing.Size(75, 13);
             this.lblPhonePrimary.TabIndex = 60;
@@ -90,14 +90,14 @@ namespace SU21_Final_Project
             // 
             // tbxPhoneSecond
             // 
-            this.tbxPhoneSecond.Location = new System.Drawing.Point(377, 263);
+            this.tbxPhoneSecond.Location = new System.Drawing.Point(324, 255);
             this.tbxPhoneSecond.Name = "tbxPhoneSecond";
             this.tbxPhoneSecond.Size = new System.Drawing.Size(100, 20);
             this.tbxPhoneSecond.TabIndex = 58;
             // 
             // tbxPhonePrimary
             // 
-            this.tbxPhonePrimary.Location = new System.Drawing.Point(377, 227);
+            this.tbxPhonePrimary.Location = new System.Drawing.Point(324, 219);
             this.tbxPhonePrimary.Name = "tbxPhonePrimary";
             this.tbxPhonePrimary.Size = new System.Drawing.Size(100, 20);
             this.tbxPhonePrimary.TabIndex = 57;
@@ -105,7 +105,7 @@ namespace SU21_Final_Project
             // lblState
             // 
             this.lblState.AutoSize = true;
-            this.lblState.Location = new System.Drawing.Point(336, 162);
+            this.lblState.Location = new System.Drawing.Point(283, 154);
             this.lblState.Name = "lblState";
             this.lblState.Size = new System.Drawing.Size(32, 13);
             this.lblState.TabIndex = 56;
@@ -114,7 +114,7 @@ namespace SU21_Final_Project
             // lblEmail
             // 
             this.lblEmail.AutoSize = true;
-            this.lblEmail.Location = new System.Drawing.Point(336, 191);
+            this.lblEmail.Location = new System.Drawing.Point(283, 183);
             this.lblEmail.Name = "lblEmail";
             this.lblEmail.Size = new System.Drawing.Size(32, 13);
             this.lblEmail.TabIndex = 55;
@@ -123,7 +123,7 @@ namespace SU21_Final_Project
             // lblZipCode
             // 
             this.lblZipCode.AutoSize = true;
-            this.lblZipCode.Location = new System.Drawing.Point(322, 118);
+            this.lblZipCode.Location = new System.Drawing.Point(269, 110);
             this.lblZipCode.Name = "lblZipCode";
             this.lblZipCode.Size = new System.Drawing.Size(46, 13);
             this.lblZipCode.TabIndex = 54;
@@ -132,7 +132,7 @@ namespace SU21_Final_Project
             // lblCity
             // 
             this.lblCity.AutoSize = true;
-            this.lblCity.Location = new System.Drawing.Point(344, 78);
+            this.lblCity.Location = new System.Drawing.Point(291, 70);
             this.lblCity.Name = "lblCity";
             this.lblCity.Size = new System.Drawing.Size(24, 13);
             this.lblCity.TabIndex = 53;
@@ -140,28 +140,28 @@ namespace SU21_Final_Project
             // 
             // tbxEmail
             // 
-            this.tbxEmail.Location = new System.Drawing.Point(377, 191);
+            this.tbxEmail.Location = new System.Drawing.Point(324, 183);
             this.tbxEmail.Name = "tbxEmail";
             this.tbxEmail.Size = new System.Drawing.Size(100, 20);
             this.tbxEmail.TabIndex = 52;
             // 
             // tbxState
             // 
-            this.tbxState.Location = new System.Drawing.Point(377, 155);
+            this.tbxState.Location = new System.Drawing.Point(324, 147);
             this.tbxState.Name = "tbxState";
             this.tbxState.Size = new System.Drawing.Size(100, 20);
             this.tbxState.TabIndex = 51;
             // 
             // tbxZipcode
             // 
-            this.tbxZipcode.Location = new System.Drawing.Point(377, 111);
+            this.tbxZipcode.Location = new System.Drawing.Point(324, 103);
             this.tbxZipcode.Name = "tbxZipcode";
             this.tbxZipcode.Size = new System.Drawing.Size(100, 20);
             this.tbxZipcode.TabIndex = 50;
             // 
             // tbxCity
             // 
-            this.tbxCity.Location = new System.Drawing.Point(377, 75);
+            this.tbxCity.Location = new System.Drawing.Point(324, 67);
             this.tbxCity.Name = "tbxCity";
             this.tbxCity.Size = new System.Drawing.Size(100, 20);
             this.tbxCity.TabIndex = 49;
@@ -169,7 +169,7 @@ namespace SU21_Final_Project
             // lblSuffix
             // 
             this.lblSuffix.AutoSize = true;
-            this.lblSuffix.Location = new System.Drawing.Point(136, 234);
+            this.lblSuffix.Location = new System.Drawing.Point(83, 226);
             this.lblSuffix.Name = "lblSuffix";
             this.lblSuffix.Size = new System.Drawing.Size(33, 13);
             this.lblSuffix.TabIndex = 48;
@@ -178,7 +178,7 @@ namespace SU21_Final_Project
             // lblAdress1
             // 
             this.lblAdress1.AutoSize = true;
-            this.lblAdress1.Location = new System.Drawing.Point(115, 270);
+            this.lblAdress1.Location = new System.Drawing.Point(62, 262);
             this.lblAdress1.Name = "lblAdress1";
             this.lblAdress1.Size = new System.Drawing.Size(54, 13);
             this.lblAdress1.TabIndex = 47;
@@ -187,7 +187,7 @@ namespace SU21_Final_Project
             // lblAdress2
             // 
             this.lblAdress2.AutoSize = true;
-            this.lblAdress2.Location = new System.Drawing.Point(121, 311);
+            this.lblAdress2.Location = new System.Drawing.Point(68, 303);
             this.lblAdress2.Name = "lblAdress2";
             this.lblAdress2.Size = new System.Drawing.Size(48, 13);
             this.lblAdress2.TabIndex = 46;
@@ -196,7 +196,7 @@ namespace SU21_Final_Project
             // lblAdress3
             // 
             this.lblAdress3.AutoSize = true;
-            this.lblAdress3.Location = new System.Drawing.Point(121, 350);
+            this.lblAdress3.Location = new System.Drawing.Point(68, 342);
             this.lblAdress3.Name = "lblAdress3";
             this.lblAdress3.Size = new System.Drawing.Size(48, 13);
             this.lblAdress3.TabIndex = 45;
@@ -205,7 +205,7 @@ namespace SU21_Final_Project
             // lblMiddleName
             // 
             this.lblMiddleName.AutoSize = true;
-            this.lblMiddleName.Location = new System.Drawing.Point(99, 155);
+            this.lblMiddleName.Location = new System.Drawing.Point(46, 147);
             this.lblMiddleName.Name = "lblMiddleName";
             this.lblMiddleName.Size = new System.Drawing.Size(70, 13);
             this.lblMiddleName.TabIndex = 44;
@@ -214,7 +214,7 @@ namespace SU21_Final_Project
             // lblLastName
             // 
             this.lblLastName.AutoSize = true;
-            this.lblLastName.Location = new System.Drawing.Point(111, 188);
+            this.lblLastName.Location = new System.Drawing.Point(58, 180);
             this.lblLastName.Name = "lblLastName";
             this.lblLastName.Size = new System.Drawing.Size(58, 13);
             this.lblLastName.TabIndex = 43;
@@ -223,7 +223,7 @@ namespace SU21_Final_Project
             // lblFirstName
             // 
             this.lblFirstName.AutoSize = true;
-            this.lblFirstName.Location = new System.Drawing.Point(112, 115);
+            this.lblFirstName.Location = new System.Drawing.Point(59, 107);
             this.lblFirstName.Name = "lblFirstName";
             this.lblFirstName.Size = new System.Drawing.Size(57, 13);
             this.lblFirstName.TabIndex = 42;
@@ -232,7 +232,7 @@ namespace SU21_Final_Project
             // lblTitle
             // 
             this.lblTitle.AutoSize = true;
-            this.lblTitle.Location = new System.Drawing.Point(142, 75);
+            this.lblTitle.Location = new System.Drawing.Point(89, 67);
             this.lblTitle.Name = "lblTitle";
             this.lblTitle.Size = new System.Drawing.Size(27, 13);
             this.lblTitle.TabIndex = 41;
@@ -240,56 +240,56 @@ namespace SU21_Final_Project
             // 
             // tbxAddress3
             // 
-            this.tbxAddress3.Location = new System.Drawing.Point(183, 347);
+            this.tbxAddress3.Location = new System.Drawing.Point(130, 339);
             this.tbxAddress3.Name = "tbxAddress3";
             this.tbxAddress3.Size = new System.Drawing.Size(100, 20);
             this.tbxAddress3.TabIndex = 40;
             // 
             // tbxAddress2
             // 
-            this.tbxAddress2.Location = new System.Drawing.Point(183, 311);
+            this.tbxAddress2.Location = new System.Drawing.Point(130, 303);
             this.tbxAddress2.Name = "tbxAddress2";
             this.tbxAddress2.Size = new System.Drawing.Size(100, 20);
             this.tbxAddress2.TabIndex = 39;
             // 
             // tbxAddress1
             // 
-            this.tbxAddress1.Location = new System.Drawing.Point(183, 267);
+            this.tbxAddress1.Location = new System.Drawing.Point(130, 259);
             this.tbxAddress1.Name = "tbxAddress1";
             this.tbxAddress1.Size = new System.Drawing.Size(100, 20);
             this.tbxAddress1.TabIndex = 38;
             // 
             // tbxSuffix
             // 
-            this.tbxSuffix.Location = new System.Drawing.Point(183, 231);
+            this.tbxSuffix.Location = new System.Drawing.Point(130, 223);
             this.tbxSuffix.Name = "tbxSuffix";
             this.tbxSuffix.Size = new System.Drawing.Size(100, 20);
             this.tbxSuffix.TabIndex = 37;
             // 
             // tbxLastName
             // 
-            this.tbxLastName.Location = new System.Drawing.Point(183, 188);
+            this.tbxLastName.Location = new System.Drawing.Point(130, 180);
             this.tbxLastName.Name = "tbxLastName";
             this.tbxLastName.Size = new System.Drawing.Size(100, 20);
             this.tbxLastName.TabIndex = 36;
             // 
             // tbxMiddleName
             // 
-            this.tbxMiddleName.Location = new System.Drawing.Point(183, 152);
+            this.tbxMiddleName.Location = new System.Drawing.Point(130, 144);
             this.tbxMiddleName.Name = "tbxMiddleName";
             this.tbxMiddleName.Size = new System.Drawing.Size(100, 20);
             this.tbxMiddleName.TabIndex = 35;
             // 
             // tbxFirstName
             // 
-            this.tbxFirstName.Location = new System.Drawing.Point(183, 108);
+            this.tbxFirstName.Location = new System.Drawing.Point(130, 100);
             this.tbxFirstName.Name = "tbxFirstName";
             this.tbxFirstName.Size = new System.Drawing.Size(100, 20);
             this.tbxFirstName.TabIndex = 34;
             // 
             // tbxTitle
             // 
-            this.tbxTitle.Location = new System.Drawing.Point(183, 72);
+            this.tbxTitle.Location = new System.Drawing.Point(130, 64);
             this.tbxTitle.Name = "tbxTitle";
             this.tbxTitle.Size = new System.Drawing.Size(100, 20);
             this.tbxTitle.TabIndex = 33;
@@ -298,7 +298,7 @@ namespace SU21_Final_Project
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(678, 450);
             this.Controls.Add(this.btnAdd);
             this.Controls.Add(this.lblPhoneSecondary);
             this.Controls.Add(this.lblPhonePrimary);
