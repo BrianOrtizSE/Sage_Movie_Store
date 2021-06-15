@@ -93,13 +93,13 @@ namespace SU21_Final_Project
             //Address 2
             if (tbxAddress2.Text == "")
             {
-                strCreate.Append("NULL,");
+                strCreate.Append("NULL,'");
             }
             else
             {
-                strCreate.Append("'" + tbxAddress2.Text + "','");
+                strCreate.Append("'" + tbxAddress2.Text + "',");
             }
-
+            
             //Address 3
             if (tbxAddress3.Text == "")
             {
@@ -110,8 +110,16 @@ namespace SU21_Final_Project
                 strCreate.Append("'" + tbxAddress3.Text + "','");
             }
 
-            //City
-            strCreate.Append(tbxCity.Text + "','");
+            //City            
+            if (tbxZipcode.Text == "")
+            {
+                MessageBox.Show("City Name Must Not Be Empty");
+                blnPass = false;
+            }
+            else
+            {
+                strCreate.Append(tbxCity.Text + "','");
+            }
 
             //Zipcode
             if (tbxZipcode.Text == "")
@@ -155,7 +163,7 @@ namespace SU21_Final_Project
             }
             else
             {
-                strCreate.Append(tbxPhonePrimary.Text + "','"); ;
+                strCreate.Append(tbxPhonePrimary.Text + "',"); ;
             }
 
             //Phone 2
@@ -165,9 +173,12 @@ namespace SU21_Final_Project
             }
             else
             {
-                strCreate.Append("'" + tbxAddress3.Text + "')");
+                strCreate.Append("'" + tbxPhoneSecond.Text + "')");
             }
-            if(blnPass == true)
+
+            MessageBox.Show(strCreate.ToString());
+
+            if (blnPass == true)
             {
                 ProgOps.CreateNewUser(tbxTitle, tbxFirstName, tbxMiddleName, tbxLastName, tbxSuffix, tbxAddress1, tbxAddress2, tbxAddress3, tbxCity, tbxZipcode, tbxState, tbxEmail, tbxPhonePrimary, tbxPhoneSecond, strCreate.ToString());
                 frmSecurityQuestions frmquesiton = new frmSecurityQuestions();
