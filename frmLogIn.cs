@@ -24,11 +24,13 @@ namespace SU21_Final_Project
         private void rdCustomer_CheckedChanged(object sender, EventArgs e)
         {
             lblUSernameText.Text = "Username : ";
+            lblErrorText.Visible = false;
         }
 
         private void rdEmployee_CheckedChanged(object sender, EventArgs e)
         {
             lblUSernameText.Text = "EmployeeID : ";
+            lblErrorText.Visible = false;
         }
 
         private void btnLogin_Click(object sender, EventArgs e)
@@ -41,11 +43,15 @@ namespace SU21_Final_Project
                 blnPass = false;
             }
 
-            if(blnPass == true)
+            if(blnPass == true && ProgOps.blnFound == true)
             {
                 ProgOps.LogOn(tbxUsername, tbxPassword, rdbCustomer, rdbEmployee, Text);
                 frmProductView frmproductview = new frmProductView();
                 frmproductview.ShowDialog();
+            }
+            else
+            {
+                lblErrorText.Visible = true;
             }
             
 

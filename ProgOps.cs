@@ -25,6 +25,8 @@ namespace SU21_Final_Project
 
         //Int for PersonID
         public static int intPersonID;
+        //Bool If Person Was Found
+        public static bool blnFound;
 
         //Strinbuilder for error messages in the trycatch
         private static StringBuilder errorMessages = new StringBuilder();
@@ -65,7 +67,7 @@ namespace SU21_Final_Project
         public static void LogOn(TextBox tbxUsername, TextBox tbxPassword, RadioButton rdButtonA, RadioButton rdButtonB, String query)
         {
             //used to search for specific user
-
+            
             if (rdButtonA.Checked == true)
             {
                 query = "Select * From OrtizB21Su2332.LogOn " +
@@ -92,9 +94,11 @@ namespace SU21_Final_Project
             if (_dtLogOn.Rows.Count == 1)
             {
                 MessageBox.Show("User Was Found");
+                blnFound = true;
             }
             else
                 MessageBox.Show("User Was Not Found");
+                blnFound = false;
 
         }
 

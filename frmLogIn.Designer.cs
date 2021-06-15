@@ -36,6 +36,7 @@ namespace SU21_Final_Project
             this.btnLogin = new System.Windows.Forms.Button();
             this.lblUSernameText = new System.Windows.Forms.Label();
             this.lblPasswordText = new System.Windows.Forms.Label();
+            this.lblErrorText = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // tbxUsername
@@ -69,7 +70,7 @@ namespace SU21_Final_Project
             // 
             this.rdbEmployee.AutoSize = true;
             this.rdbEmployee.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rdbEmployee.Location = new System.Drawing.Point(357, 90);
+            this.rdbEmployee.Location = new System.Drawing.Point(379, 90);
             this.rdbEmployee.Name = "rdbEmployee";
             this.rdbEmployee.Size = new System.Drawing.Size(114, 19);
             this.rdbEmployee.TabIndex = 3;
@@ -80,7 +81,7 @@ namespace SU21_Final_Project
             // 
             // btnLogin
             // 
-            this.btnLogin.Location = new System.Drawing.Point(440, 182);
+            this.btnLogin.Location = new System.Drawing.Point(302, 273);
             this.btnLogin.Name = "btnLogin";
             this.btnLogin.Size = new System.Drawing.Size(88, 28);
             this.btnLogin.TabIndex = 4;
@@ -108,11 +109,23 @@ namespace SU21_Final_Project
             this.lblPasswordText.TabIndex = 6;
             this.lblPasswordText.Text = "Password : ";
             // 
+            // lblErrorText
+            // 
+            this.lblErrorText.AutoSize = true;
+            this.lblErrorText.ForeColor = System.Drawing.Color.Red;
+            this.lblErrorText.Location = new System.Drawing.Point(215, 43);
+            this.lblErrorText.Name = "lblErrorText";
+            this.lblErrorText.Size = new System.Drawing.Size(267, 13);
+            this.lblErrorText.TabIndex = 7;
+            this.lblErrorText.Text = "ERROR : USERNAME OR PASSWORD INCORRECT";
+            this.lblErrorText.Visible = false;
+            // 
             // frmLogIn
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(712, 383);
+            this.Controls.Add(this.lblErrorText);
             this.Controls.Add(this.lblPasswordText);
             this.Controls.Add(this.lblUSernameText);
             this.Controls.Add(this.btnLogin);
@@ -137,5 +150,6 @@ namespace SU21_Final_Project
         private System.Windows.Forms.Button btnLogin;
         private System.Windows.Forms.Label lblUSernameText;
         private System.Windows.Forms.Label lblPasswordText;
+        private System.Windows.Forms.Label lblErrorText;
     }
 }
