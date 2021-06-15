@@ -56,5 +56,11 @@ namespace SU21_Final_Project
             frmLogIn frmlogin = new frmLogIn();
             frmlogin.ShowDialog();
         }
+
+        private void addMerchandiseToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmMerchandiseAdd frmmerchadd = new frmMerchandiseAdd();
+            frmmerchadd.ShowDialog();
+        }
     }
 }

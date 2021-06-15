@@ -15,6 +15,8 @@ namespace SU21_Final_Project
          - Show up to class metting
          - 1:35 pm
          - Fix Log In Error when switching between customer and Employee - DONE
+         - Alter Products Table row 30000 so that things happen better
+
          */ 
     }
 }

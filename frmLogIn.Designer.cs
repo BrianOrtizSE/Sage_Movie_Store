@@ -52,6 +52,7 @@ namespace SU21_Final_Project
             this.tbxPassword.Name = "tbxPassword";
             this.tbxPassword.Size = new System.Drawing.Size(142, 20);
             this.tbxPassword.TabIndex = 1;
+            this.tbxPassword.UseSystemPasswordChar = true;
             // 
             // rdbCustomer
             // 
@@ -113,7 +114,7 @@ namespace SU21_Final_Project
             // 
             this.lblErrorText.AutoSize = true;
             this.lblErrorText.ForeColor = System.Drawing.Color.Red;
-            this.lblErrorText.Location = new System.Drawing.Point(215, 43);
+            this.lblErrorText.Location = new System.Drawing.Point(201, 43);
             this.lblErrorText.Name = "lblErrorText";
             this.lblErrorText.Size = new System.Drawing.Size(267, 13);
             this.lblErrorText.TabIndex = 7;

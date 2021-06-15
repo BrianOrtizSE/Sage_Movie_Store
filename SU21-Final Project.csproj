@@ -61,6 +61,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="frmMerchandiseAdd.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmMerchandiseAdd.Designer.cs">
+      <DependentUpon>frmMerchandiseAdd.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmLogIn.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -73,11 +79,11 @@
     <Compile Include="frmMain.Designer.cs">
       <DependentUpon>frmMain.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmProductView.cs">
+    <Compile Include="frmMerhandiseView.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmProductView.Designer.cs">
-      <DependentUpon>frmProductView.cs</DependentUpon>
+    <Compile Include="frmMerhandiseView.Designer.cs">
+      <DependentUpon>frmMerhandiseView.cs</DependentUpon>
     </Compile>
     <Compile Include="frmSecurityQuestions.cs">
       <SubType>Form</SubType>
@@ -101,8 +107,11 @@
     <EmbeddedResource Include="frmMain.resx">
       <DependentUpon>frmMain.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmProductView.resx">
-      <DependentUpon>frmProductView.cs</DependentUpon>
+    <EmbeddedResource Include="frmMerchandiseAdd.resx">
+      <DependentUpon>frmMerchandiseAdd.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmMerhandiseView.resx">
+      <DependentUpon>frmMerhandiseView.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmSecurityQuestions.resx">
       <DependentUpon>frmSecurityQuestions.cs</DependentUpon>

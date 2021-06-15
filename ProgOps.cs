@@ -23,10 +23,21 @@ namespace SU21_Final_Project
         private static SqlDataAdapter _daProduct = new SqlDataAdapter();
         private static DataTable _dtProductTable = new DataTable();
 
+        //Function To Get Product Tabled
+        public static DataTable GetProductTable
+        {
+        //Return the product table when called
+            get { return _dtProductTable; }
+        }
+
+
+
         //Int for PersonID
         public static int intPersonID;
         //Bool If Person Was Found
         public static bool blnFound;
+
+
 
         //Strinbuilder for error messages in the trycatch
         private static StringBuilder errorMessages = new StringBuilder();
@@ -195,6 +206,34 @@ namespace SU21_Final_Project
             _dtProductTable = new DataTable();
             _daProduct.Fill(_dtProductTable);
             dgvOrders.DataSource = _dtProductTable;
+
+        }
+
+
+        public static void MerchandiseAdd(TextBox tbxProductID, TextBox ProductName , TextBox tbxGenre , TextBox tbxQuanity, TextBox tbxPrice, TextBox tbxDescription ,CheckBox chxInStock)
+        {
+            //string to build query
+            string query = "select * From OrtizB21Su2332.Products ORDER BY ProductID";
+
+            //est cmd obj
+            _sqlResultsCommand = new SqlCommand(query, _conDatabase);
+
+            //est data adapter
+            _daProduct = new SqlDataAdapter();
+            _daProduct.SelectCommand = _sqlResultsCommand;
+
+            //fill data table
+            _dtProductTable = new DataTable();
+            _daProduct.Fill(_dtProductTable);
+
+            //bind to controls to data table
+            tbxProductID.DataBindings.Add("Text", _dtProductTable, "ProductID");
+            ProductName.DataBindings.Add("Text", _dtProductTable, "ProductName");
+            tbxGenre.DataBindings.Add("Text", _dtProductTable, "Genre");
+            tbxQuanity.DataBindings.Add("Text", _dtProductTable, "Quantity");
+            tbxPrice.DataBindings.Add("Text", _dtProductTable, "ProductPrice");
+            tbxDescription.DataBindings.Add("Text", _dtProductTable, "ProductDescription");
+            chxInStock.DataBindings.Add("Checked", _dtProductTable, "inStock");
 
         }
     }

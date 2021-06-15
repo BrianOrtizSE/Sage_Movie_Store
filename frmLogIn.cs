@@ -43,16 +43,9 @@ namespace SU21_Final_Project
                 blnPass = false;
             }
 
-            if(blnPass == true && ProgOps.blnFound == true)
-            {
                 ProgOps.LogOn(tbxUsername, tbxPassword, rdbCustomer, rdbEmployee, Text);
-                frmProductView frmproductview = new frmProductView();
+                frmMerhandiseView frmproductview = new frmMerhandiseView();
                 frmproductview.ShowDialog();
-            }
-            else
-            {
-                lblErrorText.Visible = true;
-            }
             
 
         }

@@ -1,7 +1,7 @@
 ﻿
 namespace SU21_Final_Project
 {
-    partial class frmProductView
+    partial class frmMerhandiseView
     {
         /// <summary>
         /// Required designer variable.

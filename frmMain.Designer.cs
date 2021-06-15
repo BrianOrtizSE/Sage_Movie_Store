@@ -33,6 +33,7 @@ namespace SU21_Final_Project
             this.tsOptions = new System.Windows.Forms.ToolStripMenuItem();
             this.tsSignUp = new System.Windows.Forms.ToolStripMenuItem();
             this.tsLogIn = new System.Windows.Forms.ToolStripMenuItem();
+            this.addMerchandiseToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.mnsMain.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -51,7 +52,8 @@ namespace SU21_Final_Project
             this.tsOptions.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
             this.tsOptions.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.tsSignUp,
-            this.tsLogIn});
+            this.tsLogIn,
+            this.addMerchandiseToolStripMenuItem});
             this.tsOptions.Name = "tsOptions";
             this.tsOptions.Size = new System.Drawing.Size(52, 20);
             this.tsOptions.Text = "Log In";
@@ -70,6 +72,13 @@ namespace SU21_Final_Project
             this.tsLogIn.Size = new System.Drawing.Size(180, 22);
             this.tsLogIn.Text = "Log In";
             this.tsLogIn.Click += new System.EventHandler(this.tsLogIn_Click);
+            // 
+            // addMerchandiseToolStripMenuItem
+            // 
+            this.addMerchandiseToolStripMenuItem.Name = "addMerchandiseToolStripMenuItem";
+            this.addMerchandiseToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.addMerchandiseToolStripMenuItem.Text = "Add Merchandise";
+            this.addMerchandiseToolStripMenuItem.Click += new System.EventHandler(this.addMerchandiseToolStripMenuItem_Click);
             // 
             // frmMain
             // 
@@ -97,6 +106,7 @@ namespace SU21_Final_Project
         private System.Windows.Forms.ToolStripMenuItem tsOptions;
         private System.Windows.Forms.ToolStripMenuItem tsSignUp;
         private System.Windows.Forms.ToolStripMenuItem tsLogIn;
+        private System.Windows.Forms.ToolStripMenuItem addMerchandiseToolStripMenuItem;
     }
 }
 
