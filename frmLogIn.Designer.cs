@@ -56,7 +56,7 @@ namespace SU21_Final_Project
             // 
             this.rdbCustomer.AutoSize = true;
             this.rdbCustomer.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rdbCustomer.Location = new System.Drawing.Point(168, 90);
+            this.rdbCustomer.Location = new System.Drawing.Point(191, 90);
             this.rdbCustomer.Name = "rdbCustomer";
             this.rdbCustomer.Size = new System.Drawing.Size(112, 19);
             this.rdbCustomer.TabIndex = 2;
@@ -69,7 +69,7 @@ namespace SU21_Final_Project
             // 
             this.rdbEmployee.AutoSize = true;
             this.rdbEmployee.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rdbEmployee.Location = new System.Drawing.Point(310, 90);
+            this.rdbEmployee.Location = new System.Drawing.Point(357, 90);
             this.rdbEmployee.Name = "rdbEmployee";
             this.rdbEmployee.Size = new System.Drawing.Size(114, 19);
             this.rdbEmployee.TabIndex = 3;

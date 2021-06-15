@@ -14,6 +14,7 @@ namespace SU21_Final_Project
          - Get a job
          - Show up to class metting
          - 1:35 pm
+         - Fix Log In Error when switching between customer and Employee
          */ 
     }
 }

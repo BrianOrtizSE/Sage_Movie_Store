@@ -33,7 +33,22 @@ namespace SU21_Final_Project
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
-            ProgOps.LogOn(tbxUsername , tbxPassword , rdbCustomer , rdbEmployee , Text);
+            bool blnPass = true;
+
+            if(rdbCustomer.Checked == false && rdbEmployee.Checked == false)
+            {
+               MessageBox.Show("Customer Or Employee Must Be Checked", "Welcome", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                blnPass = false;
+            }
+
+            if(blnPass == true)
+            {
+                ProgOps.LogOn(tbxUsername, tbxPassword, rdbCustomer, rdbEmployee, Text);
+                frmProductView frmproductview = new frmProductView();
+                frmproductview.ShowDialog();
+            }
+            
+
         }
     }
 }

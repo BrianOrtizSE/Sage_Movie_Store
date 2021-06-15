@@ -18,6 +18,11 @@ namespace SU21_Final_Project
         private static SqlCommand _sqlResultsCommand;
         private static SqlDataAdapter _daLogOn = new SqlDataAdapter();
         private static DataTable _dtLogOn = new DataTable();
+        
+        //Information for Product Table
+        private static SqlDataAdapter _daProduct = new SqlDataAdapter();
+        private static DataTable _dtProductTable = new DataTable();
+
         //Int for PersonID
         public static int intPersonID;
 
@@ -71,7 +76,7 @@ namespace SU21_Final_Project
             {
                 query = "Select * From OrtizB21Su2332.LogOn, OrtizB21Su2332.Employees " +
                 "Where EmployeeID = " + tbxUsername.Text + " " +
-                "And Password = '" + tbxPassword.Text + "';";
+                "and Password = '" + tbxPassword.Text + "';";
             }
 
 
@@ -171,5 +176,22 @@ namespace SU21_Final_Project
 
         }
 
+        public static void GrabProduct(TextBox tbxProductID, DataGridView dgvOrders)
+        {
+            string strQuery = "Select ProductID , CategoryID , ProductName , Quantity , ProductPrice , ProductDescription From OrtizB21Su2332.Products Where Quantity > 0";
+
+            //Establish Command Object
+            _sqlResultsCommand = new SqlCommand(strQuery, _conDatabase);
+
+            //Establish Data Adapter
+            _daProduct = new SqlDataAdapter();
+            _daProduct.SelectCommand = _sqlResultsCommand;
+
+            //Fill Data Table
+            _dtProductTable = new DataTable();
+            _daProduct.Fill(_dtProductTable);
+            dgvOrders.DataSource = _dtProductTable;
+
+        }
     }
 }

@@ -45,7 +45,6 @@ namespace SU21_Final_Project
             else
             {
                 strCreate.Append(tbxFirstName.Text + "',");
-                blnPass = true;
             }
             
 
@@ -68,7 +67,6 @@ namespace SU21_Final_Project
             else
             {
                 strCreate.Append(tbxLastName.Text + "',");
-                blnPass = true;
             }
 
             //Suffix
@@ -90,7 +88,6 @@ namespace SU21_Final_Project
             else
             {
                 strCreate.Append(tbxAddress1.Text + "',");
-                blnPass = true;
             }
 
             //Address 2
@@ -125,7 +122,6 @@ namespace SU21_Final_Project
             else
             {
                 strCreate.Append(tbxZipcode.Text + "','"); ;
-                blnPass = true;
             }
 
 
@@ -138,7 +134,6 @@ namespace SU21_Final_Project
             else
             {
                 strCreate.Append(tbxState.Text + "','"); ;
-                blnPass = true;
             }
 
             //Email
@@ -150,7 +145,6 @@ namespace SU21_Final_Project
             else
             {
                 strCreate.Append(tbxEmail.Text + "','"); ;
-                blnPass = true;
             }
 
             //Phone 1
@@ -162,7 +156,6 @@ namespace SU21_Final_Project
             else
             {
                 strCreate.Append(tbxPhonePrimary.Text + "','"); ;
-                blnPass = true;
             }
 
             //Phone 2
