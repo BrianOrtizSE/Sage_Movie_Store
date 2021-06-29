@@ -18,7 +18,7 @@ namespace SU21_Final_Project
         private static SqlCommand _sqlResultsCommand;
         private static SqlDataAdapter _daLogOn = new SqlDataAdapter();
         private static DataTable _dtLogOn = new DataTable();
-        
+
         //Information for Product Table
         private static SqlDataAdapter _daProduct = new SqlDataAdapter();
         private static DataTable _dtProductTable = new DataTable();
@@ -26,7 +26,7 @@ namespace SU21_Final_Project
         //Function To Get Product Tabled
         public static DataTable GetProductTable
         {
-        //Return the product table when called
+            //Return the product table when called
             get { return _dtProductTable; }
         }
 
@@ -78,7 +78,7 @@ namespace SU21_Final_Project
         public static void LogOn(TextBox tbxUsername, TextBox tbxPassword, RadioButton rdButtonA, RadioButton rdButtonB, String query)
         {
             //used to search for specific user
-            
+
             if (rdButtonA.Checked == true)
             {
                 query = "Select * From OrtizB21Su2332.LogOn " +
@@ -109,10 +109,9 @@ namespace SU21_Final_Project
             }
             else
                 MessageBox.Show("User Was Not Found");
-                blnFound = false;
+            blnFound = false;
 
         }
-
         public static void CreateNewUser(TextBox tbxTitle, TextBox tbxFirstName, TextBox tbxMiddleName, TextBox tbxLastName, TextBox tbxSuffix, TextBox tbxAddress1, TextBox tbxAddress2, TextBox tbxAddress3,
                                         TextBox tbxCity, TextBox tbxZipcode, TextBox tbxState, TextBox tbxEmail, TextBox tbxPhonePrim, TextBox tbxPhoneSecon, string query)
         {
@@ -147,7 +146,6 @@ namespace SU21_Final_Project
 
 
         }
-
         public static void GrabPersonID()
         {
             //Grab the newst PersonID that was just creted
@@ -159,7 +157,6 @@ namespace SU21_Final_Project
             intPersonID = (int)_sqlResultsCommand.ExecuteScalar();
 
         }
-
         public static void CreateLogIn(TextBox tbxUsername, TextBox tbxPassword, ComboBox cmbSQuestion1, TextBox SQAnswer1, ComboBox cmbSQuestion2, TextBox SQAnswer2, String strQuery)
         {
             try
@@ -190,10 +187,9 @@ namespace SU21_Final_Project
             }
 
         }
-
         public static void GrabProduct(TextBox tbxProductID, DataGridView dgvOrders)
         {
-            string strQuery = "Select ProductID , CategoryID , ProductName , Quantity , ProductPrice , ProductDescription From OrtizB21Su2332.Products Where Quantity > 0";
+            string strQuery = "Select ProductID , ProductName , Genre , Quantity , ProductPrice , ProductDescription From OrtizB21Su2332.Products Where Quantity > 0";
 
             //Establish Command Object
             _sqlResultsCommand = new SqlCommand(strQuery, _conDatabase);
@@ -208,9 +204,7 @@ namespace SU21_Final_Project
             dgvOrders.DataSource = _dtProductTable;
 
         }
-
-
-        public static void MerchandiseAdd(TextBox tbxProductID, TextBox ProductName , TextBox tbxGenre , TextBox tbxQuanity, TextBox tbxPrice, TextBox tbxDescription ,CheckBox chxInStock)
+        public static void ProductView(TextBox tbxProductID, TextBox ProductName, TextBox tbxGenre, TextBox tbxQuanity, TextBox tbxPrice, TextBox tbxDescription, CheckBox chxInStock)
         {
             //string to build query
             string query = "select * From OrtizB21Su2332.Products ORDER BY ProductID";
@@ -235,6 +229,47 @@ namespace SU21_Final_Project
             tbxDescription.DataBindings.Add("Text", _dtProductTable, "ProductDescription");
             chxInStock.DataBindings.Add("Checked", _dtProductTable, "inStock");
 
+        }
+        public static void ProductAdd(TextBox tbxProductName, TextBox tbxGenre, TextBox tbxQuanity, TextBox tbxPrice, TextBox tbxDescription, int blnInStock)
+        {
+            try
+            {
+                string query = "Insert into OrtizB21Su2332.Products(ProductName , Genre , Quantity , ProductPrice , ProductDescription , inStock)" +
+                    "values ('"+  tbxProductName.Text + "','" + tbxGenre.Text + "', " + tbxQuanity.Text + " , "+ tbxPrice.Text + " , '" + tbxDescription.Text + "'," + blnInStock + ")";
+
+                //establish Command Object For This Function
+                _sqlResultsCommand = new SqlCommand(query, _conDatabase);
+                _sqlResultsCommand.ExecuteNonQuery();
+
+                //Dispose Of Command Object
+                _sqlResultsCommand.Dispose();
+            }
+            
+            catch (SqlException ex)
+            {
+                //Check if an SqlException was caught
+                if (ex is SqlException)
+                {
+                    //Set the error message and display it
+                    for (int i = 0; i < ex.Errors.Count; i++)
+                    {
+                        errorMessages.Append("Index #" + i + "\n" +
+                            "Message: " + ex.Errors[i].Message + "\n" +
+                            "LineNumber " + ex.Errors[i].LineNumber + "\n" +
+                            "Source " + ex.Errors[i].Source + "\n" +
+                            "Procedure " + ex.Errors[i].Procedure + "\n");
+                    }
+                    MessageBox.Show(errorMessages.ToString(), "Error on Merchandise Update On Close",
+                        MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+        }
+        public static void ProductDispose()
+        {
+            //dispose of connection objects
+            _sqlResultsCommand.Dispose();
+            _daProduct.Dispose();
+            _dtProductTable.Dispose();
         }
     }
 }

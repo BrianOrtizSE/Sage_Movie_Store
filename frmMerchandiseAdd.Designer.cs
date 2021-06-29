@@ -49,7 +49,7 @@ namespace SU21_Final_Project
             this.lblQuantityText = new System.Windows.Forms.Label();
             this.lblGenreText = new System.Windows.Forms.Label();
             this.lblProductIDText = new System.Windows.Forms.Label();
-            this.cmbInStock = new System.Windows.Forms.CheckBox();
+            this.cbxInStock = new System.Windows.Forms.CheckBox();
             this.tbxDescription = new System.Windows.Forms.TextBox();
             this.lblDesriptionText = new System.Windows.Forms.Label();
             this.SuspendLayout();
@@ -60,7 +60,7 @@ namespace SU21_Final_Project
             this.btnClose.Location = new System.Drawing.Point(211, 592);
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(101, 37);
-            this.btnClose.TabIndex = 34;
+            this.btnClose.TabIndex = 14;
             this.btnClose.Text = "C&lose";
             this.btnClose.UseVisualStyleBackColor = true;
             this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
@@ -71,9 +71,10 @@ namespace SU21_Final_Project
             this.btnCancel.Location = new System.Drawing.Point(371, 550);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(101, 37);
-            this.btnCancel.TabIndex = 27;
+            this.btnCancel.TabIndex = 13;
             this.btnCancel.Text = "&Cancel";
             this.btnCancel.UseVisualStyleBackColor = true;
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
             // btnSave
             // 
@@ -81,9 +82,10 @@ namespace SU21_Final_Project
             this.btnSave.Location = new System.Drawing.Point(264, 550);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(101, 37);
-            this.btnSave.TabIndex = 26;
+            this.btnSave.TabIndex = 12;
             this.btnSave.Text = "&Save";
             this.btnSave.UseVisualStyleBackColor = true;
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // btnEdit
             // 
@@ -91,9 +93,10 @@ namespace SU21_Final_Project
             this.btnEdit.Location = new System.Drawing.Point(157, 550);
             this.btnEdit.Name = "btnEdit";
             this.btnEdit.Size = new System.Drawing.Size(101, 37);
-            this.btnEdit.TabIndex = 33;
+            this.btnEdit.TabIndex = 11;
             this.btnEdit.Text = "&Edit";
             this.btnEdit.UseVisualStyleBackColor = true;
+            this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
             // 
             // btnAddNew
             // 
@@ -101,9 +104,10 @@ namespace SU21_Final_Project
             this.btnAddNew.Location = new System.Drawing.Point(50, 550);
             this.btnAddNew.Name = "btnAddNew";
             this.btnAddNew.Size = new System.Drawing.Size(101, 37);
-            this.btnAddNew.TabIndex = 32;
+            this.btnAddNew.TabIndex = 10;
             this.btnAddNew.Text = "&Add New";
             this.btnAddNew.UseVisualStyleBackColor = true;
+            this.btnAddNew.Click += new System.EventHandler(this.btnAddNew_Click);
             // 
             // tbxPrice
             // 
@@ -112,7 +116,7 @@ namespace SU21_Final_Project
             this.tbxPrice.Name = "tbxPrice";
             this.tbxPrice.ReadOnly = true;
             this.tbxPrice.Size = new System.Drawing.Size(246, 27);
-            this.tbxPrice.TabIndex = 24;
+            this.tbxPrice.TabIndex = 4;
             // 
             // tbxQuantity
             // 
@@ -121,7 +125,7 @@ namespace SU21_Final_Project
             this.tbxQuantity.Name = "tbxQuantity";
             this.tbxQuantity.ReadOnly = true;
             this.tbxQuantity.Size = new System.Drawing.Size(246, 27);
-            this.tbxQuantity.TabIndex = 23;
+            this.tbxQuantity.TabIndex = 3;
             // 
             // tbxProductName
             // 
@@ -130,7 +134,7 @@ namespace SU21_Final_Project
             this.tbxProductName.Name = "tbxProductName";
             this.tbxProductName.ReadOnly = true;
             this.tbxProductName.Size = new System.Drawing.Size(246, 27);
-            this.tbxProductName.TabIndex = 22;
+            this.tbxProductName.TabIndex = 1;
             // 
             // tbxGenre
             // 
@@ -139,7 +143,7 @@ namespace SU21_Final_Project
             this.tbxGenre.Name = "tbxGenre";
             this.tbxGenre.ReadOnly = true;
             this.tbxGenre.Size = new System.Drawing.Size(246, 27);
-            this.tbxGenre.TabIndex = 21;
+            this.tbxGenre.TabIndex = 2;
             // 
             // tbxProductID
             // 
@@ -148,7 +152,7 @@ namespace SU21_Final_Project
             this.tbxProductID.Name = "tbxProductID";
             this.tbxProductID.ReadOnly = true;
             this.tbxProductID.Size = new System.Drawing.Size(246, 27);
-            this.tbxProductID.TabIndex = 41;
+            this.tbxProductID.TabIndex = 0;
             // 
             // btnLast
             // 
@@ -156,9 +160,10 @@ namespace SU21_Final_Project
             this.btnLast.Location = new System.Drawing.Point(371, 509);
             this.btnLast.Name = "btnLast";
             this.btnLast.Size = new System.Drawing.Size(101, 37);
-            this.btnLast.TabIndex = 31;
+            this.btnLast.TabIndex = 9;
             this.btnLast.Text = "Last";
             this.btnLast.UseVisualStyleBackColor = true;
+            this.btnLast.Click += new System.EventHandler(this.btnLast_Click);
             // 
             // btnFirst
             // 
@@ -166,9 +171,10 @@ namespace SU21_Final_Project
             this.btnFirst.Location = new System.Drawing.Point(264, 509);
             this.btnFirst.Name = "btnFirst";
             this.btnFirst.Size = new System.Drawing.Size(101, 37);
-            this.btnFirst.TabIndex = 30;
+            this.btnFirst.TabIndex = 8;
             this.btnFirst.Text = "First";
             this.btnFirst.UseVisualStyleBackColor = true;
+            this.btnFirst.Click += new System.EventHandler(this.btnFirst_Click);
             // 
             // btnNext
             // 
@@ -176,9 +182,10 @@ namespace SU21_Final_Project
             this.btnNext.Location = new System.Drawing.Point(157, 509);
             this.btnNext.Name = "btnNext";
             this.btnNext.Size = new System.Drawing.Size(101, 37);
-            this.btnNext.TabIndex = 29;
+            this.btnNext.TabIndex = 7;
             this.btnNext.Text = "Next";
             this.btnNext.UseVisualStyleBackColor = true;
+            this.btnNext.Click += new System.EventHandler(this.btnNext_Click);
             // 
             // btnPrevious
             // 
@@ -186,9 +193,10 @@ namespace SU21_Final_Project
             this.btnPrevious.Location = new System.Drawing.Point(50, 509);
             this.btnPrevious.Name = "btnPrevious";
             this.btnPrevious.Size = new System.Drawing.Size(101, 37);
-            this.btnPrevious.TabIndex = 28;
+            this.btnPrevious.TabIndex = 6;
             this.btnPrevious.Text = "Previous";
             this.btnPrevious.UseVisualStyleBackColor = true;
+            this.btnPrevious.Click += new System.EventHandler(this.btnPrevious_Click);
             // 
             // lblPriceText
             // 
@@ -197,7 +205,7 @@ namespace SU21_Final_Project
             this.lblPriceText.Location = new System.Drawing.Point(239, 276);
             this.lblPriceText.Name = "lblPriceText";
             this.lblPriceText.Size = new System.Drawing.Size(48, 19);
-            this.lblPriceText.TabIndex = 39;
+            this.lblPriceText.TabIndex = 19;
             this.lblPriceText.Text = "Price ";
             this.lblPriceText.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
@@ -208,7 +216,7 @@ namespace SU21_Final_Project
             this.lblInStockText.Location = new System.Drawing.Point(216, 473);
             this.lblInStockText.Name = "lblInStockText";
             this.lblInStockText.Size = new System.Drawing.Size(67, 19);
-            this.lblInStockText.TabIndex = 40;
+            this.lblInStockText.TabIndex = 21;
             this.lblInStockText.Text = "In Stock";
             this.lblInStockText.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
@@ -219,7 +227,7 @@ namespace SU21_Final_Project
             this.lblProductNametxt.Location = new System.Drawing.Point(203, 83);
             this.lblProductNametxt.Name = "lblProductNametxt";
             this.lblProductNametxt.Size = new System.Drawing.Size(114, 19);
-            this.lblProductNametxt.TabIndex = 37;
+            this.lblProductNametxt.TabIndex = 16;
             this.lblProductNametxt.Text = "Product Name ";
             this.lblProductNametxt.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
@@ -230,7 +238,7 @@ namespace SU21_Final_Project
             this.lblQuantityText.Location = new System.Drawing.Point(223, 216);
             this.lblQuantityText.Name = "lblQuantityText";
             this.lblQuantityText.Size = new System.Drawing.Size(74, 19);
-            this.lblQuantityText.TabIndex = 38;
+            this.lblQuantityText.TabIndex = 18;
             this.lblQuantityText.Text = "Quantity ";
             this.lblQuantityText.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
@@ -241,7 +249,7 @@ namespace SU21_Final_Project
             this.lblGenreText.Location = new System.Drawing.Point(230, 152);
             this.lblGenreText.Name = "lblGenreText";
             this.lblGenreText.Size = new System.Drawing.Size(51, 19);
-            this.lblGenreText.TabIndex = 36;
+            this.lblGenreText.TabIndex = 17;
             this.lblGenreText.Text = "Genre";
             this.lblGenreText.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
@@ -252,19 +260,19 @@ namespace SU21_Final_Project
             this.lblProductIDText.Location = new System.Drawing.Point(212, 21);
             this.lblProductIDText.Name = "lblProductIDText";
             this.lblProductIDText.Size = new System.Drawing.Size(85, 19);
-            this.lblProductIDText.TabIndex = 35;
+            this.lblProductIDText.TabIndex = 15;
             this.lblProductIDText.Text = "Product ID";
             this.lblProductIDText.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // cmbInStock
+            // cbxInStock
             // 
-            this.cmbInStock.AutoSize = true;
-            this.cmbInStock.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cmbInStock.Location = new System.Drawing.Point(289, 478);
-            this.cmbInStock.Name = "cmbInStock";
-            this.cmbInStock.Size = new System.Drawing.Size(15, 14);
-            this.cmbInStock.TabIndex = 42;
-            this.cmbInStock.UseVisualStyleBackColor = true;
+            this.cbxInStock.AutoSize = true;
+            this.cbxInStock.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbxInStock.Location = new System.Drawing.Point(289, 478);
+            this.cbxInStock.Name = "cbxInStock";
+            this.cbxInStock.Size = new System.Drawing.Size(15, 14);
+            this.cbxInStock.TabIndex = 22;
+            this.cbxInStock.UseVisualStyleBackColor = true;
             // 
             // tbxDescription
             // 
@@ -274,7 +282,7 @@ namespace SU21_Final_Project
             this.tbxDescription.Name = "tbxDescription";
             this.tbxDescription.ReadOnly = true;
             this.tbxDescription.Size = new System.Drawing.Size(384, 107);
-            this.tbxDescription.TabIndex = 43;
+            this.tbxDescription.TabIndex = 5;
             // 
             // lblDesriptionText
             // 
@@ -283,7 +291,7 @@ namespace SU21_Final_Project
             this.lblDesriptionText.Location = new System.Drawing.Point(186, 337);
             this.lblDesriptionText.Name = "lblDesriptionText";
             this.lblDesriptionText.Size = new System.Drawing.Size(143, 19);
-            this.lblDesriptionText.TabIndex = 44;
+            this.lblDesriptionText.TabIndex = 20;
             this.lblDesriptionText.Text = "Product Descrption";
             this.lblDesriptionText.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
@@ -294,7 +302,7 @@ namespace SU21_Final_Project
             this.ClientSize = new System.Drawing.Size(542, 644);
             this.Controls.Add(this.tbxDescription);
             this.Controls.Add(this.lblDesriptionText);
-            this.Controls.Add(this.cmbInStock);
+            this.Controls.Add(this.cbxInStock);
             this.Controls.Add(this.btnClose);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btnSave);
@@ -348,7 +356,7 @@ namespace SU21_Final_Project
         private System.Windows.Forms.Label lblQuantityText;
         private System.Windows.Forms.Label lblGenreText;
         private System.Windows.Forms.Label lblProductIDText;
-        private System.Windows.Forms.CheckBox cmbInStock;
+        private System.Windows.Forms.CheckBox cbxInStock;
         private System.Windows.Forms.TextBox tbxDescription;
         private System.Windows.Forms.Label lblDesriptionText;
     }
