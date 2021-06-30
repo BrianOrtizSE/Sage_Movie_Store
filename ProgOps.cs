@@ -230,12 +230,10 @@ namespace SU21_Final_Project
             chxInStock.DataBindings.Add("Checked", _dtProductTable, "inStock");
 
         }
-        public static void ProductAdd(TextBox tbxProductName, TextBox tbxGenre, TextBox tbxQuanity, TextBox tbxPrice, TextBox tbxDescription, int blnInStock)
+        public static void ProductAddEdit(TextBox tbxProductName, TextBox tbxGenre, TextBox tbxQuanity, TextBox tbxPrice, TextBox tbxDescription, int blnInStock , String query)
         {
             try
-            {
-                string query = "Insert into OrtizB21Su2332.Products(ProductName , Genre , Quantity , ProductPrice , ProductDescription , inStock)" +
-                    "values ('"+  tbxProductName.Text + "','" + tbxGenre.Text + "', " + tbxQuanity.Text + " , "+ tbxPrice.Text + " , '" + tbxDescription.Text + "'," + blnInStock + ")";
+            {                   
 
                 //establish Command Object For This Function
                 _sqlResultsCommand = new SqlCommand(query, _conDatabase);
