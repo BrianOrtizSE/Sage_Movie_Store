@@ -34,6 +34,7 @@ namespace SU21_Final_Project
             this.tsSignUp = new System.Windows.Forms.ToolStripMenuItem();
             this.tsLogIn = new System.Windows.Forms.ToolStripMenuItem();
             this.addMerchandiseToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.createInvoiceToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.mnsMain.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -53,7 +54,8 @@ namespace SU21_Final_Project
             this.tsOptions.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.tsSignUp,
             this.tsLogIn,
-            this.addMerchandiseToolStripMenuItem});
+            this.addMerchandiseToolStripMenuItem,
+            this.createInvoiceToolStripMenuItem});
             this.tsOptions.Name = "tsOptions";
             this.tsOptions.Size = new System.Drawing.Size(52, 20);
             this.tsOptions.Text = "Log In";
@@ -79,6 +81,13 @@ namespace SU21_Final_Project
             this.addMerchandiseToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.addMerchandiseToolStripMenuItem.Text = "Add Merchandise";
             this.addMerchandiseToolStripMenuItem.Click += new System.EventHandler(this.addMerchandiseToolStripMenuItem_Click);
+            // 
+            // createInvoiceToolStripMenuItem
+            // 
+            this.createInvoiceToolStripMenuItem.Name = "createInvoiceToolStripMenuItem";
+            this.createInvoiceToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.createInvoiceToolStripMenuItem.Text = "Create Invoice";
+            this.createInvoiceToolStripMenuItem.Click += new System.EventHandler(this.createInvoiceToolStripMenuItem_Click);
             // 
             // frmMain
             // 
@@ -107,6 +116,7 @@ namespace SU21_Final_Project
         private System.Windows.Forms.ToolStripMenuItem tsSignUp;
         private System.Windows.Forms.ToolStripMenuItem tsLogIn;
         private System.Windows.Forms.ToolStripMenuItem addMerchandiseToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem createInvoiceToolStripMenuItem;
     }
 }
 

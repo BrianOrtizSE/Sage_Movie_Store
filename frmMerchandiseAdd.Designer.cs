@@ -299,7 +299,7 @@ namespace SU21_Final_Project
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(542, 644);
+            this.ClientSize = new System.Drawing.Size(532, 644);
             this.Controls.Add(this.tbxDescription);
             this.Controls.Add(this.lblDesriptionText);
             this.Controls.Add(this.cbxInStock);

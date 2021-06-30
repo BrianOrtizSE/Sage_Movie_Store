@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Data.SqlClient;
 
 namespace SU21_Final_Project
 {
@@ -21,14 +22,17 @@ namespace SU21_Final_Project
         CurrencyManager prodManager;
 
         //Future variables for state and bookmark
-        string myState = "View";
-        int myBookmark = 0;
-        bool blnInStock = true;
+        string myState;
+        bool blnInStock;
+        string query;
+        int myBookmark;      
+
 
         private void frmMerchandiseAdd_Load(object sender, EventArgs e)
         {
             try
             {
+               
                 //Load in the Products table from the database
                 ProgOps.ProductView(tbxProductID, tbxProductName, tbxGenre, tbxQuantity, tbxPrice, tbxDescription, cbxInStock);
 
@@ -115,29 +119,84 @@ namespace SU21_Final_Project
             //Trim the textbox(s) that don't reject spaces
             tbxProductName.Text = tbxProductName.Text.Trim();
 
-            if (DataIsValid(tbxGenre.Text, tbxProductName.Text, tbxQuantity.Text, tbxPrice.Text , tbxDescription.Text) && myState == "Add")
+            //strinb builder for error messages
+            StringBuilder errorMessages = new StringBuilder();
+
+            int intInStock;
+            int intRow;
+
+            string savedName = tbxProductName.Text;
+
+            blnInStock = cbxInStock.Checked;
+
+            //since query needs a 1 or 0 this int does that
+            if (blnInStock)
+            {
+                intInStock = 1;
+            } else
+                intInStock = 0;
+
+            try
             {
 
-                blnInStock = cbxInStock.Checked;
-                if (blnInStock == true)
+                if (DataIsValid(tbxGenre.Text, tbxProductName.Text, tbxQuantity.Text, tbxPrice.Text, tbxDescription.Text) && myState == "Add")
                 {
-                    ProgOps.ProductAdd(tbxProductName, tbxGenre, tbxQuantity, tbxPrice, tbxDescription, 1);
+                    //query to add new item
+                    query = "Insert into OrtizB21Su2332.Products(ProductName , Genre , Quantity , ProductPrice , ProductDescription , inStock)" +
+                    "values ('" + tbxProductName.Text + "','" + tbxGenre.Text + "', " + tbxQuantity.Text + " , " + tbxPrice.Text + " , '" + tbxDescription.Text + "'," + intInStock + ")";
+
+                }
+                else if (DataIsValid(tbxGenre.Text, tbxProductName.Text, tbxQuantity.Text, tbxPrice.Text, tbxDescription.Text) && myState == "Edit")
+                {
+                    //query to add edit item
+                    query = "Update OrtizB21Su2332.Products " +
+                       "Set ProductName = '" + tbxProductName.Text + "', Genre = '" + tbxGenre.Text + "', Quantity = " + tbxQuantity.Text + ", ProductPrice = " + tbxPrice.Text + ", ProductDescription = '" + tbxDescription.Text + "', inStock = " + 1 +
+                       " Where ProductID = " + tbxProductID.Text;
                 }
                 else
                 {
-                    ProgOps.ProductAdd(tbxProductName, tbxGenre, tbxQuantity, tbxPrice, tbxDescription, 0);
+                    MessageBox.Show("Error During Saving Proccess", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
 
-                //Return to view state
-                SetState("View");
+                
+                if (blnInStock)
+                {
+                    ProgOps.ProductAddEdit(tbxProductName, tbxGenre, tbxQuantity, tbxPrice, tbxDescription, 1, query);
+                    //Display confirming message box
+                    MessageBox.Show("Record saved successfully.", "Save Record", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                   
+                }
+                else
+                {
+                    ProgOps.ProductAddEdit(tbxProductName, tbxGenre, tbxQuantity, tbxPrice, tbxDescription, 0, query);
+                    //Display confirming message box
+                    MessageBox.Show("Record saved successfully.", "Save Record", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
 
-                //Display confirming message box
-                MessageBox.Show("Record saved successfully.", "Save Record", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
-            else
+            catch (SqlException ex)
             {
-                MessageBox.Show("Record NOT saved successfully.", "Save Record", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                //Set the error message and display it
+                for (int i = 0; i < ex.Errors.Count; i++)
+                {
+                    errorMessages.Append("Index #" + i + "\n" +
+                        "Message: " + ex.Errors[i].Message + "\n" +
+                        "LineNumber " + ex.Errors[i].LineNumber + "\n" +
+                        "Source " + ex.Errors[i].Source + "\n" +
+                        "Procedure " + ex.Errors[i].Procedure + "\n");
+                }
+                MessageBox.Show(errorMessages.ToString(), "Error on Product",
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+           
+            SetState("View");
+
+            //Have the currency manager end the edit and re-sort the table
+            //prodManager.EndCurrentEdit();
+            //ProgOps.GetProductTable.DefaultView.Sort = "ProductName";
+            //intRow = ProgOps.GetProductTable.DefaultView.Find(savedName);
+            //prodManager.Position = intRow;
+
         }     
 
         public bool DataIsValid(string strProductName, string strGenre,  string strQuantity,
@@ -223,7 +282,7 @@ namespace SU21_Final_Project
                     tbxQuantity.ReadOnly = false;
                     tbxDescription.ReadOnly = false;
                     tbxPrice.ReadOnly = false;
-                    cbxInStock.Enabled = false;
+                    cbxInStock.Enabled = true;
                     break;
             }
         }

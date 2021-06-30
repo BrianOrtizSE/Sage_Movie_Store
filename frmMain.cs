@@ -62,5 +62,11 @@ namespace SU21_Final_Project
             frmMerchandiseAdd frmmerchadd = new frmMerchandiseAdd();
             frmmerchadd.ShowDialog();
         }
+
+        private void createInvoiceToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmCreateInvoice frmcreateinvoice = new frmCreateInvoice();
+            frmcreateinvoice.ShowDialog();
+        }
     }
 }
