@@ -19,7 +19,7 @@ namespace SU21_Final_Project
 
         private void frmProductView_Load(object sender, EventArgs e)
         {
-            ProgOps.GrabProduct(tbxProductID, dgvView);
+            //ProgOps.GrabProduct(tbxProductID, dgvView);
         }
     }
 }

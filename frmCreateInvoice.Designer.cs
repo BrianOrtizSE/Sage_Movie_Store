@@ -45,6 +45,7 @@ namespace SU21_Final_Project
             this.lbxOrder = new System.Windows.Forms.ListBox();
             this.tbxProductID = new System.Windows.Forms.TextBox();
             this.lblToalPrice = new System.Windows.Forms.Label();
+            this.btnRemove = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProducts)).BeginInit();
             this.SuspendLayout();
             // 
@@ -136,7 +137,7 @@ namespace SU21_Final_Project
             this.btnCheckOut.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCheckOut.Location = new System.Drawing.Point(169, 385);
             this.btnCheckOut.Name = "btnCheckOut";
-            this.btnCheckOut.Size = new System.Drawing.Size(100, 40);
+            this.btnCheckOut.Size = new System.Drawing.Size(107, 40);
             this.btnCheckOut.TabIndex = 19;
             this.btnCheckOut.Text = "&CheckOut";
             this.btnCheckOut.UseVisualStyleBackColor = true;
@@ -156,9 +157,9 @@ namespace SU21_Final_Project
             // btnExit
             // 
             this.btnExit.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnExit.Location = new System.Drawing.Point(114, 431);
+            this.btnExit.Location = new System.Drawing.Point(169, 431);
             this.btnExit.Name = "btnExit";
-            this.btnExit.Size = new System.Drawing.Size(100, 40);
+            this.btnExit.Size = new System.Drawing.Size(107, 40);
             this.btnExit.TabIndex = 20;
             this.btnExit.Text = "&Return";
             this.btnExit.UseVisualStyleBackColor = true;
@@ -167,9 +168,9 @@ namespace SU21_Final_Project
             // btnAddToOrder
             // 
             this.btnAddToOrder.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAddToOrder.Location = new System.Drawing.Point(63, 385);
+            this.btnAddToOrder.Location = new System.Drawing.Point(49, 385);
             this.btnAddToOrder.Name = "btnAddToOrder";
-            this.btnAddToOrder.Size = new System.Drawing.Size(100, 40);
+            this.btnAddToOrder.Size = new System.Drawing.Size(114, 40);
             this.btnAddToOrder.TabIndex = 18;
             this.btnAddToOrder.Text = "&Add";
             this.btnAddToOrder.UseVisualStyleBackColor = true;
@@ -190,7 +191,7 @@ namespace SU21_Final_Project
             this.lbxOrder.FormattingEnabled = true;
             this.lbxOrder.Location = new System.Drawing.Point(853, 51);
             this.lbxOrder.Name = "lbxOrder";
-            this.lbxOrder.Size = new System.Drawing.Size(208, 368);
+            this.lbxOrder.Size = new System.Drawing.Size(272, 368);
             this.lbxOrder.TabIndex = 30;
             // 
             // tbxProductID
@@ -211,11 +212,23 @@ namespace SU21_Final_Project
             this.lblToalPrice.Text = "Total: ";
             this.lblToalPrice.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // btnRemove
+            // 
+            this.btnRemove.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRemove.Location = new System.Drawing.Point(49, 431);
+            this.btnRemove.Name = "btnRemove";
+            this.btnRemove.Size = new System.Drawing.Size(114, 40);
+            this.btnRemove.TabIndex = 32;
+            this.btnRemove.Text = "R&emove Item";
+            this.btnRemove.UseVisualStyleBackColor = true;
+            this.btnRemove.Click += new System.EventHandler(this.btnRemove_Click);
+            // 
             // frmCreateInvoice
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1088, 491);
+            this.ClientSize = new System.Drawing.Size(1168, 491);
+            this.Controls.Add(this.btnRemove);
             this.Controls.Add(this.lblProdError);
             this.Controls.Add(this.lblError);
             this.Controls.Add(this.lblToalPrice);
@@ -259,5 +272,6 @@ namespace SU21_Final_Project
         private System.Windows.Forms.ListBox lbxOrder;
         private System.Windows.Forms.TextBox tbxProductID;
         private System.Windows.Forms.Label lblToalPrice;
+        private System.Windows.Forms.Button btnRemove;
     }
 }

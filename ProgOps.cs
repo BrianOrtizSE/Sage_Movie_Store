@@ -187,9 +187,9 @@ namespace SU21_Final_Project
             }
 
         }
-        public static void GrabProduct(TextBox tbxProductID, DataGridView dgvOrders)
+        public static void GrabProduct(TextBox tbxProductID, DataGridView dgvOrders , String strQuery)
         {
-            string strQuery = "Select ProductID , ProductName , Genre , ProductDescription , Quantity , ProductPrice From OrtizB21Su2332.Products Where Quantity > 0";
+            
 
             //Establish Command Object
             _sqlResultsCommand = new SqlCommand(strQuery, _conDatabase);
@@ -269,5 +269,7 @@ namespace SU21_Final_Project
             _daProduct.Dispose();
             _dtProductTable.Dispose();
         }
+
+
     }
 }
