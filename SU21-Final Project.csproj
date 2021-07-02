@@ -91,6 +91,12 @@
     <Compile Include="frmMerhandiseView.Designer.cs">
       <DependentUpon>frmMerhandiseView.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmPayScreen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmPayScreen.Designer.cs">
+      <DependentUpon>frmPayScreen.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmSecurityQuestions.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -121,6 +127,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmMerhandiseView.resx">
       <DependentUpon>frmMerhandiseView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmPayScreen.resx">
+      <DependentUpon>frmPayScreen.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmSecurityQuestions.resx">
       <DependentUpon>frmSecurityQuestions.cs</DependentUpon>

@@ -23,6 +23,10 @@ namespace SU21_Final_Project
         private static SqlDataAdapter _daProduct = new SqlDataAdapter();
         private static DataTable _dtProductTable = new DataTable();
 
+        //Information for Discount Table
+        private static SqlDataAdapter _daDiscount = new SqlDataAdapter();
+        private static DataTable _dtDiscount = new DataTable();
+
         //Function To Get Product Tabled
         public static DataTable GetProductTable
         {
@@ -31,12 +35,14 @@ namespace SU21_Final_Project
         }
 
 
+        //TAX FOR WHOLE PROJECT:
+        public static double _TAX = 0.0825;
 
         //Int for PersonID
         public static int intPersonID;
         //Bool If Person Was Found
         public static bool blnFound;
-
+        public static decimal DiscountPercent;
 
 
         //Strinbuilder for error messages in the trycatch
@@ -108,8 +114,11 @@ namespace SU21_Final_Project
                 blnFound = true;
             }
             else
+            {
                 MessageBox.Show("User Was Not Found");
-            blnFound = false;
+                blnFound = false;
+            }
+               
 
         }
         public static void CreateNewUser(TextBox tbxTitle, TextBox tbxFirstName, TextBox tbxMiddleName, TextBox tbxLastName, TextBox tbxSuffix, TextBox tbxAddress1, TextBox tbxAddress2, TextBox tbxAddress3,
@@ -269,6 +278,87 @@ namespace SU21_Final_Project
             _daProduct.Dispose();
             _dtProductTable.Dispose();
         }
+
+        public static void GetDiscountID(TextBox tbxDiscountCode)
+        {
+            String strQuery = "Select * from OrtizB21Su2332.Discount where DiscountID = " + tbxDiscountCode.Text;
+
+
+            _sqlResultsCommand = new SqlCommand(strQuery, _conDatabase);
+            //establish data adapter
+            _daDiscount = new SqlDataAdapter();
+            _daDiscount.SelectCommand = _sqlResultsCommand;
+            //fill data table
+            _dtDiscount= new DataTable();
+            _daDiscount.Fill(_dtDiscount);
+
+            if (_dtDiscount.Rows.Count == 1)
+            {
+                MessageBox.Show("Code Was Found");
+                blnFound = true;                
+            }
+            else
+            {
+                MessageBox.Show("Code Was Not Found");
+                blnFound = false;
+            }
+        }
+
+        //used to check for product discount vs whole sale discount
+        public static void GetDiscountInformation(TextBox tbxDiscountCode)
+        {
+            int intProductID = 1;          
+            decimal DiscountPercent;
+            try
+            {
+                string strquery = "Select ProductID from OrtizB21Su2332.Discount where DiscountID = " + tbxDiscountCode.Text;
+
+                _sqlResultsCommand = new SqlCommand(strquery, _conDatabase);
+                //Grab ProductID IF one is associated with this item
+                intProductID = (int)_sqlResultsCommand.ExecuteScalar();
+            }
+            catch (SqlException ex )
+            {
+                if (ex is SqlException)
+                {//handles more specific SqlException here.
+
+                    for (int i = 0; i < ex.Errors.Count; i++)
+                    {
+                        errorMessages.Append("Index #" + i + "\n" +
+                            "Message: " + ex.Errors[i].Message + "\n" +
+                            "LineNumber: " + ex.Errors[i].LineNumber + "\n" +
+                            "Source: " + ex.Errors[i].Source + "\n" +
+                            "Procedure: " + ex.Errors[i].Procedure + "\n");
+                    }
+                    MessageBox.Show(errorMessages.ToString(), "Error on DatabaseCommand", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                
+            }
+            catch (InvalidCastException)
+            {
+                string strquery = "Select DiscountPercent from OrtizB21Su2332.Discount where DiscountID = " + tbxDiscountCode.Text;
+
+                _sqlResultsCommand = new SqlCommand(strquery, _conDatabase);
+                //Grab Discount Percen
+                DiscountPercent = (int)_sqlResultsCommand.ExecuteScalar();
+
+            }
+
+
+           
+
+            //_sqlResultsCommand = new SqlCommand(strQuery, _conDatabase);
+            ////establush command object
+            //_sqlResultsCommand = new SqlCommand(query, _conDatabase);
+            ////establish data adapter
+            //_daLogOn = new SqlDataAdapter();
+            //_daLogOn.SelectCommand = _sqlResultsCommand;
+            ////fill data table
+            //_dtLogOn = new DataTable();
+            //_daLogOn.Fill(_dtLogOn);
+
+        }
+
 
 
     }

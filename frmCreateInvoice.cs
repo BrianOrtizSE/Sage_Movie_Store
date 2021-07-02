@@ -17,16 +17,13 @@ namespace SU21_Final_Project
             InitializeComponent();
         }
 
-        
-        public string strQuery;
-        public double Total = 0.0;
-
-        public struct ProdList
+        public class ProdList
         {
             //struct variables
             public string strProdName;
             public double dblProdPrice;
             public int intProdQuan;
+            
 
             //constructor
             public ProdList(string strProdName, double dblProdPrice, int intProdQuan)
@@ -35,8 +32,14 @@ namespace SU21_Final_Project
                 this.dblProdPrice = dblProdPrice;
                 this.intProdQuan = intProdQuan;
             }
+
+
         }
 
+        public string strQuery;
+        public double dblTotal = 0.0;
+        public double dblSubTotal = 0.0;
+        decimal dcmDiscountPercent = 0;
         List<ProdList> prodlist = new List<ProdList>();
 
         private void btnExit_Click(object sender, EventArgs e)
@@ -60,6 +63,8 @@ namespace SU21_Final_Project
 
             dgvProducts.Columns[5].DefaultCellStyle.Format = "c";
             dgvProducts.Columns[5].HeaderText = "Movie Price";
+
+            pnlCheckout.Visible = false;
 
 
 
@@ -114,6 +119,7 @@ namespace SU21_Final_Project
                 {
                     dblPrice = Convert.ToDouble(dgvProducts.CurrentRow.Cells[5].Value);
                     prodlist.Add(new ProdList(dgvProducts.CurrentRow.Cells[1].Value.ToString(), dblPrice, int.Parse(tbxQuantity.Text)));
+                    
 
                     //Write Items to ListBox / Cart
                     lbxOrder.Items.Clear();
@@ -124,8 +130,8 @@ namespace SU21_Final_Project
                     
 
                     //Update the total and its label
-                    Total += dblPrice * double.Parse(tbxQuantity.Text);
-                    lblToalPrice.Text = "Total : \t" + Total.ToString("c2");
+                    dblTotal += dblPrice * double.Parse(tbxQuantity.Text);
+                    lblToalPrice.Text = "Total : \t" + dblTotal.ToString("c2");
 
                     //Reset User
                     tbxProductID.Clear();
@@ -157,8 +163,8 @@ namespace SU21_Final_Project
             {
                 intSelected = lbxOrder.SelectedIndex;
 
-                Total = Total - (prodlist[intSelected].dblProdPrice * prodlist[intSelected].intProdQuan);
-                lblToalPrice.Text = "Total : \t" + Total.ToString("c2");
+                dblTotal = dblTotal - (prodlist[intSelected].dblProdPrice * prodlist[intSelected].intProdQuan);
+                lblToalPrice.Text = "Total : \t" + dblTotal.ToString("c2");
 
                 prodlist.RemoveAt(intSelected);
                 lbxOrder.Items.Clear();
@@ -168,6 +174,74 @@ namespace SU21_Final_Project
                 }
             }
             
+        }
+
+        private void btnCheckOut_Click(object sender, EventArgs e)
+        {
+            dblSubTotal = dblTotal * ProgOps._TAX;
+
+            if (prodlist.Count == 0)
+            {
+                MessageBox.Show("Please Add At Least 1 Item To The Cart.", "Shoppnig Cart Empty ", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }else
+            {
+                //Switches between screens
+                pnlCart.Visible = false;
+                pnlCheckout.Visible = true;
+
+                WriteToListBox();
+            }
+            
+
+        }
+
+        private void btnClose_Click(object sender, EventArgs e)
+        {
+            pnlCart.Visible = true;
+            pnlCheckout.Visible = false;
+        }
+
+        private void btnCloseShop_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void pnlCheckout_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void btnDiscountEnter_Click(object sender, EventArgs e)
+        {
+            
+
+            ProgOps.GetDiscountID(tbxDiscount);
+            ProgOps.GetDiscountInformation(tbxDiscount);
+
+            dcmDiscountPercent = ProgOps.DiscountPercent;
+
+            
+        }
+
+        public void WriteToListBox()
+        {
+            //Write Items to ListBox / CheckOut
+            lbxCheckOutCart.Items.Clear();
+            for (int i = 0; i < prodlist.Count(); i++)
+            {
+                lbxCheckOutCart.Items.Add("\tShopping Cart");
+                lbxCheckOutCart.Items.Add("Title: " + prodlist[i].strProdName + " | $" + prodlist[i].dblProdPrice + " | " + prodlist[i].intProdQuan);
+
+                lbxCheckOutCart.Items.Add("");
+                lbxCheckOutCart.Items.Add("");
+                lbxCheckOutCart.Items.Add("");
+                lbxCheckOutCart.Items.Add("Discount : " + dcmDiscountPercent.ToString("c"));
+                lbxCheckOutCart.Items.Add("Sub Total : " + dblTotal.ToString("c"));
+                lbxCheckOutCart.Items.Add("Tax Total : " + dblSubTotal.ToString("C"));
+                lbxCheckOutCart.Items.Add("Total : " + (dblTotal + dblSubTotal).ToString("C"));
+
+
+            }
         }
     }
 }
