@@ -36,13 +36,18 @@ namespace SU21_Final_Project
 
 
         //TAX FOR WHOLE PROJECT:
-        public static double _TAX = 0.0825;
+        public static decimal _TAX = 0.0825M;
 
         //Int for PersonID
         public static int intPersonID;
+
+
+        public static decimal decDiscountPercent = 0.0m;
+        public static int intProductID = 0;
+
         //Bool If Person Was Found
         public static bool blnFound;
-        public static decimal DiscountPercent;
+        public static bool blnDiscountFound;
 
 
         //Strinbuilder for error messages in the trycatch
@@ -118,7 +123,7 @@ namespace SU21_Final_Project
                 MessageBox.Show("User Was Not Found");
                 blnFound = false;
             }
-               
+
 
         }
         public static void CreateNewUser(TextBox tbxTitle, TextBox tbxFirstName, TextBox tbxMiddleName, TextBox tbxLastName, TextBox tbxSuffix, TextBox tbxAddress1, TextBox tbxAddress2, TextBox tbxAddress3,
@@ -196,9 +201,9 @@ namespace SU21_Final_Project
             }
 
         }
-        public static void GrabProduct(TextBox tbxProductID, DataGridView dgvOrders , String strQuery)
+        public static void GrabProduct(TextBox tbxProductID, DataGridView dgvOrders, String strQuery)
         {
-            
+
 
             //Establish Command Object
             _sqlResultsCommand = new SqlCommand(strQuery, _conDatabase);
@@ -239,10 +244,10 @@ namespace SU21_Final_Project
             chxInStock.DataBindings.Add("Checked", _dtProductTable, "inStock");
 
         }
-        public static void ProductAddEdit(TextBox tbxProductName, TextBox tbxGenre, TextBox tbxQuanity, TextBox tbxPrice, TextBox tbxDescription, int blnInStock , String query)
+        public static void ProductAddEdit(TextBox tbxProductName, TextBox tbxGenre, TextBox tbxQuanity, TextBox tbxPrice, TextBox tbxDescription, int blnInStock, String query)
         {
             try
-            {                   
+            {
 
                 //establish Command Object For This Function
                 _sqlResultsCommand = new SqlCommand(query, _conDatabase);
@@ -251,7 +256,7 @@ namespace SU21_Final_Project
                 //Dispose Of Command Object
                 _sqlResultsCommand.Dispose();
             }
-            
+
             catch (SqlException ex)
             {
                 //Check if an SqlException was caught
@@ -281,43 +286,107 @@ namespace SU21_Final_Project
 
         public static void GetDiscountID(TextBox tbxDiscountCode)
         {
-            String strQuery = "Select * from OrtizB21Su2332.Discount where DiscountID = " + tbxDiscountCode.Text;
-
-
-            _sqlResultsCommand = new SqlCommand(strQuery, _conDatabase);
-            //establish data adapter
-            _daDiscount = new SqlDataAdapter();
-            _daDiscount.SelectCommand = _sqlResultsCommand;
-            //fill data table
-            _dtDiscount= new DataTable();
-            _daDiscount.Fill(_dtDiscount);
-
-            if (_dtDiscount.Rows.Count == 1)
+            try
             {
-                MessageBox.Show("Code Was Found");
-                blnFound = true;                
+
+                String strQuery = "Select * from OrtizB21Su2332.Discount where DiscountID = " + tbxDiscountCode.Text;
+
+
+                _sqlResultsCommand = new SqlCommand(strQuery, _conDatabase);
+                //establish data adapter
+                _daDiscount = new SqlDataAdapter();
+                _daDiscount.SelectCommand = _sqlResultsCommand;
+                //fill data table
+                _dtDiscount = new DataTable();
+                _daDiscount.Fill(_dtDiscount);
+
+                if (_dtDiscount.Rows.Count == 1)
+                {
+                    blnDiscountFound = true;
+                    GetDiscountInformation(tbxDiscountCode);
+                }
+                else
+                {
+                    blnDiscountFound = false;
+                }
+
             }
-            else
+            catch (SqlException ex)
             {
-                MessageBox.Show("Code Was Not Found");
-                blnFound = false;
+                //Check if an SqlException was caught
+                if (ex is SqlException)
+                {
+                    //Set the error message and display it
+                    for (int i = 0; i < ex.Errors.Count; i++)
+                    {
+                        errorMessages.Append("Index #" + i + "\n" +
+                            "Message: " + ex.Errors[i].Message + "\n" +
+                            "LineNumber " + ex.Errors[i].LineNumber + "\n" +
+                            "Source " + ex.Errors[i].Source + "\n" +
+                            "Procedure " + ex.Errors[i].Procedure + "\n");
+                    }
+                    MessageBox.Show(errorMessages.ToString(), "Discount Search Error",
+                        MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
+
+
+
         }
 
         //used to check for product discount vs whole sale discount
         public static void GetDiscountInformation(TextBox tbxDiscountCode)
         {
-            int intProductID = 1;          
-            decimal DiscountPercent;
+            int intDiscountType = 0;
+            string strQuery;
+
+
             try
             {
-                string strquery = "Select ProductID from OrtizB21Su2332.Discount where DiscountID = " + tbxDiscountCode.Text;
+                strQuery = "Select DiscountType from OrtizB21Su2332.Discount where DiscountID = " + tbxDiscountCode.Text;
 
-                _sqlResultsCommand = new SqlCommand(strquery, _conDatabase);
+                _sqlResultsCommand = new SqlCommand(strQuery, _conDatabase);
                 //Grab ProductID IF one is associated with this item
-                intProductID = (int)_sqlResultsCommand.ExecuteScalar();
+                intDiscountType = (int)_sqlResultsCommand.ExecuteScalar();
+
+                switch (intDiscountType)
+                {
+
+                    case 1: //For whole sale discount items
+                        strQuery = "Select DiscountPercent from OrtizB21Su2332.Discount where DiscountID = " + tbxDiscountCode.Text;
+
+                        _sqlResultsCommand = new SqlCommand(strQuery, _conDatabase);
+                        //Grab ProductID IF one is associated with this item
+                        decDiscountPercent = (decimal)_sqlResultsCommand.ExecuteScalar();
+                        break;
+
+                    case 2: //For Type 2 Discount that need a specific item in their to use
+                        strQuery = "Select DiscountPercent from OrtizB21Su2332.Discount where DiscountID = " + tbxDiscountCode.Text;
+
+                        _sqlResultsCommand = new SqlCommand(strQuery, _conDatabase);
+                        decDiscountPercent = (decimal)_sqlResultsCommand.ExecuteScalar();
+
+                        strQuery = "Select ProductID from OrtizB21Su2332.Discount where DiscountID = " + tbxDiscountCode.Text;
+                        _sqlResultsCommand = new SqlCommand(strQuery, _conDatabase);
+                        intProductID = (int)_sqlResultsCommand.ExecuteScalar();
+                        break;
+
+                    //case 3: TO BE USED LATER FOR ITEMS SUCH AS BOGO AND SUCH
+                    //    strQuery = "Select DiscountPercent from OrtizB21Su2332.Discount where DiscountID = " + tbxDiscountCode.Text;
+
+                    //    _sqlResultsCommand = new SqlCommand(strQuery, _conDatabase);
+                    //    //Grab ProductID IF one is associated with this item
+                    //    decDiscountPercent = (decimal)_sqlResultsCommand.ExecuteScalar();
+                    //    break;
+
+                    default:
+                        MessageBox.Show("Error Invalid Discount Type", "Error on DatabaseCommand", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        break;
+
+
+                }
             }
-            catch (SqlException ex )
+            catch (SqlException ex)
             {
                 if (ex is SqlException)
                 {//handles more specific SqlException here.
@@ -332,34 +401,20 @@ namespace SU21_Final_Project
                     }
                     MessageBox.Show(errorMessages.ToString(), "Error on DatabaseCommand", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
-                
+
             }
             catch (InvalidCastException)
             {
-                string strquery = "Select DiscountPercent from OrtizB21Su2332.Discount where DiscountID = " + tbxDiscountCode.Text;
 
-                _sqlResultsCommand = new SqlCommand(strquery, _conDatabase);
-                //Grab Discount Percen
-                DiscountPercent = (int)_sqlResultsCommand.ExecuteScalar();
+                MessageBox.Show("Error Invalid Cast", "Error on DatabaseCommand", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
             }
 
 
-           
-
-            //_sqlResultsCommand = new SqlCommand(strQuery, _conDatabase);
-            ////establush command object
-            //_sqlResultsCommand = new SqlCommand(query, _conDatabase);
-            ////establish data adapter
-            //_daLogOn = new SqlDataAdapter();
-            //_daLogOn.SelectCommand = _sqlResultsCommand;
-            ////fill data table
-            //_dtLogOn = new DataTable();
-            //_daLogOn.Fill(_dtLogOn);
 
         }
 
-
-
     }
+
 }
+

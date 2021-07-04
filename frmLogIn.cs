@@ -49,5 +49,10 @@ namespace SU21_Final_Project
             
 
         }
+
+        private void tbxUsername_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -45,6 +45,7 @@ namespace SU21_Final_Project
             this.tbxUsername.Name = "tbxUsername";
             this.tbxUsername.Size = new System.Drawing.Size(142, 20);
             this.tbxUsername.TabIndex = 0;
+            this.tbxUsername.TextChanged += new System.EventHandler(this.tbxUsername_TextChanged);
             // 
             // tbxPassword
             // 
