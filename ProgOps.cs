@@ -117,12 +117,10 @@ namespace SU21_Final_Project
 
                 if (_dtLogOn.Rows.Count == 1)
                 {
-                    MessageBox.Show("User Was Found");
                     blnFound = true;
                 }
                 else
                 {
-                    MessageBox.Show("User Was Not Found");
                     blnFound = false;
                 }
             }

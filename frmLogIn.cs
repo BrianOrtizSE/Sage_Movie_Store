@@ -35,18 +35,44 @@ namespace SU21_Final_Project
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
-            //bool blnPass = true;
+            bool blnPass = true;
 
-            if(rdbCustomer.Checked == false && rdbEmployee.Checked == false)
+            if (rdbCustomer.Checked == false && rdbEmployee.Checked == false)
             {
-               MessageBox.Show("Customer Or Employee Must Be Checked", "Customer Or Employee", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-               // blnPass = false;
+                MessageBox.Show("Customer Or Employee Must Be Checked", "Customer Or Employee", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            }
+            else
+            {
+                if (rdbEmployee.Checked && tbxUsername.Text == String.Empty)
+                {
+                    lblErrorText.Visible = true;
+                    blnPass = false;
+                }
             }
 
+
+            if (blnPass == false)
+            {
+                MessageBox.Show("Please Fix All Incorrect Informatoion", "Incorect Information", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            }
+            else
+            {
                 ProgOps.LogOn(tbxUsername, tbxPassword, rdbCustomer, rdbEmployee, Text);
-                frmMerhandiseView frmproductview = new frmMerhandiseView();
-                frmproductview.ShowDialog();
-            
+                if (ProgOps.blnFound == true)
+                {
+                    frmMerhandiseView frmproductview = new frmMerhandiseView();
+                    this.Hide();
+                    frmproductview.ShowDialog();
+                    this.Close();
+                }
+                else
+                {
+                    lblErrorText.Visible = true;
+                    MessageBox.Show("User Could Not Be Found", "Incorect Information", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                }
+
+
+            }
 
         }
 
@@ -58,6 +84,24 @@ namespace SU21_Final_Project
         private void lblClose_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void tbxUsername_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (rdbEmployee.Checked)
+            {
+                if (e.KeyChar >= 48 && e.KeyChar <= 57 || //ASCII Check For Numbers
+                e.KeyChar == 8)
+                {
+                    //Allow the key press
+                    e.Handled = false;
+                }
+                else
+                {
+                    //Deny the key press
+                    e.Handled = true;
+                }
+            }
         }
     }
 }
