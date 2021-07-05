@@ -1,11 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 //TO DO : VALIDATION!!!!
@@ -25,7 +18,7 @@ namespace SU21_Final_Project
             bool blnPass = true;
 
             //We will add all the validation here later. 
-            if(tbxUsername.Text == String.Empty || tbxUsername.Text.Length < 6 || tbxUsername.Text.Length > 20)
+            if (tbxUsername.Text == String.Empty || tbxUsername.Text.Length < 6 || tbxUsername.Text.Length > 20)
             {
                 lblErrorUserName.Visible = true;
                 blnPass = false;
@@ -75,7 +68,7 @@ namespace SU21_Final_Project
                 lblErrorPassword.Visible = false;
             }
 
-            if(tbxRetypePassword.Text != tbxPassword.Text)
+            if (tbxRetypePassword.Text != tbxPassword.Text)
             {
                 lblErrorRetype.Visible = true;
                 blnPass = false;
@@ -123,17 +116,21 @@ namespace SU21_Final_Project
                 blnPass = false;
             }
 
-            if(blnPass == true)
+            if (blnPass == true)
             {
+                tbxSQAnswer1.Text.ToLower();
+                tbxSQAnswer2.Text.ToLower();
+                tbxSQAnswer3.Text.ToLower();
+
                 string query = "Insert into OrtizB21Su2332.LogOn(PersonID , UserName , Password , SQuestion1 , SQAnswer1 , SQuestion2 , SQAnswer2 , SQuestion3 , SQAnswer3) " +
                 "values(" + ProgOps.intPersonID + ",'" + tbxUsername.Text + "','" + tbxPassword.Text + "','" + cmbSQuestion1.Text + "','" + tbxSQAnswer1.Text + "','" + cmbSQuestion2.Text + "','" + tbxSQAnswer2.Text
                 + "','" + cmbQuestion3.Text + "','" + tbxSQAnswer3.Text + "');";
-                ProgOps.CreateLogIn(tbxUsername, tbxPassword, cmbSQuestion1, tbxSQAnswer1, cmbSQuestion2, tbxSQAnswer2, cmbQuestion3, tbxSQAnswer3 , query);
+                ProgOps.CreateLogIn(tbxUsername, tbxPassword, cmbSQuestion1, tbxSQAnswer1, cmbSQuestion2, tbxSQAnswer2, cmbQuestion3, tbxSQAnswer3, query);
 
-                MessageBox.Show("Welcome To The Shop! ", "Welcome", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                MessageBox.Show("Welcome To The Store! ", "Welcome", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 this.Close();
             }
-           
+
         }
 
         private void frmSecurityQuestions_Load(object sender, EventArgs e)
@@ -170,6 +167,15 @@ namespace SU21_Final_Project
                 //Prevent spaces from being entered into the password textbox
                 e.Handled = true;
             }
+        }
+
+        private void helpToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmHelp frmhelp = new frmHelp();
+            ProgOps._PICTURE = 4;
+            this.Hide();
+            frmhelp.ShowDialog();
+            this.Show();
         }
     }
 }

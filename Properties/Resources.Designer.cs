@@ -93,6 +93,16 @@ namespace SU21_Final_Project.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Sages_Movie_Store_SecurityQuestion {
+            get {
+                object obj = ResourceManager.GetObject("Sages_Movie_Store_SecurityQuestion", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Sages_Movie_Store_SignUp {
             get {
                 object obj = ResourceManager.GetObject("Sages_Movie_Store_SignUp", resourceCulture);

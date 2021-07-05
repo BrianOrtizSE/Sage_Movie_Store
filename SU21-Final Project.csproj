@@ -195,6 +195,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="favicon %281%29.ico" />
+    <None Include="Resources\Sages_Movie_Store_SecurityQuestion.JPG" />
     <None Include="Resources\Sages_Movie_Store_LogIn.JPG" />
     <None Include="Resources\Sages_Movie_Store_SignUp.JPG" />
     <None Include="Resources\Sages_Movie_Store_MainScreen.JPG" />
