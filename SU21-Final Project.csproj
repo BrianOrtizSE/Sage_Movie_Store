@@ -47,6 +47,9 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>favicon %281%29.ico</ApplicationIcon>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -91,12 +94,6 @@
     <Compile Include="frmMerhandiseView.Designer.cs">
       <DependentUpon>frmMerhandiseView.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmPayScreen.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frmPayScreen.Designer.cs">
-      <DependentUpon>frmPayScreen.cs</DependentUpon>
-    </Compile>
     <Compile Include="frmSecurityQuestions.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -127,9 +124,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmMerhandiseView.resx">
       <DependentUpon>frmMerhandiseView.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="frmPayScreen.resx">
-      <DependentUpon>frmPayScreen.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmSecurityQuestions.resx">
       <DependentUpon>frmSecurityQuestions.cs</DependentUpon>
@@ -177,6 +171,12 @@
       <ProductName>.NET Framework 3.5 SP1</ProductName>
       <Install>false</Install>
     </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Logo_SMS.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="favicon %281%29.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

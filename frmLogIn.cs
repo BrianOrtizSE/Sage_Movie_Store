@@ -40,6 +40,7 @@ namespace SU21_Final_Project
             if (rdbCustomer.Checked == false && rdbEmployee.Checked == false)
             {
                 MessageBox.Show("Customer Or Employee Must Be Checked", "Customer Or Employee", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                blnPass = false;
             }
             else
             {
@@ -102,6 +103,11 @@ namespace SU21_Final_Project
                     e.Handled = true;
                 }
             }
+        }
+
+        private void lblMainText_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

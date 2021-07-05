@@ -75,13 +75,16 @@ namespace SU21_Final_Project
             this.lblErrorCity = new System.Windows.Forms.Label();
             this.cbxState = new System.Windows.Forms.ComboBox();
             this.btnClose = new System.Windows.Forms.Button();
+            this.lblBlackLine = new System.Windows.Forms.Label();
+            this.lblMainText = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // btnAdd
             // 
-            this.btnAdd.Location = new System.Drawing.Point(559, 197);
+            this.btnAdd.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAdd.Location = new System.Drawing.Point(278, 321);
             this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(75, 23);
+            this.btnAdd.Size = new System.Drawing.Size(109, 30);
             this.btnAdd.TabIndex = 14;
             this.btnAdd.Text = "&Create User";
             this.btnAdd.UseVisualStyleBackColor = true;
@@ -90,70 +93,78 @@ namespace SU21_Final_Project
             // lblPhoneSecondary
             // 
             this.lblPhoneSecondary.AutoSize = true;
-            this.lblPhoneSecondary.Location = new System.Drawing.Point(278, 277);
+            this.lblPhoneSecondary.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPhoneSecondary.Location = new System.Drawing.Point(532, 192);
             this.lblPhoneSecondary.Name = "lblPhoneSecondary";
-            this.lblPhoneSecondary.Size = new System.Drawing.Size(92, 13);
+            this.lblPhoneSecondary.Size = new System.Drawing.Size(107, 16);
             this.lblPhoneSecondary.TabIndex = 61;
             this.lblPhoneSecondary.Text = "Phone Secondary";
             // 
             // lblPhonePrimary
             // 
             this.lblPhonePrimary.AutoSize = true;
-            this.lblPhonePrimary.Location = new System.Drawing.Point(286, 242);
+            this.lblPhonePrimary.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPhonePrimary.Location = new System.Drawing.Point(540, 157);
             this.lblPhonePrimary.Name = "lblPhonePrimary";
-            this.lblPhonePrimary.Size = new System.Drawing.Size(79, 13);
+            this.lblPhonePrimary.Size = new System.Drawing.Size(99, 16);
             this.lblPhonePrimary.TabIndex = 60;
             this.lblPhonePrimary.Text = "Phone Primary*";
             // 
             // lblState
             // 
             this.lblState.AutoSize = true;
-            this.lblState.Location = new System.Drawing.Point(329, 169);
+            this.lblState.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblState.Location = new System.Drawing.Point(593, 84);
             this.lblState.Name = "lblState";
-            this.lblState.Size = new System.Drawing.Size(36, 13);
+            this.lblState.Size = new System.Drawing.Size(46, 16);
             this.lblState.TabIndex = 56;
             this.lblState.Text = "State*";
             // 
             // lblEmail
             // 
             this.lblEmail.AutoSize = true;
-            this.lblEmail.Location = new System.Drawing.Point(329, 202);
+            this.lblEmail.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblEmail.Location = new System.Drawing.Point(592, 117);
             this.lblEmail.Name = "lblEmail";
-            this.lblEmail.Size = new System.Drawing.Size(36, 13);
+            this.lblEmail.Size = new System.Drawing.Size(47, 16);
             this.lblEmail.TabIndex = 55;
             this.lblEmail.Text = "Email*";
             // 
             // lblZipCode
             // 
             this.lblZipCode.AutoSize = true;
-            this.lblZipCode.Location = new System.Drawing.Point(315, 129);
+            this.lblZipCode.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblZipCode.Location = new System.Drawing.Point(301, 241);
             this.lblZipCode.Name = "lblZipCode";
-            this.lblZipCode.Size = new System.Drawing.Size(50, 13);
+            this.lblZipCode.Size = new System.Drawing.Size(60, 16);
             this.lblZipCode.TabIndex = 54;
             this.lblZipCode.Text = "Zipcode*";
             // 
             // lblCity
             // 
             this.lblCity.AutoSize = true;
-            this.lblCity.Location = new System.Drawing.Point(337, 89);
+            this.lblCity.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCity.Location = new System.Drawing.Point(316, 201);
             this.lblCity.Name = "lblCity";
-            this.lblCity.Size = new System.Drawing.Size(32, 13);
+            this.lblCity.Size = new System.Drawing.Size(45, 16);
             this.lblCity.TabIndex = 53;
             this.lblCity.Text = "*City*";
             // 
             // tbxEmail
             // 
-            this.tbxEmail.Location = new System.Drawing.Point(370, 202);
+            this.tbxEmail.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbxEmail.Location = new System.Drawing.Point(645, 115);
             this.tbxEmail.Name = "tbxEmail";
-            this.tbxEmail.Size = new System.Drawing.Size(100, 20);
+            this.tbxEmail.Size = new System.Drawing.Size(100, 23);
             this.tbxEmail.TabIndex = 11;
             // 
             // tbxZipcode
             // 
-            this.tbxZipcode.Location = new System.Drawing.Point(370, 122);
+            this.tbxZipcode.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbxZipcode.Location = new System.Drawing.Point(367, 237);
             this.tbxZipcode.MaxLength = 9;
             this.tbxZipcode.Name = "tbxZipcode";
-            this.tbxZipcode.Size = new System.Drawing.Size(100, 20);
+            this.tbxZipcode.Size = new System.Drawing.Size(100, 23);
             this.tbxZipcode.TabIndex = 9;
             this.ttError.SetToolTip(this.tbxZipcode, "ZipCode Must Not Be Empty\r\nZIpCode Must Be At Least Longer Than 5 Numbers\r\nZipCod" +
         "e Cannot Be Greater Than 9 Numbers\r\n");
@@ -161,77 +172,78 @@ namespace SU21_Final_Project
             // 
             // tbxCity
             // 
-            this.tbxCity.Location = new System.Drawing.Point(370, 86);
+            this.tbxCity.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbxCity.Location = new System.Drawing.Point(367, 201);
             this.tbxCity.Name = "tbxCity";
-            this.tbxCity.Size = new System.Drawing.Size(100, 20);
+            this.tbxCity.Size = new System.Drawing.Size(100, 23);
             this.tbxCity.TabIndex = 8;
             this.tbxCity.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbxCity_KeyPress);
             // 
             // lblSuffix
             // 
             this.lblSuffix.AutoSize = true;
-            this.lblSuffix.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSuffix.Location = new System.Drawing.Point(53, 222);
+            this.lblSuffix.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSuffix.Location = new System.Drawing.Point(65, 237);
             this.lblSuffix.Name = "lblSuffix";
-            this.lblSuffix.Size = new System.Drawing.Size(39, 16);
+            this.lblSuffix.Size = new System.Drawing.Size(40, 16);
             this.lblSuffix.TabIndex = 48;
             this.lblSuffix.Text = "Suffix";
             // 
             // lblAdress1
             // 
             this.lblAdress1.AutoSize = true;
-            this.lblAdress1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblAdress1.Location = new System.Drawing.Point(32, 258);
+            this.lblAdress1.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblAdress1.Location = new System.Drawing.Point(288, 80);
             this.lblAdress1.Name = "lblAdress1";
-            this.lblAdress1.Size = new System.Drawing.Size(74, 16);
+            this.lblAdress1.Size = new System.Drawing.Size(73, 16);
             this.lblAdress1.TabIndex = 47;
             this.lblAdress1.Text = "Address 1*";
             // 
             // lblAddress2
             // 
             this.lblAddress2.AutoSize = true;
-            this.lblAddress2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblAddress2.Location = new System.Drawing.Point(38, 299);
+            this.lblAddress2.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblAddress2.Location = new System.Drawing.Point(296, 121);
             this.lblAddress2.Name = "lblAddress2";
-            this.lblAddress2.Size = new System.Drawing.Size(69, 16);
+            this.lblAddress2.Size = new System.Drawing.Size(65, 16);
             this.lblAddress2.TabIndex = 46;
             this.lblAddress2.Text = "Address 2";
             // 
             // lblAddress3
             // 
             this.lblAddress3.AutoSize = true;
-            this.lblAddress3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblAddress3.Location = new System.Drawing.Point(38, 338);
+            this.lblAddress3.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblAddress3.Location = new System.Drawing.Point(296, 160);
             this.lblAddress3.Name = "lblAddress3";
-            this.lblAddress3.Size = new System.Drawing.Size(69, 16);
+            this.lblAddress3.Size = new System.Drawing.Size(65, 16);
             this.lblAddress3.TabIndex = 45;
             this.lblAddress3.Text = "Address 3";
             // 
             // lblMiddleName
             // 
             this.lblMiddleName.AutoSize = true;
-            this.lblMiddleName.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblMiddleName.Location = new System.Drawing.Point(16, 143);
+            this.lblMiddleName.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblMiddleName.Location = new System.Drawing.Point(22, 158);
             this.lblMiddleName.Name = "lblMiddleName";
-            this.lblMiddleName.Size = new System.Drawing.Size(89, 16);
+            this.lblMiddleName.Size = new System.Drawing.Size(83, 16);
             this.lblMiddleName.TabIndex = 44;
             this.lblMiddleName.Text = "MIddle Name";
             // 
             // lblLastName
             // 
             this.lblLastName.AutoSize = true;
-            this.lblLastName.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblLastName.Location = new System.Drawing.Point(28, 176);
+            this.lblLastName.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblLastName.Location = new System.Drawing.Point(29, 191);
             this.lblLastName.Name = "lblLastName";
-            this.lblLastName.Size = new System.Drawing.Size(78, 16);
+            this.lblLastName.Size = new System.Drawing.Size(76, 16);
             this.lblLastName.TabIndex = 43;
             this.lblLastName.Text = "Last Name*";
             // 
             // lblFirstName
             // 
             this.lblFirstName.AutoSize = true;
-            this.lblFirstName.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblFirstName.Location = new System.Drawing.Point(29, 103);
+            this.lblFirstName.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblFirstName.Location = new System.Drawing.Point(27, 118);
             this.lblFirstName.Name = "lblFirstName";
             this.lblFirstName.Size = new System.Drawing.Size(78, 16);
             this.lblFirstName.TabIndex = 42;
@@ -240,93 +252,103 @@ namespace SU21_Final_Project
             // lblTitle
             // 
             this.lblTitle.AutoSize = true;
-            this.lblTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTitle.Location = new System.Drawing.Point(59, 63);
+            this.lblTitle.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTitle.Location = new System.Drawing.Point(72, 78);
             this.lblTitle.Name = "lblTitle";
-            this.lblTitle.Size = new System.Drawing.Size(34, 16);
+            this.lblTitle.Size = new System.Drawing.Size(33, 16);
             this.lblTitle.TabIndex = 41;
             this.lblTitle.Text = "Title";
             // 
             // tbxAddress3
             // 
-            this.tbxAddress3.Location = new System.Drawing.Point(114, 337);
+            this.tbxAddress3.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbxAddress3.Location = new System.Drawing.Point(367, 159);
             this.tbxAddress3.Name = "tbxAddress3";
-            this.tbxAddress3.Size = new System.Drawing.Size(100, 20);
+            this.tbxAddress3.Size = new System.Drawing.Size(100, 23);
             this.tbxAddress3.TabIndex = 7;
             this.tbxAddress3.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbxAddress3_KeyPress);
             // 
             // tbxAddress2
             // 
-            this.tbxAddress2.Location = new System.Drawing.Point(114, 301);
+            this.tbxAddress2.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbxAddress2.Location = new System.Drawing.Point(367, 123);
             this.tbxAddress2.Name = "tbxAddress2";
-            this.tbxAddress2.Size = new System.Drawing.Size(100, 20);
+            this.tbxAddress2.Size = new System.Drawing.Size(100, 23);
             this.tbxAddress2.TabIndex = 6;
             this.tbxAddress2.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbxAddress2_KeyPress);
             // 
             // tbxAddress1
             // 
-            this.tbxAddress1.Location = new System.Drawing.Point(114, 257);
+            this.tbxAddress1.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbxAddress1.Location = new System.Drawing.Point(367, 79);
             this.tbxAddress1.Name = "tbxAddress1";
-            this.tbxAddress1.Size = new System.Drawing.Size(100, 20);
+            this.tbxAddress1.Size = new System.Drawing.Size(100, 23);
             this.tbxAddress1.TabIndex = 5;
             this.tbxAddress1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbxAddress1_KeyPress);
             // 
             // tbxSuffix
             // 
-            this.tbxSuffix.Location = new System.Drawing.Point(114, 221);
+            this.tbxSuffix.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbxSuffix.Location = new System.Drawing.Point(111, 236);
             this.tbxSuffix.Name = "tbxSuffix";
-            this.tbxSuffix.Size = new System.Drawing.Size(100, 20);
+            this.tbxSuffix.Size = new System.Drawing.Size(100, 23);
             this.tbxSuffix.TabIndex = 4;
             this.tbxSuffix.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbxSuffix_KeyPress);
             // 
             // tbxLastName
             // 
-            this.tbxLastName.Location = new System.Drawing.Point(114, 178);
+            this.tbxLastName.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbxLastName.Location = new System.Drawing.Point(111, 193);
             this.tbxLastName.Name = "tbxLastName";
-            this.tbxLastName.Size = new System.Drawing.Size(100, 20);
+            this.tbxLastName.Size = new System.Drawing.Size(100, 23);
             this.tbxLastName.TabIndex = 3;
             this.tbxLastName.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbxLastName_KeyPress);
             // 
             // tbxMiddleName
             // 
-            this.tbxMiddleName.Location = new System.Drawing.Point(114, 142);
+            this.tbxMiddleName.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbxMiddleName.Location = new System.Drawing.Point(111, 157);
             this.tbxMiddleName.Name = "tbxMiddleName";
-            this.tbxMiddleName.Size = new System.Drawing.Size(100, 20);
+            this.tbxMiddleName.Size = new System.Drawing.Size(100, 23);
             this.tbxMiddleName.TabIndex = 2;
             this.tbxMiddleName.TextChanged += new System.EventHandler(this.tbxMiddleName_TextChanged);
             this.tbxMiddleName.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbxMiddleName_KeyPress);
             // 
             // tbxFirstName
             // 
-            this.tbxFirstName.Location = new System.Drawing.Point(114, 98);
+            this.tbxFirstName.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbxFirstName.Location = new System.Drawing.Point(111, 113);
             this.tbxFirstName.Name = "tbxFirstName";
-            this.tbxFirstName.Size = new System.Drawing.Size(100, 20);
+            this.tbxFirstName.Size = new System.Drawing.Size(100, 23);
             this.tbxFirstName.TabIndex = 1;
             this.tbxFirstName.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbxFirstName_KeyPress);
             // 
             // tbxTitle
             // 
-            this.tbxTitle.Location = new System.Drawing.Point(114, 62);
+            this.tbxTitle.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbxTitle.Location = new System.Drawing.Point(111, 77);
             this.tbxTitle.Name = "tbxTitle";
-            this.tbxTitle.Size = new System.Drawing.Size(100, 20);
+            this.tbxTitle.Size = new System.Drawing.Size(100, 23);
             this.tbxTitle.TabIndex = 0;
             this.tbxTitle.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbxTitle_KeyPress);
             // 
             // mtbPhone1
             // 
-            this.mtbPhone1.Location = new System.Drawing.Point(370, 242);
+            this.mtbPhone1.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.mtbPhone1.Location = new System.Drawing.Point(645, 155);
             this.mtbPhone1.Mask = "(999) 000-0000";
             this.mtbPhone1.Name = "mtbPhone1";
-            this.mtbPhone1.Size = new System.Drawing.Size(100, 20);
+            this.mtbPhone1.Size = new System.Drawing.Size(100, 23);
             this.mtbPhone1.TabIndex = 12;
             this.mtbPhone1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.mtbPhone1_KeyPress);
             // 
             // mtbPhone2
             // 
-            this.mtbPhone2.Location = new System.Drawing.Point(370, 274);
+            this.mtbPhone2.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.mtbPhone2.Location = new System.Drawing.Point(645, 187);
             this.mtbPhone2.Mask = "(999) 000-0000";
             this.mtbPhone2.Name = "mtbPhone2";
-            this.mtbPhone2.Size = new System.Drawing.Size(100, 20);
+            this.mtbPhone2.Size = new System.Drawing.Size(100, 23);
             this.mtbPhone2.TabIndex = 13;
             this.mtbPhone2.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.mtbPhone2_KeyPress);
             // 
@@ -336,7 +358,7 @@ namespace SU21_Final_Project
             this.lblErrorTitle.BackColor = System.Drawing.Color.Transparent;
             this.lblErrorTitle.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblErrorTitle.ForeColor = System.Drawing.Color.Red;
-            this.lblErrorTitle.Location = new System.Drawing.Point(220, 63);
+            this.lblErrorTitle.Location = new System.Drawing.Point(217, 78);
             this.lblErrorTitle.Name = "lblErrorTitle";
             this.lblErrorTitle.Size = new System.Drawing.Size(45, 16);
             this.lblErrorTitle.TabIndex = 62;
@@ -350,7 +372,7 @@ namespace SU21_Final_Project
             this.lblErrorFirstName.BackColor = System.Drawing.Color.Transparent;
             this.lblErrorFirstName.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblErrorFirstName.ForeColor = System.Drawing.Color.Red;
-            this.lblErrorFirstName.Location = new System.Drawing.Point(220, 98);
+            this.lblErrorFirstName.Location = new System.Drawing.Point(217, 113);
             this.lblErrorFirstName.Name = "lblErrorFirstName";
             this.lblErrorFirstName.Size = new System.Drawing.Size(45, 16);
             this.lblErrorFirstName.TabIndex = 63;
@@ -364,7 +386,7 @@ namespace SU21_Final_Project
             this.lblErrorLastName.BackColor = System.Drawing.Color.Transparent;
             this.lblErrorLastName.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblErrorLastName.ForeColor = System.Drawing.Color.Red;
-            this.lblErrorLastName.Location = new System.Drawing.Point(220, 181);
+            this.lblErrorLastName.Location = new System.Drawing.Point(217, 196);
             this.lblErrorLastName.Name = "lblErrorLastName";
             this.lblErrorLastName.Size = new System.Drawing.Size(45, 16);
             this.lblErrorLastName.TabIndex = 65;
@@ -378,7 +400,7 @@ namespace SU21_Final_Project
             this.lblErrorMiddleName.BackColor = System.Drawing.Color.Transparent;
             this.lblErrorMiddleName.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblErrorMiddleName.ForeColor = System.Drawing.Color.Red;
-            this.lblErrorMiddleName.Location = new System.Drawing.Point(220, 146);
+            this.lblErrorMiddleName.Location = new System.Drawing.Point(217, 161);
             this.lblErrorMiddleName.Name = "lblErrorMiddleName";
             this.lblErrorMiddleName.Size = new System.Drawing.Size(45, 16);
             this.lblErrorMiddleName.TabIndex = 64;
@@ -392,7 +414,7 @@ namespace SU21_Final_Project
             this.lblErrorAddress3.BackColor = System.Drawing.Color.Transparent;
             this.lblErrorAddress3.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblErrorAddress3.ForeColor = System.Drawing.Color.Red;
-            this.lblErrorAddress3.Location = new System.Drawing.Point(220, 339);
+            this.lblErrorAddress3.Location = new System.Drawing.Point(473, 161);
             this.lblErrorAddress3.Name = "lblErrorAddress3";
             this.lblErrorAddress3.Size = new System.Drawing.Size(45, 16);
             this.lblErrorAddress3.TabIndex = 69;
@@ -406,7 +428,7 @@ namespace SU21_Final_Project
             this.lblErrorAddress2.BackColor = System.Drawing.Color.Transparent;
             this.lblErrorAddress2.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblErrorAddress2.ForeColor = System.Drawing.Color.Red;
-            this.lblErrorAddress2.Location = new System.Drawing.Point(220, 304);
+            this.lblErrorAddress2.Location = new System.Drawing.Point(473, 126);
             this.lblErrorAddress2.Name = "lblErrorAddress2";
             this.lblErrorAddress2.Size = new System.Drawing.Size(45, 16);
             this.lblErrorAddress2.TabIndex = 68;
@@ -420,7 +442,7 @@ namespace SU21_Final_Project
             this.lblErrorAddress1.BackColor = System.Drawing.Color.Transparent;
             this.lblErrorAddress1.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblErrorAddress1.ForeColor = System.Drawing.Color.Red;
-            this.lblErrorAddress1.Location = new System.Drawing.Point(220, 256);
+            this.lblErrorAddress1.Location = new System.Drawing.Point(473, 78);
             this.lblErrorAddress1.Name = "lblErrorAddress1";
             this.lblErrorAddress1.Size = new System.Drawing.Size(45, 16);
             this.lblErrorAddress1.TabIndex = 67;
@@ -435,7 +457,7 @@ namespace SU21_Final_Project
             this.lblErrorSuffix.BackColor = System.Drawing.Color.Transparent;
             this.lblErrorSuffix.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblErrorSuffix.ForeColor = System.Drawing.Color.Red;
-            this.lblErrorSuffix.Location = new System.Drawing.Point(220, 221);
+            this.lblErrorSuffix.Location = new System.Drawing.Point(217, 236);
             this.lblErrorSuffix.Name = "lblErrorSuffix";
             this.lblErrorSuffix.Size = new System.Drawing.Size(45, 16);
             this.lblErrorSuffix.TabIndex = 66;
@@ -449,7 +471,7 @@ namespace SU21_Final_Project
             this.lblErrorPhoneSecondary.BackColor = System.Drawing.Color.Transparent;
             this.lblErrorPhoneSecondary.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblErrorPhoneSecondary.ForeColor = System.Drawing.Color.Red;
-            this.lblErrorPhoneSecondary.Location = new System.Drawing.Point(476, 277);
+            this.lblErrorPhoneSecondary.Location = new System.Drawing.Point(751, 190);
             this.lblErrorPhoneSecondary.Name = "lblErrorPhoneSecondary";
             this.lblErrorPhoneSecondary.Size = new System.Drawing.Size(45, 16);
             this.lblErrorPhoneSecondary.TabIndex = 75;
@@ -463,7 +485,7 @@ namespace SU21_Final_Project
             this.lblErrorPhonePrimary.BackColor = System.Drawing.Color.Transparent;
             this.lblErrorPhonePrimary.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblErrorPhonePrimary.ForeColor = System.Drawing.Color.Red;
-            this.lblErrorPhonePrimary.Location = new System.Drawing.Point(476, 242);
+            this.lblErrorPhonePrimary.Location = new System.Drawing.Point(751, 155);
             this.lblErrorPhonePrimary.Name = "lblErrorPhonePrimary";
             this.lblErrorPhonePrimary.Size = new System.Drawing.Size(45, 16);
             this.lblErrorPhonePrimary.TabIndex = 74;
@@ -477,7 +499,7 @@ namespace SU21_Final_Project
             this.lblErrorEmail.BackColor = System.Drawing.Color.Transparent;
             this.lblErrorEmail.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblErrorEmail.ForeColor = System.Drawing.Color.Red;
-            this.lblErrorEmail.Location = new System.Drawing.Point(476, 202);
+            this.lblErrorEmail.Location = new System.Drawing.Point(751, 115);
             this.lblErrorEmail.Name = "lblErrorEmail";
             this.lblErrorEmail.Size = new System.Drawing.Size(45, 16);
             this.lblErrorEmail.TabIndex = 73;
@@ -491,7 +513,7 @@ namespace SU21_Final_Project
             this.lblErrorState.BackColor = System.Drawing.Color.Transparent;
             this.lblErrorState.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblErrorState.ForeColor = System.Drawing.Color.Red;
-            this.lblErrorState.Location = new System.Drawing.Point(476, 167);
+            this.lblErrorState.Location = new System.Drawing.Point(751, 80);
             this.lblErrorState.Name = "lblErrorState";
             this.lblErrorState.Size = new System.Drawing.Size(45, 16);
             this.lblErrorState.TabIndex = 72;
@@ -505,7 +527,7 @@ namespace SU21_Final_Project
             this.lblErrorZipcode.BackColor = System.Drawing.Color.Transparent;
             this.lblErrorZipcode.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblErrorZipcode.ForeColor = System.Drawing.Color.Red;
-            this.lblErrorZipcode.Location = new System.Drawing.Point(476, 119);
+            this.lblErrorZipcode.Location = new System.Drawing.Point(473, 234);
             this.lblErrorZipcode.Name = "lblErrorZipcode";
             this.lblErrorZipcode.Size = new System.Drawing.Size(45, 16);
             this.lblErrorZipcode.TabIndex = 71;
@@ -519,7 +541,7 @@ namespace SU21_Final_Project
             this.lblErrorCity.BackColor = System.Drawing.Color.Transparent;
             this.lblErrorCity.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblErrorCity.ForeColor = System.Drawing.Color.Red;
-            this.lblErrorCity.Location = new System.Drawing.Point(476, 84);
+            this.lblErrorCity.Location = new System.Drawing.Point(473, 199);
             this.lblErrorCity.Name = "lblErrorCity";
             this.lblErrorCity.Size = new System.Drawing.Size(45, 16);
             this.lblErrorCity.TabIndex = 70;
@@ -530,6 +552,7 @@ namespace SU21_Final_Project
             // cbxState
             // 
             this.cbxState.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbxState.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbxState.FormattingEnabled = true;
             this.cbxState.Items.AddRange(new object[] {
             "AL",
@@ -588,28 +611,50 @@ namespace SU21_Final_Project
             "WV",
             "WI",
             "WY"});
-            this.cbxState.Location = new System.Drawing.Point(370, 167);
+            this.cbxState.Location = new System.Drawing.Point(645, 80);
             this.cbxState.MaxLength = 2;
             this.cbxState.Name = "cbxState";
-            this.cbxState.Size = new System.Drawing.Size(100, 21);
+            this.cbxState.Size = new System.Drawing.Size(100, 24);
             this.cbxState.TabIndex = 10;
             // 
             // btnClose
             // 
-            this.btnClose.Location = new System.Drawing.Point(559, 240);
+            this.btnClose.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnClose.Location = new System.Drawing.Point(475, 321);
             this.btnClose.Name = "btnClose";
-            this.btnClose.Size = new System.Drawing.Size(75, 23);
+            this.btnClose.Size = new System.Drawing.Size(109, 30);
             this.btnClose.TabIndex = 15;
             this.btnClose.Text = "&Return";
             this.btnClose.UseVisualStyleBackColor = true;
             this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
+            // lblBlackLine
+            // 
+            this.lblBlackLine.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.lblBlackLine.Location = new System.Drawing.Point(16, 43);
+            this.lblBlackLine.Name = "lblBlackLine";
+            this.lblBlackLine.Size = new System.Drawing.Size(800, 2);
+            this.lblBlackLine.TabIndex = 76;
+            this.lblBlackLine.Text = "0";
+            // 
+            // lblMainText
+            // 
+            this.lblMainText.AutoSize = true;
+            this.lblMainText.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblMainText.Location = new System.Drawing.Point(363, 13);
+            this.lblMainText.Name = "lblMainText";
+            this.lblMainText.Size = new System.Drawing.Size(104, 19);
+            this.lblMainText.TabIndex = 77;
+            this.lblMainText.Text = "Sign Up Page";
+            // 
             // frmSignUp
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(678, 450);
+            this.ClientSize = new System.Drawing.Size(829, 395);
             this.ControlBox = false;
+            this.Controls.Add(this.lblMainText);
+            this.Controls.Add(this.lblBlackLine);
             this.Controls.Add(this.btnClose);
             this.Controls.Add(this.cbxState);
             this.Controls.Add(this.lblErrorPhoneSecondary);
@@ -712,5 +757,7 @@ namespace SU21_Final_Project
         private System.Windows.Forms.Label lblErrorCity;
         private System.Windows.Forms.ComboBox cbxState;
         private System.Windows.Forms.Button btnClose;
+        private System.Windows.Forms.Label lblBlackLine;
+        private System.Windows.Forms.Label lblMainText;
     }
 }

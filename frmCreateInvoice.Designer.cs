@@ -29,7 +29,9 @@ namespace SU21_Final_Project
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmCreateInvoice));
             this.pnlCheckout = new System.Windows.Forms.Panel();
+            this.btnDiscountEnter = new System.Windows.Forms.Button();
             this.lblDiscountCode = new System.Windows.Forms.Label();
             this.tbxDiscount = new System.Windows.Forms.TextBox();
             this.btnClose = new System.Windows.Forms.Button();
@@ -52,7 +54,6 @@ namespace SU21_Final_Project
             this.btnCheckOut = new System.Windows.Forms.Button();
             this.btnCloseShop = new System.Windows.Forms.Button();
             this.pnlCart = new System.Windows.Forms.Panel();
-            this.btnDiscountEnter = new System.Windows.Forms.Button();
             this.pnlCheckout.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProducts)).BeginInit();
             this.pnlCart.SuspendLayout();
@@ -71,6 +72,16 @@ namespace SU21_Final_Project
             this.pnlCheckout.TabIndex = 34;
             this.pnlCheckout.Visible = false;
             this.pnlCheckout.Paint += new System.Windows.Forms.PaintEventHandler(this.pnlCheckout_Paint);
+            // 
+            // btnDiscountEnter
+            // 
+            this.btnDiscountEnter.Location = new System.Drawing.Point(123, 31);
+            this.btnDiscountEnter.Name = "btnDiscountEnter";
+            this.btnDiscountEnter.Size = new System.Drawing.Size(50, 20);
+            this.btnDiscountEnter.TabIndex = 4;
+            this.btnDiscountEnter.Text = "Enter";
+            this.btnDiscountEnter.UseVisualStyleBackColor = true;
+            this.btnDiscountEnter.Click += new System.EventHandler(this.btnDiscountEnter_Click);
             // 
             // lblDiscountCode
             // 
@@ -307,16 +318,6 @@ namespace SU21_Final_Project
             this.pnlCart.Size = new System.Drawing.Size(1124, 519);
             this.pnlCart.TabIndex = 33;
             // 
-            // btnDiscountEnter
-            // 
-            this.btnDiscountEnter.Location = new System.Drawing.Point(123, 31);
-            this.btnDiscountEnter.Name = "btnDiscountEnter";
-            this.btnDiscountEnter.Size = new System.Drawing.Size(50, 20);
-            this.btnDiscountEnter.TabIndex = 4;
-            this.btnDiscountEnter.Text = "Enter";
-            this.btnDiscountEnter.UseVisualStyleBackColor = true;
-            this.btnDiscountEnter.Click += new System.EventHandler(this.btnDiscountEnter_Click);
-            // 
             // frmCreateInvoice
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -326,6 +327,7 @@ namespace SU21_Final_Project
             this.Controls.Add(this.pnlCheckout);
             this.Controls.Add(this.pnlCart);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "frmCreateInvoice";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

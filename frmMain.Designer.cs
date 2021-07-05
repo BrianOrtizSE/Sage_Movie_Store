@@ -29,15 +29,16 @@ namespace SU21_Final_Project
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmMain));
             this.mnsMain = new System.Windows.Forms.MenuStrip();
             this.tsOptions = new System.Windows.Forms.ToolStripMenuItem();
-            this.tsSignUp = new System.Windows.Forms.ToolStripMenuItem();
-            this.tsLogIn = new System.Windows.Forms.ToolStripMenuItem();
-            this.addMerchandiseToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.createInvoiceToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.securityQuestionCheclToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.btnSignUp = new System.Windows.Forms.Button();
+            this.btnSignIn = new System.Windows.Forms.Button();
+            this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.mnsMain.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // mnsMain
@@ -54,67 +55,73 @@ namespace SU21_Final_Project
             // 
             this.tsOptions.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
             this.tsOptions.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.tsSignUp,
-            this.tsLogIn,
-            this.addMerchandiseToolStripMenuItem,
-            this.createInvoiceToolStripMenuItem,
-            this.securityQuestionCheclToolStripMenuItem});
+            this.helpToolStripMenuItem});
             this.tsOptions.Name = "tsOptions";
             this.tsOptions.Size = new System.Drawing.Size(52, 20);
             this.tsOptions.Text = "Log In";
             this.tsOptions.Click += new System.EventHandler(this.logInToolStripMenuItem_Click);
             // 
-            // tsSignUp
+            // pictureBox1
             // 
-            this.tsSignUp.Name = "tsSignUp";
-            this.tsSignUp.Size = new System.Drawing.Size(203, 22);
-            this.tsSignUp.Text = "Sign-Up";
-            this.tsSignUp.Click += new System.EventHandler(this.tsSignUp_Click);
-            // 
-            // tsLogIn
-            // 
-            this.tsLogIn.Name = "tsLogIn";
-            this.tsLogIn.Size = new System.Drawing.Size(203, 22);
-            this.tsLogIn.Text = "Log In";
-            this.tsLogIn.Click += new System.EventHandler(this.tsLogIn_Click);
-            // 
-            // addMerchandiseToolStripMenuItem
-            // 
-            this.addMerchandiseToolStripMenuItem.Name = "addMerchandiseToolStripMenuItem";
-            this.addMerchandiseToolStripMenuItem.Size = new System.Drawing.Size(203, 22);
-            this.addMerchandiseToolStripMenuItem.Text = "Add Merchandise";
-            this.addMerchandiseToolStripMenuItem.Click += new System.EventHandler(this.addMerchandiseToolStripMenuItem_Click);
-            // 
-            // createInvoiceToolStripMenuItem
-            // 
-            this.createInvoiceToolStripMenuItem.Name = "createInvoiceToolStripMenuItem";
-            this.createInvoiceToolStripMenuItem.Size = new System.Drawing.Size(203, 22);
-            this.createInvoiceToolStripMenuItem.Text = "Create Invoice";
-            this.createInvoiceToolStripMenuItem.Click += new System.EventHandler(this.createInvoiceToolStripMenuItem_Click);
-            // 
-            // securityQuestionCheclToolStripMenuItem
-            // 
-            this.securityQuestionCheclToolStripMenuItem.Name = "securityQuestionCheclToolStripMenuItem";
-            this.securityQuestionCheclToolStripMenuItem.Size = new System.Drawing.Size(203, 22);
-            this.securityQuestionCheclToolStripMenuItem.Text = "Security Question Check";
-            this.securityQuestionCheclToolStripMenuItem.Click += new System.EventHandler(this.securityQuestionCheclToolStripMenuItem_Click);
+            this.pictureBox1.Image = global::SU21_Final_Project.Properties.Resources.Logo_SMS;
+            this.pictureBox1.Location = new System.Drawing.Point(91, 62);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(641, 289);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 1;
+            this.pictureBox1.TabStop = false;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(345, 83);
+            this.label1.Font = new System.Drawing.Font("Tahoma", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.label1.Location = new System.Drawing.Point(287, 26);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(35, 13);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "label1";
+            this.label1.Size = new System.Drawing.Size(228, 33);
+            this.label1.TabIndex = 2;
+            this.label1.Text = "WELCOME TO!!!";
+            // 
+            // btnSignUp
+            // 
+            this.btnSignUp.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSignUp.Location = new System.Drawing.Point(457, 386);
+            this.btnSignUp.Name = "btnSignUp";
+            this.btnSignUp.Size = new System.Drawing.Size(104, 34);
+            this.btnSignUp.TabIndex = 3;
+            this.btnSignUp.Text = "Sign-Up";
+            this.btnSignUp.UseVisualStyleBackColor = true;
+            this.btnSignUp.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // btnSignIn
+            // 
+            this.btnSignIn.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSignIn.Location = new System.Drawing.Point(252, 386);
+            this.btnSignIn.Name = "btnSignIn";
+            this.btnSignIn.Size = new System.Drawing.Size(103, 34);
+            this.btnSignIn.TabIndex = 4;
+            this.btnSignIn.Text = "Sign-In";
+            this.btnSignIn.UseVisualStyleBackColor = true;
+            this.btnSignIn.Click += new System.EventHandler(this.btnSignIn_Click);
+            // 
+            // helpToolStripMenuItem
+            // 
+            this.helpToolStripMenuItem.Name = "helpToolStripMenuItem";
+            this.helpToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.helpToolStripMenuItem.Text = "Help";
+            this.helpToolStripMenuItem.Click += new System.EventHandler(this.helpToolStripMenuItem_Click);
             // 
             // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.btnSignIn);
+            this.Controls.Add(this.btnSignUp);
             this.Controls.Add(this.label1);
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.mnsMain);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.mnsMain;
             this.Name = "frmMain";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -124,6 +131,7 @@ namespace SU21_Final_Project
             this.Load += new System.EventHandler(this.frmMain_Load);
             this.mnsMain.ResumeLayout(false);
             this.mnsMain.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -133,12 +141,11 @@ namespace SU21_Final_Project
 
         private System.Windows.Forms.MenuStrip mnsMain;
         private System.Windows.Forms.ToolStripMenuItem tsOptions;
-        private System.Windows.Forms.ToolStripMenuItem tsSignUp;
-        private System.Windows.Forms.ToolStripMenuItem tsLogIn;
-        private System.Windows.Forms.ToolStripMenuItem addMerchandiseToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem createInvoiceToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem securityQuestionCheclToolStripMenuItem;
+        private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button btnSignUp;
+        private System.Windows.Forms.Button btnSignIn;
+        private System.Windows.Forms.ToolStripMenuItem helpToolStripMenuItem;
     }
 }
 

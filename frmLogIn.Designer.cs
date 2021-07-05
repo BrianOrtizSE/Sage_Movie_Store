@@ -29,6 +29,7 @@ namespace SU21_Final_Project
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmLogIn));
             this.tbxUsername = new System.Windows.Forms.TextBox();
             this.tbxPassword = new System.Windows.Forms.TextBox();
             this.rdbCustomer = new System.Windows.Forms.RadioButton();
@@ -38,11 +39,13 @@ namespace SU21_Final_Project
             this.lblPasswordText = new System.Windows.Forms.Label();
             this.lblErrorText = new System.Windows.Forms.Label();
             this.lblClose = new System.Windows.Forms.Button();
+            this.lblMainText = new System.Windows.Forms.Label();
+            this.lblBlackLine = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // tbxUsername
             // 
-            this.tbxUsername.Location = new System.Drawing.Point(165, 168);
+            this.tbxUsername.Location = new System.Drawing.Point(167, 160);
             this.tbxUsername.Name = "tbxUsername";
             this.tbxUsername.Size = new System.Drawing.Size(142, 20);
             this.tbxUsername.TabIndex = 0;
@@ -51,7 +54,7 @@ namespace SU21_Final_Project
             // 
             // tbxPassword
             // 
-            this.tbxPassword.Location = new System.Drawing.Point(165, 226);
+            this.tbxPassword.Location = new System.Drawing.Point(167, 218);
             this.tbxPassword.Name = "tbxPassword";
             this.tbxPassword.Size = new System.Drawing.Size(142, 20);
             this.tbxPassword.TabIndex = 1;
@@ -61,7 +64,7 @@ namespace SU21_Final_Project
             // 
             this.rdbCustomer.AutoSize = true;
             this.rdbCustomer.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rdbCustomer.Location = new System.Drawing.Point(74, 103);
+            this.rdbCustomer.Location = new System.Drawing.Point(95, 95);
             this.rdbCustomer.Name = "rdbCustomer";
             this.rdbCustomer.Size = new System.Drawing.Size(112, 19);
             this.rdbCustomer.TabIndex = 2;
@@ -74,7 +77,7 @@ namespace SU21_Final_Project
             // 
             this.rdbEmployee.AutoSize = true;
             this.rdbEmployee.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rdbEmployee.Location = new System.Drawing.Point(262, 103);
+            this.rdbEmployee.Location = new System.Drawing.Point(245, 95);
             this.rdbEmployee.Name = "rdbEmployee";
             this.rdbEmployee.Size = new System.Drawing.Size(114, 19);
             this.rdbEmployee.TabIndex = 3;
@@ -85,7 +88,7 @@ namespace SU21_Final_Project
             // 
             // btnLogin
             // 
-            this.btnLogin.Location = new System.Drawing.Point(136, 282);
+            this.btnLogin.Location = new System.Drawing.Point(138, 274);
             this.btnLogin.Name = "btnLogin";
             this.btnLogin.Size = new System.Drawing.Size(88, 28);
             this.btnLogin.TabIndex = 4;
@@ -97,7 +100,7 @@ namespace SU21_Final_Project
             // 
             this.lblUSernameText.AutoSize = true;
             this.lblUSernameText.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblUSernameText.Location = new System.Drawing.Point(71, 168);
+            this.lblUSernameText.Location = new System.Drawing.Point(73, 160);
             this.lblUSernameText.Name = "lblUSernameText";
             this.lblUSernameText.Size = new System.Drawing.Size(74, 15);
             this.lblUSernameText.TabIndex = 5;
@@ -107,7 +110,7 @@ namespace SU21_Final_Project
             // 
             this.lblPasswordText.AutoSize = true;
             this.lblPasswordText.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPasswordText.Location = new System.Drawing.Point(71, 226);
+            this.lblPasswordText.Location = new System.Drawing.Point(73, 218);
             this.lblPasswordText.Name = "lblPasswordText";
             this.lblPasswordText.Size = new System.Drawing.Size(70, 15);
             this.lblPasswordText.TabIndex = 6;
@@ -117,7 +120,7 @@ namespace SU21_Final_Project
             // 
             this.lblErrorText.AutoSize = true;
             this.lblErrorText.ForeColor = System.Drawing.Color.Red;
-            this.lblErrorText.Location = new System.Drawing.Point(84, 56);
+            this.lblErrorText.Location = new System.Drawing.Point(92, 132);
             this.lblErrorText.Name = "lblErrorText";
             this.lblErrorText.Size = new System.Drawing.Size(267, 13);
             this.lblErrorText.TabIndex = 7;
@@ -126,7 +129,7 @@ namespace SU21_Final_Project
             // 
             // lblClose
             // 
-            this.lblClose.Location = new System.Drawing.Point(230, 282);
+            this.lblClose.Location = new System.Drawing.Point(232, 274);
             this.lblClose.Name = "lblClose";
             this.lblClose.Size = new System.Drawing.Size(88, 28);
             this.lblClose.TabIndex = 8;
@@ -134,12 +137,34 @@ namespace SU21_Final_Project
             this.lblClose.UseVisualStyleBackColor = true;
             this.lblClose.Click += new System.EventHandler(this.lblClose_Click);
             // 
+            // lblMainText
+            // 
+            this.lblMainText.AutoSize = true;
+            this.lblMainText.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblMainText.Location = new System.Drawing.Point(201, 21);
+            this.lblMainText.Name = "lblMainText";
+            this.lblMainText.Size = new System.Drawing.Size(55, 19);
+            this.lblMainText.TabIndex = 79;
+            this.lblMainText.Text = "Log In";
+            this.lblMainText.Click += new System.EventHandler(this.lblMainText_Click);
+            // 
+            // lblBlackLine
+            // 
+            this.lblBlackLine.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.lblBlackLine.Location = new System.Drawing.Point(10, 51);
+            this.lblBlackLine.Name = "lblBlackLine";
+            this.lblBlackLine.Size = new System.Drawing.Size(436, 2);
+            this.lblBlackLine.TabIndex = 78;
+            this.lblBlackLine.Text = "0";
+            // 
             // frmLogIn
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(452, 379);
+            this.ClientSize = new System.Drawing.Size(452, 353);
             this.ControlBox = false;
+            this.Controls.Add(this.lblMainText);
+            this.Controls.Add(this.lblBlackLine);
             this.Controls.Add(this.lblClose);
             this.Controls.Add(this.lblErrorText);
             this.Controls.Add(this.lblPasswordText);
@@ -149,6 +174,7 @@ namespace SU21_Final_Project
             this.Controls.Add(this.rdbCustomer);
             this.Controls.Add(this.tbxPassword);
             this.Controls.Add(this.tbxUsername);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmLogIn";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Log In Form";
@@ -169,5 +195,7 @@ namespace SU21_Final_Project
         private System.Windows.Forms.Label lblPasswordText;
         private System.Windows.Forms.Label lblErrorText;
         private System.Windows.Forms.Button lblClose;
+        private System.Windows.Forms.Label lblMainText;
+        private System.Windows.Forms.Label lblBlackLine;
     }
 }

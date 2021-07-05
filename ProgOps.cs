@@ -34,6 +34,8 @@ namespace SU21_Final_Project
             get { return _dtProductTable; }
         }
 
+        //INT FOR PICTURE CASES
+        public static int _PICTURE;
 
         //TAX FOR WHOLE PROJECT:
         public static decimal _TAX = 0.0825M;

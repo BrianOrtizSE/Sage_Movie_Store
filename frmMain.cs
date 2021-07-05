@@ -47,18 +47,12 @@ namespace SU21_Final_Project
 
         private void tsSignUp_Click(object sender, EventArgs e)
         {
-            frmSignUp frmsingup = new frmSignUp();
-            this.Hide();
-            frmsingup.ShowDialog();
-            this.Show();
+            
         }
 
         private void tsLogIn_Click(object sender, EventArgs e)
         {
-            frmLogIn frmlogin = new frmLogIn();
-            this.Hide();
-            frmlogin.ShowDialog();
-            this.Show();
+            
         }
 
         private void addMerchandiseToolStripMenuItem_Click(object sender, EventArgs e)
@@ -80,6 +74,27 @@ namespace SU21_Final_Project
         {
             frmSecurityQuestions frmsq = new frmSecurityQuestions();
             frmsq.ShowDialog();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            frmSignUp frmsingup = new frmSignUp();
+            this.Hide();
+            frmsingup.ShowDialog();
+            this.Show();
+        }
+
+        private void btnSignIn_Click(object sender, EventArgs e)
+        {
+            frmLogIn frmlogin = new frmLogIn();
+            this.Hide();
+            frmlogin.ShowDialog();
+            this.Show();
+        }
+
+        private void helpToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+           
         }
     }
 }
