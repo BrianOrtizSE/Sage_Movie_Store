@@ -109,5 +109,14 @@ namespace SU21_Final_Project
         {
 
         }
+
+        private void tsmHelp_Click(object sender, EventArgs e)
+        {
+            ProgOps._PICTURE = 3;
+            frmHelp frmhelp = new frmHelp();
+            this.Hide();
+            frmhelp.ShowDialog();
+            this.Show();
+        }
     }
 }

@@ -111,12 +111,13 @@ namespace SU21_Final_Project
             this.btnSignOut.TabIndex = 32;
             this.btnSignOut.Text = "Sign Out";
             this.btnSignOut.UseVisualStyleBackColor = true;
+            this.btnSignOut.Click += new System.EventHandler(this.btnSignOut_Click);
             // 
             // frmCustomer_Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(420, 382);
+            this.ClientSize = new System.Drawing.Size(420, 393);
             this.ControlBox = false;
             this.Controls.Add(this.btnSignOut);
             this.Controls.Add(this.lblDate);

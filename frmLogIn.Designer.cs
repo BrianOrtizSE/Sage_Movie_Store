@@ -41,6 +41,9 @@ namespace SU21_Final_Project
             this.lblClose = new System.Windows.Forms.Button();
             this.lblMainText = new System.Windows.Forms.Label();
             this.lblBlackLine = new System.Windows.Forms.Label();
+            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.tsmHelp = new System.Windows.Forms.ToolStripMenuItem();
+            this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // tbxUsername
@@ -157,6 +160,24 @@ namespace SU21_Final_Project
             this.lblBlackLine.TabIndex = 78;
             this.lblBlackLine.Text = "0";
             // 
+            // menuStrip1
+            // 
+            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.tsmHelp});
+            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
+            this.menuStrip1.Name = "menuStrip1";
+            this.menuStrip1.Size = new System.Drawing.Size(452, 24);
+            this.menuStrip1.TabIndex = 80;
+            this.menuStrip1.Text = "menuStrip1";
+            // 
+            // tsmHelp
+            // 
+            this.tsmHelp.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
+            this.tsmHelp.Name = "tsmHelp";
+            this.tsmHelp.Size = new System.Drawing.Size(44, 20);
+            this.tsmHelp.Text = "Help";
+            this.tsmHelp.Click += new System.EventHandler(this.tsmHelp_Click);
+            // 
             // frmLogIn
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -174,11 +195,15 @@ namespace SU21_Final_Project
             this.Controls.Add(this.rdbCustomer);
             this.Controls.Add(this.tbxPassword);
             this.Controls.Add(this.tbxUsername);
+            this.Controls.Add(this.menuStrip1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MainMenuStrip = this.menuStrip1;
             this.Name = "frmLogIn";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Log In Form";
             this.Load += new System.EventHandler(this.frmLogIn_Load);
+            this.menuStrip1.ResumeLayout(false);
+            this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -197,5 +222,7 @@ namespace SU21_Final_Project
         private System.Windows.Forms.Button lblClose;
         private System.Windows.Forms.Label lblMainText;
         private System.Windows.Forms.Label lblBlackLine;
+        private System.Windows.Forms.MenuStrip menuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem tsmHelp;
     }
 }

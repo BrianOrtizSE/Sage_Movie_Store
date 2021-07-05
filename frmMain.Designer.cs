@@ -62,7 +62,7 @@ namespace SU21_Final_Project
             // pictureBox1
             // 
             this.pictureBox1.Image = global::SU21_Final_Project.Properties.Resources.Logo_SMS;
-            this.pictureBox1.Location = new System.Drawing.Point(91, 62);
+            this.pictureBox1.Location = new System.Drawing.Point(70, 63);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(641, 289);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -74,7 +74,7 @@ namespace SU21_Final_Project
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Tahoma", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.label1.Location = new System.Drawing.Point(287, 26);
+            this.label1.Location = new System.Drawing.Point(266, 27);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(228, 33);
             this.label1.TabIndex = 2;

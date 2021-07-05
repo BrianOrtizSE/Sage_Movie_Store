@@ -40,5 +40,10 @@ namespace SU21_Final_Project
             DateTime localDate = DateTime.Now;
             lblDate.Text = localDate.ToString();
         }
+
+        private void btnSignOut_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

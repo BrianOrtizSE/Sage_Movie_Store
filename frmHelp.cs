@@ -28,6 +28,7 @@ namespace SU21_Final_Project
                     pbxHelp.Image = Properties.Resources.Sages_Movie_Store_SignUp;
                     break;
                 case 3:
+                    pbxHelp.Image = Properties.Resources.Sages_Movie_Store_LogIn;
                     break;
                 case 4:
                     break;
