@@ -344,5 +344,107 @@ namespace SU21_Final_Project
             lbxCheckOutCart.Items.Add("Tax Total : " + decTaxTotal.ToString("C"));
             lbxCheckOutCart.Items.Add("Total : " + (decTotalHold).ToString("C"));
         }
+
+        private void tbxProductID_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (
+               e.KeyChar >= 48 && e.KeyChar <= 57 ||       //ASCII Check for Numbers
+               e.KeyChar == 8)                              //ASCII Check for Backspace
+            {
+                //Accept the keystroke
+                e.Handled = false;
+            }
+            else
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void tbxQuantity_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (
+               e.KeyChar >= 48 && e.KeyChar <= 57 ||       //ASCII Check for Numbers
+               e.KeyChar == 8)                              //ASCII Check for Backspace
+            {
+                //Accept the keystroke
+                e.Handled = false;
+            }
+            else
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void btnPay_Click(object sender, EventArgs e)
+        {
+            if (tbxCardHolderName.Text == string.Empty || tbxCardNumber.Text == string.Empty || cmbMonth.Text == string.Empty || cmbYear.Text == string.Empty || tbxSCode.Text == string.Empty)
+            {
+                MessageBox.Show("Make Sure All Required Information Is Filled Out!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else
+            {
+                StringBuilder strRecipt = new StringBuilder();
+
+            }
+        }
+
+        private void tbxCardHolderName_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            //Only allow letters and backspace
+            if (e.KeyChar >= 65 && e.KeyChar <= 90 ||       //ASCII Check for Capital Letters                
+               e.KeyChar >= 97 && e.KeyChar <= 122 ||       //ASCII Check for Lowercase Letters
+               e.KeyChar == 8)                              //ASCII Check for Backspace
+
+            {
+                //Accept the keystroke
+                e.Handled = false;
+            }
+            else
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void tbxCardNumber_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            //Only allow letters and backspace
+            if (e.KeyChar == 32 ||                          //ASCII Check For Spacebar
+                e.KeyChar >= 48 && e.KeyChar <= 57 ||       //ASCII Check for Numbers
+                e.KeyChar == 8)                             //ASCII Check for Backspace
+
+
+
+            {
+                //Accept the keystroke
+                e.Handled = false;
+            }
+            else
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void tbxSCode_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void tbxSCode_KeyUp(object sender, KeyEventArgs e)
+        {
+            //Only allow letters and backspace
+            if (e.KeyChar >= 48 && e.KeyChar <= 57 ||       //ASCII Check for Numbers
+                e.KeyChar == 8)                             //ASCII Check for Backspace
+
+
+
+            {
+                //Accept the keystroke
+                e.Handled = false;
+            }
+            else
+            {
+                e.Handled = true;
+            }
+        }
     }
 }

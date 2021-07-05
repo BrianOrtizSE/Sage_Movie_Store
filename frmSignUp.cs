@@ -476,5 +476,14 @@ namespace SU21_Final_Project
         {
             this.Close();
         }
+
+        private void mnsHelp_Click(object sender, EventArgs e)
+        {
+            frmHelp frmhelp = new frmHelp();
+            ProgOps._PICTURE = 2;
+            this.Hide();
+            frmhelp.ShowDialog();
+            this.Show();
+        }
     }
 }

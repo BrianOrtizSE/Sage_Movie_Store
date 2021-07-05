@@ -77,6 +77,10 @@ namespace SU21_Final_Project
             this.btnClose = new System.Windows.Forms.Button();
             this.lblBlackLine = new System.Windows.Forms.Label();
             this.lblMainText = new System.Windows.Forms.Label();
+            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.mnsHelp = new System.Windows.Forms.ToolStripMenuItem();
+            this.lblRequriemtsn = new System.Windows.Forms.Label();
+            this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // btnAdd
@@ -647,12 +651,42 @@ namespace SU21_Final_Project
             this.lblMainText.TabIndex = 77;
             this.lblMainText.Text = "Sign Up Page";
             // 
+            // menuStrip1
+            // 
+            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.mnsHelp});
+            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
+            this.menuStrip1.Name = "menuStrip1";
+            this.menuStrip1.Size = new System.Drawing.Size(829, 24);
+            this.menuStrip1.TabIndex = 78;
+            this.menuStrip1.Text = "menuStrip1";
+            // 
+            // mnsHelp
+            // 
+            this.mnsHelp.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
+            this.mnsHelp.Name = "mnsHelp";
+            this.mnsHelp.Size = new System.Drawing.Size(44, 20);
+            this.mnsHelp.Text = "Help";
+            this.mnsHelp.Click += new System.EventHandler(this.mnsHelp_Click);
+            // 
+            // lblRequriemtsn
+            // 
+            this.lblRequriemtsn.AutoSize = true;
+            this.lblRequriemtsn.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblRequriemtsn.ForeColor = System.Drawing.Color.Red;
+            this.lblRequriemtsn.Location = new System.Drawing.Point(532, 239);
+            this.lblRequriemtsn.Name = "lblRequriemtsn";
+            this.lblRequriemtsn.Size = new System.Drawing.Size(206, 16);
+            this.lblRequriemtsn.TabIndex = 79;
+            this.lblRequriemtsn.Text = "All Boxes with * Must Be Filled Out";
+            // 
             // frmSignUp
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(829, 395);
             this.ControlBox = false;
+            this.Controls.Add(this.lblRequriemtsn);
             this.Controls.Add(this.lblMainText);
             this.Controls.Add(this.lblBlackLine);
             this.Controls.Add(this.btnClose);
@@ -699,12 +733,16 @@ namespace SU21_Final_Project
             this.Controls.Add(this.tbxMiddleName);
             this.Controls.Add(this.tbxFirstName);
             this.Controls.Add(this.tbxTitle);
+            this.Controls.Add(this.menuStrip1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MainMenuStrip = this.menuStrip1;
             this.MaximizeBox = false;
             this.Name = "frmSignUp";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Sign Up Page";
             this.Load += new System.EventHandler(this.frmSignUp_Load);
+            this.menuStrip1.ResumeLayout(false);
+            this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -759,5 +797,8 @@ namespace SU21_Final_Project
         private System.Windows.Forms.Button btnClose;
         private System.Windows.Forms.Label lblBlackLine;
         private System.Windows.Forms.Label lblMainText;
+        private System.Windows.Forms.MenuStrip menuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem mnsHelp;
+        private System.Windows.Forms.Label lblRequriemtsn;
     }
 }

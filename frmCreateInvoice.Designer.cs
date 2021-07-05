@@ -54,6 +54,20 @@ namespace SU21_Final_Project
             this.btnCheckOut = new System.Windows.Forms.Button();
             this.btnCloseShop = new System.Windows.Forms.Button();
             this.pnlCart = new System.Windows.Forms.Panel();
+            this.cmbYear = new System.Windows.Forms.ComboBox();
+            this.cmbMonth = new System.Windows.Forms.ComboBox();
+            this.tbxSCode = new System.Windows.Forms.TextBox();
+            this.lblSecurityCode = new System.Windows.Forms.Label();
+            this.lblValidDate = new System.Windows.Forms.Label();
+            this.lblCardNumber = new System.Windows.Forms.Label();
+            this.tbxCardNumber = new System.Windows.Forms.TextBox();
+            this.rdbMasterCard = new System.Windows.Forms.RadioButton();
+            this.rdbVisa = new System.Windows.Forms.RadioButton();
+            this.btnPay = new System.Windows.Forms.Button();
+            this.lblCardName = new System.Windows.Forms.Label();
+            this.tbxCardHolderName = new System.Windows.Forms.TextBox();
+            this.lblBlackLine = new System.Windows.Forms.Label();
+            this.lblCheckOut = new System.Windows.Forms.Label();
             this.pnlCheckout.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProducts)).BeginInit();
             this.pnlCart.SuspendLayout();
@@ -61,23 +75,38 @@ namespace SU21_Final_Project
             // 
             // pnlCheckout
             // 
+            this.pnlCheckout.Controls.Add(this.lblBlackLine);
+            this.pnlCheckout.Controls.Add(this.lblCheckOut);
+            this.pnlCheckout.Controls.Add(this.cmbYear);
             this.pnlCheckout.Controls.Add(this.btnDiscountEnter);
+            this.pnlCheckout.Controls.Add(this.cmbMonth);
             this.pnlCheckout.Controls.Add(this.lblDiscountCode);
+            this.pnlCheckout.Controls.Add(this.tbxSCode);
             this.pnlCheckout.Controls.Add(this.tbxDiscount);
+            this.pnlCheckout.Controls.Add(this.lblSecurityCode);
             this.pnlCheckout.Controls.Add(this.btnClose);
+            this.pnlCheckout.Controls.Add(this.lblValidDate);
             this.pnlCheckout.Controls.Add(this.lbxCheckOutCart);
+            this.pnlCheckout.Controls.Add(this.lblCardNumber);
+            this.pnlCheckout.Controls.Add(this.tbxCardHolderName);
+            this.pnlCheckout.Controls.Add(this.tbxCardNumber);
+            this.pnlCheckout.Controls.Add(this.rdbMasterCard);
+            this.pnlCheckout.Controls.Add(this.rdbVisa);
+            this.pnlCheckout.Controls.Add(this.btnPay);
+            this.pnlCheckout.Controls.Add(this.lblCardName);
             this.pnlCheckout.Location = new System.Drawing.Point(12, 12);
             this.pnlCheckout.Name = "pnlCheckout";
-            this.pnlCheckout.Size = new System.Drawing.Size(554, 521);
+            this.pnlCheckout.Size = new System.Drawing.Size(632, 521);
             this.pnlCheckout.TabIndex = 34;
             this.pnlCheckout.Visible = false;
             this.pnlCheckout.Paint += new System.Windows.Forms.PaintEventHandler(this.pnlCheckout_Paint);
             // 
             // btnDiscountEnter
             // 
-            this.btnDiscountEnter.Location = new System.Drawing.Point(123, 31);
+            this.btnDiscountEnter.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDiscountEnter.Location = new System.Drawing.Point(259, 395);
             this.btnDiscountEnter.Name = "btnDiscountEnter";
-            this.btnDiscountEnter.Size = new System.Drawing.Size(50, 20);
+            this.btnDiscountEnter.Size = new System.Drawing.Size(66, 26);
             this.btnDiscountEnter.TabIndex = 4;
             this.btnDiscountEnter.Text = "Enter";
             this.btnDiscountEnter.UseVisualStyleBackColor = true;
@@ -86,17 +115,19 @@ namespace SU21_Final_Project
             // lblDiscountCode
             // 
             this.lblDiscountCode.AutoSize = true;
-            this.lblDiscountCode.Location = new System.Drawing.Point(14, 7);
+            this.lblDiscountCode.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDiscountCode.Location = new System.Drawing.Point(29, 404);
             this.lblDiscountCode.Name = "lblDiscountCode";
-            this.lblDiscountCode.Size = new System.Drawing.Size(86, 13);
+            this.lblDiscountCode.Size = new System.Drawing.Size(102, 16);
             this.lblDiscountCode.TabIndex = 3;
             this.lblDiscountCode.Text = "Discount Code : ";
             // 
             // tbxDiscount
             // 
-            this.tbxDiscount.Location = new System.Drawing.Point(17, 31);
+            this.tbxDiscount.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbxDiscount.Location = new System.Drawing.Point(144, 397);
             this.tbxDiscount.Name = "tbxDiscount";
-            this.tbxDiscount.Size = new System.Drawing.Size(100, 20);
+            this.tbxDiscount.Size = new System.Drawing.Size(100, 23);
             this.tbxDiscount.TabIndex = 2;
             // 
             // btnClose
@@ -114,7 +145,7 @@ namespace SU21_Final_Project
             this.lbxCheckOutCart.Font = new System.Drawing.Font("Constantia", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbxCheckOutCart.FormattingEnabled = true;
             this.lbxCheckOutCart.ItemHeight = 15;
-            this.lbxCheckOutCart.Location = new System.Drawing.Point(294, 10);
+            this.lbxCheckOutCart.Location = new System.Drawing.Point(380, 10);
             this.lbxCheckOutCart.Name = "lbxCheckOutCart";
             this.lbxCheckOutCart.Size = new System.Drawing.Size(232, 484);
             this.lbxCheckOutCart.TabIndex = 0;
@@ -145,6 +176,7 @@ namespace SU21_Final_Project
             this.tbxQuantity.Name = "tbxQuantity";
             this.tbxQuantity.Size = new System.Drawing.Size(132, 27);
             this.tbxQuantity.TabIndex = 17;
+            this.tbxQuantity.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbxQuantity_KeyPress);
             // 
             // lblAmount
             // 
@@ -239,6 +271,7 @@ namespace SU21_Final_Project
             this.tbxProductID.Name = "tbxProductID";
             this.tbxProductID.Size = new System.Drawing.Size(132, 27);
             this.tbxProductID.TabIndex = 16;
+            this.tbxProductID.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbxProductID_KeyPress);
             // 
             // lblProduct
             // 
@@ -318,6 +351,176 @@ namespace SU21_Final_Project
             this.pnlCart.Size = new System.Drawing.Size(1124, 519);
             this.pnlCart.TabIndex = 33;
             // 
+            // cmbYear
+            // 
+            this.cmbYear.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbYear.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbYear.FormattingEnabled = true;
+            this.cmbYear.Items.AddRange(new object[] {
+            "2021",
+            "2022",
+            "2023",
+            "2024",
+            "2025",
+            "2026",
+            "2027",
+            "2028",
+            "2029",
+            "2030",
+            "2031"});
+            this.cmbYear.Location = new System.Drawing.Point(94, 234);
+            this.cmbYear.Name = "cmbYear";
+            this.cmbYear.Size = new System.Drawing.Size(99, 24);
+            this.cmbYear.TabIndex = 41;
+            // 
+            // cmbMonth
+            // 
+            this.cmbMonth.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbMonth.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbMonth.FormattingEnabled = true;
+            this.cmbMonth.Items.AddRange(new object[] {
+            "January",
+            "February",
+            "March",
+            "April",
+            "May",
+            "June",
+            "July",
+            "August\t",
+            "September",
+            "October",
+            "November",
+            "December"});
+            this.cmbMonth.Location = new System.Drawing.Point(23, 234);
+            this.cmbMonth.Name = "cmbMonth";
+            this.cmbMonth.Size = new System.Drawing.Size(58, 24);
+            this.cmbMonth.TabIndex = 39;
+            // 
+            // tbxSCode
+            // 
+            this.tbxSCode.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbxSCode.Location = new System.Drawing.Point(206, 235);
+            this.tbxSCode.MaxLength = 3;
+            this.tbxSCode.Name = "tbxSCode";
+            this.tbxSCode.Size = new System.Drawing.Size(100, 23);
+            this.tbxSCode.TabIndex = 42;
+            this.tbxSCode.TextChanged += new System.EventHandler(this.tbxSCode_TextChanged);
+            this.tbxSCode.KeyUp += new System.Windows.Forms.KeyEventHandler(this.tbxSCode_KeyUp);
+            // 
+            // lblSecurityCode
+            // 
+            this.lblSecurityCode.AutoSize = true;
+            this.lblSecurityCode.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSecurityCode.Location = new System.Drawing.Point(209, 216);
+            this.lblSecurityCode.Name = "lblSecurityCode";
+            this.lblSecurityCode.Size = new System.Drawing.Size(87, 16);
+            this.lblSecurityCode.TabIndex = 49;
+            this.lblSecurityCode.Text = "Security Code";
+            // 
+            // lblValidDate
+            // 
+            this.lblValidDate.AutoSize = true;
+            this.lblValidDate.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblValidDate.Location = new System.Drawing.Point(20, 209);
+            this.lblValidDate.Name = "lblValidDate";
+            this.lblValidDate.Size = new System.Drawing.Size(66, 16);
+            this.lblValidDate.TabIndex = 48;
+            this.lblValidDate.Text = "Valid Date";
+            // 
+            // lblCardNumber
+            // 
+            this.lblCardNumber.AutoSize = true;
+            this.lblCardNumber.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCardNumber.Location = new System.Drawing.Point(203, 141);
+            this.lblCardNumber.Name = "lblCardNumber";
+            this.lblCardNumber.Size = new System.Drawing.Size(84, 16);
+            this.lblCardNumber.TabIndex = 47;
+            this.lblCardNumber.Text = "Card Number";
+            // 
+            // tbxCardNumber
+            // 
+            this.tbxCardNumber.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbxCardNumber.Location = new System.Drawing.Point(200, 157);
+            this.tbxCardNumber.MaxLength = 12;
+            this.tbxCardNumber.Name = "tbxCardNumber";
+            this.tbxCardNumber.Size = new System.Drawing.Size(164, 23);
+            this.tbxCardNumber.TabIndex = 37;
+            this.tbxCardNumber.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbxCardNumber_KeyPress);
+            // 
+            // rdbMasterCard
+            // 
+            this.rdbMasterCard.AutoSize = true;
+            this.rdbMasterCard.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rdbMasterCard.Location = new System.Drawing.Point(195, 86);
+            this.rdbMasterCard.Name = "rdbMasterCard";
+            this.rdbMasterCard.Size = new System.Drawing.Size(92, 20);
+            this.rdbMasterCard.TabIndex = 35;
+            this.rdbMasterCard.Text = "MasterCard";
+            this.rdbMasterCard.UseVisualStyleBackColor = true;
+            // 
+            // rdbVisa
+            // 
+            this.rdbVisa.AutoSize = true;
+            this.rdbVisa.Checked = true;
+            this.rdbVisa.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rdbVisa.Location = new System.Drawing.Point(71, 86);
+            this.rdbVisa.Name = "rdbVisa";
+            this.rdbVisa.Size = new System.Drawing.Size(50, 20);
+            this.rdbVisa.TabIndex = 34;
+            this.rdbVisa.TabStop = true;
+            this.rdbVisa.Text = "Visa";
+            this.rdbVisa.UseVisualStyleBackColor = true;
+            // 
+            // btnPay
+            // 
+            this.btnPay.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPay.Location = new System.Drawing.Point(56, 458);
+            this.btnPay.Name = "btnPay";
+            this.btnPay.Size = new System.Drawing.Size(101, 36);
+            this.btnPay.TabIndex = 45;
+            this.btnPay.Text = "&Pay";
+            this.btnPay.UseVisualStyleBackColor = true;
+            this.btnPay.Click += new System.EventHandler(this.btnPay_Click);
+            // 
+            // lblCardName
+            // 
+            this.lblCardName.AutoSize = true;
+            this.lblCardName.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCardName.Location = new System.Drawing.Point(14, 141);
+            this.lblCardName.Name = "lblCardName";
+            this.lblCardName.Size = new System.Drawing.Size(117, 16);
+            this.lblCardName.TabIndex = 43;
+            this.lblCardName.Text = "Cardholder\'s Name";
+            // 
+            // tbxCardHolderName
+            // 
+            this.tbxCardHolderName.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbxCardHolderName.Location = new System.Drawing.Point(17, 157);
+            this.tbxCardHolderName.MaxLength = 20;
+            this.tbxCardHolderName.Name = "tbxCardHolderName";
+            this.tbxCardHolderName.Size = new System.Drawing.Size(170, 23);
+            this.tbxCardHolderName.TabIndex = 36;
+            this.tbxCardHolderName.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbxCardHolderName_KeyPress);
+            // 
+            // lblBlackLine
+            // 
+            this.lblBlackLine.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.lblBlackLine.Location = new System.Drawing.Point(14, 61);
+            this.lblBlackLine.Name = "lblBlackLine";
+            this.lblBlackLine.Size = new System.Drawing.Size(350, 2);
+            this.lblBlackLine.TabIndex = 81;
+            this.lblBlackLine.Text = "0";
+            // 
+            // lblCheckOut
+            // 
+            this.lblCheckOut.AutoSize = true;
+            this.lblCheckOut.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCheckOut.Location = new System.Drawing.Point(23, 38);
+            this.lblCheckOut.Name = "lblCheckOut";
+            this.lblCheckOut.Size = new System.Drawing.Size(74, 19);
+            this.lblCheckOut.TabIndex = 80;
+            this.lblCheckOut.Text = "Checkout";
+            // 
             // frmCreateInvoice
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -367,5 +570,19 @@ namespace SU21_Final_Project
         private System.Windows.Forms.Label lblDiscountCode;
         private System.Windows.Forms.TextBox tbxDiscount;
         private System.Windows.Forms.Button btnDiscountEnter;
+        private System.Windows.Forms.ComboBox cmbYear;
+        private System.Windows.Forms.ComboBox cmbMonth;
+        private System.Windows.Forms.TextBox tbxSCode;
+        private System.Windows.Forms.Label lblSecurityCode;
+        private System.Windows.Forms.Label lblValidDate;
+        private System.Windows.Forms.Label lblCardNumber;
+        private System.Windows.Forms.TextBox tbxCardHolderName;
+        private System.Windows.Forms.TextBox tbxCardNumber;
+        private System.Windows.Forms.RadioButton rdbMasterCard;
+        private System.Windows.Forms.RadioButton rdbVisa;
+        private System.Windows.Forms.Button btnPay;
+        private System.Windows.Forms.Label lblCardName;
+        private System.Windows.Forms.Label lblBlackLine;
+        private System.Windows.Forms.Label lblCheckOut;
     }
 }
