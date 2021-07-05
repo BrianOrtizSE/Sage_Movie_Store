@@ -34,5 +34,11 @@ namespace SU21_Final_Project
         {
 
         }
+
+        private void lblDate_Click(object sender, EventArgs e)
+        {
+            DateTime localDate = DateTime.Now;
+            lblDate.Text = localDate.ToString();
+        }
     }
 }

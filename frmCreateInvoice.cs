@@ -202,6 +202,7 @@ namespace SU21_Final_Project
 
                 
                 WriteToListBox(decSubTotal, decDiscountPercent, decTaxTotal, decTotal);
+                this.Size = new Size(760, 630);
             }
             
 
@@ -225,7 +226,9 @@ namespace SU21_Final_Project
 
             //reset listox
             lbxCheckOutCart.Items.Clear();
-            
+
+            this.Size = new Size(1200, 630);
+
         }
 
         private void pnlCheckout_Paint(object sender, PaintEventArgs e)
@@ -431,11 +434,14 @@ namespace SU21_Final_Project
 
         private void tbxSCode_KeyUp(object sender, KeyEventArgs e)
         {
+           
+        }
+
+        private void tbxDiscount_KeyPress(object sender, KeyPressEventArgs e)
+        {
             //Only allow letters and backspace
             if (e.KeyChar >= 48 && e.KeyChar <= 57 ||       //ASCII Check for Numbers
                 e.KeyChar == 8)                             //ASCII Check for Backspace
-
-
 
             {
                 //Accept the keystroke
