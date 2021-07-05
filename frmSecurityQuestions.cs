@@ -25,29 +25,99 @@ namespace SU21_Final_Project
             bool blnPass = true;
 
             //We will add all the validation here later. 
-            if(tbxUsername.Text == "")
+            if(tbxUsername.Text == String.Empty || tbxUsername.Text.Length < 6 || tbxUsername.Text.Length > 20)
             {
-                MessageBox.Show("Username Cannot Be The Same", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                lblErrorUserName.Visible = true;
                 blnPass = false;
             }
-            if (tbxPassword.Text == "")
+            else
             {
-                MessageBox.Show("Password Cannot Be The Same", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                blnPass = false;
-            }
-            if (tbxSQAnswer1.Text == "")
-            {
-                MessageBox.Show("Security Question Answer 1 Cannot Be The Same", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                blnPass = false;
-            }
-            if (tbxSQAnswer2.Text == "")
-            {
-                MessageBox.Show("Security Question Answer 2 Cannot Be The Same", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                blnPass = false;
+                lblErrorUserName.Visible = false;
             }
 
 
-            if (cmbSQuestion1.Text == cmbSQuestion2.Text)
+            //VALIDATION FOR PASSWORD
+            //bool to tell if password has a number
+            bool hasNumber = false;
+
+            for (int i = 0; i < tbxPassword.Text.Length; i++)
+            {
+                if (Char.IsDigit(tbxPassword.Text[i]))
+                {
+                    hasNumber = true;
+                    break;
+                }
+            }
+
+            //int to track the number of symbols found in password
+            int symbolCtr = 0;
+
+            for (int i = 0; i < tbxPassword.Text.Length; i++)
+            {
+                //Check each character to see if it's a symbol
+                //Note: Char.IsSymbol() did not actually work here
+                if (!Char.IsLetter(tbxPassword.Text[i]) &&
+                    !Char.IsDigit(tbxPassword.Text[i]))
+                {
+                    symbolCtr++;
+                }
+            }
+
+            if (tbxPassword.Text == String.Empty || tbxPassword.Text.Length > 20 || tbxPassword.Text.Length < 8 || !hasNumber || symbolCtr < 2)
+            {
+                lblErrorPassword.Visible = true;
+                blnPass = false;
+                Console.WriteLine(symbolCtr);
+                Console.WriteLine(hasNumber);
+            }
+            else
+            {
+                lblErrorPassword.Visible = false;
+            }
+
+            if(tbxRetypePassword.Text != tbxPassword.Text)
+            {
+                lblErrorRetype.Visible = true;
+                blnPass = false;
+            }
+            else
+            {
+                lblErrorRetype.Visible = false;
+            }
+
+            if (tbxSQAnswer1.Text == String.Empty)
+            {
+                lblErrorSQA1.Visible = true;
+                blnPass = false;
+            }
+            else
+            {
+                lblErrorSQA1.Visible = false;
+            }
+
+
+            if (tbxSQAnswer2.Text == String.Empty)
+            {
+                lblErrorSQA2.Visible = true;
+                blnPass = false;
+            }
+            else
+            {
+                lblErrorSQA2.Visible = false;
+            }
+
+            if (tbxSQAnswer3.Text == String.Empty)
+            {
+                lblErrorSQA3.Visible = true;
+                blnPass = false;
+            }
+            else
+            {
+                lblErrorSQA3.Visible = false;
+            }
+
+
+            if (cmbSQuestion1.Text == cmbSQuestion2.Text || cmbSQuestion2.Text == cmbQuestion3.Text || cmbSQuestion1.Text == cmbQuestion3.Text)
             {
                 MessageBox.Show("Security Questions Cannot Be The Same", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 blnPass = false;
@@ -55,9 +125,10 @@ namespace SU21_Final_Project
 
             if(blnPass == true)
             {
-                string query = "Insert into OrtizB21Su2332.LogOn(PersonID , UserName , Password , SQuestion1 , SQAnswer1 , SQuestion2 , SQAnswer2) " +
-                "values(" + ProgOps.intPersonID + ",'" + tbxUsername.Text + "','" + tbxPassword.Text + "','" + cmbSQuestion1.Text + "','" + tbxSQAnswer1.Text + "','" + cmbSQuestion2.Text + "','" + tbxSQAnswer2.Text + "');";
-                ProgOps.CreateLogIn(tbxUsername, tbxPassword, cmbSQuestion1, tbxSQAnswer1, cmbSQuestion2, tbxSQAnswer2, query);
+                string query = "Insert into OrtizB21Su2332.LogOn(PersonID , UserName , Password , SQuestion1 , SQAnswer1 , SQuestion2 , SQAnswer2 , SQuestion3 , SQAnswer3) " +
+                "values(" + ProgOps.intPersonID + ",'" + tbxUsername.Text + "','" + tbxPassword.Text + "','" + cmbSQuestion1.Text + "','" + tbxSQAnswer1.Text + "','" + cmbSQuestion2.Text + "','" + tbxSQAnswer2.Text
+                + "','" + cmbQuestion3.Text + "','" + tbxSQAnswer3.Text + "');";
+                ProgOps.CreateLogIn(tbxUsername, tbxPassword, cmbSQuestion1, tbxSQAnswer1, cmbSQuestion2, tbxSQAnswer2, cmbQuestion3, tbxSQAnswer3 , query);
 
                 MessageBox.Show("Welcome To The Shop! ", "Welcome", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 this.Close();
@@ -68,6 +139,37 @@ namespace SU21_Final_Project
         private void frmSecurityQuestions_Load(object sender, EventArgs e)
         {
             ProgOps.GrabPersonID();
+        }
+
+        private void btnClose_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void tbxUsername_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            //Only allow letters and backspace
+            if (e.KeyChar >= 65 && e.KeyChar <= 90 ||       //ASCII Check for Capital Letters
+               e.KeyChar >= 97 && e.KeyChar <= 122 ||       //ASCII Check for Lowercase Letters
+                e.KeyChar >= 48 && e.KeyChar <= 57 ||       //ASCII Check For Numbers
+               e.KeyChar == 8)                              //ASCII Check for Backspace
+            {
+                //Accept the keystroke
+                e.Handled = false;
+            }
+            else
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void tbxPassword_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == 32)
+            {
+                //Prevent spaces from being entered into the password textbox
+                e.Handled = true;
+            }
         }
     }
 }

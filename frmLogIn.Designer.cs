@@ -37,6 +37,7 @@ namespace SU21_Final_Project
             this.lblUSernameText = new System.Windows.Forms.Label();
             this.lblPasswordText = new System.Windows.Forms.Label();
             this.lblErrorText = new System.Windows.Forms.Label();
+            this.lblClose = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // tbxUsername
@@ -83,7 +84,7 @@ namespace SU21_Final_Project
             // 
             // btnLogin
             // 
-            this.btnLogin.Location = new System.Drawing.Point(302, 273);
+            this.btnLogin.Location = new System.Drawing.Point(253, 269);
             this.btnLogin.Name = "btnLogin";
             this.btnLogin.Size = new System.Drawing.Size(88, 28);
             this.btnLogin.TabIndex = 4;
@@ -122,11 +123,23 @@ namespace SU21_Final_Project
             this.lblErrorText.Text = "ERROR : USERNAME OR PASSWORD INCORRECT";
             this.lblErrorText.Visible = false;
             // 
+            // lblClose
+            // 
+            this.lblClose.Location = new System.Drawing.Point(347, 269);
+            this.lblClose.Name = "lblClose";
+            this.lblClose.Size = new System.Drawing.Size(88, 28);
+            this.lblClose.TabIndex = 8;
+            this.lblClose.Text = "&Return";
+            this.lblClose.UseVisualStyleBackColor = true;
+            this.lblClose.Click += new System.EventHandler(this.lblClose_Click);
+            // 
             // frmLogIn
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(712, 383);
+            this.ControlBox = false;
+            this.Controls.Add(this.lblClose);
             this.Controls.Add(this.lblErrorText);
             this.Controls.Add(this.lblPasswordText);
             this.Controls.Add(this.lblUSernameText);
@@ -136,7 +149,8 @@ namespace SU21_Final_Project
             this.Controls.Add(this.tbxPassword);
             this.Controls.Add(this.tbxUsername);
             this.Name = "frmLogIn";
-            this.Text = "frmLogIn";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
+            this.Text = "Log In Form";
             this.Load += new System.EventHandler(this.frmLogIn_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -153,5 +167,6 @@ namespace SU21_Final_Project
         private System.Windows.Forms.Label lblUSernameText;
         private System.Windows.Forms.Label lblPasswordText;
         private System.Windows.Forms.Label lblErrorText;
+        private System.Windows.Forms.Button lblClose;
     }
 }

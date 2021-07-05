@@ -20,167 +20,240 @@ namespace SU21_Final_Project
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
+            bool blnValid = true;
             strCreate.Clear();
-            bool blnPass = true;
+
             //Query To Add New Person To Database
             strCreate.Append("INSERT INTO OrtizB21Su2332.Person(Title , NameFirst , NameMiddle ,NameLast , Suffix , Address1 , Address2 , Address3 , City , Zipcode , State , Email , PhonePrimary , PhoneSecondary)" +
                 "Values(");
 
-            //Title
-            if (tbxTitle.Text == "")
+
+            if (tbxTitle.Text.Length > 15)
             {
-                strCreate.Append("NULL,'");
+                blnValid = false;
+                lblErrorTitle.Visible = true;
             }
-            else
-            {
-                strCreate.Append("'" + tbxTitle.Text + "','");
+            else {
+                lblErrorTitle.Visible = false;
+                //Title
+                if (tbxTitle.Text == String.Empty)
+                {
+                    strCreate.Append("NULL,'");
+                }
+                else
+                {
+                    strCreate.Append("'" + tbxTitle.Text + "','");
+                }
             }
 
             //First Name
-            if(tbxFirstName.Text == "")
+            if (tbxFirstName.Text == String.Empty || tbxFirstName.Text.Length > 20)
             {
-                MessageBox.Show("First Name Must Not Be Empty");
-                blnPass = false;
+                blnValid = false;
+                lblErrorFirstName.Visible = true;
             }
             else
             {
+                lblErrorFirstName.Visible = false;
                 strCreate.Append(tbxFirstName.Text + "',");
             }
-            
+
 
             //Middle Name
-            if (tbxMiddleName.Text == "")
+            if (tbxMiddleName.Text.Length > 20)
             {
-                strCreate.Append("NULL,'");
+                blnValid = false;
+                lblErrorMiddleName.Visible = true;
             }
             else
             {
-                strCreate.Append("'" + tbxMiddleName.Text + "','");
+                lblErrorMiddleName.Visible = false;
+                if (tbxMiddleName.Text == String.Empty)
+                {
+                    strCreate.Append("NULL,'");
+                }
+                else
+                {
+                    strCreate.Append("'" + tbxMiddleName.Text + "','");
+                }
             }
 
+
             //Last Name
-            if (tbxLastName.Text == "")
+            if (tbxLastName.Text == String.Empty || tbxLastName.Text.Length > 20)
             {
-                MessageBox.Show("Last Name Must Not Be Empty");
-                blnPass = false;
+                lblErrorLastName.Visible = true;
+                blnValid = false;
             }
             else
             {
+                lblErrorLastName.Visible = false;
                 strCreate.Append(tbxLastName.Text + "',");
             }
 
             //Suffix
-            if (tbxSuffix.Text == "")
+            if (tbxSuffix.Text.Length > 20)
             {
-                strCreate.Append("NULL,'");
+                lblErrorSuffix.Visible = true;
             }
             else
             {
-                strCreate.Append("'" + tbxSuffix.Text + "','");
+                lblErrorSuffix.Visible = false;
+                if (tbxSuffix.Text == String.Empty)
+                {
+                    strCreate.Append("NULL,'");
+                }
+                else
+                {
+                    strCreate.Append("'" + tbxSuffix.Text + "','");
+                }
+
             }
 
+
             //Address1
-            if (tbxAddress1.Text == "")
+            if (tbxAddress1.Text == String.Empty || tbxAddress1.Text.Length > 30)
             {
-                MessageBox.Show("Adress1 Name Must Not Be Empty");
-                blnPass = false;
+                blnValid = false;
+                lblErrorAddress1.Visible = true;
             }
             else
             {
+                lblErrorAddress1.Visible = false;
                 strCreate.Append(tbxAddress1.Text + "',");
             }
 
+
             //Address 2
-            if (tbxAddress2.Text == "")
+            if (tbxAddress2.Text.Length > 30)
             {
-                strCreate.Append("NULL,'");
+                lblErrorAddress2.Visible = true;
+                blnValid = false;
             }
             else
             {
-                strCreate.Append("'" + tbxAddress2.Text + "',");
-            }
-            
-            //Address 3
-            if (tbxAddress3.Text == "")
-            {
-                strCreate.Append("NULL,'");
-            }
-            else
-            {
-                strCreate.Append("'" + tbxAddress3.Text + "','");
+                lblErrorAddress2.Visible = false;
+                if (tbxAddress2.Text == String.Empty)
+                {
+                    strCreate.Append("NULL,");
+                }
+                else
+                {
+                    strCreate.Append("'" + tbxAddress2.Text + "',");
+                }
             }
 
-            //City            
-            if (tbxZipcode.Text == "")
+
+            //Address 3
+            if (tbxAddress3.Text.Length > 30)
             {
-                MessageBox.Show("City Name Must Not Be Empty");
-                blnPass = false;
+                lblErrorAddress3.Visible = true;
+                blnValid = false;
             }
             else
             {
+                lblErrorAddress3.Visible = false;
+                if (tbxAddress3.Text == String.Empty)
+                {
+                    strCreate.Append("NULL,'");
+                }
+                else
+                {
+                    strCreate.Append("'" + tbxAddress3.Text + "','");
+                }
+            }
+
+
+            //City   
+            if (tbxCity.Text == String.Empty || tbxCity.Text.Length > 30)
+            {
+                lblErrorCity.Visible = true;
+                blnValid = false;
+            }
+            else
+            {
+                lblErrorCity.Visible = false;
                 strCreate.Append(tbxCity.Text + "','");
             }
 
             //Zipcode
-            if (tbxZipcode.Text == "")
+            if (tbxZipcode.Text == String.Empty || tbxZipcode.Text.Length > 10 || tbxZipcode.Text.Length < 5)
             {
-                MessageBox.Show("Zipcode Name Must Not Be Empty");
-                blnPass = false;
+                lblErrorZipcode.Visible = true;
+                blnValid = false;
             }
             else
             {
+                lblErrorZipcode.Visible = false;
                 strCreate.Append(tbxZipcode.Text + "','"); ;
             }
 
 
             //State
-            if (tbxState.Text == "")
+            if (cbxState.Text == String.Empty || cbxState.Text.Length > 2)
             {
-                MessageBox.Show("State Name Must Not Be Empty");
-                blnPass = false;
+                blnValid = false;
+                lblErrorState.Visible = true;
             }
             else
             {
-                strCreate.Append(tbxState.Text + "','"); ;
+                lblErrorState.Visible = false;
+                strCreate.Append(cbxState.Text + "','"); ;
             }
 
             //Email
-            if (tbxEmail.Text == "")
+            if (tbxEmail.Text == String.Empty || tbxEmail.Text.Length > 40)
             {
-                MessageBox.Show("Email Must Not Be Empty");
-                blnPass = false;
+                blnValid = false;
+                lblErrorEmail.Visible = true;
             }
             else
             {
+                lblErrorEmail.Visible = false;
                 strCreate.Append(tbxEmail.Text + "','"); ;
             }
 
             //Phone 1
-            if (tbxPhonePrimary.Text == "")
+            if (mtbPhone1.MaskCompleted != true || mtbPhone1.Text.Length > 20)
             {
-                MessageBox.Show("Phone Must Not Be Empty");
-                blnPass = false;
+                lblErrorPhonePrimary.Visible = true;
+                blnValid = false;
             }
             else
             {
-                strCreate.Append(tbxPhonePrimary.Text + "',"); ;
+                lblErrorPhonePrimary.Visible = false;
+                strCreate.Append(mtbPhone1.Text + "',"); ;
             }
 
+
             //Phone 2
-            if (tbxPhoneSecond.Text == "")
+            if (mtbPhone2.Text.Length > 20)
             {
-                strCreate.Append("NULL)");
+                lblErrorPhoneSecondary.Visible = true;
+                
+                blnValid = false;
             }
             else
             {
-                strCreate.Append("'" + tbxPhoneSecond.Text + "')");
+                if(mtbPhone2.MaskCompleted != true)
+                {
+                    mtbPhone2.Text = "";
+                    strCreate.Append("NULL)");
+
+                }
+                else
+                {
+                    lblErrorPhoneSecondary.Visible = false;
+                    strCreate.Append("'" + mtbPhone2.Text + "')");
+                }
             }
+            
 
             MessageBox.Show(strCreate.ToString());
 
-            if (blnPass == true)
+            if (blnValid == true)
             {
-                ProgOps.CreateNewUser(tbxTitle, tbxFirstName, tbxMiddleName, tbxLastName, tbxSuffix, tbxAddress1, tbxAddress2, tbxAddress3, tbxCity, tbxZipcode, tbxState, tbxEmail, tbxPhonePrimary, tbxPhoneSecond, strCreate.ToString());
+                ProgOps.CreateNewUser(tbxTitle, tbxFirstName, tbxMiddleName, tbxLastName, tbxSuffix, tbxAddress1, tbxAddress2, tbxAddress3, tbxCity, tbxZipcode, cbxState, tbxEmail, mtbPhone1, mtbPhone2, strCreate.ToString());
                 frmSecurityQuestions frmquesiton = new frmSecurityQuestions();
                 frmquesiton.ShowDialog();
                 this.Close();
@@ -191,6 +264,217 @@ namespace SU21_Final_Project
         private void frmSignUp_Load(object sender, EventArgs e)
         {
             //Close Things To Do
+        }
+
+
+        //KEY PRESS EVENTS SO THAT PEOPLE CANT TYPE IN INCORRECT INFORMATION
+
+        private void tbxTitle_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            //Only allow letters and backspace
+            if (e.KeyChar >= 65 && e.KeyChar <= 90 ||       //ASCII Check for Capital Letters
+               e.KeyChar >= 97 && e.KeyChar <= 122 ||       //ASCII Check for Lowercase Letters
+               e.KeyChar == 8)                              //ASCII Check for Backspace
+            {
+                //Accept the keystroke
+                e.Handled = false;
+            }
+            else
+            {
+                e.Handled = true;
+            }
+        }    
+        private void tbxFirstName_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            //Only allow letters and backspace
+            if (e.KeyChar >= 65 && e.KeyChar <= 90 ||       //ASCII Check for Capital Letters
+               e.KeyChar >= 97 && e.KeyChar <= 122 ||       //ASCII Check for Lowercase Letters
+               e.KeyChar == 8)                              //ASCII Check for Backspace
+            {
+                //Accept the keystroke
+                e.Handled = false;
+            }
+            else
+            {
+                e.Handled = true;
+            }
+        }
+        private void tbxMiddleName_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+        private void tbxMiddleName_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            //Only allow letters and backspace
+            if (e.KeyChar >= 65 && e.KeyChar <= 90 ||       //ASCII Check for Capital Letters
+               e.KeyChar >= 97 && e.KeyChar <= 122 ||       //ASCII Check for Lowercase Letters
+               e.KeyChar == 8)                              //ASCII Check for Backspace
+            {
+                //Accept the keystroke
+                e.Handled = false;
+            }
+            else
+            {
+                e.Handled = true;
+            }
+        }
+        private void tbxLastName_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            //Only allow letters and backspace
+            if (e.KeyChar >= 65 && e.KeyChar <= 90 ||       //ASCII Check for Capital Letters
+               e.KeyChar >= 97 && e.KeyChar <= 122 ||       //ASCII Check for Lowercase Letters
+               e.KeyChar == 8)                              //ASCII Check for Backspace
+            {
+                //Accept the keystroke
+                e.Handled = false;
+            }
+            else
+            {
+                e.Handled = true;
+            }
+        }
+        private void tbxSuffix_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            //Only allow letters and backspace
+            if (e.KeyChar >= 65 && e.KeyChar <= 90 ||       //ASCII Check for Capital Letters
+               e.KeyChar >= 97 && e.KeyChar <= 122 ||       //ASCII Check for Lowercase Letters
+               e.KeyChar == 8)                              //ASCII Check for Backspace
+            {
+                //Accept the keystroke
+                e.Handled = false;
+            }
+            else
+            {
+                e.Handled = true;
+            }
+        }
+        private void tbxAddress1_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            //Only allow letters and backspace
+            if (e.KeyChar >= 65 && e.KeyChar <= 90 ||       //ASCII Check for Capital Letters
+                e.KeyChar == 32 ||                          //ASCII Check For Spacebar
+                e.KeyChar >= 48 && e.KeyChar <= 57 ||       //ASCII Check for Numbers
+               e.KeyChar >= 97 && e.KeyChar <= 122 ||       //ASCII Check for Lowercase Letters
+               e.KeyChar == 8)                              //ASCII Check for Backspace
+            {
+                //Accept the keystroke
+                e.Handled = false;
+            }
+            else
+            {
+                e.Handled = true;
+            }
+        }
+        private void tbxAddress2_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            //Only allow letters and backspace
+            if (e.KeyChar >= 65 && e.KeyChar <= 90 ||       //ASCII Check for Capital Letters
+                e.KeyChar == 32 ||                          //ASCII Check For Spacebar
+                e.KeyChar >= 48 && e.KeyChar <= 57 ||       //ASCII Check for Numbers
+               e.KeyChar >= 97 && e.KeyChar <= 122 ||       //ASCII Check for Lowercase Letters
+               e.KeyChar == 8)                              //ASCII Check for Backspace
+            {
+                //Accept the keystroke
+                e.Handled = false;
+            }
+            else
+            {
+                e.Handled = true;
+            }
+        }
+        private void tbxAddress3_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            //Only allow letters and backspace
+            if (e.KeyChar >= 65 && e.KeyChar <= 90 ||       //ASCII Check for Capital Letters
+                e.KeyChar == 32 ||                          //ASCII Check For Spacebar
+                e.KeyChar >= 48 && e.KeyChar <= 57 ||       //ASCII Check for Numbers
+               e.KeyChar >= 97 && e.KeyChar <= 122 ||       //ASCII Check for Lowercase Letters
+               e.KeyChar == 8)                              //ASCII Check for Backspace
+            {
+                //Accept the keystroke
+                e.Handled = false;
+            }
+            else
+            {
+                e.Handled = true;
+            }
+        }
+        private void tbxCity_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            //Only allow letters and backspace
+            if (e.KeyChar >= 65 && e.KeyChar <= 90 ||       //ASCII Check for Capital Letters
+               e.KeyChar >= 97 && e.KeyChar <= 122 ||       //ASCII Check for Lowercase Letters
+               e.KeyChar == 8)                              //ASCII Check for Backspace
+            {
+                //Accept the keystroke
+                e.Handled = false;
+            }
+            else
+            {
+                e.Handled = true;
+            }
+        }
+        private void tbxZipcode_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar >= 48 && e.KeyChar <= 57 || //ASCII Check For Numbers
+                e.KeyChar == 8)
+            {
+                //Allow the key press
+                e.Handled = false;
+            }
+            else
+            {
+                //Deny the key press
+                e.Handled = true;
+            }
+        }
+        private void tbxState_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            //Only allow Captital Letters
+            if (e.KeyChar >= 65 && e.KeyChar <= 90 ||       //ASCII Check for Capital Letters
+               e.KeyChar >= 97 && e.KeyChar <= 122 ||       //ASCII Check for Lowercase Letters
+               e.KeyChar == 8)                              //ASCII Check for Backspace
+            {
+                //Accept the keystroke
+                e.Handled = false;
+            }
+            else
+            {
+                e.Handled = true;
+            }
+        }
+        private void mtbPhone1_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar >= 48 && e.KeyChar <= 57 || //ASCII Check For Numbers
+               e.KeyChar == 8)
+            {
+                //Allow the key press
+                e.Handled = false;
+            }
+            else
+            {
+                //Deny the key press
+                e.Handled = true;
+            }
+        }
+        private void mtbPhone2_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar >= 48 && e.KeyChar <= 57 || //ASCII Check For Numbers
+               e.KeyChar == 8)
+            {
+                //Allow the key press
+                e.Handled = false;
+            }
+            else
+            {
+                //Deny the key press
+                e.Handled = true;
+            }
+        }
+
+        private void btnClose_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

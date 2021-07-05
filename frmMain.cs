@@ -48,25 +48,38 @@ namespace SU21_Final_Project
         private void tsSignUp_Click(object sender, EventArgs e)
         {
             frmSignUp frmsingup = new frmSignUp();
+            this.Hide();
             frmsingup.ShowDialog();
+            this.Show();
         }
 
         private void tsLogIn_Click(object sender, EventArgs e)
         {
             frmLogIn frmlogin = new frmLogIn();
+            this.Hide();
             frmlogin.ShowDialog();
+            this.Show();
         }
 
         private void addMerchandiseToolStripMenuItem_Click(object sender, EventArgs e)
         {
             frmMerchandiseAdd frmmerchadd = new frmMerchandiseAdd();
+            this.Hide();
             frmmerchadd.ShowDialog();
+            this.Show();
         }
 
         private void createInvoiceToolStripMenuItem_Click(object sender, EventArgs e)
         {
             frmCreateInvoice frmcreateinvoice = new frmCreateInvoice();
+
             frmcreateinvoice.ShowDialog();
+        }
+
+        private void securityQuestionCheclToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmSecurityQuestions frmsq = new frmSecurityQuestions();
+            frmsq.ShowDialog();
         }
     }
 }

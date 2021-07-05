@@ -35,12 +35,12 @@ namespace SU21_Final_Project
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
-            bool blnPass = true;
+            //bool blnPass = true;
 
             if(rdbCustomer.Checked == false && rdbEmployee.Checked == false)
             {
-               MessageBox.Show("Customer Or Employee Must Be Checked", "Welcome", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                blnPass = false;
+               MessageBox.Show("Customer Or Employee Must Be Checked", "Customer Or Employee", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+               // blnPass = false;
             }
 
                 ProgOps.LogOn(tbxUsername, tbxPassword, rdbCustomer, rdbEmployee, Text);
@@ -53,6 +53,11 @@ namespace SU21_Final_Project
         private void tbxUsername_TextChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void lblClose_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

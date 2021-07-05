@@ -90,44 +90,65 @@ namespace SU21_Final_Project
         {
             //used to search for specific user
 
-            if (rdButtonA.Checked == true)
+            try
             {
-                query = "Select * From OrtizB21Su2332.LogOn " +
-                 "Where Username = '" + tbxUsername.Text + "' " +
-                 "And Password = '" + tbxPassword.Text + "';";
-            }
-            if (rdButtonB.Checked == true)
-            {
-                query = "Select * From OrtizB21Su2332.LogOn, OrtizB21Su2332.Employees " +
-                "Where EmployeeID = " + tbxUsername.Text + " " +
-                "and Password = '" + tbxPassword.Text + "';";
-            }
+                if (rdButtonA.Checked == true)
+                {
+                    query = "Select * From OrtizB21Su2332.LogOn " +
+                     "Where Username = '" + tbxUsername.Text + "' " +
+                     "And Password = '" + tbxPassword.Text + "';";
+                }
+                if (rdButtonB.Checked == true)
+                {
+                    query = "Select * From OrtizB21Su2332.LogOn, OrtizB21Su2332.Employees " +
+                    "Where EmployeeID = " + tbxUsername.Text + " " +
+                    "and Password = '" + tbxPassword.Text + "';";
+                }
 
 
-            //establush command object
-            _sqlResultsCommand = new SqlCommand(query, _conDatabase);
-            //establish data adapter
-            _daLogOn = new SqlDataAdapter();
-            _daLogOn.SelectCommand = _sqlResultsCommand;
-            //fill data table
-            _dtLogOn = new DataTable();
-            _daLogOn.Fill(_dtLogOn);
+                //establush command object
+                _sqlResultsCommand = new SqlCommand(query, _conDatabase);
+                //establish data adapter
+                _daLogOn = new SqlDataAdapter();
+                _daLogOn.SelectCommand = _sqlResultsCommand;
+                //fill data table
+                _dtLogOn = new DataTable();
+                _daLogOn.Fill(_dtLogOn);
 
-            if (_dtLogOn.Rows.Count == 1)
-            {
-                MessageBox.Show("User Was Found");
-                blnFound = true;
+                if (_dtLogOn.Rows.Count == 1)
+                {
+                    MessageBox.Show("User Was Found");
+                    blnFound = true;
+                }
+                else
+                {
+                    MessageBox.Show("User Was Not Found");
+                    blnFound = false;
+                }
             }
-            else
+
+            catch (SqlException ex)
             {
-                MessageBox.Show("User Was Not Found");
-                blnFound = false;
+                if (ex is SqlException)
+                {//handles more specific SqlException here.
+
+                    for (int i = 0; i < ex.Errors.Count; i++)
+                    {
+                        errorMessages.Append("Index #" + i + "\n" +
+                            "Message: " + ex.Errors[i].Message + "\n" +
+                            "LineNumber: " + ex.Errors[i].LineNumber + "\n" +
+                            "Source: " + ex.Errors[i].Source + "\n" +
+                            "Procedure: " + ex.Errors[i].Procedure + "\n");
+                    }
+                    MessageBox.Show(errorMessages.ToString(), "Error on DatabaseCommand", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
+
 
 
         }
         public static void CreateNewUser(TextBox tbxTitle, TextBox tbxFirstName, TextBox tbxMiddleName, TextBox tbxLastName, TextBox tbxSuffix, TextBox tbxAddress1, TextBox tbxAddress2, TextBox tbxAddress3,
-                                        TextBox tbxCity, TextBox tbxZipcode, TextBox tbxState, TextBox tbxEmail, TextBox tbxPhonePrim, TextBox tbxPhoneSecon, string query)
+                                        TextBox tbxCity, TextBox tbxZipcode, ComboBox cbxState, TextBox tbxEmail, MaskedTextBox mtbPhonePrim, MaskedTextBox mtbPhoneSecon, string query)
         {
             try
             {
@@ -171,7 +192,7 @@ namespace SU21_Final_Project
             intPersonID = (int)_sqlResultsCommand.ExecuteScalar();
 
         }
-        public static void CreateLogIn(TextBox tbxUsername, TextBox tbxPassword, ComboBox cmbSQuestion1, TextBox SQAnswer1, ComboBox cmbSQuestion2, TextBox SQAnswer2, String strQuery)
+        public static void CreateLogIn(TextBox tbxUsername, TextBox tbxPassword, ComboBox cmbSQuestion1, TextBox SQAnswer1, ComboBox cmbSQuestion2, TextBox SQAnswer2, ComboBox cmbSQuestion3 , TextBox SQAnswer3 ,String strQuery)
         {
             try
             {

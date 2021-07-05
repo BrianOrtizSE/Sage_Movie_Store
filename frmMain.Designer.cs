@@ -35,6 +35,7 @@ namespace SU21_Final_Project
             this.tsLogIn = new System.Windows.Forms.ToolStripMenuItem();
             this.addMerchandiseToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.createInvoiceToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.securityQuestionCheclToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.mnsMain.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -55,7 +56,8 @@ namespace SU21_Final_Project
             this.tsSignUp,
             this.tsLogIn,
             this.addMerchandiseToolStripMenuItem,
-            this.createInvoiceToolStripMenuItem});
+            this.createInvoiceToolStripMenuItem,
+            this.securityQuestionCheclToolStripMenuItem});
             this.tsOptions.Name = "tsOptions";
             this.tsOptions.Size = new System.Drawing.Size(52, 20);
             this.tsOptions.Text = "Log In";
@@ -64,30 +66,37 @@ namespace SU21_Final_Project
             // tsSignUp
             // 
             this.tsSignUp.Name = "tsSignUp";
-            this.tsSignUp.Size = new System.Drawing.Size(180, 22);
+            this.tsSignUp.Size = new System.Drawing.Size(203, 22);
             this.tsSignUp.Text = "Sign-Up";
             this.tsSignUp.Click += new System.EventHandler(this.tsSignUp_Click);
             // 
             // tsLogIn
             // 
             this.tsLogIn.Name = "tsLogIn";
-            this.tsLogIn.Size = new System.Drawing.Size(180, 22);
+            this.tsLogIn.Size = new System.Drawing.Size(203, 22);
             this.tsLogIn.Text = "Log In";
             this.tsLogIn.Click += new System.EventHandler(this.tsLogIn_Click);
             // 
             // addMerchandiseToolStripMenuItem
             // 
             this.addMerchandiseToolStripMenuItem.Name = "addMerchandiseToolStripMenuItem";
-            this.addMerchandiseToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.addMerchandiseToolStripMenuItem.Size = new System.Drawing.Size(203, 22);
             this.addMerchandiseToolStripMenuItem.Text = "Add Merchandise";
             this.addMerchandiseToolStripMenuItem.Click += new System.EventHandler(this.addMerchandiseToolStripMenuItem_Click);
             // 
             // createInvoiceToolStripMenuItem
             // 
             this.createInvoiceToolStripMenuItem.Name = "createInvoiceToolStripMenuItem";
-            this.createInvoiceToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.createInvoiceToolStripMenuItem.Size = new System.Drawing.Size(203, 22);
             this.createInvoiceToolStripMenuItem.Text = "Create Invoice";
             this.createInvoiceToolStripMenuItem.Click += new System.EventHandler(this.createInvoiceToolStripMenuItem_Click);
+            // 
+            // securityQuestionCheclToolStripMenuItem
+            // 
+            this.securityQuestionCheclToolStripMenuItem.Name = "securityQuestionCheclToolStripMenuItem";
+            this.securityQuestionCheclToolStripMenuItem.Size = new System.Drawing.Size(203, 22);
+            this.securityQuestionCheclToolStripMenuItem.Text = "Security Question Check";
+            this.securityQuestionCheclToolStripMenuItem.Click += new System.EventHandler(this.securityQuestionCheclToolStripMenuItem_Click);
             // 
             // frmMain
             // 
@@ -117,6 +126,7 @@ namespace SU21_Final_Project
         private System.Windows.Forms.ToolStripMenuItem tsLogIn;
         private System.Windows.Forms.ToolStripMenuItem addMerchandiseToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem createInvoiceToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem securityQuestionCheclToolStripMenuItem;
     }
 }
 
