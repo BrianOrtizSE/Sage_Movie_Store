@@ -36,6 +36,7 @@ namespace SU21_Final_Project
             this.addMerchandiseToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.createInvoiceToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.securityQuestionCheclToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.label1 = new System.Windows.Forms.Label();
             this.mnsMain.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -98,11 +99,21 @@ namespace SU21_Final_Project
             this.securityQuestionCheclToolStripMenuItem.Text = "Security Question Check";
             this.securityQuestionCheclToolStripMenuItem.Click += new System.EventHandler(this.securityQuestionCheclToolStripMenuItem_Click);
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(345, 83);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(35, 13);
+            this.label1.TabIndex = 1;
+            this.label1.Text = "label1";
+            // 
             // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.mnsMain);
             this.MainMenuStrip = this.mnsMain;
             this.Name = "frmMain";
@@ -127,6 +138,7 @@ namespace SU21_Final_Project
         private System.Windows.Forms.ToolStripMenuItem addMerchandiseToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem createInvoiceToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem securityQuestionCheclToolStripMenuItem;
+        private System.Windows.Forms.Label label1;
     }
 }
 
