@@ -37,7 +37,9 @@ namespace SU21_Final_Project
 
         private void logInToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            
+            ProgOps._PICTURE = 1;
+            frmHelp frmhelp = new frmHelp();
+            frmhelp.ShowDialog();
         }
 
         private void frmMain_FormClosing(object sender, FormClosingEventArgs e)

@@ -61,9 +61,9 @@ namespace SU21_Final_Project
                 ProgOps.LogOn(tbxUsername, tbxPassword, rdbCustomer, rdbEmployee, Text);
                 if (ProgOps.blnFound == true)
                 {
-                    frmMerhandiseView frmproductview = new frmMerhandiseView();
+                    frmCustomer_Main frmcustomermain = new frmCustomer_Main();
                     this.Hide();
-                    frmproductview.ShowDialog();
+                    frmcustomermain.ShowDialog();
                     this.Close();
                 }
                 else

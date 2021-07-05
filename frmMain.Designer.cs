@@ -31,12 +31,11 @@ namespace SU21_Final_Project
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmMain));
             this.mnsMain = new System.Windows.Forms.MenuStrip();
-            this.tsOptions = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnsHelp = new System.Windows.Forms.ToolStripMenuItem();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
             this.btnSignUp = new System.Windows.Forms.Button();
             this.btnSignIn = new System.Windows.Forms.Button();
-            this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.mnsMain.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -44,22 +43,21 @@ namespace SU21_Final_Project
             // mnsMain
             // 
             this.mnsMain.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.tsOptions});
+            this.mnsHelp});
             this.mnsMain.Location = new System.Drawing.Point(0, 0);
             this.mnsMain.Name = "mnsMain";
             this.mnsMain.Size = new System.Drawing.Size(800, 24);
             this.mnsMain.TabIndex = 0;
             this.mnsMain.Text = "menuStrip1";
             // 
-            // tsOptions
+            // mnsHelp
             // 
-            this.tsOptions.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
-            this.tsOptions.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.helpToolStripMenuItem});
-            this.tsOptions.Name = "tsOptions";
-            this.tsOptions.Size = new System.Drawing.Size(52, 20);
-            this.tsOptions.Text = "Log In";
-            this.tsOptions.Click += new System.EventHandler(this.logInToolStripMenuItem_Click);
+            this.mnsHelp.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
+            this.mnsHelp.Name = "mnsHelp";
+            this.mnsHelp.Size = new System.Drawing.Size(44, 20);
+            this.mnsHelp.Text = "Help";
+            this.mnsHelp.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.mnsHelp.Click += new System.EventHandler(this.logInToolStripMenuItem_Click);
             // 
             // pictureBox1
             // 
@@ -104,13 +102,6 @@ namespace SU21_Final_Project
             this.btnSignIn.UseVisualStyleBackColor = true;
             this.btnSignIn.Click += new System.EventHandler(this.btnSignIn_Click);
             // 
-            // helpToolStripMenuItem
-            // 
-            this.helpToolStripMenuItem.Name = "helpToolStripMenuItem";
-            this.helpToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.helpToolStripMenuItem.Text = "Help";
-            this.helpToolStripMenuItem.Click += new System.EventHandler(this.helpToolStripMenuItem_Click);
-            // 
             // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -140,12 +131,11 @@ namespace SU21_Final_Project
         #endregion
 
         private System.Windows.Forms.MenuStrip mnsMain;
-        private System.Windows.Forms.ToolStripMenuItem tsOptions;
+        private System.Windows.Forms.ToolStripMenuItem mnsHelp;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btnSignUp;
         private System.Windows.Forms.Button btnSignIn;
-        private System.Windows.Forms.ToolStripMenuItem helpToolStripMenuItem;
     }
 }
 

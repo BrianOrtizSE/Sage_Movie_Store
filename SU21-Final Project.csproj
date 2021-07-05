@@ -70,6 +70,18 @@
     <Compile Include="frmCreateInvoice.Designer.cs">
       <DependentUpon>frmCreateInvoice.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmCustomer_Main.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmCustomer_Main.Designer.cs">
+      <DependentUpon>frmCustomer_Main.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmHelp.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmHelp.Designer.cs">
+      <DependentUpon>frmHelp.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmMerchandiseAdd.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -112,6 +124,12 @@
     <Compile Include="ToDo.cs" />
     <EmbeddedResource Include="frmCreateInvoice.resx">
       <DependentUpon>frmCreateInvoice.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmCustomer_Main.resx">
+      <DependentUpon>frmCustomer_Main.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmHelp.resx">
+      <DependentUpon>frmHelp.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmLogIn.resx">
       <DependentUpon>frmLogIn.cs</DependentUpon>
@@ -177,6 +195,8 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="favicon %281%29.ico" />
+    <None Include="Resources\Sages_Movie_Store_SignUp.JPG" />
+    <None Include="Resources\Sages_Movie_Store_MainScreen.JPG" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
