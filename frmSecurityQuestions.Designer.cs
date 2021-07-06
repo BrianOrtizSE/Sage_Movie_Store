@@ -30,6 +30,7 @@ namespace SU21_Final_Project
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmSecurityQuestions));
             this.btnAdd = new System.Windows.Forms.Button();
             this.cmbSQuestion2 = new System.Windows.Forms.ComboBox();
             this.cmbSQuestion1 = new System.Windows.Forms.ComboBox();
@@ -41,10 +42,10 @@ namespace SU21_Final_Project
             this.lblPassword = new System.Windows.Forms.Label();
             this.lblSQuestion1 = new System.Windows.Forms.Label();
             this.lblSQAnwser = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
+            this.lblSQ2 = new System.Windows.Forms.Label();
             this.lblSQAnwser2 = new System.Windows.Forms.Label();
             this.lblSQuestion3 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
+            this.lblSQA3 = new System.Windows.Forms.Label();
             this.cmbQuestion3 = new System.Windows.Forms.ComboBox();
             this.tbxSQAnswer3 = new System.Windows.Forms.TextBox();
             this.lblErrorUserName = new System.Windows.Forms.Label();
@@ -58,9 +59,9 @@ namespace SU21_Final_Project
             this.lblRetypePassword = new System.Windows.Forms.Label();
             this.tbxRetypePassword = new System.Windows.Forms.TextBox();
             this.TTError = new System.Windows.Forms.ToolTip(this.components);
-            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.mnsHelp = new System.Windows.Forms.MenuStrip();
             this.smnHelp = new System.Windows.Forms.ToolStripMenuItem();
-            this.menuStrip1.SuspendLayout();
+            this.mnsHelp.SuspendLayout();
             this.SuspendLayout();
             // 
             // btnAdd
@@ -197,15 +198,15 @@ namespace SU21_Final_Project
             this.lblSQAnwser.TabIndex = 17;
             this.lblSQAnwser.Text = "Answer To Question 1 : ";
             // 
-            // label5
+            // lblSQ2
             // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(67, 251);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(128, 16);
-            this.label5.TabIndex = 20;
-            this.label5.Text = "Security Question 2 :";
+            this.lblSQ2.AutoSize = true;
+            this.lblSQ2.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSQ2.Location = new System.Drawing.Point(67, 251);
+            this.lblSQ2.Name = "lblSQ2";
+            this.lblSQ2.Size = new System.Drawing.Size(128, 16);
+            this.lblSQ2.TabIndex = 20;
+            this.lblSQ2.Text = "Security Question 2 :";
             // 
             // lblSQAnwser2
             // 
@@ -227,15 +228,15 @@ namespace SU21_Final_Project
             this.lblSQuestion3.TabIndex = 24;
             this.lblSQuestion3.Text = "Security Question 3 :";
             // 
-            // label2
+            // lblSQA3
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(47, 364);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(148, 16);
-            this.label2.TabIndex = 23;
-            this.label2.Text = "Answer To Question 3 : ";
+            this.lblSQA3.AutoSize = true;
+            this.lblSQA3.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSQA3.Location = new System.Drawing.Point(47, 364);
+            this.lblSQA3.Name = "lblSQA3";
+            this.lblSQA3.Size = new System.Drawing.Size(148, 16);
+            this.lblSQA3.TabIndex = 23;
+            this.lblSQA3.Text = "Answer To Question 3 : ";
             // 
             // cmbQuestion3
             // 
@@ -403,15 +404,15 @@ namespace SU21_Final_Project
             // 
             this.TTError.Tag = "lblErrorUserName";
             // 
-            // menuStrip1
+            // mnsHelp
             // 
-            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.mnsHelp.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.smnHelp});
-            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
-            this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(659, 24);
-            this.menuStrip1.TabIndex = 76;
-            this.menuStrip1.Text = "menuStrip1";
+            this.mnsHelp.Location = new System.Drawing.Point(0, 0);
+            this.mnsHelp.Name = "mnsHelp";
+            this.mnsHelp.Size = new System.Drawing.Size(659, 24);
+            this.mnsHelp.TabIndex = 76;
+            this.mnsHelp.Text = "menuStrip1";
             // 
             // smnHelp
             // 
@@ -426,7 +427,6 @@ namespace SU21_Final_Project
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(659, 533);
-            this.ControlBox = false;
             this.Controls.Add(this.lblErrorRetype);
             this.Controls.Add(this.lblRetypePassword);
             this.Controls.Add(this.tbxRetypePassword);
@@ -438,10 +438,10 @@ namespace SU21_Final_Project
             this.Controls.Add(this.lblPasswordText);
             this.Controls.Add(this.lblErrorUserName);
             this.Controls.Add(this.lblSQuestion3);
-            this.Controls.Add(this.label2);
+            this.Controls.Add(this.lblSQA3);
             this.Controls.Add(this.cmbQuestion3);
             this.Controls.Add(this.tbxSQAnswer3);
-            this.Controls.Add(this.label5);
+            this.Controls.Add(this.lblSQ2);
             this.Controls.Add(this.lblSQAnwser2);
             this.Controls.Add(this.lblSQuestion1);
             this.Controls.Add(this.lblSQAnwser);
@@ -454,14 +454,16 @@ namespace SU21_Final_Project
             this.Controls.Add(this.tbxSQAnswer1);
             this.Controls.Add(this.tbxPassword);
             this.Controls.Add(this.tbxUsername);
-            this.Controls.Add(this.menuStrip1);
-            this.MainMenuStrip = this.menuStrip1;
+            this.Controls.Add(this.mnsHelp);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MainMenuStrip = this.mnsHelp;
+            this.MaximizeBox = false;
             this.Name = "frmSecurityQuestions";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Security Questions";
             this.Load += new System.EventHandler(this.frmSecurityQuestions_Load);
-            this.menuStrip1.ResumeLayout(false);
-            this.menuStrip1.PerformLayout();
+            this.mnsHelp.ResumeLayout(false);
+            this.mnsHelp.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -480,10 +482,10 @@ namespace SU21_Final_Project
         private System.Windows.Forms.Label lblPassword;
         private System.Windows.Forms.Label lblSQuestion1;
         private System.Windows.Forms.Label lblSQAnwser;
-        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label lblSQ2;
         private System.Windows.Forms.Label lblSQAnwser2;
         private System.Windows.Forms.Label lblSQuestion3;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label lblSQA3;
         private System.Windows.Forms.ComboBox cmbQuestion3;
         private System.Windows.Forms.TextBox tbxSQAnswer3;
         private System.Windows.Forms.Label lblErrorUserName;
@@ -497,7 +499,7 @@ namespace SU21_Final_Project
         private System.Windows.Forms.Label lblRetypePassword;
         private System.Windows.Forms.TextBox tbxRetypePassword;
         private System.Windows.Forms.ToolTip TTError;
-        private System.Windows.Forms.MenuStrip menuStrip1;
+        private System.Windows.Forms.MenuStrip mnsHelp;
         private System.Windows.Forms.ToolStripMenuItem smnHelp;
     }
 }

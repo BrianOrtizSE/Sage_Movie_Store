@@ -29,6 +29,7 @@ namespace SU21_Final_Project
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmMerhandiseView));
             this.dgvView = new System.Windows.Forms.DataGridView();
             this.btnClose = new System.Windows.Forms.Button();
             this.tbxProductID = new System.Windows.Forms.TextBox();
@@ -125,7 +126,6 @@ namespace SU21_Final_Project
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(977, 450);
-            this.ControlBox = false;
             this.Controls.Add(this.btnReset);
             this.Controls.Add(this.btnSearch);
             this.Controls.Add(this.lblSearch);
@@ -133,7 +133,9 @@ namespace SU21_Final_Project
             this.Controls.Add(this.btnClose);
             this.Controls.Add(this.dgvView);
             this.Controls.Add(this.menuStrip1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.menuStrip1;
+            this.MinimizeBox = false;
             this.Name = "frmMerhandiseView";
             this.Text = "Product View";
             this.Load += new System.EventHandler(this.frmProductView_Load);

@@ -202,7 +202,6 @@ namespace SU21_Final_Project
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(516, 417);
-            this.ControlBox = false;
             this.Controls.Add(this.btnForgotPassword);
             this.Controls.Add(this.lblMainText);
             this.Controls.Add(this.lblBlackLine);
@@ -218,6 +217,7 @@ namespace SU21_Final_Project
             this.Controls.Add(this.menuStrip1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.menuStrip1;
+            this.MaximizeBox = false;
             this.Name = "frmLogIn";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Log In Form";

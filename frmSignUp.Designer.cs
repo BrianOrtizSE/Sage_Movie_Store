@@ -30,6 +30,7 @@ namespace SU21_Final_Project
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmSignUp));
             this.btnAdd = new System.Windows.Forms.Button();
             this.lblPhoneSecondary = new System.Windows.Forms.Label();
             this.lblPhonePrimary = new System.Windows.Forms.Label();
@@ -685,7 +686,6 @@ namespace SU21_Final_Project
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(829, 395);
-            this.ControlBox = false;
             this.Controls.Add(this.lblRequriemtsn);
             this.Controls.Add(this.lblMainText);
             this.Controls.Add(this.lblBlackLine);
@@ -735,6 +735,7 @@ namespace SU21_Final_Project
             this.Controls.Add(this.tbxTitle);
             this.Controls.Add(this.menuStrip1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.menuStrip1;
             this.MaximizeBox = false;
             this.Name = "frmSignUp";

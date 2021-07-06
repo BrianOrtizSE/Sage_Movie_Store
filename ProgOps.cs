@@ -60,10 +60,6 @@ namespace SU21_Final_Project
             {
                 //Try to open the database
                 _conDatabase.Open();
-
-                //If it worked
-                MessageBox.Show("Connection to Database Opened Successfully!", "Connection Status",
-                                MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             catch (Exception e) //Note: May change to SqlException down the road
             {
@@ -79,9 +75,6 @@ namespace SU21_Final_Project
                 //closes Database 
                 _conDatabase.Close();
                 _conDatabase.Dispose();
-
-                MessageBox.Show("Connection to Database Closed Successfully!", "Connection Status",
-                MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             catch (Exception e) //Note: May change to SqlException down the road
             {
