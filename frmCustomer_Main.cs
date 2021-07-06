@@ -27,7 +27,10 @@ namespace SU21_Final_Project
 
         private void btnView_Click(object sender, EventArgs e)
         {
-
+            frmMerhandiseView frmMerhandise = new frmMerhandiseView();
+            this.Hide();
+            frmMerhandise.ShowDialog();
+            this.Close();
         }
 
         private void btnInfo_Click(object sender, EventArgs e)
@@ -44,6 +47,15 @@ namespace SU21_Final_Project
         private void btnSignOut_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void helpToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmHelp frmhelp = new frmHelp();
+            ProgOps._PICTURE = 5;
+            this.Hide();
+            frmhelp.ShowDialog();
+            this.Show();
         }
     }
 }

@@ -123,7 +123,6 @@ namespace SU21_Final_Project
             StringBuilder errorMessages = new StringBuilder();
 
             int intInStock;
-            int intRow;
 
             string savedName = tbxProductName.Text;
 

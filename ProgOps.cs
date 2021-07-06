@@ -273,18 +273,38 @@ namespace SU21_Final_Project
         public static void GrabProduct(TextBox tbxProductID, DataGridView dgvOrders, String strQuery)
         {
 
+            try
+            {
+                //Establish Command Object
+                _sqlResultsCommand = new SqlCommand(strQuery, _conDatabase);
 
-            //Establish Command Object
-            _sqlResultsCommand = new SqlCommand(strQuery, _conDatabase);
+                //Establish Data Adapter
+                _daProduct = new SqlDataAdapter();
+                _daProduct.SelectCommand = _sqlResultsCommand;
 
-            //Establish Data Adapter
-            _daProduct = new SqlDataAdapter();
-            _daProduct.SelectCommand = _sqlResultsCommand;
+                //Fill Data Table
+                _dtProductTable = new DataTable();
+                _daProduct.Fill(_dtProductTable);
+                dgvOrders.DataSource = _dtProductTable;
+            }
+            catch (SqlException ex)
+            {
+                if (ex is SqlException)
+                {//handles more specific SqlException here.
 
-            //Fill Data Table
-            _dtProductTable = new DataTable();
-            _daProduct.Fill(_dtProductTable);
-            dgvOrders.DataSource = _dtProductTable;
+                    for (int i = 0; i < ex.Errors.Count; i++)
+                    {
+                        errorMessages.Append("Index #" + i + "\n" +
+                            "Message: " + ex.Errors[i].Message + "\n" +
+                            "LineNumber: " + ex.Errors[i].LineNumber + "\n" +
+                            "Source: " + ex.Errors[i].Source + "\n" +
+                            "Procedure: " + ex.Errors[i].Procedure + "\n");
+                    }
+                    MessageBox.Show(errorMessages.ToString(), "Error on DatabaseCommand", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+
+
 
         }
         public static void ProductView(TextBox tbxProductID, TextBox ProductName, TextBox tbxGenre, TextBox tbxQuanity, TextBox tbxPrice, TextBox tbxDescription, CheckBox chxInStock)

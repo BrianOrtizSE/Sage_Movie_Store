@@ -31,6 +31,8 @@ namespace SU21_Final_Project
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmCreateInvoice));
             this.pnlCheckout = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
+            this.lblMonth = new System.Windows.Forms.Label();
             this.lblBlackLine = new System.Windows.Forms.Label();
             this.lblCheckOut = new System.Windows.Forms.Label();
             this.cmbYear = new System.Windows.Forms.ComboBox();
@@ -68,8 +70,6 @@ namespace SU21_Final_Project
             this.btnCheckOut = new System.Windows.Forms.Button();
             this.btnCloseShop = new System.Windows.Forms.Button();
             this.pnlCart = new System.Windows.Forms.Panel();
-            this.lblMonth = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
             this.pnlCheckout.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProducts)).BeginInit();
             this.pnlCart.SuspendLayout();
@@ -104,6 +104,26 @@ namespace SU21_Final_Project
             this.pnlCheckout.TabIndex = 34;
             this.pnlCheckout.Visible = false;
             this.pnlCheckout.Paint += new System.Windows.Forms.PaintEventHandler(this.pnlCheckout_Paint);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(107, 261);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(34, 16);
+            this.label1.TabIndex = 83;
+            this.label1.Text = "Year";
+            // 
+            // lblMonth
+            // 
+            this.lblMonth.AutoSize = true;
+            this.lblMonth.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblMonth.Location = new System.Drawing.Point(10, 261);
+            this.lblMonth.Name = "lblMonth";
+            this.lblMonth.Size = new System.Drawing.Size(43, 16);
+            this.lblMonth.TabIndex = 82;
+            this.lblMonth.Text = "Month";
             // 
             // lblBlackLine
             // 
@@ -249,6 +269,7 @@ namespace SU21_Final_Project
             this.lbxCheckOutCart.Name = "lbxCheckOutCart";
             this.lbxCheckOutCart.Size = new System.Drawing.Size(232, 484);
             this.lbxCheckOutCart.TabIndex = 0;
+            this.lbxCheckOutCart.UseTabStops = false;
             // 
             // lblCardNumber
             // 
@@ -393,6 +414,7 @@ namespace SU21_Final_Project
             this.lbxOrder.Name = "lbxOrder";
             this.lbxOrder.Size = new System.Drawing.Size(272, 394);
             this.lbxOrder.TabIndex = 30;
+            this.lbxOrder.TabStop = false;
             // 
             // lbltextID
             // 
@@ -526,26 +548,6 @@ namespace SU21_Final_Project
             this.pnlCart.Name = "pnlCart";
             this.pnlCart.Size = new System.Drawing.Size(1124, 519);
             this.pnlCart.TabIndex = 33;
-            // 
-            // lblMonth
-            // 
-            this.lblMonth.AutoSize = true;
-            this.lblMonth.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblMonth.Location = new System.Drawing.Point(10, 261);
-            this.lblMonth.Name = "lblMonth";
-            this.lblMonth.Size = new System.Drawing.Size(43, 16);
-            this.lblMonth.TabIndex = 82;
-            this.lblMonth.Text = "Month";
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(107, 261);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(34, 16);
-            this.label1.TabIndex = 83;
-            this.label1.Text = "Year";
             // 
             // frmCreateInvoice
             // 
