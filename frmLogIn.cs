@@ -59,8 +59,15 @@ namespace SU21_Final_Project
             else
             {
                 ProgOps.LogOn(tbxUsername, tbxPassword, rdbCustomer, rdbEmployee, Text);
+
+
                 if (ProgOps.blnFound == true)
                 {
+                    string strQuery = "Select PersonID From OrtizB21Su2332.LogOn " +
+                    "Where Username = '" + tbxUsername.Text + "' " +
+                     "And Password = '" + tbxPassword.Text + "';";
+                    ProgOps.GrabPersonInfo(strQuery);
+
                     frmCustomer_Main frmcustomermain = new frmCustomer_Main();
                     this.Hide();
                     frmcustomermain.ShowDialog();

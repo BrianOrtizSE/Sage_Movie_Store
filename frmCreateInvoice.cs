@@ -404,6 +404,14 @@ namespace SU21_Final_Project
             {
                 
                 ReportPrint(Reciept(decSubTotal, decDiscountPercent, decTaxTotal, decTotal));
+
+
+                strQuery = "Insert into OrtizB21Su2332.Invoice(PersonID, TotalPrice , TransData)" +
+                    "values(" + ProgOps.intPersonID + "," + decTotal + ",GETDATE()" + ")";
+                ProgOps.CreateInvoice(strQuery);
+
+
+
                 this.Close();
             }
         }
