@@ -87,7 +87,7 @@ namespace SU21_Final_Project
         private void btnAddToOrder_Click(object sender, EventArgs e)
         {
             decimal dblPrice;
-            int intQuantity;
+            int intQuantity = 0;
 
             //small check for ProdID
             if(tbxProductID.Text == "")
@@ -116,36 +116,51 @@ namespace SU21_Final_Project
                 }
             }
 
+            
+            
             if(lblError.Visible == false && lblProdError.Visible == false)
             {
+
+              
 
                 strQuery = "Select ProductID , ProductName , Genre , ProductDescription , Quantity , ProductPrice From OrtizB21Su2332.Products Where Quantity > 0 and ProductID = " + tbxProductID.Text;
                 ProgOps.GrabProduct(tbxProductID, dgvProducts, strQuery);
 
                 if(dgvProducts.RowCount != 1)
                 {
-                    dblPrice = Convert.ToDecimal(dgvProducts.CurrentRow.Cells[5].Value);
-                    prodlist.Add(new ProdList((int)dgvProducts.CurrentRow.Cells[0].Value, dgvProducts.CurrentRow.Cells[1].Value.ToString(), dblPrice, int.Parse(tbxQuantity.Text)));
-                    
+                    strQuery = "Select Quantity From OrtizB21Su2332.Products Where ProductID = " + tbxProductID.Text;
+                    ProgOps.GrabAmount(strQuery);
 
-                    //Write Items to ListBox / Cart
-                    lbxOrder.Items.Clear();
-                    for(int i = 0; i < prodlist.Count(); i++)
+                    if (int.Parse(tbxQuantity.Text) > ProgOps.intQuantity)
                     {
-                        lbxOrder.Items.Add("Title: " + prodlist[i].strProdName + " | $" + prodlist[i].dblProdPrice + " | " + prodlist[i].intProdQuan);
-                    } 
+                        MessageBox.Show("Quanity Ordered Cannot Be Greater Than That Of Inventory", "Over Quantity", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                    else
+                    {
+                        dblPrice = Convert.ToDecimal(dgvProducts.CurrentRow.Cells[5].Value);
+                        prodlist.Add(new ProdList((int)dgvProducts.CurrentRow.Cells[0].Value, dgvProducts.CurrentRow.Cells[1].Value.ToString(), dblPrice, int.Parse(tbxQuantity.Text)));
+
+
+                        //Write Items to ListBox / Cart
+                        lbxOrder.Items.Clear();
+                        for (int i = 0; i < prodlist.Count(); i++)
+                        {
+                            lbxOrder.Items.Add("Title: " + prodlist[i].strProdName + " | $" + prodlist[i].dblProdPrice + " | " + prodlist[i].intProdQuan);
+                        }
+
+
+                        //Update the total and its label
+                        decTotal += dblPrice * decimal.Parse(tbxQuantity.Text);
+                        lblToalPrice.Text = "Total : \t" + decTotal.ToString("c2");
+
+
+
+                        //Reset User
+                        tbxProductID.Clear();
+                        tbxQuantity.Clear();
+                        tbxProductID.Focus();
+                    }
                     
-
-                    //Update the total and its label
-                    decTotal += dblPrice * decimal.Parse(tbxQuantity.Text);
-                    lblToalPrice.Text = "Total : \t" + decTotal.ToString("c2");
-
-                    
-
-                    //Reset User
-                    tbxProductID.Clear();
-                    tbxQuantity.Clear();
-                    tbxProductID.Focus();
 
                 }
                 else

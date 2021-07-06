@@ -94,7 +94,7 @@ namespace SU21_Final_Project
             this.pnlCheckout.Controls.Add(this.rdbVisa);
             this.pnlCheckout.Controls.Add(this.btnPay);
             this.pnlCheckout.Controls.Add(this.lblCardName);
-            this.pnlCheckout.Location = new System.Drawing.Point(49, 12);
+            this.pnlCheckout.Location = new System.Drawing.Point(21, 12);
             this.pnlCheckout.Name = "pnlCheckout";
             this.pnlCheckout.Size = new System.Drawing.Size(632, 551);
             this.pnlCheckout.TabIndex = 34;

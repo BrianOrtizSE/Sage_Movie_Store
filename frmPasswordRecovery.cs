@@ -134,19 +134,14 @@ namespace SU21_Final_Project
         private void button1_Click(object sender, EventArgs e)
         {
             intSearch++;
-
-            if(intSearch > 3)
-            {
-                intSearch = 1;
-            }
-
+            tbxSQA.Text.ToLower();
             FindPassword();
         }
 
         public void FindPassword()
         {
-            
 
+            ProgOps.blnFound = false;
             String strQuery;
 
 
@@ -160,6 +155,7 @@ namespace SU21_Final_Project
                     if (cmbSQ.Text == string.Empty || tbxSQA.Text == string.Empty)
                     {
                         MessageBox.Show("Security Question and Security Awnser can not be Empty", "Empty Error", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        intSearch--;
                     }
                     else
                     {
@@ -189,6 +185,7 @@ namespace SU21_Final_Project
                     if (cmbSQ.Text == string.Empty || tbxSQA.Text == string.Empty)
                     {
                         MessageBox.Show("Security Question and Security Awnser can not be Empty", "Empty Error", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        intSearch--;
                     }
                     else
                     {
@@ -218,6 +215,7 @@ namespace SU21_Final_Project
                     if (cmbSQ.Text == string.Empty || tbxSQA.Text == string.Empty)
                     {
                         MessageBox.Show("Security Question and Security Awnser can not be Empty", "Empty Error", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        intSearch--;
                     }
                     else
                     {

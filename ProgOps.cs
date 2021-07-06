@@ -42,7 +42,7 @@ namespace SU21_Final_Project
 
         //Int for PersonID
         public static int intPersonID;
-
+        public static int intQuantity;
 
         public static decimal decDiscountPercent = 0.0m;
         public static int intProductID = 0;
@@ -219,7 +219,27 @@ namespace SU21_Final_Project
 
             }
         }
+        public static void GrabAmount(string strQuery)
+        {
+            try
+            {
+                //Use this Function To Grab Person ID whenever this is called
+                _sqlResultsCommand = new SqlCommand(strQuery, _conDatabase);
 
+                //Grab PersonID so we can cretae LogIn Info
+                intQuantity = (int)_sqlResultsCommand.ExecuteScalar();
+            }
+            catch (InvalidCastException)
+            {
+
+                MessageBox.Show("Error Invalid Cast", "Error on DatabaseCommand", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+            }
+            catch (NullReferenceException)
+            {
+                MessageBox.Show("NULL Cast", "Error on DatabaseCommand", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
         public static void CreateLogIn(TextBox tbxUsername, TextBox tbxPassword, ComboBox cmbSQuestion1, TextBox SQAnswer1, ComboBox cmbSQuestion2, TextBox SQAnswer2, ComboBox cmbSQuestion3 , TextBox SQAnswer3 ,String strQuery)
         {
             try
