@@ -88,5 +88,14 @@ namespace SU21_Final_Project
                 e.Handled = true;
             }
         }
+
+        private void mnsHelp_Click(object sender, EventArgs e)
+        {
+            ProgOps._PICTURE = 8;
+            this.Hide();
+            frmHelp frmhelp = new frmHelp();
+            frmhelp.ShowDialog();
+            this.Show();
+        }
     }
 }

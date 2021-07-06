@@ -30,7 +30,7 @@ namespace SU21_Final_Project
             frmMerhandiseView frmMerhandise = new frmMerhandiseView();
             this.Hide();
             frmMerhandise.ShowDialog();
-            this.Close();
+            this.Show();
         }
 
         private void btnInfo_Click(object sender, EventArgs e)
@@ -56,6 +56,11 @@ namespace SU21_Final_Project
             this.Hide();
             frmhelp.ShowDialog();
             this.Show();
+        }
+
+        private void frmCustomer_Main_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

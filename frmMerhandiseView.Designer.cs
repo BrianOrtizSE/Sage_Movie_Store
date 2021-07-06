@@ -35,7 +35,10 @@ namespace SU21_Final_Project
             this.lblSearch = new System.Windows.Forms.Label();
             this.btnSearch = new System.Windows.Forms.Button();
             this.btnReset = new System.Windows.Forms.Button();
+            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.mnsHelp = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.dgvView)).BeginInit();
+            this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // dgvView
@@ -99,6 +102,24 @@ namespace SU21_Final_Project
             this.btnReset.UseVisualStyleBackColor = true;
             this.btnReset.Click += new System.EventHandler(this.btnReset_Click);
             // 
+            // menuStrip1
+            // 
+            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.mnsHelp});
+            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
+            this.menuStrip1.Name = "menuStrip1";
+            this.menuStrip1.Size = new System.Drawing.Size(977, 24);
+            this.menuStrip1.TabIndex = 6;
+            this.menuStrip1.Text = "menuStrip1";
+            // 
+            // mnsHelp
+            // 
+            this.mnsHelp.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
+            this.mnsHelp.Name = "mnsHelp";
+            this.mnsHelp.Size = new System.Drawing.Size(44, 20);
+            this.mnsHelp.Text = "Help";
+            this.mnsHelp.Click += new System.EventHandler(this.mnsHelp_Click);
+            // 
             // frmMerhandiseView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -111,10 +132,14 @@ namespace SU21_Final_Project
             this.Controls.Add(this.tbxProductID);
             this.Controls.Add(this.btnClose);
             this.Controls.Add(this.dgvView);
+            this.Controls.Add(this.menuStrip1);
+            this.MainMenuStrip = this.menuStrip1;
             this.Name = "frmMerhandiseView";
             this.Text = "Product View";
             this.Load += new System.EventHandler(this.frmProductView_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvView)).EndInit();
+            this.menuStrip1.ResumeLayout(false);
+            this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -127,5 +152,7 @@ namespace SU21_Final_Project
         private System.Windows.Forms.Label lblSearch;
         private System.Windows.Forms.Button btnSearch;
         private System.Windows.Forms.Button btnReset;
+        private System.Windows.Forms.MenuStrip menuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem mnsHelp;
     }
 }

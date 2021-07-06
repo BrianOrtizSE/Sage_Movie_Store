@@ -597,6 +597,24 @@ namespace SU21_Final_Project
             }
         }
 
-
+        private void helpToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (pnlCart.Visible)
+            {
+                ProgOps._PICTURE = 6;
+                this.Hide();
+                frmHelp frmhelp = new frmHelp();
+                frmhelp.ShowDialog();
+                this.Show();
+            }
+            else
+            {
+                ProgOps._PICTURE = 7;
+                this.Hide();
+                frmHelp frmhelp = new frmHelp();
+                frmhelp.ShowDialog();
+                this.Show();
+            }
+        }
     }
 }

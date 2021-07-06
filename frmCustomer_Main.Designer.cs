@@ -165,6 +165,7 @@ namespace SU21_Final_Project
             this.Name = "frmCustomer_Main";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Customer Main Menu";
+            this.Load += new System.EventHandler(this.frmCustomer_Main_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();

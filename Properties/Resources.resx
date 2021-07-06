@@ -136,4 +136,16 @@
   <data name="Logo_SMS1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Logo_SMS.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="Sages_Movie_Store_CheckOut" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Sages_Movie_Store_CheckOut.JPG;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Sages_Movie_Store_CustomerMainScreen" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Sages_Movie_Store_CustomerMainScreen.JPG;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Sages_Movie_Store_MerchandiseView" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Sages_Movie_Store_MerchandiseView.JPG;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Sages_Movie_Store_Shop" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Sages_Movie_Store_Shop.JPG;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
 </root>

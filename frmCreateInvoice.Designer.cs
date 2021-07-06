@@ -70,9 +70,12 @@ namespace SU21_Final_Project
             this.btnCheckOut = new System.Windows.Forms.Button();
             this.btnCloseShop = new System.Windows.Forms.Button();
             this.pnlCart = new System.Windows.Forms.Panel();
+            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.pnlCheckout.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProducts)).BeginInit();
             this.pnlCart.SuspendLayout();
+            this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // pnlCheckout
@@ -98,7 +101,7 @@ namespace SU21_Final_Project
             this.pnlCheckout.Controls.Add(this.rdbVisa);
             this.pnlCheckout.Controls.Add(this.btnPay);
             this.pnlCheckout.Controls.Add(this.lblCardName);
-            this.pnlCheckout.Location = new System.Drawing.Point(21, 12);
+            this.pnlCheckout.Location = new System.Drawing.Point(12, 12);
             this.pnlCheckout.Name = "pnlCheckout";
             this.pnlCheckout.Size = new System.Drawing.Size(632, 551);
             this.pnlCheckout.TabIndex = 34;
@@ -549,6 +552,24 @@ namespace SU21_Final_Project
             this.pnlCart.Size = new System.Drawing.Size(1124, 519);
             this.pnlCart.TabIndex = 33;
             // 
+            // menuStrip1
+            // 
+            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.helpToolStripMenuItem});
+            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
+            this.menuStrip1.Name = "menuStrip1";
+            this.menuStrip1.Size = new System.Drawing.Size(1184, 24);
+            this.menuStrip1.TabIndex = 35;
+            this.menuStrip1.Text = "menuStrip1";
+            // 
+            // helpToolStripMenuItem
+            // 
+            this.helpToolStripMenuItem.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
+            this.helpToolStripMenuItem.Name = "helpToolStripMenuItem";
+            this.helpToolStripMenuItem.Size = new System.Drawing.Size(44, 20);
+            this.helpToolStripMenuItem.Text = "Help";
+            this.helpToolStripMenuItem.Click += new System.EventHandler(this.helpToolStripMenuItem_Click);
+            // 
             // frmCreateInvoice
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -557,8 +578,10 @@ namespace SU21_Final_Project
             this.ControlBox = false;
             this.Controls.Add(this.pnlCheckout);
             this.Controls.Add(this.pnlCart);
+            this.Controls.Add(this.menuStrip1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MainMenuStrip = this.menuStrip1;
             this.MaximizeBox = false;
             this.Name = "frmCreateInvoice";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -569,7 +592,10 @@ namespace SU21_Final_Project
             ((System.ComponentModel.ISupportInitialize)(this.dgvProducts)).EndInit();
             this.pnlCart.ResumeLayout(false);
             this.pnlCart.PerformLayout();
+            this.menuStrip1.ResumeLayout(false);
+            this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -614,5 +640,7 @@ namespace SU21_Final_Project
         private System.Windows.Forms.Label lblCheckOut;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label lblMonth;
+        private System.Windows.Forms.MenuStrip menuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem helpToolStripMenuItem;
     }
 }
