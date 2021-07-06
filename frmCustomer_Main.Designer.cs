@@ -86,7 +86,7 @@ namespace SU21_Final_Project
             this.btnView.Location = new System.Drawing.Point(137, 209);
             this.btnView.Name = "btnView";
             this.btnView.Size = new System.Drawing.Size(131, 49);
-            this.btnView.TabIndex = 26;
+            this.btnView.TabIndex = 1;
             this.btnView.Text = "View Merchandise";
             this.btnView.UseVisualStyleBackColor = true;
             this.btnView.Click += new System.EventHandler(this.btnView_Click);
@@ -97,7 +97,7 @@ namespace SU21_Final_Project
             this.btnShop.Location = new System.Drawing.Point(137, 114);
             this.btnShop.Name = "btnShop";
             this.btnShop.Size = new System.Drawing.Size(131, 49);
-            this.btnShop.TabIndex = 25;
+            this.btnShop.TabIndex = 0;
             this.btnShop.Text = "&Shop";
             this.btnShop.UseVisualStyleBackColor = true;
             this.btnShop.Click += new System.EventHandler(this.btnShop_Click);
@@ -108,7 +108,7 @@ namespace SU21_Final_Project
             this.btnSignOut.Location = new System.Drawing.Point(137, 295);
             this.btnSignOut.Name = "btnSignOut";
             this.btnSignOut.Size = new System.Drawing.Size(131, 49);
-            this.btnSignOut.TabIndex = 32;
+            this.btnSignOut.TabIndex = 2;
             this.btnSignOut.Text = "Sign Out";
             this.btnSignOut.UseVisualStyleBackColor = true;
             this.btnSignOut.Click += new System.EventHandler(this.btnSignOut_Click);

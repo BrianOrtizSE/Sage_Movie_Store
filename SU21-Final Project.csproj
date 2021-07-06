@@ -106,6 +106,12 @@
     <Compile Include="frmMerhandiseView.Designer.cs">
       <DependentUpon>frmMerhandiseView.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmPasswordRecovery.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmPasswordRecovery.Designer.cs">
+      <DependentUpon>frmPasswordRecovery.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmSecurityQuestions.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -142,6 +148,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmMerhandiseView.resx">
       <DependentUpon>frmMerhandiseView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmPasswordRecovery.resx">
+      <DependentUpon>frmPasswordRecovery.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmSecurityQuestions.resx">
       <DependentUpon>frmSecurityQuestions.cs</DependentUpon>

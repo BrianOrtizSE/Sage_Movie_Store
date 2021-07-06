@@ -43,6 +43,7 @@ namespace SU21_Final_Project
             this.lblBlackLine = new System.Windows.Forms.Label();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.tsmHelp = new System.Windows.Forms.ToolStripMenuItem();
+            this.btnForgotPassword = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -66,11 +67,12 @@ namespace SU21_Final_Project
             // rdbCustomer
             // 
             this.rdbCustomer.AutoSize = true;
+            this.rdbCustomer.Checked = true;
             this.rdbCustomer.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.rdbCustomer.Location = new System.Drawing.Point(95, 95);
             this.rdbCustomer.Name = "rdbCustomer";
             this.rdbCustomer.Size = new System.Drawing.Size(112, 19);
-            this.rdbCustomer.TabIndex = 2;
+            this.rdbCustomer.TabIndex = 4;
             this.rdbCustomer.TabStop = true;
             this.rdbCustomer.Text = "Customer Login";
             this.rdbCustomer.UseVisualStyleBackColor = true;
@@ -83,18 +85,17 @@ namespace SU21_Final_Project
             this.rdbEmployee.Location = new System.Drawing.Point(245, 95);
             this.rdbEmployee.Name = "rdbEmployee";
             this.rdbEmployee.Size = new System.Drawing.Size(114, 19);
-            this.rdbEmployee.TabIndex = 3;
-            this.rdbEmployee.TabStop = true;
+            this.rdbEmployee.TabIndex = 5;
             this.rdbEmployee.Text = "Employee Login";
             this.rdbEmployee.UseVisualStyleBackColor = true;
             this.rdbEmployee.CheckedChanged += new System.EventHandler(this.rdEmployee_CheckedChanged);
             // 
             // btnLogin
             // 
-            this.btnLogin.Location = new System.Drawing.Point(138, 274);
+            this.btnLogin.Location = new System.Drawing.Point(76, 272);
             this.btnLogin.Name = "btnLogin";
-            this.btnLogin.Size = new System.Drawing.Size(88, 28);
-            this.btnLogin.TabIndex = 4;
+            this.btnLogin.Size = new System.Drawing.Size(99, 35);
+            this.btnLogin.TabIndex = 2;
             this.btnLogin.Text = "&Log In";
             this.btnLogin.UseVisualStyleBackColor = true;
             this.btnLogin.Click += new System.EventHandler(this.btnLogin_Click);
@@ -106,7 +107,7 @@ namespace SU21_Final_Project
             this.lblUSernameText.Location = new System.Drawing.Point(73, 160);
             this.lblUSernameText.Name = "lblUSernameText";
             this.lblUSernameText.Size = new System.Drawing.Size(74, 15);
-            this.lblUSernameText.TabIndex = 5;
+            this.lblUSernameText.TabIndex = 8;
             this.lblUSernameText.Text = "Username : ";
             // 
             // lblPasswordText
@@ -116,7 +117,7 @@ namespace SU21_Final_Project
             this.lblPasswordText.Location = new System.Drawing.Point(73, 218);
             this.lblPasswordText.Name = "lblPasswordText";
             this.lblPasswordText.Size = new System.Drawing.Size(70, 15);
-            this.lblPasswordText.TabIndex = 6;
+            this.lblPasswordText.TabIndex = 9;
             this.lblPasswordText.Text = "Password : ";
             // 
             // lblErrorText
@@ -132,10 +133,10 @@ namespace SU21_Final_Project
             // 
             // lblClose
             // 
-            this.lblClose.Location = new System.Drawing.Point(232, 274);
+            this.lblClose.Location = new System.Drawing.Point(289, 272);
             this.lblClose.Name = "lblClose";
-            this.lblClose.Size = new System.Drawing.Size(88, 28);
-            this.lblClose.TabIndex = 8;
+            this.lblClose.Size = new System.Drawing.Size(99, 35);
+            this.lblClose.TabIndex = 3;
             this.lblClose.Text = "&Return";
             this.lblClose.UseVisualStyleBackColor = true;
             this.lblClose.Click += new System.EventHandler(this.lblClose_Click);
@@ -147,7 +148,7 @@ namespace SU21_Final_Project
             this.lblMainText.Location = new System.Drawing.Point(201, 21);
             this.lblMainText.Name = "lblMainText";
             this.lblMainText.Size = new System.Drawing.Size(55, 19);
-            this.lblMainText.TabIndex = 79;
+            this.lblMainText.TabIndex = 10;
             this.lblMainText.Text = "Log In";
             this.lblMainText.Click += new System.EventHandler(this.lblMainText_Click);
             // 
@@ -157,7 +158,7 @@ namespace SU21_Final_Project
             this.lblBlackLine.Location = new System.Drawing.Point(10, 51);
             this.lblBlackLine.Name = "lblBlackLine";
             this.lblBlackLine.Size = new System.Drawing.Size(436, 2);
-            this.lblBlackLine.TabIndex = 78;
+            this.lblBlackLine.TabIndex = 11;
             this.lblBlackLine.Text = "0";
             // 
             // menuStrip1
@@ -167,7 +168,7 @@ namespace SU21_Final_Project
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(452, 24);
-            this.menuStrip1.TabIndex = 80;
+            this.menuStrip1.TabIndex = 6;
             this.menuStrip1.Text = "menuStrip1";
             // 
             // tsmHelp
@@ -178,12 +179,23 @@ namespace SU21_Final_Project
             this.tsmHelp.Text = "Help";
             this.tsmHelp.Click += new System.EventHandler(this.tsmHelp_Click);
             // 
+            // btnForgotPassword
+            // 
+            this.btnForgotPassword.Location = new System.Drawing.Point(184, 272);
+            this.btnForgotPassword.Name = "btnForgotPassword";
+            this.btnForgotPassword.Size = new System.Drawing.Size(99, 35);
+            this.btnForgotPassword.TabIndex = 12;
+            this.btnForgotPassword.Text = "Password Recovery";
+            this.btnForgotPassword.UseVisualStyleBackColor = true;
+            this.btnForgotPassword.Click += new System.EventHandler(this.btnForgotPassword_Click);
+            // 
             // frmLogIn
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(452, 353);
             this.ControlBox = false;
+            this.Controls.Add(this.btnForgotPassword);
             this.Controls.Add(this.lblMainText);
             this.Controls.Add(this.lblBlackLine);
             this.Controls.Add(this.lblClose);
@@ -224,5 +236,6 @@ namespace SU21_Final_Project
         private System.Windows.Forms.Label lblBlackLine;
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem tsmHelp;
+        private System.Windows.Forms.Button btnForgotPassword;
     }
 }

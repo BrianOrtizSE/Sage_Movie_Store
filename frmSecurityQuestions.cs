@@ -122,6 +122,10 @@ namespace SU21_Final_Project
                 tbxSQAnswer2.Text.ToLower();
                 tbxSQAnswer3.Text.ToLower();
 
+                tbxSQAnswer1.Text.Trim();
+                tbxSQAnswer2.Text.Trim();
+                tbxSQAnswer3.Text.Trim();
+
                 string query = "Insert into OrtizB21Su2332.LogOn(PersonID , UserName , Password , SQuestion1 , SQAnswer1 , SQuestion2 , SQAnswer2 , SQuestion3 , SQAnswer3) " +
                 "values(" + ProgOps.intPersonID + ",'" + tbxUsername.Text + "','" + tbxPassword.Text + "','" + cmbSQuestion1.Text + "','" + tbxSQAnswer1.Text + "','" + cmbSQuestion2.Text + "','" + tbxSQAnswer2.Text
                 + "','" + cmbQuestion3.Text + "','" + tbxSQAnswer3.Text + "');";

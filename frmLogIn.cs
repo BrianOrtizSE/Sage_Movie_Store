@@ -118,5 +118,13 @@ namespace SU21_Final_Project
             frmhelp.ShowDialog();
             this.Show();
         }
+
+        private void btnForgotPassword_Click(object sender, EventArgs e)
+        {
+            frmPasswordRecovery frmpasswordrecover = new frmPasswordRecovery();
+            this.Hide();
+            frmpasswordrecover.ShowDialog();
+            this.Show();
+        }
     }
 }
