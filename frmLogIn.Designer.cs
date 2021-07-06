@@ -49,18 +49,20 @@ namespace SU21_Final_Project
             // 
             // tbxUsername
             // 
-            this.tbxUsername.Location = new System.Drawing.Point(167, 160);
+            this.tbxUsername.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbxUsername.Location = new System.Drawing.Point(176, 174);
             this.tbxUsername.Name = "tbxUsername";
-            this.tbxUsername.Size = new System.Drawing.Size(142, 20);
+            this.tbxUsername.Size = new System.Drawing.Size(184, 27);
             this.tbxUsername.TabIndex = 0;
             this.tbxUsername.TextChanged += new System.EventHandler(this.tbxUsername_TextChanged);
             this.tbxUsername.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbxUsername_KeyPress);
             // 
             // tbxPassword
             // 
-            this.tbxPassword.Location = new System.Drawing.Point(167, 218);
+            this.tbxPassword.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbxPassword.Location = new System.Drawing.Point(176, 232);
             this.tbxPassword.Name = "tbxPassword";
-            this.tbxPassword.Size = new System.Drawing.Size(142, 20);
+            this.tbxPassword.Size = new System.Drawing.Size(184, 27);
             this.tbxPassword.TabIndex = 1;
             this.tbxPassword.UseSystemPasswordChar = true;
             // 
@@ -68,10 +70,10 @@ namespace SU21_Final_Project
             // 
             this.rdbCustomer.AutoSize = true;
             this.rdbCustomer.Checked = true;
-            this.rdbCustomer.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rdbCustomer.Location = new System.Drawing.Point(95, 95);
+            this.rdbCustomer.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rdbCustomer.Location = new System.Drawing.Point(78, 95);
             this.rdbCustomer.Name = "rdbCustomer";
-            this.rdbCustomer.Size = new System.Drawing.Size(112, 19);
+            this.rdbCustomer.Size = new System.Drawing.Size(115, 20);
             this.rdbCustomer.TabIndex = 4;
             this.rdbCustomer.TabStop = true;
             this.rdbCustomer.Text = "Customer Login";
@@ -81,10 +83,10 @@ namespace SU21_Final_Project
             // rdbEmployee
             // 
             this.rdbEmployee.AutoSize = true;
-            this.rdbEmployee.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rdbEmployee.Location = new System.Drawing.Point(245, 95);
+            this.rdbEmployee.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rdbEmployee.Location = new System.Drawing.Point(296, 95);
             this.rdbEmployee.Name = "rdbEmployee";
-            this.rdbEmployee.Size = new System.Drawing.Size(114, 19);
+            this.rdbEmployee.Size = new System.Drawing.Size(115, 20);
             this.rdbEmployee.TabIndex = 5;
             this.rdbEmployee.Text = "Employee Login";
             this.rdbEmployee.UseVisualStyleBackColor = true;
@@ -92,9 +94,10 @@ namespace SU21_Final_Project
             // 
             // btnLogin
             // 
-            this.btnLogin.Location = new System.Drawing.Point(76, 272);
+            this.btnLogin.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLogin.Location = new System.Drawing.Point(45, 305);
             this.btnLogin.Name = "btnLogin";
-            this.btnLogin.Size = new System.Drawing.Size(99, 35);
+            this.btnLogin.Size = new System.Drawing.Size(125, 48);
             this.btnLogin.TabIndex = 2;
             this.btnLogin.Text = "&Log In";
             this.btnLogin.UseVisualStyleBackColor = true;
@@ -103,39 +106,41 @@ namespace SU21_Final_Project
             // lblUSernameText
             // 
             this.lblUSernameText.AutoSize = true;
-            this.lblUSernameText.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblUSernameText.Location = new System.Drawing.Point(73, 160);
+            this.lblUSernameText.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblUSernameText.Location = new System.Drawing.Point(74, 177);
             this.lblUSernameText.Name = "lblUSernameText";
-            this.lblUSernameText.Size = new System.Drawing.Size(74, 15);
+            this.lblUSernameText.Size = new System.Drawing.Size(96, 19);
             this.lblUSernameText.TabIndex = 8;
             this.lblUSernameText.Text = "Username : ";
             // 
             // lblPasswordText
             // 
             this.lblPasswordText.AutoSize = true;
-            this.lblPasswordText.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPasswordText.Location = new System.Drawing.Point(73, 218);
+            this.lblPasswordText.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPasswordText.Location = new System.Drawing.Point(74, 235);
             this.lblPasswordText.Name = "lblPasswordText";
-            this.lblPasswordText.Size = new System.Drawing.Size(70, 15);
+            this.lblPasswordText.Size = new System.Drawing.Size(92, 19);
             this.lblPasswordText.TabIndex = 9;
             this.lblPasswordText.Text = "Password : ";
             // 
             // lblErrorText
             // 
             this.lblErrorText.AutoSize = true;
+            this.lblErrorText.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblErrorText.ForeColor = System.Drawing.Color.Red;
-            this.lblErrorText.Location = new System.Drawing.Point(92, 132);
+            this.lblErrorText.Location = new System.Drawing.Point(75, 136);
             this.lblErrorText.Name = "lblErrorText";
-            this.lblErrorText.Size = new System.Drawing.Size(267, 13);
+            this.lblErrorText.Size = new System.Drawing.Size(336, 18);
             this.lblErrorText.TabIndex = 7;
             this.lblErrorText.Text = "ERROR : USERNAME OR PASSWORD INCORRECT";
             this.lblErrorText.Visible = false;
             // 
             // lblClose
             // 
-            this.lblClose.Location = new System.Drawing.Point(289, 272);
+            this.lblClose.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblClose.Location = new System.Drawing.Point(313, 305);
             this.lblClose.Name = "lblClose";
-            this.lblClose.Size = new System.Drawing.Size(99, 35);
+            this.lblClose.Size = new System.Drawing.Size(125, 48);
             this.lblClose.TabIndex = 3;
             this.lblClose.Text = "&Return";
             this.lblClose.UseVisualStyleBackColor = true;
@@ -145,7 +150,7 @@ namespace SU21_Final_Project
             // 
             this.lblMainText.AutoSize = true;
             this.lblMainText.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblMainText.Location = new System.Drawing.Point(201, 21);
+            this.lblMainText.Location = new System.Drawing.Point(221, 24);
             this.lblMainText.Name = "lblMainText";
             this.lblMainText.Size = new System.Drawing.Size(55, 19);
             this.lblMainText.TabIndex = 10;
@@ -155,19 +160,21 @@ namespace SU21_Final_Project
             // lblBlackLine
             // 
             this.lblBlackLine.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.lblBlackLine.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblBlackLine.Location = new System.Drawing.Point(10, 51);
             this.lblBlackLine.Name = "lblBlackLine";
-            this.lblBlackLine.Size = new System.Drawing.Size(436, 2);
+            this.lblBlackLine.Size = new System.Drawing.Size(500, 2);
             this.lblBlackLine.TabIndex = 11;
             this.lblBlackLine.Text = "0";
             // 
             // menuStrip1
             // 
+            this.menuStrip1.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.tsmHelp});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(452, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(516, 24);
             this.menuStrip1.TabIndex = 6;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -175,15 +182,16 @@ namespace SU21_Final_Project
             // 
             this.tsmHelp.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
             this.tsmHelp.Name = "tsmHelp";
-            this.tsmHelp.Size = new System.Drawing.Size(44, 20);
+            this.tsmHelp.Size = new System.Drawing.Size(45, 20);
             this.tsmHelp.Text = "Help";
             this.tsmHelp.Click += new System.EventHandler(this.tsmHelp_Click);
             // 
             // btnForgotPassword
             // 
-            this.btnForgotPassword.Location = new System.Drawing.Point(184, 272);
+            this.btnForgotPassword.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnForgotPassword.Location = new System.Drawing.Point(179, 305);
             this.btnForgotPassword.Name = "btnForgotPassword";
-            this.btnForgotPassword.Size = new System.Drawing.Size(99, 35);
+            this.btnForgotPassword.Size = new System.Drawing.Size(125, 48);
             this.btnForgotPassword.TabIndex = 12;
             this.btnForgotPassword.Text = "Password Recovery";
             this.btnForgotPassword.UseVisualStyleBackColor = true;
@@ -193,7 +201,7 @@ namespace SU21_Final_Project
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(452, 353);
+            this.ClientSize = new System.Drawing.Size(516, 417);
             this.ControlBox = false;
             this.Controls.Add(this.btnForgotPassword);
             this.Controls.Add(this.lblMainText);

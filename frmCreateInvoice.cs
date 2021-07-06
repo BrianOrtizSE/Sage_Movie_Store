@@ -310,6 +310,7 @@ namespace SU21_Final_Project
                             else
                             {
                                 MessageBox.Show("Item associated with discount cannot be found in your cart and not applied.", "Product Missing", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                blnDiscountUsed = false;
                             }
                             //reset productID
                             ProgOps.intProductID = 0;

@@ -247,9 +247,6 @@ namespace SU21_Final_Project
                     strCreate.Append("'" + mtbPhone2.Text + "')");
                 }
             }
-            
-
-            MessageBox.Show(strCreate.ToString());
 
             if (blnValid == true)
             {

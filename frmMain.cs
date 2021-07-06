@@ -98,5 +98,11 @@ namespace SU21_Final_Project
         {
            
         }
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            frmMerchandiseAdd frmmerch = new frmMerchandiseAdd();
+            frmmerch.ShowDialog();
+        }
     }
 }
