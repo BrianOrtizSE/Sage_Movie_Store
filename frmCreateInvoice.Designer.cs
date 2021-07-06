@@ -68,6 +68,8 @@ namespace SU21_Final_Project
             this.btnCheckOut = new System.Windows.Forms.Button();
             this.btnCloseShop = new System.Windows.Forms.Button();
             this.pnlCart = new System.Windows.Forms.Panel();
+            this.lblMonth = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             this.pnlCheckout.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProducts)).BeginInit();
             this.pnlCart.SuspendLayout();
@@ -75,6 +77,8 @@ namespace SU21_Final_Project
             // 
             // pnlCheckout
             // 
+            this.pnlCheckout.Controls.Add(this.label1);
+            this.pnlCheckout.Controls.Add(this.lblMonth);
             this.pnlCheckout.Controls.Add(this.lblBlackLine);
             this.pnlCheckout.Controls.Add(this.lblCheckOut);
             this.pnlCheckout.Controls.Add(this.cmbYear);
@@ -137,7 +141,7 @@ namespace SU21_Final_Project
             "2029",
             "2030",
             "2031"});
-            this.cmbYear.Location = new System.Drawing.Point(94, 234);
+            this.cmbYear.Location = new System.Drawing.Point(103, 233);
             this.cmbYear.Name = "cmbYear";
             this.cmbYear.Size = new System.Drawing.Size(99, 24);
             this.cmbYear.TabIndex = 41;
@@ -171,9 +175,9 @@ namespace SU21_Final_Project
             "October",
             "November",
             "December"});
-            this.cmbMonth.Location = new System.Drawing.Point(23, 234);
+            this.cmbMonth.Location = new System.Drawing.Point(6, 234);
             this.cmbMonth.Name = "cmbMonth";
-            this.cmbMonth.Size = new System.Drawing.Size(58, 24);
+            this.cmbMonth.Size = new System.Drawing.Size(91, 24);
             this.cmbMonth.TabIndex = 39;
             // 
             // lblDiscountCode
@@ -189,10 +193,10 @@ namespace SU21_Final_Project
             // tbxSCode
             // 
             this.tbxSCode.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbxSCode.Location = new System.Drawing.Point(206, 235);
+            this.tbxSCode.Location = new System.Drawing.Point(225, 234);
             this.tbxSCode.MaxLength = 3;
             this.tbxSCode.Name = "tbxSCode";
-            this.tbxSCode.Size = new System.Drawing.Size(100, 23);
+            this.tbxSCode.Size = new System.Drawing.Size(85, 23);
             this.tbxSCode.TabIndex = 42;
             this.tbxSCode.TextChanged += new System.EventHandler(this.tbxSCode_TextChanged);
             this.tbxSCode.KeyUp += new System.Windows.Forms.KeyEventHandler(this.tbxSCode_KeyUp);
@@ -210,7 +214,7 @@ namespace SU21_Final_Project
             // 
             this.lblSecurityCode.AutoSize = true;
             this.lblSecurityCode.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSecurityCode.Location = new System.Drawing.Point(209, 216);
+            this.lblSecurityCode.Location = new System.Drawing.Point(223, 212);
             this.lblSecurityCode.Name = "lblSecurityCode";
             this.lblSecurityCode.Size = new System.Drawing.Size(87, 16);
             this.lblSecurityCode.TabIndex = 49;
@@ -230,7 +234,7 @@ namespace SU21_Final_Project
             // 
             this.lblValidDate.AutoSize = true;
             this.lblValidDate.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblValidDate.Location = new System.Drawing.Point(20, 209);
+            this.lblValidDate.Location = new System.Drawing.Point(3, 212);
             this.lblValidDate.Name = "lblValidDate";
             this.lblValidDate.Size = new System.Drawing.Size(66, 16);
             this.lblValidDate.TabIndex = 48;
@@ -523,6 +527,26 @@ namespace SU21_Final_Project
             this.pnlCart.Size = new System.Drawing.Size(1124, 519);
             this.pnlCart.TabIndex = 33;
             // 
+            // lblMonth
+            // 
+            this.lblMonth.AutoSize = true;
+            this.lblMonth.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblMonth.Location = new System.Drawing.Point(10, 261);
+            this.lblMonth.Name = "lblMonth";
+            this.lblMonth.Size = new System.Drawing.Size(43, 16);
+            this.lblMonth.TabIndex = 82;
+            this.lblMonth.Text = "Month";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(107, 261);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(34, 16);
+            this.label1.TabIndex = 83;
+            this.label1.Text = "Year";
+            // 
             // frmCreateInvoice
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -586,5 +610,7 @@ namespace SU21_Final_Project
         private System.Windows.Forms.Label lblCardName;
         private System.Windows.Forms.Label lblBlackLine;
         private System.Windows.Forms.Label lblCheckOut;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lblMonth;
     }
 }

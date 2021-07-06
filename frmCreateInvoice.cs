@@ -258,77 +258,86 @@ namespace SU21_Final_Project
             bool blnProductInCart = false;
             tbxDiscount.Text.Trim();
 
-            for (int i = 0; i < discountUsed.Count(); i++)
+            if(tbxDiscount.Text == string.Empty)
             {
-                if(tbxDiscount.Text == discountUsed[i])
-                {
-                    blnDiscountDupe = true;
-                    
-                }
-
-            }
-
-            //WILL TRY TO ADD MORE THAN 1 DISCOUNT LATER for now only 1 per transaction.          
-            if (blnDiscountUsed == true)
-            {
-                MessageBox.Show("Only 1 Coupon Per Transaction", "Discount Used", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                tbxDiscount.Text = "";
-                tbxDiscount.Focus();
+                MessageBox.Show("Discount box can not be empty", "Empty", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             else
             {
-                if (blnDiscountDupe == false)
+                for (int i = 0; i < discountUsed.Count(); i++)
                 {
-                    ProgOps.GetDiscountID(tbxDiscount);
-                    if (ProgOps.blnDiscountFound == true)
+                    if (tbxDiscount.Text == discountUsed[i])
                     {
-                        discountUsed.Add(tbxDiscount.Text);
+                        blnDiscountDupe = true;
 
-                        //Type 0 discount code that applies to whole purchase
-                        if (ProgOps.intProductID == 0)
-                        {
-                            decDiscountPercent = ProgOps.decDiscountPercent;
-                            blnDiscountUsed = true;
-                        }
-                        else
-                        {
-                            //If not 0 then we check for specified item so that discount type 2 can be applied if applicable
-                            for (int i = 0; i < prodlist.Count; i++)
-                            {
-                                if (ProgOps.intProductID == prodlist[i].intProductID)
-                                {
-                                    blnDiscountUsed = true;
-                                    blnProductInCart = true;
-                                }
-                            }
+                    }
 
-                            if(blnProductInCart == true)
+                }
+
+                //WILL TRY TO ADD MORE THAN 1 DISCOUNT LATER for now only 1 per transaction.          
+                if (blnDiscountUsed == true)
+                {
+                    MessageBox.Show("Only 1 Coupon Per Transaction", "Discount Used", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    tbxDiscount.Text = "";
+                    tbxDiscount.Focus();
+                }
+                else
+                {
+                    if (blnDiscountDupe == false)
+                    {
+                        ProgOps.GetDiscountID(tbxDiscount);
+                        if (ProgOps.blnDiscountFound == true)
+                        {
+                            discountUsed.Add(tbxDiscount.Text);
+
+                            //Type 0 discount code that applies to whole purchase
+                            if (ProgOps.intProductID == 0)
                             {
                                 decDiscountPercent = ProgOps.decDiscountPercent;
-                                blnProductInCart = false;
+                                blnDiscountUsed = true;
                             }
                             else
                             {
-                                MessageBox.Show("Item associated with discount cannot be found in your cart and not applied.", "Product Missing", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                                blnDiscountUsed = false;
+                                //If not 0 then we check for specified item so that discount type 2 can be applied if applicable
+                                for (int i = 0; i < prodlist.Count; i++)
+                                {
+                                    if (ProgOps.intProductID == prodlist[i].intProductID)
+                                    {
+                                        blnDiscountUsed = true;
+                                        blnProductInCart = true;
+                                    }
+                                }
+
+                                if (blnProductInCart == true)
+                                {
+                                    decDiscountPercent = ProgOps.decDiscountPercent;
+                                    blnProductInCart = false;
+                                }
+                                else
+                                {
+                                    MessageBox.Show("Item associated with discount cannot be found in your cart and not applied.", "Product Missing", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                    blnDiscountUsed = false;
+                                }
+                                //reset productID
+                                ProgOps.intProductID = 0;
                             }
-                            //reset productID
-                            ProgOps.intProductID = 0;
+
+                            tbxDiscount.Text = "";
+                            tbxDiscount.Focus();
+
+                            WriteToListBox(decSubTotal, decDiscountPercent, decTaxTotal, decTotal);
                         }
-
-                        tbxDiscount.Text = "";
-                        tbxDiscount.Focus();
-
-                        WriteToListBox(decSubTotal, decDiscountPercent, decTaxTotal, decTotal);
-                    }
-                    else
-                    {
-                        MessageBox.Show("Discount Code Could Not Be Used!", "Discount Code Error", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        tbxDiscount.Text = "";
-                        tbxDiscount.Focus();
+                        else
+                        {
+                            MessageBox.Show("Discount Code Could Not Be Used!", "Discount Code Error", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            tbxDiscount.Text = "";
+                            tbxDiscount.Focus();
+                        }
                     }
                 }
             }
+
+
 
       
 
