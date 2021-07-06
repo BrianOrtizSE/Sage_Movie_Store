@@ -396,6 +396,8 @@ namespace SU21_Final_Project
 
         private void btnPay_Click(object sender, EventArgs e)
         {
+            int intQuanityHold;
+
             if (tbxCardHolderName.Text == string.Empty || tbxCardNumber.Text == string.Empty || cmbMonth.Text == string.Empty || cmbYear.Text == string.Empty || tbxSCode.Text == string.Empty)
             {
                 MessageBox.Show("Make Sure All Required Information Is Filled Out!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -405,10 +407,26 @@ namespace SU21_Final_Project
                 
                 ReportPrint(Reciept(decSubTotal, decDiscountPercent, decTaxTotal, decTotal));
 
+                for(int i = 0; i < prodlist.Count(); i++)
+                {
+                    strQuery = "Select Quantity From OrtizB21Su2332.Products " +
+                    "Where ProductID = " + prodlist[i].intProductID;
+
+                    ProgOps.GrabAmount(strQuery);
+                    intQuanityHold = prodlist[i].intProdQuan;
+
+                    ProgOps.intQuantity = ProgOps.intQuantity - intQuanityHold;
+
+                    strQuery = "Update OrtizB21Su2332.Products Set Quantity = " + ProgOps.intQuantity + " where ProductID = + " + prodlist[i].intProductID;
+                    ProgOps.UpdateQuantity(strQuery);
+                }
+                
+
 
                 strQuery = "Insert into OrtizB21Su2332.Invoice(PersonID, TotalPrice , TransData)" +
                     "values(" + ProgOps.intPersonID + "," + decTotal + ",GETDATE()" + ")";
                 ProgOps.CreateInvoice(strQuery);
+
 
 
 
@@ -568,5 +586,7 @@ namespace SU21_Final_Project
                 MessageBox.Show("You don't have write permisions", "Error System Permission", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
+
     }
 }

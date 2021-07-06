@@ -555,6 +555,37 @@ namespace SU21_Final_Project
             }
         }
 
+        public static void UpdateQuantity(string strQuery)
+        {
+            try
+            {
+
+                //establish Command Object For This Function
+                _sqlResultsCommand = new SqlCommand(strQuery, _conDatabase);
+                _sqlResultsCommand.ExecuteNonQuery();
+
+                //Dispose Of Command Object
+                _sqlResultsCommand.Dispose();
+
+            }
+            catch (SqlException ex)
+            {
+                if (ex is SqlException)
+                {//handles more specific SqlException here.
+
+                    for (int i = 0; i < ex.Errors.Count; i++)
+                    {
+                        errorMessages.Append("Index #" + i + "\n" +
+                            "Message: " + ex.Errors[i].Message + "\n" +
+                            "LineNumber: " + ex.Errors[i].LineNumber + "\n" +
+                            "Source: " + ex.Errors[i].Source + "\n" +
+                            "Procedure: " + ex.Errors[i].Procedure + "\n");
+                    }
+                    MessageBox.Show(errorMessages.ToString(), "Error on DatabaseCommand", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+        }
+
         public static void CreateInvoice(string strQuery)
         {
             try
