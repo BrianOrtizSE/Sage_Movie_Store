@@ -410,6 +410,7 @@ namespace SU21_Final_Project
             this.dgvProducts.RowHeadersWidth = 72;
             this.dgvProducts.Size = new System.Drawing.Size(491, 394);
             this.dgvProducts.TabIndex = 28;
+            this.dgvProducts.TabStop = false;
             this.dgvProducts.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvProducts_CellContentClick);
             // 
             // lblProdError

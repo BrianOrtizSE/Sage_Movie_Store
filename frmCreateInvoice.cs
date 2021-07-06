@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.IO;
 
 namespace SU21_Final_Project
 {
@@ -401,8 +402,9 @@ namespace SU21_Final_Project
             }
             else
             {
-                StringBuilder strRecipt = new StringBuilder();
-
+                
+                ReportPrint(Reciept(decSubTotal, decDiscountPercent, decTaxTotal, decTotal));
+                this.Close();
             }
         }
 
@@ -465,6 +467,97 @@ namespace SU21_Final_Project
             else
             {
                 e.Handled = true;
+            }
+        }
+    
+        private StringBuilder Reciept(decimal decSubTotal, decimal decDiscountPercent, decimal decTaxTotal, decimal decTotal)
+        {
+            decimal decTotalHold = decTotal;
+
+
+            //Get Totals For all things
+            decSubTotal = decTotalHold;
+            decDiscountPercent = decSubTotal * (decDiscountPercent * 0.01M);
+            decTaxTotal = decSubTotal * ProgOps._TAX;
+            decTotalHold = (decSubTotal - decDiscountPercent) + decTaxTotal;
+
+            StringBuilder html = new StringBuilder();
+            StringBuilder css = new StringBuilder();
+            css.Append("<style>");
+            css.Append("td{padding:5px;text-align:center;font-weight:bold;text-align:center;}");
+            css.Append("h1{color:Orange}");
+            css.Append("h1{text-align: center}");
+            css.Append("h2{color:Blue}");
+            css.Append("h2{text-align: center}");
+            css.Append("p{text-align: center}");
+            css.Append("p{font-size: 18px}");
+            css.Append("table.center{margin-left: auto;}");
+            css.Append("table.center{margin-right: auto;}");
+            css.Append("</style>");
+
+
+            html.Append("<html>");
+            html.Append($"<head>{css}<title>Movie Shop Reciept</title></head>");
+            html.Append("<body>");
+            html.Append($"<h1>{"Movie Shop Reciept"}</h1>");
+            html.Append($"<h2>{"Thank You For Shopping Sage!"}</h2>");
+
+            html.Append("<table class = \"center\">");
+            html.Append("<tr><td colspan=3><hr/></td></tr>");
+            html.Append("<tr>");
+            html.Append("<th>Movie Name</th>");
+            html.Append("<th>Movie Price</th>");
+            html.Append("<th>Quantity</th>");
+            html.Append("</tr>");
+            html.Append("<tr>");
+
+            for (int i = 0; i < prodlist.Count(); i++)
+            {
+                html.Append($"<td>{prodlist[i].strProdName}</td>");
+                html.Append($"<td>{prodlist[i].dblProdPrice}</td>");
+                html.Append($"<td>{prodlist[i].intProdQuan}</td>");
+
+                html.Append("</tr>");
+            }
+            html.Append("<tr><td colspan=3><hr/></td></tr>");
+            html.Append("</table");
+            html.Append("<p>");
+
+            html.Append("<p>");
+            html.Append("Subtotal : " + decSubTotal.ToString("c2"));
+            html.Append("</p>");
+            html.Append("<p>");
+            html.Append("Discount : " + decDiscountPercent.ToString("c2"));
+            html.Append("</p>");
+            html.Append("<p>");
+            html.Append("Tax : " + decTaxTotal.ToString("c2"));
+            html.Append("</p>");
+            html.Append("<p>");
+            html.Append("Total : " + decTotal.ToString("c2"));
+            html.Append("</p>");
+            html.Append("<p>");
+            html.Append(DateTime.Now);
+            html.Append("</p>");
+            html.Append("</body>");
+            html.Append("</html>");
+            return html;
+        }
+
+        private void ReportPrint(StringBuilder html)
+        {
+            //write to hard drive using the name report.html
+            try
+            {
+                //using statement will automaticaly close a file after opening it
+                using (StreamWriter wr = new StreamWriter("Report.html"))
+                {
+                    wr.WriteLine(html);
+                }
+                System.Diagnostics.Process.Start(@"Report.html");
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("You don't have write permisions", "Error System Permission", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
     }
