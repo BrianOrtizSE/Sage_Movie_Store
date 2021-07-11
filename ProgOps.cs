@@ -174,7 +174,7 @@ namespace SU21_Final_Project
 
 
         }
-        public static void GrabPersonID()
+        public static void GrabPersonNewID()
         {
             try
             {
@@ -233,6 +233,54 @@ namespace SU21_Final_Project
                 MessageBox.Show("NULL Cast", "Error on DatabaseCommand", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+        public static void CheckPassword(string strQuery)
+        {
+            try
+            {
+                //Using the Sqlcommand we execute the Query
+                _sqlResultsCommand = new SqlCommand(strQuery, _conDatabase);
+                _sqlResultsCommand.ExecuteNonQuery();
+
+                //establush command object
+                _sqlResultsCommand = new SqlCommand(strQuery, _conDatabase);
+                //establish data adapter
+                _daLogOn = new SqlDataAdapter();
+                _daLogOn.SelectCommand = _sqlResultsCommand;
+                //fill data table
+                _dtLogOn = new DataTable();
+                _daLogOn.Fill(_dtLogOn);
+
+                if (_dtLogOn.Rows.Count != 0)
+                {
+                    blnFound = true;
+                }
+                else
+                {
+                    blnFound = false;
+                }
+
+                //Dispose Of Command Object
+                _sqlResultsCommand.Dispose();
+            }
+            catch (SqlException ex)
+            {
+                if (ex is SqlException)
+                {//handles more specific SqlException here.
+
+                    for (int i = 0; i < ex.Errors.Count; i++)
+                    {
+                        errorMessages.Append("Index #" + i + "\n" +
+                            "Message: " + ex.Errors[i].Message + "\n" +
+                            "LineNumber: " + ex.Errors[i].LineNumber + "\n" +
+                            "Source: " + ex.Errors[i].Source + "\n" +
+                            "Procedure: " + ex.Errors[i].Procedure + "\n");
+                    }
+                    MessageBox.Show(errorMessages.ToString(), "Error on DatabaseCommand", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+
+        }
+
         public static void CreateLogIn(TextBox tbxUsername, TextBox tbxPassword, ComboBox cmbSQuestion1, TextBox SQAnswer1, ComboBox cmbSQuestion2, TextBox SQAnswer2, ComboBox cmbSQuestion3 , TextBox SQAnswer3 ,String strQuery)
         {
             try

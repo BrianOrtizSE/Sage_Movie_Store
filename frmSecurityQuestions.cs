@@ -12,11 +12,19 @@ namespace SU21_Final_Project
         {
             InitializeComponent();
         }
-
+        string strQuery;
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            bool blnPass = true;
 
+            bool blnPass = true;
+            tbxSQAnswer1.Text.ToLower();
+            tbxSQAnswer2.Text.ToLower();
+            tbxSQAnswer3.Text.ToLower();
+
+            tbxSQAnswer1.Text.Trim();
+            tbxSQAnswer2.Text.Trim();
+            tbxSQAnswer3.Text.Trim();
+           
             //We will add all the validation here later. 
             if (tbxUsername.Text == String.Empty || tbxUsername.Text.Length < 6 || tbxUsername.Text.Length > 20)
             {
@@ -116,30 +124,37 @@ namespace SU21_Final_Project
                 blnPass = false;
             }
 
-            if (blnPass == true)
+
+
+            strQuery = "Select * From OrtizB21Su2332.LogOn Where Username like '" + tbxUsername.Text + "'";
+             ProgOps.CheckPassword(strQuery);
+
+            if(ProgOps.blnFound == true)
             {
-                tbxSQAnswer1.Text.ToLower();
-                tbxSQAnswer2.Text.ToLower();
-                tbxSQAnswer3.Text.ToLower();
-
-                tbxSQAnswer1.Text.Trim();
-                tbxSQAnswer2.Text.Trim();
-                tbxSQAnswer3.Text.Trim();
-
-                string query = "Insert into OrtizB21Su2332.LogOn(PersonID , UserName , Password , SQuestion1 , SQAnswer1 , SQuestion2 , SQAnswer2 , SQuestion3 , SQAnswer3) " +
-                "values(" + ProgOps.intPersonID + ",'" + tbxUsername.Text + "','" + tbxPassword.Text + "','" + cmbSQuestion1.Text + "','" + tbxSQAnswer1.Text + "','" + cmbSQuestion2.Text + "','" + tbxSQAnswer2.Text
-                + "','" + cmbQuestion3.Text + "','" + tbxSQAnswer3.Text + "');";
-                ProgOps.CreateLogIn(tbxUsername, tbxPassword, cmbSQuestion1, tbxSQAnswer1, cmbSQuestion2, tbxSQAnswer2, cmbQuestion3, tbxSQAnswer3, query);
-
-                MessageBox.Show("Welcome To The Store! ", "Welcome", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                this.Close();
+                MessageBox.Show("Username already taken!", "Username Error", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
+            else
+            {
+                if (blnPass == true)
+                {                    
+
+                    strQuery = "Insert into OrtizB21Su2332.LogOn(PersonID , UserName , Password , SQuestion1 , SQAnswer1 , SQuestion2 , SQAnswer2 , SQuestion3 , SQAnswer3) " +
+                    "values(" + ProgOps.intPersonID + ",'" + tbxUsername.Text + "','" + tbxPassword.Text + "','" + cmbSQuestion1.Text + "','" + tbxSQAnswer1.Text + "','" + cmbSQuestion2.Text + "','" + tbxSQAnswer2.Text
+                    + "','" + cmbQuestion3.Text + "','" + tbxSQAnswer3.Text + "');";
+                    ProgOps.CreateLogIn(tbxUsername, tbxPassword, cmbSQuestion1, tbxSQAnswer1, cmbSQuestion2, tbxSQAnswer2, cmbQuestion3, tbxSQAnswer3, strQuery);
+
+                    MessageBox.Show("Welcome To The Store! ", "Welcome", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    this.Close();
+                }
+            }
+
+            
 
         }
 
         private void frmSecurityQuestions_Load(object sender, EventArgs e)
         {
-            ProgOps.GrabPersonID();
+            ProgOps.GrabPersonNewID();
         }
 
         private void btnClose_Click(object sender, EventArgs e)

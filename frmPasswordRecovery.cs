@@ -134,7 +134,6 @@ namespace SU21_Final_Project
         private void button1_Click(object sender, EventArgs e)
         {
             intSearch++;
-            tbxSQA.Text.ToLower();
             FindPassword();
         }
 
@@ -160,7 +159,7 @@ namespace SU21_Final_Project
                     else
                     {
                         strQuery = "Select PersonID From OrtizB21Su2332.LogOn " +
-                     "Where SQuestion1 = '" + cmbSQ.Text + "' and SQAnswer1 = '" + tbxSQA.Text + "'";
+                     "Where SQuestion1 = '" + cmbSQ.Text + "' and SQAnswer1 = '" + tbxSQA.Text + "' and Username = '" + tbxUsername.Text + "'";
 
                         ProgOps.GetPassword(tbxUsername, cmbSQ, strQuery);
                         if (ProgOps.blnFound == true)
@@ -190,7 +189,7 @@ namespace SU21_Final_Project
                     else
                     {
                         strQuery = "Select PersonID From OrtizB21Su2332.LogOn " +
-                     "Where SQuestion2 = '" + cmbSQ.Text + "' and SQAnswer2 = '" + tbxSQA.Text + "'";
+                     "Where SQuestion2 = '" + cmbSQ.Text + "' and SQAnswer2 = '" + tbxSQA.Text + "'and Username = '" + tbxUsername.Text + "'" ;
 
                         ProgOps.GetPassword(tbxUsername, cmbSQ, strQuery);
                         if (ProgOps.blnFound == true)
@@ -220,7 +219,7 @@ namespace SU21_Final_Project
                     else
                     {
                         strQuery = "Select PersonID From OrtizB21Su2332.LogOn " +
-                     "Where SQuestion3 = '" + cmbSQ.Text + "' and SQAnswer3 = '" + tbxSQA.Text + "'";
+                     "Where SQuestion3 = '" + cmbSQ.Text + "' and SQAnswer3 = '" + tbxSQA.Text + "'and Username = '" + tbxUsername.Text + "'";
 
                         ProgOps.GetPassword(tbxUsername, cmbSQ, strQuery);
                         if (ProgOps.blnFound == true)
