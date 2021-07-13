@@ -23,6 +23,7 @@ namespace SU21_Final_Project
             //On Load We Display All Items
             strQuery = "Select * From OrtizB21Su2332.Products"; ;
             ProgOps.GrabProduct(tbxProductID, dgvView, strQuery);
+
         }
 
         private void btnClose_Click(object sender, EventArgs e)

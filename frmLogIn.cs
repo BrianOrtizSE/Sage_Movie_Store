@@ -35,43 +35,57 @@ namespace SU21_Final_Project
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
+            string strQuery;
             bool blnPass = true;
 
-            if (rdbCustomer.Checked == false && rdbEmployee.Checked == false)
-            {
-                MessageBox.Show("Customer Or Employee Must Be Checked", "Customer Or Employee", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                blnPass = false;
-            }
-            else
-            {
-                if (rdbEmployee.Checked && tbxUsername.Text == String.Empty)
-                {
-                    lblErrorText.Visible = true;
-                    blnPass = false;
-                }
-            }
+           if (tbxPassword.Text == String.Empty || tbxUsername.Text == String.Empty)
+           {
+               lblErrorText.Visible = true;
+               blnPass = false; 
+           }
 
 
             if (blnPass == false)
             {
-                MessageBox.Show("Please Fix All Incorrect Informatoion", "Incorect Information", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                lblErrorText.Visible = true;
             }
             else
             {
-                ProgOps.LogOn(tbxUsername, tbxPassword, rdbCustomer, rdbEmployee, Text);
-
-
-                if (ProgOps.blnFound == true)
+                if (rdbCustomer.Checked)
                 {
-                    string strQuery = "Select PersonID From OrtizB21Su2332.LogOn " +
-                    "Where Username = '" + tbxUsername.Text + "' " +
-                     "And Password = '" + tbxPassword.Text + "';";
-                    ProgOps.GrabPersonInfo(strQuery);
+                    //Use Given Information to Try to log in as a customer 
+                    strQuery = "Select * From OrtizB21Su2332.LogOn " + 
+                    "Where Username = '" + tbxUsername.Text + "' " + "And Password = '" + tbxPassword.Text + "';";
+                    ProgOps.LogOn(strQuery);
 
-                    frmCustomer_Main frmcustomermain = new frmCustomer_Main();
-                    this.Hide();
-                    frmcustomermain.ShowDialog();
-                    this.Close();
+
+                    if (ProgOps.blnFound == true)
+                    {
+                        //if person found using same query Grab Their ID
+                        ProgOps.GrabPersonID(strQuery);
+
+                        frmCustomer_Main frmcustomermain = new frmCustomer_Main();
+                        this.Hide();
+                        frmcustomermain.ShowDialog();
+                        this.Close();
+                    }
+                }
+                else if (rdbEmployee.Checked)
+                {
+                    //User Given Information to Try to log in as a employee
+                    strQuery = "Select * from OrtizB21Su2332.Employees e inner join OrtizB21Su2332.LogOn l on e.PersonID = l.PersonID " +
+                    "Where EmployeeID = " + tbxUsername.Text + " " +  "and Password = '" + tbxPassword.Text + "';";
+                    ProgOps.LogOn(strQuery);
+
+                    if (ProgOps.blnFound == true)
+                    {
+                        ProgOps.GrabPersonID(strQuery);
+
+                        frmEmployee_Main frmemployeemain = new frmEmployee_Main();
+                        this.Hide();
+                        frmemployeemain.ShowDialog();
+                        this.Close();
+                    }
                 }
                 else
                 {

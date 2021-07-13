@@ -40,21 +40,23 @@ namespace SU21_Final_Project
         //TAX FOR WHOLE PROJECT:
         public static decimal _TAX = 0.0825M;
 
-        //Int for PersonID
+        //Public Ints and Deciamls
         public static int intPersonID;
-        public static int intQuantity;
 
-        public static decimal decDiscountPercent = 0.0m;
         public static int intProductID = 0;
+        public static int intQuantity;
+        public static decimal decDiscountPercent = 0.0m;
+        
 
-        //Bool If Person Was Found
+        //Public Booleans
         public static bool blnFound;
         public static bool blnDiscountFound;
 
 
         //Strinbuilder for error messages in the trycatch
         private static StringBuilder errorMessages = new StringBuilder();
-        public static void OpenDatabase()
+
+        public static void OpenDatabase()//Attemp To Open Database
         {
             try
             {
@@ -81,25 +83,10 @@ namespace SU21_Final_Project
                 MessageBox.Show(e.Message);
             }
         }
-        public static void LogOn(TextBox tbxUsername, TextBox tbxPassword, RadioButton rdButtonA, RadioButton rdButtonB, String query)
+        public static void LogOn(String query)//Used At LogIn Scren To Log User In
         {
-            //used to search for specific user
-
             try
             {
-                if (rdButtonA.Checked == true)
-                {
-                    query = "Select * From OrtizB21Su2332.LogOn " +
-                     "Where Username = '" + tbxUsername.Text + "' " +
-                     "And Password = '" + tbxPassword.Text + "';";
-                }
-                if (rdButtonB.Checked == true)
-                {
-                    query = "Select * From OrtizB21Su2332.LogOn, OrtizB21Su2332.Employees " +
-                    "Where EmployeeID = " + tbxUsername.Text + " " +
-                    "and Password = '" + tbxPassword.Text + "';";
-                }
-
 
                 //establush command object
                 _sqlResultsCommand = new SqlCommand(query, _conDatabase);
@@ -118,6 +105,10 @@ namespace SU21_Final_Project
                 {
                     blnFound = false;
                 }
+
+                _sqlResultsCommand.Dispose();
+                _daLogOn.Dispose();
+                _dtLogOn.Dispose();
             }
 
             catch (SqlException ex)
@@ -141,7 +132,7 @@ namespace SU21_Final_Project
 
         }
         public static void CreateNewUser(TextBox tbxTitle, TextBox tbxFirstName, TextBox tbxMiddleName, TextBox tbxLastName, TextBox tbxSuffix, TextBox tbxAddress1, TextBox tbxAddress2, TextBox tbxAddress3,
-                                        TextBox tbxCity, TextBox tbxZipcode, ComboBox cbxState, TextBox tbxEmail, MaskedTextBox mtbPhonePrim, MaskedTextBox mtbPhoneSecon, string query)
+                                        TextBox tbxCity, TextBox tbxZipcode, ComboBox cbxState, TextBox tbxEmail, MaskedTextBox mtbPhonePrim, MaskedTextBox mtbPhoneSecon, string query)//Used To Create New User
         {
             try
             {
@@ -185,6 +176,8 @@ namespace SU21_Final_Project
 
                 //Grab PersonID so we can cretae LogIn Info
                 intPersonID = (int)_sqlResultsCommand.ExecuteScalar();
+
+                _sqlResultsCommand.Dispose();
             }
             catch (InvalidCastException)
             {
@@ -195,7 +188,7 @@ namespace SU21_Final_Project
 
 
         }
-        public static void GrabPersonInfo(string strQuery)
+        public static void GrabPersonID(string strQuery)
         {
             try
             {
@@ -204,6 +197,8 @@ namespace SU21_Final_Project
 
                 //Grab PersonID so we can cretae LogIn Info
                 intPersonID = (int)_sqlResultsCommand.ExecuteScalar();
+
+                _sqlResultsCommand.Dispose();
             }           
             catch (InvalidCastException)
             {
@@ -221,6 +216,8 @@ namespace SU21_Final_Project
 
                 //Grab PersonID so we can cretae LogIn Info
                 intQuantity = (int)_sqlResultsCommand.ExecuteScalar();
+
+                _sqlResultsCommand.Dispose();
             }
             catch (InvalidCastException)
             {
@@ -261,6 +258,8 @@ namespace SU21_Final_Project
 
                 //Dispose Of Command Object
                 _sqlResultsCommand.Dispose();
+                _daLogOn.Dispose();
+                _dtLogOn.Dispose();
             }
             catch (SqlException ex)
             {
@@ -280,7 +279,6 @@ namespace SU21_Final_Project
             }
 
         }
-
         public static void CreateLogIn(TextBox tbxUsername, TextBox tbxPassword, ComboBox cmbSQuestion1, TextBox SQAnswer1, ComboBox cmbSQuestion2, TextBox SQAnswer2, ComboBox cmbSQuestion3 , TextBox SQAnswer3 ,String strQuery)
         {
             try

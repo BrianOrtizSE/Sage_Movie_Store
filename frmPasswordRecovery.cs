@@ -32,7 +32,7 @@ namespace SU21_Final_Project
                 {
                     strQuery = "Select PersonID From OrtizB21Su2332.LogOn " +
                     "Where " + strQuestion + " = '" + cmbSQ.Text + "' and " + strAnwser + " = '" + tbxSQA.Text + "'";
-                    ProgOps.GrabPersonInfo(strQuery);
+                    ProgOps.GrabPersonID(strQuery);
 
                     
 

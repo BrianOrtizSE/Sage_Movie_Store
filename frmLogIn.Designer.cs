@@ -50,7 +50,7 @@ namespace SU21_Final_Project
             // tbxUsername
             // 
             this.tbxUsername.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbxUsername.Location = new System.Drawing.Point(176, 174);
+            this.tbxUsername.Location = new System.Drawing.Point(195, 174);
             this.tbxUsername.Name = "tbxUsername";
             this.tbxUsername.Size = new System.Drawing.Size(184, 27);
             this.tbxUsername.TabIndex = 0;
@@ -60,7 +60,7 @@ namespace SU21_Final_Project
             // tbxPassword
             // 
             this.tbxPassword.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbxPassword.Location = new System.Drawing.Point(176, 232);
+            this.tbxPassword.Location = new System.Drawing.Point(195, 232);
             this.tbxPassword.Name = "tbxPassword";
             this.tbxPassword.Size = new System.Drawing.Size(184, 27);
             this.tbxPassword.TabIndex = 1;
@@ -107,7 +107,7 @@ namespace SU21_Final_Project
             // 
             this.lblUSernameText.AutoSize = true;
             this.lblUSernameText.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblUSernameText.Location = new System.Drawing.Point(74, 177);
+            this.lblUSernameText.Location = new System.Drawing.Point(70, 177);
             this.lblUSernameText.Name = "lblUSernameText";
             this.lblUSernameText.Size = new System.Drawing.Size(96, 19);
             this.lblUSernameText.TabIndex = 8;
