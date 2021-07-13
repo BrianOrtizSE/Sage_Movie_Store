@@ -62,7 +62,9 @@ namespace SU21_Final_Project
                     if (ProgOps.blnFound == true)
                     {
                         //if person found using same query Grab Their ID
-                        ProgOps.GrabPersonID(strQuery);
+                        strQuery = "Select PersonID From OrtizB21Su2332.LogOn " +
+                        "Where Username = '" + tbxUsername.Text + "'";
+                        ProgOps.GrabPersonID(strQuery);//====SWITCH TO STRING LATER TO GRAB TEHIR NAME INSTEAD OF ID======
 
                         frmCustomer_Main frmcustomermain = new frmCustomer_Main();
                         this.Hide();
@@ -79,12 +81,28 @@ namespace SU21_Final_Project
 
                     if (ProgOps.blnFound == true)
                     {
+                        strQuery = "Select e.PersonID from  OrtizB21Su2332.Employees e inner join OrtizB21Su2332.LogOn l on l.PersonID = e.PersonID " +
+                        "Where EmployeeID = " + tbxUsername.Text;
                         ProgOps.GrabPersonID(strQuery);
 
-                        frmEmployee_Main frmemployeemain = new frmEmployee_Main();
-                        this.Hide();
-                        frmemployeemain.ShowDialog();
-                        this.Close();
+                        if(ProgOps.GrabAdmin(ProgOps.intPersonID) == true)
+                        {
+                           frmManager_Main frmmanagermain = new frmManager_Main();
+                            this.Hide();
+                            frmmanagermain.ShowDialog();
+                            this.Close();
+                        }
+                        else
+                        {
+                         strQuery = "Select e.PersonID from  OrtizB21Su2332.Employees e inner join OrtizB21Su2332.LogOn l on l.PersonID = e.PersonID " +
+                         "Where EmployeeID = " + tbxUsername.Text;
+                            ProgOps.GrabPersonID(strQuery);
+
+                            frmEmployee_Main frmemployeemain = new frmEmployee_Main();
+                            this.Hide();
+                            frmemployeemain.ShowDialog();
+                            this.Close();
+                        }                      
                     }
                 }
                 else

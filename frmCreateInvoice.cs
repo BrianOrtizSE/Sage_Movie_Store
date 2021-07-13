@@ -285,7 +285,7 @@ namespace SU21_Final_Project
                 {
                     if (blnDiscountDupe == false)
                     {
-                        ProgOps.GetDiscountID(tbxDiscount);
+                        ProgOps.GrabDiscountID(tbxDiscount);
                         if (ProgOps.blnDiscountFound == true)
                         {
                             discountUsed.Add(tbxDiscount.Text);

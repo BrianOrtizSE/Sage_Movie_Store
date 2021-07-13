@@ -98,7 +98,7 @@ namespace SU21_Final_Project
                      "Where Username = '" + tbxUsername.Text + "'";
 
 
-                ProgOps.GetPassword(tbxUsername, cmbSQ, strQuery);
+                ProgOps.GrabPassword(tbxUsername, cmbSQ, strQuery);
 
                 if (ProgOps.blnFound == false)
                 {
@@ -161,7 +161,7 @@ namespace SU21_Final_Project
                         strQuery = "Select PersonID From OrtizB21Su2332.LogOn " +
                      "Where SQuestion1 = '" + cmbSQ.Text + "' and SQAnswer1 = '" + tbxSQA.Text + "' and Username = '" + tbxUsername.Text + "'";
 
-                        ProgOps.GetPassword(tbxUsername, cmbSQ, strQuery);
+                        ProgOps.GrabPassword(tbxUsername, cmbSQ, strQuery);
                         if (ProgOps.blnFound == true)
                         {
                             strQuestion = "SQuestion1";
@@ -191,7 +191,7 @@ namespace SU21_Final_Project
                         strQuery = "Select PersonID From OrtizB21Su2332.LogOn " +
                      "Where SQuestion2 = '" + cmbSQ.Text + "' and SQAnswer2 = '" + tbxSQA.Text + "'and Username = '" + tbxUsername.Text + "'" ;
 
-                        ProgOps.GetPassword(tbxUsername, cmbSQ, strQuery);
+                        ProgOps.GrabPassword(tbxUsername, cmbSQ, strQuery);
                         if (ProgOps.blnFound == true)
                         {
                             strQuestion = "SQuestion2";
@@ -221,7 +221,7 @@ namespace SU21_Final_Project
                         strQuery = "Select PersonID From OrtizB21Su2332.LogOn " +
                      "Where SQuestion3 = '" + cmbSQ.Text + "' and SQAnswer3 = '" + tbxSQA.Text + "'and Username = '" + tbxUsername.Text + "'";
 
-                        ProgOps.GetPassword(tbxUsername, cmbSQ, strQuery);
+                        ProgOps.GrabPassword(tbxUsername, cmbSQ, strQuery);
                         if (ProgOps.blnFound == true)
                         {
                             strQuestion = "SQuestion3";

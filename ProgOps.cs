@@ -165,6 +165,8 @@ namespace SU21_Final_Project
 
 
         }
+        
+        //Used These Functions To Grab Information From The Database
         public static void GrabPersonNewID()
         {
             try
@@ -206,6 +208,10 @@ namespace SU21_Final_Project
                 MessageBox.Show("Error Invalid Cast", "Error on DatabaseCommand", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
             }
+            catch (NullReferenceException)
+            {
+                MessageBox.Show("Error NULL", "Error on DatabaseCommand", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
         public static void GrabAmount(string strQuery)
         {
@@ -230,238 +236,7 @@ namespace SU21_Final_Project
                 MessageBox.Show("NULL Cast", "Error on DatabaseCommand", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
-        public static void CheckPassword(string strQuery)
-        {
-            try
-            {
-                //Using the Sqlcommand we execute the Query
-                _sqlResultsCommand = new SqlCommand(strQuery, _conDatabase);
-                _sqlResultsCommand.ExecuteNonQuery();
-
-                //establush command object
-                _sqlResultsCommand = new SqlCommand(strQuery, _conDatabase);
-                //establish data adapter
-                _daLogOn = new SqlDataAdapter();
-                _daLogOn.SelectCommand = _sqlResultsCommand;
-                //fill data table
-                _dtLogOn = new DataTable();
-                _daLogOn.Fill(_dtLogOn);
-
-                if (_dtLogOn.Rows.Count != 0)
-                {
-                    blnFound = true;
-                }
-                else
-                {
-                    blnFound = false;
-                }
-
-                //Dispose Of Command Object
-                _sqlResultsCommand.Dispose();
-                _daLogOn.Dispose();
-                _dtLogOn.Dispose();
-            }
-            catch (SqlException ex)
-            {
-                if (ex is SqlException)
-                {//handles more specific SqlException here.
-
-                    for (int i = 0; i < ex.Errors.Count; i++)
-                    {
-                        errorMessages.Append("Index #" + i + "\n" +
-                            "Message: " + ex.Errors[i].Message + "\n" +
-                            "LineNumber: " + ex.Errors[i].LineNumber + "\n" +
-                            "Source: " + ex.Errors[i].Source + "\n" +
-                            "Procedure: " + ex.Errors[i].Procedure + "\n");
-                    }
-                    MessageBox.Show(errorMessages.ToString(), "Error on DatabaseCommand", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
-            }
-
-        }
-        public static void CreateLogIn(TextBox tbxUsername, TextBox tbxPassword, ComboBox cmbSQuestion1, TextBox SQAnswer1, ComboBox cmbSQuestion2, TextBox SQAnswer2, ComboBox cmbSQuestion3 , TextBox SQAnswer3 ,String strQuery)
-        {
-            try
-            {
-                //Using the Sqlcommand we execute the Query
-                _sqlResultsCommand = new SqlCommand(strQuery, _conDatabase);
-                _sqlResultsCommand.ExecuteNonQuery();
-
-                //Dispose Of Command Object
-                _sqlResultsCommand.Dispose();
-
-            }
-            catch (SqlException ex)
-            {
-                if (ex is SqlException)
-                {//handles more specific SqlException here.
-
-                    for (int i = 0; i < ex.Errors.Count; i++)
-                    {
-                        errorMessages.Append("Index #" + i + "\n" +
-                            "Message: " + ex.Errors[i].Message + "\n" +
-                            "LineNumber: " + ex.Errors[i].LineNumber + "\n" +
-                            "Source: " + ex.Errors[i].Source + "\n" +
-                            "Procedure: " + ex.Errors[i].Procedure + "\n");
-                    }
-                    MessageBox.Show(errorMessages.ToString(), "Error on DatabaseCommand", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
-            }
-
-        }
-        public static void GrabProduct(TextBox tbxProductID, DataGridView dgvOrders, String strQuery)
-        {
-
-            try
-            {
-                //Establish Command Object
-                _sqlResultsCommand = new SqlCommand(strQuery, _conDatabase);
-
-                //Establish Data Adapter
-                _daProduct = new SqlDataAdapter();
-                _daProduct.SelectCommand = _sqlResultsCommand;
-
-                //Fill Data Table
-                _dtProductTable = new DataTable();
-                _daProduct.Fill(_dtProductTable);
-                dgvOrders.DataSource = _dtProductTable;
-            }
-            catch (SqlException ex)
-            {
-                if (ex is SqlException)
-                {//handles more specific SqlException here.
-
-                    for (int i = 0; i < ex.Errors.Count; i++)
-                    {
-                        errorMessages.Append("Index #" + i + "\n" +
-                            "Message: " + ex.Errors[i].Message + "\n" +
-                            "LineNumber: " + ex.Errors[i].LineNumber + "\n" +
-                            "Source: " + ex.Errors[i].Source + "\n" +
-                            "Procedure: " + ex.Errors[i].Procedure + "\n");
-                    }
-                    MessageBox.Show(errorMessages.ToString(), "Error on DatabaseCommand", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
-            }
-
-
-
-        }
-        public static void ProductView(TextBox tbxProductID, TextBox ProductName, TextBox tbxGenre, TextBox tbxQuanity, TextBox tbxPrice, TextBox tbxDescription, CheckBox chxInStock)
-        {
-            //string to build query
-            string query = "select * From OrtizB21Su2332.Products ORDER BY ProductID";
-
-            //est cmd obj
-            _sqlResultsCommand = new SqlCommand(query, _conDatabase);
-
-            //est data adapter
-            _daProduct = new SqlDataAdapter();
-            _daProduct.SelectCommand = _sqlResultsCommand;
-
-            //fill data table
-            _dtProductTable = new DataTable();
-            _daProduct.Fill(_dtProductTable);
-
-            //bind to controls to data table
-            tbxProductID.DataBindings.Add("Text", _dtProductTable, "ProductID");
-            ProductName.DataBindings.Add("Text", _dtProductTable, "ProductName");
-            tbxGenre.DataBindings.Add("Text", _dtProductTable, "Genre");
-            tbxQuanity.DataBindings.Add("Text", _dtProductTable, "Quantity");
-            tbxPrice.DataBindings.Add("Text", _dtProductTable, "ProductPrice");
-            tbxDescription.DataBindings.Add("Text", _dtProductTable, "ProductDescription");
-            chxInStock.DataBindings.Add("Checked", _dtProductTable, "inStock");
-
-        }
-        public static void ProductAddEdit(TextBox tbxProductName, TextBox tbxGenre, TextBox tbxQuanity, TextBox tbxPrice, TextBox tbxDescription, int blnInStock, String query)
-        {
-            try
-            {
-
-                //establish Command Object For This Function
-                _sqlResultsCommand = new SqlCommand(query, _conDatabase);
-                _sqlResultsCommand.ExecuteNonQuery();
-
-                //Dispose Of Command Object
-                _sqlResultsCommand.Dispose();
-            }
-
-            catch (SqlException ex)
-            {
-                //Check if an SqlException was caught
-                if (ex is SqlException)
-                {
-                    //Set the error message and display it
-                    for (int i = 0; i < ex.Errors.Count; i++)
-                    {
-                        errorMessages.Append("Index #" + i + "\n" +
-                            "Message: " + ex.Errors[i].Message + "\n" +
-                            "LineNumber " + ex.Errors[i].LineNumber + "\n" +
-                            "Source " + ex.Errors[i].Source + "\n" +
-                            "Procedure " + ex.Errors[i].Procedure + "\n");
-                    }
-                    MessageBox.Show(errorMessages.ToString(), "Error on Merchandise Update On Close",
-                        MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
-            }
-        }
-        public static void ProductDispose()
-        {
-            //dispose of connection objects
-            _sqlResultsCommand.Dispose();
-            _daProduct.Dispose();
-            _dtProductTable.Dispose();
-        }
-        public static void GetDiscountID(TextBox tbxDiscountCode)
-        {
-            try
-            {
-
-                String strQuery = "Select * from OrtizB21Su2332.Discount where DiscountID = " + tbxDiscountCode.Text;
-
-
-                _sqlResultsCommand = new SqlCommand(strQuery, _conDatabase);
-                //establish data adapter
-                _daDiscount = new SqlDataAdapter();
-                _daDiscount.SelectCommand = _sqlResultsCommand;
-                //fill data table
-                _dtDiscount = new DataTable();
-                _daDiscount.Fill(_dtDiscount);
-
-                if (_dtDiscount.Rows.Count == 1)
-                {
-                    blnDiscountFound = true;
-                    GetDiscountInformation(tbxDiscountCode);
-                }
-                else
-                {
-                    blnDiscountFound = false;
-                }
-
-            }
-            catch (SqlException ex)
-            {
-                //Check if an SqlException was caught
-                if (ex is SqlException)
-                {
-                    //Set the error message and display it
-                    for (int i = 0; i < ex.Errors.Count; i++)
-                    {
-                        errorMessages.Append("Index #" + i + "\n" +
-                            "Message: " + ex.Errors[i].Message + "\n" +
-                            "LineNumber " + ex.Errors[i].LineNumber + "\n" +
-                            "Source " + ex.Errors[i].Source + "\n" +
-                            "Procedure " + ex.Errors[i].Procedure + "\n");
-                    }
-                    MessageBox.Show(errorMessages.ToString(), "Discount Search Error",
-                        MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
-            }
-
-
-
-        }
-        //used to check for product discount vs whole sale discount
-        public static void GetDiscountInformation(TextBox tbxDiscountCode)
+        public static void GrabDiscountInformation(TextBox tbxDiscountCode)//used to check for product discount vs whole sale discount
         {
             int intDiscountType = 0;
             string strQuery;
@@ -539,8 +314,54 @@ namespace SU21_Final_Project
 
 
         }
+        public static void GrabDiscountID(TextBox tbxDiscountCode)
+        {
+            try
+            {
+                String strQuery = "Select * from OrtizB21Su2332.Discount where DiscountID = " + tbxDiscountCode.Text;
 
-        public static void GetPassword(TextBox tbxUsername , ComboBox cmbSQ , String query)
+                _sqlResultsCommand = new SqlCommand(strQuery, _conDatabase);
+                //establish data adapter
+                _daDiscount = new SqlDataAdapter();
+                _daDiscount.SelectCommand = _sqlResultsCommand;
+                //fill data table
+                _dtDiscount = new DataTable();
+                _daDiscount.Fill(_dtDiscount);
+
+                if (_dtDiscount.Rows.Count == 1)
+                {
+                    blnDiscountFound = true;
+                    GrabDiscountInformation(tbxDiscountCode);
+                }
+                else
+                {
+                    blnDiscountFound = false;
+                }
+
+            }
+            catch (SqlException ex)
+            {
+                //Check if an SqlException was caught
+                if (ex is SqlException)
+                {
+                    //Set the error message and display it
+                    for (int i = 0; i < ex.Errors.Count; i++)
+                    {
+                        errorMessages.Append("Index #" + i + "\n" +
+                            "Message: " + ex.Errors[i].Message + "\n" +
+                            "LineNumber " + ex.Errors[i].LineNumber + "\n" +
+                            "Source " + ex.Errors[i].Source + "\n" +
+                            "Procedure " + ex.Errors[i].Procedure + "\n");
+                    }
+                    MessageBox.Show(errorMessages.ToString(), "Discount Search Error",
+                        MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+
+
+
+        }
+        public static void GrabPassword(TextBox tbxUsername, ComboBox cmbSQ, String query)
         {
 
             try
@@ -582,8 +403,122 @@ namespace SU21_Final_Project
                 }
             }
         }
+        public static void GrabProduct(TextBox tbxProductID, DataGridView dgvOrders, String strQuery)
+        {
 
-        public static void UpdatePassword(string strQuery)
+            try
+            {
+                //Establish Command Object
+                _sqlResultsCommand = new SqlCommand(strQuery, _conDatabase);
+
+                //Establish Data Adapter
+                _daProduct = new SqlDataAdapter();
+                _daProduct.SelectCommand = _sqlResultsCommand;
+
+                //Fill Data Table
+                _dtProductTable = new DataTable();
+                _daProduct.Fill(_dtProductTable);
+                dgvOrders.DataSource = _dtProductTable;
+            }
+            catch (SqlException ex)
+            {
+                if (ex is SqlException)
+                {//handles more specific SqlException here.
+
+                    for (int i = 0; i < ex.Errors.Count; i++)
+                    {
+                        errorMessages.Append("Index #" + i + "\n" +
+                            "Message: " + ex.Errors[i].Message + "\n" +
+                            "LineNumber: " + ex.Errors[i].LineNumber + "\n" +
+                            "Source: " + ex.Errors[i].Source + "\n" +
+                            "Procedure: " + ex.Errors[i].Procedure + "\n");
+                    }
+                    MessageBox.Show(errorMessages.ToString(), "Error on DatabaseCommand", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+
+
+
+        }
+        public static bool GrabAdmin(int intPersonID)
+        {
+            
+            string strQuery = "Select isAdmin from OrtizB21Su2332.Employees " +
+            "Where PersonID = " + intPersonID;
+
+
+            bool isAdmin = false;
+
+            try
+            {
+                //Use this Function To Grab Person ID whenever this is called
+                _sqlResultsCommand = new SqlCommand(strQuery, _conDatabase);
+
+                //Grab PersonID so we can cretae LogIn Info
+                isAdmin = (bool)_sqlResultsCommand.ExecuteScalar();
+
+                _sqlResultsCommand.Dispose();
+
+                
+            }
+            catch (InvalidCastException)
+            {
+
+                MessageBox.Show("Error Invalid Cast", "Error on DatabaseCommand", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+            }
+            catch (SqlException ex)
+            {
+                if (ex is SqlException)
+                {//handles more specific SqlException here.
+
+                    for (int i = 0; i < ex.Errors.Count; i++)
+                    {
+                        errorMessages.Append("Index #" + i + "\n" +
+                            "Message: " + ex.Errors[i].Message + "\n" +
+                            "LineNumber: " + ex.Errors[i].LineNumber + "\n" +
+                            "Source: " + ex.Errors[i].Source + "\n" +
+                            "Procedure: " + ex.Errors[i].Procedure + "\n");
+                    }
+                    MessageBox.Show(errorMessages.ToString(), "Error on DatabaseCommand", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+            return isAdmin;
+        }
+
+
+       //Fuctions for Creating Information to pass into the database
+        public static void CreateLogIn(TextBox tbxUsername, TextBox tbxPassword, ComboBox cmbSQuestion1, TextBox SQAnswer1, ComboBox cmbSQuestion2, TextBox SQAnswer2, ComboBox cmbSQuestion3 , TextBox SQAnswer3 ,String strQuery)
+        {
+            try
+            {
+                //Using the Sqlcommand we execute the Query
+                _sqlResultsCommand = new SqlCommand(strQuery, _conDatabase);
+                _sqlResultsCommand.ExecuteNonQuery();
+
+                //Dispose Of Command Object
+                _sqlResultsCommand.Dispose();
+
+            }
+            catch (SqlException ex)
+            {
+                if (ex is SqlException)
+                {//handles more specific SqlException here.
+
+                    for (int i = 0; i < ex.Errors.Count; i++)
+                    {
+                        errorMessages.Append("Index #" + i + "\n" +
+                            "Message: " + ex.Errors[i].Message + "\n" +
+                            "LineNumber: " + ex.Errors[i].LineNumber + "\n" +
+                            "Source: " + ex.Errors[i].Source + "\n" +
+                            "Procedure: " + ex.Errors[i].Procedure + "\n");
+                    }
+                    MessageBox.Show(errorMessages.ToString(), "Error on DatabaseCommand", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+
+        }
+        public static void CreateInvoice(string strQuery)
         {
             try
             {
@@ -614,6 +549,156 @@ namespace SU21_Final_Project
             }
         }
 
+
+
+
+        public static void ProductView(TextBox tbxProductID, TextBox ProductName, TextBox tbxGenre, TextBox tbxQuanity, TextBox tbxPrice, TextBox tbxDescription, CheckBox chxInStock)
+        {
+            //string to build query
+            string query = "select * From OrtizB21Su2332.Products ORDER BY ProductID";
+
+            //est cmd obj
+            _sqlResultsCommand = new SqlCommand(query, _conDatabase);
+
+            //est data adapter
+            _daProduct = new SqlDataAdapter();
+            _daProduct.SelectCommand = _sqlResultsCommand;
+
+            //fill data table
+            _dtProductTable = new DataTable();
+            _daProduct.Fill(_dtProductTable);
+
+            //bind to controls to data table
+            tbxProductID.DataBindings.Add("Text", _dtProductTable, "ProductID");
+            ProductName.DataBindings.Add("Text", _dtProductTable, "ProductName");
+            tbxGenre.DataBindings.Add("Text", _dtProductTable, "Genre");
+            tbxQuanity.DataBindings.Add("Text", _dtProductTable, "Quantity");
+            tbxPrice.DataBindings.Add("Text", _dtProductTable, "ProductPrice");
+            tbxDescription.DataBindings.Add("Text", _dtProductTable, "ProductDescription");
+            chxInStock.DataBindings.Add("Checked", _dtProductTable, "inStock");
+
+        }
+        public static void ProductAddEdit(TextBox tbxProductName, TextBox tbxGenre, TextBox tbxQuanity, TextBox tbxPrice, TextBox tbxDescription, int blnInStock, String query)
+        {
+            try
+            {
+
+                //establish Command Object For This Function
+                _sqlResultsCommand = new SqlCommand(query, _conDatabase);
+                _sqlResultsCommand.ExecuteNonQuery();
+
+                //Dispose Of Command Object
+                _sqlResultsCommand.Dispose();
+            }
+
+            catch (SqlException ex)
+            {
+                //Check if an SqlException was caught
+                if (ex is SqlException)
+                {
+                    //Set the error message and display it
+                    for (int i = 0; i < ex.Errors.Count; i++)
+                    {
+                        errorMessages.Append("Index #" + i + "\n" +
+                            "Message: " + ex.Errors[i].Message + "\n" +
+                            "LineNumber " + ex.Errors[i].LineNumber + "\n" +
+                            "Source " + ex.Errors[i].Source + "\n" +
+                            "Procedure " + ex.Errors[i].Procedure + "\n");
+                    }
+                    MessageBox.Show(errorMessages.ToString(), "Error on Merchandise Update On Close",
+                        MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+        }
+        public static void ProductDispose()
+        {
+            //dispose of connection objects
+            _sqlResultsCommand.Dispose();
+            _daProduct.Dispose();
+            _dtProductTable.Dispose();
+        }
+
+
+
+        public static void CheckPassword(string strQuery)
+        {
+            try
+            {
+                //Using the Sqlcommand we execute the Query
+                _sqlResultsCommand = new SqlCommand(strQuery, _conDatabase);
+                _sqlResultsCommand.ExecuteNonQuery();
+
+                //establush command object
+                _sqlResultsCommand = new SqlCommand(strQuery, _conDatabase);
+                //establish data adapter
+                _daLogOn = new SqlDataAdapter();
+                _daLogOn.SelectCommand = _sqlResultsCommand;
+                //fill data table
+                _dtLogOn = new DataTable();
+                _daLogOn.Fill(_dtLogOn);
+
+                if (_dtLogOn.Rows.Count != 0)
+                {
+                    blnFound = true;
+                }
+                else
+                {
+                    blnFound = false;
+                }
+
+                //Dispose Of Command Object
+                _sqlResultsCommand.Dispose();
+                _daLogOn.Dispose();
+                _dtLogOn.Dispose();
+            }
+            catch (SqlException ex)
+            {
+                if (ex is SqlException)
+                {//handles more specific SqlException here.
+
+                    for (int i = 0; i < ex.Errors.Count; i++)
+                    {
+                        errorMessages.Append("Index #" + i + "\n" +
+                            "Message: " + ex.Errors[i].Message + "\n" +
+                            "LineNumber: " + ex.Errors[i].LineNumber + "\n" +
+                            "Source: " + ex.Errors[i].Source + "\n" +
+                            "Procedure: " + ex.Errors[i].Procedure + "\n");
+                    }
+                    MessageBox.Show(errorMessages.ToString(), "Error on DatabaseCommand", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+
+        }
+        public static void UpdatePassword(string strQuery)
+        {
+            try
+            {
+
+                //establish Command Object For This Function
+                _sqlResultsCommand = new SqlCommand(strQuery, _conDatabase);
+                _sqlResultsCommand.ExecuteNonQuery();
+
+                //Dispose Of Command Object
+                _sqlResultsCommand.Dispose();
+
+            }
+            catch (SqlException ex)
+            {
+                if (ex is SqlException)
+                {//handles more specific SqlException here.
+
+                    for (int i = 0; i < ex.Errors.Count; i++)
+                    {
+                        errorMessages.Append("Index #" + i + "\n" +
+                            "Message: " + ex.Errors[i].Message + "\n" +
+                            "LineNumber: " + ex.Errors[i].LineNumber + "\n" +
+                            "Source: " + ex.Errors[i].Source + "\n" +
+                            "Procedure: " + ex.Errors[i].Procedure + "\n");
+                    }
+                    MessageBox.Show(errorMessages.ToString(), "Error on DatabaseCommand", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+        }
         public static void UpdateQuantity(string strQuery)
         {
             try
@@ -645,36 +730,7 @@ namespace SU21_Final_Project
             }
         }
 
-        public static void CreateInvoice(string strQuery)
-        {
-            try
-            {
-
-                //establish Command Object For This Function
-                _sqlResultsCommand = new SqlCommand(strQuery, _conDatabase);
-                _sqlResultsCommand.ExecuteNonQuery();
-
-                //Dispose Of Command Object
-                _sqlResultsCommand.Dispose();
-
-            }
-            catch (SqlException ex)
-            {
-                if (ex is SqlException)
-                {//handles more specific SqlException here.
-
-                    for (int i = 0; i < ex.Errors.Count; i++)
-                    {
-                        errorMessages.Append("Index #" + i + "\n" +
-                            "Message: " + ex.Errors[i].Message + "\n" +
-                            "LineNumber: " + ex.Errors[i].LineNumber + "\n" +
-                            "Source: " + ex.Errors[i].Source + "\n" +
-                            "Procedure: " + ex.Errors[i].Procedure + "\n");
-                    }
-                    MessageBox.Show(errorMessages.ToString(), "Error on DatabaseCommand", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
-            }
-        }
+        
 
     }
 
