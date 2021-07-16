@@ -29,12 +29,7 @@ namespace SU21_Final_Project
             {
                 lblPasswordValid.Visible = true;
                 if (ProgOps.blnFound == true)
-                {
-                    strQuery = "Select PersonID From OrtizB21Su2332.LogOn " +
-                    "Where " + strQuestion + " = '" + cmbSQ.Text + "' and " + strAnwser + " = '" + tbxSQA.Text + "'";
-                    ProgOps.GrabPersonID(strQuery);
-
-                    
+                {   
 
                     //VALIDATION FOR PASSWORD
                     //bool to tell if password has a number
@@ -71,7 +66,7 @@ namespace SU21_Final_Project
                     }
                     else
                     {
-                        //lblErrorPassword.Visible = false;
+                        
                     }
 
                     if(blnValid == true)
@@ -98,7 +93,7 @@ namespace SU21_Final_Project
                      "Where Username = '" + tbxUsername.Text + "'";
 
 
-                ProgOps.GrabPassword(tbxUsername, cmbSQ, strQuery);
+                ProgOps.GrabPassword(strQuery);
 
                 if (ProgOps.blnFound == false)
                 {
@@ -106,6 +101,10 @@ namespace SU21_Final_Project
                 }
                 else
                 {
+                    strQuery = "Select PersonID From OrtizB21Su2332.LogOn " +
+                        "Where Username = '" + tbxUsername.Text + "'";
+                    ProgOps.GrabPersonID(strQuery);
+
                     btnSearch.Enabled = false;
                     tbxUsername.Enabled = false;
 
@@ -116,12 +115,6 @@ namespace SU21_Final_Project
                     btnSSearch.Visible = true;
                 }
             }
-            
-
-            
-
-
-
 
         }
 
@@ -134,6 +127,7 @@ namespace SU21_Final_Project
         private void button1_Click(object sender, EventArgs e)
         {
             intSearch++;
+            //Call Find Password To Beggin Search For User
             FindPassword();
         }
 
@@ -148,9 +142,8 @@ namespace SU21_Final_Project
             {
 
                 case 1:
-
                     
-
+                    //Quick Check To Make Sure SQuestion are not Empty
                     if (cmbSQ.Text == string.Empty || tbxSQA.Text == string.Empty)
                     {
                         MessageBox.Show("Security Question and Security Awnser can not be Empty", "Empty Error", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -158,10 +151,14 @@ namespace SU21_Final_Project
                     }
                     else
                     {
+                        //Search For PersonID using Username , SQ's and SQAnswers
                         strQuery = "Select PersonID From OrtizB21Su2332.LogOn " +
                      "Where SQuestion1 = '" + cmbSQ.Text + "' and SQAnswer1 = '" + tbxSQA.Text + "' and Username = '" + tbxUsername.Text + "'";
 
-                        ProgOps.GrabPassword(tbxUsername, cmbSQ, strQuery);
+
+                        ProgOps.GrabPassword(strQuery);
+
+                    //If a person is found we set the SQuestions and SQAnswer
                         if (ProgOps.blnFound == true)
                         {
                             strQuestion = "SQuestion1";
@@ -170,6 +167,7 @@ namespace SU21_Final_Project
                         }
                         else
                         {
+                    //Could Not Find User so we are moving on to the Next question
                             MessageBox.Show("Was unable to confirm Identity continuing to next question.", "Wrong Awnser", MessageBoxButtons.OK, MessageBoxIcon.Information);
                             lblSecurityText.Text = "Security Question 2";
                             lblSecurityAnswer.Text = "Security Answer 2";
@@ -178,8 +176,6 @@ namespace SU21_Final_Project
                     break;
 
                 case 2:
-
-                    
 
                     if (cmbSQ.Text == string.Empty || tbxSQA.Text == string.Empty)
                     {
@@ -191,7 +187,7 @@ namespace SU21_Final_Project
                         strQuery = "Select PersonID From OrtizB21Su2332.LogOn " +
                      "Where SQuestion2 = '" + cmbSQ.Text + "' and SQAnswer2 = '" + tbxSQA.Text + "'and Username = '" + tbxUsername.Text + "'" ;
 
-                        ProgOps.GrabPassword(tbxUsername, cmbSQ, strQuery);
+                        ProgOps.GrabPassword(strQuery);
                         if (ProgOps.blnFound == true)
                         {
                             strQuestion = "SQuestion2";
@@ -209,8 +205,6 @@ namespace SU21_Final_Project
 
                 case 3:
 
-                    
-
                     if (cmbSQ.Text == string.Empty || tbxSQA.Text == string.Empty)
                     {
                         MessageBox.Show("Security Question and Security Awnser can not be Empty", "Empty Error", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -221,7 +215,7 @@ namespace SU21_Final_Project
                         strQuery = "Select PersonID From OrtizB21Su2332.LogOn " +
                      "Where SQuestion3 = '" + cmbSQ.Text + "' and SQAnswer3 = '" + tbxSQA.Text + "'and Username = '" + tbxUsername.Text + "'";
 
-                        ProgOps.GrabPassword(tbxUsername, cmbSQ, strQuery);
+                        ProgOps.GrabPassword(strQuery);
                         if (ProgOps.blnFound == true)
                         {
                             strQuestion = "SQuestion3";
@@ -237,6 +231,7 @@ namespace SU21_Final_Project
                     break;
 
                 default:
+                    MessageBox.Show("Error On intSearch", "Error", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     break;
 
             }

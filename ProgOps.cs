@@ -56,6 +56,7 @@ namespace SU21_Final_Project
         //Strinbuilder for error messages in the trycatch
         private static StringBuilder errorMessages = new StringBuilder();
 
+
         public static void OpenDatabase()//Attemp To Open Database
         {
             try
@@ -166,6 +167,7 @@ namespace SU21_Final_Project
 
         }
         
+
         //Used These Functions To Grab Information From The Database
         public static void GrabPersonNewID()
         {
@@ -361,7 +363,7 @@ namespace SU21_Final_Project
 
 
         }
-        public static void GrabPassword(TextBox tbxUsername, ComboBox cmbSQ, String query)
+        public static void GrabPassword(String query)
         {
 
             try
@@ -487,6 +489,7 @@ namespace SU21_Final_Project
         }
 
 
+
        //Fuctions for Creating Information to pass into the database
         public static void CreateLogIn(TextBox tbxUsername, TextBox tbxPassword, ComboBox cmbSQuestion1, TextBox SQAnswer1, ComboBox cmbSQuestion2, TextBox SQAnswer2, ComboBox cmbSQuestion3 , TextBox SQAnswer3 ,String strQuery)
         {
@@ -548,8 +551,36 @@ namespace SU21_Final_Project
                 }
             }
         }
+        public static void CreateSale(string strQuery)
+        {
+            try
+            {
 
+                //establish Command Object For This Function
+                _sqlResultsCommand = new SqlCommand(strQuery, _conDatabase);
+                _sqlResultsCommand.ExecuteNonQuery();
 
+                //Dispose Of Command Object
+                _sqlResultsCommand.Dispose();
+
+            }
+            catch (SqlException ex)
+            {
+                if (ex is SqlException)
+                {//handles more specific SqlException here.
+
+                    for (int i = 0; i < ex.Errors.Count; i++)
+                    {
+                        errorMessages.Append("Index #" + i + "\n" +
+                            "Message: " + ex.Errors[i].Message + "\n" +
+                            "LineNumber: " + ex.Errors[i].LineNumber + "\n" +
+                            "Source: " + ex.Errors[i].Source + "\n" +
+                            "Procedure: " + ex.Errors[i].Procedure + "\n");
+                    }
+                    MessageBox.Show(errorMessages.ToString(), "Error on DatabaseCommand", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+        }
 
 
         public static void ProductView(TextBox tbxProductID, TextBox ProductName, TextBox tbxGenre, TextBox tbxQuanity, TextBox tbxPrice, TextBox tbxDescription, CheckBox chxInStock)
@@ -617,7 +648,6 @@ namespace SU21_Final_Project
             _daProduct.Dispose();
             _dtProductTable.Dispose();
         }
-
 
 
         public static void CheckPassword(string strQuery)

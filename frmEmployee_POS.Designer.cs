@@ -1,7 +1,7 @@
 ﻿
 namespace SU21_Final_Project
 {
-    partial class frmCreateInvoice
+    partial class frmEmployee_POS
     {
         /// <summary>
         /// Required designer variable.
@@ -29,7 +29,7 @@ namespace SU21_Final_Project
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmCreateInvoice));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmEmployee_POS));
             this.pnlCheckout = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.lblMonth = new System.Windows.Forms.Label();
@@ -52,29 +52,29 @@ namespace SU21_Final_Project
             this.rdbVisa = new System.Windows.Forms.RadioButton();
             this.btnPay = new System.Windows.Forms.Button();
             this.lblCardName = new System.Windows.Forms.Label();
-            this.lblOrderDetails = new System.Windows.Forms.Label();
-            this.lblLine = new System.Windows.Forms.Label();
-            this.tbxQuantity = new System.Windows.Forms.TextBox();
-            this.lblAmount = new System.Windows.Forms.Label();
-            this.btnAddToOrder = new System.Windows.Forms.Button();
-            this.lblError = new System.Windows.Forms.Label();
-            this.lbxOrder = new System.Windows.Forms.ListBox();
-            this.lbltextID = new System.Windows.Forms.Label();
-            this.dgvProducts = new System.Windows.Forms.DataGridView();
-            this.lblProdError = new System.Windows.Forms.Label();
-            this.lblShoppingCart = new System.Windows.Forms.Label();
-            this.tbxProductID = new System.Windows.Forms.TextBox();
-            this.lblProduct = new System.Windows.Forms.Label();
-            this.btnRemove = new System.Windows.Forms.Button();
-            this.lblToalPrice = new System.Windows.Forms.Label();
-            this.btnCheckOut = new System.Windows.Forms.Button();
-            this.btnCloseShop = new System.Windows.Forms.Button();
             this.pnlCart = new System.Windows.Forms.Panel();
+            this.btnCloseShop = new System.Windows.Forms.Button();
+            this.btnCheckOut = new System.Windows.Forms.Button();
+            this.lblToalPrice = new System.Windows.Forms.Label();
+            this.btnRemove = new System.Windows.Forms.Button();
+            this.lblProduct = new System.Windows.Forms.Label();
+            this.tbxProductID = new System.Windows.Forms.TextBox();
+            this.lblShoppingCart = new System.Windows.Forms.Label();
+            this.lblProdError = new System.Windows.Forms.Label();
+            this.dgvProducts = new System.Windows.Forms.DataGridView();
+            this.lbltextID = new System.Windows.Forms.Label();
+            this.lbxOrder = new System.Windows.Forms.ListBox();
+            this.lblError = new System.Windows.Forms.Label();
+            this.btnAddToOrder = new System.Windows.Forms.Button();
+            this.lblAmount = new System.Windows.Forms.Label();
+            this.tbxQuantity = new System.Windows.Forms.TextBox();
+            this.lblLine = new System.Windows.Forms.Label();
+            this.lblOrderDetails = new System.Windows.Forms.Label();
             this.mnsHelp = new System.Windows.Forms.MenuStrip();
             this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.pnlCheckout.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvProducts)).BeginInit();
             this.pnlCart.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvProducts)).BeginInit();
             this.mnsHelp.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -101,12 +101,11 @@ namespace SU21_Final_Project
             this.pnlCheckout.Controls.Add(this.rdbVisa);
             this.pnlCheckout.Controls.Add(this.btnPay);
             this.pnlCheckout.Controls.Add(this.lblCardName);
-            this.pnlCheckout.Location = new System.Drawing.Point(21, 12);
+            this.pnlCheckout.Location = new System.Drawing.Point(12, 12);
             this.pnlCheckout.Name = "pnlCheckout";
             this.pnlCheckout.Size = new System.Drawing.Size(632, 551);
-            this.pnlCheckout.TabIndex = 34;
+            this.pnlCheckout.TabIndex = 37;
             this.pnlCheckout.Visible = false;
-            this.pnlCheckout.Paint += new System.Windows.Forms.PaintEventHandler(this.pnlCheckout_Paint);
             // 
             // label1
             // 
@@ -221,8 +220,6 @@ namespace SU21_Final_Project
             this.tbxSCode.Name = "tbxSCode";
             this.tbxSCode.Size = new System.Drawing.Size(85, 23);
             this.tbxSCode.TabIndex = 42;
-            this.tbxSCode.TextChanged += new System.EventHandler(this.tbxSCode_TextChanged);
-            this.tbxSCode.KeyUp += new System.Windows.Forms.KeyEventHandler(this.tbxSCode_KeyUp);
             // 
             // tbxDiscount
             // 
@@ -231,7 +228,6 @@ namespace SU21_Final_Project
             this.tbxDiscount.Name = "tbxDiscount";
             this.tbxDiscount.Size = new System.Drawing.Size(100, 23);
             this.tbxDiscount.TabIndex = 2;
-            this.tbxDiscount.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbxDiscount_KeyPress);
             // 
             // lblSecurityCode
             // 
@@ -251,7 +247,7 @@ namespace SU21_Final_Project
             this.btnClose.TabIndex = 1;
             this.btnClose.Text = "&Return To Cart";
             this.btnClose.UseVisualStyleBackColor = true;
-            this.btnClose.Click += new System.EventHandler(this.btnCloseShop_Click);
+            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
             // lblValidDate
             // 
@@ -292,7 +288,6 @@ namespace SU21_Final_Project
             this.tbxCardHolderName.Name = "tbxCardHolderName";
             this.tbxCardHolderName.Size = new System.Drawing.Size(170, 23);
             this.tbxCardHolderName.TabIndex = 36;
-            this.tbxCardHolderName.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbxCardHolderName_KeyPress);
             // 
             // tbxCardNumber
             // 
@@ -302,7 +297,6 @@ namespace SU21_Final_Project
             this.tbxCardNumber.Name = "tbxCardNumber";
             this.tbxCardNumber.Size = new System.Drawing.Size(164, 23);
             this.tbxCardNumber.TabIndex = 37;
-            this.tbxCardNumber.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbxCardNumber_KeyPress);
             // 
             // rdbMasterCard
             // 
@@ -349,185 +343,6 @@ namespace SU21_Final_Project
             this.lblCardName.TabIndex = 43;
             this.lblCardName.Text = "Cardholder\'s Name";
             // 
-            // lblOrderDetails
-            // 
-            this.lblOrderDetails.AutoSize = true;
-            this.lblOrderDetails.Font = new System.Drawing.Font("Tahoma", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblOrderDetails.Location = new System.Drawing.Point(74, 22);
-            this.lblOrderDetails.Name = "lblOrderDetails";
-            this.lblOrderDetails.Size = new System.Drawing.Size(117, 25);
-            this.lblOrderDetails.TabIndex = 25;
-            this.lblOrderDetails.Text = "Shop Menu";
-            this.lblOrderDetails.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // lblLine
-            // 
-            this.lblLine.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.lblLine.Location = new System.Drawing.Point(3, 59);
-            this.lblLine.Name = "lblLine";
-            this.lblLine.Size = new System.Drawing.Size(320, 3);
-            this.lblLine.TabIndex = 26;
-            // 
-            // tbxQuantity
-            // 
-            this.tbxQuantity.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbxQuantity.Location = new System.Drawing.Point(59, 167);
-            this.tbxQuantity.Name = "tbxQuantity";
-            this.tbxQuantity.Size = new System.Drawing.Size(132, 27);
-            this.tbxQuantity.TabIndex = 17;
-            this.tbxQuantity.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbxQuantity_KeyPress);
-            // 
-            // lblAmount
-            // 
-            this.lblAmount.AutoSize = true;
-            this.lblAmount.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblAmount.Location = new System.Drawing.Point(91, 145);
-            this.lblAmount.Name = "lblAmount";
-            this.lblAmount.Size = new System.Drawing.Size(71, 19);
-            this.lblAmount.TabIndex = 22;
-            this.lblAmount.Text = "Amount ";
-            // 
-            // btnAddToOrder
-            // 
-            this.btnAddToOrder.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAddToOrder.Location = new System.Drawing.Point(28, 336);
-            this.btnAddToOrder.Name = "btnAddToOrder";
-            this.btnAddToOrder.Size = new System.Drawing.Size(114, 40);
-            this.btnAddToOrder.TabIndex = 18;
-            this.btnAddToOrder.Text = "&Add";
-            this.btnAddToOrder.UseVisualStyleBackColor = true;
-            this.btnAddToOrder.Click += new System.EventHandler(this.btnAddToOrder_Click);
-            // 
-            // lblError
-            // 
-            this.lblError.AutoSize = true;
-            this.lblError.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblError.ForeColor = System.Drawing.Color.Red;
-            this.lblError.Location = new System.Drawing.Point(194, 173);
-            this.lblError.Name = "lblError";
-            this.lblError.Size = new System.Drawing.Size(98, 16);
-            this.lblError.TabIndex = 24;
-            this.lblError.Text = "*Required Field";
-            this.lblError.Visible = false;
-            // 
-            // lbxOrder
-            // 
-            this.lbxOrder.FormattingEnabled = true;
-            this.lbxOrder.Location = new System.Drawing.Point(836, 59);
-            this.lbxOrder.Name = "lbxOrder";
-            this.lbxOrder.Size = new System.Drawing.Size(272, 394);
-            this.lbxOrder.TabIndex = 30;
-            this.lbxOrder.TabStop = false;
-            // 
-            // lbltextID
-            // 
-            this.lbltextID.AutoSize = true;
-            this.lbltextID.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbltextID.Location = new System.Drawing.Point(91, 85);
-            this.lbltextID.Name = "lbltextID";
-            this.lbltextID.Size = new System.Drawing.Size(67, 19);
-            this.lbltextID.TabIndex = 21;
-            this.lbltextID.Text = "MovieID";
-            // 
-            // dgvProducts
-            // 
-            this.dgvProducts.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.DisplayedCells;
-            this.dgvProducts.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
-            this.dgvProducts.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvProducts.Location = new System.Drawing.Point(330, 59);
-            this.dgvProducts.Name = "dgvProducts";
-            this.dgvProducts.RowHeadersWidth = 72;
-            this.dgvProducts.Size = new System.Drawing.Size(491, 394);
-            this.dgvProducts.TabIndex = 28;
-            this.dgvProducts.TabStop = false;
-            this.dgvProducts.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvProducts_CellContentClick);
-            // 
-            // lblProdError
-            // 
-            this.lblProdError.AutoSize = true;
-            this.lblProdError.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblProdError.ForeColor = System.Drawing.Color.Red;
-            this.lblProdError.Location = new System.Drawing.Point(197, 115);
-            this.lblProdError.Name = "lblProdError";
-            this.lblProdError.Size = new System.Drawing.Size(88, 16);
-            this.lblProdError.TabIndex = 23;
-            this.lblProdError.Text = "Numbers Only";
-            this.lblProdError.Visible = false;
-            // 
-            // lblShoppingCart
-            // 
-            this.lblShoppingCart.AutoSize = true;
-            this.lblShoppingCart.Font = new System.Drawing.Font("Tahoma", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblShoppingCart.Location = new System.Drawing.Point(884, 8);
-            this.lblShoppingCart.Name = "lblShoppingCart";
-            this.lblShoppingCart.Size = new System.Drawing.Size(160, 25);
-            this.lblShoppingCart.TabIndex = 29;
-            this.lblShoppingCart.Text = "Shopping Cart :";
-            this.lblShoppingCart.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // tbxProductID
-            // 
-            this.tbxProductID.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbxProductID.Location = new System.Drawing.Point(59, 110);
-            this.tbxProductID.Name = "tbxProductID";
-            this.tbxProductID.Size = new System.Drawing.Size(132, 27);
-            this.tbxProductID.TabIndex = 16;
-            this.tbxProductID.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbxProductID_KeyPress);
-            // 
-            // lblProduct
-            // 
-            this.lblProduct.AutoSize = true;
-            this.lblProduct.Font = new System.Drawing.Font("Tahoma", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblProduct.Location = new System.Drawing.Point(505, 8);
-            this.lblProduct.Name = "lblProduct";
-            this.lblProduct.Size = new System.Drawing.Size(95, 25);
-            this.lblProduct.TabIndex = 27;
-            this.lblProduct.Text = "Movies : ";
-            this.lblProduct.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // btnRemove
-            // 
-            this.btnRemove.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnRemove.Location = new System.Drawing.Point(148, 336);
-            this.btnRemove.Name = "btnRemove";
-            this.btnRemove.Size = new System.Drawing.Size(114, 40);
-            this.btnRemove.TabIndex = 32;
-            this.btnRemove.Text = "R&emove Item";
-            this.btnRemove.UseVisualStyleBackColor = true;
-            this.btnRemove.Click += new System.EventHandler(this.btnRemove_Click);
-            // 
-            // lblToalPrice
-            // 
-            this.lblToalPrice.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblToalPrice.Location = new System.Drawing.Point(836, 465);
-            this.lblToalPrice.Name = "lblToalPrice";
-            this.lblToalPrice.Size = new System.Drawing.Size(208, 40);
-            this.lblToalPrice.TabIndex = 31;
-            this.lblToalPrice.Text = "Total: ";
-            this.lblToalPrice.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // btnCheckOut
-            // 
-            this.btnCheckOut.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCheckOut.Location = new System.Drawing.Point(28, 382);
-            this.btnCheckOut.Name = "btnCheckOut";
-            this.btnCheckOut.Size = new System.Drawing.Size(114, 40);
-            this.btnCheckOut.TabIndex = 19;
-            this.btnCheckOut.Text = "&CheckOut";
-            this.btnCheckOut.UseVisualStyleBackColor = true;
-            this.btnCheckOut.Click += new System.EventHandler(this.btnCheckOut_Click);
-            // 
-            // btnCloseShop
-            // 
-            this.btnCloseShop.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCloseShop.Location = new System.Drawing.Point(148, 382);
-            this.btnCloseShop.Name = "btnCloseShop";
-            this.btnCloseShop.Size = new System.Drawing.Size(114, 40);
-            this.btnCloseShop.TabIndex = 33;
-            this.btnCloseShop.Text = "&Close";
-            this.btnCloseShop.UseVisualStyleBackColor = true;
-            this.btnCloseShop.Click += new System.EventHandler(this.btnClose_Click);
-            // 
             // pnlCart
             // 
             this.pnlCart.Controls.Add(this.btnCloseShop);
@@ -547,10 +362,186 @@ namespace SU21_Final_Project
             this.pnlCart.Controls.Add(this.tbxQuantity);
             this.pnlCart.Controls.Add(this.lblLine);
             this.pnlCart.Controls.Add(this.lblOrderDetails);
-            this.pnlCart.Location = new System.Drawing.Point(21, 35);
+            this.pnlCart.Location = new System.Drawing.Point(21, 41);
             this.pnlCart.Name = "pnlCart";
             this.pnlCart.Size = new System.Drawing.Size(1124, 519);
-            this.pnlCart.TabIndex = 33;
+            this.pnlCart.TabIndex = 36;
+            // 
+            // btnCloseShop
+            // 
+            this.btnCloseShop.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCloseShop.Location = new System.Drawing.Point(148, 382);
+            this.btnCloseShop.Name = "btnCloseShop";
+            this.btnCloseShop.Size = new System.Drawing.Size(114, 40);
+            this.btnCloseShop.TabIndex = 33;
+            this.btnCloseShop.Text = "&Close";
+            this.btnCloseShop.UseVisualStyleBackColor = true;
+            this.btnCloseShop.Click += new System.EventHandler(this.btnCloseShop_Click);
+            // 
+            // btnCheckOut
+            // 
+            this.btnCheckOut.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCheckOut.Location = new System.Drawing.Point(28, 382);
+            this.btnCheckOut.Name = "btnCheckOut";
+            this.btnCheckOut.Size = new System.Drawing.Size(114, 40);
+            this.btnCheckOut.TabIndex = 19;
+            this.btnCheckOut.Text = "&CheckOut";
+            this.btnCheckOut.UseVisualStyleBackColor = true;
+            this.btnCheckOut.Click += new System.EventHandler(this.btnCheckOut_Click);
+            // 
+            // lblToalPrice
+            // 
+            this.lblToalPrice.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblToalPrice.Location = new System.Drawing.Point(836, 465);
+            this.lblToalPrice.Name = "lblToalPrice";
+            this.lblToalPrice.Size = new System.Drawing.Size(208, 40);
+            this.lblToalPrice.TabIndex = 31;
+            this.lblToalPrice.Text = "Total: ";
+            this.lblToalPrice.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // btnRemove
+            // 
+            this.btnRemove.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRemove.Location = new System.Drawing.Point(148, 336);
+            this.btnRemove.Name = "btnRemove";
+            this.btnRemove.Size = new System.Drawing.Size(114, 40);
+            this.btnRemove.TabIndex = 32;
+            this.btnRemove.Text = "R&emove Item";
+            this.btnRemove.UseVisualStyleBackColor = true;
+            this.btnRemove.Click += new System.EventHandler(this.btnRemove_Click);
+            // 
+            // lblProduct
+            // 
+            this.lblProduct.AutoSize = true;
+            this.lblProduct.Font = new System.Drawing.Font("Tahoma", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblProduct.Location = new System.Drawing.Point(505, 8);
+            this.lblProduct.Name = "lblProduct";
+            this.lblProduct.Size = new System.Drawing.Size(95, 25);
+            this.lblProduct.TabIndex = 27;
+            this.lblProduct.Text = "Movies : ";
+            this.lblProduct.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // tbxProductID
+            // 
+            this.tbxProductID.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbxProductID.Location = new System.Drawing.Point(59, 110);
+            this.tbxProductID.Name = "tbxProductID";
+            this.tbxProductID.Size = new System.Drawing.Size(132, 27);
+            this.tbxProductID.TabIndex = 16;
+            // 
+            // lblShoppingCart
+            // 
+            this.lblShoppingCart.AutoSize = true;
+            this.lblShoppingCart.Font = new System.Drawing.Font("Tahoma", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblShoppingCart.Location = new System.Drawing.Point(884, 8);
+            this.lblShoppingCart.Name = "lblShoppingCart";
+            this.lblShoppingCart.Size = new System.Drawing.Size(160, 25);
+            this.lblShoppingCart.TabIndex = 29;
+            this.lblShoppingCart.Text = "Shopping Cart :";
+            this.lblShoppingCart.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // lblProdError
+            // 
+            this.lblProdError.AutoSize = true;
+            this.lblProdError.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblProdError.ForeColor = System.Drawing.Color.Red;
+            this.lblProdError.Location = new System.Drawing.Point(197, 115);
+            this.lblProdError.Name = "lblProdError";
+            this.lblProdError.Size = new System.Drawing.Size(88, 16);
+            this.lblProdError.TabIndex = 23;
+            this.lblProdError.Text = "Numbers Only";
+            this.lblProdError.Visible = false;
+            // 
+            // dgvProducts
+            // 
+            this.dgvProducts.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.DisplayedCells;
+            this.dgvProducts.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
+            this.dgvProducts.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvProducts.Location = new System.Drawing.Point(330, 59);
+            this.dgvProducts.Name = "dgvProducts";
+            this.dgvProducts.RowHeadersWidth = 72;
+            this.dgvProducts.Size = new System.Drawing.Size(491, 394);
+            this.dgvProducts.TabIndex = 28;
+            this.dgvProducts.TabStop = false;
+            // 
+            // lbltextID
+            // 
+            this.lbltextID.AutoSize = true;
+            this.lbltextID.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbltextID.Location = new System.Drawing.Point(91, 85);
+            this.lbltextID.Name = "lbltextID";
+            this.lbltextID.Size = new System.Drawing.Size(67, 19);
+            this.lbltextID.TabIndex = 21;
+            this.lbltextID.Text = "MovieID";
+            // 
+            // lbxOrder
+            // 
+            this.lbxOrder.FormattingEnabled = true;
+            this.lbxOrder.Location = new System.Drawing.Point(836, 59);
+            this.lbxOrder.Name = "lbxOrder";
+            this.lbxOrder.Size = new System.Drawing.Size(272, 394);
+            this.lbxOrder.TabIndex = 30;
+            this.lbxOrder.TabStop = false;
+            // 
+            // lblError
+            // 
+            this.lblError.AutoSize = true;
+            this.lblError.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblError.ForeColor = System.Drawing.Color.Red;
+            this.lblError.Location = new System.Drawing.Point(194, 173);
+            this.lblError.Name = "lblError";
+            this.lblError.Size = new System.Drawing.Size(98, 16);
+            this.lblError.TabIndex = 24;
+            this.lblError.Text = "*Required Field";
+            this.lblError.Visible = false;
+            // 
+            // btnAddToOrder
+            // 
+            this.btnAddToOrder.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAddToOrder.Location = new System.Drawing.Point(28, 336);
+            this.btnAddToOrder.Name = "btnAddToOrder";
+            this.btnAddToOrder.Size = new System.Drawing.Size(114, 40);
+            this.btnAddToOrder.TabIndex = 18;
+            this.btnAddToOrder.Text = "&Add";
+            this.btnAddToOrder.UseVisualStyleBackColor = true;
+            this.btnAddToOrder.Click += new System.EventHandler(this.btnAddToOrder_Click);
+            // 
+            // lblAmount
+            // 
+            this.lblAmount.AutoSize = true;
+            this.lblAmount.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblAmount.Location = new System.Drawing.Point(91, 145);
+            this.lblAmount.Name = "lblAmount";
+            this.lblAmount.Size = new System.Drawing.Size(71, 19);
+            this.lblAmount.TabIndex = 22;
+            this.lblAmount.Text = "Amount ";
+            // 
+            // tbxQuantity
+            // 
+            this.tbxQuantity.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbxQuantity.Location = new System.Drawing.Point(59, 167);
+            this.tbxQuantity.Name = "tbxQuantity";
+            this.tbxQuantity.Size = new System.Drawing.Size(132, 27);
+            this.tbxQuantity.TabIndex = 17;
+            // 
+            // lblLine
+            // 
+            this.lblLine.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.lblLine.Location = new System.Drawing.Point(3, 59);
+            this.lblLine.Name = "lblLine";
+            this.lblLine.Size = new System.Drawing.Size(320, 3);
+            this.lblLine.TabIndex = 26;
+            // 
+            // lblOrderDetails
+            // 
+            this.lblOrderDetails.AutoSize = true;
+            this.lblOrderDetails.Font = new System.Drawing.Font("Tahoma", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblOrderDetails.Location = new System.Drawing.Point(74, 22);
+            this.lblOrderDetails.Name = "lblOrderDetails";
+            this.lblOrderDetails.Size = new System.Drawing.Size(117, 25);
+            this.lblOrderDetails.TabIndex = 25;
+            this.lblOrderDetails.Text = "Shop Menu";
+            this.lblOrderDetails.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // mnsHelp
             // 
@@ -558,10 +549,9 @@ namespace SU21_Final_Project
             this.helpToolStripMenuItem});
             this.mnsHelp.Location = new System.Drawing.Point(0, 0);
             this.mnsHelp.Name = "mnsHelp";
-            this.mnsHelp.Size = new System.Drawing.Size(1184, 24);
-            this.mnsHelp.TabIndex = 35;
+            this.mnsHelp.Size = new System.Drawing.Size(1172, 24);
+            this.mnsHelp.TabIndex = 38;
             this.mnsHelp.Text = "menuStrip1";
-            this.mnsHelp.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.mnsHelp_ItemClicked);
             // 
             // helpToolStripMenuItem
             // 
@@ -569,29 +559,24 @@ namespace SU21_Final_Project
             this.helpToolStripMenuItem.Name = "helpToolStripMenuItem";
             this.helpToolStripMenuItem.Size = new System.Drawing.Size(44, 20);
             this.helpToolStripMenuItem.Text = "Help";
-            this.helpToolStripMenuItem.Click += new System.EventHandler(this.helpToolStripMenuItem_Click);
             // 
-            // frmCreateInvoice
+            // frmEmployee_POS
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1184, 591);
+            this.ClientSize = new System.Drawing.Size(1172, 575);
             this.Controls.Add(this.pnlCheckout);
             this.Controls.Add(this.pnlCart);
             this.Controls.Add(this.mnsHelp);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.MainMenuStrip = this.mnsHelp;
-            this.MaximizeBox = false;
-            this.Name = "frmCreateInvoice";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Shopping Cart";
-            this.Load += new System.EventHandler(this.frmCreateInvoice_Load);
+            this.Name = "frmEmployee_POS";
+            this.Text = "Point Of Sales System";
+            this.Load += new System.EventHandler(this.frmEmployee_POS_Load);
             this.pnlCheckout.ResumeLayout(false);
             this.pnlCheckout.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvProducts)).EndInit();
             this.pnlCart.ResumeLayout(false);
             this.pnlCart.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvProducts)).EndInit();
             this.mnsHelp.ResumeLayout(false);
             this.mnsHelp.PerformLayout();
             this.ResumeLayout(false);
@@ -600,35 +585,22 @@ namespace SU21_Final_Project
         }
 
         #endregion
+
         private System.Windows.Forms.Panel pnlCheckout;
-        private System.Windows.Forms.Button btnClose;
-        private System.Windows.Forms.ListBox lbxCheckOutCart;
-        private System.Windows.Forms.Label lblOrderDetails;
-        private System.Windows.Forms.Label lblLine;
-        private System.Windows.Forms.TextBox tbxQuantity;
-        private System.Windows.Forms.Label lblAmount;
-        private System.Windows.Forms.Button btnAddToOrder;
-        private System.Windows.Forms.Label lblError;
-        private System.Windows.Forms.ListBox lbxOrder;
-        private System.Windows.Forms.Label lbltextID;
-        private System.Windows.Forms.DataGridView dgvProducts;
-        private System.Windows.Forms.Label lblProdError;
-        private System.Windows.Forms.Label lblShoppingCart;
-        private System.Windows.Forms.TextBox tbxProductID;
-        private System.Windows.Forms.Label lblProduct;
-        private System.Windows.Forms.Button btnRemove;
-        private System.Windows.Forms.Label lblToalPrice;
-        private System.Windows.Forms.Button btnCheckOut;
-        private System.Windows.Forms.Button btnCloseShop;
-        private System.Windows.Forms.Panel pnlCart;
-        private System.Windows.Forms.Label lblDiscountCode;
-        private System.Windows.Forms.TextBox tbxDiscount;
-        private System.Windows.Forms.Button btnDiscountEnter;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lblMonth;
+        private System.Windows.Forms.Label lblBlackLine;
+        private System.Windows.Forms.Label lblCheckOut;
         private System.Windows.Forms.ComboBox cmbYear;
+        private System.Windows.Forms.Button btnDiscountEnter;
         private System.Windows.Forms.ComboBox cmbMonth;
+        private System.Windows.Forms.Label lblDiscountCode;
         private System.Windows.Forms.TextBox tbxSCode;
+        private System.Windows.Forms.TextBox tbxDiscount;
         private System.Windows.Forms.Label lblSecurityCode;
+        private System.Windows.Forms.Button btnClose;
         private System.Windows.Forms.Label lblValidDate;
+        private System.Windows.Forms.ListBox lbxCheckOutCart;
         private System.Windows.Forms.Label lblCardNumber;
         private System.Windows.Forms.TextBox tbxCardHolderName;
         private System.Windows.Forms.TextBox tbxCardNumber;
@@ -636,10 +608,24 @@ namespace SU21_Final_Project
         private System.Windows.Forms.RadioButton rdbVisa;
         private System.Windows.Forms.Button btnPay;
         private System.Windows.Forms.Label lblCardName;
-        private System.Windows.Forms.Label lblBlackLine;
-        private System.Windows.Forms.Label lblCheckOut;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label lblMonth;
+        private System.Windows.Forms.Panel pnlCart;
+        private System.Windows.Forms.Button btnCloseShop;
+        private System.Windows.Forms.Button btnCheckOut;
+        private System.Windows.Forms.Label lblToalPrice;
+        private System.Windows.Forms.Button btnRemove;
+        private System.Windows.Forms.Label lblProduct;
+        private System.Windows.Forms.TextBox tbxProductID;
+        private System.Windows.Forms.Label lblShoppingCart;
+        private System.Windows.Forms.Label lblProdError;
+        private System.Windows.Forms.DataGridView dgvProducts;
+        private System.Windows.Forms.Label lbltextID;
+        private System.Windows.Forms.ListBox lbxOrder;
+        private System.Windows.Forms.Label lblError;
+        private System.Windows.Forms.Button btnAddToOrder;
+        private System.Windows.Forms.Label lblAmount;
+        private System.Windows.Forms.TextBox tbxQuantity;
+        private System.Windows.Forms.Label lblLine;
+        private System.Windows.Forms.Label lblOrderDetails;
         private System.Windows.Forms.MenuStrip mnsHelp;
         private System.Windows.Forms.ToolStripMenuItem helpToolStripMenuItem;
     }

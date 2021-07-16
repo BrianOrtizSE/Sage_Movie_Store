@@ -16,5 +16,12 @@ namespace SU21_Final_Project
         {
             InitializeComponent();
         }
+
+        private void btnPOS_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            frmEmployee_POS frmEmpPos = new frmEmployee_POS();
+            frmEmpPos.ShowDialog();
+        }
     }
 }

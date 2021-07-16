@@ -16,5 +16,12 @@ namespace SU21_Final_Project
         {
             InitializeComponent();
         }
+
+        private void btnMerchandiseAdd_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            frmMerchandiseAdd frmmerchadd = new frmMerchandiseAdd();
+            frmmerchadd.ShowDialog();
+        }
     }
 }

@@ -102,7 +102,11 @@ namespace SU21_Final_Project
                             this.Hide();
                             frmemployeemain.ShowDialog();
                             this.Close();
-                        }                      
+                        }
+                    }
+                    else
+                    {
+                        lblErrorText.Visible = true;
                     }
                 }
                 else
@@ -164,6 +168,17 @@ namespace SU21_Final_Project
             this.Hide();
             frmpasswordrecover.ShowDialog();
             this.Show();
+        }
+
+        private void cbxShowPassword_CheckedChanged(object sender, EventArgs e)
+        {
+            if (cbxShowPassword.Checked)
+            {
+                tbxPassword.UseSystemPasswordChar = false;
+            }
+            else{
+                tbxPassword.UseSystemPasswordChar = true;
+            }
         }
     }
 }

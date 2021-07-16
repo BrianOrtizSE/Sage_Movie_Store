@@ -44,6 +44,7 @@ namespace SU21_Final_Project
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.tsmHelp = new System.Windows.Forms.ToolStripMenuItem();
             this.btnForgotPassword = new System.Windows.Forms.Button();
+            this.cbxShowPassword = new System.Windows.Forms.CheckBox();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -197,11 +198,23 @@ namespace SU21_Final_Project
             this.btnForgotPassword.UseVisualStyleBackColor = true;
             this.btnForgotPassword.Click += new System.EventHandler(this.btnForgotPassword_Click);
             // 
+            // cbxShowPassword
+            // 
+            this.cbxShowPassword.AutoSize = true;
+            this.cbxShowPassword.Location = new System.Drawing.Point(385, 237);
+            this.cbxShowPassword.Name = "cbxShowPassword";
+            this.cbxShowPassword.Size = new System.Drawing.Size(102, 17);
+            this.cbxShowPassword.TabIndex = 13;
+            this.cbxShowPassword.Text = "Show Password";
+            this.cbxShowPassword.UseVisualStyleBackColor = true;
+            this.cbxShowPassword.CheckedChanged += new System.EventHandler(this.cbxShowPassword_CheckedChanged);
+            // 
             // frmLogIn
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(516, 417);
+            this.Controls.Add(this.cbxShowPassword);
             this.Controls.Add(this.btnForgotPassword);
             this.Controls.Add(this.lblMainText);
             this.Controls.Add(this.lblBlackLine);
@@ -245,5 +258,6 @@ namespace SU21_Final_Project
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem tsmHelp;
         private System.Windows.Forms.Button btnForgotPassword;
+        private System.Windows.Forms.CheckBox cbxShowPassword;
     }
 }
