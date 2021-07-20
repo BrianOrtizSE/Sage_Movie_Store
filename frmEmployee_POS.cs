@@ -113,7 +113,7 @@ namespace SU21_Final_Project
             dgvProducts.Columns[3].HeaderText = "Movie Description";
             dgvProducts.Columns[4].HeaderText = "Quantity";
 
-            dgvProducts.Columns[5].DefaultCellStyle.Format = "c";
+            dgvProducts.Columns[5].DefaultCellStyle.Format = "c2";
             dgvProducts.Columns[5].HeaderText = "Movie Price";
 
             pnlCheckout.Visible = false;

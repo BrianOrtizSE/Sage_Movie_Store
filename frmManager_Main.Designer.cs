@@ -31,6 +31,7 @@ namespace SU21_Final_Project
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmManager_Main));
             this.btnMerchandiseAdd = new System.Windows.Forms.Button();
+            this.btnViewSales = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btnMerchandiseAdd
@@ -43,11 +44,22 @@ namespace SU21_Final_Project
             this.btnMerchandiseAdd.UseVisualStyleBackColor = true;
             this.btnMerchandiseAdd.Click += new System.EventHandler(this.btnMerchandiseAdd_Click);
             // 
+            // btnViewSales
+            // 
+            this.btnViewSales.Location = new System.Drawing.Point(320, 264);
+            this.btnViewSales.Name = "btnViewSales";
+            this.btnViewSales.Size = new System.Drawing.Size(105, 45);
+            this.btnViewSales.TabIndex = 1;
+            this.btnViewSales.Text = "View Sales";
+            this.btnViewSales.UseVisualStyleBackColor = true;
+            this.btnViewSales.Click += new System.EventHandler(this.btnViewSales_Click);
+            // 
             // frmManager_Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.btnViewSales);
             this.Controls.Add(this.btnMerchandiseAdd);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmManager_Main";
@@ -59,5 +71,6 @@ namespace SU21_Final_Project
         #endregion
 
         private System.Windows.Forms.Button btnMerchandiseAdd;
+        private System.Windows.Forms.Button btnViewSales;
     }
 }

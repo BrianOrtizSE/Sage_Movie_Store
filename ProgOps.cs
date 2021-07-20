@@ -27,6 +27,10 @@ namespace SU21_Final_Project
         private static SqlDataAdapter _daDiscount = new SqlDataAdapter();
         private static DataTable _dtDiscount = new DataTable();
 
+        //Information for Sales
+        private static SqlDataAdapter _daSales = new SqlDataAdapter();
+        private static DataTable _dtSales = new DataTable();
+
         //Function To Get Product Tabled
         public static DataTable GetProductTable
         {
@@ -441,6 +445,40 @@ namespace SU21_Final_Project
 
 
 
+        }
+        public static void GrabSales(DataGridView dgvSales, String strQuery)
+        {
+            try
+            {
+
+                //establush command object
+                _sqlResultsCommand = new SqlCommand(strQuery, _conDatabase);
+                //establish data adapter
+                _daSales = new SqlDataAdapter();
+                _daSales.SelectCommand = _sqlResultsCommand;
+                //fill data table
+                _dtSales = new DataTable();
+                _daSales.Fill(_dtSales);
+
+                dgvSales.DataSource = _dtSales;
+            }
+
+            catch (SqlException ex)
+            {
+                if (ex is SqlException)
+                {//handles more specific SqlException here.
+
+                    for (int i = 0; i < ex.Errors.Count; i++)
+                    {
+                        errorMessages.Append("Index #" + i + "\n" +
+                            "Message: " + ex.Errors[i].Message + "\n" +
+                            "LineNumber: " + ex.Errors[i].LineNumber + "\n" +
+                            "Source: " + ex.Errors[i].Source + "\n" +
+                            "Procedure: " + ex.Errors[i].Procedure + "\n");
+                    }
+                    MessageBox.Show(errorMessages.ToString(), "Error on DatabaseCommand", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
         }
         public static bool GrabAdmin(int intPersonID)
         {

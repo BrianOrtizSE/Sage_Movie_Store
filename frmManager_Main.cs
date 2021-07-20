@@ -23,5 +23,13 @@ namespace SU21_Final_Project
             frmMerchandiseAdd frmmerchadd = new frmMerchandiseAdd();
             frmmerchadd.ShowDialog();
         }
+
+        private void btnViewSales_Click(object sender, EventArgs e)
+        {
+            frmManager_View_Sales frmviewsales = new frmManager_View_Sales();
+            this.Hide();
+            frmviewsales.ShowDialog();
+            this.Show();
+        }
     }
 }
