@@ -112,5 +112,13 @@ namespace SU21_Final_Project
             frmviewsales.ShowDialog();
             this.Show();
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            frmManager_Discount_Add frmDiscountAdd = new frmManager_Discount_Add();
+            frmDiscountAdd.ShowDialog();
+            this.Show();
+        }
     }
 }

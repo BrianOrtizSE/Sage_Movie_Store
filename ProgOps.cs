@@ -242,6 +242,45 @@ namespace SU21_Final_Project
                 MessageBox.Show("NULL Cast", "Error on DatabaseCommand", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+        public static void GrabDiscounts(DataGridView dgvDiscount , string strQuery)
+        {
+
+            try
+            {
+
+                //establush command object
+                _sqlResultsCommand = new SqlCommand(strQuery, _conDatabase);
+                //establish data adapter
+                _daDiscount = new SqlDataAdapter();
+                _daDiscount.SelectCommand = _sqlResultsCommand;
+                //fill data table
+                _dtDiscount = new DataTable();
+                _daDiscount.Fill(_dtDiscount);
+
+                dgvDiscount.DataSource = _dtDiscount;
+            }
+
+            catch (SqlException ex)
+            {
+                if (ex is SqlException)
+                {//handles more specific SqlException here.
+
+                    for (int i = 0; i < ex.Errors.Count; i++)
+                    {
+                        errorMessages.Append("Index #" + i + "\n" +
+                            "Message: " + ex.Errors[i].Message + "\n" +
+                            "LineNumber: " + ex.Errors[i].LineNumber + "\n" +
+                            "Source: " + ex.Errors[i].Source + "\n" +
+                            "Procedure: " + ex.Errors[i].Procedure + "\n");
+                    }
+                    MessageBox.Show(errorMessages.ToString(), "Error on DatabaseCommand", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+
+            _dtDiscount.Dispose();
+            _daDiscount.Dispose();
+            _sqlResultsCommand.Dispose();
+        }
         public static void GrabDiscountInformation(TextBox tbxDiscountCode)//used to check for product discount vs whole sale discount
         {
             int intDiscountType = 0;

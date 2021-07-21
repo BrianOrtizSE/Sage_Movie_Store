@@ -94,6 +94,12 @@
     <Compile Include="frmHelp.Designer.cs">
       <DependentUpon>frmHelp.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmManager_Discount_Add.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmManager_Discount_Add.Designer.cs">
+      <DependentUpon>frmManager_Discount_Add.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmManager_Main.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -172,6 +178,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmMain.resx">
       <DependentUpon>frmMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmManager_Discount_Add.resx">
+      <DependentUpon>frmManager_Discount_Add.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmManager_Main.resx">
       <DependentUpon>frmManager_Main.cs</DependentUpon>
