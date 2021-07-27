@@ -45,9 +45,13 @@ namespace SU21_Final_Project
             this.btnProduct = new System.Windows.Forms.Button();
             this.btnShowDiscount = new System.Windows.Forms.Button();
             this.btnAdd = new System.Windows.Forms.Button();
-            this.lblDiscountIDText = new System.Windows.Forms.Label();
+            this.lblDiscountIDTextValid = new System.Windows.Forms.Label();
             this.ttValid = new System.Windows.Forms.ToolTip(this.components);
             this.lblDiscountPercentValid = new System.Windows.Forms.Label();
+            this.lblProductIDValid = new System.Windows.Forms.Label();
+            this.btnEditDiscount = new System.Windows.Forms.Button();
+            this.btnCompleteEdit = new System.Windows.Forms.Button();
+            this.btnCancelEdit = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDiscount)).BeginInit();
             this.SuspendLayout();
             // 
@@ -66,6 +70,8 @@ namespace SU21_Final_Project
             this.dgvDiscount.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvDiscount.Size = new System.Drawing.Size(456, 492);
             this.dgvDiscount.TabIndex = 0;
+            this.dgvDiscount.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDiscount_CellClick);
+            this.dgvDiscount.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDiscount_CellContentClick);
             // 
             // tbxDiscount
             // 
@@ -75,6 +81,7 @@ namespace SU21_Final_Project
             this.tbxDiscount.Size = new System.Drawing.Size(116, 21);
             this.tbxDiscount.TabIndex = 1;
             this.tbxDiscount.TextChanged += new System.EventHandler(this.tbxDiscount_TextChanged);
+            this.tbxDiscount.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbxDiscount_KeyPress);
             // 
             // lblDiscountID
             // 
@@ -103,9 +110,9 @@ namespace SU21_Final_Project
             this.lblDiscountType.AutoSize = true;
             this.lblDiscountType.Location = new System.Drawing.Point(27, 119);
             this.lblDiscountType.Name = "lblDiscountType";
-            this.lblDiscountType.Size = new System.Drawing.Size(76, 15);
+            this.lblDiscountType.Size = new System.Drawing.Size(90, 15);
             this.lblDiscountType.TabIndex = 4;
-            this.lblDiscountType.Text = "Discount ID :";
+            this.lblDiscountType.Text = "Discount Type :";
             // 
             // lblProductID
             // 
@@ -120,10 +127,12 @@ namespace SU21_Final_Project
             // 
             this.tbxProductID.Enabled = false;
             this.tbxProductID.Location = new System.Drawing.Point(30, 222);
-            this.tbxProductID.MaxLength = 9;
+            this.tbxProductID.MaxLength = 5;
             this.tbxProductID.Name = "tbxProductID";
             this.tbxProductID.Size = new System.Drawing.Size(116, 21);
             this.tbxProductID.TabIndex = 7;
+            this.tbxProductID.TextChanged += new System.EventHandler(this.tbxProductID_TextChanged);
+            this.tbxProductID.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbxProductID_KeyPress);
             // 
             // tbxDiscountPercent
             // 
@@ -164,9 +173,9 @@ namespace SU21_Final_Project
             // 
             // btnProduct
             // 
-            this.btnProduct.Location = new System.Drawing.Point(421, 399);
+            this.btnProduct.Location = new System.Drawing.Point(451, 406);
             this.btnProduct.Name = "btnProduct";
-            this.btnProduct.Size = new System.Drawing.Size(100, 50);
+            this.btnProduct.Size = new System.Drawing.Size(70, 43);
             this.btnProduct.TabIndex = 12;
             this.btnProduct.Text = "Show &Product";
             this.btnProduct.UseVisualStyleBackColor = true;
@@ -174,9 +183,9 @@ namespace SU21_Final_Project
             // 
             // btnShowDiscount
             // 
-            this.btnShowDiscount.Location = new System.Drawing.Point(421, 455);
+            this.btnShowDiscount.Location = new System.Drawing.Point(451, 462);
             this.btnShowDiscount.Name = "btnShowDiscount";
-            this.btnShowDiscount.Size = new System.Drawing.Size(100, 50);
+            this.btnShowDiscount.Size = new System.Drawing.Size(70, 43);
             this.btnShowDiscount.TabIndex = 13;
             this.btnShowDiscount.Text = "Show &Discount";
             this.btnShowDiscount.UseVisualStyleBackColor = true;
@@ -186,39 +195,87 @@ namespace SU21_Final_Project
             // 
             this.btnAdd.Location = new System.Drawing.Point(30, 455);
             this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(100, 50);
+            this.btnAdd.Size = new System.Drawing.Size(87, 50);
             this.btnAdd.TabIndex = 14;
             this.btnAdd.Text = "&Add Discount";
             this.btnAdd.UseVisualStyleBackColor = true;
             this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
-            // lblDiscountIDText
+            // lblDiscountIDTextValid
             // 
-            this.lblDiscountIDText.ForeColor = System.Drawing.Color.Red;
-            this.lblDiscountIDText.Location = new System.Drawing.Point(152, 57);
-            this.lblDiscountIDText.Name = "lblDiscountIDText";
-            this.lblDiscountIDText.Size = new System.Drawing.Size(20, 21);
-            this.lblDiscountIDText.TabIndex = 15;
-            this.lblDiscountIDText.Text = "X";
-            this.ttValid.SetToolTip(this.lblDiscountIDText, "Discount ID Must Be 9 Numbers");
+            this.lblDiscountIDTextValid.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDiscountIDTextValid.ForeColor = System.Drawing.Color.Red;
+            this.lblDiscountIDTextValid.Location = new System.Drawing.Point(154, 57);
+            this.lblDiscountIDTextValid.Name = "lblDiscountIDTextValid";
+            this.lblDiscountIDTextValid.Size = new System.Drawing.Size(18, 21);
+            this.lblDiscountIDTextValid.TabIndex = 15;
+            this.lblDiscountIDTextValid.Text = "X";
+            this.ttValid.SetToolTip(this.lblDiscountIDTextValid, "Discount ID Must Be 9 Numbers");
             // 
             // lblDiscountPercentValid
             // 
+            this.lblDiscountPercentValid.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblDiscountPercentValid.ForeColor = System.Drawing.Color.Red;
-            this.lblDiscountPercentValid.Location = new System.Drawing.Point(150, 304);
+            this.lblDiscountPercentValid.Location = new System.Drawing.Point(152, 302);
             this.lblDiscountPercentValid.Name = "lblDiscountPercentValid";
             this.lblDiscountPercentValid.Size = new System.Drawing.Size(20, 21);
             this.lblDiscountPercentValid.TabIndex = 16;
             this.lblDiscountPercentValid.Text = "X";
             this.ttValid.SetToolTip(this.lblDiscountPercentValid, "Discount Percent Can Be A Number Between 0-95");
             // 
+            // lblProductIDValid
+            // 
+            this.lblProductIDValid.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblProductIDValid.ForeColor = System.Drawing.Color.Red;
+            this.lblProductIDValid.Location = new System.Drawing.Point(152, 222);
+            this.lblProductIDValid.Name = "lblProductIDValid";
+            this.lblProductIDValid.Size = new System.Drawing.Size(20, 21);
+            this.lblProductIDValid.TabIndex = 17;
+            this.lblProductIDValid.Text = "X";
+            this.ttValid.SetToolTip(this.lblProductIDValid, "Discount Percent Can Be A Number Between 0-95");
+            this.lblProductIDValid.Visible = false;
+            // 
+            // btnEditDiscount
+            // 
+            this.btnEditDiscount.Location = new System.Drawing.Point(123, 455);
+            this.btnEditDiscount.Name = "btnEditDiscount";
+            this.btnEditDiscount.Size = new System.Drawing.Size(74, 50);
+            this.btnEditDiscount.TabIndex = 18;
+            this.btnEditDiscount.Text = "&Edit Discount";
+            this.btnEditDiscount.UseVisualStyleBackColor = true;
+            this.btnEditDiscount.Click += new System.EventHandler(this.btnEditDiscount_Click);
+            // 
+            // btnCompleteEdit
+            // 
+            this.btnCompleteEdit.Location = new System.Drawing.Point(203, 455);
+            this.btnCompleteEdit.Name = "btnCompleteEdit";
+            this.btnCompleteEdit.Size = new System.Drawing.Size(75, 50);
+            this.btnCompleteEdit.TabIndex = 19;
+            this.btnCompleteEdit.Text = "&Complete Edit";
+            this.btnCompleteEdit.UseVisualStyleBackColor = true;
+            this.btnCompleteEdit.Click += new System.EventHandler(this.btnComplete_Click);
+            // 
+            // btnCancelEdit
+            // 
+            this.btnCancelEdit.Location = new System.Drawing.Point(284, 455);
+            this.btnCancelEdit.Name = "btnCancelEdit";
+            this.btnCancelEdit.Size = new System.Drawing.Size(75, 50);
+            this.btnCancelEdit.TabIndex = 20;
+            this.btnCancelEdit.Text = "Cancel Edit";
+            this.btnCancelEdit.UseVisualStyleBackColor = true;
+            this.btnCancelEdit.Click += new System.EventHandler(this.btnCancelEdit_Click);
+            // 
             // frmManager_Discount_Add
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1001, 522);
+            this.Controls.Add(this.btnCancelEdit);
+            this.Controls.Add(this.btnCompleteEdit);
+            this.Controls.Add(this.btnEditDiscount);
+            this.Controls.Add(this.lblProductIDValid);
             this.Controls.Add(this.lblDiscountPercentValid);
-            this.Controls.Add(this.lblDiscountIDText);
+            this.Controls.Add(this.lblDiscountIDTextValid);
             this.Controls.Add(this.btnAdd);
             this.Controls.Add(this.btnShowDiscount);
             this.Controls.Add(this.btnProduct);
@@ -262,8 +319,12 @@ namespace SU21_Final_Project
         private System.Windows.Forms.Button btnProduct;
         private System.Windows.Forms.Button btnShowDiscount;
         private System.Windows.Forms.Button btnAdd;
-        private System.Windows.Forms.Label lblDiscountIDText;
+        private System.Windows.Forms.Label lblDiscountIDTextValid;
         private System.Windows.Forms.ToolTip ttValid;
         private System.Windows.Forms.Label lblDiscountPercentValid;
+        private System.Windows.Forms.Label lblProductIDValid;
+        private System.Windows.Forms.Button btnEditDiscount;
+        private System.Windows.Forms.Button btnCompleteEdit;
+        private System.Windows.Forms.Button btnCancelEdit;
     }
 }
