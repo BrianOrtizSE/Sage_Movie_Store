@@ -102,6 +102,7 @@ namespace SU21_Final_Project
             this.btnClose.TabIndex = 95;
             this.btnClose.Text = "&Return";
             this.btnClose.UseVisualStyleBackColor = true;
+            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
             // cbxState
             // 
@@ -455,7 +456,7 @@ namespace SU21_Final_Project
             // 
             this.tbxZipcode.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tbxZipcode.Location = new System.Drawing.Point(382, 293);
-            this.tbxZipcode.MaxLength = 9;
+            this.tbxZipcode.MaxLength = 10;
             this.tbxZipcode.Name = "tbxZipcode";
             this.tbxZipcode.Size = new System.Drawing.Size(119, 23);
             this.tbxZipcode.TabIndex = 89;
