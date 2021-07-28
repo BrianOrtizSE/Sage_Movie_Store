@@ -16,20 +16,21 @@ namespace SU21_Final_Project
 
         private static SqlConnection _conDatabase = new SqlConnection(CONNECT_STRING);
         private static SqlCommand _sqlResultsCommand;
+        //Information for LogOn Table
         private static SqlDataAdapter _daLogOn = new SqlDataAdapter();
         private static DataTable _dtLogOn = new DataTable();
-
         //Information for Product Table
         private static SqlDataAdapter _daProduct = new SqlDataAdapter();
         private static DataTable _dtProductTable = new DataTable();
-
         //Information for Discount Table
         private static SqlDataAdapter _daDiscount = new SqlDataAdapter();
         private static DataTable _dtDiscount = new DataTable();
-
         //Information for Sales
         private static SqlDataAdapter _daSales = new SqlDataAdapter();
         private static DataTable _dtSales = new DataTable();
+        //Information for Person
+        private static SqlDataAdapter _daPerson = new SqlDataAdapter();
+        private static DataTable _dtPerson = new DataTable();
 
         //Function To Get Product Tabled
         public static DataTable GetProductTable
@@ -37,6 +38,12 @@ namespace SU21_Final_Project
             //Return the product table when called
             get { return _dtProductTable; }
         }
+        public static DataTable GetPersonTable
+        {
+            //Return the product table when called
+            get { return _dtPerson; }
+        }
+
 
         //INT FOR PICTURE CASES
         public static int _PICTURE;
@@ -45,16 +52,16 @@ namespace SU21_Final_Project
         public static decimal _TAX = 0.0825M;
 
         //Public Ints and Deciamls
-        public static int intPersonID;
+        public static int _intPersonID = 1000;
 
-        public static int intProductID = 0;
-        public static int intQuantity;
-        public static decimal decDiscountPercent = 0.0m;
+        public static int _intProductID = 0;
+        public static int _intQuantity;
+        public static decimal _decDiscountPercent = 0.0m;
 
 
         //Public Booleans
-        public static bool blnFound;
-        public static bool blnDiscountFound;
+        public static bool _blnFound;
+        public static bool _blnDiscountFound;
 
 
         //Strinbuilder for error messages in the trycatch
@@ -104,11 +111,11 @@ namespace SU21_Final_Project
 
                 if (_dtLogOn.Rows.Count == 1)
                 {
-                    blnFound = true;
+                    _blnFound = true;
                 }
                 else
                 {
-                    blnFound = false;
+                    _blnFound = false;
                 }
 
                 _sqlResultsCommand.Dispose();
@@ -167,7 +174,7 @@ namespace SU21_Final_Project
                 }
             }
 
-
+            _sqlResultsCommand.Dispose();
 
         }
 
@@ -183,7 +190,7 @@ namespace SU21_Final_Project
                 _sqlResultsCommand = new SqlCommand(query, _conDatabase);
 
                 //Grab PersonID so we can cretae LogIn Info
-                intPersonID = (int)_sqlResultsCommand.ExecuteScalar();
+                _intPersonID = (int)_sqlResultsCommand.ExecuteScalar();
 
                 _sqlResultsCommand.Dispose();
             }
@@ -204,7 +211,7 @@ namespace SU21_Final_Project
                 _sqlResultsCommand = new SqlCommand(strQuery, _conDatabase);
 
                 //Grab PersonID so we can cretae LogIn Info
-                intPersonID = (int)_sqlResultsCommand.ExecuteScalar();
+                _intPersonID = (int)_sqlResultsCommand.ExecuteScalar();
 
                 _sqlResultsCommand.Dispose();
             }
@@ -227,7 +234,7 @@ namespace SU21_Final_Project
                 _sqlResultsCommand = new SqlCommand(strQuery, _conDatabase);
 
                 //Grab PersonID so we can cretae LogIn Info
-                intQuantity = (int)_sqlResultsCommand.ExecuteScalar();
+                _intQuantity = (int)_sqlResultsCommand.ExecuteScalar();
 
                 _sqlResultsCommand.Dispose();
             }
@@ -303,18 +310,18 @@ namespace SU21_Final_Project
 
                         _sqlResultsCommand = new SqlCommand(strQuery, _conDatabase);
                         //Grab ProductID IF one is associated with this item
-                        decDiscountPercent = (decimal)_sqlResultsCommand.ExecuteScalar();
+                        _decDiscountPercent = (decimal)_sqlResultsCommand.ExecuteScalar();
                         break;
 
                     case 2: //For Type 2 Discount that need a specific item in their to use
                         strQuery = "Select DiscountPercent from OrtizB21Su2332.Discount where DiscountID = " + tbxDiscountCode.Text;
 
                         _sqlResultsCommand = new SqlCommand(strQuery, _conDatabase);
-                        decDiscountPercent = (decimal)_sqlResultsCommand.ExecuteScalar();
+                        _decDiscountPercent = (decimal)_sqlResultsCommand.ExecuteScalar();
 
                         strQuery = "Select ProductID from OrtizB21Su2332.Discount where DiscountID = " + tbxDiscountCode.Text;
                         _sqlResultsCommand = new SqlCommand(strQuery, _conDatabase);
-                        intProductID = (int)_sqlResultsCommand.ExecuteScalar();
+                        _intProductID = (int)_sqlResultsCommand.ExecuteScalar();
                         break;
 
                     //case 3: TO BE USED LATER FOR ITEMS SUCH AS BOGO AND SUCH
@@ -375,12 +382,12 @@ namespace SU21_Final_Project
 
                 if (_dtDiscount.Rows.Count == 1)
                 {
-                    blnDiscountFound = true;
+                    _blnDiscountFound = true;
                     GrabDiscountInformation(tbxDiscountCode);
                 }
                 else
                 {
-                    blnDiscountFound = false;
+                    _blnDiscountFound = false;
                 }
 
             }
@@ -423,11 +430,11 @@ namespace SU21_Final_Project
 
                 if (_dtLogOn.Rows.Count == 1)
                 {
-                    blnFound = true;
+                    _blnFound = true;
                 }
                 else
                 {
-                    blnFound = false;
+                    _blnFound = false;
                 }
             }
 
@@ -464,11 +471,11 @@ namespace SU21_Final_Project
 
                 if (_dtProductTable.Rows.Count == 1)
                 {
-                    blnFound = true;
+                    _blnFound = true;
                 }
                 else
                 {
-                    blnFound = false;
+                    _blnFound = false;
                 }
             }
 
@@ -703,7 +710,6 @@ namespace SU21_Final_Project
                 }
             }
         }
-
         public static void CreateSale(string strQuery)
         {
             try
@@ -794,6 +800,74 @@ namespace SU21_Final_Project
                 }
             }
         }
+        
+        public static void CustomerEdit(TextBox tbxTitle, TextBox tbxFirstName, TextBox tbxMiddleName, TextBox tbxLastName, TextBox tbxSuffix, TextBox tbxAddress1, TextBox tbxAddress2, TextBox tbxAddress3,
+                                        TextBox tbxCity, TextBox tbxZipcode, ComboBox cbxState, TextBox tbxEmail, MaskedTextBox mtbPhonePrim, MaskedTextBox mtbPhoneSecon)
+        {
+            try
+            {
+                string strQuery;
+                //string to build query
+                strQuery = "Select * From OrtizB21Su2332.Person Where PersonID = " + _intPersonID;
+
+                //est cmd obj
+                _sqlResultsCommand = new SqlCommand(strQuery, _conDatabase);
+
+                //est data adapter
+                _daPerson = new SqlDataAdapter();
+                _daPerson.SelectCommand = _sqlResultsCommand;
+
+                //Fill data table
+                _dtPerson = new DataTable();
+                _daPerson.Fill(_dtPerson);
+
+                //bind controlls
+                tbxTitle.DataBindings.Add("Text", _dtPerson, "Title");
+                tbxFirstName.DataBindings.Add("Text", _dtPerson, "NameFirst");
+                tbxMiddleName.DataBindings.Add("Text", _dtPerson, "NameMiddle");
+                tbxLastName.DataBindings.Add("Text", _dtPerson, "NameLast");
+                tbxSuffix.DataBindings.Add("Text", _dtPerson, "Suffix");
+                tbxAddress1.DataBindings.Add("Text", _dtPerson, "Address1");
+                tbxAddress2.DataBindings.Add("Text", _dtPerson, "Address2");
+                tbxAddress3.DataBindings.Add("Text", _dtPerson, "Address3");
+                tbxCity.DataBindings.Add("Text", _dtPerson, "City");
+                tbxZipcode.DataBindings.Add("Text", _dtPerson, "Zipcode");
+                cbxState.DataBindings.Add("Text", _dtPerson, "State");
+                tbxEmail.DataBindings.Add("Text", _dtPerson, "Email");
+                mtbPhonePrim.DataBindings.Add("Text", _dtPerson, "PhonePrimary");
+                mtbPhoneSecon.DataBindings.Add("Text", _dtPerson, "PhoneSecondary");
+                //cbxState.DataBindings.Add("Text", _dtPerson, "State");
+
+
+
+
+                //Dispose Of Command Object
+                _sqlResultsCommand.Dispose();
+
+            }
+            catch (SqlException ex)
+            {
+                if (ex is SqlException)
+                {//handles more specific SqlException here.
+
+                    for (int i = 0; i < ex.Errors.Count; i++)
+                    {
+                        errorMessages.Append("Index #" + i + "\n" +
+                            "Message: " + ex.Errors[i].Message + "\n" +
+                            "LineNumber: " + ex.Errors[i].LineNumber + "\n" +
+                            "Source: " + ex.Errors[i].Source + "\n" +
+                            "Procedure: " + ex.Errors[i].Procedure + "\n");
+                    }
+                    MessageBox.Show(errorMessages.ToString(), "Error on DatabaseCommand", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+            catch (InvalidOperationException ex)
+            {
+                MessageBox.Show(ex.ToString(), "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
+        }
+
         public static void ProductDispose()
         {
             //dispose of connection objects
@@ -822,11 +896,11 @@ namespace SU21_Final_Project
 
                 if (_dtLogOn.Rows.Count != 0)
                 {
-                    blnFound = true;
+                    _blnFound = true;
                 }
                 else
                 {
-                    blnFound = false;
+                    _blnFound = false;
                 }
 
                 //Dispose Of Command Object

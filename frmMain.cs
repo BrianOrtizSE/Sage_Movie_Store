@@ -120,5 +120,13 @@ namespace SU21_Final_Project
             frmDiscountAdd.ShowDialog();
             this.Show();
         }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            frmEmployee_Edit_Customer frmempcusedit = new frmEmployee_Edit_Customer();
+            frmempcusedit.ShowDialog();
+            this.Show();
+        }
     }
 }

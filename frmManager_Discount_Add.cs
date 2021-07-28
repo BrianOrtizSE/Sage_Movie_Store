@@ -120,7 +120,7 @@ namespace SU21_Final_Project
             {
                 strQuery = "Select DiscountID From OrtizB21Su2332.Discount where DiscountID =" + tbxDiscount.Text;
                 ProgOps.GrabProductID(strQuery);//Will Change to GrabProductID
-                if (ProgOps.blnFound == true)
+                if (ProgOps._blnFound == true)
                 {
                     lblDiscountIDTextValid.Text = "X";
                     lblDiscountIDTextValid.ForeColor = Color.Red;
@@ -171,7 +171,7 @@ namespace SU21_Final_Project
             {
                 strQuery = "Select ProductID from OrtizB21Su2332.Products where ProductID = " + tbxProductID.Text;
                 ProgOps.GrabProductID(strQuery);
-                if(ProgOps.blnFound == true)
+                if(ProgOps._blnFound == true)
                 {
                     lblProductIDValid.Text = "\u221A";
                     lblProductIDValid.ForeColor = Color.Green;

@@ -72,25 +72,25 @@ namespace SU21_Final_Project
                     ProgOps.GrabAmount(strQuery);
                     intQuanityHold = prodlist[i].intProdQuan;
 
-                    ProgOps.intQuantity = ProgOps.intQuantity - intQuanityHold;
+                    ProgOps._intQuantity = ProgOps._intQuantity - intQuanityHold;
 
-                    strQuery = "Update OrtizB21Su2332.Products Set Quantity = " + ProgOps.intQuantity + " where ProductID = + " + prodlist[i].intProductID;
+                    strQuery = "Update OrtizB21Su2332.Products Set Quantity = " + ProgOps._intQuantity + " where ProductID = + " + prodlist[i].intProductID;
                     ProgOps.UpdateQuantity(strQuery);
 
                 }
 
                 strQuery = "Select EmployeeID" +
                     " From OrtizB21Su2332.Employees " +
-                    " Where PersonID = " + ProgOps.intPersonID;
+                    " Where PersonID = " + ProgOps._intPersonID;
                 ProgOps.GrabPersonID(strQuery);
 
                 strQuery = "Insert into OrtizB21Su2332.Invoice(TotalPrice , TransData , EmployeeID)" +
-                    "values(" + decTotal + ", GETDATE() ," + ProgOps.intPersonID + ")";
+                    "values(" + decTotal + ", GETDATE() ," + ProgOps._intPersonID + ")";
                 ProgOps.CreateInvoice(strQuery);
 
 
                 strQuery = "Insert Into OrtizB21Su2332.Sales(EmployeeID , Sale , DateOfSale)" +
-                    "values(" + ProgOps.intPersonID + "," + decTotal + ",GETDATE()" + ")";
+                    "values(" + ProgOps._intPersonID + "," + decTotal + ",GETDATE()" + ")";
                 ProgOps.CreateSale(strQuery);
 
 
@@ -169,7 +169,7 @@ namespace SU21_Final_Project
                     strQuery = "Select Quantity From OrtizB21Su2332.Products Where ProductID = " + tbxProductID.Text;
                     ProgOps.GrabAmount(strQuery);
 
-                    if (int.Parse(tbxQuantity.Text) > ProgOps.intQuantity)
+                    if (int.Parse(tbxQuantity.Text) > ProgOps._intQuantity)
                     {
                         MessageBox.Show("Quanity Ordered Cannot Be Greater Than That Of Inventory", "Over Quantity", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
@@ -330,14 +330,14 @@ namespace SU21_Final_Project
                     if (blnDiscountDupe == false)
                     {
                         ProgOps.GrabDiscountID(tbxDiscount);
-                        if (ProgOps.blnDiscountFound == true)
+                        if (ProgOps._blnDiscountFound == true)
                         {
                             discountUsed.Add(tbxDiscount.Text);
 
                             //Type 0 discount code that applies to whole purchase
-                            if (ProgOps.intProductID == 0)
+                            if (ProgOps._intProductID == 0)
                             {
-                                decDiscountPercent = ProgOps.decDiscountPercent;
+                                decDiscountPercent = ProgOps._decDiscountPercent;
                                 blnDiscountUsed = true;
                             }
                             else
@@ -345,7 +345,7 @@ namespace SU21_Final_Project
                                 //If not 0 then we check for specified item so that discount type 2 can be applied if applicable
                                 for (int i = 0; i < prodlist.Count; i++)
                                 {
-                                    if (ProgOps.intProductID == prodlist[i].intProductID)
+                                    if (ProgOps._intProductID == prodlist[i].intProductID)
                                     {
                                         blnDiscountUsed = true;
                                         blnProductInCart = true;
@@ -354,7 +354,7 @@ namespace SU21_Final_Project
 
                                 if (blnProductInCart == true)
                                 {
-                                    decDiscountPercent = ProgOps.decDiscountPercent;
+                                    decDiscountPercent = ProgOps._decDiscountPercent;
                                     blnProductInCart = false;
                                 }
                                 else
@@ -363,7 +363,7 @@ namespace SU21_Final_Project
                                     blnDiscountUsed = false;
                                 }
                                 //reset productID
-                                ProgOps.intProductID = 0;
+                                ProgOps._intProductID = 0;
                             }
 
                             tbxDiscount.Text = "";
@@ -466,7 +466,7 @@ namespace SU21_Final_Project
             html.Append("Total : " + decTotal.ToString("c2"));
             html.Append("</p>");
             html.Append("<p>");
-            html.Append("Cashier : " + ProgOps.intPersonID.ToString());
+            html.Append("Cashier : " + ProgOps._intPersonID.ToString());
             html.Append("</p>");
             html.Append("<p>");
             html.Append(DateTime.Now);

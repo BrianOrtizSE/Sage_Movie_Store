@@ -59,7 +59,7 @@ namespace SU21_Final_Project
                     ProgOps.LogOn(strQuery);
 
 
-                    if (ProgOps.blnFound == true)
+                    if (ProgOps._blnFound == true)
                     {
                         //if person found using same query Grab Their ID
                         strQuery = "Select PersonID From OrtizB21Su2332.LogOn " +
@@ -79,13 +79,13 @@ namespace SU21_Final_Project
                     "Where EmployeeID = " + tbxUsername.Text + " " +  "and Password = '" + tbxPassword.Text + "';";
                     ProgOps.LogOn(strQuery);
 
-                    if (ProgOps.blnFound == true)
+                    if (ProgOps._blnFound == true)
                     {
                         strQuery = "Select e.PersonID from  OrtizB21Su2332.Employees e inner join OrtizB21Su2332.LogOn l on l.PersonID = e.PersonID " +
                         "Where EmployeeID = " + tbxUsername.Text;
                         ProgOps.GrabPersonID(strQuery);
 
-                        if(ProgOps.GrabAdmin(ProgOps.intPersonID) == true)
+                        if(ProgOps.GrabAdmin(ProgOps._intPersonID) == true)
                         {
                            frmManager_Main frmmanagermain = new frmManager_Main();
                             this.Hide();

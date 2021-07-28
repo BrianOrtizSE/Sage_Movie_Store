@@ -28,7 +28,7 @@ namespace SU21_Final_Project
             if (lblUsername.Text == "Enter New Password: ")
             {
                 lblPasswordValid.Visible = true;
-                if (ProgOps.blnFound == true)
+                if (ProgOps._blnFound == true)
                 {   
 
                     //VALIDATION FOR PASSWORD
@@ -71,7 +71,7 @@ namespace SU21_Final_Project
 
                     if(blnValid == true)
                     {
-                        strQuery = "Update OrtizB21Su2332.LogOn SET Password = '" + tbxUsername.Text + "' WHERE PersonID = " + ProgOps.intPersonID;
+                        strQuery = "Update OrtizB21Su2332.LogOn SET Password = '" + tbxUsername.Text + "' WHERE PersonID = " + ProgOps._intPersonID;
                         ProgOps.UpdatePassword(strQuery);
                         MessageBox.Show("Password Changed", "Password Change" ,MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                         this.Close();
@@ -95,7 +95,7 @@ namespace SU21_Final_Project
 
                 ProgOps.GrabPassword(strQuery);
 
-                if (ProgOps.blnFound == false)
+                if (ProgOps._blnFound == false)
                 {
                     MessageBox.Show("Username not found", "Not Found", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
@@ -134,7 +134,7 @@ namespace SU21_Final_Project
         public void FindPassword()
         {
 
-            ProgOps.blnFound = false;
+            ProgOps._blnFound = false;
             String strQuery;
 
 
@@ -159,7 +159,7 @@ namespace SU21_Final_Project
                         ProgOps.GrabPassword(strQuery);
 
                     //If a person is found we set the SQuestions and SQAnswer
-                        if (ProgOps.blnFound == true)
+                        if (ProgOps._blnFound == true)
                         {
                             strQuestion = "SQuestion1";
                             strAnwser = "SQanswer1";
@@ -188,7 +188,7 @@ namespace SU21_Final_Project
                      "Where SQuestion2 = '" + cmbSQ.Text + "' and SQAnswer2 = '" + tbxSQA.Text + "'and Username = '" + tbxUsername.Text + "'" ;
 
                         ProgOps.GrabPassword(strQuery);
-                        if (ProgOps.blnFound == true)
+                        if (ProgOps._blnFound == true)
                         {
                             strQuestion = "SQuestion2";
                             strAnwser = "SQanswer2";
@@ -216,7 +216,7 @@ namespace SU21_Final_Project
                      "Where SQuestion3 = '" + cmbSQ.Text + "' and SQAnswer3 = '" + tbxSQA.Text + "'and Username = '" + tbxUsername.Text + "'";
 
                         ProgOps.GrabPassword(strQuery);
-                        if (ProgOps.blnFound == true)
+                        if (ProgOps._blnFound == true)
                         {
                             strQuestion = "SQuestion3";
                             strAnwser = "SQanswer3";
@@ -236,7 +236,7 @@ namespace SU21_Final_Project
 
             }
 
-            if(ProgOps.blnFound == true)
+            if(ProgOps._blnFound == true)
             {
                 lblUsername.Text = "Enter New Password: ";
                 btnSearch.Text = "Update";
