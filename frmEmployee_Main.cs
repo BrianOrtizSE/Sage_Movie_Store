@@ -23,5 +23,21 @@ namespace SU21_Final_Project
             frmEmployee_POS frmEmpPos = new frmEmployee_POS();
             frmEmpPos.ShowDialog();
         }
+
+        private void btnEditSelfInformation_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            frmEmployee_Edit_Self frmEditSelf = new frmEmployee_Edit_Self();
+            frmEditSelf.ShowDialog();
+            this.Show();
+        }
+
+        private void btnEditCustomer_Click(object sender, EventArgs e)
+        {
+            frmFind_User frmFindUser = new frmFind_User();
+            this.Hide();
+            frmFindUser.ShowDialog();
+            this.Show();
+        }
     }
 }

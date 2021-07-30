@@ -46,7 +46,7 @@ namespace SU21_Final_Project
             // lblDate
             // 
             this.lblDate.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDate.Location = new System.Drawing.Point(311, 25);
+            this.lblDate.Location = new System.Drawing.Point(311, 24);
             this.lblDate.Name = "lblDate";
             this.lblDate.Size = new System.Drawing.Size(100, 23);
             this.lblDate.TabIndex = 31;
@@ -57,7 +57,7 @@ namespace SU21_Final_Project
             // lblUserId
             // 
             this.lblUserId.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblUserId.Location = new System.Drawing.Point(105, 25);
+            this.lblUserId.Location = new System.Drawing.Point(105, 24);
             this.lblUserId.Name = "lblUserId";
             this.lblUserId.Size = new System.Drawing.Size(100, 23);
             this.lblUserId.TabIndex = 30;
@@ -67,7 +67,7 @@ namespace SU21_Final_Project
             // lblWelcomeUserText
             // 
             this.lblWelcomeUserText.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblWelcomeUserText.Location = new System.Drawing.Point(12, 25);
+            this.lblWelcomeUserText.Location = new System.Drawing.Point(12, 24);
             this.lblWelcomeUserText.Name = "lblWelcomeUserText";
             this.lblWelcomeUserText.Size = new System.Drawing.Size(114, 23);
             this.lblWelcomeUserText.TabIndex = 29;
@@ -78,7 +78,7 @@ namespace SU21_Final_Project
             this.lblBlackLine.BackColor = System.Drawing.Color.Black;
             this.lblBlackLine.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblBlackLine.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.lblBlackLine.Location = new System.Drawing.Point(8, 53);
+            this.lblBlackLine.Location = new System.Drawing.Point(8, 52);
             this.lblBlackLine.Name = "lblBlackLine";
             this.lblBlackLine.Size = new System.Drawing.Size(476, 3);
             this.lblBlackLine.TabIndex = 28;

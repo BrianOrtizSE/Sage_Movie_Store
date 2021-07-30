@@ -84,13 +84,13 @@ namespace SU21_Final_Project
                     " Where PersonID = " + ProgOps._intPersonID;
                 ProgOps.GrabPersonID(strQuery);
 
-                strQuery = "Insert into OrtizB21Su2332.Invoice(TotalPrice , TransData , EmployeeID)" +
-                    "values(" + decTotal + ", GETDATE() ," + ProgOps._intPersonID + ")";
+                strQuery = "Insert into OrtizB21Su2332.Invoice(PersonID , TotalPrice , TransData , EmployeeID)" +
+                    "values(" + ProgOps._intPersonID + decTotal  + ", GETDATE() ," + ProgOps._intPersonID + ")";
                 ProgOps.CreateInvoice(strQuery);
 
 
                 strQuery = "Insert Into OrtizB21Su2332.Sales(EmployeeID , Sale , DateOfSale)" +
-                    "values(" + ProgOps._intPersonID + "," + decTotal + ",GETDATE()" + ")";
+                    "values(" + ProgOps._intEmployeeID + "," + decTotal + ",GETDATE()" + ")";
                 ProgOps.CreateSale(strQuery);
 
 
@@ -452,7 +452,9 @@ namespace SU21_Final_Project
             html.Append("<tr><td colspan=3><hr/></td></tr>");
             html.Append("</table");
             html.Append("<p>");
-
+            html.Append("<p>");
+            html.Append("Customer ID : " + ProgOps._intPersonID.ToString("c2"));
+            html.Append("</p>");
             html.Append("<p>");
             html.Append("Subtotal : " + decSubTotal.ToString("c2"));
             html.Append("</p>");
@@ -466,7 +468,7 @@ namespace SU21_Final_Project
             html.Append("Total : " + decTotal.ToString("c2"));
             html.Append("</p>");
             html.Append("<p>");
-            html.Append("Cashier : " + ProgOps._intPersonID.ToString());
+            html.Append("Cashier : " + ProgOps._intEmployeeID.ToString());
             html.Append("</p>");
             html.Append("<p>");
             html.Append(DateTime.Now);

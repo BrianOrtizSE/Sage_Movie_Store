@@ -26,6 +26,7 @@ namespace SU21_Final_Project
 
             dgvSales.Columns[0].HeaderText = "EmployeeID";
             dgvSales.Columns[1].HeaderText = "Total Sales";
+            dgvSales.Columns[1].DefaultCellStyle.Format = "c2";
             dgvSales.BackgroundColor = Color.White;
         }
 

@@ -32,6 +32,7 @@ namespace SU21_Final_Project
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmManager_Main));
             this.btnMerchandiseAdd = new System.Windows.Forms.Button();
             this.btnViewSales = new System.Windows.Forms.Button();
+            this.btnAddDiscount = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btnMerchandiseAdd
@@ -54,11 +55,22 @@ namespace SU21_Final_Project
             this.btnViewSales.UseVisualStyleBackColor = true;
             this.btnViewSales.Click += new System.EventHandler(this.btnViewSales_Click);
             // 
+            // btnAddDiscount
+            // 
+            this.btnAddDiscount.Location = new System.Drawing.Point(320, 189);
+            this.btnAddDiscount.Name = "btnAddDiscount";
+            this.btnAddDiscount.Size = new System.Drawing.Size(105, 45);
+            this.btnAddDiscount.TabIndex = 2;
+            this.btnAddDiscount.Text = "Edit/Add &Discount";
+            this.btnAddDiscount.UseVisualStyleBackColor = true;
+            this.btnAddDiscount.Click += new System.EventHandler(this.btnAddDiscount_Click);
+            // 
             // frmManager_Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.btnAddDiscount);
             this.Controls.Add(this.btnViewSales);
             this.Controls.Add(this.btnMerchandiseAdd);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -72,5 +84,6 @@ namespace SU21_Final_Project
 
         private System.Windows.Forms.Button btnMerchandiseAdd;
         private System.Windows.Forms.Button btnViewSales;
+        private System.Windows.Forms.Button btnAddDiscount;
     }
 }

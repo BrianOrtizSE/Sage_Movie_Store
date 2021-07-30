@@ -30,23 +30,30 @@ namespace SU21_Final_Project
             DisplayDiscount();
         }
 
-        private void btnProduct_Click(object sender, EventArgs e)
+        private void btnProduct_Click(object sender, EventArgs e)//Dispaly Product Data Grid View
         {
             strQuery = "Select ProductID , ProductName , Quantity , ProductPrice from OrtizB21Su2332.Products";
-            ProgOps.GrabDiscounts(dgvDiscount, strQuery);
+            ProgOps.GrabDiscounts(dgvProduct, strQuery);
 
-            dgvDiscount.Columns[0].HeaderText = "Product ID ";
-            dgvDiscount.Columns[1].HeaderText = "Product Name";
-            dgvDiscount.Columns[2].HeaderText = "Quantity";
-            //dgvDiscount.Columns[3].DefaultCellStyle.Format = "c2";
-            dgvDiscount.Columns[3].HeaderText = "Product Price";
+            dgvProduct.Visible = true;
+            dgvDiscount.Visible = false;
+
+            dgvProduct.Columns[0].HeaderText = "Product ID ";
+            dgvProduct.Columns[1].HeaderText = "Product Name";
+            dgvProduct.Columns[2].HeaderText = "Quantity";
+            dgvProduct.Columns[3].DefaultCellStyle.Format = "c2";
+            dgvProduct.Columns[3].HeaderText = "Product Price";
         }
 
-        public void DisplayDiscount()
+        public void DisplayDiscount()//Dispplay Discount Data Grid View
         {
+
             strQuery = "Select * from OrtizB21Su2332.Discount";
             ProgOps.GrabDiscounts(dgvDiscount, strQuery);
             //dgvDiscount.AutoResizeColumn();
+
+            dgvProduct.Visible = false;
+            dgvDiscount.Visible = true;
 
             dgvDiscount.Columns[0].HeaderText = "Discount ID ";
             dgvDiscount.Columns[1].HeaderText = "Discount Type";
@@ -186,23 +193,35 @@ namespace SU21_Final_Project
             
         }
 
-        private void dgvDiscount_CellClick(object sender, DataGridViewCellEventArgs e)
+        private void dgvDiscount_CellClick(object sender, DataGridViewCellEventArgs e)//For When the User is In Edit Discount Mode
         {
-            if(blnEdit == true)
+            try
             {
-                if (dgvDiscount.Rows[e.RowIndex].Cells[e.ColumnIndex].Value != null)
+                if (blnEdit == true)
                 {
-                    dgvDiscount.CurrentRow.Selected = true;
-                    tbxDiscount.Text = dgvDiscount.Rows[e.RowIndex].Cells["DiscountID"].Value.ToString();
-                    cmxDiscountType.Text = dgvDiscount.Rows[e.RowIndex].Cells["DiscountType"].Value.ToString();
-                    tbxProductID.Text = dgvDiscount.Rows[e.RowIndex].Cells["ProductID"].Value.ToString();
-                    tbxDiscountPercent.Text = dgvDiscount.Rows[e.RowIndex].Cells["DiscountPercent"].Value.ToString();
-                    cbxIsValid.Checked = Convert.ToBoolean(dgvDiscount.Rows[e.RowIndex].Cells["isValid"].Value);
+                    if(e.RowIndex  < 0 || e.ColumnIndex < 0)
+                    {
+
+                    }
+                    else if (dgvDiscount.Rows[e.RowIndex].Cells[e.ColumnIndex].Value != null)
+                    {
+                        dgvDiscount.CurrentRow.Selected = true;
+                        tbxDiscount.Text = dgvDiscount.Rows[e.RowIndex].Cells["DiscountID"].Value.ToString();
+                        cmxDiscountType.Text = dgvDiscount.Rows[e.RowIndex].Cells["DiscountType"].Value.ToString();
+                        tbxProductID.Text = dgvDiscount.Rows[e.RowIndex].Cells["ProductID"].Value.ToString();
+                        tbxDiscountPercent.Text = dgvDiscount.Rows[e.RowIndex].Cells["DiscountPercent"].Value.ToString();
+                        cbxIsValid.Checked = Convert.ToBoolean(dgvDiscount.Rows[e.RowIndex].Cells["isValid"].Value);
+                    }
                 }
             }
+            catch (ArgumentOutOfRangeException)
+            {
+                
+            }
+           
           
         }
-        private void btnComplete_Click(object sender, EventArgs e)
+        private void btnComplete_Click(object sender, EventArgs e)//For When User is Done making new Discount
         {
             int intBool = 1;
             if (cbxIsValid.Checked)
@@ -233,7 +252,7 @@ namespace SU21_Final_Project
             }
             else
             {
-                MessageBox.Show("Yeah It Would Be InValid");
+                MessageBox.Show("Invalid Discount , Please Fill Out Neccesary Information " , "Invalid Disocunt" , MessageBoxButtons.OK , MessageBoxIcon.Error);
             }
 
             tbxDiscount.Clear();
@@ -241,6 +260,71 @@ namespace SU21_Final_Project
             cmxDiscountType.Text = "1";
             cbxIsValid.Checked = false;
             tbxProductID.Clear();
+        }
+        private void SetState(string state)
+        {
+            string myState = state;
+
+            switch (state)
+            {
+                case "View":
+                    //button
+                    btnAdd.Enabled = true;
+                    btnEditDiscount.Enabled = true;
+                    btnCancelEdit.Enabled = false;
+                    btnCompleteEdit.Enabled = false;
+                    //labels
+                    lblDiscountIDTextValid.Visible = true;
+
+                    //textboxes
+                    tbxDiscount.Enabled = true;
+
+                    //Bool
+                    blnEdit = false;
+                    break;
+
+                case "Edit":
+                    //Data Grid View
+                    dgvDiscount.AllowUserToOrderColumns = false;
+
+                    //Button
+                    btnEditDiscount.Enabled = false;
+                    btnAdd.Enabled = false;
+                    btnCompleteEdit.Enabled = true;
+                    btnCancelEdit.Enabled = true;
+
+                    //labels
+                    lblDiscountIDTextValid.Visible = false;
+
+                    //Text boxes
+                    tbxDiscount.Enabled = false;
+
+                    blnEdit = true;
+                    break;
+                default:
+                   
+                    break;
+            }
+        }
+
+        private void btnEditDiscount_Click(object sender, EventArgs e)
+        {
+            SetState("Edit");
+            DisplayDiscount();
+        }
+
+        private void btnCancelEdit_Click(object sender, EventArgs e)
+        {
+            SetState("View");
+            tbxDiscount.Clear();
+            tbxDiscountPercent.Clear();
+            cmxDiscountType.Text = "1";
+            cbxIsValid.Checked = false;
+            tbxProductID.Clear();
+        }
+
+        private void dgvDiscount_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
         }
 
         private void tbxDiscountPercent_KeyPress(object sender, KeyPressEventArgs e)
@@ -288,66 +372,9 @@ namespace SU21_Final_Project
             }
         }
 
-        private void SetState(string state)
+        private void btnReturn_Click(object sender, EventArgs e)
         {
-            string myState = state;
-
-            switch (state)
-            {
-                case "View":
-                    //button
-                    btnAdd.Enabled = true;
-                    btnEditDiscount.Enabled = true;
-                    btnCancelEdit.Enabled = false;
-                    btnCompleteEdit.Enabled = false;
-                    //labels
-                    lblDiscountIDTextValid.Visible = true;
-
-                    //textboxes
-                    tbxDiscount.Enabled = true;
-
-                    //Bool
-                    blnEdit = false;
-                    break;
-
-                case "Edit":
-                    //Button
-                    btnEditDiscount.Enabled = false;
-                    btnAdd.Enabled = false;
-                    btnCompleteEdit.Enabled = true;
-                    btnCancelEdit.Enabled = true;
-
-                    //labels
-                    lblDiscountIDTextValid.Visible = false;
-
-                    //Text boxes
-                    tbxDiscount.Enabled = false;
-
-                    blnEdit = true;
-                    break;
-                default:
-                   
-                    break;
-            }
-        }
-
-        private void btnEditDiscount_Click(object sender, EventArgs e)
-        {
-            SetState("Edit");
-        }
-
-        private void dgvDiscount_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-        }
-
-        private void btnCancelEdit_Click(object sender, EventArgs e)
-        {
-            SetState("View");
-            tbxDiscount.Clear();
-            tbxDiscountPercent.Clear();
-            cmxDiscountType.Text = "1";
-            cbxIsValid.Checked = false;
-            tbxProductID.Clear();
+            this.Close();
         }
     }
 }

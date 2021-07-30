@@ -53,6 +53,7 @@ namespace SU21_Final_Project
 
         //Public Ints and Deciamls
         public static int _intPersonID = 1000;
+        public static int _intEmployeeID;
 
         public static int _intProductID = 0;
         public static int _intQuantity;
@@ -210,8 +211,70 @@ namespace SU21_Final_Project
                 //Use this Function To Grab Person ID whenever this is called
                 _sqlResultsCommand = new SqlCommand(strQuery, _conDatabase);
 
-                //Grab PersonID so we can cretae LogIn Info
-                _intPersonID = (int)_sqlResultsCommand.ExecuteScalar();
+                //establish data adapter
+                _daPerson = new SqlDataAdapter();
+                _daPerson.SelectCommand = _sqlResultsCommand;
+                //fill data table
+                _dtPerson = new DataTable();
+                _daPerson.Fill(_dtPerson);
+
+                if (_dtPerson.Rows.Count == 1)
+                {
+                    _blnFound = true;
+
+                    //Grab PersonID so we can cretae LogIn Info
+                    _intPersonID = (int)_sqlResultsCommand.ExecuteScalar();
+                }
+                else
+                {
+                    _blnFound = false;
+                    MessageBox.Show("No User Was Found", "No User", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+
+                _sqlResultsCommand.Dispose();
+
+
+            }
+            catch (InvalidCastException)
+            {
+
+                MessageBox.Show("Error Invalid Cast", "Error on DatabaseCommand", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+            }
+            catch (NullReferenceException)
+            {
+                MessageBox.Show("Error NULL", "Error on DatabaseCommand", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
+            _sqlResultsCommand.Dispose();
+        }
+        public static void GrabEmployeeID(string strQuery)
+        {
+            try
+            {
+                //Use this Function To Grab Person ID whenever this is called
+                _sqlResultsCommand = new SqlCommand(strQuery, _conDatabase);
+
+                //establish data adapter
+                _daLogOn = new SqlDataAdapter();
+                _daLogOn.SelectCommand = _sqlResultsCommand;
+                //fill data table
+                _dtLogOn = new DataTable();
+                _daLogOn.Fill(_dtLogOn);
+
+                if (_dtLogOn.Rows.Count == 1)
+                {
+                    _blnFound = true;
+
+                    //Grab EmployeeID so we can cretae LogIn Info
+                    _intEmployeeID = (int)_sqlResultsCommand.ExecuteScalar();
+                }
+                else
+                {
+                    _blnFound = false;
+
+                }
+
 
                 _sqlResultsCommand.Dispose();
             }
@@ -752,8 +815,6 @@ namespace SU21_Final_Project
                 }
             }
         }
-
-
         public static void ProductView(TextBox tbxProductID, TextBox ProductName, TextBox tbxGenre, TextBox tbxQuanity, TextBox tbxPrice, TextBox tbxDescription, CheckBox chxInStock)
         {
             //string to build query
@@ -821,6 +882,72 @@ namespace SU21_Final_Project
                 string strQuery;
                 //string to build query
                 strQuery = "Select * From OrtizB21Su2332.Person Where PersonID = " + _intPersonID;
+
+                //est cmd obj
+                _sqlResultsCommand = new SqlCommand(strQuery, _conDatabase);
+
+                //est data adapter
+                _daPerson = new SqlDataAdapter();
+                _daPerson.SelectCommand = _sqlResultsCommand;
+
+                //Fill data table
+                _dtPerson = new DataTable();
+                _daPerson.Fill(_dtPerson);
+
+                //bind controlls
+                tbxTitle.DataBindings.Add("Text", _dtPerson, "Title");
+                tbxFirstName.DataBindings.Add("Text", _dtPerson, "NameFirst");
+                tbxMiddleName.DataBindings.Add("Text", _dtPerson, "NameMiddle");
+                tbxLastName.DataBindings.Add("Text", _dtPerson, "NameLast");
+                tbxSuffix.DataBindings.Add("Text", _dtPerson, "Suffix");
+                tbxAddress1.DataBindings.Add("Text", _dtPerson, "Address1");
+                tbxAddress2.DataBindings.Add("Text", _dtPerson, "Address2");
+                tbxAddress3.DataBindings.Add("Text", _dtPerson, "Address3");
+                tbxCity.DataBindings.Add("Text", _dtPerson, "City");
+                tbxZipcode.DataBindings.Add("Text", _dtPerson, "Zipcode");
+                cbxState.DataBindings.Add("Text", _dtPerson, "State");
+                tbxEmail.DataBindings.Add("Text", _dtPerson, "Email");
+                mtbPhonePrim.DataBindings.Add("Text", _dtPerson, "PhonePrimary");
+                mtbPhoneSecon.DataBindings.Add("Text", _dtPerson, "PhoneSecondary");
+                //cbxState.DataBindings.Add("Text", _dtPerson, "State");
+
+                //Dispose Of Command Object
+                _sqlResultsCommand.Dispose();
+
+            }
+            catch (SqlException ex)
+            {
+                if (ex is SqlException)
+                {//handles more specific SqlException here.
+
+                    for (int i = 0; i < ex.Errors.Count; i++)
+                    {
+                        errorMessages.Append("Index #" + i + "\n" +
+                            "Message: " + ex.Errors[i].Message + "\n" +
+                            "LineNumber: " + ex.Errors[i].LineNumber + "\n" +
+                            "Source: " + ex.Errors[i].Source + "\n" +
+                            "Procedure: " + ex.Errors[i].Procedure + "\n");
+                    }
+                    MessageBox.Show(errorMessages.ToString(), "Error on DatabaseCommand", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+            catch (InvalidOperationException ex)
+            {
+                MessageBox.Show(ex.ToString(), "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
+        }
+
+        public static void EmployeeEdit(TextBox tbxTitle, TextBox tbxFirstName, TextBox tbxMiddleName, TextBox tbxLastName, TextBox tbxSuffix, TextBox tbxAddress1, TextBox tbxAddress2, TextBox tbxAddress3,
+                                       TextBox tbxCity, TextBox tbxZipcode, ComboBox cbxState, TextBox tbxEmail, MaskedTextBox mtbPhonePrim, MaskedTextBox mtbPhoneSecon)
+        {
+            try
+            {
+                string strQuery;
+                //string to build query
+                strQuery = "Select *  + " +
+                    "From OrtizB21Su2332.Person p inner join OrtizB21Su2332.Employees e on p.PersonID = e.PersonID" +
+                    "Where e.EmployeeID = " + _intEmployeeID;
 
                 //est cmd obj
                 _sqlResultsCommand = new SqlCommand(strQuery, _conDatabase);

@@ -30,6 +30,7 @@ namespace SU21_Final_Project
         private void rdEmployee_CheckedChanged(object sender, EventArgs e)
         {
             lblUSernameText.Text = "EmployeeID : ";
+            tbxUsername.Clear();
             lblErrorText.Visible = false;
         }
 
@@ -83,9 +84,10 @@ namespace SU21_Final_Project
                     {
                         strQuery = "Select e.PersonID from  OrtizB21Su2332.Employees e inner join OrtizB21Su2332.LogOn l on l.PersonID = e.PersonID " +
                         "Where EmployeeID = " + tbxUsername.Text;
-                        ProgOps.GrabPersonID(strQuery);
 
-                        if(ProgOps.GrabAdmin(ProgOps._intPersonID) == true)
+                        ProgOps.GrabEmployeeID(strQuery);
+
+                        if(ProgOps.GrabAdmin(ProgOps._intEmployeeID) == true)
                         {
                            frmManager_Main frmmanagermain = new frmManager_Main();
                             this.Hide();
@@ -96,7 +98,7 @@ namespace SU21_Final_Project
                         {
                          strQuery = "Select e.PersonID from  OrtizB21Su2332.Employees e inner join OrtizB21Su2332.LogOn l on l.PersonID = e.PersonID " +
                          "Where EmployeeID = " + tbxUsername.Text;
-                            ProgOps.GrabPersonID(strQuery);
+                            ProgOps.GrabEmployeeID(strQuery);
 
                             frmEmployee_Main frmemployeemain = new frmEmployee_Main();
                             this.Hide();

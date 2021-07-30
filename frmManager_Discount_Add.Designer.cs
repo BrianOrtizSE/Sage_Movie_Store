@@ -52,7 +52,10 @@ namespace SU21_Final_Project
             this.btnEditDiscount = new System.Windows.Forms.Button();
             this.btnCompleteEdit = new System.Windows.Forms.Button();
             this.btnCancelEdit = new System.Windows.Forms.Button();
+            this.dgvProduct = new System.Windows.Forms.DataGridView();
+            this.btnReturn = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDiscount)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvProduct)).BeginInit();
             this.SuspendLayout();
             // 
             // dgvDiscount
@@ -248,29 +251,58 @@ namespace SU21_Final_Project
             // 
             // btnCompleteEdit
             // 
-            this.btnCompleteEdit.Location = new System.Drawing.Point(203, 455);
+            this.btnCompleteEdit.Location = new System.Drawing.Point(203, 399);
             this.btnCompleteEdit.Name = "btnCompleteEdit";
             this.btnCompleteEdit.Size = new System.Drawing.Size(75, 50);
             this.btnCompleteEdit.TabIndex = 19;
-            this.btnCompleteEdit.Text = "&Complete Edit";
+            this.btnCompleteEdit.Text = "C&omplete Edit";
             this.btnCompleteEdit.UseVisualStyleBackColor = true;
             this.btnCompleteEdit.Click += new System.EventHandler(this.btnComplete_Click);
             // 
             // btnCancelEdit
             // 
-            this.btnCancelEdit.Location = new System.Drawing.Point(284, 455);
+            this.btnCancelEdit.Location = new System.Drawing.Point(203, 455);
             this.btnCancelEdit.Name = "btnCancelEdit";
             this.btnCancelEdit.Size = new System.Drawing.Size(75, 50);
             this.btnCancelEdit.TabIndex = 20;
-            this.btnCancelEdit.Text = "Cancel Edit";
+            this.btnCancelEdit.Text = "&Cancel Edit";
             this.btnCancelEdit.UseVisualStyleBackColor = true;
             this.btnCancelEdit.Click += new System.EventHandler(this.btnCancelEdit_Click);
+            // 
+            // dgvProduct
+            // 
+            this.dgvProduct.AllowUserToAddRows = false;
+            this.dgvProduct.AllowUserToDeleteRows = false;
+            this.dgvProduct.AllowUserToOrderColumns = true;
+            this.dgvProduct.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvProduct.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedCells;
+            this.dgvProduct.BackgroundColor = System.Drawing.Color.White;
+            this.dgvProduct.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvProduct.Location = new System.Drawing.Point(527, 13);
+            this.dgvProduct.MultiSelect = false;
+            this.dgvProduct.Name = "dgvProduct";
+            this.dgvProduct.ReadOnly = true;
+            this.dgvProduct.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvProduct.Size = new System.Drawing.Size(456, 492);
+            this.dgvProduct.TabIndex = 21;
+            // 
+            // btnReturn
+            // 
+            this.btnReturn.Location = new System.Drawing.Point(284, 455);
+            this.btnReturn.Name = "btnReturn";
+            this.btnReturn.Size = new System.Drawing.Size(75, 50);
+            this.btnReturn.TabIndex = 22;
+            this.btnReturn.Text = "&Return";
+            this.btnReturn.UseVisualStyleBackColor = true;
+            this.btnReturn.Click += new System.EventHandler(this.btnReturn_Click);
             // 
             // frmManager_Discount_Add
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1001, 522);
+            this.Controls.Add(this.btnReturn);
+            this.Controls.Add(this.dgvProduct);
             this.Controls.Add(this.btnCancelEdit);
             this.Controls.Add(this.btnCompleteEdit);
             this.Controls.Add(this.btnEditDiscount);
@@ -299,6 +331,7 @@ namespace SU21_Final_Project
             this.Text = "Discount Editor";
             this.Load += new System.EventHandler(this.frmManager_Discount_Add_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvDiscount)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvProduct)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -327,5 +360,7 @@ namespace SU21_Final_Project
         private System.Windows.Forms.Button btnEditDiscount;
         private System.Windows.Forms.Button btnCompleteEdit;
         private System.Windows.Forms.Button btnCancelEdit;
+        private System.Windows.Forms.DataGridView dgvProduct;
+        private System.Windows.Forms.Button btnReturn;
     }
 }

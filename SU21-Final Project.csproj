@@ -82,6 +82,12 @@
     <Compile Include="frmEmployee_Edit_Customer.Designer.cs">
       <DependentUpon>frmEmployee_Edit_Customer.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmEmployee_Edit_Self.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmEmployee_Edit_Self.Designer.cs">
+      <DependentUpon>frmEmployee_Edit_Self.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmEmployee_Inventory_View.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -99,6 +105,12 @@
     </Compile>
     <Compile Include="frmEmployee_POS.Designer.cs">
       <DependentUpon>frmEmployee_POS.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmFind_User.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmFind_User.Designer.cs">
+      <DependentUpon>frmFind_User.cs</DependentUpon>
     </Compile>
     <Compile Include="frmHelp.cs">
       <SubType>Form</SubType>
@@ -136,11 +148,11 @@
     <Compile Include="frmLogIn.Designer.cs">
       <DependentUpon>frmLogIn.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmMain.cs">
+    <Compile Include="frmMainMenu.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmMain.Designer.cs">
-      <DependentUpon>frmMain.cs</DependentUpon>
+    <Compile Include="frmMainMenu.Designer.cs">
+      <DependentUpon>frmMainMenu.cs</DependentUpon>
     </Compile>
     <Compile Include="frmMerhandiseView.cs">
       <SubType>Form</SubType>
@@ -179,6 +191,9 @@
     <EmbeddedResource Include="frmEmployee_Edit_Customer.resx">
       <DependentUpon>frmEmployee_Edit_Customer.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmEmployee_Edit_Self.resx">
+      <DependentUpon>frmEmployee_Edit_Self.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmEmployee_Inventory_View.resx">
       <DependentUpon>frmEmployee_Inventory_View.cs</DependentUpon>
     </EmbeddedResource>
@@ -188,14 +203,17 @@
     <EmbeddedResource Include="frmEmployee_POS.resx">
       <DependentUpon>frmEmployee_POS.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmFind_User.resx">
+      <DependentUpon>frmFind_User.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmHelp.resx">
       <DependentUpon>frmHelp.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmLogIn.resx">
       <DependentUpon>frmLogIn.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmMain.resx">
-      <DependentUpon>frmMain.cs</DependentUpon>
+    <EmbeddedResource Include="frmMainMenu.resx">
+      <DependentUpon>frmMainMenu.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmManager_Discount_Add.resx">
       <DependentUpon>frmManager_Discount_Add.cs</DependentUpon>
