@@ -496,6 +496,12 @@ namespace SU21_Final_Project
             }
         }
 
-
+        private void btnDiscountSearch_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            frmEmplpyee_Discount_View frmEmpDisView = new frmEmplpyee_Discount_View();
+            frmEmpDisView.ShowDialog();
+            this.Show();
+        }
     }
 }

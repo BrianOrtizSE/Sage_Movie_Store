@@ -106,6 +106,12 @@
     <Compile Include="frmEmployee_POS.Designer.cs">
       <DependentUpon>frmEmployee_POS.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmEmplpyee_Discount_View.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmEmplpyee_Discount_View.Designer.cs">
+      <DependentUpon>frmEmplpyee_Discount_View.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmFind_User.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -202,6 +208,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmEmployee_POS.resx">
       <DependentUpon>frmEmployee_POS.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmEmplpyee_Discount_View.resx">
+      <DependentUpon>frmEmplpyee_Discount_View.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmFind_User.resx">
       <DependentUpon>frmFind_User.cs</DependentUpon>

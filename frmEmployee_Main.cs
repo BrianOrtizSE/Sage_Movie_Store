@@ -22,6 +22,7 @@ namespace SU21_Final_Project
             this.Hide();
             frmEmployee_POS frmEmpPos = new frmEmployee_POS();
             frmEmpPos.ShowDialog();
+            this.Show();
         }
 
         private void btnEditSelfInformation_Click(object sender, EventArgs e)
@@ -37,6 +38,22 @@ namespace SU21_Final_Project
             frmFind_User frmFindUser = new frmFind_User();
             this.Hide();
             frmFindUser.ShowDialog();
+            this.Show();
+        }
+
+        private void btnViewDiscounts_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            frmEmplpyee_Discount_View frmEmpDisView = new frmEmplpyee_Discount_View();
+            frmEmpDisView.ShowDialog();
+            this.Show();
+        }
+
+        private void btnViewInventory_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            frmEmployee_Inventory_View frmEmpInvView = new frmEmployee_Inventory_View();
+            frmEmpInvView.ShowDialog();
             this.Show();
         }
     }

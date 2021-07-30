@@ -72,6 +72,7 @@ namespace SU21_Final_Project
             this.lblOrderDetails = new System.Windows.Forms.Label();
             this.mnsHelp = new System.Windows.Forms.MenuStrip();
             this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.btnDiscountSearch = new System.Windows.Forms.Button();
             this.pnlCheckout.SuspendLayout();
             this.pnlCart.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProducts)).BeginInit();
@@ -80,6 +81,7 @@ namespace SU21_Final_Project
             // 
             // pnlCheckout
             // 
+            this.pnlCheckout.Controls.Add(this.btnDiscountSearch);
             this.pnlCheckout.Controls.Add(this.label1);
             this.pnlCheckout.Controls.Add(this.lblMonth);
             this.pnlCheckout.Controls.Add(this.lblBlackLine);
@@ -171,7 +173,7 @@ namespace SU21_Final_Project
             // btnDiscountEnter
             // 
             this.btnDiscountEnter.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDiscountEnter.Location = new System.Drawing.Point(259, 395);
+            this.btnDiscountEnter.Location = new System.Drawing.Point(259, 411);
             this.btnDiscountEnter.Name = "btnDiscountEnter";
             this.btnDiscountEnter.Size = new System.Drawing.Size(66, 26);
             this.btnDiscountEnter.TabIndex = 4;
@@ -241,7 +243,7 @@ namespace SU21_Final_Project
             // 
             // btnClose
             // 
-            this.btnClose.Location = new System.Drawing.Point(163, 458);
+            this.btnClose.Location = new System.Drawing.Point(139, 457);
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(101, 36);
             this.btnClose.TabIndex = 1;
@@ -325,7 +327,7 @@ namespace SU21_Final_Project
             // btnPay
             // 
             this.btnPay.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnPay.Location = new System.Drawing.Point(56, 458);
+            this.btnPay.Location = new System.Drawing.Point(32, 458);
             this.btnPay.Name = "btnPay";
             this.btnPay.Size = new System.Drawing.Size(101, 36);
             this.btnPay.TabIndex = 45;
@@ -560,6 +562,17 @@ namespace SU21_Final_Project
             this.helpToolStripMenuItem.Size = new System.Drawing.Size(44, 20);
             this.helpToolStripMenuItem.Text = "Help";
             // 
+            // btnDiscountSearch
+            // 
+            this.btnDiscountSearch.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDiscountSearch.Location = new System.Drawing.Point(259, 374);
+            this.btnDiscountSearch.Name = "btnDiscountSearch";
+            this.btnDiscountSearch.Size = new System.Drawing.Size(65, 26);
+            this.btnDiscountSearch.TabIndex = 84;
+            this.btnDiscountSearch.Text = "Search For Discount";
+            this.btnDiscountSearch.UseVisualStyleBackColor = true;
+            this.btnDiscountSearch.Click += new System.EventHandler(this.btnDiscountSearch_Click);
+            // 
             // frmEmployee_POS
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -628,5 +641,6 @@ namespace SU21_Final_Project
         private System.Windows.Forms.Label lblOrderDetails;
         private System.Windows.Forms.MenuStrip mnsHelp;
         private System.Windows.Forms.ToolStripMenuItem helpToolStripMenuItem;
+        private System.Windows.Forms.Button btnDiscountSearch;
     }
 }

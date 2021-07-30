@@ -134,5 +134,11 @@ namespace SU21_Final_Project
             frmEmployee_Inventory_View frminvvie = new frmEmployee_Inventory_View();
             frminvvie.ShowDialog();
         }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            frmEmplpyee_Discount_View frmDisView = new frmEmplpyee_Discount_View();
+            frmDisView.ShowDialog();
+        }
     }
 }

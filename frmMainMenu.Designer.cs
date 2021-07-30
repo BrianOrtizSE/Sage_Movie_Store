@@ -35,11 +35,7 @@ namespace SU21_Final_Project
             this.label1 = new System.Windows.Forms.Label();
             this.btnSignUp = new System.Windows.Forms.Button();
             this.btnSignIn = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.button4 = new System.Windows.Forms.Button();
             this.mnsMain.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -96,39 +92,6 @@ namespace SU21_Final_Project
             this.btnSignIn.UseVisualStyleBackColor = true;
             this.btnSignIn.Click += new System.EventHandler(this.btnSignIn_Click);
             // 
-            // button1
-            // 
-            this.button1.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(647, 386);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(49, 34);
-            this.button1.TabIndex = 5;
-            this.button1.Text = "Sign-Up";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click_2);
-            // 
-            // button2
-            // 
-            this.button2.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.Location = new System.Drawing.Point(702, 386);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(49, 34);
-            this.button2.TabIndex = 6;
-            this.button2.Text = "Sign-Up";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
-            // 
-            // button3
-            // 
-            this.button3.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.Location = new System.Drawing.Point(592, 386);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(49, 34);
-            this.button3.TabIndex = 7;
-            this.button3.Text = "Sign-Up";
-            this.button3.UseVisualStyleBackColor = true;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
-            // 
             // pictureBox1
             // 
             this.pictureBox1.Image = global::SU21_Final_Project.Properties.Resources.Logo_SMS;
@@ -139,26 +102,11 @@ namespace SU21_Final_Project
             this.pictureBox1.TabIndex = 1;
             this.pictureBox1.TabStop = false;
             // 
-            // button4
-            // 
-            this.button4.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button4.Location = new System.Drawing.Point(152, 386);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(49, 34);
-            this.button4.TabIndex = 8;
-            this.button4.Text = "Sign-Up";
-            this.button4.UseVisualStyleBackColor = true;
-            this.button4.Click += new System.EventHandler(this.button4_Click);
-            // 
-            // frmMain
+            // frmMainMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.button4);
-            this.Controls.Add(this.button3);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
             this.Controls.Add(this.btnSignIn);
             this.Controls.Add(this.btnSignUp);
             this.Controls.Add(this.label1);
@@ -167,7 +115,7 @@ namespace SU21_Final_Project
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.mnsMain;
             this.MaximizeBox = false;
-            this.Name = "frmMain";
+            this.Name = "frmMainMenu";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Tag = "2021.05.02";
             this.Text = "Sages Movie Store";
@@ -189,10 +137,6 @@ namespace SU21_Final_Project
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btnSignUp;
         private System.Windows.Forms.Button btnSignIn;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button4;
     }
 }
 
