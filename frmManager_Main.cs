@@ -22,6 +22,7 @@ namespace SU21_Final_Project
             this.Hide();
             frmManager_Edit_Inventory frmmerchadd = new frmManager_Edit_Inventory();
             frmmerchadd.ShowDialog();
+            this.Show();
         }
 
         private void btnViewSales_Click(object sender, EventArgs e)

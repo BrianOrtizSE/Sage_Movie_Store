@@ -199,7 +199,6 @@ namespace SU21_Final_Project
                 strCreate.Append("PhoneSecondary = '" + mtbPhone2.Text + "'");
             }
 
-            MessageBox.Show(strCreate.ToString());
             if (blnValid == true)
             {
                 strCreate.Append(" Where PersonID = " + ProgOps._intPersonID);
