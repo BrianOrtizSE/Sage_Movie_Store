@@ -128,5 +128,11 @@ namespace SU21_Final_Project
             frmempcusedit.ShowDialog();
             this.Show();
         }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            frmEmployee_Inventory_View frminvvie = new frmEmployee_Inventory_View();
+            frminvvie.ShowDialog();
+        }
     }
 }

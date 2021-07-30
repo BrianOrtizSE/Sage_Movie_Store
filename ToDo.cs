@@ -18,6 +18,7 @@ namespace SU21_Final_Project
          - Alter Products Table row 30000 so that things happen better - DONE
          - FIX ALL TEXTBOCES SO THEY HAVE A MAX AND NO NEED TO RISK CUSTOMER MESSING THAT UP
          - FIX MANGAER DISCOUNT SO THAT IT CANNOT BE NEGATIVE
+         - Check ALl Data Grid Views so that they cannot be edited or anything like that
          */ 
     }
 }

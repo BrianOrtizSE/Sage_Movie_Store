@@ -36,6 +36,7 @@ namespace SU21_Final_Project
 
         private void btnToday_Click(object sender, EventArgs e)
         {
+            //Grabs Sales For Today
             strQuery = "Select EmployeeId, Sum(Sale) AS 'Total Sales' " + " From OrtizB21Su2332.Sales " + " Where DateOfSale = cast (GETDATE() as DATE) " + " Group by EmployeeID ";
             ProgOps.GrabSales(dgvSales, strQuery);
             lblDate.Text = "Sales For : " + DateTime.Today.ToString("d");
@@ -43,6 +44,7 @@ namespace SU21_Final_Project
 
         private void button2_Click(object sender, EventArgs e)
         {
+            //Grab Sales For The Week
             strQuery = "Select EmployeeId, Sum(Sale) AS 'Total Sales' " + " From OrtizB21Su2332.Sales " + " Where DateOfSale > cast (GETDATE() - 7 as DATE) " + " Group by EmployeeID ";
             ProgOps.GrabSales(dgvSales, strQuery);
             lblDate.Text = "Sales For : " + DateTime.Today.ToString("d") + " - " + DateTime.Today.AddDays(-7).ToString("d");
@@ -51,6 +53,7 @@ namespace SU21_Final_Project
 
         private void button3_Click(object sender, EventArgs e)
         {
+            //Grab Sales for the Last Month
             strQuery = "Select EmployeeId, Sum(Sale) AS 'Total Sales' " + " From OrtizB21Su2332.Sales " + " Where DateOfSale > cast (GETDATE() - 30 as DATE) " + " Group by EmployeeID ";
             ProgOps.GrabSales(dgvSales, strQuery);
             lblDate.Text = "Sales For : " + DateTime.Today.ToString("d") + " - " + DateTime.Today.AddDays(-30).ToString("d");

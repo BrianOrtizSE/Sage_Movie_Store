@@ -22,7 +22,7 @@ namespace SU21_Final_Project
 
             //On Load We Display All Items
             strQuery = "Select * From OrtizB21Su2332.Products"; ;
-            ProgOps.GrabProduct(tbxProductID, dgvView, strQuery);
+            ProgOps.GrabProduct( dgvView, strQuery);
 
         }
 
@@ -43,7 +43,7 @@ namespace SU21_Final_Project
             else
             {
                 strQuery = "Select * From OrtizB21Su2332.Products Where ProductID = " + tbxProductID.Text;
-                ProgOps.GrabProduct(tbxProductID, dgvView, strQuery);
+                ProgOps.GrabProduct( dgvView, strQuery);
 
                 if (dgvView.RowCount != 1)
                 {
@@ -58,7 +58,7 @@ namespace SU21_Final_Project
 
                     //Reset Data Grid View
                     strQuery = "Select * From OrtizB21Su2332.Products"; ;
-                    ProgOps.GrabProduct(tbxProductID, dgvView, strQuery);
+                    ProgOps.GrabProduct( dgvView, strQuery);
 
                 }
 
@@ -71,7 +71,7 @@ namespace SU21_Final_Project
         {
             //Reset Data Grid View
             strQuery = "Select * From OrtizB21Su2332.Products"; ;
-            ProgOps.GrabProduct(tbxProductID, dgvView, strQuery);
+            ProgOps.GrabProduct( dgvView, strQuery);
         }
 
         private void tbxProductID_KeyPress(object sender, KeyPressEventArgs e)

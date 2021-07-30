@@ -65,6 +65,7 @@ namespace SU21_Final_Project
             this.dgvDiscount.BackgroundColor = System.Drawing.Color.White;
             this.dgvDiscount.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvDiscount.Location = new System.Drawing.Point(527, 13);
+            this.dgvDiscount.MultiSelect = false;
             this.dgvDiscount.Name = "dgvDiscount";
             this.dgvDiscount.ReadOnly = true;
             this.dgvDiscount.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;

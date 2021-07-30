@@ -59,7 +59,7 @@ namespace SU21_Final_Project
             // 
             this.lblOrderBy.AutoSize = true;
             this.lblOrderBy.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblOrderBy.Location = new System.Drawing.Point(495, 345);
+            this.lblOrderBy.Location = new System.Drawing.Point(482, 345);
             this.lblOrderBy.Name = "lblOrderBy";
             this.lblOrderBy.Size = new System.Drawing.Size(57, 16);
             this.lblOrderBy.TabIndex = 1;
@@ -67,7 +67,7 @@ namespace SU21_Final_Project
             // 
             // btnToday
             // 
-            this.btnToday.Location = new System.Drawing.Point(352, 384);
+            this.btnToday.Location = new System.Drawing.Point(339, 384);
             this.btnToday.Name = "btnToday";
             this.btnToday.Size = new System.Drawing.Size(92, 40);
             this.btnToday.TabIndex = 2;
@@ -77,7 +77,7 @@ namespace SU21_Final_Project
             // 
             // btnWeekSales
             // 
-            this.btnWeekSales.Location = new System.Drawing.Point(476, 384);
+            this.btnWeekSales.Location = new System.Drawing.Point(463, 384);
             this.btnWeekSales.Name = "btnWeekSales";
             this.btnWeekSales.Size = new System.Drawing.Size(92, 40);
             this.btnWeekSales.TabIndex = 3;
@@ -87,7 +87,7 @@ namespace SU21_Final_Project
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(595, 384);
+            this.button3.Location = new System.Drawing.Point(582, 384);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(92, 40);
             this.button3.TabIndex = 4;
@@ -108,7 +108,7 @@ namespace SU21_Final_Project
             // 
             // btnExit
             // 
-            this.btnExit.Location = new System.Drawing.Point(696, 12);
+            this.btnExit.Location = new System.Drawing.Point(696, 384);
             this.btnExit.Name = "btnExit";
             this.btnExit.Size = new System.Drawing.Size(92, 40);
             this.btnExit.TabIndex = 6;

@@ -500,7 +500,7 @@ namespace SU21_Final_Project
             _daLogOn.Dispose();
             _sqlResultsCommand.Dispose();
         }
-        public static void GrabProduct(TextBox tbxProductID, DataGridView dgvOrders, String strQuery)
+        public static void GrabProduct(DataGridView dgvOrders, String strQuery)
         {
 
             try
@@ -515,7 +515,19 @@ namespace SU21_Final_Project
                 //Fill Data Table
                 _dtProductTable = new DataTable();
                 _daProduct.Fill(_dtProductTable);
-                dgvOrders.DataSource = _dtProductTable;
+
+                if (_dtProductTable.Rows.Count == 0)
+                {
+                    _blnFound = false;
+                    MessageBox.Show("No Item's Were Found", "No Item's", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                else
+                {
+                    _blnFound = true;
+                    dgvOrders.DataSource = _dtProductTable;
+                }
+
+                
             }
             catch (SqlException ex)
             {

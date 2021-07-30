@@ -104,7 +104,7 @@ namespace SU21_Final_Project
             //On Load We Display All Items
             strQuery = "Select ProductID , ProductName , Genre , ProductDescription , Quantity , ProductPrice From OrtizB21Su2332.Products Where Quantity > 0";
 
-            ProgOps.GrabProduct(tbxProductID, dgvProducts, strQuery);
+            ProgOps.GrabProduct( dgvProducts, strQuery);
 
             //Setting Titles and such for Grids
             dgvProducts.Columns[0].HeaderText = "Product ID";
@@ -162,7 +162,7 @@ namespace SU21_Final_Project
 
 
                 strQuery = "Select ProductID , ProductName , Genre , ProductDescription , Quantity , ProductPrice From OrtizB21Su2332.Products Where Quantity > 0 and ProductID = " + tbxProductID.Text;
-                ProgOps.GrabProduct(tbxProductID, dgvProducts, strQuery);
+                ProgOps.GrabProduct( dgvProducts, strQuery);
 
                 if (dgvProducts.RowCount != 1)
                 {
@@ -208,7 +208,7 @@ namespace SU21_Final_Project
 
                 //Reset Data Grid View
                 strQuery = "Select ProductID , ProductName , Genre , ProductDescription , Quantity , ProductPrice From OrtizB21Su2332.Products Where Quantity > 0";
-                ProgOps.GrabProduct(tbxProductID, dgvProducts, strQuery);
+                ProgOps.GrabProduct( dgvProducts, strQuery);
             }
 
         }
