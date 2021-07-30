@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace SU21_Final_Project
 {
-    public partial class frmEmplpyee_Discount_View : Form
+    public partial class frmEmplpyee_View_Discount : Form
     {
-        public frmEmplpyee_Discount_View()
+        public frmEmplpyee_View_Discount()
         {
             InitializeComponent();
         }

@@ -11,9 +11,9 @@ using System.IO;
 
 namespace SU21_Final_Project
 {
-    public partial class frmCreateInvoice : Form
+    public partial class frmCustomer_POS : Form
     {
-        public frmCreateInvoice()
+        public frmCustomer_POS()
         {
             InitializeComponent();
         }

@@ -1,7 +1,7 @@
 ﻿
 namespace SU21_Final_Project
 {
-    partial class frmCreateInvoice
+    partial class frmCustomer_POS
     {
         /// <summary>
         /// Required designer variable.
@@ -29,7 +29,7 @@ namespace SU21_Final_Project
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmCreateInvoice));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmCustomer_POS));
             this.pnlCheckout = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.lblMonth = new System.Windows.Forms.Label();

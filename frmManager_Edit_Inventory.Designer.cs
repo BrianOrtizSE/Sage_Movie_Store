@@ -1,7 +1,7 @@
 ﻿
 namespace SU21_Final_Project
 {
-    partial class frmMerchandiseAdd
+    partial class frmManager_Edit_Inventory
     {
         /// <summary>
         /// Required designer variable.
@@ -29,6 +29,7 @@ namespace SU21_Final_Project
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmManager_Edit_Inventory));
             this.btnClose = new System.Windows.Forms.Button();
             this.btnCancel = new System.Windows.Forms.Button();
             this.btnSave = new System.Windows.Forms.Button();
@@ -323,11 +324,12 @@ namespace SU21_Final_Project
             this.Controls.Add(this.lblQuantityText);
             this.Controls.Add(this.lblGenreText);
             this.Controls.Add(this.lblProductIDText);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "frmMerchandiseAdd";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "frmAddMerchandise";
+            this.Text = "Add Merchandise";
             this.Load += new System.EventHandler(this.frmMerchandiseAdd_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

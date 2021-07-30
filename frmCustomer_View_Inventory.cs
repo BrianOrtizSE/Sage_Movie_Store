@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace SU21_Final_Project
 {
-    public partial class frmMerhandiseView : Form
+    public partial class frmCustomer_View_Inventory : Form
     {
-        public frmMerhandiseView()
+        public frmCustomer_View_Inventory()
         {
             InitializeComponent();
         }

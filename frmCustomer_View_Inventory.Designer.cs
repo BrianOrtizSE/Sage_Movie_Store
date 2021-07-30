@@ -1,7 +1,7 @@
 ﻿
 namespace SU21_Final_Project
 {
-    partial class frmMerhandiseView
+    partial class frmCustomer_View_Inventory
     {
         /// <summary>
         /// Required designer variable.
@@ -29,7 +29,7 @@ namespace SU21_Final_Project
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmMerhandiseView));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmCustomer_View_Inventory));
             this.dgvView = new System.Windows.Forms.DataGridView();
             this.btnClose = new System.Windows.Forms.Button();
             this.tbxProductID = new System.Windows.Forms.TextBox();

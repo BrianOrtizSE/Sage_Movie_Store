@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace SU21_Final_Project
 {
-    public partial class frmEmployee_Inventory_View : Form
+    public partial class frmEmployee_View_Inventory : Form
     {
-        public frmEmployee_Inventory_View()
+        public frmEmployee_View_Inventory()
         {
             InitializeComponent();
         }

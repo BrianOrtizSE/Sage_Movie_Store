@@ -11,9 +11,9 @@ using System.Data.SqlClient;
 
 namespace SU21_Final_Project
 {
-    public partial class frmMerchandiseAdd : Form
+    public partial class frmManager_Edit_Inventory : Form
     {
-        public frmMerchandiseAdd()
+        public frmManager_Edit_Inventory()
         {
             InitializeComponent();
         }

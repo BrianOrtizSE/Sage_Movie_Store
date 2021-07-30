@@ -1,7 +1,7 @@
 ﻿
 namespace SU21_Final_Project
 {
-    partial class frmEmplpyee_Discount_View
+    partial class frmEmplpyee_View_Discount
     {
         /// <summary>
         /// Required designer variable.
@@ -29,7 +29,7 @@ namespace SU21_Final_Project
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmEmplpyee_Discount_View));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmEmplpyee_View_Discount));
             this.lblIsValidText = new System.Windows.Forms.Label();
             this.lblDiscountPercentText = new System.Windows.Forms.Label();
             this.lblProductIDText = new System.Windows.Forms.Label();

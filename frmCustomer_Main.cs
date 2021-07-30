@@ -19,7 +19,7 @@ namespace SU21_Final_Project
 
         private void btnShop_Click(object sender, EventArgs e)
         {
-            frmCreateInvoice frmcreateinvoice = new frmCreateInvoice();
+            frmCustomer_POS frmcreateinvoice = new frmCustomer_POS();
             this.Hide();
             frmcreateinvoice.ShowDialog();
             this.Show();
@@ -27,7 +27,7 @@ namespace SU21_Final_Project
 
         private void btnView_Click(object sender, EventArgs e)
         {
-            frmMerhandiseView frmMerhandise = new frmMerhandiseView();
+            frmCustomer_View_Inventory frmMerhandise = new frmCustomer_View_Inventory();
             this.Hide();
             frmMerhandise.ShowDialog();
             this.Show();

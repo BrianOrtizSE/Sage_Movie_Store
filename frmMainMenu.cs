@@ -59,7 +59,7 @@ namespace SU21_Final_Project
 
         private void addMerchandiseToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            frmMerchandiseAdd frmmerchadd = new frmMerchandiseAdd();
+            frmManager_Edit_Inventory frmmerchadd = new frmManager_Edit_Inventory();
             this.Hide();
             frmmerchadd.ShowDialog();
             this.Show();
@@ -67,7 +67,7 @@ namespace SU21_Final_Project
 
         private void createInvoiceToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            frmCreateInvoice frmcreateinvoice = new frmCreateInvoice();
+            frmCustomer_POS frmcreateinvoice = new frmCustomer_POS();
 
             frmcreateinvoice.ShowDialog();
         }
@@ -101,7 +101,7 @@ namespace SU21_Final_Project
 
         private void button1_Click_1(object sender, EventArgs e)
         {
-            frmMerchandiseAdd frmmerch = new frmMerchandiseAdd();
+            frmManager_Edit_Inventory frmmerch = new frmManager_Edit_Inventory();
             frmmerch.ShowDialog();
         }
 
@@ -131,13 +131,13 @@ namespace SU21_Final_Project
 
         private void button4_Click(object sender, EventArgs e)
         {
-            frmEmployee_Inventory_View frminvvie = new frmEmployee_Inventory_View();
+            frmEmployee_View_Inventory frminvvie = new frmEmployee_View_Inventory();
             frminvvie.ShowDialog();
         }
 
         private void button5_Click(object sender, EventArgs e)
         {
-            frmEmplpyee_Discount_View frmDisView = new frmEmplpyee_Discount_View();
+            frmEmplpyee_View_Discount frmDisView = new frmEmplpyee_View_Discount();
             frmDisView.ShowDialog();
         }
     }

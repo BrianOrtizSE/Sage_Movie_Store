@@ -1,7 +1,7 @@
 ﻿
 namespace SU21_Final_Project
 {
-    partial class frmEmployee_Inventory_View
+    partial class frmEmployee_View_Inventory
     {
         /// <summary>
         /// Required designer variable.
@@ -29,7 +29,7 @@ namespace SU21_Final_Project
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmEmployee_Inventory_View));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmEmployee_View_Inventory));
             this.btnReset = new System.Windows.Forms.Button();
             this.btnSearch = new System.Windows.Forms.Button();
             this.lblSearch = new System.Windows.Forms.Label();

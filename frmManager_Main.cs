@@ -20,7 +20,7 @@ namespace SU21_Final_Project
         private void btnMerchandiseAdd_Click(object sender, EventArgs e)
         {
             this.Hide();
-            frmMerchandiseAdd frmmerchadd = new frmMerchandiseAdd();
+            frmManager_Edit_Inventory frmmerchadd = new frmManager_Edit_Inventory();
             frmmerchadd.ShowDialog();
         }
 
