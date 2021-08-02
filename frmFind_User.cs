@@ -38,7 +38,7 @@ namespace SU21_Final_Project
 
             ProgOps.GrabPersonID(strQuery);
 
-            if(ProgOps._blnFound == true)
+            if(ProgOps._blnFound == true && ProgOps._FindUser == 0)
             {
                 //If it is found we make sure that the user is not a Employee
                 strQuery = "Select e.EmployeeID " +
@@ -47,7 +47,8 @@ namespace SU21_Final_Project
 
                 ProgOps.GrabEmployeeID(strQuery);
 
-                if(ProgOps._blnFound == true)
+
+                if(ProgOps._blnFound == true )
                 {
                     //if they are an employee we let them know you cant edit information without manager
                     MessageBox.Show("Employees can not edit other Employee Information. Please Change infomration by yourself or ask for Mangaer for help", "Employee",MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -65,7 +66,8 @@ namespace SU21_Final_Project
             }
             else
             {
-
+                ProgOps._FindUser = 0;
+                this.Close();
             }
         }
 

@@ -140,5 +140,11 @@ namespace SU21_Final_Project
             frmEmplpyee_View_Discount frmDisView = new frmEmplpyee_View_Discount();
             frmDisView.ShowDialog();
         }
+
+        private void button1_Click_3(object sender, EventArgs e)
+        {
+            frmManger_View_Employees frmViewEmployee = new frmManger_View_Employees();
+            frmViewEmployee.ShowDialog();
+        }
     }
 }

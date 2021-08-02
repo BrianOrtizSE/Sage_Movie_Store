@@ -31,6 +31,9 @@ namespace SU21_Final_Project
         //Information for Person
         private static SqlDataAdapter _daPerson = new SqlDataAdapter();
         private static DataTable _dtPerson = new DataTable();
+        //Information for Employee
+        private static SqlDataAdapter _daEmployee = new SqlDataAdapter();
+        private static DataTable _dtEmployee = new DataTable();
 
         //Function To Get Product Tabled
         public static DataTable GetProductTable
@@ -56,6 +59,7 @@ namespace SU21_Final_Project
         public static int _intEmployeeID;
 
         public static int _intProductID = 0;
+        public static int _FindUser = 0;
         public static int _intQuantity;
         public static decimal _decDiscountPercent = 0.0m;
 
@@ -612,6 +616,54 @@ namespace SU21_Final_Project
 
 
         }
+        public static void GrabEmployee(DataGridView dgvOrders, String strQuery)
+        {
+
+            try
+            {
+                //Establish Command Object
+                _sqlResultsCommand = new SqlCommand(strQuery, _conDatabase);
+
+                //Establish Data Adapter
+                _daEmployee = new SqlDataAdapter();
+                _daEmployee.SelectCommand = _sqlResultsCommand;
+
+                //Fill Data Table
+                _dtEmployee = new DataTable();
+                _daEmployee.Fill(_dtEmployee);
+
+                if (_dtEmployee.Rows.Count == 0)
+                {
+                    _blnFound = false;
+                    MessageBox.Show("No Item's Were Found", "No Item's", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                else
+                {
+                    _blnFound = true;
+                    dgvOrders.DataSource = _dtEmployee;
+                }
+            }
+            catch (SqlException ex)
+            {
+                if (ex is SqlException)
+                {//handles more specific SqlException here.
+
+                    for (int i = 0; i < ex.Errors.Count; i++)
+                    {
+                        errorMessages.Append("Index #" + i + "\n" +
+                            "Message: " + ex.Errors[i].Message + "\n" +
+                            "LineNumber: " + ex.Errors[i].LineNumber + "\n" +
+                            "Source: " + ex.Errors[i].Source + "\n" +
+                            "Procedure: " + ex.Errors[i].Procedure + "\n");
+                    }
+                    MessageBox.Show(errorMessages.ToString(), "Error on DatabaseCommand", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+            _sqlResultsCommand.Dispose();
+            _dtEmployee.Dispose();
+            _daEmployee.Dispose();
+
+        }
         public static void GrabSales(DataGridView dgvSales, String strQuery)
         {
             try
@@ -691,7 +743,6 @@ namespace SU21_Final_Project
             }
             return isAdmin;
         }
-
 
 
        //Fuctions for Creating Information to pass into the database
@@ -1014,8 +1065,6 @@ namespace SU21_Final_Project
             _daProduct.Dispose();
             _dtProductTable.Dispose();
         }
-
-
         public static void CheckPassword(string strQuery)
         {
             try

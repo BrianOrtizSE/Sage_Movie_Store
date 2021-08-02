@@ -62,7 +62,7 @@ namespace SU21_Final_Project
             dgvDiscount.Columns[4].HeaderText = "Is Valid";
         }
 
-        private void cmxDiscountType_SelectedIndexChanged(object sender, EventArgs e)
+        private void cmxDiscountType_SelectedIndexChanged(object sender, EventArgs e)//Used To Turn on Product Box
         {
             if(cmxDiscountType.Text == "2")
             {
@@ -76,7 +76,7 @@ namespace SU21_Final_Project
             }
         }
 
-        private void btnAdd_Click(object sender, EventArgs e)
+        private void btnAdd_Click(object sender, EventArgs e)//Add to Dataabse
         {
             int intBool = 1;
             if (cbxIsValid.Checked)
@@ -115,7 +115,7 @@ namespace SU21_Final_Project
             tbxProductID.Clear();
         }
 
-        private void tbxDiscount_TextChanged(object sender, EventArgs e)
+        private void tbxDiscount_TextChanged(object sender, EventArgs e)//Used to make sure that the Discount ID is valid
         {
             
             if (tbxDiscount.Text.Length != 9)
@@ -141,7 +141,7 @@ namespace SU21_Final_Project
             }
         }
 
-        private void tbxDiscountPercent_TextChanged(object sender, EventArgs e)
+        private void tbxDiscountPercent_TextChanged(object sender, EventArgs e)//Validation for Discount Percent
         {
             int intDiscountTest = 0;
             if (tbxDiscountPercent.Text == String.Empty)
@@ -261,7 +261,7 @@ namespace SU21_Final_Project
             cbxIsValid.Checked = false;
             tbxProductID.Clear();
         }
-        private void SetState(string state)
+        private void SetState(string state)//Set State To Make It Easier For User
         {
             string myState = state;
 

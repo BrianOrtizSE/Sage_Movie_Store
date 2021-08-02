@@ -18,7 +18,7 @@ namespace SU21_Final_Project
         }
         int intSearch = 1;
         string strQuery;
-        private void btnSearch_Click(object sender, EventArgs e)
+        private void btnSearch_Click(object sender, EventArgs e)//For Search Query
         {
 
             if (lblItemError.Text == "X")
@@ -87,9 +87,7 @@ namespace SU21_Final_Project
         private void frmEmployee_Inventory_View_Load(object sender, EventArgs e)//On Load
         {
             AttachInventory();
-            cbxSearch.Text = "Product ID";
-            
-
+            cbxSearch.Text = "Product ID";         
         }
 
         public void AttachInventory()//Function to Display defualt
@@ -107,7 +105,7 @@ namespace SU21_Final_Project
             dgvInventory.Columns[4].HeaderText = "Product Description";
         }
 
-        private void tbxProductID_TextChanged(object sender, EventArgs e)//Quick Check to make sure Product Textbox is not empty
+        private void tbxProductID_TextChanged(object sender, EventArgs e)//Quick Check to make sure Product Textbox is not empty TODO MAYBE LOOK UP
         {
             
             if(tbxProductID.Text == string.Empty)
