@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace SU21_Final_Project
 {
-    public partial class frmManger_View_Employees : Form
+    public partial class frmManager_Edit_Employees : Form
     {
-        public frmManger_View_Employees()
+        public frmManager_Edit_Employees()
         {
             InitializeComponent();
         }
@@ -23,22 +23,7 @@ namespace SU21_Final_Project
         {
             GrabEmployee();
             cmxPosition.Text = "Employee";
-        }
-
-        public void GrabEmployee()//Used For Employee Data Grid To Display To Data Grid 
-        {
-            strQuery = "Select * from OrtizB21Su2332.Employees";
-            ProgOps.GrabEmployee(dgvEmployee, strQuery);
-
-            dgvEmployee.Columns[0].HeaderText = "Employee ID ";
-            dgvEmployee.Columns[1].HeaderText = "Person ID";
-            dgvEmployee.Columns[2].HeaderText = "Position";
-            dgvEmployee.Columns[3].DefaultCellStyle.Format = "c2";
-            dgvEmployee.Columns[3].HeaderText = "Wage";
-            dgvEmployee.Columns[4].HeaderText = "Hire Date";
-            dgvEmployee.Columns[4].HeaderText = "Salary?";
-            dgvEmployee.Columns[4].HeaderText = "Admin?";
-        }
+        }    
 
         private void btnAdd_Click(object sender, EventArgs e)//Check Validation then Add New Employee
         {
@@ -100,60 +85,9 @@ namespace SU21_Final_Project
                 GrabEmployee();
 
             }
-        }
+        }        
 
-
-
-        private void SetState(string state)//Set State To Make It Easier For User
-        {
-            string myState = state;
-
-            switch (state)
-            {
-                case "View":
-                    //button
-                    btnAdd.Enabled = true;
-                    btnEditEmployee.Enabled = true;
-                    btnCancelEdit.Enabled = false;
-                    btnCompleteEdit.Enabled = false;
-                    btnFindPersonID.Visible = true;
-                    btnGetDate.Visible = true;
-
-                    //labels
-                    lblWageTextValid.Visible = true;
-
-                    //textboxes
-                    tbxEmployee.Enabled = true;
-
-                    //Bool
-                    blnEdit = false;
-                    break;
-
-                case "Edit":
-
-                    //Button
-                    btnFindPersonID.Visible = false;
-                    btnGetDate.Visible = false;
-                    btnEditEmployee.Enabled = false;
-                    btnAdd.Enabled = false;
-                    btnCompleteEdit.Enabled = true;
-                    btnCancelEdit.Enabled = true;
-
-                    //labels
-                    //lblDiscountIDTextValid.Visible = false;
-
-                    //Text boxes
-                    tbxEmployee.Enabled = false;
-
-                    blnEdit = true;
-                    break;
-                default:
-
-                    break;
-            }
-        }
-
-        private void tbxDiscountPercent_TextChanged(object sender, EventArgs e)
+        private void tbxDiscountPercent_TextChanged(object sender, EventArgs e)//Validation for Discount
         {
 
             if (tbxWage.Text == String.Empty)
@@ -169,7 +103,7 @@ namespace SU21_Final_Project
 
         }
 
-        private void dgvEmployee_CellClick(object sender, DataGridViewCellEventArgs e)
+        private void dgvEmployee_CellClick(object sender, DataGridViewCellEventArgs e)//Cell Click to make all information from data grid move to textboxes
         {
             double dblPrice;
             try
@@ -211,19 +145,7 @@ namespace SU21_Final_Project
         private void btnCancelEdit_Click(object sender, EventArgs e)
         {
             Clear();
-        }
-
-        public void Clear()//Reset All Textboxes and set View Mode
-        {
-            SetState("View");
-            tbxPersonID.Clear();
-            tbxEmployee.Clear();
-            cmxPosition.Text = "Employee";
-            tbxWage.Clear();
-            tbxHireDate.Clear();
-            cbxIsSalary.Checked = false;
-            cbxAdmin.Checked = false;
-        }
+        }  
         private void btnCompleteEdit_Click(object sender, EventArgs e)//Validation To Make Sure User Check Is Okay
         {
             bool blnValid = true;
@@ -301,12 +223,188 @@ namespace SU21_Final_Project
             frmFindUser.ShowDialog();
             this.Show();
             tbxPersonID.Text = ProgOps._intPersonID.ToString();
+
+            strQuery = "Select * from OrtizB21Su2332.Employees where PersonID = " + tbxPersonID.Text;
+            ProgOps.GrabEmployeeID(strQuery);
+            if(ProgOps._blnFound == true)
+            {
+                MessageBox.Show("User is already an Employee", "User Employee", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                tbxPersonID.Clear();
+            }
         }
 
-        private void btnGetDate_Click(object sender, EventArgs e)
+        private void btnGetDate_Click(object sender, EventArgs e)//Used to show Dte
         {
             tbxHireDate.Text = DateTime.Today.ToString();
         }
+
+        private void btnDisable_Click(object sender, EventArgs e)//Disable User
+        {
+
+            if(tbxPersonID.Text == string.Empty)
+            {
+                MessageBox.Show("Please Choose An Employee To Disable", "Employee Error", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else
+            {
+                DialogResult dialogResult = MessageBox.Show("Are You Sure You Want To Disable This Employee", "Conformation", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                
+               if(dialogResult == DialogResult.Yes)
+               {
+                    strQuery = "Update OrtizB21Su2332.Employees Set isActive = 0 Where PersonID = " + tbxPersonID.Text;
+                    MessageBox.Show("Employee Has Been Disabled", "Employee Disabled", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    ProgOps.CreateDiscount(strQuery);
+                    GrabEmployee();
+               }     
+
+            }
+            
+        }
+        private void btnShowUnactive_Click(object sender, EventArgs e)//Show Inactive Employees
+        {
+            strQuery = "Select EmployeeID , PersonID , Position , Wage , Hire_Date , isSalary , isAdmin from OrtizB21Su2332.Employees where isActive = 0";
+            ProgOps.GrabEmployee(dgvEmployee, strQuery);
+
+            if (ProgOps._blnFound == false)
+            {
+
+            }
+            else
+            {
+
+                dgvEmployee.Columns[0].HeaderText = "Employee ID ";
+                dgvEmployee.Columns[1].HeaderText = "Person ID";
+                dgvEmployee.Columns[2].HeaderText = "Position";
+                dgvEmployee.Columns[3].DefaultCellStyle.Format = "c2";
+                dgvEmployee.Columns[3].HeaderText = "Wage";
+                dgvEmployee.Columns[4].HeaderText = "Hire Date";
+                dgvEmployee.Columns[4].HeaderText = "Salary?";
+                dgvEmployee.Columns[4].HeaderText = "Admin?";
+
+                btnShowActive.Visible = true;
+                btnShowUnactive.Visible = false;
+
+
+                btnEnable.Visible = true;
+                btnDisable.Visible = false;
+            }
+
+
+        }
+
+        private void btnShowActive_Click(object sender, EventArgs e)
+        {
+            btnShowUnactive.Visible = true;
+            btnShowActive.Visible = false;
+
+            btnDisable.Visible = true;
+            btnEnable.Visible = false;
+
+            GrabEmployee();
+        }
+
+        private void EnableEmployee_Click(object sender, EventArgs e)
+        {
+            if (tbxPersonID.Text == string.Empty)
+            {
+                MessageBox.Show("Please Choose An Employee To Enable", "Employee Error", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else
+            {
+                DialogResult dialogResult = MessageBox.Show("Are You Sure You Want To Enable This Employee", "Conformation", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+
+                if (dialogResult == DialogResult.Yes)
+                {
+                    strQuery = "Update OrtizB21Su2332.Employees Set isActive = 1 Where PersonID = " + tbxPersonID.Text;
+                    MessageBox.Show("Employee Has Been Enabled", "Employee Enabled", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    ProgOps.CreateDiscount(strQuery);
+                    GrabEmployee();
+                }
+
+            }
+        }
+
+        public void Clear()//Reset All Textboxes and set View Mode
+        {
+            SetState("View");
+            tbxPersonID.Clear();
+            tbxEmployee.Clear();
+            cmxPosition.Text = "Employee";
+            tbxWage.Clear();
+            tbxHireDate.Clear();
+            cbxIsSalary.Checked = false;
+            cbxAdmin.Checked = false;
+        }
+        public void GrabEmployee()//Function Used For Employee Data Grid To Display To Data Grid 
+        {
+            strQuery = "Select EmployeeID , PersonID , Position , Wage , Hire_Date , isSalary , isAdmin from OrtizB21Su2332.Employees where isActive = 1";
+            ProgOps.GrabEmployee(dgvEmployee, strQuery);
+
+            dgvEmployee.Columns[0].HeaderText = "Employee ID ";
+            dgvEmployee.Columns[1].HeaderText = "Person ID";
+            dgvEmployee.Columns[2].HeaderText = "Position";
+            dgvEmployee.Columns[3].DefaultCellStyle.Format = "c2";
+            dgvEmployee.Columns[3].HeaderText = "Wage";
+            dgvEmployee.Columns[4].HeaderText = "Hire Date";
+            dgvEmployee.Columns[4].HeaderText = "Salary?";
+            dgvEmployee.Columns[4].HeaderText = "Admin?";
+        }
+        private void SetState(string state)//Set State To Make It Easier For User
+        {
+            string myState = state;
+
+            switch (state)
+            {
+                case "View":
+                    //button
+                    btnAdd.Enabled = true;
+                    btnEditEmployee.Enabled = true;
+                    btnCancelEdit.Enabled = false;
+                    btnCompleteEdit.Enabled = false;
+
+                    btnFindPersonID.Visible = true;
+                    btnGetDate.Visible = true;
+
+                    btnDisable.Enabled = false;
+                    btnEnable.Enabled = false;
+
+                    //labels
+                    lblWageTextValid.Visible = true;
+
+                    //textboxes
+                    tbxEmployee.ReadOnly = false;
+
+                    //Bool
+                    blnEdit = false;
+                    break;
+
+                case "Edit":
+
+                    //Button
+                    btnFindPersonID.Visible = false;
+                    btnGetDate.Visible = false;
+                    btnEditEmployee.Enabled = false;
+                    btnAdd.Enabled = false;
+                    btnCompleteEdit.Enabled = true;
+                    btnCancelEdit.Enabled = true;
+
+                    btnDisable.Enabled = true;
+                    btnEnable.Enabled = true;
+
+                    //labels
+                    //lblDiscountIDTextValid.Visible = false;
+
+                    //Text boxes
+                    tbxEmployee.ReadOnly = true;
+
+                    blnEdit = true;
+                    break;
+                default:
+
+                    break;
+            }
+        }
+
 
     }
 }

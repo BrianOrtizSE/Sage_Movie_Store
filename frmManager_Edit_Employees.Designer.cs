@@ -1,7 +1,7 @@
 ﻿
 namespace SU21_Final_Project
 {
-    partial class frmManger_View_Employees
+    partial class frmManager_Edit_Employees
     {
         /// <summary>
         /// Required designer variable.
@@ -29,7 +29,7 @@ namespace SU21_Final_Project
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmManger_View_Employees));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmManager_Edit_Employees));
             this.btnReturn = new System.Windows.Forms.Button();
             this.btnCancelEdit = new System.Windows.Forms.Button();
             this.btnCompleteEdit = new System.Windows.Forms.Button();
@@ -52,13 +52,17 @@ namespace SU21_Final_Project
             this.lblHireDate = new System.Windows.Forms.Label();
             this.btnFindPersonID = new System.Windows.Forms.Button();
             this.btnGetDate = new System.Windows.Forms.Button();
+            this.btnDisable = new System.Windows.Forms.Button();
+            this.btnShowUnactive = new System.Windows.Forms.Button();
+            this.btnShowActive = new System.Windows.Forms.Button();
+            this.btnEnable = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvEmployee)).BeginInit();
             this.SuspendLayout();
             // 
             // btnReturn
             // 
             this.btnReturn.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnReturn.Location = new System.Drawing.Point(348, 504);
+            this.btnReturn.Location = new System.Drawing.Point(267, 504);
             this.btnReturn.Name = "btnReturn";
             this.btnReturn.Size = new System.Drawing.Size(75, 50);
             this.btnReturn.TabIndex = 44;
@@ -69,7 +73,7 @@ namespace SU21_Final_Project
             // btnCancelEdit
             // 
             this.btnCancelEdit.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCancelEdit.Location = new System.Drawing.Point(267, 504);
+            this.btnCancelEdit.Location = new System.Drawing.Point(186, 504);
             this.btnCancelEdit.Name = "btnCancelEdit";
             this.btnCancelEdit.Size = new System.Drawing.Size(75, 50);
             this.btnCancelEdit.TabIndex = 42;
@@ -80,7 +84,7 @@ namespace SU21_Final_Project
             // btnCompleteEdit
             // 
             this.btnCompleteEdit.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCompleteEdit.Location = new System.Drawing.Point(186, 504);
+            this.btnCompleteEdit.Location = new System.Drawing.Point(185, 449);
             this.btnCompleteEdit.Name = "btnCompleteEdit";
             this.btnCompleteEdit.Size = new System.Drawing.Size(75, 50);
             this.btnCompleteEdit.TabIndex = 41;
@@ -206,11 +210,11 @@ namespace SU21_Final_Project
             // 
             // tbxEmployee
             // 
-            this.tbxEmployee.Enabled = false;
             this.tbxEmployee.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tbxEmployee.Location = new System.Drawing.Point(19, 56);
             this.tbxEmployee.MaxLength = 9;
             this.tbxEmployee.Name = "tbxEmployee";
+            this.tbxEmployee.ReadOnly = true;
             this.tbxEmployee.Size = new System.Drawing.Size(116, 23);
             this.tbxEmployee.TabIndex = 24;
             // 
@@ -223,7 +227,7 @@ namespace SU21_Final_Project
             this.dgvEmployee.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedCells;
             this.dgvEmployee.BackgroundColor = System.Drawing.Color.White;
             this.dgvEmployee.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvEmployee.Location = new System.Drawing.Point(471, 12);
+            this.dgvEmployee.Location = new System.Drawing.Point(561, 12);
             this.dgvEmployee.MultiSelect = false;
             this.dgvEmployee.Name = "dgvEmployee";
             this.dgvEmployee.ReadOnly = true;
@@ -234,11 +238,11 @@ namespace SU21_Final_Project
             // 
             // tbxPersonID
             // 
-            this.tbxPersonID.Enabled = false;
             this.tbxPersonID.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tbxPersonID.Location = new System.Drawing.Point(19, 132);
             this.tbxPersonID.MaxLength = 9;
             this.tbxPersonID.Name = "tbxPersonID";
+            this.tbxPersonID.ReadOnly = true;
             this.tbxPersonID.Size = new System.Drawing.Size(116, 23);
             this.tbxPersonID.TabIndex = 45;
             // 
@@ -255,11 +259,11 @@ namespace SU21_Final_Project
             // 
             // tbxHireDate
             // 
-            this.tbxHireDate.Enabled = false;
             this.tbxHireDate.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tbxHireDate.Location = new System.Drawing.Point(20, 367);
             this.tbxHireDate.MaxLength = 9;
             this.tbxHireDate.Name = "tbxHireDate";
+            this.tbxHireDate.ReadOnly = true;
             this.tbxHireDate.Size = new System.Drawing.Size(137, 23);
             this.tbxHireDate.TabIndex = 49;
             // 
@@ -295,11 +299,63 @@ namespace SU21_Final_Project
             this.btnGetDate.UseVisualStyleBackColor = true;
             this.btnGetDate.Click += new System.EventHandler(this.btnGetDate_Click);
             // 
-            // frmManger_View_Employees
+            // btnDisable
+            // 
+            this.btnDisable.Enabled = false;
+            this.btnDisable.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDisable.Location = new System.Drawing.Point(477, 449);
+            this.btnDisable.Name = "btnDisable";
+            this.btnDisable.Size = new System.Drawing.Size(78, 50);
+            this.btnDisable.TabIndex = 52;
+            this.btnDisable.Text = "&Disable Employee";
+            this.btnDisable.UseVisualStyleBackColor = true;
+            this.btnDisable.Click += new System.EventHandler(this.btnDisable_Click);
+            // 
+            // btnShowUnactive
+            // 
+            this.btnShowUnactive.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnShowUnactive.Location = new System.Drawing.Point(477, 504);
+            this.btnShowUnactive.Name = "btnShowUnactive";
+            this.btnShowUnactive.Size = new System.Drawing.Size(78, 50);
+            this.btnShowUnactive.TabIndex = 53;
+            this.btnShowUnactive.Text = "&Show Unactive ";
+            this.btnShowUnactive.UseVisualStyleBackColor = true;
+            this.btnShowUnactive.Click += new System.EventHandler(this.btnShowUnactive_Click);
+            // 
+            // btnShowActive
+            // 
+            this.btnShowActive.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnShowActive.Location = new System.Drawing.Point(477, 504);
+            this.btnShowActive.Name = "btnShowActive";
+            this.btnShowActive.Size = new System.Drawing.Size(78, 50);
+            this.btnShowActive.TabIndex = 54;
+            this.btnShowActive.Text = "&Show Active ";
+            this.btnShowActive.UseVisualStyleBackColor = true;
+            this.btnShowActive.Visible = false;
+            this.btnShowActive.Click += new System.EventHandler(this.btnShowActive_Click);
+            // 
+            // btnEnable
+            // 
+            this.btnEnable.Enabled = false;
+            this.btnEnable.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEnable.Location = new System.Drawing.Point(477, 448);
+            this.btnEnable.Name = "btnEnable";
+            this.btnEnable.Size = new System.Drawing.Size(78, 50);
+            this.btnEnable.TabIndex = 55;
+            this.btnEnable.Text = "&Enable Employee";
+            this.btnEnable.UseVisualStyleBackColor = true;
+            this.btnEnable.Visible = false;
+            this.btnEnable.Click += new System.EventHandler(this.EnableEmployee_Click);
+            // 
+            // frmManager_Edit_Employees
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1002, 573);
+            this.ClientSize = new System.Drawing.Size(1101, 573);
+            this.Controls.Add(this.btnEnable);
+            this.Controls.Add(this.btnShowActive);
+            this.Controls.Add(this.btnShowUnactive);
+            this.Controls.Add(this.btnDisable);
             this.Controls.Add(this.btnGetDate);
             this.Controls.Add(this.btnFindPersonID);
             this.Controls.Add(this.tbxHireDate);
@@ -323,7 +379,9 @@ namespace SU21_Final_Project
             this.Controls.Add(this.tbxEmployee);
             this.Controls.Add(this.dgvEmployee);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Name = "frmManger_View_Employees";
+            this.MaximizeBox = false;
+            this.Name = "frmManager_Edit_Employees";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Employee Mangaer";
             this.Load += new System.EventHandler(this.frmManger_View_Employees_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvEmployee)).EndInit();
@@ -356,5 +414,9 @@ namespace SU21_Final_Project
         private System.Windows.Forms.Label lblHireDate;
         private System.Windows.Forms.Button btnFindPersonID;
         private System.Windows.Forms.Button btnGetDate;
+        private System.Windows.Forms.Button btnDisable;
+        private System.Windows.Forms.Button btnShowUnactive;
+        private System.Windows.Forms.Button btnShowActive;
+        private System.Windows.Forms.Button btnEnable;
     }
 }

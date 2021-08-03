@@ -37,6 +37,7 @@ namespace SU21_Final_Project
             this.btnSignIn = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.button1 = new System.Windows.Forms.Button();
+            this.btn = new System.Windows.Forms.Button();
             this.mnsMain.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -114,11 +115,23 @@ namespace SU21_Final_Project
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click_3);
             // 
+            // btn
+            // 
+            this.btn.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn.Location = new System.Drawing.Point(131, 386);
+            this.btn.Name = "btn";
+            this.btn.Size = new System.Drawing.Size(104, 34);
+            this.btn.TabIndex = 6;
+            this.btn.Text = "Sign-Up";
+            this.btn.UseVisualStyleBackColor = true;
+            this.btn.Click += new System.EventHandler(this.btn_Click);
+            // 
             // frmMainMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.btn);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.btnSignIn);
             this.Controls.Add(this.btnSignUp);
@@ -151,6 +164,7 @@ namespace SU21_Final_Project
         private System.Windows.Forms.Button btnSignUp;
         private System.Windows.Forms.Button btnSignIn;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btn;
     }
 }
 

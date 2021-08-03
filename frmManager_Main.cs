@@ -40,5 +40,10 @@ namespace SU21_Final_Project
             frmDisAdd.ShowDialog();
             this.Show();
         }
+
+        private void btnClose_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

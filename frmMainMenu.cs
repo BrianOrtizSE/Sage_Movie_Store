@@ -143,8 +143,16 @@ namespace SU21_Final_Project
 
         private void button1_Click_3(object sender, EventArgs e)
         {
-            frmManger_View_Employees frmViewEmployee = new frmManger_View_Employees();
+            frmManager_Edit_Employees frmViewEmployee = new frmManager_Edit_Employees();
             frmViewEmployee.ShowDialog();
+        }
+
+        private void btn_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            frmManager_Edit_Customer frmCus = new frmManager_Edit_Customer();
+            frmCus.ShowDialog();
+            this.Show();
         }
     }
 }

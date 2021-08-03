@@ -130,6 +130,12 @@
     <Compile Include="frmManager_Discount_Add.Designer.cs">
       <DependentUpon>frmManager_Discount_Add.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmManager_Edit_Customer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmManager_Edit_Customer.Designer.cs">
+      <DependentUpon>frmManager_Edit_Customer.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmManager_Main.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -166,11 +172,11 @@
     <Compile Include="frmCustomer_View_Inventory.Designer.cs">
       <DependentUpon>frmCustomer_View_Inventory.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmManger_View_Employees.cs">
+    <Compile Include="frmManager_Edit_Employees.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmManger_View_Employees.Designer.cs">
-      <DependentUpon>frmManger_View_Employees.cs</DependentUpon>
+    <Compile Include="frmManager_Edit_Employees.Designer.cs">
+      <DependentUpon>frmManager_Edit_Employees.cs</DependentUpon>
     </Compile>
     <Compile Include="frmPasswordRecovery.cs">
       <SubType>Form</SubType>
@@ -233,6 +239,9 @@
     <EmbeddedResource Include="frmManager_Discount_Add.resx">
       <DependentUpon>frmManager_Discount_Add.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmManager_Edit_Customer.resx">
+      <DependentUpon>frmManager_Edit_Customer.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmManager_Main.resx">
       <DependentUpon>frmManager_Main.cs</DependentUpon>
     </EmbeddedResource>
@@ -245,8 +254,8 @@
     <EmbeddedResource Include="frmCustomer_View_Inventory.resx">
       <DependentUpon>frmCustomer_View_Inventory.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmManger_View_Employees.resx">
-      <DependentUpon>frmManger_View_Employees.cs</DependentUpon>
+    <EmbeddedResource Include="frmManager_Edit_Employees.resx">
+      <DependentUpon>frmManager_Edit_Employees.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmPasswordRecovery.resx">
       <DependentUpon>frmPasswordRecovery.cs</DependentUpon>
