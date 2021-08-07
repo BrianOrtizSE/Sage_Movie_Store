@@ -45,5 +45,21 @@ namespace SU21_Final_Project
         {
             this.Close();
         }
+
+        private void btnEditCustomer_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            frmManager_Edit_Customer frmEditCustomer = new frmManager_Edit_Customer();
+            frmEditCustomer.ShowDialog();
+            this.Show();
+        }
+
+        private void btnEditEmployee_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            frmManager_Edit_Employees frmEditEmp = new frmManager_Edit_Employees();
+            frmEditEmp.ShowDialog();
+            this.Show();
+        }
     }
 }

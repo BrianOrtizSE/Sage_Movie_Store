@@ -19,6 +19,8 @@ namespace SU21_Final_Project
          - FIX ALL TEXTBOCES SO THEY HAVE A MAX AND NO NEED TO RISK CUSTOMER MESSING THAT UP
          - FIX MANGAER DISCOUNT SO THAT IT CANNOT BE NEGATIVE
          - Check ALl Data Grid Views so that they cannot be edited or anything like that
+         - FIX Crash on data grid EMployee Product View
+         - Watch Video and Do Checklist , Package and Deploy
          */ 
     }
 }

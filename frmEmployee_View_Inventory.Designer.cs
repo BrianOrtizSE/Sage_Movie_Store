@@ -194,7 +194,7 @@ namespace SU21_Final_Project
             // 
             // lblProductDescription
             // 
-            this.lblProductDescription.BackColor = System.Drawing.Color.White;
+            this.lblProductDescription.BackColor = System.Drawing.SystemColors.Control;
             this.lblProductDescription.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.lblProductDescription.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblProductDescription.Location = new System.Drawing.Point(716, 319);
@@ -205,7 +205,7 @@ namespace SU21_Final_Project
             // 
             // lblProductPrice
             // 
-            this.lblProductPrice.BackColor = System.Drawing.Color.White;
+            this.lblProductPrice.BackColor = System.Drawing.SystemColors.Control;
             this.lblProductPrice.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.lblProductPrice.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblProductPrice.Location = new System.Drawing.Point(757, 260);
@@ -216,7 +216,7 @@ namespace SU21_Final_Project
             // 
             // lblQuantity
             // 
-            this.lblQuantity.BackColor = System.Drawing.Color.White;
+            this.lblQuantity.BackColor = System.Drawing.SystemColors.Control;
             this.lblQuantity.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.lblQuantity.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblQuantity.Location = new System.Drawing.Point(757, 206);
@@ -227,7 +227,7 @@ namespace SU21_Final_Project
             // 
             // lblGenre
             // 
-            this.lblGenre.BackColor = System.Drawing.Color.White;
+            this.lblGenre.BackColor = System.Drawing.SystemColors.Control;
             this.lblGenre.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.lblGenre.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblGenre.Location = new System.Drawing.Point(757, 157);
@@ -238,7 +238,7 @@ namespace SU21_Final_Project
             // 
             // lblProductName
             // 
-            this.lblProductName.BackColor = System.Drawing.Color.White;
+            this.lblProductName.BackColor = System.Drawing.SystemColors.Control;
             this.lblProductName.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.lblProductName.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblProductName.Location = new System.Drawing.Point(757, 103);
@@ -249,7 +249,7 @@ namespace SU21_Final_Project
             // 
             // lblProductID
             // 
-            this.lblProductID.BackColor = System.Drawing.Color.White;
+            this.lblProductID.BackColor = System.Drawing.SystemColors.Control;
             this.lblProductID.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.lblProductID.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblProductID.Location = new System.Drawing.Point(757, 51);
@@ -319,7 +319,7 @@ namespace SU21_Final_Project
             this.lblProductDescriptionText.Text = "Product Description";
             this.lblProductDescriptionText.Click += new System.EventHandler(this.lblProductDescriptionText_Click);
             // 
-            // frmEmployee_Inventory_View
+            // frmEmployee_View_Inventory
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -347,9 +347,9 @@ namespace SU21_Final_Project
             this.Controls.Add(this.dgvInventory);
             this.Controls.Add(this.menuStrip1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Name = "frmEmployee_Inventory_View";
+            this.Name = "frmEmployee_View_Inventory";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
-            this.Text = "frmEmployee_Inventory_View";
+            this.Text = "Inventory View";
             this.Load += new System.EventHandler(this.frmEmployee_Inventory_View_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvInventory)).EndInit();
             this.menuStrip1.ResumeLayout(false);

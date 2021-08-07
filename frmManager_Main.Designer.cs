@@ -40,7 +40,7 @@ namespace SU21_Final_Project
             // 
             // btnMerchandiseAdd
             // 
-            this.btnMerchandiseAdd.Location = new System.Drawing.Point(274, 287);
+            this.btnMerchandiseAdd.Location = new System.Drawing.Point(217, 266);
             this.btnMerchandiseAdd.Name = "btnMerchandiseAdd";
             this.btnMerchandiseAdd.Size = new System.Drawing.Size(105, 45);
             this.btnMerchandiseAdd.TabIndex = 0;
@@ -50,7 +50,7 @@ namespace SU21_Final_Project
             // 
             // btnViewSales
             // 
-            this.btnViewSales.Location = new System.Drawing.Point(274, 222);
+            this.btnViewSales.Location = new System.Drawing.Point(217, 201);
             this.btnViewSales.Name = "btnViewSales";
             this.btnViewSales.Size = new System.Drawing.Size(105, 45);
             this.btnViewSales.TabIndex = 1;
@@ -60,7 +60,7 @@ namespace SU21_Final_Project
             // 
             // btnAddDiscount
             // 
-            this.btnAddDiscount.Location = new System.Drawing.Point(274, 147);
+            this.btnAddDiscount.Location = new System.Drawing.Point(217, 126);
             this.btnAddDiscount.Name = "btnAddDiscount";
             this.btnAddDiscount.Size = new System.Drawing.Size(105, 45);
             this.btnAddDiscount.TabIndex = 2;
@@ -70,25 +70,27 @@ namespace SU21_Final_Project
             // 
             // btnEditCustomer
             // 
-            this.btnEditCustomer.Location = new System.Drawing.Point(385, 147);
+            this.btnEditCustomer.Location = new System.Drawing.Point(328, 126);
             this.btnEditCustomer.Name = "btnEditCustomer";
             this.btnEditCustomer.Size = new System.Drawing.Size(105, 45);
             this.btnEditCustomer.TabIndex = 3;
             this.btnEditCustomer.Text = "Edit/Add &Customer";
             this.btnEditCustomer.UseVisualStyleBackColor = true;
+            this.btnEditCustomer.Click += new System.EventHandler(this.btnEditCustomer_Click);
             // 
             // btnEditEmployee
             // 
-            this.btnEditEmployee.Location = new System.Drawing.Point(385, 222);
+            this.btnEditEmployee.Location = new System.Drawing.Point(328, 201);
             this.btnEditEmployee.Name = "btnEditEmployee";
             this.btnEditEmployee.Size = new System.Drawing.Size(105, 45);
             this.btnEditEmployee.TabIndex = 4;
             this.btnEditEmployee.Text = "Edit / Add Emplpyee";
             this.btnEditEmployee.UseVisualStyleBackColor = true;
+            this.btnEditEmployee.Click += new System.EventHandler(this.btnEditEmployee_Click);
             // 
             // btnClose
             // 
-            this.btnClose.Location = new System.Drawing.Point(385, 287);
+            this.btnClose.Location = new System.Drawing.Point(328, 266);
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(105, 45);
             this.btnClose.TabIndex = 5;
@@ -100,7 +102,7 @@ namespace SU21_Final_Project
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(747, 450);
             this.Controls.Add(this.btnClose);
             this.Controls.Add(this.btnEditEmployee);
             this.Controls.Add(this.btnEditCustomer);

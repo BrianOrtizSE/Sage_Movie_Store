@@ -185,19 +185,26 @@ namespace SU21_Final_Project
         {
             
             double dblPrice;
-
-            if (dgvInventory.Rows[e.RowIndex].Cells[e.ColumnIndex].Value != null)
+            if (e.RowIndex < 0 || e.ColumnIndex < 0)
             {
-                dgvInventory.CurrentRow.Selected = true;
-                lblProductID.Text = dgvInventory.Rows[e.RowIndex].Cells["ProductID"].Value.ToString();
-                lblProductName.Text = dgvInventory.Rows[e.RowIndex].Cells["ProductName"].Value.ToString();
-                lblGenre.Text = dgvInventory.Rows[e.RowIndex].Cells["Genre"].Value.ToString();
-                lblQuantity.Text = dgvInventory.Rows[e.RowIndex].Cells["Quantity"].Value.ToString();
-                dblPrice = Convert.ToDouble(dgvInventory.Rows[e.RowIndex].Cells["ProductPrice"].Value);
-                lblProductPrice.Text = dblPrice.ToString("c2");
-                lblProductDescription.Text = dgvInventory.Rows[e.RowIndex].Cells["ProductDescription"].Value.ToString();
 
             }
+            else
+            {
+                if (dgvInventory.Rows[e.RowIndex].Cells[e.ColumnIndex].Value != null)
+                {
+                    dgvInventory.CurrentRow.Selected = true;
+                    lblProductID.Text = dgvInventory.Rows[e.RowIndex].Cells["ProductID"].Value.ToString();
+                    lblProductName.Text = dgvInventory.Rows[e.RowIndex].Cells["ProductName"].Value.ToString();
+                    lblGenre.Text = dgvInventory.Rows[e.RowIndex].Cells["Genre"].Value.ToString();
+                    lblQuantity.Text = dgvInventory.Rows[e.RowIndex].Cells["Quantity"].Value.ToString();
+                    dblPrice = Convert.ToDouble(dgvInventory.Rows[e.RowIndex].Cells["ProductPrice"].Value);
+                    lblProductPrice.Text = dblPrice.ToString("c2");
+                    lblProductDescription.Text = dgvInventory.Rows[e.RowIndex].Cells["ProductDescription"].Value.ToString();
+
+                }
+            }
+            
         }
 
         private void btnReset_Click(object sender, EventArgs e)//Reset All Fields

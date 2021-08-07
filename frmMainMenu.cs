@@ -154,5 +154,17 @@ namespace SU21_Final_Project
             frmCus.ShowDialog();
             this.Show();
         }
+
+        private void button1_Click_4(object sender, EventArgs e)
+        {
+            Form1 frm1 = new Form1();
+            frm1.ShowDialog();
+        }
+
+        private void button2_Click_1(object sender, EventArgs e)
+        {
+            frmManager_Edit_Inventory frmManagerEditInventory = new frmManager_Edit_Inventory();
+            frmManagerEditInventory.ShowDialog();
+        }
     }
 }

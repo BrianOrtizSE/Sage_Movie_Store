@@ -17,30 +17,20 @@ namespace SU21_Final_Project
         {
             InitializeComponent();
         }
-
-        //Set up merchandise CurrencyManager
-        CurrencyManager prodManager;
-
-        //Future variables for state and bookmark
-        string myState;
-        bool blnInStock;
-        string query;
-        int myBookmark;      
-
-
+        string strQuery;
+        string imgLoc;
+        bool blnEdit;
+        bool blnAdd;
+        bool blnAddPic;
+        bool blnPictureAdd = false;
         private void frmMerchandiseAdd_Load(object sender, EventArgs e)
         {
             try
             {
-               
-                //Load in the Products table from the database
-                ProgOps.ProductView(tbxProductID, tbxProductName, tbxGenre, tbxQuantity, tbxPrice, tbxDescription, cbxInStock);
-
-                //Fill the currency manager
-                prodManager = (CurrencyManager)this.BindingContext[ProgOps.GetProductTable];
-
+                GrabProduct();
                 //Start in view state
                 SetState("View");
+                Clear();
 
             }
             catch (Exception ex)
@@ -48,260 +38,495 @@ namespace SU21_Final_Project
                 MessageBox.Show(ex.Message, "Error : Products Table ", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
+        }    
+
+        private void SetState(string state)
+        {
+            switch (state)
+            {
+                case "View":
+                    //Bool Variable;
+                    blnEdit = true;
+                    blnAdd = false;
+                    blnAddPic = false;
+
+                    //Buttons
+                    btnEditMerchandise.Enabled = true;
+                    btnCompleteEdit.Enabled = false;
+                    btnCancel.Enabled = false;
+                    btnCreateInvoice.Enabled = true;
+                    btnAdd.Enabled = true;
+                    btnComplete.Enabled = false;
+                    btnUploadImage.Enabled = false;
+                    btnSaveImage.Enabled = false;
+                    
+                    //Textbox
+                    tbxProductID.ReadOnly = true;
+                    tbxProductID.BackColor = Color.LightGray;
+                    tbxProductName.ReadOnly = true;
+                    tbxProductName.BackColor = Color.LightGray;
+                    tbxQuantity.ReadOnly = true;
+                    tbxQuantity.BackColor = Color.LightGray;
+                    tbxProductPrice.ReadOnly = true;
+                    tbxProductPrice.BackColor = Color.LightGray;
+                    tbxProductDescription.ReadOnly = true;
+                    tbxProductDescription.BackColor = Color.LightGray;
+                    //ComboBox and Checkbox
+                    cbxGenres.Enabled = false;
+                    cbxInStock.Enabled = false;
+                    //label
+                    lblProductNameValid.Visible = false;
+                    lblGenreValid.Visible = false;
+                    lblPriceValid.Visible = false;
+                    lblProductDescriptionValid.Visible = false;
+                    lblQuantityValid.Visible = false;
+                    break;
+                case "Add":
+                    //Bool Variable
+
+                    blnEdit = false;
+                    blnAdd = false;
+                    blnAddPic = false;
+
+                    //Buttons
+                    btnEditMerchandise.Enabled = false;
+                    btnCompleteEdit.Enabled = false;
+                    btnCancel.Enabled = true;
+                    btnCreateInvoice.Enabled = false;
+                    btnAdd.Enabled = false;
+                    btnComplete.Enabled = true;
+                    btnUploadImage.Enabled = true;
+                    btnSaveImage.Enabled = false;
+                    
+                    //Textbox
+
+                    tbxProductID.ReadOnly = true;
+                    tbxProductID.BackColor = Color.LightGray;
+                    tbxProductName.ReadOnly = false;
+                    tbxProductName.BackColor = Color.White;
+                    tbxQuantity.ReadOnly = false;
+                    tbxQuantity.BackColor = Color.White;
+                    tbxProductPrice.ReadOnly = false;
+                    tbxProductPrice.BackColor = Color.White;
+                    tbxProductDescription.ReadOnly = false;
+                    tbxProductDescription.BackColor = Color.White;
+
+                    //ComboBox and Checkbox
+                    cbxGenres.Enabled = true;
+                    cbxInStock.Enabled = true;
+                    //label
+                    lblProductNameValid.Visible = true;
+                    lblGenreValid.Visible = true;
+                    lblPriceValid.Visible = true;
+                    lblProductDescriptionValid.Visible = true;
+                    lblQuantityValid.Visible = true;
+
+                    break;
+                case "Edit":
+                    //Bool Variable
+
+                    blnEdit = false;
+                    blnAdd = true;
+                    blnAddPic = true;
+                    //Buttons
+                    btnEditMerchandise.Enabled = false;
+                    btnCompleteEdit.Enabled = true;
+                    btnCancel.Enabled = true;
+                    btnCreateInvoice.Enabled = false;
+                    btnAdd.Enabled = false;
+                    btnComplete.Enabled = false;
+                    btnUploadImage.Enabled = true;
+                    btnSaveImage.Enabled = false;
+
+                    //Textbox
+
+                    tbxProductID.ReadOnly = true;
+                    tbxProductID.BackColor = Color.LightGray;
+                    tbxProductName.ReadOnly = false;
+                    tbxProductName.BackColor = Color.White;
+                    tbxQuantity.ReadOnly = false;
+                    tbxQuantity.BackColor = Color.White;
+                    tbxProductPrice.ReadOnly = false;
+                    tbxProductPrice.BackColor = Color.White;
+                    tbxProductDescription.ReadOnly = false;
+                    tbxProductDescription.BackColor = Color.White;
+
+                    //ComboBox and Checkbox
+                    cbxGenres.Enabled = true;
+                    cbxInStock.Enabled = true;
+                    //label
+                    lblProductNameValid.Visible = true;
+                    lblGenreValid.Visible = true;
+                    lblPriceValid.Visible = true;
+                    lblProductDescriptionValid.Visible = true;
+                    lblQuantityValid.Visible = true;
+
+
+                    break;
+                default:
+                    //Buttons
+                   
+                    break;
+            }
+            
         }
 
-        private void btnClose_Click(object sender, EventArgs e)
+        public void GrabProduct()
+        {
+            strQuery = "Select ProductID , ProductName , Genre , Quantity , ProductPrice , ProductDescription , inStock from OrtizB21Su2332.Products";
+            ProgOps.GrabEmployee(dgvInventory, strQuery);
+
+            if(ProgOps._blnFound == false)
+            {
+
+            }
+            else
+            {
+                dgvInventory.Columns[0].HeaderText = "Product ID ";
+                dgvInventory.Columns[1].HeaderText = "Product Name";
+                //dgvPerson.Columns[3].DefaultCellStyle.Format = "c2";
+                dgvInventory.Columns[2].HeaderText = "Genre";
+                dgvInventory.Columns[3].HeaderText = "Quantity";
+                dgvInventory.Columns[4].HeaderText = "Price ";
+                dgvInventory.Columns[5].HeaderText = "Description ";
+                dgvInventory.Columns[6].HeaderText = "inStock";
+            }
+        }
+        private void frmMerchandiseInfo_FormClosing(object sender, FormClosingEventArgs e)
+        {
+           
+        }
+
+        private void dgvInventory_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            double dblPrice;
+            try
+            {
+                if(blnEdit == true)
+                {
+                    if (e.RowIndex < 0 || e.ColumnIndex < 0)
+                    {
+
+                    }
+                    else if (dgvInventory.Rows[e.RowIndex].Cells[e.ColumnIndex].Value != null)
+                    {
+                        dgvInventory.CurrentRow.Selected = true;
+                        tbxProductID.Text = dgvInventory.Rows[e.RowIndex].Cells["ProductID"].Value.ToString();
+                        tbxProductName.Text = dgvInventory.Rows[e.RowIndex].Cells["ProductName"].Value.ToString();
+                        cbxGenres.Text = dgvInventory.Rows[e.RowIndex].Cells["Genre"].Value.ToString();
+                        tbxQuantity.Text = dgvInventory.Rows[e.RowIndex].Cells["Quantity"].Value.ToString();
+
+                        dblPrice = Convert.ToDouble(dgvInventory.Rows[e.RowIndex].Cells["ProductPrice"].Value);
+                        tbxProductPrice.Text = dblPrice.ToString("c2");
+
+                        tbxProductDescription.Text = dgvInventory.Rows[e.RowIndex].Cells["ProductDescription"].Value.ToString();
+                        cbxInStock.Checked = Convert.ToBoolean(dgvInventory.Rows[e.RowIndex].Cells["inStock"].Value);
+
+                    }
+                }
+                
+            }
+            catch (ArgumentOutOfRangeException)
+            {
+
+            }
+        }
+
+        private void btnUploadImage_Click(object sender, EventArgs e)
+        {           
+            OpenFileDialog dialog = new OpenFileDialog();
+            dialog.Filter = "JPG FIles (*.jpg)|*.jpg| GIF Files (*.gif)|*.gif| All Files (*.*)|*.*";
+            dialog.Title = "Select Employee Picture";
+            if (dialog.ShowDialog() == DialogResult.OK)
+            {
+                imgLoc = dialog.FileName.ToString();
+                pbxImage.ImageLocation = imgLoc;
+                if(blnAddPic == true)
+                {
+                    btnSaveImage.Enabled = false;
+                }
+                else
+                {
+                    btnSaveImage.Enabled = true;
+                }
+                
+            }
+        }
+
+        private void btnSaveImage_Click(object sender, EventArgs e)
+        {
+            if(tbxProductID.Text == String.Empty)
+            {
+                MessageBox.Show("Please Have The Product ID Selected or Created.", "Save Error", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else
+            {
+                strQuery = "Update OrtizB21Su2332.Products Set Image = " + "@img where ProductID = " + tbxProductID.Text;
+                ProgOps.UploadPicture(imgLoc, strQuery);
+                MessageBox.Show("Imaged Saved.", "Saved", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+            }
+            
+        }
+
+        private void tbxProductID_TextChanged(object sender, EventArgs e)
+        {
+            if(blnEdit == true) { 
+
+                strQuery = "Select Image from OrtizB21Su2332.Products where ProductID = " + tbxProductID.Text;
+                ProgOps.CheckPicture(strQuery);
+                if(ProgOps._blnFound == true)
+                {
+                    ProgOps.GrabPicture(pbxImage, tbxProductID, strQuery);
+                }
+                else
+                {
+                    MessageBox.Show("No Picture For This Item", "Save Error", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                
+
+            }
+        }
+        private void btnEditEmployee_Click(object sender, EventArgs e)
+        {
+            if(tbxProductID.Text == String.Empty)
+            {
+                MessageBox.Show("Please Have The Product ID Selected or Created.", "Save Error", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else
+            {
+                SetState("Edit");
+            }
+            
+        }
+        private void btnAdd_Click(object sender, EventArgs e)
+        {
+            SetState("Add");
+            Clear();
+            //This Grab ProductID so that if the user uploads a picture the picture is uploaded to that ProductID
+            strQuery = "Select ProductID from OrtizB21Su2332.Products Order By productID desc";
+            ProgOps.GrabProductID(strQuery);
+
+            tbxProductID.Text = (ProgOps._intProductID + 1).ToString();
+        }
+        public void Clear()
+        {
+            tbxProductID.Clear();
+            tbxProductName.Clear();
+            tbxQuantity.Clear();
+            tbxProductPrice.Clear();
+            tbxProductDescription.Clear();
+            cbxInStock.Checked = false;
+            cbxGenres.SelectedIndex = -1;
+            pbxImage.Image = Properties.Resources.Logo_SMS;
+        }
+        private void btnReturn_Click(object sender, EventArgs e)
         {
             this.Close();
         }
 
-        private void btnPrevious_Click(object sender, EventArgs e)
+        //Validation For When Adding New Item
+        private void tbxProductName_TextChanged(object sender, EventArgs e)//Product Name Textbox Validation
         {
-            //Move back one entry if currency manager is not at the first
-            if (prodManager.Position != 0)
-            {
-                prodManager.Position--;
-            }
 
-        }
-
-        private void btnNext_Click(object sender, EventArgs e)
-        {
-            if (prodManager.Position != prodManager.Count - 1)
-                prodManager.Position++;
-        }
-
-        private void btnFirst_Click(object sender, EventArgs e)
-        {
-            prodManager.Position = 0;
-        }
-
-        private void btnLast_Click(object sender, EventArgs e)
-        {
-            prodManager.Position = prodManager.Count - 1;
-        }
-
-        private void btnAddNew_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                myBookmark = prodManager.Position;
-
-                //clear everything
-                tbxProductID.Clear();
-                tbxProductName.Clear();
-                tbxGenre.Clear();
-                tbxQuantity.Clear();
-                tbxPrice.Clear();
-                tbxDescription.Clear();
-
-
-
-                SetState("Add");
-                tbxProductName.Focus();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message, "Error : In Add New ", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return;
-            }
-        }
-
-        private void btnEdit_Click(object sender, EventArgs e)
-        {
-            //Set the form into "Edit" mode
-            SetState("Edit");
-            tbxProductName.Focus();
-        }
-
-        private void btnSave_Click(object sender, EventArgs e)
-        {
-            //Trim the textbox(s) that don't reject spaces
-            tbxProductName.Text = tbxProductName.Text.Trim();
-
-            //strinb builder for error messages
-            StringBuilder errorMessages = new StringBuilder();
-
-            int intInStock;
-
-            string savedName = tbxProductName.Text;
-
-            blnInStock = cbxInStock.Checked;
-
-            //since query needs a 1 or 0 this int does that
-            if (blnInStock)
-            {
-                intInStock = 1;
-            } else
-                intInStock = 0;
-
-            try
-            {
-
-                if (DataIsValid(tbxGenre.Text, tbxProductName.Text, tbxQuantity.Text, tbxPrice.Text, tbxDescription.Text) && myState == "Add")
+                if (tbxProductName.Text == string.Empty)
                 {
-                    //query to add new item
-                    query = "Insert into OrtizB21Su2332.Products(ProductName , Genre , Quantity , ProductPrice , ProductDescription , inStock)" +
-                    "values ('" + tbxProductName.Text + "','" + tbxGenre.Text + "', " + tbxQuantity.Text + " , " + tbxPrice.Text + " , '" + tbxDescription.Text + "'," + intInStock + ")";
-
-                }
-                else if (DataIsValid(tbxGenre.Text, tbxProductName.Text, tbxQuantity.Text, tbxPrice.Text, tbxDescription.Text) && myState == "Edit")
-                {
-                    //query to add edit item
-                    query = "Update OrtizB21Su2332.Products " +
-                       "Set ProductName = '" + tbxProductName.Text + "', Genre = '" + tbxGenre.Text + "', Quantity = " + tbxQuantity.Text + ", ProductPrice = " + tbxPrice.Text + ", ProductDescription = '" + tbxDescription.Text + "', inStock = " + 1 +
-                       " Where ProductID = " + tbxProductID.Text;
+                    lblProductNameValid.Text = "X";
+                    lblProductNameValid.ForeColor = Color.Red;
                 }
                 else
                 {
-                    MessageBox.Show("Error During Saving Proccess", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    lblProductNameValid.Text = "\u221A";
+                    lblProductNameValid.ForeColor = Color.Green;
+                }
+        }
+        private void cbxGenres_SelectedIndexChanged(object sender, EventArgs e)//Genre ComboBox Validation
+        {
+
+                if(cbxGenres.SelectedIndex == -1)
+                {
+                    lblGenreValid.Text = "X";
+                    lblGenreValid.ForeColor = Color.Red;
+                }
+                else
+                {
+                    lblGenreValid.Text = "\u221A";
+                    lblGenreValid.ForeColor = Color.Green;
+                }
+            
+        }
+        private void tbxQuantity_TextChanged(object sender, EventArgs e)//Quantity Validation
+        {
+
+                if (tbxQuantity.Text == string.Empty)
+                {
+                    lblQuantityValid.Text = "X";
+                    lblQuantityValid.ForeColor = Color.Red;
+                }
+                else
+                {
+                    lblQuantityValid.Text = "\u221A";
+                    lblQuantityValid.ForeColor = Color.Green;
+                }
+            
+        }
+        private void tbxProductPrice_TextChanged(object sender, EventArgs e)//Price Validation (For Text Only)
+        {
+
+                if(tbxProductPrice.Text == string.Empty)
+                {
+                    lblPriceValid.Text = "X";
+                    lblPriceValid.ForeColor = Color.Red;
+                }
+                else
+                {
+                    lblPriceValid.Text = "\u221A";
+                    lblPriceValid.ForeColor = Color.Green;
+                }
+            
+        }
+        private void tbxProductDescription_TextChanged(object sender, EventArgs e)
+        {
+
+                if (tbxProductDescription.Text == string.Empty)
+                {
+                    lblProductDescriptionValid.Text = "X";
+                    lblProductDescriptionValid.ForeColor = Color.Red;
+                }
+                else
+                {
+                    lblProductDescriptionValid.Text = "\u221A";
+                    lblProductDescriptionValid.ForeColor = Color.Green;
+                }
+            
+        }
+
+
+        private void btnComplete_Click(object sender, EventArgs e)//Adding Data To Database
+        {
+            double dblPrice;
+            int intInStock = 0;
+
+            if (lblProductNameValid.Text == "X" || lblGenreValid.Text == "X" || lblQuantityValid.Text == "X" || lblProductDescriptionValid.Text  == "X" || lblPriceValid.Text == "X")
+            {
+                MessageBox.Show("Please Fill Out All Required Information : Product Name , Genre , Quantity , Price , Description", "Invalid Data", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else
+            {
+                if(cbxInStock.Checked == true)
+                {
+                    intInStock = 1;
+                }
+
+                //This makes it so any single qutoes are changed to double quotes
+                tbxProductName.Text = tbxProductName.Text.Replace("'" , "\''");
+                tbxProductDescription.Text = tbxProductDescription.Text.Replace("'", "\''");
+                tbxProductPrice.Text = tbxProductPrice.Text.Replace("$", "");
+
+                
+                if (!double.TryParse(tbxProductPrice.Text, out dblPrice))
+                {
+                    MessageBox.Show("Error On Product Price", "Invalid Data", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                else
+                {
+                    //FIX LATER SO THAT QUANTITY IS AN INTERGER THAT HAS BEEN TRY PARSED
+                    if (blnPictureAdd == false)
+                    {
+                       
+                        strQuery = "Insert into OrtizB21Su2332.Products(ProductName,Genre,Quantity,ProductPrice,ProductDescription,inStock)" +
+                            "values('" + tbxProductName.Text + "','" + cbxGenres.Text + "'," + tbxQuantity.Text + "," + dblPrice + ",'" + tbxProductDescription.Text + "'," + intInStock + ")";
+                       
+                        MessageBox.Show(strQuery);
+
+                        MessageBox.Show("Item Succefully Added", "Valid Data", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                    else
+                    {
+                        //Adding Item Then Picture
+                        strQuery = "Insert into OrtizB21Su2332.Products(ProductName,Genre,Quantity,ProductPrice,ProductDescription,inStock)" +
+                            "values('" + tbxProductName.Text + "','" + cbxGenres.Text + "'," + tbxQuantity.Text + "," + dblPrice + ",'" + tbxProductDescription.Text + "'," + intInStock + ")";
+                        ProgOps.CreateProduct(strQuery);
+                        MessageBox.Show("Item Succefully Added", "Valid Data", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                        strQuery = "Update OrtizB21Su2332.Products Set Image = " + "@img where ProductID = " + tbxProductID.Text;
+                        ProgOps.UploadPicture(imgLoc, strQuery);
+                        MessageBox.Show("Picture Succefully Added", "Valid Data", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        blnPictureAdd = false;
+                    }
+                    Clear();
+                    SetState("View");                 
+                    GrabProduct();
+                    
                 }
 
                 
-                if (blnInStock)
-                {
-                    ProgOps.ProductAddEdit(tbxProductName, tbxGenre, tbxQuantity, tbxPrice, tbxDescription, 1, query);
-                    //Display confirming message box
-                    MessageBox.Show("Record saved successfully.", "Save Record", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                   
-                }
-                else
-                {
-                    ProgOps.ProductAddEdit(tbxProductName, tbxGenre, tbxQuantity, tbxPrice, tbxDescription, 0, query);
-                    //Display confirming message box
-                    MessageBox.Show("Record saved successfully.", "Save Record", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                }
+
 
             }
-            catch (SqlException ex)
-            {
-                //Set the error message and display it
-                for (int i = 0; i < ex.Errors.Count; i++)
-                {
-                    errorMessages.Append("Index #" + i + "\n" +
-                        "Message: " + ex.Errors[i].Message + "\n" +
-                        "LineNumber " + ex.Errors[i].LineNumber + "\n" +
-                        "Source " + ex.Errors[i].Source + "\n" +
-                        "Procedure " + ex.Errors[i].Procedure + "\n");
-                }
-                MessageBox.Show(errorMessages.ToString(), "Error on Product",
-                    MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-           
-            SetState("View");
+        }
 
-            //Have the currency manager end the edit and re-sort the table
-            //prodManager.EndCurrentEdit();
-            //ProgOps.GetProductTable.DefaultView.Sort = "ProductName";
-            //intRow = ProgOps.GetProductTable.DefaultView.Find(savedName);
-            //prodManager.Position = intRow;
-
-        }     
-
-        public bool DataIsValid(string strProductName, string strGenre,  string strQuantity,
-                                string strPrice , string strDescription)
+        private void pbxImage_LoadProgressChanged(object sender, ProgressChangedEventArgs e)
         {
-            //Check if any textbox is empty
-            if (strGenre == "" || strProductName == "" || strQuantity == "" || strPrice == "" || strDescription == "")
+            if(blnAdd == true)
             {
-                MessageBox.Show("Please make sure all fields are filled in.", "Input Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return false;
+                blnPictureAdd = true;
             }
-
-            if (cbxInStock.Checked == false)
-            {
-                DialogResult dialogresults = MessageBox.Show("Plesae Confirm Item is Out Of Stock", "Out Of Stock", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
-                if (dialogresults == DialogResult.Yes)
-                {
-                    return true;
-                }
-                else if (dialogresults == DialogResult.No)
-                {
-                    return false;
-                }
-            }
-
-            return true;
         }
 
         private void btnCancel_Click(object sender, EventArgs e)
         {
-            //Cancel the edit
-            prodManager.CancelCurrentEdit();
-
-            //If cancelling from adding an entry, return to saved position
-            if (myState == "Add")
-                prodManager.Position = myBookmark;
-
-            //Return to view mode
+            Clear();
             SetState("View");
         }
 
-        private void SetState(string state)
+        private void btnCompleteEdit_Click(object sender, EventArgs e)//While in edit more this button upades the database so it equalls the new information
         {
-            myState = state;
+            double dblPrice;
+            int intInStock = 0;
 
-            switch (state)
+            if (lblProductNameValid.Text == "X" || lblGenreValid.Text == "X" || lblQuantityValid.Text == "X" || lblProductDescriptionValid.Text == "X" || lblPriceValid.Text == "X")
             {
-                case "View":
-                    //Buttons
-                    btnPrevious.Enabled = true;
-                    btnNext.Enabled = true;
-                    btnLast.Enabled = true;
-                    btnFirst.Enabled = true;
-                    btnAddNew.Enabled = true;
-                    btnEdit.Enabled = true;
-                    btnSave.Enabled = false;
-                    btnCancel.Enabled = false;
-                    btnClose.Enabled = true;
-                    //textbox
-                    tbxProductID.BackColor = Color.White;
-                    tbxGenre.ReadOnly = true;
-                    tbxProductName.ReadOnly = true;
-                    tbxQuantity.ReadOnly = true;
-                    tbxPrice.ReadOnly = true;
-                    tbxDescription.ReadOnly = true;
-                    cbxInStock.Enabled = false;
-                    break;
-                default:
-                    //Buttons
-                    btnPrevious.Enabled = false;
-                    btnNext.Enabled = false;
-                    btnLast.Enabled = false;
-                    btnFirst.Enabled = false;
-                    btnAddNew.Enabled = false;
-                    btnEdit.Enabled = false;
-                    btnSave.Enabled = true;
-                    btnCancel.Enabled = true;
-                    btnClose.Enabled = false;
-                    //textbox
-                    tbxProductID.BackColor = Color.Red;
-                    tbxGenre.ReadOnly = false;
-                    tbxProductName.ReadOnly = false;
-                    tbxQuantity.ReadOnly = false;
-                    tbxDescription.ReadOnly = false;
-                    tbxPrice.ReadOnly = false;
-                    cbxInStock.Enabled = true;
-                    break;
-            }
-        }
-
-        private void frmMerchandiseInfo_FormClosing(object sender, FormClosingEventArgs e)
-        {
-            //Check if the user is not in view mode
-            if (myState != "View")
-            {
-                //Display notification and cancel close
-                MessageBox.Show("You must finish the current edit before closing the application.", "Finish Edit",
-                    MessageBoxButtons.OK, MessageBoxIcon.Information);
-                e.Cancel = true;
+                MessageBox.Show("Please Fill Out All Required Information : Product Name , Genre , Quantity , Price , Description", "Invalid Data", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             else
             {
-                //Update database
-                ProgOps.ProductDispose();
+                if (cbxInStock.Checked == true)
+                {
+                    intInStock = 1;
+                }
+
+                //This makes it so any single qutoes are changed to double quotes
+                tbxProductName.Text = tbxProductName.Text.Replace("'", "\''");
+                tbxProductDescription.Text = tbxProductDescription.Text.Replace("'", "\''");
+                tbxProductPrice.Text = tbxProductPrice.Text.Replace("$", "");
+
+                if (!double.TryParse(tbxProductPrice.Text, out dblPrice))
+                {
+                    MessageBox.Show("Error On Product Price", "Invalid Data", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                else
+                {
+                    //FIX LATER SO THAT QUANTITY IS AN INTERGER THAT HAS BEEN TRY PARSED
+
+                    strQuery = "Update OrtizB21Su2332.Products " +
+                        "Set ProductName = '" + tbxProductName.Text + "', Genre = '" + cbxGenres.Text + "', Quantity = " + tbxQuantity.Text + ", ProductPrice = " + dblPrice + ", ProductDescription = '" + tbxProductDescription.Text + "', inStock = " + intInStock +
+                        " Where ProductID = " + tbxProductID.Text;
+                    ProgOps.UpdateProduct(strQuery);
+
+
+                    MessageBox.Show("Item Succefully Updated", "Valid Data", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    Clear();
+                    SetState("View");
+                    GrabProduct();
+
+                }
             }
         }
 
+        private void btnCreateInvoice_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
