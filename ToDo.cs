@@ -21,6 +21,7 @@ namespace SU21_Final_Project
          - Check ALl Data Grid Views so that they cannot be edited or anything like that
          - FIX Crash on data grid EMployee Product View
          - Watch Video and Do Checklist , Package and Deploy
+         - DO NOT LET USER BE ABLE TO COPY PASTE CODE!!!
          */ 
     }
 }

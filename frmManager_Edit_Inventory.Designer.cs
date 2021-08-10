@@ -186,9 +186,9 @@ namespace SU21_Final_Project
             this.lblQuanitty.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblQuanitty.Location = new System.Drawing.Point(13, 236);
             this.lblQuanitty.Name = "lblQuanitty";
-            this.lblQuanitty.Size = new System.Drawing.Size(68, 16);
+            this.lblQuanitty.Size = new System.Drawing.Size(64, 16);
             this.lblQuanitty.TabIndex = 62;
-            this.lblQuanitty.Text = "Quantity ; ";
+            this.lblQuanitty.Text = "Quantity :";
             // 
             // lblGenre
             // 

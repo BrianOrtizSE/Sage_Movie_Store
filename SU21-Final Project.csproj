@@ -130,6 +130,12 @@
     <Compile Include="frmHelp.Designer.cs">
       <DependentUpon>frmHelp.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmManager_Create_Invoice.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmManager_Create_Invoice.Designer.cs">
+      <DependentUpon>frmManager_Create_Invoice.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmManager_Discount_Add.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -244,6 +250,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmMainMenu.resx">
       <DependentUpon>frmMainMenu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmManager_Create_Invoice.resx">
+      <DependentUpon>frmManager_Create_Invoice.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmManager_Discount_Add.resx">
       <DependentUpon>frmManager_Discount_Add.cs</DependentUpon>

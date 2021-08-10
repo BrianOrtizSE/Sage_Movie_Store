@@ -16,61 +16,66 @@ namespace SU21_Final_Project
         {
             InitializeComponent();
         }
-        string imgLoc = "";
-        private void btnBrowse_Click(object sender, EventArgs e)
-        {
-            OpenFileDialog dialog = new OpenFileDialog();
-            dialog.Filter = "JPG FIles (*.jpg)|*.jpg| GIF Files (*.gif)|*.gif| All Files (*.*)|*.*";
-            dialog.Title = "Select Employee Picture";
-            if (dialog.ShowDialog() == DialogResult.OK)
-            {
-                imgLoc = dialog.FileName.ToString();
-                pictureBox1.ImageLocation = imgLoc;
-
-            }
-        }
-
-        private void btnSave_Click(object sender, EventArgs e)
-        {
-           // ProgOps.UploadPicture(imgLoc);
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-           // ProgOps.GrabPicture(pictureBox1 , textBox1);
-            
-        }
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            string strQuery = "Select * from OrtizB21Su2332.Picture";
-            ProgOps.GrabDiscounts(dataGridView1, strQuery);
+            string str = "Select ProductID , Quantity from OrtizB21Su2332.Products";
+            ProgOps.GrabDiscounts(dataGridView1, str);
+        }
+
+        
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
 
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            try
+            if (e.RowIndex < 0 || e.ColumnIndex < 0)
             {
-                    if (e.RowIndex < 0 || e.ColumnIndex < 0)
-                    {
 
-                    }
-                    else if (dataGridView1.Rows[e.RowIndex].Cells[e.ColumnIndex].Value != null)
-                    {
-                        dataGridView1.CurrentRow.Selected = true;
-                        textBox1.Text = dataGridView1.Rows[e.RowIndex].Cells["Number"].Value.ToString();
-
-                    }
             }
-            catch (ArgumentOutOfRangeException)
+            else if (dataGridView1.Rows[e.RowIndex].Cells[e.ColumnIndex].Value != null)
             {
-
+                dataGridView1.CurrentRow.Selected = true;
+                textBox1.Text =  dataGridView1.Rows[e.RowIndex].Cells["ProductID"].Value.ToString();
+                textBox2.Text = dataGridView1.Rows[e.RowIndex].Cells["Quantity"].Value.ToString();
             }
         }
-
-        private void textBox1_TextChanged(object sender, EventArgs e)
+        private void button1_Click(object sender, EventArgs e)
         {
-           // ProgOps.GrabPicture(pictureBox1, textBox1);
+            int cellVal;
+            int newCellVal;
+
+            int intQuan = int.Parse(textBox2.Text);
+            cellVal = Convert.ToInt32(dataGridView1.SelectedRows[0].Cells["Quantity"].Value);
+            newCellVal = Convert.ToInt32(cellVal - intQuan);
+            dataGridView1.SelectedRows[0].Cells["Quantity"].Value = newCellVal;
+
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            int cellVal;
+            int newCellVal;
+
+            string searchValue = "30000";
+            int rowIndex = -1;
+            foreach (DataGridViewRow row in dataGridView1.Rows)
+            {
+                if (row.Cells[0].Value.ToString().Equals(searchValue))
+                {
+                    rowIndex = row.Index;
+                    break;
+                }
+            }
+            dataGridView1.Rows[rowIndex].Selected = true;
+
+            int intQuan = int.Parse(textBox2.Text);
+            cellVal = Convert.ToInt32(dataGridView1.SelectedRows[0].Cells["Quantity"].Value);
+            newCellVal = Convert.ToInt32(cellVal - intQuan);
+            dataGridView1.SelectedRows[0].Cells["Quantity"].Value = newCellVal;
         }
     }
 }

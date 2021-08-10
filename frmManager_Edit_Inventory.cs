@@ -277,7 +277,7 @@ namespace SU21_Final_Project
                 ProgOps.CheckPicture(strQuery);
                 if(ProgOps._blnFound == true)
                 {
-                    ProgOps.GrabPicture(pbxImage, tbxProductID, strQuery);
+                    ProgOps.GrabPicture(pbxImage, strQuery);
                 }
                 else
                 {

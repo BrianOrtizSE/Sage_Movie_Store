@@ -738,6 +738,9 @@ namespace SU21_Final_Project
                     _blnFound = true;
                     dgvOrders.DataSource = _dtProductTable;
                 }
+                _sqlResultsCommand.Dispose();
+                _daProduct.Dispose();
+                _dtProductTable.Dispose();
 
 
             }
@@ -756,6 +759,9 @@ namespace SU21_Final_Project
                     }
                     MessageBox.Show(errorMessages.ToString(), "Error on DatabaseCommand", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
+            }catch(ArgumentOutOfRangeException ex)
+            {
+                MessageBox.Show(ex.ToString(), "Error Out Of Range", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
 
@@ -1310,7 +1316,7 @@ namespace SU21_Final_Project
 
 
         }
-        public static void GrabPicture(PictureBox pbxBox, TextBox tbxID, string strQuery)
+        public static void GrabPicture(PictureBox pbxBox, string strQuery)
         {
             try
             {

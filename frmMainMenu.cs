@@ -166,5 +166,19 @@ namespace SU21_Final_Project
             frmManager_Edit_Inventory frmManagerEditInventory = new frmManager_Edit_Inventory();
             frmManagerEditInventory.ShowDialog();
         }
+
+        private void button3_Click_1(object sender, EventArgs e)
+        {
+            this.Hide();
+            frmEmployee_POS frmEmpPos = new frmEmployee_POS();
+            frmEmpPos.ShowDialog();
+            this.Show();
+        }
+
+        private void button4_Click_1(object sender, EventArgs e)
+        {
+            frmManager_Create_Invoice frmCreInv = new frmManager_Create_Invoice();
+            frmCreInv.ShowDialog();
+        }
     }
 }
