@@ -37,6 +37,7 @@ namespace SU21_Final_Project
             this.button3 = new System.Windows.Forms.Button();
             this.lblDate = new System.Windows.Forms.Label();
             this.btnExit = new System.Windows.Forms.Button();
+            this.btnPrintReport = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSales)).BeginInit();
             this.SuspendLayout();
             // 
@@ -116,11 +117,21 @@ namespace SU21_Final_Project
             this.btnExit.UseVisualStyleBackColor = true;
             this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
             // 
+            // btnPrintReport
+            // 
+            this.btnPrintReport.Location = new System.Drawing.Point(696, 321);
+            this.btnPrintReport.Name = "btnPrintReport";
+            this.btnPrintReport.Size = new System.Drawing.Size(92, 40);
+            this.btnPrintReport.TabIndex = 7;
+            this.btnPrintReport.Text = "Print Report";
+            this.btnPrintReport.UseVisualStyleBackColor = true;
+            // 
             // frmManager_View_Sales
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.btnPrintReport);
             this.Controls.Add(this.btnExit);
             this.Controls.Add(this.lblDate);
             this.Controls.Add(this.button3);
@@ -149,5 +160,6 @@ namespace SU21_Final_Project
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Label lblDate;
         private System.Windows.Forms.Button btnExit;
+        private System.Windows.Forms.Button btnPrintReport;
     }
 }

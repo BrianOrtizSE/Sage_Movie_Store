@@ -52,7 +52,9 @@ namespace SU21_Final_Project
             // 
             this.tbxUsername.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tbxUsername.Location = new System.Drawing.Point(195, 174);
+            this.tbxUsername.MaxLength = 20;
             this.tbxUsername.Name = "tbxUsername";
+            this.tbxUsername.ShortcutsEnabled = false;
             this.tbxUsername.Size = new System.Drawing.Size(184, 27);
             this.tbxUsername.TabIndex = 0;
             this.tbxUsername.TextChanged += new System.EventHandler(this.tbxUsername_TextChanged);
@@ -62,19 +64,22 @@ namespace SU21_Final_Project
             // 
             this.tbxPassword.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tbxPassword.Location = new System.Drawing.Point(195, 232);
+            this.tbxPassword.MaxLength = 20;
             this.tbxPassword.Name = "tbxPassword";
+            this.tbxPassword.ShortcutsEnabled = false;
             this.tbxPassword.Size = new System.Drawing.Size(184, 27);
             this.tbxPassword.TabIndex = 1;
             this.tbxPassword.UseSystemPasswordChar = true;
+            this.tbxPassword.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbxPassword_KeyPress);
             // 
             // rdbCustomer
             // 
             this.rdbCustomer.AutoSize = true;
             this.rdbCustomer.Checked = true;
-            this.rdbCustomer.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rdbCustomer.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.rdbCustomer.Location = new System.Drawing.Point(78, 95);
             this.rdbCustomer.Name = "rdbCustomer";
-            this.rdbCustomer.Size = new System.Drawing.Size(115, 20);
+            this.rdbCustomer.Size = new System.Drawing.Size(127, 22);
             this.rdbCustomer.TabIndex = 4;
             this.rdbCustomer.TabStop = true;
             this.rdbCustomer.Text = "Customer Login";
@@ -84,10 +89,10 @@ namespace SU21_Final_Project
             // rdbEmployee
             // 
             this.rdbEmployee.AutoSize = true;
-            this.rdbEmployee.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rdbEmployee.Location = new System.Drawing.Point(296, 95);
+            this.rdbEmployee.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rdbEmployee.Location = new System.Drawing.Point(284, 95);
             this.rdbEmployee.Name = "rdbEmployee";
-            this.rdbEmployee.Size = new System.Drawing.Size(115, 20);
+            this.rdbEmployee.Size = new System.Drawing.Size(127, 22);
             this.rdbEmployee.TabIndex = 5;
             this.rdbEmployee.Text = "Employee Login";
             this.rdbEmployee.UseVisualStyleBackColor = true;
@@ -96,7 +101,7 @@ namespace SU21_Final_Project
             // btnLogin
             // 
             this.btnLogin.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnLogin.Location = new System.Drawing.Point(45, 305);
+            this.btnLogin.Location = new System.Drawing.Point(45, 317);
             this.btnLogin.Name = "btnLogin";
             this.btnLogin.Size = new System.Drawing.Size(125, 48);
             this.btnLogin.TabIndex = 2;
@@ -139,7 +144,7 @@ namespace SU21_Final_Project
             // lblClose
             // 
             this.lblClose.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblClose.Location = new System.Drawing.Point(313, 305);
+            this.lblClose.Location = new System.Drawing.Point(313, 317);
             this.lblClose.Name = "lblClose";
             this.lblClose.Size = new System.Drawing.Size(125, 48);
             this.lblClose.TabIndex = 3;
@@ -161,7 +166,7 @@ namespace SU21_Final_Project
             // lblBlackLine
             // 
             this.lblBlackLine.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.lblBlackLine.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblBlackLine.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblBlackLine.Location = new System.Drawing.Point(10, 51);
             this.lblBlackLine.Name = "lblBlackLine";
             this.lblBlackLine.Size = new System.Drawing.Size(500, 2);
@@ -190,18 +195,18 @@ namespace SU21_Final_Project
             // btnForgotPassword
             // 
             this.btnForgotPassword.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnForgotPassword.Location = new System.Drawing.Point(179, 305);
+            this.btnForgotPassword.Location = new System.Drawing.Point(179, 317);
             this.btnForgotPassword.Name = "btnForgotPassword";
             this.btnForgotPassword.Size = new System.Drawing.Size(125, 48);
             this.btnForgotPassword.TabIndex = 12;
-            this.btnForgotPassword.Text = "Password Recovery";
+            this.btnForgotPassword.Text = "&Password Recovery";
             this.btnForgotPassword.UseVisualStyleBackColor = true;
             this.btnForgotPassword.Click += new System.EventHandler(this.btnForgotPassword_Click);
             // 
             // cbxShowPassword
             // 
             this.cbxShowPassword.AutoSize = true;
-            this.cbxShowPassword.Location = new System.Drawing.Point(385, 237);
+            this.cbxShowPassword.Location = new System.Drawing.Point(195, 265);
             this.cbxShowPassword.Name = "cbxShowPassword";
             this.cbxShowPassword.Size = new System.Drawing.Size(102, 17);
             this.cbxShowPassword.TabIndex = 13;

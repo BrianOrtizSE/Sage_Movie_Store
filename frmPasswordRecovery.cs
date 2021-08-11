@@ -19,22 +19,20 @@ namespace SU21_Final_Project
         int intSearch = 0;
         string strQuestion;
         string strAnwser;
-       
         private void btnSearch_Click(object sender, EventArgs e)
         {
-            String strQuery;
-            bool blnValid = true;
+            string strQuery;
 
+            //While Creating New Password Do This: 
             if (lblUsername.Text == "Enter New Password: ")
             {
                 lblPasswordValid.Visible = true;
                 if (ProgOps._blnFound == true)
-                {   
+                {
 
                     //VALIDATION FOR PASSWORD
                     //bool to tell if password has a number
                     bool hasNumber = false;
-
                     for (int i = 0; i < tbxUsername.Text.Length; i++)
                     {
                         if (Char.IsDigit(tbxUsername.Text[i]))
@@ -43,13 +41,12 @@ namespace SU21_Final_Project
                             break;
                         }
                     }
-
                     //int to track the number of symbols found in password
                     int symbolCtr = 0;
-
                     for (int i = 0; i < tbxUsername.Text.Length; i++)
                     {
                         //Check each character to see if it's a symbol
+                        //Note: Char.IsSymbol() did not actually work here
                         if (!Char.IsLetter(tbxUsername.Text[i]) &&
                             !Char.IsDigit(tbxUsername.Text[i]))
                         {
@@ -57,30 +54,17 @@ namespace SU21_Final_Project
                         }
                     }
 
-                    if (tbxUsername.Text == String.Empty || tbxUsername.Text.Length > 20 || tbxUsername.Text.Length < 8 || !hasNumber || symbolCtr < 2)
+                    if (tbxUsername.Text == String.Empty || tbxUsername.Text.Length < 8 || !hasNumber || symbolCtr < 1)
                     {
-                        //lblErrorPassword.Visible = true;
-                        blnValid = false;
-                        Console.WriteLine(symbolCtr);
-                        Console.WriteLine(hasNumber);
+                        MessageBox.Show("Please Create A New Valid Password", "Password Invalid ", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
                     else
-                    {
-                        
-                    }
-
-                    if(blnValid == true)
                     {
                         strQuery = "Update OrtizB21Su2332.LogOn SET Password = '" + tbxUsername.Text + "' WHERE PersonID = " + ProgOps._intPersonID;
                         ProgOps.UpdatePassword(strQuery);
-                        MessageBox.Show("Password Changed", "Password Change" ,MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                        MessageBox.Show("Password Changed", "Password Change", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                         this.Close();
                     }
-                    else
-                    {
-                        MessageBox.Show("Password Must Contain at least 8 letters , 1 Capital , 1 lowercase , 2 Symbols , 1 Number", "Password Invalid ", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    }
-                    
 
                     cmbSQ.Visible = false;
                     tbxSQA.Visible = false;
@@ -89,10 +73,9 @@ namespace SU21_Final_Project
             }
             else
             {
+                //Check to see if entered username is real , if it is continue if not let em know.
                 strQuery = "Select Username From OrtizB21Su2332.LogOn " +
                      "Where Username = '" + tbxUsername.Text + "'";
-
-
                 ProgOps.GrabPassword(strQuery);
 
                 if (ProgOps._blnFound == false)
@@ -105,6 +88,7 @@ namespace SU21_Final_Project
                         "Where Username = '" + tbxUsername.Text + "'";
                     ProgOps.GrabPersonID(strQuery);
 
+                    //Low Tier Set View
                     btnSearch.Enabled = false;
                     tbxUsername.Enabled = false;
 
@@ -124,7 +108,7 @@ namespace SU21_Final_Project
         }
 
 
-        private void button1_Click(object sender, EventArgs e)
+        private void btnSSearch_Click(object sender, EventArgs e)
         {
             intSearch++;
             //Call Find Password To Beggin Search For User
@@ -135,8 +119,7 @@ namespace SU21_Final_Project
         {
 
             ProgOps._blnFound = false;
-            String strQuery;
-
+            string strQuery;
 
             switch (intSearch)
             {
@@ -153,9 +136,7 @@ namespace SU21_Final_Project
                     {
                         //Search For PersonID using Username , SQ's and SQAnswers
                         strQuery = "Select PersonID From OrtizB21Su2332.LogOn " +
-                     "Where SQuestion1 = '" + cmbSQ.Text + "' and SQAnswer1 = '" + tbxSQA.Text + "' and Username = '" + tbxUsername.Text + "'";
-
-
+                        "Where SQuestion1 = '" + cmbSQ.Text + "' and SQAnswer1 = '" + tbxSQA.Text + "' and Username = '" + tbxUsername.Text + "'";
                         ProgOps.GrabPassword(strQuery);
 
                     //If a person is found we set the SQuestions and SQAnswer
@@ -173,6 +154,8 @@ namespace SU21_Final_Project
                             lblSecurityAnswer.Text = "Security Answer 2";
                         }
                     }
+                    cmbSQ.SelectedIndex = -1;
+                    tbxSQA.Clear();
                     break;
 
                 case 2:
@@ -201,6 +184,8 @@ namespace SU21_Final_Project
                             lblSecurityAnswer.Text = "Security Answer 3";
                         }
                     }
+                    cmbSQ.SelectedIndex = -1;
+                    tbxSQA.Clear();
                     break;
 
                 case 3:
@@ -228,6 +213,8 @@ namespace SU21_Final_Project
                             this.Close();
                         }
                     }
+                    cmbSQ.SelectedIndex = -1;
+                    tbxSQA.Clear();
                     break;
 
                 default:
@@ -239,14 +226,19 @@ namespace SU21_Final_Project
             if(ProgOps._blnFound == true)
             {
                 lblUsername.Text = "Enter New Password: ";
+                lblPasswordValid.Visible = true;
                 btnSearch.Text = "Update";
+
                 tbxUsername.Enabled = true;
+                tbxUsername.Clear();
                 btnSearch.Enabled = true;
+
                 cmbSQ.Visible = false;
                 tbxSQA.Visible = false;
                 lblSecurityText.Visible = false;
                 lblSecurityAnswer.Visible = false;
                 btnSSearch.Visible = false;
+
             }
             
         }
@@ -254,6 +246,41 @@ namespace SU21_Final_Project
         private void btnClose_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        //Below key press so that user cannot type in wrong information
+        private void tbxUsername_KeyPress(object sender, KeyPressEventArgs e)
+        {
+                    //Only allow letters and backspace
+                    if (e.KeyChar >= 65 && e.KeyChar <= 90 ||       //ASCII Check for Capital Letters
+                       e.KeyChar >= 97 && e.KeyChar <= 122 ||       //ASCII Check for Lowercase Letters
+                        e.KeyChar >= 40 && e.KeyChar <= 64 ||       //ASCII Check For Numbers
+                        e.KeyChar == 33 ||
+                        e.KeyChar >= 35 && e.KeyChar <= 38 ||       //ASCII for specific charectors
+                       e.KeyChar == 8)                              //ASCII Check for Backspace
+                    {
+                        //Accept the keystroke
+                        e.Handled = false;
+        }
+         else
+        {
+            e.Handled = true;
+        }              
+        }
+        private void tbxSQA_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            //Only allow letters and backspace
+            if (e.KeyChar >= 65 && e.KeyChar <= 90 ||       //ASCII Check for Capital Letters
+               e.KeyChar >= 97 && e.KeyChar <= 122 ||       //ASCII Check for Lowercase Letters
+               e.KeyChar == 8)                              //ASCII Check for Backspace
+            {
+                //Accept the keystroke
+                e.Handled = false;
+            }
+            else
+            {
+                e.Handled = true;
+            }
         }
     }
 }

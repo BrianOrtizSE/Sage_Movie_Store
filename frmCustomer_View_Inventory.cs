@@ -19,84 +19,73 @@ namespace SU21_Final_Project
         string strQuery;
         private void frmProductView_Load(object sender, EventArgs e)
         {
+            GrabProducts();
+        }
+        public void GrabProducts()
+        {
 
             //On Load We Display All Items
-            strQuery = "Select * From OrtizB21Su2332.Products"; ;
-            ProgOps.GrabProduct( dgvView, strQuery);
+            strQuery = "Select ProductID , ProductName , Genre , ProductDescription , Quantity , ProductPrice From OrtizB21Su2332.Products Where Quantity > 0 and inStock = 1";
 
+            ProgOps.GrabProduct(dgvProducts, strQuery);
+
+            //Setting Titles and such for Grids
+            dgvProducts.Columns[0].HeaderText = "Product ID";
+            dgvProducts.Columns[1].HeaderText = "Movie Title";
+            dgvProducts.Columns[2].HeaderText = "Movie Genre";
+            dgvProducts.Columns[3].HeaderText = "Movie Description";
+            dgvProducts.Columns[4].HeaderText = "Quantity";
+
+            dgvProducts.Columns[5].DefaultCellStyle.Format = "c2";
+            dgvProducts.Columns[5].HeaderText = "Movie Price";
+        }
+
+        private void dgvProducts_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            double dblPrice;
+            if (e.RowIndex < 0 || e.ColumnIndex < 0)
+            {
+
+            }
+            else if (dgvProducts.Rows[e.RowIndex].Cells[e.ColumnIndex].Value != null)
+            {
+                //Insert data from Data Grid To Labels
+                dgvProducts.CurrentRow.Selected = true;
+                lblProductID.Text = dgvProducts.Rows[e.RowIndex].Cells["ProductID"].Value.ToString();
+                lblProductName.Text = dgvProducts.Rows[e.RowIndex].Cells["ProductName"].Value.ToString();
+                lblGenre.Text = dgvProducts.Rows[e.RowIndex].Cells["Genre"].Value.ToString();
+                lblQuantity.Text = dgvProducts.Rows[e.RowIndex].Cells["Quantity"].Value.ToString();
+
+                dblPrice = Convert.ToDouble(dgvProducts.Rows[e.RowIndex].Cells["ProductPrice"].Value);
+                lblProductPrice.Text = dblPrice.ToString("c2");
+
+                lblProductDescription.Text = dgvProducts.Rows[e.RowIndex].Cells["ProductDescription"].Value.ToString();
+
+                //Grab Picture associated with the ProductID
+                strQuery = "Select Image from OrtizB21Su2332.Products where ProductID = " + lblProductID.Text;
+                //MessageBox.Show(strQuery);
+                ProgOps.CheckPicture(strQuery);
+                if (ProgOps._blnFound == true)
+                {
+                    ProgOps.GrabPicture(pbxImage, strQuery);
+                }
+                else
+                {
+                    MessageBox.Show("No Picture For This Item", "Save Error", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+
+
+            }
+        }
+
+        private void dgvProducts_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            
         }
 
         private void btnClose_Click(object sender, EventArgs e)
         {
             this.Close();
-        }
-
-        private void btnSearch_Click(object sender, EventArgs e)
-        {
-            //Look For Specific Item
-
-            if (tbxProductID.Text == string.Empty)
-            {
-                MessageBox.Show("Search box must not be empty.", "Input Error", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
-            }
-            else
-            {
-                strQuery = "Select * From OrtizB21Su2332.Products Where ProductID = " + tbxProductID.Text;
-                ProgOps.GrabProduct( dgvView, strQuery);
-
-                if (dgvView.RowCount != 1)
-                {
-
-                }
-                else
-                {
-                    MessageBox.Show("The entered ID doesn't exist within our inventory.", "Input Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    //Reset User
-                    tbxProductID.Clear();
-                    tbxProductID.Focus();
-
-                    //Reset Data Grid View
-                    strQuery = "Select * From OrtizB21Su2332.Products"; ;
-                    ProgOps.GrabProduct( dgvView, strQuery);
-
-                }
-
-            }
-
-
-        }
-
-        private void btnReset_Click(object sender, EventArgs e)
-        {
-            //Reset Data Grid View
-            strQuery = "Select * From OrtizB21Su2332.Products"; ;
-            ProgOps.GrabProduct( dgvView, strQuery);
-        }
-
-        private void tbxProductID_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            //Only allow letters and backspace
-            if (e.KeyChar >= 48 && e.KeyChar <= 57 ||       //ASCII Check for Numbers
-                e.KeyChar == 8)                             //ASCII Check for Backspace
-
-            {
-                //Accept the keystroke
-                e.Handled = false;
-            }
-            else
-            {
-                e.Handled = true;
-            }
-        }
-
-        private void mnsHelp_Click(object sender, EventArgs e)
-        {
-            ProgOps._PICTURE = 8;
-            this.Hide();
-            frmHelp frmhelp = new frmHelp();
-            frmhelp.ShowDialog();
-            this.Show();
         }
     }
 }

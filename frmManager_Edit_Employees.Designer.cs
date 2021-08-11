@@ -227,7 +227,7 @@ namespace SU21_Final_Project
             this.dgvEmployee.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedCells;
             this.dgvEmployee.BackgroundColor = System.Drawing.Color.White;
             this.dgvEmployee.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvEmployee.Location = new System.Drawing.Point(561, 12);
+            this.dgvEmployee.Location = new System.Drawing.Point(456, 12);
             this.dgvEmployee.MultiSelect = false;
             this.dgvEmployee.Name = "dgvEmployee";
             this.dgvEmployee.ReadOnly = true;
@@ -303,7 +303,7 @@ namespace SU21_Final_Project
             // 
             this.btnDisable.Enabled = false;
             this.btnDisable.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDisable.Location = new System.Drawing.Point(477, 449);
+            this.btnDisable.Location = new System.Drawing.Point(372, 449);
             this.btnDisable.Name = "btnDisable";
             this.btnDisable.Size = new System.Drawing.Size(78, 50);
             this.btnDisable.TabIndex = 52;
@@ -314,7 +314,7 @@ namespace SU21_Final_Project
             // btnShowUnactive
             // 
             this.btnShowUnactive.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnShowUnactive.Location = new System.Drawing.Point(477, 504);
+            this.btnShowUnactive.Location = new System.Drawing.Point(372, 504);
             this.btnShowUnactive.Name = "btnShowUnactive";
             this.btnShowUnactive.Size = new System.Drawing.Size(78, 50);
             this.btnShowUnactive.TabIndex = 53;
@@ -325,7 +325,7 @@ namespace SU21_Final_Project
             // btnShowActive
             // 
             this.btnShowActive.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnShowActive.Location = new System.Drawing.Point(477, 504);
+            this.btnShowActive.Location = new System.Drawing.Point(372, 504);
             this.btnShowActive.Name = "btnShowActive";
             this.btnShowActive.Size = new System.Drawing.Size(78, 50);
             this.btnShowActive.TabIndex = 54;
@@ -338,7 +338,7 @@ namespace SU21_Final_Project
             // 
             this.btnEnable.Enabled = false;
             this.btnEnable.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEnable.Location = new System.Drawing.Point(477, 448);
+            this.btnEnable.Location = new System.Drawing.Point(372, 448);
             this.btnEnable.Name = "btnEnable";
             this.btnEnable.Size = new System.Drawing.Size(78, 50);
             this.btnEnable.TabIndex = 55;
@@ -351,7 +351,7 @@ namespace SU21_Final_Project
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1101, 573);
+            this.ClientSize = new System.Drawing.Size(1000, 573);
             this.Controls.Add(this.btnEnable);
             this.Controls.Add(this.btnShowActive);
             this.Controls.Add(this.btnShowUnactive);

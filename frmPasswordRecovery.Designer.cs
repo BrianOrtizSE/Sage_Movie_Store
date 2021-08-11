@@ -46,19 +46,23 @@ namespace SU21_Final_Project
             // 
             // tbxUsername
             // 
-            this.tbxUsername.ForeColor = System.Drawing.Color.Red;
-            this.tbxUsername.Location = new System.Drawing.Point(109, 109);
+            this.tbxUsername.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbxUsername.ForeColor = System.Drawing.Color.Black;
+            this.tbxUsername.Location = new System.Drawing.Point(144, 92);
             this.tbxUsername.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.tbxUsername.Name = "tbxUsername";
-            this.tbxUsername.Size = new System.Drawing.Size(143, 23);
+            this.tbxUsername.ShortcutsEnabled = false;
+            this.tbxUsername.Size = new System.Drawing.Size(143, 27);
             this.tbxUsername.TabIndex = 0;
+            this.tbxUsername.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbxUsername_KeyPress);
             // 
             // lblUsername
             // 
             this.lblUsername.AutoSize = true;
-            this.lblUsername.Location = new System.Drawing.Point(126, 78);
+            this.lblUsername.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblUsername.Location = new System.Drawing.Point(147, 58);
             this.lblUsername.Name = "lblUsername";
-            this.lblUsername.Size = new System.Drawing.Size(113, 16);
+            this.lblUsername.Size = new System.Drawing.Size(138, 19);
             this.lblUsername.TabIndex = 1;
             this.lblUsername.Text = "Enter Username : ";
             this.lblUsername.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -66,7 +70,7 @@ namespace SU21_Final_Project
             // lblUserId
             // 
             this.lblUserId.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblUserId.Location = new System.Drawing.Point(65, 11);
+            this.lblUserId.Location = new System.Drawing.Point(113, 9);
             this.lblUserId.Name = "lblUserId";
             this.lblUserId.Size = new System.Drawing.Size(223, 28);
             this.lblUserId.TabIndex = 32;
@@ -78,18 +82,19 @@ namespace SU21_Final_Project
             this.lblBlackLine.BackColor = System.Drawing.Color.Black;
             this.lblBlackLine.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblBlackLine.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.lblBlackLine.Location = new System.Drawing.Point(-2, 48);
+            this.lblBlackLine.Location = new System.Drawing.Point(-45, 37);
             this.lblBlackLine.Name = "lblBlackLine";
-            this.lblBlackLine.Size = new System.Drawing.Size(405, 2);
+            this.lblBlackLine.Size = new System.Drawing.Size(550, 2);
             this.lblBlackLine.TabIndex = 31;
             this.lblBlackLine.Text = "lblBlackLine";
             this.lblBlackLine.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // btnSearch
             // 
-            this.btnSearch.Location = new System.Drawing.Point(145, 171);
+            this.btnSearch.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSearch.Location = new System.Drawing.Point(144, 184);
             this.btnSearch.Name = "btnSearch";
-            this.btnSearch.Size = new System.Drawing.Size(75, 23);
+            this.btnSearch.Size = new System.Drawing.Size(143, 35);
             this.btnSearch.TabIndex = 33;
             this.btnSearch.Text = "Search";
             this.btnSearch.UseVisualStyleBackColor = true;
@@ -98,6 +103,7 @@ namespace SU21_Final_Project
             // cmbSQ
             // 
             this.cmbSQ.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbSQ.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbSQ.FormattingEnabled = true;
             this.cmbSQ.Items.AddRange(new object[] {
             "What was your childhood nickname?",
@@ -112,7 +118,7 @@ namespace SU21_Final_Project
             "What was the make and model of your first car?",
             "What was the name of the hospital where you were born?",
             "Who is your childhood sports hero?"});
-            this.cmbSQ.Location = new System.Drawing.Point(12, 252);
+            this.cmbSQ.Location = new System.Drawing.Point(45, 274);
             this.cmbSQ.Name = "cmbSQ";
             this.cmbSQ.Size = new System.Drawing.Size(354, 24);
             this.cmbSQ.TabIndex = 34;
@@ -121,9 +127,10 @@ namespace SU21_Final_Project
             // lblSecurityText
             // 
             this.lblSecurityText.AutoSize = true;
-            this.lblSecurityText.Location = new System.Drawing.Point(133, 222);
+            this.lblSecurityText.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSecurityText.Location = new System.Drawing.Point(140, 252);
             this.lblSecurityText.Name = "lblSecurityText";
-            this.lblSecurityText.Size = new System.Drawing.Size(119, 16);
+            this.lblSecurityText.Size = new System.Drawing.Size(147, 19);
             this.lblSecurityText.TabIndex = 35;
             this.lblSecurityText.Text = "Security Question 1";
             this.lblSecurityText.Visible = false;
@@ -131,37 +138,43 @@ namespace SU21_Final_Project
             // lblSecurityAnswer
             // 
             this.lblSecurityAnswer.AutoSize = true;
-            this.lblSecurityAnswer.Location = new System.Drawing.Point(129, 297);
+            this.lblSecurityAnswer.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSecurityAnswer.Location = new System.Drawing.Point(150, 316);
             this.lblSecurityAnswer.Name = "lblSecurityAnswer";
-            this.lblSecurityAnswer.Size = new System.Drawing.Size(112, 16);
+            this.lblSecurityAnswer.Size = new System.Drawing.Size(137, 19);
             this.lblSecurityAnswer.TabIndex = 36;
             this.lblSecurityAnswer.Text = "Security Answer 1";
             this.lblSecurityAnswer.Visible = false;
             // 
             // tbxSQA
             // 
-            this.tbxSQA.Location = new System.Drawing.Point(59, 316);
+            this.tbxSQA.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbxSQA.Location = new System.Drawing.Point(93, 338);
             this.tbxSQA.Name = "tbxSQA";
-            this.tbxSQA.Size = new System.Drawing.Size(259, 23);
+            this.tbxSQA.ShortcutsEnabled = false;
+            this.tbxSQA.Size = new System.Drawing.Size(259, 27);
             this.tbxSQA.TabIndex = 37;
             this.tbxSQA.Visible = false;
+            this.tbxSQA.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbxSQA_KeyPress);
             // 
             // btnSSearch
             // 
-            this.btnSSearch.Location = new System.Drawing.Point(145, 365);
+            this.btnSSearch.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSSearch.Location = new System.Drawing.Point(144, 400);
             this.btnSSearch.Name = "btnSSearch";
-            this.btnSSearch.Size = new System.Drawing.Size(75, 23);
+            this.btnSSearch.Size = new System.Drawing.Size(143, 35);
             this.btnSSearch.TabIndex = 38;
             this.btnSSearch.Text = "Search";
             this.btnSSearch.UseVisualStyleBackColor = true;
             this.btnSSearch.Visible = false;
-            this.btnSSearch.Click += new System.EventHandler(this.button1_Click);
+            this.btnSSearch.Click += new System.EventHandler(this.btnSSearch_Click);
             // 
             // btnClose
             // 
-            this.btnClose.Location = new System.Drawing.Point(291, 413);
+            this.btnClose.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnClose.Location = new System.Drawing.Point(360, 458);
             this.btnClose.Name = "btnClose";
-            this.btnClose.Size = new System.Drawing.Size(75, 23);
+            this.btnClose.Size = new System.Drawing.Size(81, 33);
             this.btnClose.TabIndex = 39;
             this.btnClose.Text = "&Close";
             this.btnClose.UseVisualStyleBackColor = true;
@@ -170,12 +183,13 @@ namespace SU21_Final_Project
             // lblPasswordValid
             // 
             this.lblPasswordValid.AutoSize = true;
+            this.lblPasswordValid.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblPasswordValid.ForeColor = System.Drawing.Color.Red;
-            this.lblPasswordValid.Location = new System.Drawing.Point(56, 136);
+            this.lblPasswordValid.Location = new System.Drawing.Point(51, 133);
             this.lblPasswordValid.Name = "lblPasswordValid";
-            this.lblPasswordValid.Size = new System.Drawing.Size(278, 32);
+            this.lblPasswordValid.Size = new System.Drawing.Size(344, 38);
             this.lblPasswordValid.TabIndex = 40;
-            this.lblPasswordValid.Text = "Password Must Contain at least 8 letters , \r\n1 Capital , 1 lowercase , 2 Symbols " +
+            this.lblPasswordValid.Text = "Password Must Contain at least 8 letters , \r\n1 Capital , 1 lowercase , 1 Symbols " +
     ", 1 Number";
             this.lblPasswordValid.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.lblPasswordValid.Visible = false;
@@ -184,7 +198,7 @@ namespace SU21_Final_Project
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(378, 448);
+            this.ClientSize = new System.Drawing.Size(453, 512);
             this.Controls.Add(this.lblPasswordValid);
             this.Controls.Add(this.btnClose);
             this.Controls.Add(this.btnSSearch);

@@ -202,6 +202,18 @@ namespace SU21_Final_Project
                     lblProductPrice.Text = dblPrice.ToString("c2");
                     lblProductDescription.Text = dgvInventory.Rows[e.RowIndex].Cells["ProductDescription"].Value.ToString();
 
+                    //Grab Picture associated with the ProductID
+                    strQuery = "Select Image from OrtizB21Su2332.Products where ProductID = " + lblProductID.Text;
+                    //MessageBox.Show(strQuery);
+                    ProgOps.CheckPicture(strQuery);
+                    if (ProgOps._blnFound == true)
+                    {
+                        ProgOps.GrabPicture(pbxImage, strQuery);
+                    }
+                    else
+                    {
+                        MessageBox.Show("No Picture For This Item", "Save Error", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
                 }
             }
             
@@ -219,6 +231,7 @@ namespace SU21_Final_Project
             lblProductPrice.Text = String.Empty;
             lblGenre.Text = String.Empty;
             lblProductDescription.Text = String.Empty;
+            pbxImage.Image = Properties.Resources.Logo_SMS;
 
         }
 

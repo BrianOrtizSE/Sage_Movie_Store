@@ -21,13 +21,12 @@ namespace SU21_Final_Project
         {
 
         }
-        private void rdCustomer_CheckedChanged(object sender, EventArgs e)
+        private void rdCustomer_CheckedChanged(object sender, EventArgs e)//Sets LogIn To Customer
         {
             lblUSernameText.Text = "Username : ";
             lblErrorText.Visible = false;
         }
-
-        private void rdEmployee_CheckedChanged(object sender, EventArgs e)
+        private void rdEmployee_CheckedChanged(object sender, EventArgs e)//Sets LogIn To Employee
         {
             lblUSernameText.Text = "EmployeeID : ";
             tbxUsername.Clear();
@@ -37,28 +36,19 @@ namespace SU21_Final_Project
         private void btnLogin_Click(object sender, EventArgs e)
         {
             string strQuery;
-            bool blnPass = true;
 
            if (tbxPassword.Text == String.Empty || tbxUsername.Text == String.Empty)
            {
                lblErrorText.Visible = true;
-               blnPass = false; 
            }
-
-
-            if (blnPass == false)
-            {
-                lblErrorText.Visible = true;
-            }
-            else
-            {
+           else
+           {
                 if (rdbCustomer.Checked)
                 {
                     //Use Given Information to Try to log in as a customer 
                     strQuery = "Select * From OrtizB21Su2332.LogOn " + 
                     "Where Username = '" + tbxUsername.Text + "' " + "And Password = '" + tbxPassword.Text + "';";
                     ProgOps.LogOn(strQuery);
-
 
                     if (ProgOps._blnFound == true)
                     {
@@ -72,6 +62,10 @@ namespace SU21_Final_Project
                         frmcustomermain.ShowDialog();
                         this.Close();
                     }
+                    else
+                    {
+                        lblErrorText.Visible = true;
+                    }
                 }
                 else if (rdbEmployee.Checked)
                 {
@@ -82,11 +76,12 @@ namespace SU21_Final_Project
 
                     if (ProgOps._blnFound == true)
                     {
+                        //If Found we set EmployeeID 
                         strQuery = "Select e.PersonID from  OrtizB21Su2332.Employees e inner join OrtizB21Su2332.LogOn l on l.PersonID = e.PersonID " +
                         "Where EmployeeID = " + tbxUsername.Text;
-
                         ProgOps.GrabEmployeeID(strQuery);
 
+                        //Checks To see employee is admin if they are show them manager screen if not use employee
                         if(ProgOps.GrabAdmin(ProgOps._intEmployeeID) == true)
                         {
                            frmManager_Main frmmanagermain = new frmManager_Main();
@@ -94,11 +89,11 @@ namespace SU21_Final_Project
                             frmmanagermain.ShowDialog();
                             this.Close();
                         }
-                        else
+                        else 
                         {
-                         strQuery = "Select e.PersonID from  OrtizB21Su2332.Employees e inner join OrtizB21Su2332.LogOn l on l.PersonID = e.PersonID " +
+                         strQuery = "Select e.EmployeeID from  OrtizB21Su2332.Employees e inner join OrtizB21Su2332.LogOn l on l.PersonID = e.PersonID " +
                          "Where EmployeeID = " + tbxUsername.Text;
-                            ProgOps.GrabEmployeeID(strQuery);
+                         ProgOps.GrabEmployeeID(strQuery);
 
                             frmEmployee_Main frmemployeemain = new frmEmployee_Main();
                             this.Hide();
@@ -118,10 +113,9 @@ namespace SU21_Final_Project
                 }
 
 
-            }
+           }
 
         }
-
         private void tbxUsername_TextChanged(object sender, EventArgs e)
         {
 
@@ -131,25 +125,6 @@ namespace SU21_Final_Project
         {
             this.Close();
         }
-
-        private void tbxUsername_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            if (rdbEmployee.Checked)
-            {
-                if (e.KeyChar >= 48 && e.KeyChar <= 57 || //ASCII Check For Numbers
-                e.KeyChar == 8)
-                {
-                    //Allow the key press
-                    e.Handled = false;
-                }
-                else
-                {
-                    //Deny the key press
-                    e.Handled = true;
-                }
-            }
-        }
-
         private void lblMainText_Click(object sender, EventArgs e)
         {
 
@@ -171,7 +146,6 @@ namespace SU21_Final_Project
             frmpasswordrecover.ShowDialog();
             this.Show();
         }
-
         private void cbxShowPassword_CheckedChanged(object sender, EventArgs e)
         {
             if (cbxShowPassword.Checked)
@@ -180,6 +154,59 @@ namespace SU21_Final_Project
             }
             else{
                 tbxPassword.UseSystemPasswordChar = true;
+            }
+        }
+
+        private void tbxUsername_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (rdbEmployee.Checked)
+            {
+                if (e.KeyChar >= 48 && e.KeyChar <= 57 || //ASCII Check For Numbers
+                e.KeyChar == 8)
+                {
+                    //Allow the key press
+                    e.Handled = false;
+                }
+                else
+                {
+                    //Deny the key press
+                    e.Handled = true;
+                }
+            }
+            else
+            {
+                //Only allow letters and backspace
+                if (e.KeyChar >= 65 && e.KeyChar <= 90 ||       //ASCII Check for Capital Letters
+                   e.KeyChar >= 97 && e.KeyChar <= 122 ||       //ASCII Check for Lowercase Letters
+                    e.KeyChar >= 40 && e.KeyChar <= 64 ||       //ASCII Check For Numbers
+                    e.KeyChar == 33 ||
+                    e.KeyChar >= 35 && e.KeyChar <= 38 ||       //ASCII for specific charectors
+                   e.KeyChar == 8)                              //ASCII Check for Backspace
+                {
+                    //Accept the keystroke
+                    e.Handled = false;
+                }
+                else
+                {
+                    e.Handled = true;
+                }
+            }
+        }
+        private void tbxPassword_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar >= 65 && e.KeyChar <= 90 ||       //ASCII Check for Capital Letters
+               e.KeyChar >= 97 && e.KeyChar <= 122 ||       //ASCII Check for Lowercase Letters
+                e.KeyChar >= 40 && e.KeyChar <= 64 ||       //ASCII Check For Numbers
+                e.KeyChar == 33 ||
+                e.KeyChar >= 35 && e.KeyChar <= 38 ||       //ASCII for specific charectors
+               e.KeyChar == 8)                              //ASCII Check for Backspace
+            {
+                //Accept the keystroke
+                e.Handled = false;
+            }
+            else
+            {
+                e.Handled = true;
             }
         }
     }

@@ -59,6 +59,7 @@ namespace SU21_Final_Project
         //Public Ints and Deciamls
         public static int _intPersonID = 1000;
         public static int _intEmployeeID;
+        //public static int _intEmployeeIDCheck;
 
         public static int _intProductID = 0;
         public static int _FindUser = 0;
@@ -279,6 +280,61 @@ namespace SU21_Final_Project
 
             }
 
+        }
+        public static void CheckEmployeeID(string strQuery)
+        {
+            try
+            {
+                //Use this Function To Grab Person ID whenever this is called
+                _sqlResultsCommand = new SqlCommand(strQuery, _conDatabase);
+
+                //establish data adapter
+                _daLogOn = new SqlDataAdapter();
+                _daLogOn.SelectCommand = _sqlResultsCommand;
+                //fill data table
+                _dtLogOn = new DataTable();
+                _daLogOn.Fill(_dtLogOn);
+
+                if (_dtLogOn.Rows.Count == 1)
+                {
+                    _blnFound = true;
+                }
+                else
+                {
+                    _blnFound = false;
+
+                }
+
+
+                _sqlResultsCommand.Dispose();
+            }
+            catch (InvalidCastException)
+            {
+
+                MessageBox.Show("Error Invalid Cast", "Error on DatabaseCommand", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+            }
+            catch (NullReferenceException)
+            {
+                MessageBox.Show("Error NULL", "Error on DatabaseCommand", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            catch (SqlException ex)
+            {
+                if (ex is SqlException)
+                {//handles more specific SqlException here.
+
+                    for (int i = 0; i < ex.Errors.Count; i++)
+                    {
+                        errorMessages.Append("Index #" + i + "\n" +
+                            "Message: " + ex.Errors[i].Message + "\n" +
+                            "LineNumber: " + ex.Errors[i].LineNumber + "\n" +
+                            "Source: " + ex.Errors[i].Source + "\n" +
+                            "Procedure: " + ex.Errors[i].Procedure + "\n");
+                    }
+                    MessageBox.Show(errorMessages.ToString(), "Error on DatabaseCommand", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+
+            }
         }
         public static void GrabProductID(string strQuery)
         {
@@ -1005,7 +1061,9 @@ namespace SU21_Final_Project
             {
                 string strQuery;
                 //string to build query
-                strQuery = "Select * From OrtizB21Su2332.Person Where PersonID = " + _intPersonID;
+                strQuery = "Select Title, NameFirst , NameMiddle , NameLast , Suffix , Address1 , Address2 , Address3 , City , Zipcode , State , Email , PhonePrimary , PhoneSecondary " +
+                    "from OrtizB21Su2332.Person " +
+                    "Where PersonID = " + _intPersonID;
 
                 //est cmd obj
                 _sqlResultsCommand = new SqlCommand(strQuery, _conDatabase);
@@ -1037,6 +1095,8 @@ namespace SU21_Final_Project
 
                 //Dispose Of Command Object
                 _sqlResultsCommand.Dispose();
+                _daPerson.Dispose();
+                _dtPerson.Dispose();
 
             }
             catch (SqlException ex)
@@ -1068,8 +1128,8 @@ namespace SU21_Final_Project
             {
                 string strQuery;
                 //string to build query
-                strQuery = "Select *  + " +
-                    "From OrtizB21Su2332.Person p inner join OrtizB21Su2332.Employees e on p.PersonID = e.PersonID" +
+                strQuery = "Select Title, NameFirst , NameMiddle , NameLast , Suffix , Address1 , Address2 , Address3 , City , Zipcode , State , Email , PhonePrimary , PhoneSecondary " +
+                    "from OrtizB21Su2332.Person p inner join OrtizB21Su2332.Employees e on p.PersonID = e.PersonID " +
                     "Where e.EmployeeID = " + _intEmployeeID;
 
                 //est cmd obj
@@ -1100,11 +1160,11 @@ namespace SU21_Final_Project
                 mtbPhoneSecon.DataBindings.Add("Text", _dtPerson, "PhoneSecondary");
                 //cbxState.DataBindings.Add("Text", _dtPerson, "State");
 
-
-
-
                 //Dispose Of Command Object
                 _sqlResultsCommand.Dispose();
+                _daPerson.Dispose();
+                _dtPerson.Dispose();
+
 
             }
             catch (SqlException ex)

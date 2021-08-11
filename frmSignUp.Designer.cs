@@ -159,9 +159,12 @@ namespace SU21_Final_Project
             // 
             this.tbxEmail.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tbxEmail.Location = new System.Drawing.Point(645, 115);
+            this.tbxEmail.MaxLength = 40;
             this.tbxEmail.Name = "tbxEmail";
+            this.tbxEmail.ShortcutsEnabled = false;
             this.tbxEmail.Size = new System.Drawing.Size(120, 23);
             this.tbxEmail.TabIndex = 11;
+            this.tbxEmail.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbxEmail_KeyPress);
             // 
             // tbxZipcode
             // 
@@ -169,8 +172,9 @@ namespace SU21_Final_Project
             this.tbxZipcode.Location = new System.Drawing.Point(358, 237);
             this.tbxZipcode.MaxLength = 9;
             this.tbxZipcode.Name = "tbxZipcode";
+            this.tbxZipcode.ShortcutsEnabled = false;
             this.tbxZipcode.Size = new System.Drawing.Size(119, 23);
-            this.tbxZipcode.TabIndex = 9;
+            this.tbxZipcode.TabIndex = 5;
             this.ttError.SetToolTip(this.tbxZipcode, "ZipCode Must Not Be Empty\r\nZIpCode Must Be At Least Longer Than 5 Numbers\r\nZipCod" +
         "e Cannot Be Greater Than 9 Numbers\r\n");
             this.tbxZipcode.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbxZipcode_KeyPress);
@@ -179,7 +183,9 @@ namespace SU21_Final_Project
             // 
             this.tbxCity.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tbxCity.Location = new System.Drawing.Point(358, 201);
+            this.tbxCity.MaxLength = 30;
             this.tbxCity.Name = "tbxCity";
+            this.tbxCity.ShortcutsEnabled = false;
             this.tbxCity.Size = new System.Drawing.Size(119, 23);
             this.tbxCity.TabIndex = 8;
             this.tbxCity.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbxCity_KeyPress);
@@ -268,7 +274,9 @@ namespace SU21_Final_Project
             // 
             this.tbxAddress3.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tbxAddress3.Location = new System.Drawing.Point(358, 159);
+            this.tbxAddress3.MaxLength = 30;
             this.tbxAddress3.Name = "tbxAddress3";
+            this.tbxAddress3.ShortcutsEnabled = false;
             this.tbxAddress3.Size = new System.Drawing.Size(119, 23);
             this.tbxAddress3.TabIndex = 7;
             this.tbxAddress3.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbxAddress3_KeyPress);
@@ -277,7 +285,9 @@ namespace SU21_Final_Project
             // 
             this.tbxAddress2.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tbxAddress2.Location = new System.Drawing.Point(358, 123);
+            this.tbxAddress2.MaxLength = 30;
             this.tbxAddress2.Name = "tbxAddress2";
+            this.tbxAddress2.ShortcutsEnabled = false;
             this.tbxAddress2.Size = new System.Drawing.Size(119, 23);
             this.tbxAddress2.TabIndex = 6;
             this.tbxAddress2.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbxAddress2_KeyPress);
@@ -286,7 +296,9 @@ namespace SU21_Final_Project
             // 
             this.tbxAddress1.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tbxAddress1.Location = new System.Drawing.Point(358, 79);
+            this.tbxAddress1.MaxLength = 30;
             this.tbxAddress1.Name = "tbxAddress1";
+            this.tbxAddress1.ShortcutsEnabled = false;
             this.tbxAddress1.Size = new System.Drawing.Size(119, 23);
             this.tbxAddress1.TabIndex = 5;
             this.tbxAddress1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbxAddress1_KeyPress);
@@ -295,7 +307,9 @@ namespace SU21_Final_Project
             // 
             this.tbxSuffix.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tbxSuffix.Location = new System.Drawing.Point(94, 236);
+            this.tbxSuffix.MaxLength = 20;
             this.tbxSuffix.Name = "tbxSuffix";
+            this.tbxSuffix.ShortcutsEnabled = false;
             this.tbxSuffix.Size = new System.Drawing.Size(114, 23);
             this.tbxSuffix.TabIndex = 4;
             this.tbxSuffix.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbxSuffix_KeyPress);
@@ -304,7 +318,9 @@ namespace SU21_Final_Project
             // 
             this.tbxLastName.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tbxLastName.Location = new System.Drawing.Point(94, 193);
+            this.tbxLastName.MaxLength = 20;
             this.tbxLastName.Name = "tbxLastName";
+            this.tbxLastName.ShortcutsEnabled = false;
             this.tbxLastName.Size = new System.Drawing.Size(114, 23);
             this.tbxLastName.TabIndex = 3;
             this.tbxLastName.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbxLastName_KeyPress);
@@ -313,7 +329,9 @@ namespace SU21_Final_Project
             // 
             this.tbxMiddleName.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tbxMiddleName.Location = new System.Drawing.Point(94, 157);
+            this.tbxMiddleName.MaxLength = 20;
             this.tbxMiddleName.Name = "tbxMiddleName";
+            this.tbxMiddleName.ShortcutsEnabled = false;
             this.tbxMiddleName.Size = new System.Drawing.Size(114, 23);
             this.tbxMiddleName.TabIndex = 2;
             this.tbxMiddleName.TextChanged += new System.EventHandler(this.tbxMiddleName_TextChanged);
@@ -323,7 +341,9 @@ namespace SU21_Final_Project
             // 
             this.tbxFirstName.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tbxFirstName.Location = new System.Drawing.Point(94, 113);
+            this.tbxFirstName.MaxLength = 20;
             this.tbxFirstName.Name = "tbxFirstName";
+            this.tbxFirstName.ShortcutsEnabled = false;
             this.tbxFirstName.Size = new System.Drawing.Size(114, 23);
             this.tbxFirstName.TabIndex = 1;
             this.tbxFirstName.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbxFirstName_KeyPress);
@@ -332,7 +352,9 @@ namespace SU21_Final_Project
             // 
             this.tbxTitle.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tbxTitle.Location = new System.Drawing.Point(94, 77);
+            this.tbxTitle.MaxLength = 15;
             this.tbxTitle.Name = "tbxTitle";
+            this.tbxTitle.ShortcutsEnabled = false;
             this.tbxTitle.Size = new System.Drawing.Size(114, 23);
             this.tbxTitle.TabIndex = 0;
             this.tbxTitle.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbxTitle_KeyPress);
@@ -343,8 +365,10 @@ namespace SU21_Final_Project
             this.mtbPhone1.Location = new System.Drawing.Point(645, 155);
             this.mtbPhone1.Mask = "(999) 000-0000";
             this.mtbPhone1.Name = "mtbPhone1";
+            this.mtbPhone1.ShortcutsEnabled = false;
             this.mtbPhone1.Size = new System.Drawing.Size(120, 23);
             this.mtbPhone1.TabIndex = 12;
+            this.mtbPhone1.Enter += new System.EventHandler(this.mtbPhone1_Enter);
             this.mtbPhone1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.mtbPhone1_KeyPress);
             // 
             // mtbPhone2
@@ -353,8 +377,10 @@ namespace SU21_Final_Project
             this.mtbPhone2.Location = new System.Drawing.Point(645, 187);
             this.mtbPhone2.Mask = "(999) 000-0000";
             this.mtbPhone2.Name = "mtbPhone2";
+            this.mtbPhone2.ShortcutsEnabled = false;
             this.mtbPhone2.Size = new System.Drawing.Size(120, 23);
             this.mtbPhone2.TabIndex = 13;
+            this.mtbPhone2.Enter += new System.EventHandler(this.mtbPhone2_Enter);
             this.mtbPhone2.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.mtbPhone2_KeyPress);
             // 
             // lblErrorTitle
@@ -659,7 +685,7 @@ namespace SU21_Final_Project
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(829, 24);
-            this.menuStrip1.TabIndex = 78;
+            this.menuStrip1.TabIndex = 16;
             this.menuStrip1.Text = "menuStrip1";
             // 
             // mnsHelp

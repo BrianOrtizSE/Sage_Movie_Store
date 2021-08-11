@@ -180,5 +180,11 @@ namespace SU21_Final_Project
             frmManager_Create_Invoice frmCreInv = new frmManager_Create_Invoice();
             frmCreInv.ShowDialog();
         }
+
+        private void button1_Click_5(object sender, EventArgs e)
+        {
+            frmSecurityQuestions frmSec = new frmSecurityQuestions();
+            frmSec.ShowDialog();
+        }
     }
 }

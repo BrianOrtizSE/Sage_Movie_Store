@@ -30,131 +30,236 @@ namespace SU21_Final_Project
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmCustomer_View_Inventory));
-            this.dgvView = new System.Windows.Forms.DataGridView();
+            this.pbxImage = new System.Windows.Forms.PictureBox();
+            this.lblProductDescriptionText = new System.Windows.Forms.Label();
+            this.lblProductPriceText = new System.Windows.Forms.Label();
+            this.lblQuantityText = new System.Windows.Forms.Label();
+            this.lblGenreText = new System.Windows.Forms.Label();
+            this.lblProductNameText = new System.Windows.Forms.Label();
+            this.lblProductIDText = new System.Windows.Forms.Label();
+            this.lblProductID = new System.Windows.Forms.Label();
+            this.lblProductName = new System.Windows.Forms.Label();
+            this.lblGenre = new System.Windows.Forms.Label();
+            this.lblQuantity = new System.Windows.Forms.Label();
+            this.lblProductPrice = new System.Windows.Forms.Label();
+            this.lblProductDescription = new System.Windows.Forms.Label();
+            this.dgvProducts = new System.Windows.Forms.DataGridView();
             this.btnClose = new System.Windows.Forms.Button();
-            this.tbxProductID = new System.Windows.Forms.TextBox();
-            this.lblSearch = new System.Windows.Forms.Label();
-            this.btnSearch = new System.Windows.Forms.Button();
-            this.btnReset = new System.Windows.Forms.Button();
-            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
-            this.mnsHelp = new System.Windows.Forms.ToolStripMenuItem();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvView)).BeginInit();
-            this.menuStrip1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbxImage)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvProducts)).BeginInit();
             this.SuspendLayout();
             // 
-            // dgvView
+            // pbxImage
             // 
-            this.dgvView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvView.Location = new System.Drawing.Point(12, 21);
-            this.dgvView.Name = "dgvView";
-            this.dgvView.Size = new System.Drawing.Size(749, 391);
-            this.dgvView.TabIndex = 5;
-            this.dgvView.TabStop = false;
+            this.pbxImage.Image = global::SU21_Final_Project.Properties.Resources.Logo_SMS;
+            this.pbxImage.Location = new System.Drawing.Point(870, 34);
+            this.pbxImage.Name = "pbxImage";
+            this.pbxImage.Size = new System.Drawing.Size(242, 261);
+            this.pbxImage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pbxImage.TabIndex = 98;
+            this.pbxImage.TabStop = false;
+            // 
+            // lblProductDescriptionText
+            // 
+            this.lblProductDescriptionText.AutoSize = true;
+            this.lblProductDescriptionText.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblProductDescriptionText.Location = new System.Drawing.Point(674, 295);
+            this.lblProductDescriptionText.Name = "lblProductDescriptionText";
+            this.lblProductDescriptionText.Size = new System.Drawing.Size(118, 16);
+            this.lblProductDescriptionText.TabIndex = 97;
+            this.lblProductDescriptionText.Text = "Product Description";
+            // 
+            // lblProductPriceText
+            // 
+            this.lblProductPriceText.AutoSize = true;
+            this.lblProductPriceText.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblProductPriceText.Location = new System.Drawing.Point(687, 193);
+            this.lblProductPriceText.Name = "lblProductPriceText";
+            this.lblProductPriceText.Size = new System.Drawing.Size(83, 16);
+            this.lblProductPriceText.TabIndex = 96;
+            this.lblProductPriceText.Text = "Product Price";
+            // 
+            // lblQuantityText
+            // 
+            this.lblQuantityText.AutoSize = true;
+            this.lblQuantityText.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblQuantityText.Location = new System.Drawing.Point(699, 248);
+            this.lblQuantityText.Name = "lblQuantityText";
+            this.lblQuantityText.Size = new System.Drawing.Size(55, 16);
+            this.lblQuantityText.TabIndex = 95;
+            this.lblQuantityText.Text = "Quantity";
+            // 
+            // lblGenreText
+            // 
+            this.lblGenreText.AutoSize = true;
+            this.lblGenreText.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblGenreText.Location = new System.Drawing.Point(704, 136);
+            this.lblGenreText.Name = "lblGenreText";
+            this.lblGenreText.Size = new System.Drawing.Size(42, 16);
+            this.lblGenreText.TabIndex = 94;
+            this.lblGenreText.Text = "Genre";
+            // 
+            // lblProductNameText
+            // 
+            this.lblProductNameText.AutoSize = true;
+            this.lblProductNameText.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblProductNameText.Location = new System.Drawing.Point(685, 82);
+            this.lblProductNameText.Name = "lblProductNameText";
+            this.lblProductNameText.Size = new System.Drawing.Size(88, 16);
+            this.lblProductNameText.TabIndex = 93;
+            this.lblProductNameText.Text = "Product Name";
+            // 
+            // lblProductIDText
+            // 
+            this.lblProductIDText.AutoSize = true;
+            this.lblProductIDText.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblProductIDText.Location = new System.Drawing.Point(687, 33);
+            this.lblProductIDText.Name = "lblProductIDText";
+            this.lblProductIDText.Size = new System.Drawing.Size(67, 16);
+            this.lblProductIDText.TabIndex = 92;
+            this.lblProductIDText.Text = "Product ID";
+            // 
+            // lblProductID
+            // 
+            this.lblProductID.BackColor = System.Drawing.SystemColors.Control;
+            this.lblProductID.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lblProductID.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblProductID.Location = new System.Drawing.Point(631, 49);
+            this.lblProductID.Name = "lblProductID";
+            this.lblProductID.Size = new System.Drawing.Size(199, 28);
+            this.lblProductID.TabIndex = 91;
+            this.lblProductID.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // lblProductName
+            // 
+            this.lblProductName.BackColor = System.Drawing.SystemColors.Control;
+            this.lblProductName.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lblProductName.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblProductName.Location = new System.Drawing.Point(631, 101);
+            this.lblProductName.Name = "lblProductName";
+            this.lblProductName.Size = new System.Drawing.Size(199, 28);
+            this.lblProductName.TabIndex = 90;
+            this.lblProductName.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // lblGenre
+            // 
+            this.lblGenre.BackColor = System.Drawing.SystemColors.Control;
+            this.lblGenre.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lblGenre.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblGenre.Location = new System.Drawing.Point(631, 155);
+            this.lblGenre.Name = "lblGenre";
+            this.lblGenre.Size = new System.Drawing.Size(199, 28);
+            this.lblGenre.TabIndex = 89;
+            this.lblGenre.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // lblQuantity
+            // 
+            this.lblQuantity.BackColor = System.Drawing.SystemColors.Control;
+            this.lblQuantity.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lblQuantity.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblQuantity.Location = new System.Drawing.Point(631, 267);
+            this.lblQuantity.Name = "lblQuantity";
+            this.lblQuantity.Size = new System.Drawing.Size(199, 28);
+            this.lblQuantity.TabIndex = 88;
+            this.lblQuantity.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // lblProductPrice
+            // 
+            this.lblProductPrice.BackColor = System.Drawing.SystemColors.Control;
+            this.lblProductPrice.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lblProductPrice.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblProductPrice.Location = new System.Drawing.Point(631, 212);
+            this.lblProductPrice.Name = "lblProductPrice";
+            this.lblProductPrice.Size = new System.Drawing.Size(199, 28);
+            this.lblProductPrice.TabIndex = 87;
+            this.lblProductPrice.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // lblProductDescription
+            // 
+            this.lblProductDescription.BackColor = System.Drawing.SystemColors.Control;
+            this.lblProductDescription.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lblProductDescription.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblProductDescription.Location = new System.Drawing.Point(631, 311);
+            this.lblProductDescription.Name = "lblProductDescription";
+            this.lblProductDescription.Size = new System.Drawing.Size(481, 131);
+            this.lblProductDescription.TabIndex = 86;
+            this.lblProductDescription.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // dgvProducts
+            // 
+            this.dgvProducts.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.ColumnHeader;
+            this.dgvProducts.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
+            this.dgvProducts.Location = new System.Drawing.Point(17, 34);
+            this.dgvProducts.MultiSelect = false;
+            this.dgvProducts.Name = "dgvProducts";
+            this.dgvProducts.ReadOnly = true;
+            this.dgvProducts.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
+            this.dgvProducts.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToDisplayedHeaders;
+            this.dgvProducts.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvProducts.Size = new System.Drawing.Size(594, 405);
+            this.dgvProducts.TabIndex = 85;
+            this.dgvProducts.TabStop = false;
+            this.dgvProducts.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvProducts_CellClick);
+            this.dgvProducts.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvProducts_CellContentClick);
             // 
             // btnClose
             // 
-            this.btnClose.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnClose.Location = new System.Drawing.Point(830, 348);
+            this.btnClose.Location = new System.Drawing.Point(1128, 204);
             this.btnClose.Name = "btnClose";
-            this.btnClose.Size = new System.Drawing.Size(108, 38);
-            this.btnClose.TabIndex = 4;
-            this.btnClose.Text = "&Close";
+            this.btnClose.Size = new System.Drawing.Size(101, 36);
+            this.btnClose.TabIndex = 85;
+            this.btnClose.Text = "&Return";
             this.btnClose.UseVisualStyleBackColor = true;
             this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
-            // tbxProductID
-            // 
-            this.tbxProductID.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbxProductID.Location = new System.Drawing.Point(830, 88);
-            this.tbxProductID.Name = "tbxProductID";
-            this.tbxProductID.Size = new System.Drawing.Size(100, 27);
-            this.tbxProductID.TabIndex = 1;
-            this.tbxProductID.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbxProductID_KeyPress);
-            // 
-            // lblSearch
-            // 
-            this.lblSearch.AutoSize = true;
-            this.lblSearch.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSearch.Location = new System.Drawing.Point(804, 56);
-            this.lblSearch.Name = "lblSearch";
-            this.lblSearch.Size = new System.Drawing.Size(149, 16);
-            this.lblSearch.TabIndex = 0;
-            this.lblSearch.Text = "Search For Specific Item";
-            // 
-            // btnSearch
-            // 
-            this.btnSearch.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSearch.Location = new System.Drawing.Point(822, 140);
-            this.btnSearch.Name = "btnSearch";
-            this.btnSearch.Size = new System.Drawing.Size(116, 38);
-            this.btnSearch.TabIndex = 2;
-            this.btnSearch.Text = "&Search";
-            this.btnSearch.UseVisualStyleBackColor = true;
-            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
-            // 
-            // btnReset
-            // 
-            this.btnReset.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnReset.Location = new System.Drawing.Point(822, 184);
-            this.btnReset.Name = "btnReset";
-            this.btnReset.Size = new System.Drawing.Size(116, 38);
-            this.btnReset.TabIndex = 3;
-            this.btnReset.Text = "&Reset";
-            this.btnReset.UseVisualStyleBackColor = true;
-            this.btnReset.Click += new System.EventHandler(this.btnReset_Click);
-            // 
-            // menuStrip1
-            // 
-            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.mnsHelp});
-            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
-            this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(977, 24);
-            this.menuStrip1.TabIndex = 6;
-            this.menuStrip1.Text = "menuStrip1";
-            // 
-            // mnsHelp
-            // 
-            this.mnsHelp.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
-            this.mnsHelp.Name = "mnsHelp";
-            this.mnsHelp.Size = new System.Drawing.Size(44, 20);
-            this.mnsHelp.Text = "Help";
-            this.mnsHelp.Click += new System.EventHandler(this.mnsHelp_Click);
-            // 
-            // frmMerhandiseView
+            // frmCustomer_View_Inventory
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(977, 450);
-            this.Controls.Add(this.btnReset);
-            this.Controls.Add(this.btnSearch);
-            this.Controls.Add(this.lblSearch);
-            this.Controls.Add(this.tbxProductID);
+            this.ClientSize = new System.Drawing.Size(1241, 472);
             this.Controls.Add(this.btnClose);
-            this.Controls.Add(this.dgvView);
-            this.Controls.Add(this.menuStrip1);
+            this.Controls.Add(this.pbxImage);
+            this.Controls.Add(this.lblProductDescriptionText);
+            this.Controls.Add(this.lblProductPriceText);
+            this.Controls.Add(this.lblQuantityText);
+            this.Controls.Add(this.lblGenreText);
+            this.Controls.Add(this.lblProductNameText);
+            this.Controls.Add(this.lblProductIDText);
+            this.Controls.Add(this.lblProductID);
+            this.Controls.Add(this.lblProductName);
+            this.Controls.Add(this.lblGenre);
+            this.Controls.Add(this.lblQuantity);
+            this.Controls.Add(this.lblProductPrice);
+            this.Controls.Add(this.lblProductDescription);
+            this.Controls.Add(this.dgvProducts);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.MainMenuStrip = this.menuStrip1;
             this.MinimizeBox = false;
-            this.Name = "frmMerhandiseView";
+            this.Name = "frmCustomer_View_Inventory";
             this.Text = "Product View";
             this.Load += new System.EventHandler(this.frmProductView_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dgvView)).EndInit();
-            this.menuStrip1.ResumeLayout(false);
-            this.menuStrip1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbxImage)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvProducts)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-        private System.Windows.Forms.DataGridView dgvView;
+
+        private System.Windows.Forms.PictureBox pbxImage;
+        private System.Windows.Forms.Label lblProductDescriptionText;
+        private System.Windows.Forms.Label lblProductPriceText;
+        private System.Windows.Forms.Label lblQuantityText;
+        private System.Windows.Forms.Label lblGenreText;
+        private System.Windows.Forms.Label lblProductNameText;
+        private System.Windows.Forms.Label lblProductIDText;
+        private System.Windows.Forms.Label lblProductID;
+        private System.Windows.Forms.Label lblProductName;
+        private System.Windows.Forms.Label lblGenre;
+        private System.Windows.Forms.Label lblQuantity;
+        private System.Windows.Forms.Label lblProductPrice;
+        private System.Windows.Forms.Label lblProductDescription;
+        private System.Windows.Forms.DataGridView dgvProducts;
         private System.Windows.Forms.Button btnClose;
-        private System.Windows.Forms.TextBox tbxProductID;
-        private System.Windows.Forms.Label lblSearch;
-        private System.Windows.Forms.Button btnSearch;
-        private System.Windows.Forms.Button btnReset;
-        private System.Windows.Forms.MenuStrip menuStrip1;
-        private System.Windows.Forms.ToolStripMenuItem mnsHelp;
     }
 }

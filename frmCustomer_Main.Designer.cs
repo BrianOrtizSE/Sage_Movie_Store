@@ -30,7 +30,6 @@ namespace SU21_Final_Project
         private void InitializeComponent()
         {
             this.lblDate = new System.Windows.Forms.Label();
-            this.lblUserId = new System.Windows.Forms.Label();
             this.lblWelcomeUserText = new System.Windows.Forms.Label();
             this.lblBlackLine = new System.Windows.Forms.Label();
             this.btnView = new System.Windows.Forms.Button();
@@ -46,7 +45,7 @@ namespace SU21_Final_Project
             // lblDate
             // 
             this.lblDate.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDate.Location = new System.Drawing.Point(311, 24);
+            this.lblDate.Location = new System.Drawing.Point(321, 29);
             this.lblDate.Name = "lblDate";
             this.lblDate.Size = new System.Drawing.Size(100, 23);
             this.lblDate.TabIndex = 31;
@@ -54,31 +53,22 @@ namespace SU21_Final_Project
             this.lblDate.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.lblDate.Click += new System.EventHandler(this.lblDate_Click);
             // 
-            // lblUserId
-            // 
-            this.lblUserId.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblUserId.Location = new System.Drawing.Point(105, 24);
-            this.lblUserId.Name = "lblUserId";
-            this.lblUserId.Size = new System.Drawing.Size(100, 23);
-            this.lblUserId.TabIndex = 30;
-            this.lblUserId.Text = "Customer";
-            this.lblUserId.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
             // lblWelcomeUserText
             // 
-            this.lblWelcomeUserText.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblWelcomeUserText.Location = new System.Drawing.Point(12, 24);
+            this.lblWelcomeUserText.Font = new System.Drawing.Font("Tahoma", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblWelcomeUserText.Location = new System.Drawing.Point(122, 29);
             this.lblWelcomeUserText.Name = "lblWelcomeUserText";
-            this.lblWelcomeUserText.Size = new System.Drawing.Size(114, 23);
+            this.lblWelcomeUserText.Size = new System.Drawing.Size(173, 34);
             this.lblWelcomeUserText.TabIndex = 29;
-            this.lblWelcomeUserText.Text = "Welcome : ";
+            this.lblWelcomeUserText.Text = "Welcome";
+            this.lblWelcomeUserText.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // lblBlackLine
             // 
             this.lblBlackLine.BackColor = System.Drawing.Color.Black;
             this.lblBlackLine.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblBlackLine.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.lblBlackLine.Location = new System.Drawing.Point(8, 52);
+            this.lblBlackLine.Location = new System.Drawing.Point(-4, 67);
             this.lblBlackLine.Name = "lblBlackLine";
             this.lblBlackLine.Size = new System.Drawing.Size(476, 3);
             this.lblBlackLine.TabIndex = 28;
@@ -88,7 +78,7 @@ namespace SU21_Final_Project
             // btnView
             // 
             this.btnView.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnView.Location = new System.Drawing.Point(137, 209);
+            this.btnView.Location = new System.Drawing.Point(222, 139);
             this.btnView.Name = "btnView";
             this.btnView.Size = new System.Drawing.Size(131, 49);
             this.btnView.TabIndex = 1;
@@ -99,7 +89,7 @@ namespace SU21_Final_Project
             // btnShop
             // 
             this.btnShop.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnShop.Location = new System.Drawing.Point(137, 114);
+            this.btnShop.Location = new System.Drawing.Point(60, 139);
             this.btnShop.Name = "btnShop";
             this.btnShop.Size = new System.Drawing.Size(131, 49);
             this.btnShop.TabIndex = 0;
@@ -110,7 +100,7 @@ namespace SU21_Final_Project
             // btnSignOut
             // 
             this.btnSignOut.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSignOut.Location = new System.Drawing.Point(137, 295);
+            this.btnSignOut.Location = new System.Drawing.Point(12, 375);
             this.btnSignOut.Name = "btnSignOut";
             this.btnSignOut.Size = new System.Drawing.Size(131, 49);
             this.btnSignOut.TabIndex = 2;
@@ -121,9 +111,9 @@ namespace SU21_Final_Project
             // pictureBox1
             // 
             this.pictureBox1.Image = global::SU21_Final_Project.Properties.Resources.Logo_SMS1;
-            this.pictureBox1.Location = new System.Drawing.Point(297, 348);
+            this.pictureBox1.Location = new System.Drawing.Point(309, 358);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(114, 76);
+            this.pictureBox1.Size = new System.Drawing.Size(100, 66);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 32;
             this.pictureBox1.TabStop = false;
@@ -154,7 +144,6 @@ namespace SU21_Final_Project
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.btnSignOut);
             this.Controls.Add(this.lblDate);
-            this.Controls.Add(this.lblUserId);
             this.Controls.Add(this.lblWelcomeUserText);
             this.Controls.Add(this.lblBlackLine);
             this.Controls.Add(this.btnView);
@@ -177,7 +166,6 @@ namespace SU21_Final_Project
         #endregion
 
         private System.Windows.Forms.Label lblDate;
-        private System.Windows.Forms.Label lblUserId;
         private System.Windows.Forms.Label lblWelcomeUserText;
         private System.Windows.Forms.Label lblBlackLine;
         private System.Windows.Forms.Button btnView;

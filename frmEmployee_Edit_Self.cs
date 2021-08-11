@@ -20,11 +20,11 @@ namespace SU21_Final_Project
         CurrencyManager personManager;
         private void frmEmployee_Edit_Self_Load(object sender, EventArgs e)
         {
-            ProgOps.CustomerEdit(tbxTitle, tbxFirstName, tbxMiddleName, tbxLastName, tbxSuffix, tbxAddress1, tbxAddress2, tbxAddress3, tbxCity, tbxZipcode, cbxState, tbxEmail, mtbPhone1, mtbPhone2);
+            ProgOps.EmployeeEdit(tbxTitle, tbxFirstName, tbxMiddleName, tbxLastName, tbxSuffix, tbxAddress1, tbxAddress2, tbxAddress3, tbxCity, tbxZipcode, cbxState, tbxEmail, mtbPhone1, mtbPhone2);
             personManager = (CurrencyManager)this.BindingContext[ProgOps.GetPersonTable];
         }
 
-        private void btnEdit_Click(object sender, EventArgs e)
+        private void btnCompleteEdit_Click(object sender, EventArgs e)
         {
             bool blnValid = true;
             strCreate.Clear();
@@ -209,9 +209,248 @@ namespace SU21_Final_Project
 
         }
 
-        private void btnClose_Click(object sender, EventArgs e)
+        private void btnExit_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void tbxTitle_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            //Only allow letters and backspace
+            if (e.KeyChar >= 65 && e.KeyChar <= 90 ||       //ASCII Check for Capital Letters
+               e.KeyChar >= 97 && e.KeyChar <= 122 ||       //ASCII Check for Lowercase Letters
+               e.KeyChar == 8)                              //ASCII Check for Backspace
+            {
+                //Accept the keystroke
+                e.Handled = false;
+            }
+            else
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void tbxFirstName_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            //Only allow letters and backspace
+            if (e.KeyChar >= 65 && e.KeyChar <= 90 ||       //ASCII Check for Capital Letters
+               e.KeyChar >= 97 && e.KeyChar <= 122 ||       //ASCII Check for Lowercase Letters
+               e.KeyChar == 8)                              //ASCII Check for Backspace
+            {
+                //Accept the keystroke
+                e.Handled = false;
+            }
+            else
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void tbxMiddleName_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            //Only allow letters and backspace
+            if (e.KeyChar >= 65 && e.KeyChar <= 90 ||       //ASCII Check for Capital Letters
+               e.KeyChar >= 97 && e.KeyChar <= 122 ||       //ASCII Check for Lowercase Letters
+               e.KeyChar == 8)                              //ASCII Check for Backspace
+            {
+                //Accept the keystroke
+                e.Handled = false;
+            }
+            else
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void tbxLastName_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            //Only allow letters and backspace
+            if (e.KeyChar >= 65 && e.KeyChar <= 90 ||       //ASCII Check for Capital Letters
+               e.KeyChar >= 97 && e.KeyChar <= 122 ||       //ASCII Check for Lowercase Letters
+               e.KeyChar == 8)                              //ASCII Check for Backspace
+            {
+                //Accept the keystroke
+                e.Handled = false;
+            }
+            else
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void tbxSuffix_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            //Only allow letters and backspace
+            if (e.KeyChar >= 65 && e.KeyChar <= 90 ||       //ASCII Check for Capital Letters
+               e.KeyChar >= 97 && e.KeyChar <= 122 ||       //ASCII Check for Lowercase Letters
+               e.KeyChar == 8)                              //ASCII Check for Backspace
+            {
+                //Accept the keystroke
+                e.Handled = false;
+            }
+            else
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void tbxAddress1_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar >= 65 && e.KeyChar <= 90 ||       //ASCII Check for Capital Letters
+                e.KeyChar == 32 ||                          //ASCII Check For Spacebar
+                e.KeyChar >= 48 && e.KeyChar <= 57 ||       //ASCII Check for Numbers
+               e.KeyChar >= 97 && e.KeyChar <= 122 ||       //ASCII Check for Lowercase Letters
+               e.KeyChar == 8)                              //ASCII Check for Backspace
+            {
+                //Accept the keystroke
+                e.Handled = false;
+            }
+            else
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void tbxAddress2_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar >= 65 && e.KeyChar <= 90 ||       //ASCII Check for Capital Letters
+                e.KeyChar == 32 ||                          //ASCII Check For Spacebar
+                e.KeyChar >= 48 && e.KeyChar <= 57 ||       //ASCII Check for Numbers
+               e.KeyChar >= 97 && e.KeyChar <= 122 ||       //ASCII Check for Lowercase Letters
+               e.KeyChar == 8)                              //ASCII Check for Backspace
+            {
+                //Accept the keystroke
+                e.Handled = false;
+            }
+            else
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void tbxAddress3_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar >= 65 && e.KeyChar <= 90 ||       //ASCII Check for Capital Letters
+                e.KeyChar == 32 ||                          //ASCII Check For Spacebar
+                e.KeyChar >= 48 && e.KeyChar <= 57 ||       //ASCII Check for Numbers
+               e.KeyChar >= 97 && e.KeyChar <= 122 ||       //ASCII Check for Lowercase Letters
+               e.KeyChar == 8)                              //ASCII Check for Backspace
+            {
+                //Accept the keystroke
+                e.Handled = false;
+            }
+            else
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void tbxCity_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            //Only allow letters and backspace
+            if (e.KeyChar >= 65 && e.KeyChar <= 90 ||       //ASCII Check for Capital Letters
+               e.KeyChar >= 97 && e.KeyChar <= 122 ||       //ASCII Check for Lowercase Letters
+               e.KeyChar == 8)                              //ASCII Check for Backspace
+            {
+                //Accept the keystroke
+                e.Handled = false;
+            }
+            else
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void tbxZipcode_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar >= 48 && e.KeyChar <= 57 || //ASCII Check For Numbers
+                e.KeyChar == 8)
+            {
+                //Allow the key press
+                e.Handled = false;
+            }
+            else
+            {
+                //Deny the key press
+                e.Handled = true;
+            }
+        }
+
+        private void cbxState_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            //Only allow Captital Letters
+            if (e.KeyChar >= 65 && e.KeyChar <= 90 ||       //ASCII Check for Capital Letters
+               e.KeyChar >= 97 && e.KeyChar <= 122 ||       //ASCII Check for Lowercase Letters
+               e.KeyChar == 8)                              //ASCII Check for Backspace
+            {
+                //Accept the keystroke
+                e.Handled = false;
+            }
+            else
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void tbxEmail_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == 39 || e.KeyChar == 34)    //ASCII Check For colon and semicolon
+
+            {
+                //Allow the key press
+                e.Handled = true;
+            }
+            else
+            {
+                //Deny the key press
+                e.Handled = false;
+            }
+        }
+
+        private void mtbPhone1_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar >= 48 && e.KeyChar <= 57 || //ASCII Check For Numbers
+              e.KeyChar == 8)
+            {
+                //Allow the key press
+                e.Handled = false;
+            }
+            else
+            {
+                //Deny the key press
+                e.Handled = true;
+            }
+        }
+
+        private void mtbPhone2_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar >= 48 && e.KeyChar <= 57 || //ASCII Check For Numbers
+              e.KeyChar == 8)
+            {
+                //Allow the key press
+                e.Handled = false;
+            }
+            else
+            {
+                //Deny the key press
+                e.Handled = true;
+            }
+        }
+
+        private void mtbPhone1_Enter(object sender, EventArgs e)
+        {
+            this.BeginInvoke((MethodInvoker)delegate ()
+            {
+                mtbPhone1.Select(0, 0);
+            });
+        }
+
+        private void mtbPhone2_Enter(object sender, EventArgs e)
+        {
+            this.BeginInvoke((MethodInvoker)delegate ()
+            {
+                mtbPhone2.Select(0, 0);
+            });
         }
     }
 

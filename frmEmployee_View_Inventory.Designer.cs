@@ -53,14 +53,16 @@ namespace SU21_Final_Project
             this.lblQuantityText = new System.Windows.Forms.Label();
             this.lblProductPriceText = new System.Windows.Forms.Label();
             this.lblProductDescriptionText = new System.Windows.Forms.Label();
+            this.pbxImage = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvInventory)).BeginInit();
             this.menuStrip1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbxImage)).BeginInit();
             this.SuspendLayout();
             // 
             // btnReset
             // 
             this.btnReset.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnReset.Location = new System.Drawing.Point(1135, 191);
+            this.btnReset.Location = new System.Drawing.Point(1242, 206);
             this.btnReset.Name = "btnReset";
             this.btnReset.Size = new System.Drawing.Size(116, 38);
             this.btnReset.TabIndex = 10;
@@ -71,7 +73,7 @@ namespace SU21_Final_Project
             // btnSearch
             // 
             this.btnSearch.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSearch.Location = new System.Drawing.Point(1135, 147);
+            this.btnSearch.Location = new System.Drawing.Point(1242, 162);
             this.btnSearch.Name = "btnSearch";
             this.btnSearch.Size = new System.Drawing.Size(116, 38);
             this.btnSearch.TabIndex = 9;
@@ -83,7 +85,7 @@ namespace SU21_Final_Project
             // 
             this.lblSearch.AutoSize = true;
             this.lblSearch.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSearch.Location = new System.Drawing.Point(1115, 30);
+            this.lblSearch.Location = new System.Drawing.Point(1222, 45);
             this.lblSearch.Name = "lblSearch";
             this.lblSearch.Size = new System.Drawing.Size(149, 16);
             this.lblSearch.TabIndex = 7;
@@ -92,8 +94,10 @@ namespace SU21_Final_Project
             // tbxProductID
             // 
             this.tbxProductID.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbxProductID.Location = new System.Drawing.Point(1093, 97);
+            this.tbxProductID.Location = new System.Drawing.Point(1200, 112);
+            this.tbxProductID.MaxLength = 5;
             this.tbxProductID.Name = "tbxProductID";
+            this.tbxProductID.ShortcutsEnabled = false;
             this.tbxProductID.Size = new System.Drawing.Size(195, 26);
             this.tbxProductID.TabIndex = 8;
             this.tbxProductID.TextChanged += new System.EventHandler(this.tbxProductID_TextChanged);
@@ -102,7 +106,7 @@ namespace SU21_Final_Project
             // btnClose
             // 
             this.btnClose.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnClose.Location = new System.Drawing.Point(1135, 412);
+            this.btnClose.Location = new System.Drawing.Point(1242, 412);
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(116, 38);
             this.btnClose.TabIndex = 11;
@@ -134,7 +138,7 @@ namespace SU21_Final_Project
             this.mnsHelp});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(1300, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(1422, 24);
             this.menuStrip1.TabIndex = 13;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -153,7 +157,7 @@ namespace SU21_Final_Project
             "Product ID",
             "Product Name",
             "Genre"});
-            this.cbxSearch.Location = new System.Drawing.Point(1135, 65);
+            this.cbxSearch.Location = new System.Drawing.Point(1242, 80);
             this.cbxSearch.Name = "cbxSearch";
             this.cbxSearch.Size = new System.Drawing.Size(116, 21);
             this.cbxSearch.TabIndex = 14;
@@ -175,7 +179,7 @@ namespace SU21_Final_Project
             "Romance",
             "Based On True Events",
             "Realistic Fiction"});
-            this.cbxGenres.Location = new System.Drawing.Point(1118, 100);
+            this.cbxGenres.Location = new System.Drawing.Point(1225, 115);
             this.cbxGenres.Name = "cbxGenres";
             this.cbxGenres.Size = new System.Drawing.Size(146, 21);
             this.cbxGenres.TabIndex = 15;
@@ -186,7 +190,7 @@ namespace SU21_Final_Project
             // 
             this.lblItemError.AutoSize = true;
             this.lblItemError.ForeColor = System.Drawing.Color.Red;
-            this.lblItemError.Location = new System.Drawing.Point(1073, 104);
+            this.lblItemError.Location = new System.Drawing.Point(1126, 119);
             this.lblItemError.Name = "lblItemError";
             this.lblItemError.Size = new System.Drawing.Size(14, 13);
             this.lblItemError.TabIndex = 16;
@@ -199,7 +203,7 @@ namespace SU21_Final_Project
             this.lblProductDescription.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblProductDescription.Location = new System.Drawing.Point(716, 319);
             this.lblProductDescription.Name = "lblProductDescription";
-            this.lblProductDescription.Size = new System.Drawing.Size(296, 131);
+            this.lblProductDescription.Size = new System.Drawing.Size(460, 131);
             this.lblProductDescription.TabIndex = 23;
             this.lblProductDescription.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
@@ -208,7 +212,7 @@ namespace SU21_Final_Project
             this.lblProductPrice.BackColor = System.Drawing.SystemColors.Control;
             this.lblProductPrice.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.lblProductPrice.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblProductPrice.Location = new System.Drawing.Point(757, 260);
+            this.lblProductPrice.Location = new System.Drawing.Point(719, 260);
             this.lblProductPrice.Name = "lblProductPrice";
             this.lblProductPrice.Size = new System.Drawing.Size(199, 28);
             this.lblProductPrice.TabIndex = 24;
@@ -219,7 +223,7 @@ namespace SU21_Final_Project
             this.lblQuantity.BackColor = System.Drawing.SystemColors.Control;
             this.lblQuantity.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.lblQuantity.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblQuantity.Location = new System.Drawing.Point(757, 206);
+            this.lblQuantity.Location = new System.Drawing.Point(719, 206);
             this.lblQuantity.Name = "lblQuantity";
             this.lblQuantity.Size = new System.Drawing.Size(199, 28);
             this.lblQuantity.TabIndex = 25;
@@ -230,7 +234,7 @@ namespace SU21_Final_Project
             this.lblGenre.BackColor = System.Drawing.SystemColors.Control;
             this.lblGenre.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.lblGenre.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblGenre.Location = new System.Drawing.Point(757, 157);
+            this.lblGenre.Location = new System.Drawing.Point(719, 157);
             this.lblGenre.Name = "lblGenre";
             this.lblGenre.Size = new System.Drawing.Size(199, 28);
             this.lblGenre.TabIndex = 26;
@@ -241,7 +245,7 @@ namespace SU21_Final_Project
             this.lblProductName.BackColor = System.Drawing.SystemColors.Control;
             this.lblProductName.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.lblProductName.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblProductName.Location = new System.Drawing.Point(757, 103);
+            this.lblProductName.Location = new System.Drawing.Point(719, 103);
             this.lblProductName.Name = "lblProductName";
             this.lblProductName.Size = new System.Drawing.Size(199, 28);
             this.lblProductName.TabIndex = 27;
@@ -252,7 +256,7 @@ namespace SU21_Final_Project
             this.lblProductID.BackColor = System.Drawing.SystemColors.Control;
             this.lblProductID.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.lblProductID.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblProductID.Location = new System.Drawing.Point(757, 51);
+            this.lblProductID.Location = new System.Drawing.Point(719, 51);
             this.lblProductID.Name = "lblProductID";
             this.lblProductID.Size = new System.Drawing.Size(199, 28);
             this.lblProductID.TabIndex = 28;
@@ -262,7 +266,7 @@ namespace SU21_Final_Project
             // 
             this.lblProductIDText.AutoSize = true;
             this.lblProductIDText.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblProductIDText.Location = new System.Drawing.Point(819, 30);
+            this.lblProductIDText.Location = new System.Drawing.Point(781, 30);
             this.lblProductIDText.Name = "lblProductIDText";
             this.lblProductIDText.Size = new System.Drawing.Size(67, 16);
             this.lblProductIDText.TabIndex = 29;
@@ -272,7 +276,7 @@ namespace SU21_Final_Project
             // 
             this.lblProductNameText.AutoSize = true;
             this.lblProductNameText.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblProductNameText.Location = new System.Drawing.Point(811, 84);
+            this.lblProductNameText.Location = new System.Drawing.Point(773, 84);
             this.lblProductNameText.Name = "lblProductNameText";
             this.lblProductNameText.Size = new System.Drawing.Size(88, 16);
             this.lblProductNameText.TabIndex = 30;
@@ -282,7 +286,7 @@ namespace SU21_Final_Project
             // 
             this.lblGenreText.AutoSize = true;
             this.lblGenreText.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblGenreText.Location = new System.Drawing.Point(830, 138);
+            this.lblGenreText.Location = new System.Drawing.Point(792, 138);
             this.lblGenreText.Name = "lblGenreText";
             this.lblGenreText.Size = new System.Drawing.Size(42, 16);
             this.lblGenreText.TabIndex = 31;
@@ -292,7 +296,7 @@ namespace SU21_Final_Project
             // 
             this.lblQuantityText.AutoSize = true;
             this.lblQuantityText.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblQuantityText.Location = new System.Drawing.Point(825, 187);
+            this.lblQuantityText.Location = new System.Drawing.Point(787, 187);
             this.lblQuantityText.Name = "lblQuantityText";
             this.lblQuantityText.Size = new System.Drawing.Size(55, 16);
             this.lblQuantityText.TabIndex = 32;
@@ -302,7 +306,7 @@ namespace SU21_Final_Project
             // 
             this.lblProductPriceText.AutoSize = true;
             this.lblProductPriceText.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblProductPriceText.Location = new System.Drawing.Point(813, 241);
+            this.lblProductPriceText.Location = new System.Drawing.Point(775, 241);
             this.lblProductPriceText.Name = "lblProductPriceText";
             this.lblProductPriceText.Size = new System.Drawing.Size(83, 16);
             this.lblProductPriceText.TabIndex = 33;
@@ -319,11 +323,22 @@ namespace SU21_Final_Project
             this.lblProductDescriptionText.Text = "Product Description";
             this.lblProductDescriptionText.Click += new System.EventHandler(this.lblProductDescriptionText_Click);
             // 
+            // pbxImage
+            // 
+            this.pbxImage.Image = global::SU21_Final_Project.Properties.Resources.Logo_SMS;
+            this.pbxImage.Location = new System.Drawing.Point(934, 30);
+            this.pbxImage.Name = "pbxImage";
+            this.pbxImage.Size = new System.Drawing.Size(242, 261);
+            this.pbxImage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pbxImage.TabIndex = 99;
+            this.pbxImage.TabStop = false;
+            // 
             // frmEmployee_View_Inventory
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1300, 472);
+            this.ClientSize = new System.Drawing.Size(1422, 472);
+            this.Controls.Add(this.pbxImage);
             this.Controls.Add(this.lblProductDescriptionText);
             this.Controls.Add(this.lblProductPriceText);
             this.Controls.Add(this.lblQuantityText);
@@ -354,6 +369,7 @@ namespace SU21_Final_Project
             ((System.ComponentModel.ISupportInitialize)(this.dgvInventory)).EndInit();
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbxImage)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -384,5 +400,6 @@ namespace SU21_Final_Project
         private System.Windows.Forms.Label lblQuantityText;
         private System.Windows.Forms.Label lblProductPriceText;
         private System.Windows.Forms.Label lblProductDescriptionText;
+        private System.Windows.Forms.PictureBox pbxImage;
     }
 }

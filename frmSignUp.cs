@@ -482,5 +482,36 @@ namespace SU21_Final_Project
             frmhelp.ShowDialog();
             this.Show();
         }
+
+        private void tbxEmail_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == 39 || e.KeyChar == 34)    //ASCII Check For colon and semicolon
+
+            {
+                //Allow the key press
+                e.Handled = true;
+            }
+            else
+            {
+                //Deny the key press
+                e.Handled = false;
+            }
+        }
+
+        private void mtbPhone1_Enter(object sender, EventArgs e)
+        {
+            this.BeginInvoke((MethodInvoker)delegate ()
+            {
+                mtbPhone1.Select(0, 0);
+            });
+        }
+
+        private void mtbPhone2_Enter(object sender, EventArgs e)
+        {
+            this.BeginInvoke((MethodInvoker)delegate ()
+            {
+                mtbPhone2.Select(0, 0);
+            });
+        }
     }
 }

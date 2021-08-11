@@ -100,7 +100,7 @@ namespace SU21_Final_Project
             // 
             // lblDiscountID
             // 
-            this.lblDiscountID.BackColor = System.Drawing.Color.White;
+            this.lblDiscountID.BackColor = System.Drawing.SystemColors.Control;
             this.lblDiscountID.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.lblDiscountID.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblDiscountID.Location = new System.Drawing.Point(762, 89);
@@ -111,7 +111,7 @@ namespace SU21_Final_Project
             // 
             // lblDiscountType
             // 
-            this.lblDiscountType.BackColor = System.Drawing.Color.White;
+            this.lblDiscountType.BackColor = System.Drawing.SystemColors.Control;
             this.lblDiscountType.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.lblDiscountType.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblDiscountType.Location = new System.Drawing.Point(762, 141);
@@ -122,7 +122,7 @@ namespace SU21_Final_Project
             // 
             // lblProductID
             // 
-            this.lblProductID.BackColor = System.Drawing.Color.White;
+            this.lblProductID.BackColor = System.Drawing.SystemColors.Control;
             this.lblProductID.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.lblProductID.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblProductID.Location = new System.Drawing.Point(762, 195);
@@ -133,7 +133,7 @@ namespace SU21_Final_Project
             // 
             // lblDiscountPercent
             // 
-            this.lblDiscountPercent.BackColor = System.Drawing.Color.White;
+            this.lblDiscountPercent.BackColor = System.Drawing.SystemColors.Control;
             this.lblDiscountPercent.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.lblDiscountPercent.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblDiscountPercent.Location = new System.Drawing.Point(762, 244);
