@@ -39,8 +39,9 @@ namespace SU21_Final_Project
             // tbxUsername
             // 
             this.tbxUsername.Location = new System.Drawing.Point(202, 106);
-            this.tbxUsername.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tbxUsername.Margin = new System.Windows.Forms.Padding(4);
             this.tbxUsername.Name = "tbxUsername";
+            this.tbxUsername.ShortcutsEnabled = false;
             this.tbxUsername.Size = new System.Drawing.Size(132, 22);
             this.tbxUsername.TabIndex = 0;
             this.tbxUsername.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbxUsername_KeyPress);
@@ -86,7 +87,7 @@ namespace SU21_Final_Project
             this.Controls.Add(this.tbxUsername);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.MaximizeBox = false;
             this.Name = "frmFind_User";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;

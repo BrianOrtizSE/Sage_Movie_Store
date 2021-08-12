@@ -36,6 +36,9 @@ namespace SU21_Final_Project
         //Information for Employee
         private static SqlDataAdapter _daEmployee = new SqlDataAdapter();
         private static DataTable _dtEmployee = new DataTable();
+        //Information for Reciept
+        private static SqlDataAdapter _daReciept = new SqlDataAdapter();
+        private static DataTable _dtReciept = new DataTable();
 
         //Function To Get Product Tabled
         public static DataTable GetProductTable
@@ -62,6 +65,7 @@ namespace SU21_Final_Project
         //public static int _intEmployeeIDCheck;
 
         public static int _intProductID = 0;
+        public static int _intRecieptID = 0;
         public static int _FindUser = 0;
         public static int _intQuantity;
         public static decimal _decDiscountPercent = 0.0m;
@@ -151,8 +155,7 @@ namespace SU21_Final_Project
 
 
 
-        }
-        
+        }      
 
         //Used These Functions To Grab Information From The Database
         public static void GrabPersonNewID()
@@ -394,6 +397,63 @@ namespace SU21_Final_Project
 
             }
 
+        }
+        public static void GrabRecieptID(string strQuery)
+        {
+            try
+            {
+                //Use this Function To Grab Person ID whenever this is called
+                _sqlResultsCommand = new SqlCommand(strQuery, _conDatabase);
+
+                //establish data adapter
+                _daReciept = new SqlDataAdapter();
+                _daReciept.SelectCommand = _sqlResultsCommand;
+                //fill data table
+                _dtReciept = new DataTable();
+                _daReciept.Fill(_dtReciept);
+
+                if (_dtReciept.Rows.Count != 0)
+                {
+                    _blnFound = true;
+                    //Grab RecieptID so we can cretae use it
+                    _intRecieptID = (int)_sqlResultsCommand.ExecuteScalar();
+                }
+                else
+                {
+                    _blnFound = false;
+                }
+
+                _daProduct.Dispose();
+                _dtProductTable.Dispose();
+                _sqlResultsCommand.Dispose();
+            }
+            catch (InvalidCastException)
+            {
+
+                MessageBox.Show("Error Invalid Cast", "Error on DatabaseCommand", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+            }
+            catch (NullReferenceException)
+            {
+                MessageBox.Show("Error NULL", "Error on DatabaseCommand", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            catch (SqlException ex)
+            {
+                if (ex is SqlException)
+                {//handles more specific SqlException here.
+
+                    for (int i = 0; i < ex.Errors.Count; i++)
+                    {
+                        errorMessages.Append("Index #" + i + "\n" +
+                            "Message: " + ex.Errors[i].Message + "\n" +
+                            "LineNumber: " + ex.Errors[i].LineNumber + "\n" +
+                            "Source: " + ex.Errors[i].Source + "\n" +
+                            "Procedure: " + ex.Errors[i].Procedure + "\n");
+                    }
+                    MessageBox.Show(errorMessages.ToString(), "Error on DatabaseCommand", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+
+            }
         }
         public static void CheckID(string strQuery)
         {
@@ -707,7 +767,6 @@ namespace SU21_Final_Project
             }
         }
 
-
         //Check to make sure whatever is being looked up is available and in the database if not returns false
         public static void GrabDiscountInformation(TextBox tbxDiscountCode)//used to check for product discount vs whole sale discount
         {
@@ -834,9 +893,6 @@ namespace SU21_Final_Project
 
 
         }
-        
-        
-
 
         //Fucntions for Data Grid Views ++++Maybe change to one big one later+++++++
         public static void GrabEmployee(DataGridView dgvOrders, String strQuery)
@@ -1350,7 +1406,6 @@ namespace SU21_Final_Project
 
         }
         
-
         //Used for security Question To Check for Password
         public static void CheckPassword(string strQuery)
         {
@@ -1570,8 +1625,6 @@ namespace SU21_Final_Project
                 MessageBox.Show(ex.ToString());
             }
         }
-
-
 
     }
 

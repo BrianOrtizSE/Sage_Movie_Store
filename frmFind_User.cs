@@ -89,6 +89,8 @@ namespace SU21_Final_Project
                         frmEmployee_POS frmEmpPos = new frmEmployee_POS();
                         frmEmpPos.ShowDialog();
                         this.Show();
+                        this.Close();
+
                     }
                     else
                     {
@@ -114,6 +116,7 @@ namespace SU21_Final_Project
                     {
                         //MessageBox.Show("User Not Found", "User Not Found", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
+
                         break;
                 default:
                     break;

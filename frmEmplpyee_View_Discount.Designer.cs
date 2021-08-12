@@ -145,7 +145,7 @@ namespace SU21_Final_Project
             // btnClose
             // 
             this.btnClose.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnClose.Location = new System.Drawing.Point(808, 371);
+            this.btnClose.Location = new System.Drawing.Point(817, 371);
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(116, 38);
             this.btnClose.TabIndex = 39;

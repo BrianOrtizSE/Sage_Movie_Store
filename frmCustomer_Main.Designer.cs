@@ -29,6 +29,7 @@ namespace SU21_Final_Project
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmCustomer_Main));
             this.lblDate = new System.Windows.Forms.Label();
             this.lblWelcomeUserText = new System.Windows.Forms.Label();
             this.lblBlackLine = new System.Windows.Forms.Label();
@@ -149,6 +150,7 @@ namespace SU21_Final_Project
             this.Controls.Add(this.btnView);
             this.Controls.Add(this.btnShop);
             this.Controls.Add(this.menuStrip1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.menuStrip1;
             this.MaximizeBox = false;
             this.Name = "frmCustomer_Main";

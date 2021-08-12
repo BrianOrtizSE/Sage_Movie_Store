@@ -25,7 +25,7 @@ namespace SU21_Final_Project
         public void DisplayDiscount()//Dispplay Discount Data Grid View
         {
 
-            strQuery = "Select * from OrtizB21Su2332.Discount";
+            strQuery = "Select DiscountID , DiscountType , ProductID , DiscountPercent , isValid from OrtizB21Su2332.Discount where isValid = 1";
             ProgOps.GrabDiscounts(dgvDiscount, strQuery);
             //dgvDiscount.AutoResizeColumn();
 

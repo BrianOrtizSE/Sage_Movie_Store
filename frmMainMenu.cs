@@ -47,37 +47,6 @@ namespace SU21_Final_Project
             ProgOps.CloseDatabase();
         }
 
-        private void tsSignUp_Click(object sender, EventArgs e)
-        {
-            
-        }
-
-        private void tsLogIn_Click(object sender, EventArgs e)
-        {
-            
-        }
-
-        private void addMerchandiseToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            frmManager_Edit_Inventory frmmerchadd = new frmManager_Edit_Inventory();
-            this.Hide();
-            frmmerchadd.ShowDialog();
-            this.Show();
-        }
-
-        private void createInvoiceToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            frmCustomer_POS frmcreateinvoice = new frmCustomer_POS();
-
-            frmcreateinvoice.ShowDialog();
-        }
-
-        private void securityQuestionCheclToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            frmSecurityQuestions frmsq = new frmSecurityQuestions();
-            frmsq.ShowDialog();
-        }
-
         private void button1_Click(object sender, EventArgs e)
         {
             frmSignUp frmsingup = new frmSignUp();
@@ -92,99 +61,6 @@ namespace SU21_Final_Project
             this.Hide();
             frmlogin.ShowDialog();
             this.Show();
-        }
-
-        private void helpToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-           
-        }
-
-        private void button1_Click_1(object sender, EventArgs e)
-        {
-            frmManager_Edit_Inventory frmmerch = new frmManager_Edit_Inventory();
-            frmmerch.ShowDialog();
-        }
-
-        private void button1_Click_2(object sender, EventArgs e)
-        {
-            frmManager_View_Sales frmviewsales = new frmManager_View_Sales();
-            this.Hide();
-            frmviewsales.ShowDialog();
-            this.Show();
-        }
-
-        private void button2_Click(object sender, EventArgs e)
-        {
-            this.Hide();
-            frmManager_Discount_Add frmDiscountAdd = new frmManager_Discount_Add();
-            frmDiscountAdd.ShowDialog();
-            this.Show();
-        }
-
-        private void button3_Click(object sender, EventArgs e)
-        {
-            this.Hide();
-            frmEmployee_Edit_Customer frmempcusedit = new frmEmployee_Edit_Customer();
-            frmempcusedit.ShowDialog();
-            this.Show();
-        }
-
-        private void button4_Click(object sender, EventArgs e)
-        {
-            frmEmployee_View_Inventory frminvvie = new frmEmployee_View_Inventory();
-            frminvvie.ShowDialog();
-        }
-
-        private void button5_Click(object sender, EventArgs e)
-        {
-            frmEmplpyee_View_Discount frmDisView = new frmEmplpyee_View_Discount();
-            frmDisView.ShowDialog();
-        }
-
-        private void button1_Click_3(object sender, EventArgs e)
-        {
-            frmManager_Edit_Employees frmViewEmployee = new frmManager_Edit_Employees();
-            frmViewEmployee.ShowDialog();
-        }
-
-        private void btn_Click(object sender, EventArgs e)
-        {
-            this.Hide();
-            frmManager_Edit_Customer frmCus = new frmManager_Edit_Customer();
-            frmCus.ShowDialog();
-            this.Show();
-        }
-
-        private void button1_Click_4(object sender, EventArgs e)
-        {
-            Form1 frm1 = new Form1();
-            frm1.ShowDialog();
-        }
-
-        private void button2_Click_1(object sender, EventArgs e)
-        {
-            frmManager_Edit_Inventory frmManagerEditInventory = new frmManager_Edit_Inventory();
-            frmManagerEditInventory.ShowDialog();
-        }
-
-        private void button3_Click_1(object sender, EventArgs e)
-        {
-            this.Hide();
-            frmEmployee_POS frmEmpPos = new frmEmployee_POS();
-            frmEmpPos.ShowDialog();
-            this.Show();
-        }
-
-        private void button4_Click_1(object sender, EventArgs e)
-        {
-            frmManager_Create_Invoice frmCreInv = new frmManager_Create_Invoice();
-            frmCreInv.ShowDialog();
-        }
-
-        private void button1_Click_5(object sender, EventArgs e)
-        {
-            frmSecurityQuestions frmSec = new frmSecurityQuestions();
-            frmSec.ShowDialog();
         }
     }
 }

@@ -23,7 +23,6 @@ namespace SU21_Final_Project
             public int intProductID;
             public string strProdName;
             public decimal dblProdPrice;
-            public int intMaxQuan;
             public int intProdQuan;
 
 
@@ -47,53 +46,106 @@ namespace SU21_Final_Project
 
         bool blnDiscountDupe = false;
         bool blnDiscountUsed = false;
-
-
+        int intDiscount = 0;
+        public int intRecieptID;
         List<ProdList> prodlist = new List<ProdList>();
         List<string> discountUsed = new List<string>();
 
         private void btnPay_Click(object sender, EventArgs e)
         {
             int intQuanityHold;
-
-            if (tbxCardHolderName.Text == string.Empty || tbxCardNumber.Text == string.Empty || cmbMonth.Text == string.Empty || cmbYear.Text == string.Empty || tbxSCode.Text == string.Empty)
+            //Validation to make sure that all input fields are valid
+            if (lblCardNumberValid.Text == "X" || lblSCValid.Text == "X" || lblCardHolderValid.Text == "X" || cmbYear.Text == string.Empty || tbxSCode.Text == string.Empty)
             {
                 MessageBox.Show("Make Sure All Required Information Is Filled Out!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             else
             {
-
-                ReportPrint(Reciept(decSubTotal, decDiscountPercent, decTaxTotal, decTotal));
-
-                for (int i = 0; i < prodlist.Count(); i++)
+                //Validation to make sure card date is valid
+                string strDate = (cmbMonth.Text + "/01/" + cmbYear.Text);
+                var Date = DateTime.Parse(strDate).Date;
+                var DateToday = DateTime.Today;
+                if (Date < DateToday)
                 {
-                    strQuery = "Select Quantity From OrtizB21Su2332.Products " +
-                    "Where ProductID = " + prodlist[i].intProductID;
+                    MessageBox.Show("Invalid Card Date , Please Use Valid Card", "Error", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else
+                {
+                    //Check to make sure none of this item has been purchased and will make stock below 0                   
+                    bool blnEnough = true;
+                    bool blnPass = true;
+                    
+                    if(blnEnough == true)
+                    {
+                        //First runs through and makes sure its all good
+                        for (int i = 0; i < prodlist.Count(); i++)
+                        {
+                            strQuery = "Select Quantity From OrtizB21Su2332.Products " +
+                            "Where ProductID = " + prodlist[i].intProductID;
 
-                    ProgOps.GrabAmount(strQuery);
-                    intQuanityHold = prodlist[i].intProdQuan;
+                            ProgOps.GrabAmount(strQuery);
+                            intQuanityHold = prodlist[i].intProdQuan;
 
-                    ProgOps._intQuantity = ProgOps._intQuantity - intQuanityHold;
+                            ProgOps._intQuantity = ProgOps._intQuantity - intQuanityHold;
 
-                    strQuery = "Update OrtizB21Su2332.Products Set Quantity = " + ProgOps._intQuantity + " where ProductID = + " + prodlist[i].intProductID;
-                    ProgOps.UpdateQuantity(strQuery);
+                            if (ProgOps._intQuantity < 0)
+                            {
+                                MessageBox.Show("Not Enough The Movie : " + prodlist[i].strProdName + " To Fufill Order", "Not enough inventory", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                blnEnough = false;
+                                blnPass = false;
+                                break;
+                            }
+                        }
+                    }
+                    if(blnPass == true)
+                    {
+                        for (int i = 0; i < prodlist.Count(); i++)
+                        {
+                            //Does The Quantity Changes
+                            strQuery = "Select Quantity From OrtizB21Su2332.Products " +
+                            "Where ProductID = " + prodlist[i].intProductID;
 
+                            ProgOps.GrabAmount(strQuery);
+                            intQuanityHold = prodlist[i].intProdQuan;
+
+                            ProgOps._intQuantity = ProgOps._intQuantity - intQuanityHold;
+
+                            strQuery = "Update OrtizB21Su2332.Products Set Quantity = " + ProgOps._intQuantity + " where ProductID = + " + prodlist[i].intProductID;
+                            ProgOps.UpdateQuantity(strQuery);
+
+                        }
+                        //SWITCH TO DIALOG BOX AND ASK THEM IF THEY WOULD LIKE ONE!!!!!
+                        ReportPrint(Reciept(decSubTotal, decDiscountPercent, decTaxTotal, decTotal));
+
+                        //Creates Reciept
+                        strQuery = "Insert into OrtizB21Su2332.Reciept(PersonID ,  EmployeeID , TransData)" +
+                            "values(" + ProgOps._intPersonID + "," + ProgOps._intEmployeeID + ", GETDATE()" + ")";
+                        ProgOps.CreateInvoice(strQuery);
+
+                        //Grab newest reciept
+                        strQuery = "Select RecieptID from OrtizB21Su2332.Reciept order by RecieptID desc";
+                        ProgOps.GrabRecieptID(strQuery);
+                        intRecieptID = ProgOps._intRecieptID;
+                        //Insert The List into the product list info
+                        for (int i = 0; i < prodlist.Count(); i++)
+                        {
+                            strQuery = "Insert into OrtizB21Su2332.RecieptDetail(RecieptID , ProductID , Quantity , PriceOfProduct , Discount) " +
+                                "Values( " + ProgOps._intRecieptID + "," + prodlist[i].intProductID + "," + prodlist[i].intProdQuan + "," + prodlist[i].dblProdPrice + "," + intDiscount + ")";
+                            ProgOps.CreateInvoice(strQuery);
+                        }
+
+                        //WILL GET TOTAL AND INSERT IT INTO SALES!!
+                        strQuery = "Insert Into OrtizB21Su2332.Sales(RecieptID , TotalSales , DateOfSale)" +
+                            "Values( " + ProgOps._intRecieptID + "," + decTotal.ToString("c2") + ",GETDATE())";
+                        ProgOps.CreateInvoice(strQuery);
+
+
+                        this.Close();
+                    }
+
+                    
                 }
 
-                //WILL USE GET EMPLOYEEID AT THE START OF THE LOGIN AND MAKE SURE THIS GUYS EMPLOYEEID IS SET ALL THE WAY THROUGH!!!
-
-                strQuery = "Insert into OrtizB21Su2332.Reciept(PersonID ,  EmployeeID , TransData)" +
-                    "values(" + ProgOps._intPersonID + ProgOps._intPersonID + ", GETDATE() ," + ")";
-                ProgOps.CreateInvoice(strQuery);
-
-                //WILL USE RECIEPT TO CREATE RECIEPT INFO
-
-
-                //WILL GET TOTAL AND INSERT IT INTO SALES!!
-
-
-
-                this.Close();
             }
         }
 
@@ -187,10 +239,10 @@ namespace SU21_Final_Project
 
 
                                 //Update the total and its label
-                                decTotal += dblPrice * decimal.Parse(tbxQuantity.Text);
-                                lblToalPrice.Text = "Total : \t" + decTotal.ToString("c2");
+                                decSubTotal += dblPrice * decimal.Parse(tbxQuantity.Text);
+                                lblToalPrice.Text = "Total : \t" + decSubTotal.ToString("c2");
                                 lblQuantity.Text = newCellVal.ToString();
-                               tbxQuantity.Clear();
+                                tbxQuantity.Clear();
                                 //Reset Labels
                                 lblProductID.Focus();
 
@@ -267,7 +319,7 @@ namespace SU21_Final_Project
                 pnlCheckout.Visible = true;
 
 
-                WriteToListBox(decSubTotal, decDiscountPercent, decTaxTotal, decTotal);
+                WriteToListBox(decSubTotal, decDiscountPercent, ref decTaxTotal, ref decTotal);
                 this.Size = new Size(760, 630);
             }
 
@@ -296,9 +348,7 @@ namespace SU21_Final_Project
                     if (tbxDiscount.Text == discountUsed[i])
                     {
                         blnDiscountDupe = true;
-
                     }
-
                 }
 
                 //WILL TRY TO ADD MORE THAN 1 DISCOUNT LATER for now only 1 per transaction.          
@@ -321,6 +371,7 @@ namespace SU21_Final_Project
                             if (ProgOps._intProductID == 0)
                             {
                                 decDiscountPercent = ProgOps._decDiscountPercent;
+                                intDiscount = int.Parse(tbxDiscount.Text);
                                 blnDiscountUsed = true;
                             }
                             else
@@ -331,6 +382,7 @@ namespace SU21_Final_Project
                                     if (ProgOps._intProductID == prodlist[i].intProductID)
                                     {
                                         blnDiscountUsed = true;
+                                        intDiscount = int.Parse(tbxDiscount.Text);
                                         blnProductInCart = true;
                                     }
                                 }
@@ -352,7 +404,7 @@ namespace SU21_Final_Project
                             tbxDiscount.Text = "";
                             tbxDiscount.Focus();
 
-                            WriteToListBox(decSubTotal, decDiscountPercent, decTaxTotal, decTotal);
+                            WriteToListBox(decSubTotal, decDiscountPercent, ref decTaxTotal, ref decTotal);
                         }
                         else
                         {
@@ -370,6 +422,7 @@ namespace SU21_Final_Project
             //reset panels
             pnlCart.Visible = true;
             pnlCheckout.Visible = false;
+            pnlShoppingCart.Visible = false;
 
             //resets Discount usability
             discountUsed.Clear();
@@ -379,10 +432,16 @@ namespace SU21_Final_Project
             //reset listox
             lbxCheckOutCart.Items.Clear();
 
-            this.Size = new Size(1200, 630);
+            //Reset Data Grid
+            GrabProducts();
+
+            //TurnOfCheckbox
+            cbxDisplayCart.Checked = false;
+
+            this.Size = new Size(1320, 590);
 
         }  
-        private void btnDiscountSearch_Click(object sender, EventArgs e)
+        private void btnDiscountSearch_Click(object sender, EventArgs e)//Opens Discount View
         {
             this.Hide();
             frmEmplpyee_View_Discount frmEmpDisView = new frmEmplpyee_View_Discount();
@@ -428,7 +487,7 @@ namespace SU21_Final_Project
             }
         }
 
-        private void btnClear_Click(object sender, EventArgs e)
+        private void btnClear_Click(object sender, EventArgs e)//Clear All Listbox and labels
         {
             GrabProducts();
             prodlist.Clear();
@@ -437,77 +496,46 @@ namespace SU21_Final_Project
 
         private StringBuilder Reciept(decimal decSubTotal, decimal decDiscountPercent, decimal decTaxTotal, decimal decTotal)
         {
-            decimal decTotalHold = decTotal;
-
-
-            //Get Totals For all things
-            decSubTotal = decTotalHold;
-            decDiscountPercent = decSubTotal * (decDiscountPercent * 0.01M);
-            decTaxTotal = decSubTotal * ProgOps._TAX;
-            decTotalHold = (decSubTotal - decDiscountPercent) + decTaxTotal;
 
             StringBuilder html = new StringBuilder();
             StringBuilder css = new StringBuilder();
+
             css.Append("<style>");
-            css.Append("td{padding:5px;text-align:center;font-weight:bold;text-align:center;}");
-            css.Append("h1{color:Orange}");
-            css.Append("h1{text-align: center}");
-            css.Append("h2{color:Blue}");
-            css.Append("h2{text-align: center}");
-            css.Append("p{text-align: center}");
-            css.Append("p{font-size: 18px}");
-            css.Append("table.center{margin-left: auto;}");
-            css.Append("table.center{margin-right: auto;}");
+            css.Append("table {font-family: arial, sans-serif;border-collapse: collapse;width: 100%;}");
+            css.Append(".center {text-align: center;color: Orange;}");
+            css.Append(".Thank{text-align: center;color: LightBlue;}");
+            css.Append("p{font-family: arial, sans-serif;font-size: 18px}");
+            css.Append("td, th {border: 1px solid #dddddd;text-align: left;padding: 8px;}");
             css.Append("</style>");
 
 
             html.Append("<html>");
             html.Append($"<head>{css}<title>Movie Shop Reciept</title></head>");
+
             html.Append("<body>");
-            html.Append($"<h1>{"Movie Shop Reciept"}</h1>");
-            html.Append($"<h2>{"Thank You For Shopping Sage!"}</h2>");
+            html.Append($"<h1 class=\"center\">Sage's Movie Store</h1>");
+            html.Append($"<h1 class=\"Thank\";>Welcome To Sages Movie Store!!</h1>");
 
-            html.Append("<table class = \"center\">");
-            html.Append("<tr><td colspan=3><hr/></td></tr>");
-            html.Append("<tr>");
-            html.Append("<th>Movie Name</th>");
-            html.Append("<th>Movie Price</th>");
-            html.Append("<th>Quantity</th>");
-            html.Append("</tr>");
-            html.Append("<tr>");
+            html.Append("<p style=\"text - align:left; \">Your Cashier : " + ProgOps._intEmployeeID.ToString() +" <span style=\"float:right; \">Customer ID : " + ProgOps._intPersonID.ToString() + "</span></p>");
+            html.Append("<p style=\"text - align:left; \">Reciept ID : " + intRecieptID.ToString() + " <span style=\"float:right; \">Transaction Date : " + (DateTime.Now) + "</span></p>");
 
+            html.Append("<table><tr><th>Movie Name</th><th>Cost</th><th>Quantity</th></tr>");
             for (int i = 0; i < prodlist.Count(); i++)
             {
+                html.Append("<tr>");
+
                 html.Append($"<td>{prodlist[i].strProdName}</td>");
-                html.Append($"<td>{prodlist[i].dblProdPrice}</td>");
+                html.Append($"<td>{prodlist[i].dblProdPrice.ToString("c2")}</td>");
                 html.Append($"<td>{prodlist[i].intProdQuan}</td>");
 
                 html.Append("</tr>");
             }
-            html.Append("<tr><td colspan=3><hr/></td></tr>");
-            html.Append("</table");
-            html.Append("<p>");
-            html.Append("<p>");
-            html.Append("Customer ID : " + ProgOps._intPersonID.ToString("c2"));
-            html.Append("</p>");
-            html.Append("<p>");
-            html.Append("Subtotal : " + decSubTotal.ToString("c2"));
-            html.Append("</p>");
-            html.Append("<p>");
-            html.Append("Discount : " + decDiscountPercent.ToString("c2"));
-            html.Append("</p>");
-            html.Append("<p>");
-            html.Append("Tax : " + decTaxTotal.ToString("c2"));
-            html.Append("</p>");
-            html.Append("<p>");
-            html.Append("Total : " + decTotal.ToString("c2"));
-            html.Append("</p>");
-            html.Append("<p>");
-            html.Append("Cashier : " + ProgOps._intEmployeeID.ToString());
-            html.Append("</p>");
-            html.Append("<p>");
-            html.Append(DateTime.Now);
-            html.Append("</p>");
+            html.Append("</table>");
+            html.Append("<table><tr><th>SubTotal</th><th>Discount Total</th><th>Tax Total</th><th>Total</th></tr>");
+            html.Append("<tr><td>" + decSubTotal.ToString("c2") + "</td><td>" + decDiscountPercent.ToString("c2") + "</td><td>" + decTaxTotal.ToString("c2") + "</td><td>" + decTotal.ToString("c2") + "</td></tr>");
+            html.Append("</tr></table>");
+
+            html.Append("<p style=\"text - align:center\">Thank you for your patronege please come again</p>");
             html.Append("</body>");
             html.Append("</html>");
             return html;
@@ -519,11 +547,13 @@ namespace SU21_Final_Project
             try
             {
                 //using statement will automaticaly close a file after opening it
-                using (StreamWriter wr = new StreamWriter("Report.html"))
+                Random random = new Random();
+                int randomNumber = random.Next(0, 10000000);
+                using (StreamWriter wr = new StreamWriter("Report" +randomNumber.ToString() + ".html" ))
                 {
                     wr.WriteLine(html);
                 }
-                System.Diagnostics.Process.Start(@"Report.html");
+                System.Diagnostics.Process.Start(@"Report" + randomNumber.ToString() + ".html");
             }
             catch (Exception)
             {
@@ -542,15 +572,15 @@ namespace SU21_Final_Project
             pbxImage.Image = Properties.Resources.Logo_SMS;
         }
 
-        public void WriteToListBox(decimal decSubTotal, decimal decDiscountPercent, decimal decTaxTotal, decimal decTotal)
+        public void WriteToListBox(decimal decSubTotal, decimal decDiscountPercent, ref decimal decTaxTotal,ref decimal decTotal)
         {
-            decimal decTotalHold = decTotal;
+            decimal decTotalHold = decSubTotal;
 
 
             //Get Totals For all things
             decSubTotal = decTotalHold;
             decDiscountPercent = decSubTotal * (decDiscountPercent * 0.01M);
-            decTaxTotal = decSubTotal * ProgOps._TAX;
+            decTaxTotal = (decSubTotal - decDiscountPercent) * ProgOps._TAX;
             decTotalHold = (decSubTotal - decDiscountPercent) + decTaxTotal;
 
 
@@ -560,16 +590,18 @@ namespace SU21_Final_Project
             for (int i = 0; i < prodlist.Count(); i++)
             {
 
-                lbxCheckOutCart.Items.Add("Title: " + prodlist[i].strProdName + " | $" + prodlist[i].dblProdPrice + " | " + prodlist[i].intProdQuan);
+                lbxCheckOutCart.Items.Add("Title: " + prodlist[i].strProdName + " | " + prodlist[i].dblProdPrice.ToString("c2") + " | " + prodlist[i].intProdQuan);
 
             }
             lbxCheckOutCart.Items.Add("");
             lbxCheckOutCart.Items.Add("");
             lbxCheckOutCart.Items.Add("");
-            lbxCheckOutCart.Items.Add("Sub Total : " + decSubTotal.ToString("c"));
+            lbxCheckOutCart.Items.Add("Sub Total : " + decSubTotal.ToString("c2"));
             lbxCheckOutCart.Items.Add("Discount : " + decDiscountPercent.ToString("c2"));
-            lbxCheckOutCart.Items.Add("Tax Total : " + decTaxTotal.ToString("C"));
-            lbxCheckOutCart.Items.Add("Total : " + (decTotalHold).ToString("C"));
+            lbxCheckOutCart.Items.Add("Tax Total : " + decTaxTotal.ToString("c2"));
+            lbxCheckOutCart.Items.Add("Total : " + (decTotalHold).ToString("c2"));
+
+            decTotal = decTotalHold;
         }
 
         public void WriteToCart()
@@ -582,19 +614,140 @@ namespace SU21_Final_Project
             }
         }
 
+        //VALIDATION FOR CARD INFO
         private void cbxDisplayCart_CheckedChanged(object sender, EventArgs e)
         {
             if (cbxDisplayCart.Checked)
             {
-                pnlShoppingCart.Visible = true ;
-                this.Size = new Size(1660, 580);
+                pnlShoppingCart.Visible = true;
             }
             else
             {
                 pnlShoppingCart.Visible = false;
-                this.Size = new Size(1150, 580);
             }
             
+        }
+        private void tbxCardHolderName_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            //Only allow letters and backspace
+            if (e.KeyChar >= 65 && e.KeyChar <= 90 ||       //ASCII Check for Capital Letters
+               e.KeyChar >= 97 && e.KeyChar <= 122 ||       //ASCII Check for Lowercase Letters
+               e.KeyChar == 8)                              //ASCII Check for Backspace
+            {
+                //Accept the keystroke
+                e.Handled = false;
+            }
+            else
+            {
+                e.Handled = true;
+            }
+        }
+        private void tbxCardNumber_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar >= 48 && e.KeyChar <= 57 || //ASCII Check For Numbers
+                e.KeyChar == 8)
+            {
+                //Allow the key press
+                e.Handled = false;
+            }
+            else
+            {
+                //Deny the key press
+                e.Handled = true;
+            }
+        }
+        private void tbxSCode_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar >= 48 && e.KeyChar <= 57 || //ASCII Check For Numbers
+                e.KeyChar == 8)
+            {
+                //Allow the key press
+                e.Handled = false;
+            }
+            else
+            {
+                //Deny the key press
+                e.Handled = true;
+            }
+        }
+        private void tbxCardHolderName_TextChanged(object sender, EventArgs e)
+        {
+            if(tbxCardHolderName.Text == string.Empty)
+            {
+                lblCardHolderValid.Text = "X";
+                lblCardHolderValid.ForeColor = Color.Red;
+
+            }
+            else{
+
+                lblCardHolderValid.Text = "\u221A";
+                lblCardHolderValid.ForeColor = Color.Green;
+                
+            }
+        }
+        private void tbxSCode_TextChanged(object sender, EventArgs e)
+        {
+            if(tbxSCode.Text.Length != 3)
+            {
+                lblSCValid.Text = "X";
+                lblSCValid.ForeColor = Color.Red;
+            }
+            else
+            {
+                lblSCValid.Text = "\u221A";
+                lblSCValid.ForeColor = Color.Green;
+            }
+        }
+        private void tbxCardNumber_TextChanged(object sender, EventArgs e)
+        {
+            if (tbxCardNumber.Text.Length != 12)
+            {
+                lblCardNumberValid.Text = "X";
+                lblCardNumberValid.ForeColor = Color.Red;
+            }
+            else
+            {
+                lblCardNumberValid.Text = "\u221A";
+                lblCardNumberValid.ForeColor = Color.Green;
+            }
+        }
+        private void mnsHelp_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
+        {
+
+        }
+        private void tbxQuantity_KeyPress_1(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar >= 48 && e.KeyChar <= 57 || //ASCII Check For Numbers
+               e.KeyChar == 8)
+            {
+                //Allow the key press
+                e.Handled = false;
+            }
+            else
+            {
+                //Deny the key press
+                e.Handled = true;
+            }
+        }
+
+        private void tbxDiscount_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void tbxDiscount_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar >= 48 && e.KeyChar <= 57 || //ASCII Check For Numbers
+             e.KeyChar == 8)
+            {
+                //Allow the key press
+                e.Handled = false;
+            }
+            else
+            {
+                //Deny the key press
+                e.Handled = true;
+            }
         }
     }
 }
