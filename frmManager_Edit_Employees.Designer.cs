@@ -150,11 +150,13 @@ namespace SU21_Final_Project
             // 
             this.tbxWage.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tbxWage.Location = new System.Drawing.Point(19, 280);
-            this.tbxWage.MaxLength = 12;
+            this.tbxWage.MaxLength = 7;
             this.tbxWage.Name = "tbxWage";
+            this.tbxWage.ShortcutsEnabled = false;
             this.tbxWage.Size = new System.Drawing.Size(116, 23);
             this.tbxWage.TabIndex = 31;
             this.tbxWage.TextChanged += new System.EventHandler(this.tbxDiscountPercent_TextChanged);
+            this.tbxWage.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbxWage_KeyPress);
             // 
             // lblWage
             // 
@@ -197,6 +199,7 @@ namespace SU21_Final_Project
             this.cmxPosition.Name = "cmxPosition";
             this.cmxPosition.Size = new System.Drawing.Size(116, 24);
             this.cmxPosition.TabIndex = 26;
+            this.cmxPosition.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.cmxPosition_KeyPress);
             // 
             // lblEmployeeID
             // 
@@ -215,8 +218,10 @@ namespace SU21_Final_Project
             this.tbxEmployee.MaxLength = 9;
             this.tbxEmployee.Name = "tbxEmployee";
             this.tbxEmployee.ReadOnly = true;
+            this.tbxEmployee.ShortcutsEnabled = false;
             this.tbxEmployee.Size = new System.Drawing.Size(116, 23);
             this.tbxEmployee.TabIndex = 24;
+            this.tbxEmployee.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbxEmployee_KeyPress);
             // 
             // dgvEmployee
             // 
@@ -243,8 +248,10 @@ namespace SU21_Final_Project
             this.tbxPersonID.MaxLength = 9;
             this.tbxPersonID.Name = "tbxPersonID";
             this.tbxPersonID.ReadOnly = true;
+            this.tbxPersonID.ShortcutsEnabled = false;
             this.tbxPersonID.Size = new System.Drawing.Size(116, 23);
             this.tbxPersonID.TabIndex = 45;
+            this.tbxPersonID.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbxPersonID_KeyPress);
             // 
             // cbxIsSalary
             // 
@@ -264,6 +271,7 @@ namespace SU21_Final_Project
             this.tbxHireDate.MaxLength = 9;
             this.tbxHireDate.Name = "tbxHireDate";
             this.tbxHireDate.ReadOnly = true;
+            this.tbxHireDate.ShortcutsEnabled = false;
             this.tbxHireDate.Size = new System.Drawing.Size(137, 23);
             this.tbxHireDate.TabIndex = 49;
             // 
@@ -338,7 +346,7 @@ namespace SU21_Final_Project
             // 
             this.btnEnable.Enabled = false;
             this.btnEnable.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEnable.Location = new System.Drawing.Point(372, 448);
+            this.btnEnable.Location = new System.Drawing.Point(372, 449);
             this.btnEnable.Name = "btnEnable";
             this.btnEnable.Size = new System.Drawing.Size(78, 50);
             this.btnEnable.TabIndex = 55;

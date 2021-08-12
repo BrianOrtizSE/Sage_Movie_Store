@@ -53,19 +53,20 @@ namespace SU21_Final_Project
             this.lblZipCode = new System.Windows.Forms.Label();
             this.btnShowDIsabled = new System.Windows.Forms.Button();
             this.btnDisableCustomer = new System.Windows.Forms.Button();
-            this.btnShowInactive = new System.Windows.Forms.Button();
+            this.btnShowActive = new System.Windows.Forms.Button();
             this.btnEnable = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPerson)).BeginInit();
             this.SuspendLayout();
             // 
             // tbxPersonID
             // 
-            this.tbxPersonID.BackColor = System.Drawing.SystemColors.Window;
+            this.tbxPersonID.BackColor = System.Drawing.SystemColors.Control;
             this.tbxPersonID.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tbxPersonID.Location = new System.Drawing.Point(16, 38);
             this.tbxPersonID.MaxLength = 9;
             this.tbxPersonID.Name = "tbxPersonID";
             this.tbxPersonID.ReadOnly = true;
+            this.tbxPersonID.ShortcutsEnabled = false;
             this.tbxPersonID.Size = new System.Drawing.Size(180, 23);
             this.tbxPersonID.TabIndex = 68;
             // 
@@ -121,12 +122,13 @@ namespace SU21_Final_Project
             // 
             // tbxNameFirst
             // 
-            this.tbxNameFirst.BackColor = System.Drawing.SystemColors.Window;
+            this.tbxNameFirst.BackColor = System.Drawing.SystemColors.Control;
             this.tbxNameFirst.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tbxNameFirst.Location = new System.Drawing.Point(16, 108);
             this.tbxNameFirst.MaxLength = 9;
             this.tbxNameFirst.Name = "tbxNameFirst";
             this.tbxNameFirst.ReadOnly = true;
+            this.tbxNameFirst.ShortcutsEnabled = false;
             this.tbxNameFirst.Size = new System.Drawing.Size(180, 23);
             this.tbxNameFirst.TabIndex = 74;
             // 
@@ -142,12 +144,13 @@ namespace SU21_Final_Project
             // 
             // tbxNameLast
             // 
-            this.tbxNameLast.BackColor = System.Drawing.SystemColors.Window;
+            this.tbxNameLast.BackColor = System.Drawing.SystemColors.Control;
             this.tbxNameLast.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tbxNameLast.Location = new System.Drawing.Point(16, 178);
             this.tbxNameLast.MaxLength = 9;
             this.tbxNameLast.Name = "tbxNameLast";
             this.tbxNameLast.ReadOnly = true;
+            this.tbxNameLast.ShortcutsEnabled = false;
             this.tbxNameLast.Size = new System.Drawing.Size(180, 23);
             this.tbxNameLast.TabIndex = 76;
             // 
@@ -163,12 +166,13 @@ namespace SU21_Final_Project
             // 
             // tbxAddress1
             // 
-            this.tbxAddress1.BackColor = System.Drawing.SystemColors.Window;
+            this.tbxAddress1.BackColor = System.Drawing.SystemColors.Control;
             this.tbxAddress1.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tbxAddress1.Location = new System.Drawing.Point(16, 248);
             this.tbxAddress1.MaxLength = 9;
             this.tbxAddress1.Name = "tbxAddress1";
             this.tbxAddress1.ReadOnly = true;
+            this.tbxAddress1.ShortcutsEnabled = false;
             this.tbxAddress1.Size = new System.Drawing.Size(180, 23);
             this.tbxAddress1.TabIndex = 78;
             // 
@@ -184,12 +188,13 @@ namespace SU21_Final_Project
             // 
             // tbxCity
             // 
-            this.tbxCity.BackColor = System.Drawing.SystemColors.Window;
+            this.tbxCity.BackColor = System.Drawing.SystemColors.Control;
             this.tbxCity.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tbxCity.Location = new System.Drawing.Point(16, 316);
             this.tbxCity.MaxLength = 9;
             this.tbxCity.Name = "tbxCity";
             this.tbxCity.ReadOnly = true;
+            this.tbxCity.ShortcutsEnabled = false;
             this.tbxCity.Size = new System.Drawing.Size(180, 23);
             this.tbxCity.TabIndex = 80;
             // 
@@ -205,12 +210,13 @@ namespace SU21_Final_Project
             // 
             // tbxEmail
             // 
-            this.tbxEmail.BackColor = System.Drawing.SystemColors.Window;
+            this.tbxEmail.BackColor = System.Drawing.SystemColors.Control;
             this.tbxEmail.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tbxEmail.Location = new System.Drawing.Point(269, 179);
             this.tbxEmail.MaxLength = 9;
             this.tbxEmail.Name = "tbxEmail";
             this.tbxEmail.ReadOnly = true;
+            this.tbxEmail.ShortcutsEnabled = false;
             this.tbxEmail.Size = new System.Drawing.Size(172, 23);
             this.tbxEmail.TabIndex = 84;
             // 
@@ -226,12 +232,13 @@ namespace SU21_Final_Project
             // 
             // tbxState
             // 
-            this.tbxState.BackColor = System.Drawing.SystemColors.Window;
+            this.tbxState.BackColor = System.Drawing.SystemColors.Control;
             this.tbxState.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tbxState.Location = new System.Drawing.Point(269, 109);
             this.tbxState.MaxLength = 9;
             this.tbxState.Name = "tbxState";
             this.tbxState.ReadOnly = true;
+            this.tbxState.ShortcutsEnabled = false;
             this.tbxState.Size = new System.Drawing.Size(172, 23);
             this.tbxState.TabIndex = 82;
             // 
@@ -247,12 +254,13 @@ namespace SU21_Final_Project
             // 
             // tbxPhone
             // 
-            this.tbxPhone.BackColor = System.Drawing.SystemColors.Window;
+            this.tbxPhone.BackColor = System.Drawing.SystemColors.Control;
             this.tbxPhone.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tbxPhone.Location = new System.Drawing.Point(269, 249);
             this.tbxPhone.MaxLength = 9;
             this.tbxPhone.Name = "tbxPhone";
             this.tbxPhone.ReadOnly = true;
+            this.tbxPhone.ShortcutsEnabled = false;
             this.tbxPhone.Size = new System.Drawing.Size(172, 23);
             this.tbxPhone.TabIndex = 86;
             // 
@@ -268,12 +276,13 @@ namespace SU21_Final_Project
             // 
             // tbxZipcode
             // 
-            this.tbxZipcode.BackColor = System.Drawing.SystemColors.Window;
+            this.tbxZipcode.BackColor = System.Drawing.SystemColors.Control;
             this.tbxZipcode.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tbxZipcode.Location = new System.Drawing.Point(269, 39);
             this.tbxZipcode.MaxLength = 9;
             this.tbxZipcode.Name = "tbxZipcode";
             this.tbxZipcode.ReadOnly = true;
+            this.tbxZipcode.ShortcutsEnabled = false;
             this.tbxZipcode.Size = new System.Drawing.Size(172, 23);
             this.tbxZipcode.TabIndex = 88;
             // 
@@ -301,7 +310,7 @@ namespace SU21_Final_Project
             // btnDisableCustomer
             // 
             this.btnDisableCustomer.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDisableCustomer.Location = new System.Drawing.Point(365, 412);
+            this.btnDisableCustomer.Location = new System.Drawing.Point(365, 419);
             this.btnDisableCustomer.Name = "btnDisableCustomer";
             this.btnDisableCustomer.Size = new System.Drawing.Size(107, 50);
             this.btnDisableCustomer.TabIndex = 90;
@@ -309,22 +318,22 @@ namespace SU21_Final_Project
             this.btnDisableCustomer.UseVisualStyleBackColor = true;
             this.btnDisableCustomer.Click += new System.EventHandler(this.btnDisableCustomer_Click);
             // 
-            // btnShowInactive
+            // btnShowActive
             // 
-            this.btnShowInactive.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnShowInactive.Location = new System.Drawing.Point(365, 475);
-            this.btnShowInactive.Name = "btnShowInactive";
-            this.btnShowInactive.Size = new System.Drawing.Size(107, 50);
-            this.btnShowInactive.TabIndex = 91;
-            this.btnShowInactive.Text = "&Show Active Customers";
-            this.btnShowInactive.UseVisualStyleBackColor = true;
-            this.btnShowInactive.Visible = false;
-            this.btnShowInactive.Click += new System.EventHandler(this.button1_Click);
+            this.btnShowActive.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnShowActive.Location = new System.Drawing.Point(365, 475);
+            this.btnShowActive.Name = "btnShowActive";
+            this.btnShowActive.Size = new System.Drawing.Size(107, 50);
+            this.btnShowActive.TabIndex = 91;
+            this.btnShowActive.Text = "&Show Active Customers";
+            this.btnShowActive.UseVisualStyleBackColor = true;
+            this.btnShowActive.Visible = false;
+            this.btnShowActive.Click += new System.EventHandler(this.btnShowActive_Click);
             // 
             // btnEnable
             // 
             this.btnEnable.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEnable.Location = new System.Drawing.Point(365, 412);
+            this.btnEnable.Location = new System.Drawing.Point(365, 419);
             this.btnEnable.Name = "btnEnable";
             this.btnEnable.Size = new System.Drawing.Size(107, 50);
             this.btnEnable.TabIndex = 92;
@@ -339,7 +348,7 @@ namespace SU21_Final_Project
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1254, 537);
             this.Controls.Add(this.btnEnable);
-            this.Controls.Add(this.btnShowInactive);
+            this.Controls.Add(this.btnShowActive);
             this.Controls.Add(this.btnDisableCustomer);
             this.Controls.Add(this.btnShowDIsabled);
             this.Controls.Add(this.tbxZipcode);
@@ -399,7 +408,7 @@ namespace SU21_Final_Project
         private System.Windows.Forms.Label lblZipCode;
         private System.Windows.Forms.Button btnShowDIsabled;
         private System.Windows.Forms.Button btnDisableCustomer;
-        private System.Windows.Forms.Button btnShowInactive;
+        private System.Windows.Forms.Button btnShowActive;
         private System.Windows.Forms.Button btnEnable;
     }
 }

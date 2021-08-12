@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
+using System.Globalization;
 
 namespace SU21_Final_Project
 {
@@ -184,7 +185,7 @@ namespace SU21_Final_Project
             {
                 dgvInventory.Columns[0].HeaderText = "Product ID ";
                 dgvInventory.Columns[1].HeaderText = "Product Name";
-                //dgvPerson.Columns[3].DefaultCellStyle.Format = "c2";
+                dgvInventory.Columns[4].DefaultCellStyle.Format = "c2";
                 dgvInventory.Columns[2].HeaderText = "Genre";
                 dgvInventory.Columns[3].HeaderText = "Quantity";
                 dgvInventory.Columns[4].HeaderText = "Price ";
@@ -243,11 +244,11 @@ namespace SU21_Final_Project
                 pbxImage.ImageLocation = imgLoc;
                 if(blnAddPic == true)
                 {
-                    btnSaveImage.Enabled = false;
+                    btnSaveImage.Enabled = true;
                 }
                 else
                 {
-                    btnSaveImage.Enabled = true;
+                    btnSaveImage.Enabled = false;
                 }
                 
             }
@@ -372,18 +373,44 @@ namespace SU21_Final_Project
         }
         private void tbxProductPrice_TextChanged(object sender, EventArgs e)//Price Validation (For Text Only)
         {
-
-                if(tbxProductPrice.Text == string.Empty)
+                decimal decOrderPrice;
+                string strPrice = tbxProductPrice.Text;
+                //Make sure its not empty and all things are good if not then display nothing and let user know hes wrong
+                if (tbxProductPrice.Text == string.Empty)
                 {
                     lblPriceValid.Text = "X";
                     lblPriceValid.ForeColor = Color.Red;
                 }
                 else
                 {
-                    lblPriceValid.Text = "\u221A";
-                    lblPriceValid.ForeColor = Color.Green;
+                //Make sure item is good if not X
+                strPrice = strPrice.Replace("$", "");
+                if (!decimal.TryParse(strPrice, NumberStyles.Currency, CultureInfo.InvariantCulture, out decOrderPrice))
+                {
+                    lblPriceValid.Text = "X";
+                    lblPriceValid.ForeColor = Color.Red;
                 }
-            
+                else
+                {
+
+                    if (decOrderPrice < 0)
+                    {
+                        lblPriceValid.Text = "X";
+                        lblPriceValid.ForeColor = Color.Red;
+                    }
+                    else
+                    {
+                        lblPriceValid.Text = "\u221A";
+                        lblPriceValid.ForeColor = Color.Green;
+
+                    }
+
+                }
+
+                }
+
+  
+
         }
         private void tbxProductDescription_TextChanged(object sender, EventArgs e)
         {
@@ -526,7 +553,104 @@ namespace SU21_Final_Project
 
         private void btnCreateInvoice_Click(object sender, EventArgs e)
         {
+            this.Hide();
+            frmManager_Create_Invoice frmCreateInvoice = new frmManager_Create_Invoice();
+            frmCreateInvoice.ShowDialog();
+            this.Show();
+            SetState("View");
+            Clear();
 
+        }
+        private void tbxProductName_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            //Only allow letters and backspace
+            if (e.KeyChar >= 65 && e.KeyChar <= 90 ||       //ASCII Check for Capital Letters
+                e.KeyChar == 32 ||                          //ASCII Check For Spacebar
+                e.KeyChar >= 48 && e.KeyChar <= 57 ||       //ASCII Check for Numbers
+               e.KeyChar >= 97 && e.KeyChar <= 122 ||       //ASCII Check for Lowercase Letters
+               e.KeyChar == 8)                              //ASCII Check for Backspace
+            {
+                //Accept the keystroke
+                e.Handled = false;
+            }
+            else
+            {
+                e.Handled = true;
+            }
+        }
+        private void tbxProductID_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar >= 48 && e.KeyChar <= 57 || //ASCII Check For Numbers
+               e.KeyChar == 8)
+            {
+                //Allow the key press
+                e.Handled = false;
+            }
+            else
+            {
+                //Deny the key press
+                e.Handled = true;
+            }
+        }
+        private void cbxGenres_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            //Only allow letters and backspace
+            if (e.KeyChar >= 65 && e.KeyChar <= 90 ||       //ASCII Check for Capital Letters
+               e.KeyChar >= 97 && e.KeyChar <= 122 ||       //ASCII Check for Lowercase Letters
+               e.KeyChar == 8)                              //ASCII Check for Backspace
+            {
+                //Accept the keystroke
+                e.Handled = false;
+            }
+            else
+            {
+                e.Handled = true;
+            }
+        }
+        private void tbxQuantity_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar >= 48 && e.KeyChar <= 57 || //ASCII Check For Numbers
+             e.KeyChar == 8)
+            {
+                //Allow the key press
+                e.Handled = false;
+            }
+            else
+            {
+                //Deny the key press
+                e.Handled = true;
+            }
+        }
+        private void tbxProductDescription_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            //Only allow letters and backspace
+            if (e.KeyChar >= 65 && e.KeyChar <= 90 ||       //ASCII Check for Capital Letters
+                e.KeyChar == 32 ||                          //ASCII Check For Spacebar
+                e.KeyChar >= 48 && e.KeyChar <= 57 ||       //ASCII Check for Numbers
+               e.KeyChar >= 97 && e.KeyChar <= 122 ||       //ASCII Check for Lowercase Letters
+               e.KeyChar == 8)                              //ASCII Check for Backspace
+            {
+                //Accept the keystroke
+                e.Handled = false;
+            }
+            else
+            {
+                e.Handled = true;
+            }
+        }
+        private void tbxProductPrice_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar >= 48 && e.KeyChar <= 57 ||       //ASCII Check for Numbers
+              e.KeyChar == 36 || e.KeyChar == 46 ||        //ASCII Check for Dollar Sign Or Period
+              e.KeyChar == 8)                              //ASCII Check for Backspace
+            {
+                //Accept the keystroke
+                e.Handled = false;
+            }
+            else
+            {
+                e.Handled = true;
+            }
         }
     }
 }

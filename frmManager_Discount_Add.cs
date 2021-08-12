@@ -48,20 +48,51 @@ namespace SU21_Final_Project
         public void DisplayDiscount()//Dispplay Discount Data Grid View
         {
 
-            strQuery = "Select * from OrtizB21Su2332.Discount";
+            strQuery = "Select * from OrtizB21Su2332.Discount where isValid = 1";
             ProgOps.GrabDiscounts(dgvDiscount, strQuery);
-            //dgvDiscount.AutoResizeColumn();
+            if (ProgOps._blnFound == true)
+            {
+                //dgvDiscount.AutoResizeColumn();
 
-            dgvProduct.Visible = false;
-            dgvDiscount.Visible = true;
+                dgvProduct.Visible = false;
+                dgvDiscount.Visible = true;
 
-            dgvDiscount.Columns[0].HeaderText = "Discount ID ";
-            dgvDiscount.Columns[1].HeaderText = "Discount Type";
-            dgvDiscount.Columns[2].HeaderText = "Product ID";
-            dgvDiscount.Columns[3].HeaderText = "Discount Percent";
-            dgvDiscount.Columns[4].HeaderText = "Is Valid";
+                dgvDiscount.Columns[0].HeaderText = "Discount ID ";
+                dgvDiscount.Columns[1].HeaderText = "Discount Type";
+                dgvDiscount.Columns[2].HeaderText = "Product ID";
+                dgvDiscount.Columns[3].HeaderText = "Discount Percent";
+                dgvDiscount.Columns[4].HeaderText = "Is Valid";
+            }
+            else
+            {
+
+            }
         }
 
+        public void DisplayInactiveDiscount()//Dispplay Discount Data Grid View
+        {
+
+            strQuery = "Select * from OrtizB21Su2332.Discount where isValid = 0";
+            ProgOps.GrabDiscounts(dgvDiscount, strQuery);
+            if (ProgOps._blnFound == true)
+            {
+                //dgvDiscount.AutoResizeColumn();
+
+                dgvProduct.Visible = false;
+                dgvDiscount.Visible = true;
+
+                dgvDiscount.Columns[0].HeaderText = "Discount ID ";
+                dgvDiscount.Columns[1].HeaderText = "Discount Type";
+                dgvDiscount.Columns[2].HeaderText = "Product ID";
+                dgvDiscount.Columns[3].HeaderText = "Discount Percent";
+                dgvDiscount.Columns[4].HeaderText = "Is Valid";
+            }
+            else
+            {
+
+            }
+            
+        }
         private void cmxDiscountType_SelectedIndexChanged(object sender, EventArgs e)//Used To Turn on Product Box
         {
             if(cmxDiscountType.Text == "2")
@@ -105,7 +136,7 @@ namespace SU21_Final_Project
             }
             else
             {
-                MessageBox.Show("Yeah It Would Be InValid");
+                MessageBox.Show("Invalid! Please Fillout all required information!" , "Invalid Discount" , MessageBoxButtons.OK , MessageBoxIcon.Information);
             }
 
             tbxDiscount.Clear();
@@ -117,28 +148,32 @@ namespace SU21_Final_Project
 
         private void tbxDiscount_TextChanged(object sender, EventArgs e)//Used to make sure that the Discount ID is valid
         {
-            
-            if (tbxDiscount.Text.Length != 9)
+            if(blnEdit == false)
             {
-                lblDiscountIDTextValid.Text = "X";
-                lblDiscountIDTextValid.ForeColor = Color.Red;               
-            }
-            else
-            {
-                strQuery = "Select DiscountID From OrtizB21Su2332.Discount where DiscountID =" + tbxDiscount.Text;
-                ProgOps.GrabProductID(strQuery);//Will Change to GrabProductID
-                if (ProgOps._blnFound == true)
+                if (tbxDiscount.Text.Length != 9)
                 {
                     lblDiscountIDTextValid.Text = "X";
                     lblDiscountIDTextValid.ForeColor = Color.Red;
-
                 }
                 else
                 {
-                    lblDiscountIDTextValid.Text = "\u221A";
-                    lblDiscountIDTextValid.ForeColor = Color.Green;
+                    strQuery = "Select DiscountID From OrtizB21Su2332.Discount where DiscountID =" + tbxDiscount.Text;
+                    ProgOps.CheckID(strQuery);//Will Change to GrabProductID
+                    if (ProgOps._blnFound == true)
+                    {
+                        lblDiscountIDTextValid.Text = "X";
+                        lblDiscountIDTextValid.ForeColor = Color.Red;
+                        MessageBox.Show("Invalid! DiscountID must be unique", "Invalid Discount", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                    }
+                    else
+                    {
+                        lblDiscountIDTextValid.Text = "\u221A";
+                        lblDiscountIDTextValid.ForeColor = Color.Green;
+                    }
                 }
             }
+           
         }
 
         private void tbxDiscountPercent_TextChanged(object sender, EventArgs e)//Validation for Discount Percent
@@ -375,6 +410,11 @@ namespace SU21_Final_Project
         private void btnReturn_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void btnShowInactive_Click(object sender, EventArgs e)
+        {
+            DisplayInactiveDiscount();
         }
     }
 }

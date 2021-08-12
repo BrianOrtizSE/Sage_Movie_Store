@@ -75,6 +75,7 @@ namespace SU21_Final_Project
                     break;
 
                 case 1:
+
                     //Searches for user using Username 
                     strQuery = "Select p.PersonID " +
                         " From OrtizB21Su2332.Person p inner join OrtizB21Su2332.LogOn l on p.PersonID = l.PersonID " +
@@ -95,8 +96,25 @@ namespace SU21_Final_Project
 
                     }
                     break;
+
                 case 2:
-                    break;
+
+                    //Searches for user using Username 
+                    strQuery = "Select p.PersonID " +
+                        " From OrtizB21Su2332.Person p inner join OrtizB21Su2332.LogOn l on p.PersonID = l.PersonID " +
+                        " Where l.UserName = '" + tbxUsername.Text + "' ";
+
+                    ProgOps.GrabPersonID(strQuery);
+                    //If found let them through if not do nothing
+                    if (ProgOps._blnFound == true)
+                    {
+                        this.Close();
+                    }
+                    else
+                    {
+                        //MessageBox.Show("User Not Found", "User Not Found", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                        break;
                 default:
                     break;
 

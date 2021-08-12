@@ -76,6 +76,7 @@ namespace SU21_Final_Project
             this.tbxProductDescription.Size = new System.Drawing.Size(461, 141);
             this.tbxProductDescription.TabIndex = 75;
             this.tbxProductDescription.TextChanged += new System.EventHandler(this.tbxProductDescription_TextChanged);
+            this.tbxProductDescription.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbxProductDescription_KeyPress);
             // 
             // lblHireDate
             // 
@@ -100,6 +101,7 @@ namespace SU21_Final_Project
             this.tbxProductName.Size = new System.Drawing.Size(186, 23);
             this.tbxProductName.TabIndex = 72;
             this.tbxProductName.TextChanged += new System.EventHandler(this.tbxProductName_TextChanged);
+            this.tbxProductName.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbxProductName_KeyPress);
             // 
             // btnReturn
             // 
@@ -179,6 +181,7 @@ namespace SU21_Final_Project
             this.tbxQuantity.Size = new System.Drawing.Size(185, 23);
             this.tbxQuantity.TabIndex = 63;
             this.tbxQuantity.TextChanged += new System.EventHandler(this.tbxQuantity_TextChanged);
+            this.tbxQuantity.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbxQuantity_KeyPress);
             // 
             // lblQuanitty
             // 
@@ -233,6 +236,7 @@ namespace SU21_Final_Project
             this.tbxProductID.Size = new System.Drawing.Size(186, 23);
             this.tbxProductID.TabIndex = 57;
             this.tbxProductID.TextChanged += new System.EventHandler(this.tbxProductID_TextChanged);
+            this.tbxProductID.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbxProductID_KeyPress);
             // 
             // dgvInventory
             // 
@@ -308,6 +312,7 @@ namespace SU21_Final_Project
             this.tbxProductPrice.Size = new System.Drawing.Size(185, 23);
             this.tbxProductPrice.TabIndex = 89;
             this.tbxProductPrice.TextChanged += new System.EventHandler(this.tbxProductPrice_TextChanged);
+            this.tbxProductPrice.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbxProductPrice_KeyPress);
             // 
             // lblPrice
             // 
@@ -354,6 +359,7 @@ namespace SU21_Final_Project
             this.cbxGenres.Size = new System.Drawing.Size(185, 24);
             this.cbxGenres.TabIndex = 82;
             this.cbxGenres.SelectedIndexChanged += new System.EventHandler(this.cbxGenres_SelectedIndexChanged);
+            this.cbxGenres.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.cbxGenres_KeyPress);
             // 
             // lblProductNameValid
             // 

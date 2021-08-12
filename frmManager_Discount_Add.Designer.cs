@@ -54,6 +54,9 @@ namespace SU21_Final_Project
             this.btnCancelEdit = new System.Windows.Forms.Button();
             this.dgvProduct = new System.Windows.Forms.DataGridView();
             this.btnReturn = new System.Windows.Forms.Button();
+            this.btnShowDisabled = new System.Windows.Forms.Button();
+            this.btnShowActive = new System.Windows.Forms.Button();
+            this.btnShowInactive = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDiscount)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProduct)).BeginInit();
             this.SuspendLayout();
@@ -67,7 +70,7 @@ namespace SU21_Final_Project
             this.dgvDiscount.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedCells;
             this.dgvDiscount.BackgroundColor = System.Drawing.Color.White;
             this.dgvDiscount.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvDiscount.Location = new System.Drawing.Point(527, 13);
+            this.dgvDiscount.Location = new System.Drawing.Point(486, 11);
             this.dgvDiscount.MultiSelect = false;
             this.dgvDiscount.Name = "dgvDiscount";
             this.dgvDiscount.ReadOnly = true;
@@ -79,10 +82,11 @@ namespace SU21_Final_Project
             // 
             // tbxDiscount
             // 
-            this.tbxDiscount.Location = new System.Drawing.Point(30, 57);
+            this.tbxDiscount.Location = new System.Drawing.Point(17, 57);
             this.tbxDiscount.MaxLength = 9;
             this.tbxDiscount.Name = "tbxDiscount";
-            this.tbxDiscount.Size = new System.Drawing.Size(116, 21);
+            this.tbxDiscount.ShortcutsEnabled = false;
+            this.tbxDiscount.Size = new System.Drawing.Size(197, 21);
             this.tbxDiscount.TabIndex = 1;
             this.tbxDiscount.TextChanged += new System.EventHandler(this.tbxDiscount_TextChanged);
             this.tbxDiscount.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbxDiscount_KeyPress);
@@ -90,7 +94,7 @@ namespace SU21_Final_Project
             // lblDiscountID
             // 
             this.lblDiscountID.AutoSize = true;
-            this.lblDiscountID.Location = new System.Drawing.Point(27, 38);
+            this.lblDiscountID.Location = new System.Drawing.Point(14, 38);
             this.lblDiscountID.Name = "lblDiscountID";
             this.lblDiscountID.Size = new System.Drawing.Size(76, 15);
             this.lblDiscountID.TabIndex = 2;
@@ -103,16 +107,16 @@ namespace SU21_Final_Project
             this.cmxDiscountType.Items.AddRange(new object[] {
             "1",
             "2"});
-            this.cmxDiscountType.Location = new System.Drawing.Point(30, 138);
+            this.cmxDiscountType.Location = new System.Drawing.Point(17, 138);
             this.cmxDiscountType.Name = "cmxDiscountType";
-            this.cmxDiscountType.Size = new System.Drawing.Size(116, 23);
+            this.cmxDiscountType.Size = new System.Drawing.Size(197, 23);
             this.cmxDiscountType.TabIndex = 3;
             this.cmxDiscountType.SelectedIndexChanged += new System.EventHandler(this.cmxDiscountType_SelectedIndexChanged);
             // 
             // lblDiscountType
             // 
             this.lblDiscountType.AutoSize = true;
-            this.lblDiscountType.Location = new System.Drawing.Point(27, 119);
+            this.lblDiscountType.Location = new System.Drawing.Point(14, 119);
             this.lblDiscountType.Name = "lblDiscountType";
             this.lblDiscountType.Size = new System.Drawing.Size(90, 15);
             this.lblDiscountType.TabIndex = 4;
@@ -121,7 +125,7 @@ namespace SU21_Final_Project
             // lblProductID
             // 
             this.lblProductID.AutoSize = true;
-            this.lblProductID.Location = new System.Drawing.Point(27, 200);
+            this.lblProductID.Location = new System.Drawing.Point(14, 200);
             this.lblProductID.Name = "lblProductID";
             this.lblProductID.Size = new System.Drawing.Size(61, 15);
             this.lblProductID.TabIndex = 6;
@@ -130,20 +134,22 @@ namespace SU21_Final_Project
             // tbxProductID
             // 
             this.tbxProductID.Enabled = false;
-            this.tbxProductID.Location = new System.Drawing.Point(30, 222);
+            this.tbxProductID.Location = new System.Drawing.Point(17, 222);
             this.tbxProductID.MaxLength = 5;
             this.tbxProductID.Name = "tbxProductID";
-            this.tbxProductID.Size = new System.Drawing.Size(116, 21);
+            this.tbxProductID.ShortcutsEnabled = false;
+            this.tbxProductID.Size = new System.Drawing.Size(197, 21);
             this.tbxProductID.TabIndex = 7;
             this.tbxProductID.TextChanged += new System.EventHandler(this.tbxProductID_TextChanged);
             this.tbxProductID.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbxProductID_KeyPress);
             // 
             // tbxDiscountPercent
             // 
-            this.tbxDiscountPercent.Location = new System.Drawing.Point(30, 302);
+            this.tbxDiscountPercent.Location = new System.Drawing.Point(17, 302);
             this.tbxDiscountPercent.MaxLength = 2;
             this.tbxDiscountPercent.Name = "tbxDiscountPercent";
-            this.tbxDiscountPercent.Size = new System.Drawing.Size(116, 21);
+            this.tbxDiscountPercent.ShortcutsEnabled = false;
+            this.tbxDiscountPercent.Size = new System.Drawing.Size(197, 21);
             this.tbxDiscountPercent.TabIndex = 9;
             this.tbxDiscountPercent.TextChanged += new System.EventHandler(this.tbxDiscountPercent_TextChanged);
             this.tbxDiscountPercent.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbxDiscountPercent_KeyPress);
@@ -151,7 +157,7 @@ namespace SU21_Final_Project
             // lblDiscountPercent
             // 
             this.lblDiscountPercent.AutoSize = true;
-            this.lblDiscountPercent.Location = new System.Drawing.Point(27, 282);
+            this.lblDiscountPercent.Location = new System.Drawing.Point(14, 282);
             this.lblDiscountPercent.Name = "lblDiscountPercent";
             this.lblDiscountPercent.Size = new System.Drawing.Size(109, 15);
             this.lblDiscountPercent.TabIndex = 8;
@@ -160,7 +166,7 @@ namespace SU21_Final_Project
             // lblIsValid
             // 
             this.lblIsValid.AutoSize = true;
-            this.lblIsValid.Location = new System.Drawing.Point(27, 362);
+            this.lblIsValid.Location = new System.Drawing.Point(14, 351);
             this.lblIsValid.Name = "lblIsValid";
             this.lblIsValid.Size = new System.Drawing.Size(46, 15);
             this.lblIsValid.TabIndex = 10;
@@ -169,7 +175,7 @@ namespace SU21_Final_Project
             // cbxIsValid
             // 
             this.cbxIsValid.AutoSize = true;
-            this.cbxIsValid.Location = new System.Drawing.Point(30, 380);
+            this.cbxIsValid.Location = new System.Drawing.Point(17, 369);
             this.cbxIsValid.Name = "cbxIsValid";
             this.cbxIsValid.Size = new System.Drawing.Size(15, 14);
             this.cbxIsValid.TabIndex = 11;
@@ -177,9 +183,9 @@ namespace SU21_Final_Project
             // 
             // btnProduct
             // 
-            this.btnProduct.Location = new System.Drawing.Point(451, 406);
+            this.btnProduct.Location = new System.Drawing.Point(390, 121);
             this.btnProduct.Name = "btnProduct";
-            this.btnProduct.Size = new System.Drawing.Size(70, 43);
+            this.btnProduct.Size = new System.Drawing.Size(90, 49);
             this.btnProduct.TabIndex = 12;
             this.btnProduct.Text = "Show &Product";
             this.btnProduct.UseVisualStyleBackColor = true;
@@ -187,17 +193,17 @@ namespace SU21_Final_Project
             // 
             // btnShowDiscount
             // 
-            this.btnShowDiscount.Location = new System.Drawing.Point(451, 462);
+            this.btnShowDiscount.Location = new System.Drawing.Point(390, 11);
             this.btnShowDiscount.Name = "btnShowDiscount";
-            this.btnShowDiscount.Size = new System.Drawing.Size(70, 43);
+            this.btnShowDiscount.Size = new System.Drawing.Size(90, 49);
             this.btnShowDiscount.TabIndex = 13;
-            this.btnShowDiscount.Text = "Show &Discount";
+            this.btnShowDiscount.Text = "Show &Active Discount";
             this.btnShowDiscount.UseVisualStyleBackColor = true;
             this.btnShowDiscount.Click += new System.EventHandler(this.btnShowDiscount_Click);
             // 
             // btnAdd
             // 
-            this.btnAdd.Location = new System.Drawing.Point(30, 455);
+            this.btnAdd.Location = new System.Drawing.Point(16, 398);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(87, 50);
             this.btnAdd.TabIndex = 14;
@@ -209,7 +215,7 @@ namespace SU21_Final_Project
             // 
             this.lblDiscountIDTextValid.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblDiscountIDTextValid.ForeColor = System.Drawing.Color.Red;
-            this.lblDiscountIDTextValid.Location = new System.Drawing.Point(154, 57);
+            this.lblDiscountIDTextValid.Location = new System.Drawing.Point(222, 57);
             this.lblDiscountIDTextValid.Name = "lblDiscountIDTextValid";
             this.lblDiscountIDTextValid.Size = new System.Drawing.Size(18, 21);
             this.lblDiscountIDTextValid.TabIndex = 15;
@@ -220,7 +226,7 @@ namespace SU21_Final_Project
             // 
             this.lblDiscountPercentValid.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblDiscountPercentValid.ForeColor = System.Drawing.Color.Red;
-            this.lblDiscountPercentValid.Location = new System.Drawing.Point(152, 302);
+            this.lblDiscountPercentValid.Location = new System.Drawing.Point(220, 302);
             this.lblDiscountPercentValid.Name = "lblDiscountPercentValid";
             this.lblDiscountPercentValid.Size = new System.Drawing.Size(20, 21);
             this.lblDiscountPercentValid.TabIndex = 16;
@@ -231,7 +237,7 @@ namespace SU21_Final_Project
             // 
             this.lblProductIDValid.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblProductIDValid.ForeColor = System.Drawing.Color.Red;
-            this.lblProductIDValid.Location = new System.Drawing.Point(152, 222);
+            this.lblProductIDValid.Location = new System.Drawing.Point(220, 222);
             this.lblProductIDValid.Name = "lblProductIDValid";
             this.lblProductIDValid.Size = new System.Drawing.Size(20, 21);
             this.lblProductIDValid.TabIndex = 17;
@@ -241,7 +247,7 @@ namespace SU21_Final_Project
             // 
             // btnEditDiscount
             // 
-            this.btnEditDiscount.Location = new System.Drawing.Point(123, 455);
+            this.btnEditDiscount.Location = new System.Drawing.Point(109, 398);
             this.btnEditDiscount.Name = "btnEditDiscount";
             this.btnEditDiscount.Size = new System.Drawing.Size(74, 50);
             this.btnEditDiscount.TabIndex = 18;
@@ -251,7 +257,7 @@ namespace SU21_Final_Project
             // 
             // btnCompleteEdit
             // 
-            this.btnCompleteEdit.Location = new System.Drawing.Point(203, 399);
+            this.btnCompleteEdit.Location = new System.Drawing.Point(109, 454);
             this.btnCompleteEdit.Name = "btnCompleteEdit";
             this.btnCompleteEdit.Size = new System.Drawing.Size(75, 50);
             this.btnCompleteEdit.TabIndex = 19;
@@ -261,7 +267,7 @@ namespace SU21_Final_Project
             // 
             // btnCancelEdit
             // 
-            this.btnCancelEdit.Location = new System.Drawing.Point(203, 455);
+            this.btnCancelEdit.Location = new System.Drawing.Point(189, 398);
             this.btnCancelEdit.Name = "btnCancelEdit";
             this.btnCancelEdit.Size = new System.Drawing.Size(75, 50);
             this.btnCancelEdit.TabIndex = 20;
@@ -278,17 +284,17 @@ namespace SU21_Final_Project
             this.dgvProduct.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedCells;
             this.dgvProduct.BackgroundColor = System.Drawing.Color.White;
             this.dgvProduct.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvProduct.Location = new System.Drawing.Point(527, 12);
+            this.dgvProduct.Location = new System.Drawing.Point(486, 11);
             this.dgvProduct.MultiSelect = false;
             this.dgvProduct.Name = "dgvProduct";
             this.dgvProduct.ReadOnly = true;
             this.dgvProduct.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvProduct.Size = new System.Drawing.Size(456, 492);
+            this.dgvProduct.Size = new System.Drawing.Size(470, 493);
             this.dgvProduct.TabIndex = 21;
             // 
             // btnReturn
             // 
-            this.btnReturn.Location = new System.Drawing.Point(284, 455);
+            this.btnReturn.Location = new System.Drawing.Point(270, 451);
             this.btnReturn.Name = "btnReturn";
             this.btnReturn.Size = new System.Drawing.Size(75, 50);
             this.btnReturn.TabIndex = 22;
@@ -296,11 +302,42 @@ namespace SU21_Final_Project
             this.btnReturn.UseVisualStyleBackColor = true;
             this.btnReturn.Click += new System.EventHandler(this.btnReturn_Click);
             // 
+            // btnShowDisabled
+            // 
+            this.btnShowDisabled.Location = new System.Drawing.Point(390, 451);
+            this.btnShowDisabled.Name = "btnShowDisabled";
+            this.btnShowDisabled.Size = new System.Drawing.Size(90, 48);
+            this.btnShowDisabled.TabIndex = 23;
+            this.btnShowDisabled.Text = "Disable Discount";
+            this.btnShowDisabled.UseVisualStyleBackColor = true;
+            // 
+            // btnShowActive
+            // 
+            this.btnShowActive.Location = new System.Drawing.Point(390, 451);
+            this.btnShowActive.Name = "btnShowActive";
+            this.btnShowActive.Size = new System.Drawing.Size(90, 48);
+            this.btnShowActive.TabIndex = 24;
+            this.btnShowActive.Text = "Activate Discount";
+            this.btnShowActive.UseVisualStyleBackColor = true;
+            // 
+            // btnShowInactive
+            // 
+            this.btnShowInactive.Location = new System.Drawing.Point(390, 66);
+            this.btnShowInactive.Name = "btnShowInactive";
+            this.btnShowInactive.Size = new System.Drawing.Size(90, 49);
+            this.btnShowInactive.TabIndex = 25;
+            this.btnShowInactive.Text = "Show &Inactive Discount";
+            this.btnShowInactive.UseVisualStyleBackColor = true;
+            this.btnShowInactive.Click += new System.EventHandler(this.btnShowInactive_Click);
+            // 
             // frmManager_Discount_Add
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1001, 522);
+            this.ClientSize = new System.Drawing.Size(968, 522);
+            this.Controls.Add(this.btnShowInactive);
+            this.Controls.Add(this.btnShowActive);
+            this.Controls.Add(this.btnShowDisabled);
             this.Controls.Add(this.btnReturn);
             this.Controls.Add(this.dgvProduct);
             this.Controls.Add(this.btnCancelEdit);
@@ -362,5 +399,8 @@ namespace SU21_Final_Project
         private System.Windows.Forms.Button btnCancelEdit;
         private System.Windows.Forms.DataGridView dgvProduct;
         private System.Windows.Forms.Button btnReturn;
+        private System.Windows.Forms.Button btnShowDisabled;
+        private System.Windows.Forms.Button btnShowActive;
+        private System.Windows.Forms.Button btnShowInactive;
     }
 }

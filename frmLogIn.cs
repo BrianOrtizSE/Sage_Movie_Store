@@ -52,15 +52,24 @@ namespace SU21_Final_Project
 
                     if (ProgOps._blnFound == true)
                     {
+
                         //if person found using same query Grab Their ID
                         strQuery = "Select PersonID From OrtizB21Su2332.LogOn " +
                         "Where Username = '" + tbxUsername.Text + "'";
                         ProgOps.GrabPersonID(strQuery);//====SWITCH TO STRING LATER TO GRAB TEHIR NAME INSTEAD OF ID======
 
-                        frmCustomer_Main frmcustomermain = new frmCustomer_Main();
-                        this.Hide();
-                        frmcustomermain.ShowDialog();
-                        this.Close();
+                        //Check To See If their active if not stop them
+                        if (ProgOps.CheckActiveCustomer(ProgOps._intPersonID))
+                        {
+                            frmCustomer_Main frmcustomermain = new frmCustomer_Main();
+                            this.Hide();
+                            frmcustomermain.ShowDialog();
+                            this.Close();
+                        }
+                        else
+                        {
+                            MessageBox.Show("Account Disabled please talk to management to reactivate", "Account Disabled", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        }
                     }
                     else
                     {
@@ -76,30 +85,36 @@ namespace SU21_Final_Project
 
                     if (ProgOps._blnFound == true)
                     {
-                        //If Found we set EmployeeID 
-                        strQuery = "Select e.PersonID from  OrtizB21Su2332.Employees e inner join OrtizB21Su2332.LogOn l on l.PersonID = e.PersonID " +
-                        "Where EmployeeID = " + tbxUsername.Text;
+                        //If Found , we set EmployeeID 
+                        strQuery = "Select e.EmployeeID from  OrtizB21Su2332.Employees e inner join OrtizB21Su2332.LogOn l on l.PersonID = e.PersonID " +
+                         "Where EmployeeID = " + tbxUsername.Text;
                         ProgOps.GrabEmployeeID(strQuery);
 
-                        //Checks To see employee is admin if they are show them manager screen if not use employee
-                        if(ProgOps.GrabAdmin(ProgOps._intEmployeeID) == true)
+                        //Check to see if employee is active 
+                        if (ProgOps.CheckActiveEmployee(ProgOps._intEmployeeID))
                         {
-                           frmManager_Main frmmanagermain = new frmManager_Main();
-                            this.Hide();
-                            frmmanagermain.ShowDialog();
-                            this.Close();
+                            //Checks To see employee is admin if they are show them manager screen if not use employee
+                            if (ProgOps.GrabAdmin(ProgOps._intEmployeeID))
+                            {
+                                frmManager_Main frmmanagermain = new frmManager_Main();
+                                this.Hide();
+                                frmmanagermain.ShowDialog();
+                                this.Close();
+                            }
+                            else
+                            {
+                                frmEmployee_Main frmemployeemain = new frmEmployee_Main();
+                                this.Hide();
+                                frmemployeemain.ShowDialog();
+                                this.Close();
+                            }
                         }
-                        else 
+                        else
                         {
-                         strQuery = "Select e.EmployeeID from  OrtizB21Su2332.Employees e inner join OrtizB21Su2332.LogOn l on l.PersonID = e.PersonID " +
-                         "Where EmployeeID = " + tbxUsername.Text;
-                         ProgOps.GrabEmployeeID(strQuery);
+                            MessageBox.Show("Account Disabled please talk to management to reactivate", "Account Disabled", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        }
 
-                            frmEmployee_Main frmemployeemain = new frmEmployee_Main();
-                            this.Hide();
-                            frmemployeemain.ShowDialog();
-                            this.Close();
-                        }
+                        
                     }
                     else
                     {

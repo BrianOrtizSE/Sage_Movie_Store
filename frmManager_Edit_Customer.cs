@@ -61,7 +61,7 @@ namespace SU21_Final_Project
             }
         }
 
-        private void btnEditUser_Click(object sender, EventArgs e)
+        private void btnEditUser_Click(object sender, EventArgs e)//Brings up edit form
         {
             if(tbxPersonID.Text == string.Empty)
             {
@@ -77,12 +77,12 @@ namespace SU21_Final_Project
             }
         }
 
-        private void btnReturn_Click(object sender, EventArgs e)
+        private void btnReturn_Click(object sender, EventArgs e)//close this form
         {
             this.Close();
         }
 
-        private void btnShowDIsabled_Click(object sender, EventArgs e)
+        private void btnShowDIsabled_Click(object sender, EventArgs e)//Display Inactive Customers
         {
             strQuery = "Select PersonID , NameFirst , NameLast , Address1 , City , Zipcode , State , Email , PhonePrimary From OrtizB21Su2332.Person Where isActive = 0";
             ProgOps.GrabEmployee(dgvPerson, strQuery); // CHANGE TO A DIFFERENT FUNCITION LATER
@@ -108,14 +108,14 @@ namespace SU21_Final_Project
                 btnShowDIsabled.Visible = false;
 
                 btnEnable.Visible = true;
-                btnShowInactive.Visible = true;
+                btnShowActive.Visible = true;
                 Clear();
             }
 
 
         }
 
-        private void btnDisableCustomer_Click(object sender, EventArgs e)
+        private void btnDisableCustomer_Click(object sender, EventArgs e)//Disable Customer
         {
             if (tbxPersonID.Text == string.Empty)
             {
@@ -127,7 +127,7 @@ namespace SU21_Final_Project
 
                 if (dialogResult == DialogResult.Yes)
                 {
-                    strQuery = "Update OrtizB21Su2332.Person Set isActive = 1 Where PersonID = " + tbxPersonID.Text;
+                    strQuery = "Update OrtizB21Su2332.Person Set isActive = 0 Where PersonID = " + tbxPersonID.Text;
                     MessageBox.Show("Customer Has Been Disabled", "Employee Disable", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     ProgOps.CreateDiscount(strQuery);
                     GrabPersson();
@@ -137,18 +137,18 @@ namespace SU21_Final_Project
             }
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void btnShowActive_Click(object sender, EventArgs e)//Display Active Customers
         {
             GrabPersson();
             btnDisableCustomer.Visible = true;
             btnShowDIsabled.Visible = true;
 
             btnEnable.Visible = false;
-            btnShowInactive.Visible = false;
+            btnShowActive.Visible = false;
             Clear();
         }
 
-        private void btnEnable_Click(object sender, EventArgs e)
+        private void btnEnable_Click(object sender, EventArgs e)//Enable Customer
         {
             if (tbxPersonID.Text == string.Empty)
             {
@@ -160,11 +160,15 @@ namespace SU21_Final_Project
 
                 if (dialogResult == DialogResult.Yes)
                 {
-                    strQuery = "Update OrtizB21Su2332.Person Set isActive = 0 Where PersonID = " + tbxPersonID.Text;
+                    strQuery = "Update OrtizB21Su2332.Person Set isActive = 1 Where PersonID = " + tbxPersonID.Text;
                     MessageBox.Show("Customer Has Been Activated", "Employee Active", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     ProgOps.CreateDiscount(strQuery);
                     GrabPersson();
                     Clear();
+                    btnShowActive.Visible = false;
+                    btnEnable.Visible = false;
+                    btnDisableCustomer.Visible = true;
+                    btnShowDIsabled.Visible = true;
                 }
 
             }

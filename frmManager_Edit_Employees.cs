@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Globalization;
 
 namespace SU21_Final_Project
 {
@@ -30,12 +31,13 @@ namespace SU21_Final_Project
             bool blnValid = true;
             double dblWage = 0.0;
             string strWage = tbxWage.Text;
-            //Make Sure Admin Dont pay less than minimum wage
+            //Make Sure PersonID is not empty
             if (tbxPersonID.Text == String.Empty)
             {
                 MessageBox.Show("Please Find Person ID", "Person ID", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 blnValid = false;
             }
+            //If PersonID is found move on and make sure Wage is valid
             if (lblWageTextValid.Text == "X")
             {
                 blnValid = false;
@@ -43,30 +45,42 @@ namespace SU21_Final_Project
             else
             {
                 strWage = strWage.Replace("$", "");
-
                 dblWage = Double.Parse(strWage);
+
                 if (dblWage < 7.25)
                 {
-                    MessageBox.Show("Federal Minimum Wage is 7.25$ please correct Wage to comply.", "Minimum Wage", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("Federal Minimum Wage is $7.25 please correct Wage to comply.", "Minimum Wage", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    blnValid = false;
+                }
+                if(dblWage > 125)
+                {
+                    MessageBox.Show("Company Maximum Hourly is $125 please correct Wage to complyy.", "Minimum Wage", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     blnValid = false;
                 }
 
                 if (cbxIsSalary.Checked == true && dblWage < 25000)
                 {
-                    MessageBox.Show("Company Minimum Salary is 25,000$ please correct Wage to comply.", "Minimum Salary", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("Company Minimum Salary is $25,000 please correct Wage to comply.", "Minimum Salary", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    blnValid = false;
+                }
+                if (cbxIsSalary.Checked == true && dblWage > 99999)
+                {
+                    MessageBox.Show("Company Maximum Salary is $99,999 please correct Wage to comply.", "Minimum Salary", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     blnValid = false;
                 }
             }
-            if (cmxPosition.SelectedIndex == -1)
+            if (cmxPosition.SelectedIndex == -1)//Check To Make Sure The Person is marked as an Employee
             {
                 MessageBox.Show("Error While Setting Employee Position", "Employee Position Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 blnValid = false;
             }
-
+            
             if (blnValid == true)
             {
+                //Variables for keeping track of their salary or admin
                 int isSalary = 0;
                 int isAdmin = 0;
+
                 if (cbxIsSalary.Checked)
                 {
                     isSalary = 1;
@@ -77,11 +91,12 @@ namespace SU21_Final_Project
                 }
 
 
-                strQuery = "Insert into OrtizB21Su2332.Employees(PersonID , Position , Wage , Hire_Date , isSalary  ,isAdmin) " +
-                    " values(" + tbxPersonID.Text + ",'" + cmxPosition.Text + "'," + dblWage + ",GETDATE()," + isSalary + "," + isAdmin + ")";
+                strQuery = "Insert into OrtizB21Su2332.Employees(PersonID , Position , Wage , Hire_Date , isSalary  ,isAdmin , isActive) " +
+                    " values(" + tbxPersonID.Text + ",'" + cmxPosition.Text + "'," + dblWage + ",GETDATE()," + isSalary + "," + isAdmin + ",1)";
                 ProgOps.CreateDiscount(strQuery);
 
                 MessageBox.Show("Employee Added", "Employee", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                Clear();
                 GrabEmployee();
 
             }
@@ -99,6 +114,42 @@ namespace SU21_Final_Project
             {
                 lblWageTextValid.ForeColor = Color.Green;
                 lblWageTextValid.Text = "\u221A";
+            }
+
+            decimal decOrderPrice;
+            string strPrice = tbxWage.Text;
+            //Make sure its not empty and all things are good if not then display nothing and let user know hes wrong
+            if (tbxWage.Text == string.Empty)
+            {
+                lblWageTextValid.Text = "X";
+                lblWageTextValid.ForeColor = Color.Red;
+            }
+            else
+            {
+                //Make sure item is good if not X
+                strPrice = strPrice.Replace("$", "");
+                if (!decimal.TryParse(strPrice, NumberStyles.Currency, CultureInfo.InvariantCulture, out decOrderPrice))
+                {
+                    lblWageTextValid.Text = "X";
+                    lblWageTextValid.ForeColor = Color.Red;
+                }
+                else
+                {
+
+                    if (decOrderPrice < 0)
+                    {
+                        lblWageTextValid.Text = "X";
+                        lblWageTextValid.ForeColor = Color.Red;
+                    }
+                    else
+                    {
+                        lblWageTextValid.Text = "\u221A";
+                        lblWageTextValid.ForeColor = Color.Green;
+
+                    }
+
+                }
+
             }
 
         }
@@ -215,22 +266,33 @@ namespace SU21_Final_Project
             this.Close();
         }
 
-        private void btnFindPersonID_Click(object sender, EventArgs e)//Use Find User Form But Change it a bit so that it works for this form
+        private void btnFindPersonID_Click(object sender, EventArgs e)//Use Find User Form
         {
-            ProgOps._FindUser = 1;
+
+            //Set these settings to a value to help
+            ProgOps._FindUser = 2;
+            ProgOps._blnFound = false;
+
+            //Use Find form
             this.Hide();
             frmFind_User frmFindUser = new frmFind_User();
             frmFindUser.ShowDialog();
             this.Show();
-            tbxPersonID.Text = ProgOps._intPersonID.ToString();
 
-            strQuery = "Select * from OrtizB21Su2332.Employees where PersonID = " + tbxPersonID.Text;
-            ProgOps.GrabEmployeeID(strQuery);
-            if(ProgOps._blnFound == true)
+            //If no one is found dont do anything if they are then we check to see if they are employee
+            if (ProgOps._blnFound == true)
             {
-                MessageBox.Show("User is already an Employee", "User Employee", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                tbxPersonID.Clear();
+                tbxPersonID.Text = ProgOps._intPersonID.ToString();
+                strQuery = "Select * from OrtizB21Su2332.Employees where PersonID = " + tbxPersonID.Text;
+                ProgOps.CheckEmployeeID(strQuery);
+                if (ProgOps._blnFound == true)
+                {
+                    MessageBox.Show("User is already an Employee", "User Employee", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    tbxPersonID.Clear();
+                }
             }
+           
+            
         }
 
         private void btnGetDate_Click(object sender, EventArgs e)//Used to show Dte
@@ -254,6 +316,7 @@ namespace SU21_Final_Project
                     strQuery = "Update OrtizB21Su2332.Employees Set isActive = 0 Where PersonID = " + tbxPersonID.Text;
                     MessageBox.Show("Employee Has Been Disabled", "Employee Disabled", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     ProgOps.CreateDiscount(strQuery);
+                    Clear();
                     GrabEmployee();
                }     
 
@@ -271,7 +334,7 @@ namespace SU21_Final_Project
             }
             else
             {
-
+                Clear();
                 dgvEmployee.Columns[0].HeaderText = "Employee ID ";
                 dgvEmployee.Columns[1].HeaderText = "Person ID";
                 dgvEmployee.Columns[2].HeaderText = "Position";
@@ -291,7 +354,6 @@ namespace SU21_Final_Project
 
 
         }
-
         private void btnShowActive_Click(object sender, EventArgs e)
         {
             btnShowUnactive.Visible = true;
@@ -299,7 +361,7 @@ namespace SU21_Final_Project
 
             btnDisable.Visible = true;
             btnEnable.Visible = false;
-
+            Clear();
             GrabEmployee();
         }
 
@@ -319,6 +381,11 @@ namespace SU21_Final_Project
                     MessageBox.Show("Employee Has Been Enabled", "Employee Enabled", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     ProgOps.CreateDiscount(strQuery);
                     GrabEmployee();
+                    Clear();
+                    btnDisable.Visible = true;
+                    btnEnable.Visible = false;
+                    btnShowUnactive.Visible = true;
+                    btnShowActive.Visible = false;
                 }
 
             }
@@ -405,6 +472,65 @@ namespace SU21_Final_Project
             }
         }
 
+        private void tbxEmployee_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar >= 48 && e.KeyChar <= 57 || //ASCII Check For Numbers
+                e.KeyChar == 8)
+            {
+                //Allow the key press
+                e.Handled = false;
+            }
+            else
+            {
+                //Deny the key press
+                e.Handled = true;
+            }
+        }
 
+        private void tbxPersonID_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar >= 48 && e.KeyChar <= 57 || //ASCII Check For Numbers
+                e.KeyChar == 8)
+            {
+                //Allow the key press
+                e.Handled = false;
+            }
+            else
+            {
+                //Deny the key press
+                e.Handled = true;
+            }
+        }
+
+        private void cmxPosition_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            //Only allow letters and backspace
+            if (e.KeyChar >= 65 && e.KeyChar <= 90 ||       //ASCII Check for Capital Letters
+               e.KeyChar >= 97 && e.KeyChar <= 122 ||       //ASCII Check for Lowercase Letters
+               e.KeyChar == 8)                              //ASCII Check for Backspace
+            {
+                //Accept the keystroke
+                e.Handled = false;
+            }
+            else
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void tbxWage_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar >= 48 && e.KeyChar <= 57 ||       //ASCII Check for Numbers
+            e.KeyChar == 36 || e.KeyChar == 46 ||        //ASCII Check for Dollar Sign Or Period
+            e.KeyChar == 8)                              //ASCII Check for Backspace
+            {
+                //Accept the keystroke
+                e.Handled = false;
+            }
+            else
+            {
+                e.Handled = true;
+            }
+        }
     }
 }

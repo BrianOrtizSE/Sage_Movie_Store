@@ -61,5 +61,9 @@ namespace SU21_Final_Project
             frmEditEmp.ShowDialog();
             this.Show();
         }
+
+        private void frmManager_Main_Load(object sender, EventArgs e)
+        {
+        }
     }
 }
