@@ -134,9 +134,12 @@ namespace SU21_Final_Project
                             ProgOps.CreateInvoice(strQuery);
                         }
 
+                        string strTotal = decTotal.ToString("c2");
+                        strTotal = strTotal.Replace(",", "");
+
                         //WILL GET TOTAL AND INSERT IT INTO SALES!!
                         strQuery = "Insert Into OrtizB21Su2332.Sales(RecieptID , TotalSales , DateOfSale)" +
-                            "Values( " + ProgOps._intRecieptID + "," + decTotal.ToString("c2") + ",GETDATE())";
+                            "Values( " + ProgOps._intRecieptID + "," + strTotal + ",GETDATE())";
                         ProgOps.CreateInvoice(strQuery);
 
                         //SWITCH TO DIALOG BOX AND ASK THEM IF THEY WOULD LIKE ONE!!!!!
@@ -211,7 +214,7 @@ namespace SU21_Final_Project
                         intQuantity = int.Parse(tbxQuantity.Text);
                     }
                     
-                    if (intQuantity < 0)
+                    if (intQuantity <= 0)
                     {
                         MessageBox.Show("Pleaes Choose a Valid Amount to add to cart", "No Item", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
@@ -225,7 +228,7 @@ namespace SU21_Final_Project
                             //This Changes The Information showing ofr the datagrid but not the internals of the database
                             cellVal = Convert.ToInt32(dgvProducts.SelectedRows[0].Cells["Quantity"].Value);
                             newCellVal = Convert.ToInt32(cellVal - intQuantity);
-                        if (newCellVal <= 0)
+                        if (newCellVal < 0)
                         {
                             MessageBox.Show("Quanity Ordered Cannot Be Greater Than That Of Inventory", "Over Quantity", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         }

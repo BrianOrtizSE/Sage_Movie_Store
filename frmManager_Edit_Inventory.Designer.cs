@@ -128,9 +128,9 @@ namespace SU21_Final_Project
             // btnCompleteEdit
             // 
             this.btnCompleteEdit.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCompleteEdit.Location = new System.Drawing.Point(90, 615);
+            this.btnCompleteEdit.Location = new System.Drawing.Point(108, 615);
             this.btnCompleteEdit.Name = "btnCompleteEdit";
-            this.btnCompleteEdit.Size = new System.Drawing.Size(75, 50);
+            this.btnCompleteEdit.Size = new System.Drawing.Size(92, 50);
             this.btnCompleteEdit.TabIndex = 21;
             this.btnCompleteEdit.Text = "C&omplete Edit";
             this.btnCompleteEdit.UseVisualStyleBackColor = true;
@@ -139,9 +139,9 @@ namespace SU21_Final_Project
             // btnEditMerchandise
             // 
             this.btnEditMerchandise.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEditMerchandise.Location = new System.Drawing.Point(91, 559);
+            this.btnEditMerchandise.Location = new System.Drawing.Point(109, 559);
             this.btnEditMerchandise.Name = "btnEditMerchandise";
-            this.btnEditMerchandise.Size = new System.Drawing.Size(74, 50);
+            this.btnEditMerchandise.Size = new System.Drawing.Size(91, 50);
             this.btnEditMerchandise.TabIndex = 20;
             this.btnEditMerchandise.Text = "&Edit Merchandise";
             this.btnEditMerchandise.UseVisualStyleBackColor = true;
@@ -152,7 +152,7 @@ namespace SU21_Final_Project
             this.btnAdd.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAdd.Location = new System.Drawing.Point(10, 559);
             this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(74, 50);
+            this.btnAdd.Size = new System.Drawing.Size(93, 50);
             this.btnAdd.TabIndex = 18;
             this.btnAdd.Text = "&Add Merchandise";
             this.btnAdd.UseVisualStyleBackColor = true;
@@ -329,7 +329,7 @@ namespace SU21_Final_Project
             this.btnComplete.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnComplete.Location = new System.Drawing.Point(10, 615);
             this.btnComplete.Name = "btnComplete";
-            this.btnComplete.Size = new System.Drawing.Size(74, 50);
+            this.btnComplete.Size = new System.Drawing.Size(93, 50);
             this.btnComplete.TabIndex = 19;
             this.btnComplete.Text = "&Complete";
             this.btnComplete.UseVisualStyleBackColor = true;

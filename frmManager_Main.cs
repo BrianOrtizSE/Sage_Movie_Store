@@ -63,7 +63,8 @@ namespace SU21_Final_Project
         }
 
         private void frmManager_Main_Load(object sender, EventArgs e)
-        {
+        { 
+            lblDate.Text = DateTime.Now.ToString();
         }
     }
 }

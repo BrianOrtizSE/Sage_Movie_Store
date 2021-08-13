@@ -24,7 +24,7 @@ namespace SU21_Final_Project
             strCreate.Clear();
 
             //Query To Add New Person To Database
-            strCreate.Append("INSERT INTO OrtizB21Su2332.Person(Title , NameFirst , NameMiddle ,NameLast , Suffix , Address1 , Address2 , Address3 , City , Zipcode , State , Email , PhonePrimary , PhoneSecondary)" +
+            strCreate.Append("INSERT INTO OrtizB21Su2332.Person(Title , NameFirst , NameMiddle ,NameLast , Suffix , Address1 , Address2 , Address3 , City , Zipcode , State , Email , PhonePrimary , PhoneSecondary , isActive)" +
                 "Values(");
 
 
@@ -238,15 +238,17 @@ namespace SU21_Final_Project
                 if(mtbPhone2.MaskCompleted != true)
                 {
                     mtbPhone2.Text = "";
-                    strCreate.Append("NULL)");
+                    strCreate.Append("NULL,");
 
                 }
                 else
                 {
                     lblErrorPhoneSecondary.Visible = false;
-                    strCreate.Append("'" + mtbPhone2.Text + "')");
+                    strCreate.Append("'" + mtbPhone2.Text + "',");
                 }
             }
+
+            strCreate.Append("1)");
 
             if (blnValid == true)
             {

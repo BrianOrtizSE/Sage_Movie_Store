@@ -86,7 +86,7 @@ namespace SU21_Final_Project
                     //Bool Variable
 
                     blnEdit = false;
-                    blnAdd = false;
+                    blnAdd = true;
                     blnAddPic = false;
 
                     //Buttons
@@ -253,7 +253,67 @@ namespace SU21_Final_Project
                 
             }
         }
+        private void btnComplete_Click(object sender, EventArgs e)//Adding Data To Database
+        {
+            double dblPrice;
+            int intInStock = 0;
 
+            if (lblProductNameValid.Text == "X" || lblGenreValid.Text == "X" || lblQuantityValid.Text == "X" || lblProductDescriptionValid.Text == "X" || lblPriceValid.Text == "X")
+            {
+                MessageBox.Show("Please Fill Out All Required Information : Product Name , Genre , Quantity , Price , Description", "Invalid Data", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else
+            {
+                if (cbxInStock.Checked == true)
+                {
+                    intInStock = 1;
+                }
+
+                //This makes it so any single qutoes are changed to double quotes
+                tbxProductName.Text = tbxProductName.Text.Replace("'", "\''");
+                tbxProductDescription.Text = tbxProductDescription.Text.Replace("'", "\''");
+                tbxProductPrice.Text = tbxProductPrice.Text.Replace("$", "");
+
+
+                if (!double.TryParse(tbxProductPrice.Text, out dblPrice))
+                {
+                    MessageBox.Show("Error On Product Price", "Invalid Data", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                else
+                {
+                    //FIX LATER SO THAT QUANTITY IS AN INTERGER THAT HAS BEEN TRY PARSED
+                    if (blnPictureAdd == false)
+                    {
+
+                        strQuery = "Insert into OrtizB21Su2332.Products(ProductName,Genre,Quantity,ProductPrice,ProductDescription,inStock)" +
+                            "values('" + tbxProductName.Text + "','" + cbxGenres.Text + "'," + tbxQuantity.Text + "," + dblPrice + ",'" + tbxProductDescription.Text + "'," + intInStock + ")";
+                        ProgOps.CreateProduct(strQuery);
+                        MessageBox.Show("Item Succefully Added", "Valid Data", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                    else
+                    {
+                        //Adding Item Then Picture
+                        strQuery = "Insert into OrtizB21Su2332.Products(ProductName,Genre,Quantity,ProductPrice,ProductDescription,inStock)" +
+                            "values('" + tbxProductName.Text + "','" + cbxGenres.Text + "'," + tbxQuantity.Text + "," + dblPrice + ",'" + tbxProductDescription.Text + "'," + intInStock + ")";
+                        ProgOps.CreateProduct(strQuery);
+                        MessageBox.Show("Item Succefully Added", "Valid Data", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                        strQuery = "Update OrtizB21Su2332.Products Set Image = " + "@img where ProductID = " + tbxProductID.Text;
+                        ProgOps.UploadPicture(imgLoc, strQuery);
+                        MessageBox.Show("Picture Succefully Added", "Valid Data", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        blnPictureAdd = false;
+                    }
+                    Clear();
+                    SetState("View");
+                    GrabProduct();
+
+                }
+
+
+
+
+            }
+        }
         private void btnSaveImage_Click(object sender, EventArgs e)
         {
             if(tbxProductID.Text == String.Empty)
@@ -429,69 +489,7 @@ namespace SU21_Final_Project
         }
 
 
-        private void btnComplete_Click(object sender, EventArgs e)//Adding Data To Database
-        {
-            double dblPrice;
-            int intInStock = 0;
-
-            if (lblProductNameValid.Text == "X" || lblGenreValid.Text == "X" || lblQuantityValid.Text == "X" || lblProductDescriptionValid.Text  == "X" || lblPriceValid.Text == "X")
-            {
-                MessageBox.Show("Please Fill Out All Required Information : Product Name , Genre , Quantity , Price , Description", "Invalid Data", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            }
-            else
-            {
-                if(cbxInStock.Checked == true)
-                {
-                    intInStock = 1;
-                }
-
-                //This makes it so any single qutoes are changed to double quotes
-                tbxProductName.Text = tbxProductName.Text.Replace("'" , "\''");
-                tbxProductDescription.Text = tbxProductDescription.Text.Replace("'", "\''");
-                tbxProductPrice.Text = tbxProductPrice.Text.Replace("$", "");
-
-                
-                if (!double.TryParse(tbxProductPrice.Text, out dblPrice))
-                {
-                    MessageBox.Show("Error On Product Price", "Invalid Data", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
-                else
-                {
-                    //FIX LATER SO THAT QUANTITY IS AN INTERGER THAT HAS BEEN TRY PARSED
-                    if (blnPictureAdd == false)
-                    {
-                       
-                        strQuery = "Insert into OrtizB21Su2332.Products(ProductName,Genre,Quantity,ProductPrice,ProductDescription,inStock)" +
-                            "values('" + tbxProductName.Text + "','" + cbxGenres.Text + "'," + tbxQuantity.Text + "," + dblPrice + ",'" + tbxProductDescription.Text + "'," + intInStock + ")";
-                       
-                        MessageBox.Show(strQuery);
-
-                        MessageBox.Show("Item Succefully Added", "Valid Data", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    }
-                    else
-                    {
-                        //Adding Item Then Picture
-                        strQuery = "Insert into OrtizB21Su2332.Products(ProductName,Genre,Quantity,ProductPrice,ProductDescription,inStock)" +
-                            "values('" + tbxProductName.Text + "','" + cbxGenres.Text + "'," + tbxQuantity.Text + "," + dblPrice + ",'" + tbxProductDescription.Text + "'," + intInStock + ")";
-                        ProgOps.CreateProduct(strQuery);
-                        MessageBox.Show("Item Succefully Added", "Valid Data", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
-                        strQuery = "Update OrtizB21Su2332.Products Set Image = " + "@img where ProductID = " + tbxProductID.Text;
-                        ProgOps.UploadPicture(imgLoc, strQuery);
-                        MessageBox.Show("Picture Succefully Added", "Valid Data", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        blnPictureAdd = false;
-                    }
-                    Clear();
-                    SetState("View");                 
-                    GrabProduct();
-                    
-                }
-
-                
-
-
-            }
-        }
+       
 
         private void pbxImage_LoadProgressChanged(object sender, ProgressChangedEventArgs e)
         {

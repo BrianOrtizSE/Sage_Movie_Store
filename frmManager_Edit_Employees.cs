@@ -413,8 +413,8 @@ namespace SU21_Final_Project
             dgvEmployee.Columns[3].DefaultCellStyle.Format = "c2";
             dgvEmployee.Columns[3].HeaderText = "Wage";
             dgvEmployee.Columns[4].HeaderText = "Hire Date";
-            dgvEmployee.Columns[4].HeaderText = "Salary?";
-            dgvEmployee.Columns[4].HeaderText = "Admin?";
+            dgvEmployee.Columns[5].HeaderText = "Salary?";
+            dgvEmployee.Columns[6].HeaderText = "Admin?";
         }
         private void SetState(string state)//Set State To Make It Easier For User
         {

@@ -174,7 +174,7 @@ namespace SU21_Final_Project
             this.tbxZipcode.Name = "tbxZipcode";
             this.tbxZipcode.ShortcutsEnabled = false;
             this.tbxZipcode.Size = new System.Drawing.Size(119, 23);
-            this.tbxZipcode.TabIndex = 5;
+            this.tbxZipcode.TabIndex = 9;
             this.ttError.SetToolTip(this.tbxZipcode, "ZipCode Must Not Be Empty\r\nZIpCode Must Be At Least Longer Than 5 Numbers\r\nZipCod" +
         "e Cannot Be Greater Than 9 Numbers\r\n");
             this.tbxZipcode.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbxZipcode_KeyPress);
