@@ -179,7 +179,7 @@ namespace SU21_Final_Project
             this.MaximizeBox = false;
             this.Name = "frmManager_Main";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
-            this.Text = "Manager MaIn Menu";
+            this.Text = "Manager Main Menu";
             this.Load += new System.EventHandler(this.frmManager_Main_Load);
             this.mnsHelp.ResumeLayout(false);
             this.mnsHelp.PerformLayout();
