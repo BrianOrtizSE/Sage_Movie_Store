@@ -403,7 +403,9 @@ namespace SU21_Final_Project
                 //Switches between screens
                 pnlCart.Visible = false;
                 pnlCheckout.Visible = true;
-
+                pnlCheckout.Visible = true;
+                pnlShoppingCart.Visible = false;
+                cbxDisplayCart.Enabled = false;
 
                 WriteToListBox(decSubTotal, ref decDiscountPercent, ref decTaxTotal, ref decTotal);
                 this.Size = new Size(760, 630);
@@ -516,6 +518,7 @@ namespace SU21_Final_Project
             GrabProducts();
 
             //TurnOfCheckbox
+            cbxDisplayCart.Enabled = true;
             cbxDisplayCart.Checked = false;
 
             this.Size = new Size(1293, 602);

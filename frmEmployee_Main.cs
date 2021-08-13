@@ -64,5 +64,10 @@ namespace SU21_Final_Project
         {
             this.Close();
         }
+
+        private void frmEmployee_Main_Load(object sender, EventArgs e)
+        {
+            lblDate.Text = DateTime.Now.ToString();
+        }
     }
 }

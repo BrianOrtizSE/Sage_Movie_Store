@@ -158,6 +158,7 @@ namespace SU21_Final_Project
             this.Name = "frmEmployee_Main";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Employee Main";
+            this.Load += new System.EventHandler(this.frmEmployee_Main_Load);
             this.ResumeLayout(false);
 
         }

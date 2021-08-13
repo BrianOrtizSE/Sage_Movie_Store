@@ -295,6 +295,8 @@ namespace SU21_Final_Project
             cmxDiscountType.Text = "1";
             cbxIsValid.Checked = false;
             tbxProductID.Clear();
+            DisplayDiscount();
+
         }
         private void SetState(string state)//Set State To Make It Easier For User
         {
