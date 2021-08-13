@@ -574,8 +574,7 @@ namespace SU21_Final_Project
                             ProgOps.UpdateQuantity(strQuery);
 
                         }
-                        //SWITCH TO DIALOG BOX AND ASK THEM IF THEY WOULD LIKE ONE!!!!!
-                        ReportPrint(Reciept(decSubTotal, decDiscountPercent, decTaxTotal, decTotal));
+                        
 
                         //Creates Reciept
                         strQuery = "Insert into OrtizB21Su2332.Reciept(PersonID ,  EmployeeID , TransData)" +
@@ -599,6 +598,8 @@ namespace SU21_Final_Project
                             "Values( " + ProgOps._intRecieptID + "," + decTotal.ToString("c2") + ",GETDATE())";
                         ProgOps.CreateInvoice(strQuery);
 
+                        //SWITCH TO DIALOG BOX AND ASK THEM IF THEY WOULD LIKE ONE!!!!!
+                        ReportPrint(Reciept(decSubTotal, decDiscountPercent, decTaxTotal, decTotal));
 
                         this.Close();
                     }

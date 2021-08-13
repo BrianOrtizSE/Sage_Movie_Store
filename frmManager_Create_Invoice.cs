@@ -427,5 +427,10 @@ namespace SU21_Final_Project
                 lblSourceValid.ForeColor = Color.Green;
             }
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

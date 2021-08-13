@@ -48,7 +48,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup>
-    <ApplicationIcon>favicon %281%29.ico</ApplicationIcon>
+    <ApplicationIcon>Resources\favicon %281%29.ico</ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -329,7 +329,8 @@
     <None Include="Resources\Logo_SMS.gif" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="favicon %281%29.ico" />
+    <Content Include="Resources\favicon %281%29.ico" />
+    <Content Include="Resources\favicon %282%29.ico" />
     <None Include="Resources\Sages_Movie_Store_Shop.JPG" />
     <None Include="Resources\Sages_Movie_Store_MerchandiseView.JPG" />
     <None Include="Resources\Sages_Movie_Store_CustomerMainScreen.JPG" />

@@ -236,7 +236,7 @@ namespace SU21_Final_Project
         private void btnUploadImage_Click(object sender, EventArgs e)
         {           
             OpenFileDialog dialog = new OpenFileDialog();
-            dialog.Filter = "JPG FIles (*.jpg)|*.jpg| GIF Files (*.gif)|*.gif| All Files (*.*)|*.*";
+            dialog.Filter = "JPG FIles (*.jpg)|*.jpg";
             dialog.Title = "Select Employee Picture";
             if (dialog.ShowDialog() == DialogResult.OK)
             {

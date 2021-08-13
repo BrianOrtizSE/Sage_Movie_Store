@@ -51,6 +51,7 @@ namespace SU21_Final_Project
             this.dgvInvoice = new System.Windows.Forms.DataGridView();
             this.cbxShowInvoice = new System.Windows.Forms.CheckBox();
             this.cbxCompleted = new System.Windows.Forms.CheckBox();
+            this.btnExit = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProduct)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvInvoice)).BeginInit();
             this.SuspendLayout();
@@ -289,7 +290,7 @@ namespace SU21_Final_Project
             // 
             this.cbxShowInvoice.AutoSize = true;
             this.cbxShowInvoice.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.cbxShowInvoice.Location = new System.Drawing.Point(317, 408);
+            this.cbxShowInvoice.Location = new System.Drawing.Point(317, 367);
             this.cbxShowInvoice.Name = "cbxShowInvoice";
             this.cbxShowInvoice.Size = new System.Drawing.Size(128, 17);
             this.cbxShowInvoice.TabIndex = 117;
@@ -308,11 +309,24 @@ namespace SU21_Final_Project
             this.cbxCompleted.Text = "Payed?";
             this.cbxCompleted.UseVisualStyleBackColor = true;
             // 
+            // btnExit
+            // 
+            this.btnExit.Enabled = false;
+            this.btnExit.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnExit.Location = new System.Drawing.Point(353, 390);
+            this.btnExit.Name = "btnExit";
+            this.btnExit.Size = new System.Drawing.Size(92, 39);
+            this.btnExit.TabIndex = 119;
+            this.btnExit.Text = "Return";
+            this.btnExit.UseVisualStyleBackColor = true;
+            this.btnExit.Click += new System.EventHandler(this.button1_Click);
+            // 
             // frmManager_Create_Invoice
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1017, 446);
+            this.Controls.Add(this.btnExit);
             this.Controls.Add(this.cbxCompleted);
             this.Controls.Add(this.cbxShowInvoice);
             this.Controls.Add(this.dgvInvoice);
@@ -370,5 +384,6 @@ namespace SU21_Final_Project
         private System.Windows.Forms.DataGridView dgvInvoice;
         private System.Windows.Forms.CheckBox cbxShowInvoice;
         private System.Windows.Forms.CheckBox cbxCompleted;
+        private System.Windows.Forms.Button btnExit;
     }
 }

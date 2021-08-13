@@ -87,7 +87,7 @@ namespace SU21_Final_Project
             this.MaximizeBox = false;
             this.Name = "frmVIewRecieptReport";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
-            this.Text = "frmVIewRecieptReport";
+            this.Text = "View Reciept Report";
             this.Load += new System.EventHandler(this.frmVIewRecieptReport_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvReciept)).EndInit();
             this.ResumeLayout(false);
