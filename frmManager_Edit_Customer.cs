@@ -74,6 +74,8 @@ namespace SU21_Final_Project
                 frmEmployee_Edit_Customer frmEmpEditCus = new frmEmployee_Edit_Customer();
                 frmEmpEditCus.ShowDialog();
                 this.Show();
+                GrabPersson();
+                Clear();
             }
         }
 
