@@ -602,7 +602,6 @@ namespace SU21_Final_Project
                         {
                             strQuery = "Insert into OrtizB21Su2332.RecieptDetail(RecieptID , ProductID , Quantity , PriceOfProduct , Discount) " +
                                 "Values( " + ProgOps._intRecieptID + "," + prodlist[i].intProductID + "," + prodlist[i].intProdQuan + "," + prodlist[i].dblProdPrice + "," + intDiscount + ")";
-                            MessageBox.Show(strQuery);
                             ProgOps.CreateInvoice(strQuery);
                         }
 
@@ -612,7 +611,6 @@ namespace SU21_Final_Project
                         //WILL GET TOTAL AND INSERT IT INTO SALES!!
                         strQuery = "Insert Into OrtizB21Su2332.Sales(RecieptID , TotalSales , DateOfSale)" +
                             "Values( " + ProgOps._intRecieptID + "," + strTotal + ",GETDATE())";
-                        MessageBox.Show(strQuery);
                         ProgOps.CreateInvoice(strQuery);
 
                         //SWITCH TO DIALOG BOX AND ASK THEM IF THEY WOULD LIKE ONE!!!!!
