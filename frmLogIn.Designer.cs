@@ -56,7 +56,7 @@ namespace SU21_Final_Project
             this.tbxUsername.Name = "tbxUsername";
             this.tbxUsername.ShortcutsEnabled = false;
             this.tbxUsername.Size = new System.Drawing.Size(184, 27);
-            this.tbxUsername.TabIndex = 0;
+            this.tbxUsername.TabIndex = 2;
             this.tbxUsername.TextChanged += new System.EventHandler(this.tbxUsername_TextChanged);
             this.tbxUsername.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbxUsername_KeyPress);
             // 
@@ -68,7 +68,7 @@ namespace SU21_Final_Project
             this.tbxPassword.Name = "tbxPassword";
             this.tbxPassword.ShortcutsEnabled = false;
             this.tbxPassword.Size = new System.Drawing.Size(184, 27);
-            this.tbxPassword.TabIndex = 1;
+            this.tbxPassword.TabIndex = 3;
             this.tbxPassword.UseSystemPasswordChar = true;
             this.tbxPassword.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbxPassword_KeyPress);
             // 
@@ -80,7 +80,7 @@ namespace SU21_Final_Project
             this.rdbCustomer.Location = new System.Drawing.Point(78, 95);
             this.rdbCustomer.Name = "rdbCustomer";
             this.rdbCustomer.Size = new System.Drawing.Size(127, 22);
-            this.rdbCustomer.TabIndex = 4;
+            this.rdbCustomer.TabIndex = 0;
             this.rdbCustomer.TabStop = true;
             this.rdbCustomer.Text = "Customer Login";
             this.rdbCustomer.UseVisualStyleBackColor = true;
@@ -93,7 +93,7 @@ namespace SU21_Final_Project
             this.rdbEmployee.Location = new System.Drawing.Point(284, 95);
             this.rdbEmployee.Name = "rdbEmployee";
             this.rdbEmployee.Size = new System.Drawing.Size(127, 22);
-            this.rdbEmployee.TabIndex = 5;
+            this.rdbEmployee.TabIndex = 1;
             this.rdbEmployee.Text = "Employee Login";
             this.rdbEmployee.UseVisualStyleBackColor = true;
             this.rdbEmployee.CheckedChanged += new System.EventHandler(this.rdEmployee_CheckedChanged);
@@ -104,7 +104,7 @@ namespace SU21_Final_Project
             this.btnLogin.Location = new System.Drawing.Point(45, 317);
             this.btnLogin.Name = "btnLogin";
             this.btnLogin.Size = new System.Drawing.Size(125, 48);
-            this.btnLogin.TabIndex = 2;
+            this.btnLogin.TabIndex = 5;
             this.btnLogin.Text = "&Log In";
             this.btnLogin.UseVisualStyleBackColor = true;
             this.btnLogin.Click += new System.EventHandler(this.btnLogin_Click);
@@ -116,7 +116,7 @@ namespace SU21_Final_Project
             this.lblUSernameText.Location = new System.Drawing.Point(70, 177);
             this.lblUSernameText.Name = "lblUSernameText";
             this.lblUSernameText.Size = new System.Drawing.Size(96, 19);
-            this.lblUSernameText.TabIndex = 8;
+            this.lblUSernameText.TabIndex = 12;
             this.lblUSernameText.Text = "Username : ";
             // 
             // lblPasswordText
@@ -126,7 +126,7 @@ namespace SU21_Final_Project
             this.lblPasswordText.Location = new System.Drawing.Point(74, 235);
             this.lblPasswordText.Name = "lblPasswordText";
             this.lblPasswordText.Size = new System.Drawing.Size(92, 19);
-            this.lblPasswordText.TabIndex = 9;
+            this.lblPasswordText.TabIndex = 13;
             this.lblPasswordText.Text = "Password : ";
             // 
             // lblErrorText
@@ -137,7 +137,7 @@ namespace SU21_Final_Project
             this.lblErrorText.Location = new System.Drawing.Point(75, 136);
             this.lblErrorText.Name = "lblErrorText";
             this.lblErrorText.Size = new System.Drawing.Size(336, 18);
-            this.lblErrorText.TabIndex = 7;
+            this.lblErrorText.TabIndex = 11;
             this.lblErrorText.Text = "ERROR : USERNAME OR PASSWORD INCORRECT";
             this.lblErrorText.Visible = false;
             // 
@@ -147,7 +147,7 @@ namespace SU21_Final_Project
             this.lblClose.Location = new System.Drawing.Point(313, 317);
             this.lblClose.Name = "lblClose";
             this.lblClose.Size = new System.Drawing.Size(125, 48);
-            this.lblClose.TabIndex = 3;
+            this.lblClose.TabIndex = 7;
             this.lblClose.Text = "&Return";
             this.lblClose.UseVisualStyleBackColor = true;
             this.lblClose.Click += new System.EventHandler(this.lblClose_Click);
@@ -159,7 +159,7 @@ namespace SU21_Final_Project
             this.lblMainText.Location = new System.Drawing.Point(221, 24);
             this.lblMainText.Name = "lblMainText";
             this.lblMainText.Size = new System.Drawing.Size(55, 19);
-            this.lblMainText.TabIndex = 10;
+            this.lblMainText.TabIndex = 9;
             this.lblMainText.Text = "Log In";
             this.lblMainText.Click += new System.EventHandler(this.lblMainText_Click);
             // 
@@ -170,7 +170,7 @@ namespace SU21_Final_Project
             this.lblBlackLine.Location = new System.Drawing.Point(10, 51);
             this.lblBlackLine.Name = "lblBlackLine";
             this.lblBlackLine.Size = new System.Drawing.Size(500, 2);
-            this.lblBlackLine.TabIndex = 11;
+            this.lblBlackLine.TabIndex = 10;
             this.lblBlackLine.Text = "0";
             // 
             // menuStrip1
@@ -181,7 +181,7 @@ namespace SU21_Final_Project
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(516, 24);
-            this.menuStrip1.TabIndex = 6;
+            this.menuStrip1.TabIndex = 8;
             this.menuStrip1.Text = "menuStrip1";
             // 
             // tsmHelp
@@ -198,7 +198,7 @@ namespace SU21_Final_Project
             this.btnForgotPassword.Location = new System.Drawing.Point(179, 317);
             this.btnForgotPassword.Name = "btnForgotPassword";
             this.btnForgotPassword.Size = new System.Drawing.Size(125, 48);
-            this.btnForgotPassword.TabIndex = 12;
+            this.btnForgotPassword.TabIndex = 6;
             this.btnForgotPassword.Text = "&Password Recovery";
             this.btnForgotPassword.UseVisualStyleBackColor = true;
             this.btnForgotPassword.Click += new System.EventHandler(this.btnForgotPassword_Click);
@@ -209,7 +209,7 @@ namespace SU21_Final_Project
             this.cbxShowPassword.Location = new System.Drawing.Point(195, 265);
             this.cbxShowPassword.Name = "cbxShowPassword";
             this.cbxShowPassword.Size = new System.Drawing.Size(102, 17);
-            this.cbxShowPassword.TabIndex = 13;
+            this.cbxShowPassword.TabIndex = 4;
             this.cbxShowPassword.Text = "Show Password";
             this.cbxShowPassword.UseVisualStyleBackColor = true;
             this.cbxShowPassword.CheckedChanged += new System.EventHandler(this.cbxShowPassword_CheckedChanged);

@@ -68,7 +68,7 @@ namespace SU21_Final_Project
             this.tbxPersonID.ReadOnly = true;
             this.tbxPersonID.ShortcutsEnabled = false;
             this.tbxPersonID.Size = new System.Drawing.Size(180, 23);
-            this.tbxPersonID.TabIndex = 68;
+            this.tbxPersonID.TabIndex = 0;
             // 
             // btnReturn
             // 
@@ -76,7 +76,7 @@ namespace SU21_Final_Project
             this.btnReturn.Location = new System.Drawing.Point(100, 468);
             this.btnReturn.Name = "btnReturn";
             this.btnReturn.Size = new System.Drawing.Size(75, 50);
-            this.btnReturn.TabIndex = 67;
+            this.btnReturn.TabIndex = 10;
             this.btnReturn.Text = "&Return";
             this.btnReturn.UseVisualStyleBackColor = true;
             this.btnReturn.Click += new System.EventHandler(this.btnReturn_Click);
@@ -87,7 +87,7 @@ namespace SU21_Final_Project
             this.btnEditUser.Location = new System.Drawing.Point(7, 468);
             this.btnEditUser.Name = "btnEditUser";
             this.btnEditUser.Size = new System.Drawing.Size(87, 50);
-            this.btnEditUser.TabIndex = 61;
+            this.btnEditUser.TabIndex = 9;
             this.btnEditUser.Text = "Edit &User";
             this.btnEditUser.UseVisualStyleBackColor = true;
             this.btnEditUser.Click += new System.EventHandler(this.btnEditUser_Click);
@@ -117,7 +117,7 @@ namespace SU21_Final_Project
             this.dgvPerson.ReadOnly = true;
             this.dgvPerson.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvPerson.Size = new System.Drawing.Size(764, 513);
-            this.dgvPerson.TabIndex = 52;
+            this.dgvPerson.TabIndex = 15;
             this.dgvPerson.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvPerson_CellClick);
             // 
             // tbxNameFirst
@@ -130,7 +130,7 @@ namespace SU21_Final_Project
             this.tbxNameFirst.ReadOnly = true;
             this.tbxNameFirst.ShortcutsEnabled = false;
             this.tbxNameFirst.Size = new System.Drawing.Size(180, 23);
-            this.tbxNameFirst.TabIndex = 74;
+            this.tbxNameFirst.TabIndex = 1;
             // 
             // lblNameFirst
             // 
@@ -152,7 +152,7 @@ namespace SU21_Final_Project
             this.tbxNameLast.ReadOnly = true;
             this.tbxNameLast.ShortcutsEnabled = false;
             this.tbxNameLast.Size = new System.Drawing.Size(180, 23);
-            this.tbxNameLast.TabIndex = 76;
+            this.tbxNameLast.TabIndex = 2;
             // 
             // lblNameLast
             // 
@@ -174,7 +174,7 @@ namespace SU21_Final_Project
             this.tbxAddress1.ReadOnly = true;
             this.tbxAddress1.ShortcutsEnabled = false;
             this.tbxAddress1.Size = new System.Drawing.Size(180, 23);
-            this.tbxAddress1.TabIndex = 78;
+            this.tbxAddress1.TabIndex = 3;
             // 
             // lblAddress1
             // 
@@ -196,7 +196,7 @@ namespace SU21_Final_Project
             this.tbxCity.ReadOnly = true;
             this.tbxCity.ShortcutsEnabled = false;
             this.tbxCity.Size = new System.Drawing.Size(180, 23);
-            this.tbxCity.TabIndex = 80;
+            this.tbxCity.TabIndex = 4;
             // 
             // lblCity
             // 
@@ -218,7 +218,7 @@ namespace SU21_Final_Project
             this.tbxEmail.ReadOnly = true;
             this.tbxEmail.ShortcutsEnabled = false;
             this.tbxEmail.Size = new System.Drawing.Size(172, 23);
-            this.tbxEmail.TabIndex = 84;
+            this.tbxEmail.TabIndex = 7;
             // 
             // lblEmail
             // 
@@ -240,7 +240,7 @@ namespace SU21_Final_Project
             this.tbxState.ReadOnly = true;
             this.tbxState.ShortcutsEnabled = false;
             this.tbxState.Size = new System.Drawing.Size(172, 23);
-            this.tbxState.TabIndex = 82;
+            this.tbxState.TabIndex = 6;
             // 
             // lblState
             // 
@@ -262,7 +262,7 @@ namespace SU21_Final_Project
             this.tbxPhone.ReadOnly = true;
             this.tbxPhone.ShortcutsEnabled = false;
             this.tbxPhone.Size = new System.Drawing.Size(172, 23);
-            this.tbxPhone.TabIndex = 86;
+            this.tbxPhone.TabIndex = 8;
             // 
             // lblPhonePrimary
             // 
@@ -284,7 +284,7 @@ namespace SU21_Final_Project
             this.tbxZipcode.ReadOnly = true;
             this.tbxZipcode.ShortcutsEnabled = false;
             this.tbxZipcode.Size = new System.Drawing.Size(172, 23);
-            this.tbxZipcode.TabIndex = 88;
+            this.tbxZipcode.TabIndex = 5;
             // 
             // lblZipCode
             // 
@@ -302,7 +302,7 @@ namespace SU21_Final_Project
             this.btnShowDIsabled.Location = new System.Drawing.Point(365, 475);
             this.btnShowDIsabled.Name = "btnShowDIsabled";
             this.btnShowDIsabled.Size = new System.Drawing.Size(107, 50);
-            this.btnShowDIsabled.TabIndex = 89;
+            this.btnShowDIsabled.TabIndex = 13;
             this.btnShowDIsabled.Text = "&Show Inactive Customers";
             this.btnShowDIsabled.UseVisualStyleBackColor = true;
             this.btnShowDIsabled.Click += new System.EventHandler(this.btnShowDIsabled_Click);
@@ -313,7 +313,7 @@ namespace SU21_Final_Project
             this.btnDisableCustomer.Location = new System.Drawing.Point(365, 419);
             this.btnDisableCustomer.Name = "btnDisableCustomer";
             this.btnDisableCustomer.Size = new System.Drawing.Size(107, 50);
-            this.btnDisableCustomer.TabIndex = 90;
+            this.btnDisableCustomer.TabIndex = 14;
             this.btnDisableCustomer.Text = "&Disable Customer";
             this.btnDisableCustomer.UseVisualStyleBackColor = true;
             this.btnDisableCustomer.Click += new System.EventHandler(this.btnDisableCustomer_Click);
@@ -321,10 +321,10 @@ namespace SU21_Final_Project
             // btnShowActive
             // 
             this.btnShowActive.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnShowActive.Location = new System.Drawing.Point(365, 475);
+            this.btnShowActive.Location = new System.Drawing.Point(252, 475);
             this.btnShowActive.Name = "btnShowActive";
             this.btnShowActive.Size = new System.Drawing.Size(107, 50);
-            this.btnShowActive.TabIndex = 91;
+            this.btnShowActive.TabIndex = 12;
             this.btnShowActive.Text = "&Show Active Customers";
             this.btnShowActive.UseVisualStyleBackColor = true;
             this.btnShowActive.Visible = false;
@@ -333,10 +333,10 @@ namespace SU21_Final_Project
             // btnEnable
             // 
             this.btnEnable.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEnable.Location = new System.Drawing.Point(365, 419);
+            this.btnEnable.Location = new System.Drawing.Point(252, 419);
             this.btnEnable.Name = "btnEnable";
             this.btnEnable.Size = new System.Drawing.Size(107, 50);
-            this.btnEnable.TabIndex = 92;
+            this.btnEnable.TabIndex = 11;
             this.btnEnable.Text = "&Enable Customers";
             this.btnEnable.UseVisualStyleBackColor = true;
             this.btnEnable.Visible = false;

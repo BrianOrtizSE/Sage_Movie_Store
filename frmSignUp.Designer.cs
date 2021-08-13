@@ -236,9 +236,9 @@ namespace SU21_Final_Project
             this.lblMiddleName.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblMiddleName.Location = new System.Drawing.Point(5, 158);
             this.lblMiddleName.Name = "lblMiddleName";
-            this.lblMiddleName.Size = new System.Drawing.Size(83, 16);
+            this.lblMiddleName.Size = new System.Drawing.Size(82, 16);
             this.lblMiddleName.TabIndex = 44;
-            this.lblMiddleName.Text = "MIddle Name";
+            this.lblMiddleName.Text = "Middle Name";
             // 
             // lblLastName
             // 
@@ -301,6 +301,7 @@ namespace SU21_Final_Project
             this.tbxAddress1.ShortcutsEnabled = false;
             this.tbxAddress1.Size = new System.Drawing.Size(119, 23);
             this.tbxAddress1.TabIndex = 5;
+            this.tbxAddress1.TextChanged += new System.EventHandler(this.tbxAddress1_TextChanged);
             this.tbxAddress1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbxAddress1_KeyPress);
             // 
             // tbxSuffix

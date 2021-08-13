@@ -59,7 +59,7 @@ namespace SU21_Final_Project
             this.dgvSales.ReadOnly = true;
             this.dgvSales.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvSales.Size = new System.Drawing.Size(1100, 275);
-            this.dgvSales.TabIndex = 0;
+            this.dgvSales.TabIndex = 8;
             this.dgvSales.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvSales_CellContentClick);
             this.dgvSales.DoubleClick += new System.EventHandler(this.dgvSales_DoubleClick);
             // 
@@ -68,7 +68,7 @@ namespace SU21_Final_Project
             this.btnToday.Location = new System.Drawing.Point(12, 321);
             this.btnToday.Name = "btnToday";
             this.btnToday.Size = new System.Drawing.Size(92, 40);
-            this.btnToday.TabIndex = 2;
+            this.btnToday.TabIndex = 0;
             this.btnToday.Text = "Today Sales";
             this.btnToday.UseVisualStyleBackColor = true;
             this.btnToday.Click += new System.EventHandler(this.btnToday_Click);
@@ -78,7 +78,7 @@ namespace SU21_Final_Project
             this.btnWeekSales.Location = new System.Drawing.Point(110, 321);
             this.btnWeekSales.Name = "btnWeekSales";
             this.btnWeekSales.Size = new System.Drawing.Size(92, 40);
-            this.btnWeekSales.TabIndex = 3;
+            this.btnWeekSales.TabIndex = 1;
             this.btnWeekSales.Text = "Week Sales";
             this.btnWeekSales.UseVisualStyleBackColor = true;
             this.btnWeekSales.Click += new System.EventHandler(this.btnWeekSales_Click);
@@ -88,7 +88,7 @@ namespace SU21_Final_Project
             this.btnMonthlySales.Location = new System.Drawing.Point(208, 321);
             this.btnMonthlySales.Name = "btnMonthlySales";
             this.btnMonthlySales.Size = new System.Drawing.Size(92, 40);
-            this.btnMonthlySales.TabIndex = 4;
+            this.btnMonthlySales.TabIndex = 2;
             this.btnMonthlySales.Text = "Monthly Sales";
             this.btnMonthlySales.UseVisualStyleBackColor = true;
             this.btnMonthlySales.Click += new System.EventHandler(this.btnMonthlySales_Click);
@@ -98,7 +98,7 @@ namespace SU21_Final_Project
             this.btnExit.Location = new System.Drawing.Point(1020, 321);
             this.btnExit.Name = "btnExit";
             this.btnExit.Size = new System.Drawing.Size(92, 40);
-            this.btnExit.TabIndex = 6;
+            this.btnExit.TabIndex = 7;
             this.btnExit.Text = "&Exit";
             this.btnExit.UseVisualStyleBackColor = true;
             this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
@@ -108,7 +108,7 @@ namespace SU21_Final_Project
             this.btnPrintReport.Location = new System.Drawing.Point(922, 321);
             this.btnPrintReport.Name = "btnPrintReport";
             this.btnPrintReport.Size = new System.Drawing.Size(92, 40);
-            this.btnPrintReport.TabIndex = 7;
+            this.btnPrintReport.TabIndex = 6;
             this.btnPrintReport.Text = "Print Report";
             this.btnPrintReport.UseVisualStyleBackColor = true;
             this.btnPrintReport.Click += new System.EventHandler(this.btnPrintReport_Click);
@@ -118,7 +118,7 @@ namespace SU21_Final_Project
             this.btnViewInvoice.Location = new System.Drawing.Point(506, 321);
             this.btnViewInvoice.Name = "btnViewInvoice";
             this.btnViewInvoice.Size = new System.Drawing.Size(92, 40);
-            this.btnViewInvoice.TabIndex = 8;
+            this.btnViewInvoice.TabIndex = 4;
             this.btnViewInvoice.Text = "View Invoices";
             this.btnViewInvoice.UseVisualStyleBackColor = true;
             this.btnViewInvoice.Click += new System.EventHandler(this.btnViewInvoice_Click);
@@ -128,7 +128,7 @@ namespace SU21_Final_Project
             this.btnViewProduct.Location = new System.Drawing.Point(604, 321);
             this.btnViewProduct.Name = "btnViewProduct";
             this.btnViewProduct.Size = new System.Drawing.Size(92, 40);
-            this.btnViewProduct.TabIndex = 9;
+            this.btnViewProduct.TabIndex = 5;
             this.btnViewProduct.Text = "View Product";
             this.btnViewProduct.UseVisualStyleBackColor = true;
             this.btnViewProduct.Click += new System.EventHandler(this.btnViewProduct_Click);
@@ -146,7 +146,8 @@ namespace SU21_Final_Project
             this.dgvProduct.ReadOnly = true;
             this.dgvProduct.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvProduct.Size = new System.Drawing.Size(1100, 275);
-            this.dgvProduct.TabIndex = 10;
+            this.dgvProduct.TabIndex = 9;
+            this.dgvProduct.TabStop = false;
             // 
             // dgvInvoices
             // 
@@ -161,7 +162,8 @@ namespace SU21_Final_Project
             this.dgvInvoices.ReadOnly = true;
             this.dgvInvoices.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvInvoices.Size = new System.Drawing.Size(1100, 275);
-            this.dgvInvoices.TabIndex = 11;
+            this.dgvInvoices.TabIndex = 10;
+            this.dgvInvoices.TabStop = false;
             this.dgvInvoices.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvInvoices_CellContentClick);
             this.dgvInvoices.DoubleClick += new System.EventHandler(this.dgvInvoices_DoubleClick);
             // 
@@ -170,7 +172,7 @@ namespace SU21_Final_Project
             this.btnViewSales.Location = new System.Drawing.Point(408, 321);
             this.btnViewSales.Name = "btnViewSales";
             this.btnViewSales.Size = new System.Drawing.Size(92, 40);
-            this.btnViewSales.TabIndex = 12;
+            this.btnViewSales.TabIndex = 3;
             this.btnViewSales.Text = "View Sales";
             this.btnViewSales.UseVisualStyleBackColor = true;
             this.btnViewSales.Click += new System.EventHandler(this.btnViewSales_Click);

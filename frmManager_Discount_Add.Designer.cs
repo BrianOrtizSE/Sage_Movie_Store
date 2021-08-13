@@ -54,8 +54,6 @@ namespace SU21_Final_Project
             this.btnCancelEdit = new System.Windows.Forms.Button();
             this.dgvProduct = new System.Windows.Forms.DataGridView();
             this.btnReturn = new System.Windows.Forms.Button();
-            this.btnShowDisabled = new System.Windows.Forms.Button();
-            this.btnShowActive = new System.Windows.Forms.Button();
             this.btnShowInactive = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDiscount)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProduct)).BeginInit();
@@ -87,7 +85,7 @@ namespace SU21_Final_Project
             this.tbxDiscount.Name = "tbxDiscount";
             this.tbxDiscount.ShortcutsEnabled = false;
             this.tbxDiscount.Size = new System.Drawing.Size(197, 21);
-            this.tbxDiscount.TabIndex = 1;
+            this.tbxDiscount.TabIndex = 0;
             this.tbxDiscount.TextChanged += new System.EventHandler(this.tbxDiscount_TextChanged);
             this.tbxDiscount.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbxDiscount_KeyPress);
             // 
@@ -110,7 +108,7 @@ namespace SU21_Final_Project
             this.cmxDiscountType.Location = new System.Drawing.Point(17, 138);
             this.cmxDiscountType.Name = "cmxDiscountType";
             this.cmxDiscountType.Size = new System.Drawing.Size(197, 23);
-            this.cmxDiscountType.TabIndex = 3;
+            this.cmxDiscountType.TabIndex = 1;
             this.cmxDiscountType.SelectedIndexChanged += new System.EventHandler(this.cmxDiscountType_SelectedIndexChanged);
             // 
             // lblDiscountType
@@ -139,7 +137,7 @@ namespace SU21_Final_Project
             this.tbxProductID.Name = "tbxProductID";
             this.tbxProductID.ShortcutsEnabled = false;
             this.tbxProductID.Size = new System.Drawing.Size(197, 21);
-            this.tbxProductID.TabIndex = 7;
+            this.tbxProductID.TabIndex = 2;
             this.tbxProductID.TextChanged += new System.EventHandler(this.tbxProductID_TextChanged);
             this.tbxProductID.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbxProductID_KeyPress);
             // 
@@ -150,7 +148,7 @@ namespace SU21_Final_Project
             this.tbxDiscountPercent.Name = "tbxDiscountPercent";
             this.tbxDiscountPercent.ShortcutsEnabled = false;
             this.tbxDiscountPercent.Size = new System.Drawing.Size(197, 21);
-            this.tbxDiscountPercent.TabIndex = 9;
+            this.tbxDiscountPercent.TabIndex = 3;
             this.tbxDiscountPercent.TextChanged += new System.EventHandler(this.tbxDiscountPercent_TextChanged);
             this.tbxDiscountPercent.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbxDiscountPercent_KeyPress);
             // 
@@ -169,7 +167,7 @@ namespace SU21_Final_Project
             this.lblIsValid.Location = new System.Drawing.Point(14, 351);
             this.lblIsValid.Name = "lblIsValid";
             this.lblIsValid.Size = new System.Drawing.Size(46, 15);
-            this.lblIsValid.TabIndex = 10;
+            this.lblIsValid.TabIndex = 4;
             this.lblIsValid.Text = "Is Valid";
             // 
             // cbxIsValid
@@ -196,7 +194,7 @@ namespace SU21_Final_Project
             this.btnShowDiscount.Location = new System.Drawing.Point(390, 11);
             this.btnShowDiscount.Name = "btnShowDiscount";
             this.btnShowDiscount.Size = new System.Drawing.Size(90, 49);
-            this.btnShowDiscount.TabIndex = 13;
+            this.btnShowDiscount.TabIndex = 10;
             this.btnShowDiscount.Text = "Show &Active Discount";
             this.btnShowDiscount.UseVisualStyleBackColor = true;
             this.btnShowDiscount.Click += new System.EventHandler(this.btnShowDiscount_Click);
@@ -206,7 +204,7 @@ namespace SU21_Final_Project
             this.btnAdd.Location = new System.Drawing.Point(16, 398);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(87, 50);
-            this.btnAdd.TabIndex = 14;
+            this.btnAdd.TabIndex = 5;
             this.btnAdd.Text = "&Add Discount";
             this.btnAdd.UseVisualStyleBackColor = true;
             this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
@@ -250,7 +248,7 @@ namespace SU21_Final_Project
             this.btnEditDiscount.Location = new System.Drawing.Point(109, 398);
             this.btnEditDiscount.Name = "btnEditDiscount";
             this.btnEditDiscount.Size = new System.Drawing.Size(74, 50);
-            this.btnEditDiscount.TabIndex = 18;
+            this.btnEditDiscount.TabIndex = 6;
             this.btnEditDiscount.Text = "&Edit Discount";
             this.btnEditDiscount.UseVisualStyleBackColor = true;
             this.btnEditDiscount.Click += new System.EventHandler(this.btnEditDiscount_Click);
@@ -260,7 +258,7 @@ namespace SU21_Final_Project
             this.btnCompleteEdit.Location = new System.Drawing.Point(109, 454);
             this.btnCompleteEdit.Name = "btnCompleteEdit";
             this.btnCompleteEdit.Size = new System.Drawing.Size(75, 50);
-            this.btnCompleteEdit.TabIndex = 19;
+            this.btnCompleteEdit.TabIndex = 7;
             this.btnCompleteEdit.Text = "C&omplete Edit";
             this.btnCompleteEdit.UseVisualStyleBackColor = true;
             this.btnCompleteEdit.Click += new System.EventHandler(this.btnComplete_Click);
@@ -270,7 +268,7 @@ namespace SU21_Final_Project
             this.btnCancelEdit.Location = new System.Drawing.Point(189, 398);
             this.btnCancelEdit.Name = "btnCancelEdit";
             this.btnCancelEdit.Size = new System.Drawing.Size(75, 50);
-            this.btnCancelEdit.TabIndex = 20;
+            this.btnCancelEdit.TabIndex = 8;
             this.btnCancelEdit.Text = "&Cancel Edit";
             this.btnCancelEdit.UseVisualStyleBackColor = true;
             this.btnCancelEdit.Click += new System.EventHandler(this.btnCancelEdit_Click);
@@ -290,42 +288,24 @@ namespace SU21_Final_Project
             this.dgvProduct.ReadOnly = true;
             this.dgvProduct.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvProduct.Size = new System.Drawing.Size(470, 493);
-            this.dgvProduct.TabIndex = 21;
+            this.dgvProduct.TabIndex = 13;
             // 
             // btnReturn
             // 
             this.btnReturn.Location = new System.Drawing.Point(270, 451);
             this.btnReturn.Name = "btnReturn";
             this.btnReturn.Size = new System.Drawing.Size(75, 50);
-            this.btnReturn.TabIndex = 22;
+            this.btnReturn.TabIndex = 9;
             this.btnReturn.Text = "&Return";
             this.btnReturn.UseVisualStyleBackColor = true;
             this.btnReturn.Click += new System.EventHandler(this.btnReturn_Click);
-            // 
-            // btnShowDisabled
-            // 
-            this.btnShowDisabled.Location = new System.Drawing.Point(390, 451);
-            this.btnShowDisabled.Name = "btnShowDisabled";
-            this.btnShowDisabled.Size = new System.Drawing.Size(90, 48);
-            this.btnShowDisabled.TabIndex = 23;
-            this.btnShowDisabled.Text = "Disable Discount";
-            this.btnShowDisabled.UseVisualStyleBackColor = true;
-            // 
-            // btnShowActive
-            // 
-            this.btnShowActive.Location = new System.Drawing.Point(390, 451);
-            this.btnShowActive.Name = "btnShowActive";
-            this.btnShowActive.Size = new System.Drawing.Size(90, 48);
-            this.btnShowActive.TabIndex = 24;
-            this.btnShowActive.Text = "Activate Discount";
-            this.btnShowActive.UseVisualStyleBackColor = true;
             // 
             // btnShowInactive
             // 
             this.btnShowInactive.Location = new System.Drawing.Point(390, 66);
             this.btnShowInactive.Name = "btnShowInactive";
             this.btnShowInactive.Size = new System.Drawing.Size(90, 49);
-            this.btnShowInactive.TabIndex = 25;
+            this.btnShowInactive.TabIndex = 11;
             this.btnShowInactive.Text = "Show &Inactive Discount";
             this.btnShowInactive.UseVisualStyleBackColor = true;
             this.btnShowInactive.Click += new System.EventHandler(this.btnShowInactive_Click);
@@ -334,10 +314,8 @@ namespace SU21_Final_Project
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(968, 522);
+            this.ClientSize = new System.Drawing.Size(968, 514);
             this.Controls.Add(this.btnShowInactive);
-            this.Controls.Add(this.btnShowActive);
-            this.Controls.Add(this.btnShowDisabled);
             this.Controls.Add(this.btnReturn);
             this.Controls.Add(this.dgvProduct);
             this.Controls.Add(this.btnCancelEdit);
@@ -399,8 +377,6 @@ namespace SU21_Final_Project
         private System.Windows.Forms.Button btnCancelEdit;
         private System.Windows.Forms.DataGridView dgvProduct;
         private System.Windows.Forms.Button btnReturn;
-        private System.Windows.Forms.Button btnShowDisabled;
-        private System.Windows.Forms.Button btnShowActive;
         private System.Windows.Forms.Button btnShowInactive;
     }
 }

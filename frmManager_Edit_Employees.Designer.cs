@@ -65,7 +65,7 @@ namespace SU21_Final_Project
             this.btnReturn.Location = new System.Drawing.Point(267, 504);
             this.btnReturn.Name = "btnReturn";
             this.btnReturn.Size = new System.Drawing.Size(75, 50);
-            this.btnReturn.TabIndex = 44;
+            this.btnReturn.TabIndex = 20;
             this.btnReturn.Text = "&Return";
             this.btnReturn.UseVisualStyleBackColor = true;
             this.btnReturn.Click += new System.EventHandler(this.btnReturn_Click);
@@ -76,7 +76,7 @@ namespace SU21_Final_Project
             this.btnCancelEdit.Location = new System.Drawing.Point(186, 504);
             this.btnCancelEdit.Name = "btnCancelEdit";
             this.btnCancelEdit.Size = new System.Drawing.Size(75, 50);
-            this.btnCancelEdit.TabIndex = 42;
+            this.btnCancelEdit.TabIndex = 19;
             this.btnCancelEdit.Text = "&Cancel Edit";
             this.btnCancelEdit.UseVisualStyleBackColor = true;
             this.btnCancelEdit.Click += new System.EventHandler(this.btnCancelEdit_Click);
@@ -87,7 +87,7 @@ namespace SU21_Final_Project
             this.btnCompleteEdit.Location = new System.Drawing.Point(185, 449);
             this.btnCompleteEdit.Name = "btnCompleteEdit";
             this.btnCompleteEdit.Size = new System.Drawing.Size(75, 50);
-            this.btnCompleteEdit.TabIndex = 41;
+            this.btnCompleteEdit.TabIndex = 18;
             this.btnCompleteEdit.Text = "C&omplete Edit";
             this.btnCompleteEdit.UseVisualStyleBackColor = true;
             this.btnCompleteEdit.Click += new System.EventHandler(this.btnCompleteEdit_Click);
@@ -98,7 +98,7 @@ namespace SU21_Final_Project
             this.btnEditEmployee.Location = new System.Drawing.Point(106, 504);
             this.btnEditEmployee.Name = "btnEditEmployee";
             this.btnEditEmployee.Size = new System.Drawing.Size(74, 50);
-            this.btnEditEmployee.TabIndex = 40;
+            this.btnEditEmployee.TabIndex = 17;
             this.btnEditEmployee.Text = "&Edit Employee";
             this.btnEditEmployee.UseVisualStyleBackColor = true;
             this.btnEditEmployee.Click += new System.EventHandler(this.btnEditEmployee_Click);
@@ -110,7 +110,7 @@ namespace SU21_Final_Project
             this.lblPositionTextValid.Location = new System.Drawing.Point(141, 208);
             this.lblPositionTextValid.Name = "lblPositionTextValid";
             this.lblPositionTextValid.Size = new System.Drawing.Size(20, 21);
-            this.lblPositionTextValid.TabIndex = 39;
+            this.lblPositionTextValid.TabIndex = 7;
             this.lblPositionTextValid.Text = "X";
             this.lblPositionTextValid.Visible = false;
             // 
@@ -121,7 +121,7 @@ namespace SU21_Final_Project
             this.lblWageTextValid.Location = new System.Drawing.Point(141, 280);
             this.lblWageTextValid.Name = "lblWageTextValid";
             this.lblWageTextValid.Size = new System.Drawing.Size(20, 21);
-            this.lblWageTextValid.TabIndex = 38;
+            this.lblWageTextValid.TabIndex = 10;
             this.lblWageTextValid.Text = "X";
             // 
             // btnAdd
@@ -130,7 +130,7 @@ namespace SU21_Final_Project
             this.btnAdd.Location = new System.Drawing.Point(13, 504);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(87, 50);
-            this.btnAdd.TabIndex = 36;
+            this.btnAdd.TabIndex = 16;
             this.btnAdd.Text = "&Add Employee";
             this.btnAdd.UseVisualStyleBackColor = true;
             this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
@@ -142,7 +142,7 @@ namespace SU21_Final_Project
             this.cbxAdmin.Location = new System.Drawing.Point(19, 425);
             this.cbxAdmin.Name = "cbxAdmin";
             this.cbxAdmin.Size = new System.Drawing.Size(83, 20);
-            this.cbxAdmin.TabIndex = 33;
+            this.cbxAdmin.TabIndex = 15;
             this.cbxAdmin.Text = "Manager?";
             this.cbxAdmin.UseVisualStyleBackColor = true;
             // 
@@ -154,7 +154,7 @@ namespace SU21_Final_Project
             this.tbxWage.Name = "tbxWage";
             this.tbxWage.ShortcutsEnabled = false;
             this.tbxWage.Size = new System.Drawing.Size(116, 23);
-            this.tbxWage.TabIndex = 31;
+            this.tbxWage.TabIndex = 9;
             this.tbxWage.TextChanged += new System.EventHandler(this.tbxDiscountPercent_TextChanged);
             this.tbxWage.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbxWage_KeyPress);
             // 
@@ -165,7 +165,7 @@ namespace SU21_Final_Project
             this.lblWage.Location = new System.Drawing.Point(17, 264);
             this.lblWage.Name = "lblWage";
             this.lblWage.Size = new System.Drawing.Size(50, 16);
-            this.lblWage.TabIndex = 30;
+            this.lblWage.TabIndex = 8;
             this.lblWage.Text = "Wage :";
             // 
             // lblPosition
@@ -175,7 +175,7 @@ namespace SU21_Final_Project
             this.lblPosition.Location = new System.Drawing.Point(17, 192);
             this.lblPosition.Name = "lblPosition";
             this.lblPosition.Size = new System.Drawing.Size(65, 16);
-            this.lblPosition.TabIndex = 28;
+            this.lblPosition.TabIndex = 5;
             this.lblPosition.Text = "Position : ";
             // 
             // lblPersonID
@@ -185,7 +185,7 @@ namespace SU21_Final_Project
             this.lblPersonID.Location = new System.Drawing.Point(16, 118);
             this.lblPersonID.Name = "lblPersonID";
             this.lblPersonID.Size = new System.Drawing.Size(72, 16);
-            this.lblPersonID.TabIndex = 27;
+            this.lblPersonID.TabIndex = 2;
             this.lblPersonID.Text = "Person ID :";
             // 
             // cmxPosition
@@ -198,7 +198,7 @@ namespace SU21_Final_Project
             this.cmxPosition.Location = new System.Drawing.Point(19, 208);
             this.cmxPosition.Name = "cmxPosition";
             this.cmxPosition.Size = new System.Drawing.Size(116, 24);
-            this.cmxPosition.TabIndex = 26;
+            this.cmxPosition.TabIndex = 6;
             this.cmxPosition.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.cmxPosition_KeyPress);
             // 
             // lblEmployeeID
@@ -208,7 +208,7 @@ namespace SU21_Final_Project
             this.lblEmployeeID.Location = new System.Drawing.Point(16, 37);
             this.lblEmployeeID.Name = "lblEmployeeID";
             this.lblEmployeeID.Size = new System.Drawing.Size(84, 16);
-            this.lblEmployeeID.TabIndex = 25;
+            this.lblEmployeeID.TabIndex = 0;
             this.lblEmployeeID.Text = "Employee ID:";
             // 
             // tbxEmployee
@@ -220,7 +220,7 @@ namespace SU21_Final_Project
             this.tbxEmployee.ReadOnly = true;
             this.tbxEmployee.ShortcutsEnabled = false;
             this.tbxEmployee.Size = new System.Drawing.Size(116, 23);
-            this.tbxEmployee.TabIndex = 24;
+            this.tbxEmployee.TabIndex = 1;
             this.tbxEmployee.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbxEmployee_KeyPress);
             // 
             // dgvEmployee
@@ -250,7 +250,7 @@ namespace SU21_Final_Project
             this.tbxPersonID.ReadOnly = true;
             this.tbxPersonID.ShortcutsEnabled = false;
             this.tbxPersonID.Size = new System.Drawing.Size(116, 23);
-            this.tbxPersonID.TabIndex = 45;
+            this.tbxPersonID.TabIndex = 3;
             this.tbxPersonID.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbxPersonID_KeyPress);
             // 
             // cbxIsSalary
@@ -260,7 +260,7 @@ namespace SU21_Final_Project
             this.cbxIsSalary.Location = new System.Drawing.Point(19, 306);
             this.cbxIsSalary.Name = "cbxIsSalary";
             this.cbxIsSalary.Size = new System.Drawing.Size(162, 20);
-            this.cbxIsSalary.TabIndex = 47;
+            this.cbxIsSalary.TabIndex = 11;
             this.cbxIsSalary.Text = "Is Employee On Salary?";
             this.cbxIsSalary.UseVisualStyleBackColor = true;
             // 
@@ -273,7 +273,7 @@ namespace SU21_Final_Project
             this.tbxHireDate.ReadOnly = true;
             this.tbxHireDate.ShortcutsEnabled = false;
             this.tbxHireDate.Size = new System.Drawing.Size(137, 23);
-            this.tbxHireDate.TabIndex = 49;
+            this.tbxHireDate.TabIndex = 13;
             // 
             // lblHireDate
             // 
@@ -282,7 +282,7 @@ namespace SU21_Final_Project
             this.lblHireDate.Location = new System.Drawing.Point(18, 351);
             this.lblHireDate.Name = "lblHireDate";
             this.lblHireDate.Size = new System.Drawing.Size(74, 16);
-            this.lblHireDate.TabIndex = 48;
+            this.lblHireDate.TabIndex = 12;
             this.lblHireDate.Text = "Hire Date : ";
             // 
             // btnFindPersonID
@@ -291,7 +291,7 @@ namespace SU21_Final_Project
             this.btnFindPersonID.Location = new System.Drawing.Point(141, 132);
             this.btnFindPersonID.Name = "btnFindPersonID";
             this.btnFindPersonID.Size = new System.Drawing.Size(119, 23);
-            this.btnFindPersonID.TabIndex = 50;
+            this.btnFindPersonID.TabIndex = 4;
             this.btnFindPersonID.Text = "Find Person ID";
             this.btnFindPersonID.UseVisualStyleBackColor = true;
             this.btnFindPersonID.Click += new System.EventHandler(this.btnFindPersonID_Click);
@@ -302,7 +302,7 @@ namespace SU21_Final_Project
             this.btnGetDate.Location = new System.Drawing.Point(163, 367);
             this.btnGetDate.Name = "btnGetDate";
             this.btnGetDate.Size = new System.Drawing.Size(97, 23);
-            this.btnGetDate.TabIndex = 51;
+            this.btnGetDate.TabIndex = 14;
             this.btnGetDate.Text = "Get Date";
             this.btnGetDate.UseVisualStyleBackColor = true;
             this.btnGetDate.Click += new System.EventHandler(this.btnGetDate_Click);
@@ -314,7 +314,7 @@ namespace SU21_Final_Project
             this.btnDisable.Location = new System.Drawing.Point(372, 449);
             this.btnDisable.Name = "btnDisable";
             this.btnDisable.Size = new System.Drawing.Size(78, 50);
-            this.btnDisable.TabIndex = 52;
+            this.btnDisable.TabIndex = 24;
             this.btnDisable.Text = "&Disable Employee";
             this.btnDisable.UseVisualStyleBackColor = true;
             this.btnDisable.Click += new System.EventHandler(this.btnDisable_Click);
@@ -325,7 +325,7 @@ namespace SU21_Final_Project
             this.btnShowUnactive.Location = new System.Drawing.Point(372, 504);
             this.btnShowUnactive.Name = "btnShowUnactive";
             this.btnShowUnactive.Size = new System.Drawing.Size(78, 50);
-            this.btnShowUnactive.TabIndex = 53;
+            this.btnShowUnactive.TabIndex = 25;
             this.btnShowUnactive.Text = "&Show Unactive ";
             this.btnShowUnactive.UseVisualStyleBackColor = true;
             this.btnShowUnactive.Click += new System.EventHandler(this.btnShowUnactive_Click);
@@ -333,10 +333,10 @@ namespace SU21_Final_Project
             // btnShowActive
             // 
             this.btnShowActive.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnShowActive.Location = new System.Drawing.Point(372, 504);
+            this.btnShowActive.Location = new System.Drawing.Point(372, 505);
             this.btnShowActive.Name = "btnShowActive";
             this.btnShowActive.Size = new System.Drawing.Size(78, 50);
-            this.btnShowActive.TabIndex = 54;
+            this.btnShowActive.TabIndex = 22;
             this.btnShowActive.Text = "&Show Active ";
             this.btnShowActive.UseVisualStyleBackColor = true;
             this.btnShowActive.Visible = false;
@@ -346,10 +346,10 @@ namespace SU21_Final_Project
             // 
             this.btnEnable.Enabled = false;
             this.btnEnable.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEnable.Location = new System.Drawing.Point(372, 449);
+            this.btnEnable.Location = new System.Drawing.Point(372, 448);
             this.btnEnable.Name = "btnEnable";
             this.btnEnable.Size = new System.Drawing.Size(78, 50);
-            this.btnEnable.TabIndex = 55;
+            this.btnEnable.TabIndex = 21;
             this.btnEnable.Text = "&Enable Employee";
             this.btnEnable.UseVisualStyleBackColor = true;
             this.btnEnable.Visible = false;

@@ -58,7 +58,7 @@ namespace SU21_Final_Project
             this.btnEditSelfInformation.Location = new System.Drawing.Point(88, 240);
             this.btnEditSelfInformation.Name = "btnEditSelfInformation";
             this.btnEditSelfInformation.Size = new System.Drawing.Size(136, 55);
-            this.btnEditSelfInformation.TabIndex = 1;
+            this.btnEditSelfInformation.TabIndex = 3;
             this.btnEditSelfInformation.Text = "Edit Your Information";
             this.btnEditSelfInformation.UseVisualStyleBackColor = true;
             this.btnEditSelfInformation.Click += new System.EventHandler(this.btnEditSelfInformation_Click);
@@ -69,7 +69,7 @@ namespace SU21_Final_Project
             this.btnEditCustomer.Location = new System.Drawing.Point(88, 179);
             this.btnEditCustomer.Name = "btnEditCustomer";
             this.btnEditCustomer.Size = new System.Drawing.Size(136, 55);
-            this.btnEditCustomer.TabIndex = 2;
+            this.btnEditCustomer.TabIndex = 1;
             this.btnEditCustomer.Text = "Edit Customer Information";
             this.btnEditCustomer.UseVisualStyleBackColor = true;
             this.btnEditCustomer.Click += new System.EventHandler(this.btnEditCustomer_Click);
@@ -80,7 +80,7 @@ namespace SU21_Final_Project
             this.btnViewDiscounts.Location = new System.Drawing.Point(230, 179);
             this.btnViewDiscounts.Name = "btnViewDiscounts";
             this.btnViewDiscounts.Size = new System.Drawing.Size(136, 55);
-            this.btnViewDiscounts.TabIndex = 3;
+            this.btnViewDiscounts.TabIndex = 2;
             this.btnViewDiscounts.Text = "View Store Discounts";
             this.btnViewDiscounts.UseVisualStyleBackColor = true;
             this.btnViewDiscounts.Click += new System.EventHandler(this.btnViewDiscounts_Click);
@@ -134,7 +134,7 @@ namespace SU21_Final_Project
             this.btnSignOut.Location = new System.Drawing.Point(378, 357);
             this.btnSignOut.Name = "btnSignOut";
             this.btnSignOut.Size = new System.Drawing.Size(88, 37);
-            this.btnSignOut.TabIndex = 35;
+            this.btnSignOut.TabIndex = 5;
             this.btnSignOut.Text = "Sign Out";
             this.btnSignOut.UseVisualStyleBackColor = true;
             this.btnSignOut.Click += new System.EventHandler(this.btnSignOut_Click);

@@ -89,7 +89,7 @@ namespace SU21_Final_Project
             this.lblMainText.Location = new System.Drawing.Point(397, 31);
             this.lblMainText.Name = "lblMainText";
             this.lblMainText.Size = new System.Drawing.Size(70, 19);
-            this.lblMainText.TabIndex = 174;
+            this.lblMainText.TabIndex = 18;
             this.lblMainText.Text = "Edit Info";
             // 
             // lblBlackLine
@@ -98,7 +98,7 @@ namespace SU21_Final_Project
             this.lblBlackLine.Location = new System.Drawing.Point(11, 58);
             this.lblBlackLine.Name = "lblBlackLine";
             this.lblBlackLine.Size = new System.Drawing.Size(850, 2);
-            this.lblBlackLine.TabIndex = 173;
+            this.lblBlackLine.TabIndex = 17;
             this.lblBlackLine.Text = "0";
             // 
             // menuStrip1
@@ -108,7 +108,7 @@ namespace SU21_Final_Project
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(889, 24);
-            this.menuStrip1.TabIndex = 175;
+            this.menuStrip1.TabIndex = 16;
             this.menuStrip1.Text = "menuStrip1";
             // 
             // mnsHelp
@@ -126,7 +126,7 @@ namespace SU21_Final_Project
             this.lblRequriemtsn.Location = new System.Drawing.Point(584, 283);
             this.lblRequriemtsn.Name = "lblRequriemtsn";
             this.lblRequriemtsn.Size = new System.Drawing.Size(206, 16);
-            this.lblRequriemtsn.TabIndex = 172;
+            this.lblRequriemtsn.TabIndex = 43;
             this.lblRequriemtsn.Text = "All Boxes with * Must Be Filled Out";
             // 
             // cbxState
@@ -195,7 +195,7 @@ namespace SU21_Final_Project
             this.cbxState.MaxLength = 2;
             this.cbxState.Name = "cbxState";
             this.cbxState.Size = new System.Drawing.Size(120, 24);
-            this.cbxState.TabIndex = 138;
+            this.cbxState.TabIndex = 10;
             this.cbxState.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.cbxState_KeyPress);
             // 
             // lblErrorPhoneSecondary
@@ -207,7 +207,7 @@ namespace SU21_Final_Project
             this.lblErrorPhoneSecondary.Location = new System.Drawing.Point(799, 243);
             this.lblErrorPhoneSecondary.Name = "lblErrorPhoneSecondary";
             this.lblErrorPhoneSecondary.Size = new System.Drawing.Size(45, 16);
-            this.lblErrorPhoneSecondary.TabIndex = 171;
+            this.lblErrorPhoneSecondary.TabIndex = 47;
             this.lblErrorPhoneSecondary.Text = "*Error";
             this.lblErrorPhoneSecondary.Visible = false;
             // 
@@ -220,7 +220,7 @@ namespace SU21_Final_Project
             this.lblErrorPhonePrimary.Location = new System.Drawing.Point(799, 208);
             this.lblErrorPhonePrimary.Name = "lblErrorPhonePrimary";
             this.lblErrorPhonePrimary.Size = new System.Drawing.Size(45, 16);
-            this.lblErrorPhonePrimary.TabIndex = 170;
+            this.lblErrorPhonePrimary.TabIndex = 46;
             this.lblErrorPhonePrimary.Text = "*Error";
             this.lblErrorPhonePrimary.Visible = false;
             // 
@@ -233,7 +233,7 @@ namespace SU21_Final_Project
             this.lblErrorEmail.Location = new System.Drawing.Point(799, 168);
             this.lblErrorEmail.Name = "lblErrorEmail";
             this.lblErrorEmail.Size = new System.Drawing.Size(45, 16);
-            this.lblErrorEmail.TabIndex = 169;
+            this.lblErrorEmail.TabIndex = 45;
             this.lblErrorEmail.Text = "*Error";
             this.lblErrorEmail.Visible = false;
             // 
@@ -246,7 +246,7 @@ namespace SU21_Final_Project
             this.lblErrorState.Location = new System.Drawing.Point(799, 133);
             this.lblErrorState.Name = "lblErrorState";
             this.lblErrorState.Size = new System.Drawing.Size(45, 16);
-            this.lblErrorState.TabIndex = 168;
+            this.lblErrorState.TabIndex = 44;
             this.lblErrorState.Text = "*Error";
             this.lblErrorState.Visible = false;
             // 
@@ -259,7 +259,7 @@ namespace SU21_Final_Project
             this.lblErrorZipcode.Location = new System.Drawing.Point(486, 287);
             this.lblErrorZipcode.Name = "lblErrorZipcode";
             this.lblErrorZipcode.Size = new System.Drawing.Size(45, 16);
-            this.lblErrorZipcode.TabIndex = 167;
+            this.lblErrorZipcode.TabIndex = 38;
             this.lblErrorZipcode.Text = "*Error";
             this.lblErrorZipcode.Visible = false;
             // 
@@ -272,7 +272,7 @@ namespace SU21_Final_Project
             this.lblErrorCity.Location = new System.Drawing.Point(486, 249);
             this.lblErrorCity.Name = "lblErrorCity";
             this.lblErrorCity.Size = new System.Drawing.Size(45, 16);
-            this.lblErrorCity.TabIndex = 166;
+            this.lblErrorCity.TabIndex = 37;
             this.lblErrorCity.Text = "*Error";
             this.lblErrorCity.Visible = false;
             // 
@@ -285,7 +285,7 @@ namespace SU21_Final_Project
             this.lblErrorAddress3.Location = new System.Drawing.Point(486, 205);
             this.lblErrorAddress3.Name = "lblErrorAddress3";
             this.lblErrorAddress3.Size = new System.Drawing.Size(45, 16);
-            this.lblErrorAddress3.TabIndex = 165;
+            this.lblErrorAddress3.TabIndex = 36;
             this.lblErrorAddress3.Text = "*Error";
             this.lblErrorAddress3.Visible = false;
             // 
@@ -298,7 +298,7 @@ namespace SU21_Final_Project
             this.lblErrorAddress2.Location = new System.Drawing.Point(486, 166);
             this.lblErrorAddress2.Name = "lblErrorAddress2";
             this.lblErrorAddress2.Size = new System.Drawing.Size(45, 16);
-            this.lblErrorAddress2.TabIndex = 164;
+            this.lblErrorAddress2.TabIndex = 35;
             this.lblErrorAddress2.Text = "*Error";
             this.lblErrorAddress2.Visible = false;
             // 
@@ -311,7 +311,7 @@ namespace SU21_Final_Project
             this.lblErrorAddress1.Location = new System.Drawing.Point(486, 128);
             this.lblErrorAddress1.Name = "lblErrorAddress1";
             this.lblErrorAddress1.Size = new System.Drawing.Size(45, 16);
-            this.lblErrorAddress1.TabIndex = 163;
+            this.lblErrorAddress1.TabIndex = 34;
             this.lblErrorAddress1.Text = "*Error";
             this.lblErrorAddress1.Visible = false;
             // 
@@ -324,7 +324,7 @@ namespace SU21_Final_Project
             this.lblErrorSuffix.Location = new System.Drawing.Point(220, 286);
             this.lblErrorSuffix.Name = "lblErrorSuffix";
             this.lblErrorSuffix.Size = new System.Drawing.Size(45, 16);
-            this.lblErrorSuffix.TabIndex = 162;
+            this.lblErrorSuffix.TabIndex = 28;
             this.lblErrorSuffix.Text = "*Error";
             this.lblErrorSuffix.Visible = false;
             // 
@@ -337,7 +337,7 @@ namespace SU21_Final_Project
             this.lblErrorLastName.Location = new System.Drawing.Point(220, 246);
             this.lblErrorLastName.Name = "lblErrorLastName";
             this.lblErrorLastName.Size = new System.Drawing.Size(45, 16);
-            this.lblErrorLastName.TabIndex = 161;
+            this.lblErrorLastName.TabIndex = 27;
             this.lblErrorLastName.Text = "*Error";
             this.lblErrorLastName.Visible = false;
             // 
@@ -350,7 +350,7 @@ namespace SU21_Final_Project
             this.lblErrorMiddleName.Location = new System.Drawing.Point(220, 211);
             this.lblErrorMiddleName.Name = "lblErrorMiddleName";
             this.lblErrorMiddleName.Size = new System.Drawing.Size(45, 16);
-            this.lblErrorMiddleName.TabIndex = 160;
+            this.lblErrorMiddleName.TabIndex = 26;
             this.lblErrorMiddleName.Text = "*Error";
             this.lblErrorMiddleName.Visible = false;
             // 
@@ -363,7 +363,7 @@ namespace SU21_Final_Project
             this.lblErrorFirstName.Location = new System.Drawing.Point(220, 163);
             this.lblErrorFirstName.Name = "lblErrorFirstName";
             this.lblErrorFirstName.Size = new System.Drawing.Size(45, 16);
-            this.lblErrorFirstName.TabIndex = 159;
+            this.lblErrorFirstName.TabIndex = 25;
             this.lblErrorFirstName.Text = "*Error";
             this.lblErrorFirstName.Visible = false;
             // 
@@ -376,7 +376,7 @@ namespace SU21_Final_Project
             this.lblErrorTitle.Location = new System.Drawing.Point(220, 128);
             this.lblErrorTitle.Name = "lblErrorTitle";
             this.lblErrorTitle.Size = new System.Drawing.Size(45, 16);
-            this.lblErrorTitle.TabIndex = 158;
+            this.lblErrorTitle.TabIndex = 24;
             this.lblErrorTitle.Text = "*Error";
             this.lblErrorTitle.Visible = false;
             // 
@@ -388,7 +388,7 @@ namespace SU21_Final_Project
             this.mtbPhone2.Name = "mtbPhone2";
             this.mtbPhone2.ShortcutsEnabled = false;
             this.mtbPhone2.Size = new System.Drawing.Size(142, 23);
-            this.mtbPhone2.TabIndex = 141;
+            this.mtbPhone2.TabIndex = 13;
             this.mtbPhone2.Enter += new System.EventHandler(this.mtbPhone2_Enter);
             this.mtbPhone2.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.mtbPhone2_KeyPress);
             // 
@@ -400,7 +400,7 @@ namespace SU21_Final_Project
             this.mtbPhone1.Name = "mtbPhone1";
             this.mtbPhone1.ShortcutsEnabled = false;
             this.mtbPhone1.Size = new System.Drawing.Size(142, 23);
-            this.mtbPhone1.TabIndex = 140;
+            this.mtbPhone1.TabIndex = 12;
             this.mtbPhone1.Enter += new System.EventHandler(this.mtbPhone1_Enter);
             this.mtbPhone1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.mtbPhone1_KeyPress);
             // 
@@ -411,7 +411,7 @@ namespace SU21_Final_Project
             this.lblPhoneSecondary.Location = new System.Drawing.Point(538, 239);
             this.lblPhoneSecondary.Name = "lblPhoneSecondary";
             this.lblPhoneSecondary.Size = new System.Drawing.Size(107, 16);
-            this.lblPhoneSecondary.TabIndex = 157;
+            this.lblPhoneSecondary.TabIndex = 42;
             this.lblPhoneSecondary.Text = "Phone Secondary";
             // 
             // lblPhonePrimary
@@ -421,7 +421,7 @@ namespace SU21_Final_Project
             this.lblPhonePrimary.Location = new System.Drawing.Point(546, 204);
             this.lblPhonePrimary.Name = "lblPhonePrimary";
             this.lblPhonePrimary.Size = new System.Drawing.Size(99, 16);
-            this.lblPhonePrimary.TabIndex = 156;
+            this.lblPhonePrimary.TabIndex = 41;
             this.lblPhonePrimary.Text = "Phone Primary*";
             // 
             // lblState
@@ -431,7 +431,7 @@ namespace SU21_Final_Project
             this.lblState.Location = new System.Drawing.Point(599, 131);
             this.lblState.Name = "lblState";
             this.lblState.Size = new System.Drawing.Size(46, 16);
-            this.lblState.TabIndex = 155;
+            this.lblState.TabIndex = 39;
             this.lblState.Text = "State*";
             // 
             // lblEmail
@@ -441,7 +441,7 @@ namespace SU21_Final_Project
             this.lblEmail.Location = new System.Drawing.Point(598, 164);
             this.lblEmail.Name = "lblEmail";
             this.lblEmail.Size = new System.Drawing.Size(47, 16);
-            this.lblEmail.TabIndex = 154;
+            this.lblEmail.TabIndex = 40;
             this.lblEmail.Text = "Email*";
             // 
             // lblZipCode
@@ -451,7 +451,7 @@ namespace SU21_Final_Project
             this.lblZipCode.Location = new System.Drawing.Point(298, 287);
             this.lblZipCode.Name = "lblZipCode";
             this.lblZipCode.Size = new System.Drawing.Size(60, 16);
-            this.lblZipCode.TabIndex = 153;
+            this.lblZipCode.TabIndex = 33;
             this.lblZipCode.Text = "Zipcode*";
             // 
             // lblCity
@@ -461,7 +461,7 @@ namespace SU21_Final_Project
             this.lblCity.Location = new System.Drawing.Point(313, 247);
             this.lblCity.Name = "lblCity";
             this.lblCity.Size = new System.Drawing.Size(45, 16);
-            this.lblCity.TabIndex = 152;
+            this.lblCity.TabIndex = 32;
             this.lblCity.Text = "*City*";
             // 
             // tbxEmail
@@ -472,7 +472,7 @@ namespace SU21_Final_Project
             this.tbxEmail.Name = "tbxEmail";
             this.tbxEmail.ShortcutsEnabled = false;
             this.tbxEmail.Size = new System.Drawing.Size(142, 23);
-            this.tbxEmail.TabIndex = 139;
+            this.tbxEmail.TabIndex = 11;
             this.tbxEmail.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbxEmail_KeyPress);
             // 
             // tbxZipcode
@@ -483,7 +483,7 @@ namespace SU21_Final_Project
             this.tbxZipcode.Name = "tbxZipcode";
             this.tbxZipcode.ShortcutsEnabled = false;
             this.tbxZipcode.Size = new System.Drawing.Size(119, 23);
-            this.tbxZipcode.TabIndex = 137;
+            this.tbxZipcode.TabIndex = 9;
             this.tbxZipcode.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbxZipcode_KeyPress);
             // 
             // tbxCity
@@ -494,7 +494,7 @@ namespace SU21_Final_Project
             this.tbxCity.Name = "tbxCity";
             this.tbxCity.ShortcutsEnabled = false;
             this.tbxCity.Size = new System.Drawing.Size(119, 23);
-            this.tbxCity.TabIndex = 136;
+            this.tbxCity.TabIndex = 8;
             this.tbxCity.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbxCity_KeyPress);
             // 
             // lblSuffix
@@ -504,7 +504,7 @@ namespace SU21_Final_Project
             this.lblSuffix.Location = new System.Drawing.Point(54, 284);
             this.lblSuffix.Name = "lblSuffix";
             this.lblSuffix.Size = new System.Drawing.Size(40, 16);
-            this.lblSuffix.TabIndex = 151;
+            this.lblSuffix.TabIndex = 23;
             this.lblSuffix.Text = "Suffix";
             // 
             // lblAdress1
@@ -514,7 +514,7 @@ namespace SU21_Final_Project
             this.lblAdress1.Location = new System.Drawing.Point(285, 126);
             this.lblAdress1.Name = "lblAdress1";
             this.lblAdress1.Size = new System.Drawing.Size(73, 16);
-            this.lblAdress1.TabIndex = 150;
+            this.lblAdress1.TabIndex = 29;
             this.lblAdress1.Text = "Address 1*";
             // 
             // lblAddress2
@@ -524,7 +524,7 @@ namespace SU21_Final_Project
             this.lblAddress2.Location = new System.Drawing.Point(293, 167);
             this.lblAddress2.Name = "lblAddress2";
             this.lblAddress2.Size = new System.Drawing.Size(65, 16);
-            this.lblAddress2.TabIndex = 149;
+            this.lblAddress2.TabIndex = 30;
             this.lblAddress2.Text = "Address 2";
             // 
             // lblAddress3
@@ -534,7 +534,7 @@ namespace SU21_Final_Project
             this.lblAddress3.Location = new System.Drawing.Point(293, 206);
             this.lblAddress3.Name = "lblAddress3";
             this.lblAddress3.Size = new System.Drawing.Size(65, 16);
-            this.lblAddress3.TabIndex = 148;
+            this.lblAddress3.TabIndex = 31;
             this.lblAddress3.Text = "Address 3";
             // 
             // lblMiddleName
@@ -544,7 +544,7 @@ namespace SU21_Final_Project
             this.lblMiddleName.Location = new System.Drawing.Point(11, 205);
             this.lblMiddleName.Name = "lblMiddleName";
             this.lblMiddleName.Size = new System.Drawing.Size(83, 16);
-            this.lblMiddleName.TabIndex = 147;
+            this.lblMiddleName.TabIndex = 21;
             this.lblMiddleName.Text = "MIddle Name";
             // 
             // lblLastName
@@ -554,7 +554,7 @@ namespace SU21_Final_Project
             this.lblLastName.Location = new System.Drawing.Point(18, 238);
             this.lblLastName.Name = "lblLastName";
             this.lblLastName.Size = new System.Drawing.Size(76, 16);
-            this.lblLastName.TabIndex = 146;
+            this.lblLastName.TabIndex = 22;
             this.lblLastName.Text = "Last Name*";
             // 
             // lblFirstName
@@ -564,7 +564,7 @@ namespace SU21_Final_Project
             this.lblFirstName.Location = new System.Drawing.Point(16, 165);
             this.lblFirstName.Name = "lblFirstName";
             this.lblFirstName.Size = new System.Drawing.Size(78, 16);
-            this.lblFirstName.TabIndex = 145;
+            this.lblFirstName.TabIndex = 20;
             this.lblFirstName.Text = "First Name*";
             // 
             // lblTitle
@@ -574,7 +574,7 @@ namespace SU21_Final_Project
             this.lblTitle.Location = new System.Drawing.Point(61, 125);
             this.lblTitle.Name = "lblTitle";
             this.lblTitle.Size = new System.Drawing.Size(33, 16);
-            this.lblTitle.TabIndex = 144;
+            this.lblTitle.TabIndex = 19;
             this.lblTitle.Text = "Title";
             // 
             // tbxAddress3
@@ -585,7 +585,7 @@ namespace SU21_Final_Project
             this.tbxAddress3.Name = "tbxAddress3";
             this.tbxAddress3.ShortcutsEnabled = false;
             this.tbxAddress3.Size = new System.Drawing.Size(119, 23);
-            this.tbxAddress3.TabIndex = 135;
+            this.tbxAddress3.TabIndex = 7;
             this.tbxAddress3.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbxAddress3_KeyPress);
             // 
             // tbxAddress2
@@ -596,7 +596,7 @@ namespace SU21_Final_Project
             this.tbxAddress2.Name = "tbxAddress2";
             this.tbxAddress2.ShortcutsEnabled = false;
             this.tbxAddress2.Size = new System.Drawing.Size(119, 23);
-            this.tbxAddress2.TabIndex = 134;
+            this.tbxAddress2.TabIndex = 6;
             this.tbxAddress2.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbxAddress2_KeyPress);
             // 
             // tbxAddress1
@@ -607,7 +607,7 @@ namespace SU21_Final_Project
             this.tbxAddress1.Name = "tbxAddress1";
             this.tbxAddress1.ShortcutsEnabled = false;
             this.tbxAddress1.Size = new System.Drawing.Size(119, 23);
-            this.tbxAddress1.TabIndex = 133;
+            this.tbxAddress1.TabIndex = 5;
             this.tbxAddress1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbxAddress1_KeyPress);
             // 
             // tbxSuffix
@@ -618,7 +618,7 @@ namespace SU21_Final_Project
             this.tbxSuffix.Name = "tbxSuffix";
             this.tbxSuffix.ShortcutsEnabled = false;
             this.tbxSuffix.Size = new System.Drawing.Size(114, 23);
-            this.tbxSuffix.TabIndex = 132;
+            this.tbxSuffix.TabIndex = 4;
             this.tbxSuffix.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbxSuffix_KeyPress);
             // 
             // tbxLastName
@@ -630,7 +630,7 @@ namespace SU21_Final_Project
             this.tbxLastName.Name = "tbxLastName";
             this.tbxLastName.ShortcutsEnabled = false;
             this.tbxLastName.Size = new System.Drawing.Size(114, 23);
-            this.tbxLastName.TabIndex = 131;
+            this.tbxLastName.TabIndex = 3;
             this.tbxLastName.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbxLastName_KeyPress);
             // 
             // tbxMiddleName
@@ -642,7 +642,7 @@ namespace SU21_Final_Project
             this.tbxMiddleName.Name = "tbxMiddleName";
             this.tbxMiddleName.ShortcutsEnabled = false;
             this.tbxMiddleName.Size = new System.Drawing.Size(114, 23);
-            this.tbxMiddleName.TabIndex = 130;
+            this.tbxMiddleName.TabIndex = 2;
             this.tbxMiddleName.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbxMiddleName_KeyPress);
             // 
             // tbxFirstName
@@ -654,7 +654,7 @@ namespace SU21_Final_Project
             this.tbxFirstName.Name = "tbxFirstName";
             this.tbxFirstName.ShortcutsEnabled = false;
             this.tbxFirstName.Size = new System.Drawing.Size(114, 23);
-            this.tbxFirstName.TabIndex = 129;
+            this.tbxFirstName.TabIndex = 1;
             this.tbxFirstName.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbxFirstName_KeyPress);
             // 
             // tbxTitle
@@ -665,7 +665,7 @@ namespace SU21_Final_Project
             this.tbxTitle.Name = "tbxTitle";
             this.tbxTitle.ShortcutsEnabled = false;
             this.tbxTitle.Size = new System.Drawing.Size(114, 23);
-            this.tbxTitle.TabIndex = 128;
+            this.tbxTitle.TabIndex = 0;
             this.tbxTitle.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbxTitle_KeyPress);
             // 
             // btnExit
@@ -674,7 +674,7 @@ namespace SU21_Final_Project
             this.btnExit.Location = new System.Drawing.Point(424, 378);
             this.btnExit.Name = "btnExit";
             this.btnExit.Size = new System.Drawing.Size(124, 41);
-            this.btnExit.TabIndex = 177;
+            this.btnExit.TabIndex = 15;
             this.btnExit.Text = "&Return";
             this.btnExit.UseVisualStyleBackColor = true;
             this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
@@ -685,7 +685,7 @@ namespace SU21_Final_Project
             this.btnCompleteEdit.Location = new System.Drawing.Point(282, 378);
             this.btnCompleteEdit.Name = "btnCompleteEdit";
             this.btnCompleteEdit.Size = new System.Drawing.Size(124, 41);
-            this.btnCompleteEdit.TabIndex = 176;
+            this.btnCompleteEdit.TabIndex = 14;
             this.btnCompleteEdit.Text = "&Complete Edit";
             this.btnCompleteEdit.UseVisualStyleBackColor = true;
             this.btnCompleteEdit.Click += new System.EventHandler(this.btnCompleteEdit_Click);

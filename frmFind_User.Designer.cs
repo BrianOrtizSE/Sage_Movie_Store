@@ -43,7 +43,7 @@ namespace SU21_Final_Project
             this.tbxUsername.Name = "tbxUsername";
             this.tbxUsername.ShortcutsEnabled = false;
             this.tbxUsername.Size = new System.Drawing.Size(132, 22);
-            this.tbxUsername.TabIndex = 0;
+            this.tbxUsername.TabIndex = 1;
             this.tbxUsername.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbxUsername_KeyPress);
             // 
             // label1
@@ -53,7 +53,7 @@ namespace SU21_Final_Project
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(193, 16);
-            this.label1.TabIndex = 1;
+            this.label1.TabIndex = 0;
             this.label1.Text = "Please Enter User\'s Username";
             // 
             // btnClose
@@ -61,7 +61,7 @@ namespace SU21_Final_Project
             this.btnClose.Location = new System.Drawing.Point(224, 192);
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(84, 30);
-            this.btnClose.TabIndex = 2;
+            this.btnClose.TabIndex = 3;
             this.btnClose.Text = "&Close";
             this.btnClose.UseVisualStyleBackColor = true;
             this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
@@ -71,7 +71,7 @@ namespace SU21_Final_Project
             this.btnSearch.Location = new System.Drawing.Point(224, 156);
             this.btnSearch.Name = "btnSearch";
             this.btnSearch.Size = new System.Drawing.Size(84, 30);
-            this.btnSearch.TabIndex = 3;
+            this.btnSearch.TabIndex = 2;
             this.btnSearch.Text = "&Search";
             this.btnSearch.UseVisualStyleBackColor = true;
             this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);

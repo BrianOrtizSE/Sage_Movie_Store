@@ -47,7 +47,7 @@ namespace SU21_Final_Project
             this.btnMerchandiseAdd.Location = new System.Drawing.Point(82, 270);
             this.btnMerchandiseAdd.Name = "btnMerchandiseAdd";
             this.btnMerchandiseAdd.Size = new System.Drawing.Size(105, 45);
-            this.btnMerchandiseAdd.TabIndex = 0;
+            this.btnMerchandiseAdd.TabIndex = 5;
             this.btnMerchandiseAdd.Text = "Add Merchandise";
             this.btnMerchandiseAdd.UseVisualStyleBackColor = true;
             this.btnMerchandiseAdd.Click += new System.EventHandler(this.btnMerchandiseAdd_Click);
@@ -58,7 +58,7 @@ namespace SU21_Final_Project
             this.btnViewSales.Location = new System.Drawing.Point(82, 205);
             this.btnViewSales.Name = "btnViewSales";
             this.btnViewSales.Size = new System.Drawing.Size(105, 45);
-            this.btnViewSales.TabIndex = 1;
+            this.btnViewSales.TabIndex = 3;
             this.btnViewSales.Text = "View Sales";
             this.btnViewSales.UseVisualStyleBackColor = true;
             this.btnViewSales.Click += new System.EventHandler(this.btnViewSales_Click);
@@ -69,7 +69,7 @@ namespace SU21_Final_Project
             this.btnAddDiscount.Location = new System.Drawing.Point(82, 130);
             this.btnAddDiscount.Name = "btnAddDiscount";
             this.btnAddDiscount.Size = new System.Drawing.Size(105, 45);
-            this.btnAddDiscount.TabIndex = 2;
+            this.btnAddDiscount.TabIndex = 1;
             this.btnAddDiscount.Text = "Edit/Add &Discount";
             this.btnAddDiscount.UseVisualStyleBackColor = true;
             this.btnAddDiscount.Click += new System.EventHandler(this.btnAddDiscount_Click);
@@ -80,7 +80,7 @@ namespace SU21_Final_Project
             this.btnEditCustomer.Location = new System.Drawing.Point(193, 130);
             this.btnEditCustomer.Name = "btnEditCustomer";
             this.btnEditCustomer.Size = new System.Drawing.Size(105, 45);
-            this.btnEditCustomer.TabIndex = 3;
+            this.btnEditCustomer.TabIndex = 2;
             this.btnEditCustomer.Text = "Edit/Add &Customer";
             this.btnEditCustomer.UseVisualStyleBackColor = true;
             this.btnEditCustomer.Click += new System.EventHandler(this.btnEditCustomer_Click);
@@ -92,7 +92,7 @@ namespace SU21_Final_Project
             this.btnEditEmployee.Name = "btnEditEmployee";
             this.btnEditEmployee.Size = new System.Drawing.Size(105, 45);
             this.btnEditEmployee.TabIndex = 4;
-            this.btnEditEmployee.Text = "Edit / Add Emplpyee";
+            this.btnEditEmployee.Text = "Edit / Add Emplopyee";
             this.btnEditEmployee.UseVisualStyleBackColor = true;
             this.btnEditEmployee.Click += new System.EventHandler(this.btnEditEmployee_Click);
             // 
@@ -102,7 +102,7 @@ namespace SU21_Final_Project
             this.btnClose.Location = new System.Drawing.Point(193, 270);
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(105, 45);
-            this.btnClose.TabIndex = 5;
+            this.btnClose.TabIndex = 6;
             this.btnClose.Text = "Sign Out";
             this.btnClose.UseVisualStyleBackColor = true;
             this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
@@ -113,7 +113,7 @@ namespace SU21_Final_Project
             this.lblDate.Location = new System.Drawing.Point(283, 21);
             this.lblDate.Name = "lblDate";
             this.lblDate.Size = new System.Drawing.Size(100, 23);
-            this.lblDate.TabIndex = 37;
+            this.lblDate.TabIndex = 7;
             this.lblDate.Text = "Date";
             this.lblDate.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
@@ -123,7 +123,7 @@ namespace SU21_Final_Project
             this.lblWelcomeUserText.Location = new System.Drawing.Point(106, 21);
             this.lblWelcomeUserText.Name = "lblWelcomeUserText";
             this.lblWelcomeUserText.Size = new System.Drawing.Size(173, 34);
-            this.lblWelcomeUserText.TabIndex = 36;
+            this.lblWelcomeUserText.TabIndex = 0;
             this.lblWelcomeUserText.Text = "Welcome";
             this.lblWelcomeUserText.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 

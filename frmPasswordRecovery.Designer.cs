@@ -53,7 +53,7 @@ namespace SU21_Final_Project
             this.tbxUsername.Name = "tbxUsername";
             this.tbxUsername.ShortcutsEnabled = false;
             this.tbxUsername.Size = new System.Drawing.Size(143, 27);
-            this.tbxUsername.TabIndex = 0;
+            this.tbxUsername.TabIndex = 2;
             this.tbxUsername.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbxUsername_KeyPress);
             // 
             // lblUsername
@@ -73,7 +73,7 @@ namespace SU21_Final_Project
             this.lblUserId.Location = new System.Drawing.Point(113, 9);
             this.lblUserId.Name = "lblUserId";
             this.lblUserId.Size = new System.Drawing.Size(223, 28);
-            this.lblUserId.TabIndex = 32;
+            this.lblUserId.TabIndex = 0;
             this.lblUserId.Text = "Password Recovery";
             this.lblUserId.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
@@ -95,7 +95,7 @@ namespace SU21_Final_Project
             this.btnSearch.Location = new System.Drawing.Point(144, 184);
             this.btnSearch.Name = "btnSearch";
             this.btnSearch.Size = new System.Drawing.Size(143, 35);
-            this.btnSearch.TabIndex = 33;
+            this.btnSearch.TabIndex = 4;
             this.btnSearch.Text = "Search";
             this.btnSearch.UseVisualStyleBackColor = true;
             this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
@@ -121,7 +121,7 @@ namespace SU21_Final_Project
             this.cmbSQ.Location = new System.Drawing.Point(45, 274);
             this.cmbSQ.Name = "cmbSQ";
             this.cmbSQ.Size = new System.Drawing.Size(354, 24);
-            this.cmbSQ.TabIndex = 34;
+            this.cmbSQ.TabIndex = 6;
             this.cmbSQ.Visible = false;
             // 
             // lblSecurityText
@@ -131,7 +131,7 @@ namespace SU21_Final_Project
             this.lblSecurityText.Location = new System.Drawing.Point(140, 252);
             this.lblSecurityText.Name = "lblSecurityText";
             this.lblSecurityText.Size = new System.Drawing.Size(147, 19);
-            this.lblSecurityText.TabIndex = 35;
+            this.lblSecurityText.TabIndex = 5;
             this.lblSecurityText.Text = "Security Question 1";
             this.lblSecurityText.Visible = false;
             // 
@@ -142,7 +142,7 @@ namespace SU21_Final_Project
             this.lblSecurityAnswer.Location = new System.Drawing.Point(150, 316);
             this.lblSecurityAnswer.Name = "lblSecurityAnswer";
             this.lblSecurityAnswer.Size = new System.Drawing.Size(137, 19);
-            this.lblSecurityAnswer.TabIndex = 36;
+            this.lblSecurityAnswer.TabIndex = 7;
             this.lblSecurityAnswer.Text = "Security Answer 1";
             this.lblSecurityAnswer.Visible = false;
             // 
@@ -153,7 +153,7 @@ namespace SU21_Final_Project
             this.tbxSQA.Name = "tbxSQA";
             this.tbxSQA.ShortcutsEnabled = false;
             this.tbxSQA.Size = new System.Drawing.Size(259, 27);
-            this.tbxSQA.TabIndex = 37;
+            this.tbxSQA.TabIndex = 8;
             this.tbxSQA.Visible = false;
             this.tbxSQA.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbxSQA_KeyPress);
             // 
@@ -163,7 +163,7 @@ namespace SU21_Final_Project
             this.btnSSearch.Location = new System.Drawing.Point(144, 400);
             this.btnSSearch.Name = "btnSSearch";
             this.btnSSearch.Size = new System.Drawing.Size(143, 35);
-            this.btnSSearch.TabIndex = 38;
+            this.btnSSearch.TabIndex = 9;
             this.btnSSearch.Text = "Search";
             this.btnSSearch.UseVisualStyleBackColor = true;
             this.btnSSearch.Visible = false;
@@ -175,7 +175,7 @@ namespace SU21_Final_Project
             this.btnClose.Location = new System.Drawing.Point(360, 458);
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(81, 33);
-            this.btnClose.TabIndex = 39;
+            this.btnClose.TabIndex = 10;
             this.btnClose.Text = "&Close";
             this.btnClose.UseVisualStyleBackColor = true;
             this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
@@ -188,7 +188,7 @@ namespace SU21_Final_Project
             this.lblPasswordValid.Location = new System.Drawing.Point(51, 133);
             this.lblPasswordValid.Name = "lblPasswordValid";
             this.lblPasswordValid.Size = new System.Drawing.Size(344, 38);
-            this.lblPasswordValid.TabIndex = 40;
+            this.lblPasswordValid.TabIndex = 3;
             this.lblPasswordValid.Text = "Password Must Contain at least 8 letters , \r\n1 Capital , 1 lowercase , 1 Symbols " +
     ", 1 Number";
             this.lblPasswordValid.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;

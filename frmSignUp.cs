@@ -112,7 +112,7 @@ namespace SU21_Final_Project
 
 
             //Address1
-            if (tbxAddress1.Text == String.Empty || tbxAddress1.Text.Length > 30)
+            if (CheckAddress(tbxAddress1) == false)
             {
                 blnValid = false;
                 lblErrorAddress1.Visible = true;
@@ -165,7 +165,7 @@ namespace SU21_Final_Project
 
 
             //City   
-            if (tbxCity.Text == String.Empty || tbxCity.Text.Length > 30)
+            if (tbxCity.Text == String.Empty || tbxCity.Text.Length < 3|| tbxCity.Text.Length > 30)
             {
                 lblErrorCity.Visible = true;
                 blnValid = false;
@@ -202,7 +202,7 @@ namespace SU21_Final_Project
             }
 
             //Email
-            if (tbxEmail.Text == String.Empty || tbxEmail.Text.Length > 40)
+            if (CheckEmail(tbxEmail) == false)
             {
                 blnValid = false;
                 lblErrorEmail.Visible = true;
@@ -468,7 +468,6 @@ namespace SU21_Final_Project
                 e.Handled = true;
             }
         }
-
         private void btnClose_Click(object sender, EventArgs e)
         {
             this.Close();
@@ -497,7 +496,6 @@ namespace SU21_Final_Project
                 e.Handled = false;
             }
         }
-
         private void mtbPhone1_Enter(object sender, EventArgs e)
         {
             this.BeginInvoke((MethodInvoker)delegate ()
@@ -505,13 +503,51 @@ namespace SU21_Final_Project
                 mtbPhone1.Select(0, 0);
             });
         }
-
         private void mtbPhone2_Enter(object sender, EventArgs e)
         {
             this.BeginInvoke((MethodInvoker)delegate ()
             {
                 mtbPhone2.Select(0, 0);
             });
+        }
+        private void tbxAddress1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+        bool CheckAddress(TextBox tbxtext)
+        {
+            //VALIDATION FOR PASSWORD
+            //bool to tell if password has a number
+            bool hasNumber = false;
+            for (int i = 0; i < tbxtext.Text.Length; i++)
+            {
+                if (Char.IsDigit(tbxtext.Text[i]))
+                {
+                    hasNumber = true;
+                    break;
+                }
+            }
+
+            if (tbxtext.Text == String.Empty || tbxtext.Text.Length < 8 || !hasNumber )
+            {
+                return false;
+            }
+            else
+            {
+                return true;
+            }
+        }
+
+        bool CheckEmail(TextBox tbxText)
+        {
+            if (tbxText.Text == String.Empty || !tbxText.Text.Contains("@") || tbxText.Text.Length < 6)
+            {
+                return false;
+            }
+            else
+            {
+                return true;
+            }
         }
     }
 }

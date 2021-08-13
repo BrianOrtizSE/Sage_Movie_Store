@@ -20,7 +20,6 @@ namespace SU21_Final_Project
         CurrencyManager personManager;
         private void frmEmployee_Edit_Customer_Load(object sender, EventArgs e)
         {
-            MessageBox.Show(ProgOps._intPersonID.ToString());
             ProgOps.CustomerEdit(tbxTitle, tbxFirstName, tbxMiddleName, tbxLastName, tbxSuffix, tbxAddress1, tbxAddress2, tbxAddress3, tbxCity, tbxZipcode, cbxState, tbxEmail, mtbPhone1, mtbPhone2);
             personManager = (CurrencyManager)this.BindingContext[ProgOps.GetPersonTable];
         }

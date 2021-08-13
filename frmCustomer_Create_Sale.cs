@@ -123,6 +123,7 @@ namespace SU21_Final_Project
         private void btnAddToOrder_Click(object sender, EventArgs e)
         {
             decimal dblPrice;
+            bool blnSame = false;
             int intQuantity = 0;
 
             //Check to see if their looking at an item
@@ -154,29 +155,36 @@ namespace SU21_Final_Project
                     }
                     else
                     {
-
                         int intdgvSelected = Convert.ToInt32(dgvProducts.CurrentCell.RowIndex);
                         int cellVal;
                         int newCellVal;
-
                         //This Changes The Information showing ofr the datagrid but not the internals of the database
                         cellVal = Convert.ToInt32(dgvProducts.SelectedRows[0].Cells["Quantity"].Value);
                         newCellVal = Convert.ToInt32(cellVal - intQuantity);
-                        if (newCellVal < 0)
+                        if (newCellVal <= 0)
                         {
                             MessageBox.Show("Quanity Ordered Cannot Be Greater Than That Of Inventory", "Over Quantity", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         }
                         else
                         {
-
                             dgvProducts.SelectedRows[0].Cells["Quantity"].Value = newCellVal;
                             dblPrice = Convert.ToDecimal(dgvProducts.CurrentRow.Cells[5].Value);
-                            prodlist.Add(new ProdList((int)dgvProducts.CurrentRow.Cells[0].Value, dgvProducts.CurrentRow.Cells[1].Value.ToString(), dblPrice, int.Parse(tbxQuantity.Text)));
-
+                            for (int i = 0; i < prodlist.Count; i++)
+                            {
+                                if (prodlist[i].intProductID.Equals((int)dgvProducts.CurrentRow.Cells[0].Value))
+                                {
+                                    prodlist[i].intProdQuan = prodlist[i].intProdQuan + int.Parse(tbxQuantity.Text);
+                                    blnSame = true;
+                                    break;
+                                }
+                            }
+                            if (blnSame == false)
+                            {
+                                prodlist.Add(new ProdList((int)dgvProducts.CurrentRow.Cells[0].Value, dgvProducts.CurrentRow.Cells[1].Value.ToString(), dblPrice, int.Parse(tbxQuantity.Text)));
+                            }
 
                             //Write Items to ListBox / Cart
                             WriteToCart();
-
 
                             //Update the total and its label
                             decSubTotal += dblPrice * decimal.Parse(tbxQuantity.Text);
@@ -185,8 +193,6 @@ namespace SU21_Final_Project
                             tbxQuantity.Clear();
                             //Reset Labels
                             lblProductID.Focus();
-
-
                         }
 
                     }
@@ -248,11 +254,16 @@ namespace SU21_Final_Project
                 //using statement will automaticaly close a file after opening it
                 Random random = new Random();
                 int randomNumber = random.Next(0, 10000000);
-                using (StreamWriter wr = new StreamWriter("Report" + randomNumber.ToString() + ".html"))
+                String strFile = string.Empty;
+                strFile = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);
+                strFile = Path.Combine(strFile, " Report" + randomNumber.ToString() + ".html");
+
+                using (StreamWriter wr = new StreamWriter(strFile))
                 {
                     wr.WriteLine(html);
                 }
-                System.Diagnostics.Process.Start(@"Report" + randomNumber.ToString() + ".html");
+
+                System.Diagnostics.Process.Start(@strFile);
             }
             catch (Exception)
             {
@@ -336,10 +347,8 @@ namespace SU21_Final_Project
                 //Fixes Total On Display
                 intSelected = lbxOrder.SelectedIndex;
 
-                decTotal = decTotal - (prodlist[intSelected].dblProdPrice * prodlist[intSelected].intProdQuan);
-                lblToalPrice.Text = "Total : \t" + decTotal.ToString("c2");
-
-
+                decSubTotal = decSubTotal - (prodlist[intSelected].dblProdPrice * prodlist[intSelected].intProdQuan);
+                lblToalPrice.Text = "Total : \t" + decSubTotal.ToString("c2");
 
                 //This Part changes the Data Grid View To Display Correct Information!
                 int cellVal;
@@ -377,6 +386,8 @@ namespace SU21_Final_Project
         {
             GrabProducts();
             prodlist.Clear();
+            decSubTotal = 0;
+            lblToalPrice.Text = "SubTotal : ";
             WriteToCart();
         }
 
@@ -507,7 +518,7 @@ namespace SU21_Final_Project
             //TurnOfCheckbox
             cbxDisplayCart.Checked = false;
 
-            this.Size = new Size(1320, 590);
+            this.Size = new Size(1293, 602);
 
         }
 

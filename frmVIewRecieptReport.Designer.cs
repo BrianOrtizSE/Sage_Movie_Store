@@ -51,7 +51,7 @@ namespace SU21_Final_Project
             this.dgvReciept.ReadOnly = true;
             this.dgvReciept.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvReciept.Size = new System.Drawing.Size(776, 214);
-            this.dgvReciept.TabIndex = 24;
+            this.dgvReciept.TabIndex = 0;
             // 
             // btnPrintReport
             // 
@@ -59,7 +59,7 @@ namespace SU21_Final_Project
             this.btnPrintReport.Location = new System.Drawing.Point(251, 300);
             this.btnPrintReport.Name = "btnPrintReport";
             this.btnPrintReport.Size = new System.Drawing.Size(100, 34);
-            this.btnPrintReport.TabIndex = 25;
+            this.btnPrintReport.TabIndex = 1;
             this.btnPrintReport.Text = "Print Report";
             this.btnPrintReport.UseVisualStyleBackColor = true;
             this.btnPrintReport.Click += new System.EventHandler(this.btnPrintReport_Click);
@@ -70,7 +70,7 @@ namespace SU21_Final_Project
             this.btnClose.Location = new System.Drawing.Point(431, 300);
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(100, 34);
-            this.btnClose.TabIndex = 26;
+            this.btnClose.TabIndex = 2;
             this.btnClose.Text = "&Return";
             this.btnClose.UseVisualStyleBackColor = true;
             this.btnClose.Click += new System.EventHandler(this.btnClose_Click);

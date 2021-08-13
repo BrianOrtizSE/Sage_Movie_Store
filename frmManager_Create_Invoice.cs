@@ -208,8 +208,10 @@ namespace SU21_Final_Project
                 strQuery = "Insert Into OrtizB21Su2332.Invoice(EmployeeID , Source , ProductID , OrderQuantity , ProductCost , isPayed)" +
                 "Values (" + ProgOps._intEmployeeID + ",'" + cbxSource.Text + "'," + tbxProductID.Text + "," + intOrder + "," + decOrderPrice + ", 0)";
                 ProgOps.CreateInvoice(strQuery);
+
+                MessageBox.Show("Invoice Created!", "Valid Invoice", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                Clear();
             }
-            ProgOps._intEmployeeID = 20000;
             
             
         }

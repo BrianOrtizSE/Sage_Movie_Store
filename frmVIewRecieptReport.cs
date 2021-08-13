@@ -125,11 +125,17 @@ namespace SU21_Final_Project
             {
                 Random random = new Random();
                 int randomNumber = random.Next(0, 10000000);
-                using (StreamWriter wr = new StreamWriter("Report" + randomNumber.ToString() + ".html"))
+
+                String strFile = string.Empty;
+                strFile = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);
+                strFile = Path.Combine(strFile, " Report" + randomNumber.ToString() + ".html");
+
+                using (StreamWriter wr = new StreamWriter(strFile))
                 {
                     wr.WriteLine(html);
                 }
-                System.Diagnostics.Process.Start(@"Report" + randomNumber.ToString() + ".html");
+
+                System.Diagnostics.Process.Start(@strFile);
             }
             catch (Exception)
             {

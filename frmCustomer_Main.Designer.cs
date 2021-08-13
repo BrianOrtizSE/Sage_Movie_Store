@@ -46,7 +46,7 @@ namespace SU21_Final_Project
             // lblDate
             // 
             this.lblDate.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDate.Location = new System.Drawing.Point(321, 29);
+            this.lblDate.Location = new System.Drawing.Point(321, 38);
             this.lblDate.Name = "lblDate";
             this.lblDate.Size = new System.Drawing.Size(100, 23);
             this.lblDate.TabIndex = 31;
@@ -126,7 +126,7 @@ namespace SU21_Final_Project
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(421, 24);
-            this.menuStrip1.TabIndex = 33;
+            this.menuStrip1.TabIndex = 3;
             this.menuStrip1.Text = "mnsHelp";
             // 
             // helpToolStripMenuItem

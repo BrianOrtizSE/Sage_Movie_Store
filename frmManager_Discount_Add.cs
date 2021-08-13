@@ -416,5 +416,15 @@ namespace SU21_Final_Project
         {
             DisplayInactiveDiscount();
         }
+
+        private void btnShowActive_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnShowDisabled_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

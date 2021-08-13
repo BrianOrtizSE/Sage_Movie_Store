@@ -74,7 +74,7 @@ namespace SU21_Final_Project
             this.tbxProductDescription.Name = "tbxProductDescription";
             this.tbxProductDescription.ReadOnly = true;
             this.tbxProductDescription.Size = new System.Drawing.Size(461, 141);
-            this.tbxProductDescription.TabIndex = 75;
+            this.tbxProductDescription.TabIndex = 16;
             this.tbxProductDescription.TextChanged += new System.EventHandler(this.tbxProductDescription_TextChanged);
             this.tbxProductDescription.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbxProductDescription_KeyPress);
             // 
@@ -85,7 +85,7 @@ namespace SU21_Final_Project
             this.lblHireDate.Location = new System.Drawing.Point(13, 368);
             this.lblHireDate.Name = "lblHireDate";
             this.lblHireDate.Size = new System.Drawing.Size(131, 16);
-            this.lblHireDate.TabIndex = 74;
+            this.lblHireDate.TabIndex = 15;
             this.lblHireDate.Text = "Product Description : ";
             // 
             // tbxProductName
@@ -99,7 +99,7 @@ namespace SU21_Final_Project
             this.tbxProductName.ReadOnly = true;
             this.tbxProductName.ShortcutsEnabled = false;
             this.tbxProductName.Size = new System.Drawing.Size(186, 23);
-            this.tbxProductName.TabIndex = 72;
+            this.tbxProductName.TabIndex = 3;
             this.tbxProductName.TextChanged += new System.EventHandler(this.tbxProductName_TextChanged);
             this.tbxProductName.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbxProductName_KeyPress);
             // 
@@ -109,7 +109,7 @@ namespace SU21_Final_Project
             this.btnReturn.Location = new System.Drawing.Point(454, 610);
             this.btnReturn.Name = "btnReturn";
             this.btnReturn.Size = new System.Drawing.Size(75, 50);
-            this.btnReturn.TabIndex = 71;
+            this.btnReturn.TabIndex = 24;
             this.btnReturn.Text = "&Return";
             this.btnReturn.UseVisualStyleBackColor = true;
             this.btnReturn.Click += new System.EventHandler(this.btnReturn_Click);
@@ -120,7 +120,7 @@ namespace SU21_Final_Project
             this.btnCancel.Location = new System.Drawing.Point(210, 610);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(75, 50);
-            this.btnCancel.TabIndex = 70;
+            this.btnCancel.TabIndex = 23;
             this.btnCancel.Text = "&Cancel Edit/Add";
             this.btnCancel.UseVisualStyleBackColor = true;
             this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
@@ -131,7 +131,7 @@ namespace SU21_Final_Project
             this.btnCompleteEdit.Location = new System.Drawing.Point(90, 615);
             this.btnCompleteEdit.Name = "btnCompleteEdit";
             this.btnCompleteEdit.Size = new System.Drawing.Size(75, 50);
-            this.btnCompleteEdit.TabIndex = 69;
+            this.btnCompleteEdit.TabIndex = 21;
             this.btnCompleteEdit.Text = "C&omplete Edit";
             this.btnCompleteEdit.UseVisualStyleBackColor = true;
             this.btnCompleteEdit.Click += new System.EventHandler(this.btnCompleteEdit_Click);
@@ -142,7 +142,7 @@ namespace SU21_Final_Project
             this.btnEditMerchandise.Location = new System.Drawing.Point(91, 559);
             this.btnEditMerchandise.Name = "btnEditMerchandise";
             this.btnEditMerchandise.Size = new System.Drawing.Size(74, 50);
-            this.btnEditMerchandise.TabIndex = 68;
+            this.btnEditMerchandise.TabIndex = 20;
             this.btnEditMerchandise.Text = "&Edit Merchandise";
             this.btnEditMerchandise.UseVisualStyleBackColor = true;
             this.btnEditMerchandise.Click += new System.EventHandler(this.btnEditEmployee_Click);
@@ -153,7 +153,7 @@ namespace SU21_Final_Project
             this.btnAdd.Location = new System.Drawing.Point(10, 559);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(74, 50);
-            this.btnAdd.TabIndex = 65;
+            this.btnAdd.TabIndex = 18;
             this.btnAdd.Text = "&Add Merchandise";
             this.btnAdd.UseVisualStyleBackColor = true;
             this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
@@ -165,7 +165,7 @@ namespace SU21_Final_Project
             this.cbxInStock.Location = new System.Drawing.Point(15, 284);
             this.cbxInStock.Name = "cbxInStock";
             this.cbxInStock.Size = new System.Drawing.Size(79, 20);
-            this.cbxInStock.TabIndex = 64;
+            this.cbxInStock.TabIndex = 11;
             this.cbxInStock.Text = "In Stock?";
             this.cbxInStock.UseVisualStyleBackColor = true;
             // 
@@ -179,7 +179,7 @@ namespace SU21_Final_Project
             this.tbxQuantity.Name = "tbxQuantity";
             this.tbxQuantity.ReadOnly = true;
             this.tbxQuantity.Size = new System.Drawing.Size(185, 23);
-            this.tbxQuantity.TabIndex = 63;
+            this.tbxQuantity.TabIndex = 9;
             this.tbxQuantity.TextChanged += new System.EventHandler(this.tbxQuantity_TextChanged);
             this.tbxQuantity.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbxQuantity_KeyPress);
             // 
@@ -190,7 +190,7 @@ namespace SU21_Final_Project
             this.lblQuanitty.Location = new System.Drawing.Point(13, 236);
             this.lblQuanitty.Name = "lblQuanitty";
             this.lblQuanitty.Size = new System.Drawing.Size(64, 16);
-            this.lblQuanitty.TabIndex = 62;
+            this.lblQuanitty.TabIndex = 8;
             this.lblQuanitty.Text = "Quantity :";
             // 
             // lblGenre
@@ -200,7 +200,7 @@ namespace SU21_Final_Project
             this.lblGenre.Location = new System.Drawing.Point(13, 167);
             this.lblGenre.Name = "lblGenre";
             this.lblGenre.Size = new System.Drawing.Size(55, 16);
-            this.lblGenre.TabIndex = 61;
+            this.lblGenre.TabIndex = 5;
             this.lblGenre.Text = "Genre : ";
             // 
             // lblProductName
@@ -210,7 +210,7 @@ namespace SU21_Final_Project
             this.lblProductName.Location = new System.Drawing.Point(18, 89);
             this.lblProductName.Name = "lblProductName";
             this.lblProductName.Size = new System.Drawing.Size(97, 16);
-            this.lblProductName.TabIndex = 60;
+            this.lblProductName.TabIndex = 2;
             this.lblProductName.Text = "Product Name :";
             // 
             // lblProductID
@@ -220,7 +220,7 @@ namespace SU21_Final_Project
             this.lblProductID.Location = new System.Drawing.Point(12, 12);
             this.lblProductID.Name = "lblProductID";
             this.lblProductID.Size = new System.Drawing.Size(76, 16);
-            this.lblProductID.TabIndex = 58;
+            this.lblProductID.TabIndex = 0;
             this.lblProductID.Text = "Product ID :";
             // 
             // tbxProductID
@@ -234,7 +234,7 @@ namespace SU21_Final_Project
             this.tbxProductID.ReadOnly = true;
             this.tbxProductID.ShortcutsEnabled = false;
             this.tbxProductID.Size = new System.Drawing.Size(186, 23);
-            this.tbxProductID.TabIndex = 57;
+            this.tbxProductID.TabIndex = 1;
             this.tbxProductID.TextChanged += new System.EventHandler(this.tbxProductID_TextChanged);
             this.tbxProductID.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbxProductID_KeyPress);
             // 
@@ -252,7 +252,7 @@ namespace SU21_Final_Project
             this.dgvInventory.ReadOnly = true;
             this.dgvInventory.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvInventory.Size = new System.Drawing.Size(519, 648);
-            this.dgvInventory.TabIndex = 56;
+            this.dgvInventory.TabIndex = 26;
             this.dgvInventory.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvInventory_CellClick);
             // 
             // pbxImage
@@ -273,7 +273,7 @@ namespace SU21_Final_Project
             this.btnSaveImage.Location = new System.Drawing.Point(264, 310);
             this.btnSaveImage.Name = "btnSaveImage";
             this.btnSaveImage.Size = new System.Drawing.Size(85, 44);
-            this.btnSaveImage.TabIndex = 85;
+            this.btnSaveImage.TabIndex = 27;
             this.btnSaveImage.Text = "Save &Image";
             this.btnSaveImage.UseVisualStyleBackColor = true;
             this.btnSaveImage.Click += new System.EventHandler(this.btnSaveImage_Click);
@@ -284,7 +284,7 @@ namespace SU21_Final_Project
             this.btnUploadImage.Location = new System.Drawing.Point(391, 310);
             this.btnUploadImage.Name = "btnUploadImage";
             this.btnUploadImage.Size = new System.Drawing.Size(85, 44);
-            this.btnUploadImage.TabIndex = 86;
+            this.btnUploadImage.TabIndex = 0;
             this.btnUploadImage.Text = "&Upload Image";
             this.btnUploadImage.UseVisualStyleBackColor = true;
             this.btnUploadImage.Click += new System.EventHandler(this.btnUploadImage_Click);
@@ -295,7 +295,7 @@ namespace SU21_Final_Project
             this.btnCreateInvoice.Location = new System.Drawing.Point(291, 559);
             this.btnCreateInvoice.Name = "btnCreateInvoice";
             this.btnCreateInvoice.Size = new System.Drawing.Size(75, 50);
-            this.btnCreateInvoice.TabIndex = 87;
+            this.btnCreateInvoice.TabIndex = 22;
             this.btnCreateInvoice.Text = "Create &Order";
             this.btnCreateInvoice.UseVisualStyleBackColor = true;
             this.btnCreateInvoice.Click += new System.EventHandler(this.btnCreateInvoice_Click);
@@ -310,7 +310,7 @@ namespace SU21_Final_Project
             this.tbxProductPrice.Name = "tbxProductPrice";
             this.tbxProductPrice.ReadOnly = true;
             this.tbxProductPrice.Size = new System.Drawing.Size(185, 23);
-            this.tbxProductPrice.TabIndex = 89;
+            this.tbxProductPrice.TabIndex = 13;
             this.tbxProductPrice.TextChanged += new System.EventHandler(this.tbxProductPrice_TextChanged);
             this.tbxProductPrice.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbxProductPrice_KeyPress);
             // 
@@ -321,7 +321,7 @@ namespace SU21_Final_Project
             this.lblPrice.Location = new System.Drawing.Point(13, 312);
             this.lblPrice.Name = "lblPrice";
             this.lblPrice.Size = new System.Drawing.Size(96, 16);
-            this.lblPrice.TabIndex = 88;
+            this.lblPrice.TabIndex = 12;
             this.lblPrice.Text = "Product Price : ";
             // 
             // btnComplete
@@ -330,7 +330,7 @@ namespace SU21_Final_Project
             this.btnComplete.Location = new System.Drawing.Point(10, 615);
             this.btnComplete.Name = "btnComplete";
             this.btnComplete.Size = new System.Drawing.Size(74, 50);
-            this.btnComplete.TabIndex = 90;
+            this.btnComplete.TabIndex = 19;
             this.btnComplete.Text = "&Complete";
             this.btnComplete.UseVisualStyleBackColor = true;
             this.btnComplete.Click += new System.EventHandler(this.btnComplete_Click);
@@ -357,7 +357,7 @@ namespace SU21_Final_Project
             this.cbxGenres.Location = new System.Drawing.Point(15, 186);
             this.cbxGenres.Name = "cbxGenres";
             this.cbxGenres.Size = new System.Drawing.Size(185, 24);
-            this.cbxGenres.TabIndex = 82;
+            this.cbxGenres.TabIndex = 6;
             this.cbxGenres.SelectedIndexChanged += new System.EventHandler(this.cbxGenres_SelectedIndexChanged);
             this.cbxGenres.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.cbxGenres_KeyPress);
             // 
@@ -368,7 +368,7 @@ namespace SU21_Final_Project
             this.lblProductNameValid.Location = new System.Drawing.Point(207, 107);
             this.lblProductNameValid.Name = "lblProductNameValid";
             this.lblProductNameValid.Size = new System.Drawing.Size(20, 21);
-            this.lblProductNameValid.TabIndex = 66;
+            this.lblProductNameValid.TabIndex = 4;
             this.lblProductNameValid.Text = "X";
             // 
             // lblGenreValid
@@ -378,7 +378,7 @@ namespace SU21_Final_Project
             this.lblGenreValid.Location = new System.Drawing.Point(207, 189);
             this.lblGenreValid.Name = "lblGenreValid";
             this.lblGenreValid.Size = new System.Drawing.Size(20, 21);
-            this.lblGenreValid.TabIndex = 91;
+            this.lblGenreValid.TabIndex = 7;
             this.lblGenreValid.Text = "X";
             // 
             // lblQuantityValid
@@ -388,7 +388,7 @@ namespace SU21_Final_Project
             this.lblQuantityValid.Location = new System.Drawing.Point(207, 257);
             this.lblQuantityValid.Name = "lblQuantityValid";
             this.lblQuantityValid.Size = new System.Drawing.Size(20, 21);
-            this.lblQuantityValid.TabIndex = 92;
+            this.lblQuantityValid.TabIndex = 10;
             this.lblQuantityValid.Text = "X";
             // 
             // lblPriceValid
@@ -398,7 +398,7 @@ namespace SU21_Final_Project
             this.lblPriceValid.Location = new System.Drawing.Point(207, 333);
             this.lblPriceValid.Name = "lblPriceValid";
             this.lblPriceValid.Size = new System.Drawing.Size(20, 21);
-            this.lblPriceValid.TabIndex = 93;
+            this.lblPriceValid.TabIndex = 14;
             this.lblPriceValid.Text = "X";
             // 
             // lblProductDescriptionValid
@@ -408,7 +408,7 @@ namespace SU21_Final_Project
             this.lblProductDescriptionValid.Location = new System.Drawing.Point(482, 449);
             this.lblProductDescriptionValid.Name = "lblProductDescriptionValid";
             this.lblProductDescriptionValid.Size = new System.Drawing.Size(20, 21);
-            this.lblProductDescriptionValid.TabIndex = 94;
+            this.lblProductDescriptionValid.TabIndex = 17;
             this.lblProductDescriptionValid.Text = "X";
             // 
             // frmManager_Edit_Inventory

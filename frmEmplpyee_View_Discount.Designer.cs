@@ -55,7 +55,7 @@ namespace SU21_Final_Project
             this.lblIsValidText.Location = new System.Drawing.Point(830, 282);
             this.lblIsValidText.Name = "lblIsValidText";
             this.lblIsValidText.Size = new System.Drawing.Size(50, 16);
-            this.lblIsValidText.TabIndex = 55;
+            this.lblIsValidText.TabIndex = 3;
             this.lblIsValidText.Text = "Is Valid";
             // 
             // lblDiscountPercentText
@@ -65,7 +65,7 @@ namespace SU21_Final_Project
             this.lblDiscountPercentText.Location = new System.Drawing.Point(814, 227);
             this.lblDiscountPercentText.Name = "lblDiscountPercentText";
             this.lblDiscountPercentText.Size = new System.Drawing.Size(97, 16);
-            this.lblDiscountPercentText.TabIndex = 54;
+            this.lblDiscountPercentText.TabIndex = 5;
             this.lblDiscountPercentText.Text = "Disount Percent";
             // 
             // lblProductIDText
@@ -75,7 +75,7 @@ namespace SU21_Final_Project
             this.lblProductIDText.Location = new System.Drawing.Point(835, 176);
             this.lblProductIDText.Name = "lblProductIDText";
             this.lblProductIDText.Size = new System.Drawing.Size(63, 16);
-            this.lblProductIDText.TabIndex = 53;
+            this.lblProductIDText.TabIndex = 7;
             this.lblProductIDText.Text = "ProductID";
             // 
             // lblDiscountTypeText
@@ -85,7 +85,7 @@ namespace SU21_Final_Project
             this.lblDiscountTypeText.Location = new System.Drawing.Point(816, 122);
             this.lblDiscountTypeText.Name = "lblDiscountTypeText";
             this.lblDiscountTypeText.Size = new System.Drawing.Size(88, 16);
-            this.lblDiscountTypeText.TabIndex = 52;
+            this.lblDiscountTypeText.TabIndex = 11;
             this.lblDiscountTypeText.Text = "Discount Type";
             // 
             // lblDiscountIDText
@@ -95,7 +95,7 @@ namespace SU21_Final_Project
             this.lblDiscountIDText.Location = new System.Drawing.Point(824, 68);
             this.lblDiscountIDText.Name = "lblDiscountIDText";
             this.lblDiscountIDText.Size = new System.Drawing.Size(72, 16);
-            this.lblDiscountIDText.TabIndex = 51;
+            this.lblDiscountIDText.TabIndex = 12;
             this.lblDiscountIDText.Text = "Discount ID";
             // 
             // lblDiscountID
@@ -106,7 +106,7 @@ namespace SU21_Final_Project
             this.lblDiscountID.Location = new System.Drawing.Point(762, 89);
             this.lblDiscountID.Name = "lblDiscountID";
             this.lblDiscountID.Size = new System.Drawing.Size(199, 28);
-            this.lblDiscountID.TabIndex = 50;
+            this.lblDiscountID.TabIndex = 10;
             this.lblDiscountID.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // lblDiscountType
@@ -117,7 +117,7 @@ namespace SU21_Final_Project
             this.lblDiscountType.Location = new System.Drawing.Point(762, 141);
             this.lblDiscountType.Name = "lblDiscountType";
             this.lblDiscountType.Size = new System.Drawing.Size(199, 28);
-            this.lblDiscountType.TabIndex = 49;
+            this.lblDiscountType.TabIndex = 9;
             this.lblDiscountType.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // lblProductID
@@ -128,7 +128,7 @@ namespace SU21_Final_Project
             this.lblProductID.Location = new System.Drawing.Point(762, 195);
             this.lblProductID.Name = "lblProductID";
             this.lblProductID.Size = new System.Drawing.Size(199, 28);
-            this.lblProductID.TabIndex = 48;
+            this.lblProductID.TabIndex = 6;
             this.lblProductID.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // lblDiscountPercent
@@ -139,7 +139,7 @@ namespace SU21_Final_Project
             this.lblDiscountPercent.Location = new System.Drawing.Point(762, 244);
             this.lblDiscountPercent.Name = "lblDiscountPercent";
             this.lblDiscountPercent.Size = new System.Drawing.Size(199, 28);
-            this.lblDiscountPercent.TabIndex = 47;
+            this.lblDiscountPercent.TabIndex = 4;
             this.lblDiscountPercent.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // btnClose
@@ -148,7 +148,7 @@ namespace SU21_Final_Project
             this.btnClose.Location = new System.Drawing.Point(817, 371);
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(116, 38);
-            this.btnClose.TabIndex = 39;
+            this.btnClose.TabIndex = 0;
             this.btnClose.Text = "&Close";
             this.btnClose.UseVisualStyleBackColor = true;
             this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
@@ -168,8 +168,7 @@ namespace SU21_Final_Project
             this.dgvDiscount.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToDisplayedHeaders;
             this.dgvDiscount.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvDiscount.Size = new System.Drawing.Size(672, 382);
-            this.dgvDiscount.TabIndex = 40;
-            this.dgvDiscount.TabStop = false;
+            this.dgvDiscount.TabIndex = 1;
             this.dgvDiscount.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDiscount_CellClick);
             // 
             // menuStrip1
@@ -179,7 +178,7 @@ namespace SU21_Final_Project
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(1002, 24);
-            this.menuStrip1.TabIndex = 41;
+            this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
             // mnsHelp
@@ -195,7 +194,7 @@ namespace SU21_Final_Project
             this.cbxIsValid.Location = new System.Drawing.Point(849, 301);
             this.cbxIsValid.Name = "cbxIsValid";
             this.cbxIsValid.Size = new System.Drawing.Size(15, 36);
-            this.cbxIsValid.TabIndex = 57;
+            this.cbxIsValid.TabIndex = 2;
             this.cbxIsValid.UseVisualStyleBackColor = true;
             // 
             // frmEmplpyee_View_Discount

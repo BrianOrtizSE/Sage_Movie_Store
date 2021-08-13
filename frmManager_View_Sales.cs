@@ -104,6 +104,8 @@ namespace SU21_Final_Project
         }
         private void btnPrintReport_Click(object sender, EventArgs e)
         {
+            SaveFileDialog svdReport = new SaveFileDialog();
+            svdReport.FileName = "Report";
 
             ReportPrint(Reciept());
             
@@ -370,15 +372,22 @@ namespace SU21_Final_Project
             {
                 Random random = new Random();
                 int randomNumber = random.Next(0, 10000000);
-                using (StreamWriter wr = new StreamWriter("Report" + randomNumber.ToString() + ".html"))
+
+                String strFile = string.Empty;
+                strFile = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);
+                strFile = Path.Combine(strFile, " Report" + randomNumber.ToString() + ".html");
+
+                using (StreamWriter wr = new StreamWriter(strFile))
                 {
                     wr.WriteLine(html);
                 }
-                System.Diagnostics.Process.Start(@"Report" + randomNumber.ToString() + ".html");
+
+                System.Diagnostics.Process.Start(@strFile);
+
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-                MessageBox.Show("You don't have write permisions", "Error System Permission", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("You don't have write permisions " + ex.ToString(), "Error System Permission", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 

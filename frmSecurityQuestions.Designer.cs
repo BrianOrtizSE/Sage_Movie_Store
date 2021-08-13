@@ -55,10 +55,6 @@ namespace SU21_Final_Project
             this.lblRetypePassword = new System.Windows.Forms.Label();
             this.tbxRetypePassword = new System.Windows.Forms.TextBox();
             this.TTError = new System.Windows.Forms.ToolTip(this.components);
-            this.mnsHelp = new System.Windows.Forms.MenuStrip();
-            this.smnHelp = new System.Windows.Forms.ToolStripMenuItem();
-            this.cbxPassword1 = new System.Windows.Forms.CheckBox();
-            this.cbxPassword2 = new System.Windows.Forms.CheckBox();
             this.lblSQuestion1Valid = new System.Windows.Forms.Label();
             this.lblSQuestion2Valid = new System.Windows.Forms.Label();
             this.lblSAnswer2Valid = new System.Windows.Forms.Label();
@@ -66,16 +62,20 @@ namespace SU21_Final_Project
             this.lblSAnswer3Valid = new System.Windows.Forms.Label();
             this.lblPasswordValid = new System.Windows.Forms.Label();
             this.lblRetypePasswordValid = new System.Windows.Forms.Label();
+            this.mnsHelp = new System.Windows.Forms.MenuStrip();
+            this.smnHelp = new System.Windows.Forms.ToolStripMenuItem();
+            this.cbxPassword1 = new System.Windows.Forms.CheckBox();
+            this.cbxPassword2 = new System.Windows.Forms.CheckBox();
             this.mnsHelp.SuspendLayout();
             this.SuspendLayout();
             // 
             // btnAdd
             // 
             this.btnAdd.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAdd.Location = new System.Drawing.Point(532, 223);
+            this.btnAdd.Location = new System.Drawing.Point(531, 226);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(75, 23);
-            this.btnAdd.TabIndex = 11;
+            this.btnAdd.TabIndex = 32;
             this.btnAdd.Text = "&Finish";
             this.btnAdd.UseVisualStyleBackColor = true;
             this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
@@ -103,7 +103,7 @@ namespace SU21_Final_Project
             this.cmbSQuestion2.MaxDropDownItems = 12;
             this.cmbSQuestion2.Name = "cmbSQuestion2";
             this.cmbSQuestion2.Size = new System.Drawing.Size(274, 24);
-            this.cmbSQuestion2.TabIndex = 7;
+            this.cmbSQuestion2.TabIndex = 19;
             this.cmbSQuestion2.SelectedIndexChanged += new System.EventHandler(this.cmbSQuestion2_SelectedIndexChanged);
             // 
             // cmbSQuestion1
@@ -129,7 +129,7 @@ namespace SU21_Final_Project
             this.cmbSQuestion1.MaxDropDownItems = 12;
             this.cmbSQuestion1.Name = "cmbSQuestion1";
             this.cmbSQuestion1.Size = new System.Drawing.Size(274, 24);
-            this.cmbSQuestion1.TabIndex = 5;
+            this.cmbSQuestion1.TabIndex = 13;
             this.cmbSQuestion1.SelectedIndexChanged += new System.EventHandler(this.cmbSQuestion1_SelectedIndexChanged);
             // 
             // tbxSQAnswer2
@@ -140,7 +140,7 @@ namespace SU21_Final_Project
             this.tbxSQAnswer2.Name = "tbxSQAnswer2";
             this.tbxSQAnswer2.ShortcutsEnabled = false;
             this.tbxSQAnswer2.Size = new System.Drawing.Size(274, 23);
-            this.tbxSQAnswer2.TabIndex = 8;
+            this.tbxSQAnswer2.TabIndex = 22;
             this.tbxSQAnswer2.TextChanged += new System.EventHandler(this.tbxSQAnswer2_TextChanged);
             this.tbxSQAnswer2.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbxSQAnswer2_KeyPress);
             // 
@@ -152,7 +152,7 @@ namespace SU21_Final_Project
             this.tbxSQAnswer1.Name = "tbxSQAnswer1";
             this.tbxSQAnswer1.ShortcutsEnabled = false;
             this.tbxSQAnswer1.Size = new System.Drawing.Size(274, 23);
-            this.tbxSQAnswer1.TabIndex = 6;
+            this.tbxSQAnswer1.TabIndex = 16;
             this.tbxSQAnswer1.TextChanged += new System.EventHandler(this.tbxSQAnswer1_TextChanged);
             this.tbxSQAnswer1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbxSQAnswer1_KeyPress);
             // 
@@ -164,7 +164,7 @@ namespace SU21_Final_Project
             this.tbxPassword.Name = "tbxPassword";
             this.tbxPassword.ShortcutsEnabled = false;
             this.tbxPassword.Size = new System.Drawing.Size(274, 23);
-            this.tbxPassword.TabIndex = 1;
+            this.tbxPassword.TabIndex = 5;
             this.tbxPassword.UseSystemPasswordChar = true;
             this.tbxPassword.TextChanged += new System.EventHandler(this.tbxPassword_TextChanged);
             this.tbxPassword.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbxPassword_KeyPress);
@@ -177,7 +177,7 @@ namespace SU21_Final_Project
             this.tbxUsername.Name = "tbxUsername";
             this.tbxUsername.ShortcutsEnabled = false;
             this.tbxUsername.Size = new System.Drawing.Size(274, 23);
-            this.tbxUsername.TabIndex = 0;
+            this.tbxUsername.TabIndex = 2;
             this.tbxUsername.TextChanged += new System.EventHandler(this.tbxUsername_TextChanged);
             this.tbxUsername.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbxUsername_KeyPress);
             // 
@@ -188,7 +188,7 @@ namespace SU21_Final_Project
             this.lblUsername.Location = new System.Drawing.Point(116, 61);
             this.lblUsername.Name = "lblUsername";
             this.lblUsername.Size = new System.Drawing.Size(79, 16);
-            this.lblUsername.TabIndex = 15;
+            this.lblUsername.TabIndex = 1;
             this.lblUsername.Text = "Username : ";
             // 
             // lblPassword
@@ -198,7 +198,7 @@ namespace SU21_Final_Project
             this.lblPassword.Location = new System.Drawing.Point(119, 102);
             this.lblPassword.Name = "lblPassword";
             this.lblPassword.Size = new System.Drawing.Size(76, 16);
-            this.lblPassword.TabIndex = 16;
+            this.lblPassword.TabIndex = 4;
             this.lblPassword.Text = "Password : ";
             // 
             // lblSQuestion1
@@ -208,7 +208,7 @@ namespace SU21_Final_Project
             this.lblSQuestion1.Location = new System.Drawing.Point(67, 226);
             this.lblSQuestion1.Name = "lblSQuestion1";
             this.lblSQuestion1.Size = new System.Drawing.Size(128, 16);
-            this.lblSQuestion1.TabIndex = 18;
+            this.lblSQuestion1.TabIndex = 12;
             this.lblSQuestion1.Text = "Security Question 1 :";
             // 
             // lblSQAnwser
@@ -218,7 +218,7 @@ namespace SU21_Final_Project
             this.lblSQAnwser.Location = new System.Drawing.Point(47, 260);
             this.lblSQAnwser.Name = "lblSQAnwser";
             this.lblSQAnwser.Size = new System.Drawing.Size(148, 16);
-            this.lblSQAnwser.TabIndex = 17;
+            this.lblSQAnwser.TabIndex = 15;
             this.lblSQAnwser.Text = "Answer To Question 1 : ";
             // 
             // lblSQ2
@@ -228,7 +228,7 @@ namespace SU21_Final_Project
             this.lblSQ2.Location = new System.Drawing.Point(67, 296);
             this.lblSQ2.Name = "lblSQ2";
             this.lblSQ2.Size = new System.Drawing.Size(128, 16);
-            this.lblSQ2.TabIndex = 20;
+            this.lblSQ2.TabIndex = 18;
             this.lblSQ2.Text = "Security Question 2 :";
             // 
             // lblSQAnwser2
@@ -238,7 +238,7 @@ namespace SU21_Final_Project
             this.lblSQAnwser2.Location = new System.Drawing.Point(47, 333);
             this.lblSQAnwser2.Name = "lblSQAnwser2";
             this.lblSQAnwser2.Size = new System.Drawing.Size(148, 16);
-            this.lblSQAnwser2.TabIndex = 19;
+            this.lblSQAnwser2.TabIndex = 21;
             this.lblSQAnwser2.Text = "Answer To Question 2 : ";
             // 
             // lblSQuestion3
@@ -258,7 +258,7 @@ namespace SU21_Final_Project
             this.lblSQA3.Location = new System.Drawing.Point(47, 409);
             this.lblSQA3.Name = "lblSQA3";
             this.lblSQA3.Size = new System.Drawing.Size(148, 16);
-            this.lblSQA3.TabIndex = 23;
+            this.lblSQA3.TabIndex = 27;
             this.lblSQA3.Text = "Answer To Question 3 : ";
             // 
             // cmbQuestion3
@@ -284,7 +284,7 @@ namespace SU21_Final_Project
             this.cmbQuestion3.MaxDropDownItems = 12;
             this.cmbQuestion3.Name = "cmbQuestion3";
             this.cmbQuestion3.Size = new System.Drawing.Size(274, 24);
-            this.cmbQuestion3.TabIndex = 9;
+            this.cmbQuestion3.TabIndex = 25;
             this.cmbQuestion3.SelectedIndexChanged += new System.EventHandler(this.cmbQuestion3_SelectedIndexChanged);
             // 
             // tbxSQAnswer3
@@ -295,7 +295,7 @@ namespace SU21_Final_Project
             this.tbxSQAnswer3.Name = "tbxSQAnswer3";
             this.tbxSQAnswer3.ShortcutsEnabled = false;
             this.tbxSQAnswer3.Size = new System.Drawing.Size(274, 23);
-            this.tbxSQAnswer3.TabIndex = 10;
+            this.tbxSQAnswer3.TabIndex = 28;
             this.tbxSQAnswer3.TextChanged += new System.EventHandler(this.tbxSQAnswer3_TextChanged);
             this.tbxSQAnswer3.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbxSQAnswer3_KeyPress);
             // 
@@ -308,10 +308,10 @@ namespace SU21_Final_Project
             this.lblUsernameValid.Location = new System.Drawing.Point(480, 56);
             this.lblUsernameValid.Name = "lblUsernameValid";
             this.lblUsernameValid.Size = new System.Drawing.Size(16, 16);
-            this.lblUsernameValid.TabIndex = 63;
+            this.lblUsernameValid.TabIndex = 3;
             this.lblUsernameValid.Text = "X";
-            this.TTError.SetToolTip(this.lblUsernameValid, "Username must not be under 6 letters\r\nUsername most not be greater than 20 letter" +
-        "s");
+            this.TTError.SetToolTip(this.lblUsernameValid, "Username must be longer than 8 letters\r\n1 Capital Letter\r\n1 Lower Case Letter\r\n1 " +
+        "Symbol\r\n1 Number\r\n");
             // 
             // lblPasswordText
             // 
@@ -322,7 +322,7 @@ namespace SU21_Final_Project
             this.lblPasswordText.Location = new System.Drawing.Point(119, 471);
             this.lblPasswordText.Name = "lblPasswordText";
             this.lblPasswordText.Size = new System.Drawing.Size(369, 48);
-            this.lblPasswordText.TabIndex = 64;
+            this.lblPasswordText.TabIndex = 31;
             this.lblPasswordText.Text = "Username and Password Must Both Have At Least :\r\n1 Capital Letter , 1 Lower Case " +
     "Letter , 1 symbol and 1 number\r\n\r\n";
             this.lblPasswordText.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -336,9 +336,9 @@ namespace SU21_Final_Project
             this.lblSQAnswer1Valid.Location = new System.Drawing.Point(480, 258);
             this.lblSQAnswer1Valid.Name = "lblSQAnswer1Valid";
             this.lblSQAnswer1Valid.Size = new System.Drawing.Size(16, 16);
-            this.lblSQAnswer1Valid.TabIndex = 66;
+            this.lblSQAnswer1Valid.TabIndex = 17;
             this.lblSQAnswer1Valid.Text = "X";
-            this.TTError.SetToolTip(this.lblSQAnswer1Valid, "Security Answer Must Be Less Than 50 Letters");
+            this.TTError.SetToolTip(this.lblSQAnswer1Valid, "Answer must not be empty");
             // 
             // lblAttention
             // 
@@ -349,7 +349,7 @@ namespace SU21_Final_Project
             this.lblAttention.Location = new System.Drawing.Point(174, 454);
             this.lblAttention.Name = "lblAttention";
             this.lblAttention.Size = new System.Drawing.Size(249, 16);
-            this.lblAttention.TabIndex = 71;
+            this.lblAttention.TabIndex = 30;
             this.lblAttention.Text = "Security Questions Must Not Be The Same";
             // 
             // lblRetypePassword
@@ -359,7 +359,7 @@ namespace SU21_Final_Project
             this.lblRetypePassword.Location = new System.Drawing.Point(75, 151);
             this.lblRetypePassword.Name = "lblRetypePassword";
             this.lblRetypePassword.Size = new System.Drawing.Size(119, 16);
-            this.lblRetypePassword.TabIndex = 74;
+            this.lblRetypePassword.TabIndex = 8;
             this.lblRetypePassword.Text = "Retype Password : ";
             // 
             // tbxRetypePassword
@@ -370,7 +370,7 @@ namespace SU21_Final_Project
             this.tbxRetypePassword.Name = "tbxRetypePassword";
             this.tbxRetypePassword.ShortcutsEnabled = false;
             this.tbxRetypePassword.Size = new System.Drawing.Size(274, 23);
-            this.tbxRetypePassword.TabIndex = 3;
+            this.tbxRetypePassword.TabIndex = 9;
             this.tbxRetypePassword.UseSystemPasswordChar = true;
             this.tbxRetypePassword.TextChanged += new System.EventHandler(this.tbxRetypePassword_TextChanged);
             this.tbxRetypePassword.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbxRetypePassword_KeyPress);
@@ -379,6 +379,98 @@ namespace SU21_Final_Project
             // 
             this.TTError.Tag = "lblErrorUserName";
             // 
+            // lblSQuestion1Valid
+            // 
+            this.lblSQuestion1Valid.AutoSize = true;
+            this.lblSQuestion1Valid.BackColor = System.Drawing.Color.Transparent;
+            this.lblSQuestion1Valid.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSQuestion1Valid.ForeColor = System.Drawing.Color.Red;
+            this.lblSQuestion1Valid.Location = new System.Drawing.Point(480, 221);
+            this.lblSQuestion1Valid.Name = "lblSQuestion1Valid";
+            this.lblSQuestion1Valid.Size = new System.Drawing.Size(16, 16);
+            this.lblSQuestion1Valid.TabIndex = 14;
+            this.lblSQuestion1Valid.Text = "X";
+            this.TTError.SetToolTip(this.lblSQuestion1Valid, "Security Questions Must Not Match");
+            // 
+            // lblSQuestion2Valid
+            // 
+            this.lblSQuestion2Valid.AutoSize = true;
+            this.lblSQuestion2Valid.BackColor = System.Drawing.Color.Transparent;
+            this.lblSQuestion2Valid.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSQuestion2Valid.ForeColor = System.Drawing.Color.Red;
+            this.lblSQuestion2Valid.Location = new System.Drawing.Point(480, 296);
+            this.lblSQuestion2Valid.Name = "lblSQuestion2Valid";
+            this.lblSQuestion2Valid.Size = new System.Drawing.Size(16, 16);
+            this.lblSQuestion2Valid.TabIndex = 20;
+            this.lblSQuestion2Valid.Text = "X";
+            this.TTError.SetToolTip(this.lblSQuestion2Valid, "Security Questions Must Not Match\r\n");
+            // 
+            // lblSAnswer2Valid
+            // 
+            this.lblSAnswer2Valid.AutoSize = true;
+            this.lblSAnswer2Valid.BackColor = System.Drawing.Color.Transparent;
+            this.lblSAnswer2Valid.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSAnswer2Valid.ForeColor = System.Drawing.Color.Red;
+            this.lblSAnswer2Valid.Location = new System.Drawing.Point(480, 331);
+            this.lblSAnswer2Valid.Name = "lblSAnswer2Valid";
+            this.lblSAnswer2Valid.Size = new System.Drawing.Size(16, 16);
+            this.lblSAnswer2Valid.TabIndex = 23;
+            this.lblSAnswer2Valid.Text = "X";
+            this.TTError.SetToolTip(this.lblSAnswer2Valid, "Answer must not be empty\r\n");
+            // 
+            // lblSQuestion3Valid
+            // 
+            this.lblSQuestion3Valid.AutoSize = true;
+            this.lblSQuestion3Valid.BackColor = System.Drawing.Color.Transparent;
+            this.lblSQuestion3Valid.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSQuestion3Valid.ForeColor = System.Drawing.Color.Red;
+            this.lblSQuestion3Valid.Location = new System.Drawing.Point(480, 370);
+            this.lblSQuestion3Valid.Name = "lblSQuestion3Valid";
+            this.lblSQuestion3Valid.Size = new System.Drawing.Size(16, 16);
+            this.lblSQuestion3Valid.TabIndex = 26;
+            this.lblSQuestion3Valid.Text = "X";
+            this.TTError.SetToolTip(this.lblSQuestion3Valid, "Security Questions Must Not Match\r\n");
+            // 
+            // lblSAnswer3Valid
+            // 
+            this.lblSAnswer3Valid.AutoSize = true;
+            this.lblSAnswer3Valid.BackColor = System.Drawing.Color.Transparent;
+            this.lblSAnswer3Valid.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSAnswer3Valid.ForeColor = System.Drawing.Color.Red;
+            this.lblSAnswer3Valid.Location = new System.Drawing.Point(480, 407);
+            this.lblSAnswer3Valid.Name = "lblSAnswer3Valid";
+            this.lblSAnswer3Valid.Size = new System.Drawing.Size(16, 16);
+            this.lblSAnswer3Valid.TabIndex = 29;
+            this.lblSAnswer3Valid.Text = "X";
+            this.TTError.SetToolTip(this.lblSAnswer3Valid, "Answer must not be empty\r\n");
+            // 
+            // lblPasswordValid
+            // 
+            this.lblPasswordValid.AutoSize = true;
+            this.lblPasswordValid.BackColor = System.Drawing.Color.Transparent;
+            this.lblPasswordValid.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPasswordValid.ForeColor = System.Drawing.Color.Red;
+            this.lblPasswordValid.Location = new System.Drawing.Point(480, 97);
+            this.lblPasswordValid.Name = "lblPasswordValid";
+            this.lblPasswordValid.Size = new System.Drawing.Size(16, 16);
+            this.lblPasswordValid.TabIndex = 6;
+            this.lblPasswordValid.Text = "X";
+            this.TTError.SetToolTip(this.lblPasswordValid, "Password must be longer than 8 letters\r\n1 Capital Letter\r\n1 Lower Case Letter\r\n1 " +
+        "Symbol\r\n1 Number\r\n\r\n");
+            // 
+            // lblRetypePasswordValid
+            // 
+            this.lblRetypePasswordValid.AutoSize = true;
+            this.lblRetypePasswordValid.BackColor = System.Drawing.Color.Transparent;
+            this.lblRetypePasswordValid.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblRetypePasswordValid.ForeColor = System.Drawing.Color.Red;
+            this.lblRetypePasswordValid.Location = new System.Drawing.Point(480, 151);
+            this.lblRetypePasswordValid.Name = "lblRetypePasswordValid";
+            this.lblRetypePasswordValid.Size = new System.Drawing.Size(16, 16);
+            this.lblRetypePasswordValid.TabIndex = 10;
+            this.lblRetypePasswordValid.Text = "X";
+            this.TTError.SetToolTip(this.lblRetypePasswordValid, "Retype Password Must Be Unique\r\n");
+            // 
             // mnsHelp
             // 
             this.mnsHelp.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -386,7 +478,7 @@ namespace SU21_Final_Project
             this.mnsHelp.Location = new System.Drawing.Point(0, 0);
             this.mnsHelp.Name = "mnsHelp";
             this.mnsHelp.Size = new System.Drawing.Size(659, 24);
-            this.mnsHelp.TabIndex = 76;
+            this.mnsHelp.TabIndex = 0;
             this.mnsHelp.Text = "menuStrip1";
             // 
             // smnHelp
@@ -403,7 +495,7 @@ namespace SU21_Final_Project
             this.cbxPassword1.Location = new System.Drawing.Point(200, 119);
             this.cbxPassword1.Name = "cbxPassword1";
             this.cbxPassword1.Size = new System.Drawing.Size(102, 17);
-            this.cbxPassword1.TabIndex = 2;
+            this.cbxPassword1.TabIndex = 7;
             this.cbxPassword1.Text = "Show Password";
             this.cbxPassword1.UseVisualStyleBackColor = true;
             this.cbxPassword1.CheckedChanged += new System.EventHandler(this.cbxPassword1_CheckedChanged);
@@ -414,103 +506,10 @@ namespace SU21_Final_Project
             this.cbxPassword2.Location = new System.Drawing.Point(200, 174);
             this.cbxPassword2.Name = "cbxPassword2";
             this.cbxPassword2.Size = new System.Drawing.Size(102, 17);
-            this.cbxPassword2.TabIndex = 4;
+            this.cbxPassword2.TabIndex = 11;
             this.cbxPassword2.Text = "Show Password";
             this.cbxPassword2.UseVisualStyleBackColor = true;
             this.cbxPassword2.CheckedChanged += new System.EventHandler(this.cbxPassword2_CheckedChanged);
-            // 
-            // lblSQuestion1Valid
-            // 
-            this.lblSQuestion1Valid.AutoSize = true;
-            this.lblSQuestion1Valid.BackColor = System.Drawing.Color.Transparent;
-            this.lblSQuestion1Valid.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSQuestion1Valid.ForeColor = System.Drawing.Color.Red;
-            this.lblSQuestion1Valid.Location = new System.Drawing.Point(480, 221);
-            this.lblSQuestion1Valid.Name = "lblSQuestion1Valid";
-            this.lblSQuestion1Valid.Size = new System.Drawing.Size(16, 16);
-            this.lblSQuestion1Valid.TabIndex = 79;
-            this.lblSQuestion1Valid.Text = "X";
-            this.TTError.SetToolTip(this.lblSQuestion1Valid, "Security Answer Must Be Less Than 50 Letters");
-            // 
-            // lblSQuestion2Valid
-            // 
-            this.lblSQuestion2Valid.AutoSize = true;
-            this.lblSQuestion2Valid.BackColor = System.Drawing.Color.Transparent;
-            this.lblSQuestion2Valid.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSQuestion2Valid.ForeColor = System.Drawing.Color.Red;
-            this.lblSQuestion2Valid.Location = new System.Drawing.Point(480, 296);
-            this.lblSQuestion2Valid.Name = "lblSQuestion2Valid";
-            this.lblSQuestion2Valid.Size = new System.Drawing.Size(16, 16);
-            this.lblSQuestion2Valid.TabIndex = 80;
-            this.lblSQuestion2Valid.Text = "X";
-            this.TTError.SetToolTip(this.lblSQuestion2Valid, "Security Answer Must Be Less Than 50 Letters");
-            // 
-            // lblSAnswer2Valid
-            // 
-            this.lblSAnswer2Valid.AutoSize = true;
-            this.lblSAnswer2Valid.BackColor = System.Drawing.Color.Transparent;
-            this.lblSAnswer2Valid.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSAnswer2Valid.ForeColor = System.Drawing.Color.Red;
-            this.lblSAnswer2Valid.Location = new System.Drawing.Point(480, 331);
-            this.lblSAnswer2Valid.Name = "lblSAnswer2Valid";
-            this.lblSAnswer2Valid.Size = new System.Drawing.Size(16, 16);
-            this.lblSAnswer2Valid.TabIndex = 81;
-            this.lblSAnswer2Valid.Text = "X";
-            this.TTError.SetToolTip(this.lblSAnswer2Valid, "Security Answer Must Be Less Than 50 Letters");
-            // 
-            // lblSQuestion3Valid
-            // 
-            this.lblSQuestion3Valid.AutoSize = true;
-            this.lblSQuestion3Valid.BackColor = System.Drawing.Color.Transparent;
-            this.lblSQuestion3Valid.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSQuestion3Valid.ForeColor = System.Drawing.Color.Red;
-            this.lblSQuestion3Valid.Location = new System.Drawing.Point(480, 370);
-            this.lblSQuestion3Valid.Name = "lblSQuestion3Valid";
-            this.lblSQuestion3Valid.Size = new System.Drawing.Size(16, 16);
-            this.lblSQuestion3Valid.TabIndex = 82;
-            this.lblSQuestion3Valid.Text = "X";
-            this.TTError.SetToolTip(this.lblSQuestion3Valid, "Security Answer Must Be Less Than 50 Letters");
-            // 
-            // lblSAnswer3Valid
-            // 
-            this.lblSAnswer3Valid.AutoSize = true;
-            this.lblSAnswer3Valid.BackColor = System.Drawing.Color.Transparent;
-            this.lblSAnswer3Valid.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSAnswer3Valid.ForeColor = System.Drawing.Color.Red;
-            this.lblSAnswer3Valid.Location = new System.Drawing.Point(480, 407);
-            this.lblSAnswer3Valid.Name = "lblSAnswer3Valid";
-            this.lblSAnswer3Valid.Size = new System.Drawing.Size(16, 16);
-            this.lblSAnswer3Valid.TabIndex = 83;
-            this.lblSAnswer3Valid.Text = "X";
-            this.TTError.SetToolTip(this.lblSAnswer3Valid, "Security Answer Must Be Less Than 50 Letters");
-            // 
-            // lblPasswordValid
-            // 
-            this.lblPasswordValid.AutoSize = true;
-            this.lblPasswordValid.BackColor = System.Drawing.Color.Transparent;
-            this.lblPasswordValid.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPasswordValid.ForeColor = System.Drawing.Color.Red;
-            this.lblPasswordValid.Location = new System.Drawing.Point(480, 97);
-            this.lblPasswordValid.Name = "lblPasswordValid";
-            this.lblPasswordValid.Size = new System.Drawing.Size(16, 16);
-            this.lblPasswordValid.TabIndex = 84;
-            this.lblPasswordValid.Text = "X";
-            this.TTError.SetToolTip(this.lblPasswordValid, "Username must not be under 6 letters\r\nUsername most not be greater than 20 letter" +
-        "s");
-            // 
-            // lblRetypePasswordValid
-            // 
-            this.lblRetypePasswordValid.AutoSize = true;
-            this.lblRetypePasswordValid.BackColor = System.Drawing.Color.Transparent;
-            this.lblRetypePasswordValid.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblRetypePasswordValid.ForeColor = System.Drawing.Color.Red;
-            this.lblRetypePasswordValid.Location = new System.Drawing.Point(480, 151);
-            this.lblRetypePasswordValid.Name = "lblRetypePasswordValid";
-            this.lblRetypePasswordValid.Size = new System.Drawing.Size(16, 16);
-            this.lblRetypePasswordValid.TabIndex = 85;
-            this.lblRetypePasswordValid.Text = "X";
-            this.TTError.SetToolTip(this.lblRetypePasswordValid, "Username must not be under 6 letters\r\nUsername most not be greater than 20 letter" +
-        "s");
             // 
             // frmSecurityQuestions
             // 

@@ -187,6 +187,8 @@ namespace SU21_Final_Project
             // 
             // dgvProducts
             // 
+            this.dgvProducts.AllowUserToAddRows = false;
+            this.dgvProducts.AllowUserToDeleteRows = false;
             this.dgvProducts.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.ColumnHeader;
             this.dgvProducts.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dgvProducts.Location = new System.Drawing.Point(17, 34);
@@ -198,7 +200,6 @@ namespace SU21_Final_Project
             this.dgvProducts.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvProducts.Size = new System.Drawing.Size(594, 405);
             this.dgvProducts.TabIndex = 85;
-            this.dgvProducts.TabStop = false;
             this.dgvProducts.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvProducts_CellClick);
             this.dgvProducts.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvProducts_CellContentClick);
             // 
@@ -233,7 +234,7 @@ namespace SU21_Final_Project
             this.Controls.Add(this.lblProductDescription);
             this.Controls.Add(this.dgvProducts);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.MinimizeBox = false;
+            this.MaximizeBox = false;
             this.Name = "frmCustomer_View_Inventory";
             this.Text = "Product View";
             this.Load += new System.EventHandler(this.frmProductView_Load);
