@@ -41,9 +41,12 @@ namespace SU21_Final_Project
             this.dgvProduct = new System.Windows.Forms.DataGridView();
             this.dgvInvoices = new System.Windows.Forms.DataGridView();
             this.btnViewSales = new System.Windows.Forms.Button();
+            this.mnsHelp = new System.Windows.Forms.MenuStrip();
+            this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSales)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProduct)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvInvoices)).BeginInit();
+            this.mnsHelp.SuspendLayout();
             this.SuspendLayout();
             // 
             // dgvSales
@@ -53,7 +56,7 @@ namespace SU21_Final_Project
             this.dgvSales.AllowUserToOrderColumns = true;
             this.dgvSales.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvSales.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvSales.Location = new System.Drawing.Point(12, 23);
+            this.dgvSales.Location = new System.Drawing.Point(12, 42);
             this.dgvSales.MultiSelect = false;
             this.dgvSales.Name = "dgvSales";
             this.dgvSales.ReadOnly = true;
@@ -65,7 +68,7 @@ namespace SU21_Final_Project
             // 
             // btnToday
             // 
-            this.btnToday.Location = new System.Drawing.Point(12, 321);
+            this.btnToday.Location = new System.Drawing.Point(12, 340);
             this.btnToday.Name = "btnToday";
             this.btnToday.Size = new System.Drawing.Size(92, 40);
             this.btnToday.TabIndex = 0;
@@ -75,7 +78,7 @@ namespace SU21_Final_Project
             // 
             // btnWeekSales
             // 
-            this.btnWeekSales.Location = new System.Drawing.Point(110, 321);
+            this.btnWeekSales.Location = new System.Drawing.Point(110, 340);
             this.btnWeekSales.Name = "btnWeekSales";
             this.btnWeekSales.Size = new System.Drawing.Size(92, 40);
             this.btnWeekSales.TabIndex = 1;
@@ -85,7 +88,7 @@ namespace SU21_Final_Project
             // 
             // btnMonthlySales
             // 
-            this.btnMonthlySales.Location = new System.Drawing.Point(208, 321);
+            this.btnMonthlySales.Location = new System.Drawing.Point(208, 340);
             this.btnMonthlySales.Name = "btnMonthlySales";
             this.btnMonthlySales.Size = new System.Drawing.Size(92, 40);
             this.btnMonthlySales.TabIndex = 2;
@@ -95,7 +98,7 @@ namespace SU21_Final_Project
             // 
             // btnExit
             // 
-            this.btnExit.Location = new System.Drawing.Point(1020, 321);
+            this.btnExit.Location = new System.Drawing.Point(1020, 340);
             this.btnExit.Name = "btnExit";
             this.btnExit.Size = new System.Drawing.Size(92, 40);
             this.btnExit.TabIndex = 7;
@@ -105,7 +108,7 @@ namespace SU21_Final_Project
             // 
             // btnPrintReport
             // 
-            this.btnPrintReport.Location = new System.Drawing.Point(922, 321);
+            this.btnPrintReport.Location = new System.Drawing.Point(922, 340);
             this.btnPrintReport.Name = "btnPrintReport";
             this.btnPrintReport.Size = new System.Drawing.Size(92, 40);
             this.btnPrintReport.TabIndex = 6;
@@ -115,7 +118,7 @@ namespace SU21_Final_Project
             // 
             // btnViewInvoice
             // 
-            this.btnViewInvoice.Location = new System.Drawing.Point(506, 321);
+            this.btnViewInvoice.Location = new System.Drawing.Point(506, 340);
             this.btnViewInvoice.Name = "btnViewInvoice";
             this.btnViewInvoice.Size = new System.Drawing.Size(92, 40);
             this.btnViewInvoice.TabIndex = 4;
@@ -125,7 +128,7 @@ namespace SU21_Final_Project
             // 
             // btnViewProduct
             // 
-            this.btnViewProduct.Location = new System.Drawing.Point(604, 321);
+            this.btnViewProduct.Location = new System.Drawing.Point(604, 340);
             this.btnViewProduct.Name = "btnViewProduct";
             this.btnViewProduct.Size = new System.Drawing.Size(92, 40);
             this.btnViewProduct.TabIndex = 5;
@@ -140,7 +143,7 @@ namespace SU21_Final_Project
             this.dgvProduct.AllowUserToOrderColumns = true;
             this.dgvProduct.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvProduct.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvProduct.Location = new System.Drawing.Point(12, 23);
+            this.dgvProduct.Location = new System.Drawing.Point(12, 42);
             this.dgvProduct.MultiSelect = false;
             this.dgvProduct.Name = "dgvProduct";
             this.dgvProduct.ReadOnly = true;
@@ -156,7 +159,7 @@ namespace SU21_Final_Project
             this.dgvInvoices.AllowUserToOrderColumns = true;
             this.dgvInvoices.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvInvoices.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvInvoices.Location = new System.Drawing.Point(12, 23);
+            this.dgvInvoices.Location = new System.Drawing.Point(12, 42);
             this.dgvInvoices.MultiSelect = false;
             this.dgvInvoices.Name = "dgvInvoices";
             this.dgvInvoices.ReadOnly = true;
@@ -169,7 +172,7 @@ namespace SU21_Final_Project
             // 
             // btnViewSales
             // 
-            this.btnViewSales.Location = new System.Drawing.Point(408, 321);
+            this.btnViewSales.Location = new System.Drawing.Point(408, 340);
             this.btnViewSales.Name = "btnViewSales";
             this.btnViewSales.Size = new System.Drawing.Size(92, 40);
             this.btnViewSales.TabIndex = 3;
@@ -177,11 +180,30 @@ namespace SU21_Final_Project
             this.btnViewSales.UseVisualStyleBackColor = true;
             this.btnViewSales.Click += new System.EventHandler(this.btnViewSales_Click);
             // 
+            // mnsHelp
+            // 
+            this.mnsHelp.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.helpToolStripMenuItem});
+            this.mnsHelp.Location = new System.Drawing.Point(0, 0);
+            this.mnsHelp.Name = "mnsHelp";
+            this.mnsHelp.Size = new System.Drawing.Size(1124, 24);
+            this.mnsHelp.TabIndex = 92;
+            this.mnsHelp.Text = "menuStrip1";
+            // 
+            // helpToolStripMenuItem
+            // 
+            this.helpToolStripMenuItem.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
+            this.helpToolStripMenuItem.Name = "helpToolStripMenuItem";
+            this.helpToolStripMenuItem.Size = new System.Drawing.Size(44, 20);
+            this.helpToolStripMenuItem.Text = "Help";
+            this.helpToolStripMenuItem.Click += new System.EventHandler(this.helpToolStripMenuItem_Click);
+            // 
             // frmManager_View_Sales
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1124, 373);
+            this.ClientSize = new System.Drawing.Size(1124, 394);
+            this.Controls.Add(this.mnsHelp);
             this.Controls.Add(this.btnViewSales);
             this.Controls.Add(this.dgvInvoices);
             this.Controls.Add(this.dgvProduct);
@@ -202,7 +224,10 @@ namespace SU21_Final_Project
             ((System.ComponentModel.ISupportInitialize)(this.dgvSales)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProduct)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvInvoices)).EndInit();
+            this.mnsHelp.ResumeLayout(false);
+            this.mnsHelp.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -219,5 +244,7 @@ namespace SU21_Final_Project
         private System.Windows.Forms.DataGridView dgvProduct;
         private System.Windows.Forms.DataGridView dgvInvoices;
         private System.Windows.Forms.Button btnViewSales;
+        private System.Windows.Forms.MenuStrip mnsHelp;
+        private System.Windows.Forms.ToolStripMenuItem helpToolStripMenuItem;
     }
 }

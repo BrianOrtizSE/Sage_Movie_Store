@@ -752,5 +752,12 @@ namespace SU21_Final_Project
         {
 
         }
+
+        private void helpToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ProgOps._PICTURE = 10;
+            frmHelp frmhelp = new frmHelp();
+            frmhelp.ShowDialog();
+        }
     }
 }

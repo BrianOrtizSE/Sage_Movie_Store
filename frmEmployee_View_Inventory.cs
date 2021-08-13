@@ -281,5 +281,10 @@ namespace SU21_Final_Project
         {
 
         }
+
+        private void mnsHelp_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("This Screen can be used to search up specific items, this screen also displays negative inventory to let the user \n know that the item will be restocked soon enough.", "Help File", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
     }
 }

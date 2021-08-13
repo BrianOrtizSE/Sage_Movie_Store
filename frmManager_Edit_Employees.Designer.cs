@@ -56,13 +56,16 @@ namespace SU21_Final_Project
             this.btnShowUnactive = new System.Windows.Forms.Button();
             this.btnShowActive = new System.Windows.Forms.Button();
             this.btnEnable = new System.Windows.Forms.Button();
+            this.mnsHelp = new System.Windows.Forms.MenuStrip();
+            this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.dgvEmployee)).BeginInit();
+            this.mnsHelp.SuspendLayout();
             this.SuspendLayout();
             // 
             // btnReturn
             // 
             this.btnReturn.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnReturn.Location = new System.Drawing.Point(267, 504);
+            this.btnReturn.Location = new System.Drawing.Point(263, 519);
             this.btnReturn.Name = "btnReturn";
             this.btnReturn.Size = new System.Drawing.Size(75, 50);
             this.btnReturn.TabIndex = 20;
@@ -73,7 +76,7 @@ namespace SU21_Final_Project
             // btnCancelEdit
             // 
             this.btnCancelEdit.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCancelEdit.Location = new System.Drawing.Point(186, 504);
+            this.btnCancelEdit.Location = new System.Drawing.Point(182, 519);
             this.btnCancelEdit.Name = "btnCancelEdit";
             this.btnCancelEdit.Size = new System.Drawing.Size(75, 50);
             this.btnCancelEdit.TabIndex = 19;
@@ -84,7 +87,7 @@ namespace SU21_Final_Project
             // btnCompleteEdit
             // 
             this.btnCompleteEdit.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCompleteEdit.Location = new System.Drawing.Point(185, 449);
+            this.btnCompleteEdit.Location = new System.Drawing.Point(181, 464);
             this.btnCompleteEdit.Name = "btnCompleteEdit";
             this.btnCompleteEdit.Size = new System.Drawing.Size(75, 50);
             this.btnCompleteEdit.TabIndex = 18;
@@ -95,7 +98,7 @@ namespace SU21_Final_Project
             // btnEditEmployee
             // 
             this.btnEditEmployee.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEditEmployee.Location = new System.Drawing.Point(106, 504);
+            this.btnEditEmployee.Location = new System.Drawing.Point(102, 519);
             this.btnEditEmployee.Name = "btnEditEmployee";
             this.btnEditEmployee.Size = new System.Drawing.Size(74, 50);
             this.btnEditEmployee.TabIndex = 17;
@@ -107,7 +110,7 @@ namespace SU21_Final_Project
             // 
             this.lblPositionTextValid.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblPositionTextValid.ForeColor = System.Drawing.Color.Red;
-            this.lblPositionTextValid.Location = new System.Drawing.Point(141, 208);
+            this.lblPositionTextValid.Location = new System.Drawing.Point(137, 223);
             this.lblPositionTextValid.Name = "lblPositionTextValid";
             this.lblPositionTextValid.Size = new System.Drawing.Size(20, 21);
             this.lblPositionTextValid.TabIndex = 7;
@@ -118,7 +121,7 @@ namespace SU21_Final_Project
             // 
             this.lblWageTextValid.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblWageTextValid.ForeColor = System.Drawing.Color.Red;
-            this.lblWageTextValid.Location = new System.Drawing.Point(141, 280);
+            this.lblWageTextValid.Location = new System.Drawing.Point(137, 295);
             this.lblWageTextValid.Name = "lblWageTextValid";
             this.lblWageTextValid.Size = new System.Drawing.Size(20, 21);
             this.lblWageTextValid.TabIndex = 10;
@@ -127,7 +130,7 @@ namespace SU21_Final_Project
             // btnAdd
             // 
             this.btnAdd.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAdd.Location = new System.Drawing.Point(13, 504);
+            this.btnAdd.Location = new System.Drawing.Point(9, 519);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(87, 50);
             this.btnAdd.TabIndex = 16;
@@ -139,7 +142,7 @@ namespace SU21_Final_Project
             // 
             this.cbxAdmin.AutoSize = true;
             this.cbxAdmin.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbxAdmin.Location = new System.Drawing.Point(19, 425);
+            this.cbxAdmin.Location = new System.Drawing.Point(15, 440);
             this.cbxAdmin.Name = "cbxAdmin";
             this.cbxAdmin.Size = new System.Drawing.Size(83, 20);
             this.cbxAdmin.TabIndex = 15;
@@ -149,7 +152,7 @@ namespace SU21_Final_Project
             // tbxWage
             // 
             this.tbxWage.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbxWage.Location = new System.Drawing.Point(19, 280);
+            this.tbxWage.Location = new System.Drawing.Point(15, 295);
             this.tbxWage.MaxLength = 7;
             this.tbxWage.Name = "tbxWage";
             this.tbxWage.ShortcutsEnabled = false;
@@ -162,7 +165,7 @@ namespace SU21_Final_Project
             // 
             this.lblWage.AutoSize = true;
             this.lblWage.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblWage.Location = new System.Drawing.Point(17, 264);
+            this.lblWage.Location = new System.Drawing.Point(13, 279);
             this.lblWage.Name = "lblWage";
             this.lblWage.Size = new System.Drawing.Size(50, 16);
             this.lblWage.TabIndex = 8;
@@ -172,7 +175,7 @@ namespace SU21_Final_Project
             // 
             this.lblPosition.AutoSize = true;
             this.lblPosition.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPosition.Location = new System.Drawing.Point(17, 192);
+            this.lblPosition.Location = new System.Drawing.Point(13, 207);
             this.lblPosition.Name = "lblPosition";
             this.lblPosition.Size = new System.Drawing.Size(65, 16);
             this.lblPosition.TabIndex = 5;
@@ -182,7 +185,7 @@ namespace SU21_Final_Project
             // 
             this.lblPersonID.AutoSize = true;
             this.lblPersonID.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPersonID.Location = new System.Drawing.Point(16, 118);
+            this.lblPersonID.Location = new System.Drawing.Point(12, 133);
             this.lblPersonID.Name = "lblPersonID";
             this.lblPersonID.Size = new System.Drawing.Size(72, 16);
             this.lblPersonID.TabIndex = 2;
@@ -195,7 +198,7 @@ namespace SU21_Final_Project
             this.cmxPosition.FormattingEnabled = true;
             this.cmxPosition.Items.AddRange(new object[] {
             "Employee"});
-            this.cmxPosition.Location = new System.Drawing.Point(19, 208);
+            this.cmxPosition.Location = new System.Drawing.Point(15, 223);
             this.cmxPosition.Name = "cmxPosition";
             this.cmxPosition.Size = new System.Drawing.Size(116, 24);
             this.cmxPosition.TabIndex = 6;
@@ -205,7 +208,7 @@ namespace SU21_Final_Project
             // 
             this.lblEmployeeID.AutoSize = true;
             this.lblEmployeeID.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblEmployeeID.Location = new System.Drawing.Point(16, 37);
+            this.lblEmployeeID.Location = new System.Drawing.Point(12, 52);
             this.lblEmployeeID.Name = "lblEmployeeID";
             this.lblEmployeeID.Size = new System.Drawing.Size(84, 16);
             this.lblEmployeeID.TabIndex = 0;
@@ -214,7 +217,7 @@ namespace SU21_Final_Project
             // tbxEmployee
             // 
             this.tbxEmployee.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbxEmployee.Location = new System.Drawing.Point(19, 56);
+            this.tbxEmployee.Location = new System.Drawing.Point(15, 71);
             this.tbxEmployee.MaxLength = 9;
             this.tbxEmployee.Name = "tbxEmployee";
             this.tbxEmployee.ReadOnly = true;
@@ -232,7 +235,7 @@ namespace SU21_Final_Project
             this.dgvEmployee.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedCells;
             this.dgvEmployee.BackgroundColor = System.Drawing.Color.White;
             this.dgvEmployee.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvEmployee.Location = new System.Drawing.Point(456, 12);
+            this.dgvEmployee.Location = new System.Drawing.Point(452, 27);
             this.dgvEmployee.MultiSelect = false;
             this.dgvEmployee.Name = "dgvEmployee";
             this.dgvEmployee.ReadOnly = true;
@@ -244,7 +247,7 @@ namespace SU21_Final_Project
             // tbxPersonID
             // 
             this.tbxPersonID.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbxPersonID.Location = new System.Drawing.Point(19, 132);
+            this.tbxPersonID.Location = new System.Drawing.Point(15, 147);
             this.tbxPersonID.MaxLength = 9;
             this.tbxPersonID.Name = "tbxPersonID";
             this.tbxPersonID.ReadOnly = true;
@@ -257,7 +260,7 @@ namespace SU21_Final_Project
             // 
             this.cbxIsSalary.AutoSize = true;
             this.cbxIsSalary.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbxIsSalary.Location = new System.Drawing.Point(19, 306);
+            this.cbxIsSalary.Location = new System.Drawing.Point(15, 321);
             this.cbxIsSalary.Name = "cbxIsSalary";
             this.cbxIsSalary.Size = new System.Drawing.Size(162, 20);
             this.cbxIsSalary.TabIndex = 11;
@@ -267,7 +270,7 @@ namespace SU21_Final_Project
             // tbxHireDate
             // 
             this.tbxHireDate.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbxHireDate.Location = new System.Drawing.Point(20, 367);
+            this.tbxHireDate.Location = new System.Drawing.Point(16, 382);
             this.tbxHireDate.MaxLength = 9;
             this.tbxHireDate.Name = "tbxHireDate";
             this.tbxHireDate.ReadOnly = true;
@@ -279,7 +282,7 @@ namespace SU21_Final_Project
             // 
             this.lblHireDate.AutoSize = true;
             this.lblHireDate.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblHireDate.Location = new System.Drawing.Point(18, 351);
+            this.lblHireDate.Location = new System.Drawing.Point(14, 366);
             this.lblHireDate.Name = "lblHireDate";
             this.lblHireDate.Size = new System.Drawing.Size(74, 16);
             this.lblHireDate.TabIndex = 12;
@@ -288,7 +291,7 @@ namespace SU21_Final_Project
             // btnFindPersonID
             // 
             this.btnFindPersonID.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnFindPersonID.Location = new System.Drawing.Point(141, 132);
+            this.btnFindPersonID.Location = new System.Drawing.Point(137, 147);
             this.btnFindPersonID.Name = "btnFindPersonID";
             this.btnFindPersonID.Size = new System.Drawing.Size(119, 23);
             this.btnFindPersonID.TabIndex = 4;
@@ -299,7 +302,7 @@ namespace SU21_Final_Project
             // btnGetDate
             // 
             this.btnGetDate.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnGetDate.Location = new System.Drawing.Point(163, 367);
+            this.btnGetDate.Location = new System.Drawing.Point(159, 382);
             this.btnGetDate.Name = "btnGetDate";
             this.btnGetDate.Size = new System.Drawing.Size(97, 23);
             this.btnGetDate.TabIndex = 14;
@@ -311,7 +314,7 @@ namespace SU21_Final_Project
             // 
             this.btnDisable.Enabled = false;
             this.btnDisable.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDisable.Location = new System.Drawing.Point(372, 449);
+            this.btnDisable.Location = new System.Drawing.Point(368, 464);
             this.btnDisable.Name = "btnDisable";
             this.btnDisable.Size = new System.Drawing.Size(78, 50);
             this.btnDisable.TabIndex = 24;
@@ -322,7 +325,7 @@ namespace SU21_Final_Project
             // btnShowUnactive
             // 
             this.btnShowUnactive.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnShowUnactive.Location = new System.Drawing.Point(372, 504);
+            this.btnShowUnactive.Location = new System.Drawing.Point(368, 519);
             this.btnShowUnactive.Name = "btnShowUnactive";
             this.btnShowUnactive.Size = new System.Drawing.Size(78, 50);
             this.btnShowUnactive.TabIndex = 25;
@@ -333,7 +336,7 @@ namespace SU21_Final_Project
             // btnShowActive
             // 
             this.btnShowActive.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnShowActive.Location = new System.Drawing.Point(372, 504);
+            this.btnShowActive.Location = new System.Drawing.Point(368, 519);
             this.btnShowActive.Name = "btnShowActive";
             this.btnShowActive.Size = new System.Drawing.Size(78, 50);
             this.btnShowActive.TabIndex = 22;
@@ -346,7 +349,7 @@ namespace SU21_Final_Project
             // 
             this.btnEnable.Enabled = false;
             this.btnEnable.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEnable.Location = new System.Drawing.Point(372, 448);
+            this.btnEnable.Location = new System.Drawing.Point(368, 463);
             this.btnEnable.Name = "btnEnable";
             this.btnEnable.Size = new System.Drawing.Size(78, 50);
             this.btnEnable.TabIndex = 21;
@@ -355,11 +358,30 @@ namespace SU21_Final_Project
             this.btnEnable.Visible = false;
             this.btnEnable.Click += new System.EventHandler(this.EnableEmployee_Click);
             // 
+            // mnsHelp
+            // 
+            this.mnsHelp.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.helpToolStripMenuItem});
+            this.mnsHelp.Location = new System.Drawing.Point(0, 0);
+            this.mnsHelp.Name = "mnsHelp";
+            this.mnsHelp.Size = new System.Drawing.Size(986, 24);
+            this.mnsHelp.TabIndex = 89;
+            this.mnsHelp.Text = "menuStrip1";
+            // 
+            // helpToolStripMenuItem
+            // 
+            this.helpToolStripMenuItem.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
+            this.helpToolStripMenuItem.Name = "helpToolStripMenuItem";
+            this.helpToolStripMenuItem.Size = new System.Drawing.Size(44, 20);
+            this.helpToolStripMenuItem.Text = "Help";
+            this.helpToolStripMenuItem.Click += new System.EventHandler(this.helpToolStripMenuItem_Click);
+            // 
             // frmManager_Edit_Employees
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1000, 573);
+            this.ClientSize = new System.Drawing.Size(986, 586);
+            this.Controls.Add(this.mnsHelp);
             this.Controls.Add(this.btnEnable);
             this.Controls.Add(this.btnShowActive);
             this.Controls.Add(this.btnShowUnactive);
@@ -393,6 +415,8 @@ namespace SU21_Final_Project
             this.Text = "Employee Mangaer";
             this.Load += new System.EventHandler(this.frmManger_View_Employees_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvEmployee)).EndInit();
+            this.mnsHelp.ResumeLayout(false);
+            this.mnsHelp.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -426,5 +450,7 @@ namespace SU21_Final_Project
         private System.Windows.Forms.Button btnShowUnactive;
         private System.Windows.Forms.Button btnShowActive;
         private System.Windows.Forms.Button btnEnable;
+        private System.Windows.Forms.MenuStrip mnsHelp;
+        private System.Windows.Forms.ToolStripMenuItem helpToolStripMenuItem;
     }
 }

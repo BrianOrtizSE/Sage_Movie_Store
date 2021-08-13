@@ -66,5 +66,10 @@ namespace SU21_Final_Project
         { 
             lblDate.Text = DateTime.Now.ToString();
         }
+
+        private void helpToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Each button has a different function when pressed , button name defines what it does.", "Help File", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
     }
 }

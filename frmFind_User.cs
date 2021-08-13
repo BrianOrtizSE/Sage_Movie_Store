@@ -138,5 +138,12 @@ namespace SU21_Final_Project
                 e.Handled = false;
             }
         }
+
+        private void mnsHelp_Click(object sender, EventArgs e)
+        {
+            ProgOps._PICTURE = 12;
+            frmHelp frmhelp = new frmHelp();
+            frmhelp.ShowDialog();
+        }
     }
 }

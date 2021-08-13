@@ -452,6 +452,11 @@ namespace SU21_Final_Project
                 mtbPhone2.Select(0, 0);
             });
         }
+
+        private void mnsHelp_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("You Can Edit User Information In This Form!", "Help File", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
     }
 
 }

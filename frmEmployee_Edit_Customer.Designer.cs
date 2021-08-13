@@ -686,6 +686,7 @@ namespace SU21_Final_Project
             this.mnsHelp.Name = "mnsHelp";
             this.mnsHelp.Size = new System.Drawing.Size(44, 20);
             this.mnsHelp.Text = "Help";
+            this.mnsHelp.Click += new System.EventHandler(this.mnsHelp_Click);
             // 
             // frmEmployee_Edit_Customer
             // 

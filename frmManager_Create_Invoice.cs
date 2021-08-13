@@ -434,5 +434,10 @@ namespace SU21_Final_Project
         {
             this.Close();
         }
+
+        private void mnsHelp_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("1. Use a valid ProductID,\n2.Select A Valid Source Of Product ,\n3.Insert Quantity To Order , \n4.Insert The Price you will order those Movies at , 5. Press Create Invoice\n\n\n Show unpaid invoices will let you click on Invoices and Pay them.", "Help File", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
     }
 }

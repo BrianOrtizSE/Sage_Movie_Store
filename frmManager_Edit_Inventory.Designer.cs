@@ -59,8 +59,11 @@ namespace SU21_Final_Project
             this.lblQuantityValid = new System.Windows.Forms.Label();
             this.lblPriceValid = new System.Windows.Forms.Label();
             this.lblProductDescriptionValid = new System.Windows.Forms.Label();
+            this.mnsHelp = new System.Windows.Forms.MenuStrip();
+            this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.dgvInventory)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxImage)).BeginInit();
+            this.mnsHelp.SuspendLayout();
             this.SuspendLayout();
             // 
             // tbxProductDescription
@@ -68,7 +71,7 @@ namespace SU21_Final_Project
             this.tbxProductDescription.BackColor = System.Drawing.SystemColors.Window;
             this.tbxProductDescription.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.tbxProductDescription.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbxProductDescription.Location = new System.Drawing.Point(15, 387);
+            this.tbxProductDescription.Location = new System.Drawing.Point(19, 402);
             this.tbxProductDescription.MaxLength = 250;
             this.tbxProductDescription.Multiline = true;
             this.tbxProductDescription.Name = "tbxProductDescription";
@@ -82,7 +85,7 @@ namespace SU21_Final_Project
             // 
             this.lblHireDate.AutoSize = true;
             this.lblHireDate.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblHireDate.Location = new System.Drawing.Point(13, 368);
+            this.lblHireDate.Location = new System.Drawing.Point(17, 383);
             this.lblHireDate.Name = "lblHireDate";
             this.lblHireDate.Size = new System.Drawing.Size(131, 16);
             this.lblHireDate.TabIndex = 15;
@@ -93,7 +96,7 @@ namespace SU21_Final_Project
             this.tbxProductName.BackColor = System.Drawing.SystemColors.Window;
             this.tbxProductName.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.tbxProductName.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbxProductName.Location = new System.Drawing.Point(15, 107);
+            this.tbxProductName.Location = new System.Drawing.Point(19, 122);
             this.tbxProductName.MaxLength = 50;
             this.tbxProductName.Name = "tbxProductName";
             this.tbxProductName.ReadOnly = true;
@@ -106,7 +109,7 @@ namespace SU21_Final_Project
             // btnReturn
             // 
             this.btnReturn.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnReturn.Location = new System.Drawing.Point(454, 610);
+            this.btnReturn.Location = new System.Drawing.Point(458, 625);
             this.btnReturn.Name = "btnReturn";
             this.btnReturn.Size = new System.Drawing.Size(75, 50);
             this.btnReturn.TabIndex = 24;
@@ -117,7 +120,7 @@ namespace SU21_Final_Project
             // btnCancel
             // 
             this.btnCancel.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCancel.Location = new System.Drawing.Point(210, 610);
+            this.btnCancel.Location = new System.Drawing.Point(214, 625);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(75, 50);
             this.btnCancel.TabIndex = 23;
@@ -128,7 +131,7 @@ namespace SU21_Final_Project
             // btnCompleteEdit
             // 
             this.btnCompleteEdit.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCompleteEdit.Location = new System.Drawing.Point(108, 615);
+            this.btnCompleteEdit.Location = new System.Drawing.Point(112, 630);
             this.btnCompleteEdit.Name = "btnCompleteEdit";
             this.btnCompleteEdit.Size = new System.Drawing.Size(92, 50);
             this.btnCompleteEdit.TabIndex = 21;
@@ -139,7 +142,7 @@ namespace SU21_Final_Project
             // btnEditMerchandise
             // 
             this.btnEditMerchandise.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEditMerchandise.Location = new System.Drawing.Point(109, 559);
+            this.btnEditMerchandise.Location = new System.Drawing.Point(113, 574);
             this.btnEditMerchandise.Name = "btnEditMerchandise";
             this.btnEditMerchandise.Size = new System.Drawing.Size(91, 50);
             this.btnEditMerchandise.TabIndex = 20;
@@ -150,7 +153,7 @@ namespace SU21_Final_Project
             // btnAdd
             // 
             this.btnAdd.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAdd.Location = new System.Drawing.Point(10, 559);
+            this.btnAdd.Location = new System.Drawing.Point(14, 574);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(93, 50);
             this.btnAdd.TabIndex = 18;
@@ -162,7 +165,7 @@ namespace SU21_Final_Project
             // 
             this.cbxInStock.AutoSize = true;
             this.cbxInStock.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbxInStock.Location = new System.Drawing.Point(15, 284);
+            this.cbxInStock.Location = new System.Drawing.Point(19, 299);
             this.cbxInStock.Name = "cbxInStock";
             this.cbxInStock.Size = new System.Drawing.Size(79, 20);
             this.cbxInStock.TabIndex = 11;
@@ -174,7 +177,7 @@ namespace SU21_Final_Project
             this.tbxQuantity.BackColor = System.Drawing.SystemColors.Window;
             this.tbxQuantity.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.tbxQuantity.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbxQuantity.Location = new System.Drawing.Point(15, 255);
+            this.tbxQuantity.Location = new System.Drawing.Point(19, 270);
             this.tbxQuantity.MaxLength = 12;
             this.tbxQuantity.Name = "tbxQuantity";
             this.tbxQuantity.ReadOnly = true;
@@ -187,7 +190,7 @@ namespace SU21_Final_Project
             // 
             this.lblQuanitty.AutoSize = true;
             this.lblQuanitty.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblQuanitty.Location = new System.Drawing.Point(13, 236);
+            this.lblQuanitty.Location = new System.Drawing.Point(17, 251);
             this.lblQuanitty.Name = "lblQuanitty";
             this.lblQuanitty.Size = new System.Drawing.Size(64, 16);
             this.lblQuanitty.TabIndex = 8;
@@ -197,7 +200,7 @@ namespace SU21_Final_Project
             // 
             this.lblGenre.AutoSize = true;
             this.lblGenre.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblGenre.Location = new System.Drawing.Point(13, 167);
+            this.lblGenre.Location = new System.Drawing.Point(17, 182);
             this.lblGenre.Name = "lblGenre";
             this.lblGenre.Size = new System.Drawing.Size(55, 16);
             this.lblGenre.TabIndex = 5;
@@ -207,7 +210,7 @@ namespace SU21_Final_Project
             // 
             this.lblProductName.AutoSize = true;
             this.lblProductName.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblProductName.Location = new System.Drawing.Point(18, 89);
+            this.lblProductName.Location = new System.Drawing.Point(22, 104);
             this.lblProductName.Name = "lblProductName";
             this.lblProductName.Size = new System.Drawing.Size(97, 16);
             this.lblProductName.TabIndex = 2;
@@ -217,7 +220,7 @@ namespace SU21_Final_Project
             // 
             this.lblProductID.AutoSize = true;
             this.lblProductID.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblProductID.Location = new System.Drawing.Point(12, 12);
+            this.lblProductID.Location = new System.Drawing.Point(16, 27);
             this.lblProductID.Name = "lblProductID";
             this.lblProductID.Size = new System.Drawing.Size(76, 16);
             this.lblProductID.TabIndex = 0;
@@ -228,7 +231,7 @@ namespace SU21_Final_Project
             this.tbxProductID.BackColor = System.Drawing.Color.LightGray;
             this.tbxProductID.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.tbxProductID.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbxProductID.Location = new System.Drawing.Point(15, 31);
+            this.tbxProductID.Location = new System.Drawing.Point(19, 46);
             this.tbxProductID.MaxLength = 9;
             this.tbxProductID.Name = "tbxProductID";
             this.tbxProductID.ReadOnly = true;
@@ -246,7 +249,7 @@ namespace SU21_Final_Project
             this.dgvInventory.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedCells;
             this.dgvInventory.BackgroundColor = System.Drawing.Color.White;
             this.dgvInventory.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvInventory.Location = new System.Drawing.Point(535, 12);
+            this.dgvInventory.Location = new System.Drawing.Point(539, 27);
             this.dgvInventory.MultiSelect = false;
             this.dgvInventory.Name = "dgvInventory";
             this.dgvInventory.ReadOnly = true;
@@ -258,7 +261,7 @@ namespace SU21_Final_Project
             // pbxImage
             // 
             this.pbxImage.Image = global::SU21_Final_Project.Properties.Resources.Logo_SMS;
-            this.pbxImage.Location = new System.Drawing.Point(264, 31);
+            this.pbxImage.Location = new System.Drawing.Point(268, 46);
             this.pbxImage.Name = "pbxImage";
             this.pbxImage.Size = new System.Drawing.Size(212, 273);
             this.pbxImage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -270,7 +273,7 @@ namespace SU21_Final_Project
             // 
             this.btnSaveImage.Enabled = false;
             this.btnSaveImage.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSaveImage.Location = new System.Drawing.Point(264, 310);
+            this.btnSaveImage.Location = new System.Drawing.Point(268, 325);
             this.btnSaveImage.Name = "btnSaveImage";
             this.btnSaveImage.Size = new System.Drawing.Size(85, 44);
             this.btnSaveImage.TabIndex = 27;
@@ -281,7 +284,7 @@ namespace SU21_Final_Project
             // btnUploadImage
             // 
             this.btnUploadImage.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnUploadImage.Location = new System.Drawing.Point(391, 310);
+            this.btnUploadImage.Location = new System.Drawing.Point(395, 325);
             this.btnUploadImage.Name = "btnUploadImage";
             this.btnUploadImage.Size = new System.Drawing.Size(85, 44);
             this.btnUploadImage.TabIndex = 0;
@@ -292,7 +295,7 @@ namespace SU21_Final_Project
             // btnCreateInvoice
             // 
             this.btnCreateInvoice.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCreateInvoice.Location = new System.Drawing.Point(291, 559);
+            this.btnCreateInvoice.Location = new System.Drawing.Point(295, 574);
             this.btnCreateInvoice.Name = "btnCreateInvoice";
             this.btnCreateInvoice.Size = new System.Drawing.Size(75, 50);
             this.btnCreateInvoice.TabIndex = 22;
@@ -305,7 +308,7 @@ namespace SU21_Final_Project
             this.tbxProductPrice.BackColor = System.Drawing.SystemColors.Window;
             this.tbxProductPrice.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.tbxProductPrice.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbxProductPrice.Location = new System.Drawing.Point(15, 331);
+            this.tbxProductPrice.Location = new System.Drawing.Point(19, 346);
             this.tbxProductPrice.MaxLength = 12;
             this.tbxProductPrice.Name = "tbxProductPrice";
             this.tbxProductPrice.ReadOnly = true;
@@ -318,7 +321,7 @@ namespace SU21_Final_Project
             // 
             this.lblPrice.AutoSize = true;
             this.lblPrice.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPrice.Location = new System.Drawing.Point(13, 312);
+            this.lblPrice.Location = new System.Drawing.Point(17, 327);
             this.lblPrice.Name = "lblPrice";
             this.lblPrice.Size = new System.Drawing.Size(96, 16);
             this.lblPrice.TabIndex = 12;
@@ -327,7 +330,7 @@ namespace SU21_Final_Project
             // btnComplete
             // 
             this.btnComplete.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnComplete.Location = new System.Drawing.Point(10, 615);
+            this.btnComplete.Location = new System.Drawing.Point(14, 630);
             this.btnComplete.Name = "btnComplete";
             this.btnComplete.Size = new System.Drawing.Size(93, 50);
             this.btnComplete.TabIndex = 19;
@@ -354,7 +357,7 @@ namespace SU21_Final_Project
             "Realistic Fiction",
             "True Story",
             "Rom-Com"});
-            this.cbxGenres.Location = new System.Drawing.Point(15, 186);
+            this.cbxGenres.Location = new System.Drawing.Point(19, 201);
             this.cbxGenres.Name = "cbxGenres";
             this.cbxGenres.Size = new System.Drawing.Size(185, 24);
             this.cbxGenres.TabIndex = 6;
@@ -365,7 +368,7 @@ namespace SU21_Final_Project
             // 
             this.lblProductNameValid.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblProductNameValid.ForeColor = System.Drawing.Color.Red;
-            this.lblProductNameValid.Location = new System.Drawing.Point(207, 107);
+            this.lblProductNameValid.Location = new System.Drawing.Point(211, 122);
             this.lblProductNameValid.Name = "lblProductNameValid";
             this.lblProductNameValid.Size = new System.Drawing.Size(20, 21);
             this.lblProductNameValid.TabIndex = 4;
@@ -375,7 +378,7 @@ namespace SU21_Final_Project
             // 
             this.lblGenreValid.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblGenreValid.ForeColor = System.Drawing.Color.Red;
-            this.lblGenreValid.Location = new System.Drawing.Point(207, 189);
+            this.lblGenreValid.Location = new System.Drawing.Point(211, 204);
             this.lblGenreValid.Name = "lblGenreValid";
             this.lblGenreValid.Size = new System.Drawing.Size(20, 21);
             this.lblGenreValid.TabIndex = 7;
@@ -385,7 +388,7 @@ namespace SU21_Final_Project
             // 
             this.lblQuantityValid.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblQuantityValid.ForeColor = System.Drawing.Color.Red;
-            this.lblQuantityValid.Location = new System.Drawing.Point(207, 257);
+            this.lblQuantityValid.Location = new System.Drawing.Point(211, 272);
             this.lblQuantityValid.Name = "lblQuantityValid";
             this.lblQuantityValid.Size = new System.Drawing.Size(20, 21);
             this.lblQuantityValid.TabIndex = 10;
@@ -395,7 +398,7 @@ namespace SU21_Final_Project
             // 
             this.lblPriceValid.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblPriceValid.ForeColor = System.Drawing.Color.Red;
-            this.lblPriceValid.Location = new System.Drawing.Point(207, 333);
+            this.lblPriceValid.Location = new System.Drawing.Point(211, 348);
             this.lblPriceValid.Name = "lblPriceValid";
             this.lblPriceValid.Size = new System.Drawing.Size(20, 21);
             this.lblPriceValid.TabIndex = 14;
@@ -405,17 +408,36 @@ namespace SU21_Final_Project
             // 
             this.lblProductDescriptionValid.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblProductDescriptionValid.ForeColor = System.Drawing.Color.Red;
-            this.lblProductDescriptionValid.Location = new System.Drawing.Point(482, 449);
+            this.lblProductDescriptionValid.Location = new System.Drawing.Point(486, 464);
             this.lblProductDescriptionValid.Name = "lblProductDescriptionValid";
             this.lblProductDescriptionValid.Size = new System.Drawing.Size(20, 21);
             this.lblProductDescriptionValid.TabIndex = 17;
             this.lblProductDescriptionValid.Text = "X";
             // 
+            // mnsHelp
+            // 
+            this.mnsHelp.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.helpToolStripMenuItem});
+            this.mnsHelp.Location = new System.Drawing.Point(0, 0);
+            this.mnsHelp.Name = "mnsHelp";
+            this.mnsHelp.Size = new System.Drawing.Size(1070, 24);
+            this.mnsHelp.TabIndex = 90;
+            this.mnsHelp.Text = "menuStrip1";
+            // 
+            // helpToolStripMenuItem
+            // 
+            this.helpToolStripMenuItem.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
+            this.helpToolStripMenuItem.Name = "helpToolStripMenuItem";
+            this.helpToolStripMenuItem.Size = new System.Drawing.Size(44, 20);
+            this.helpToolStripMenuItem.Text = "Help";
+            this.helpToolStripMenuItem.Click += new System.EventHandler(this.helpToolStripMenuItem_Click);
+            // 
             // frmManager_Edit_Inventory
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1070, 672);
+            this.ClientSize = new System.Drawing.Size(1070, 687);
+            this.Controls.Add(this.mnsHelp);
             this.Controls.Add(this.lblProductDescriptionValid);
             this.Controls.Add(this.lblPriceValid);
             this.Controls.Add(this.lblQuantityValid);
@@ -454,6 +476,8 @@ namespace SU21_Final_Project
             this.Load += new System.EventHandler(this.frmMerchandiseAdd_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvInventory)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxImage)).EndInit();
+            this.mnsHelp.ResumeLayout(false);
+            this.mnsHelp.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -489,5 +513,7 @@ namespace SU21_Final_Project
         private System.Windows.Forms.Label lblQuantityValid;
         private System.Windows.Forms.Label lblPriceValid;
         private System.Windows.Forms.Label lblProductDescriptionValid;
+        private System.Windows.Forms.MenuStrip mnsHelp;
+        private System.Windows.Forms.ToolStripMenuItem helpToolStripMenuItem;
     }
 }

@@ -426,5 +426,11 @@ namespace SU21_Final_Project
         {
 
         }
+
+        private void mnsHelp_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Add Discount : \n 1.Press Add Discount \n 2.Create a new DiscountID \n3.Choose The Type Of Discount \n 3.1 If Discount Type 2 Add Valid ProductID \n4.Choose Discount Percent \n5. Choose if it Valid / Active right now \n6.Add Discount" + 
+                "\nEdit Discount: \n1 Press Edit Discount \n Click On Grid To Grab Discount Information \n3. Edit Discount Information \n4.Complete Edit", "Help File", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
     }
 }

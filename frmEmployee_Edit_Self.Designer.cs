@@ -32,8 +32,6 @@ namespace SU21_Final_Project
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmEmployee_Edit_Self));
             this.lblMainText = new System.Windows.Forms.Label();
             this.lblBlackLine = new System.Windows.Forms.Label();
-            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
-            this.mnsHelp = new System.Windows.Forms.ToolStripMenuItem();
             this.lblRequriemtsn = new System.Windows.Forms.Label();
             this.cbxState = new System.Windows.Forms.ComboBox();
             this.lblErrorPhoneSecondary = new System.Windows.Forms.Label();
@@ -79,6 +77,8 @@ namespace SU21_Final_Project
             this.tbxTitle = new System.Windows.Forms.TextBox();
             this.btnExit = new System.Windows.Forms.Button();
             this.btnCompleteEdit = new System.Windows.Forms.Button();
+            this.mnsHelp = new System.Windows.Forms.ToolStripMenuItem();
+            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -100,23 +100,6 @@ namespace SU21_Final_Project
             this.lblBlackLine.Size = new System.Drawing.Size(850, 2);
             this.lblBlackLine.TabIndex = 17;
             this.lblBlackLine.Text = "0";
-            // 
-            // menuStrip1
-            // 
-            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.mnsHelp});
-            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
-            this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(889, 24);
-            this.menuStrip1.TabIndex = 16;
-            this.menuStrip1.Text = "menuStrip1";
-            // 
-            // mnsHelp
-            // 
-            this.mnsHelp.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
-            this.mnsHelp.Name = "mnsHelp";
-            this.mnsHelp.Size = new System.Drawing.Size(44, 20);
-            this.mnsHelp.Text = "Help";
             // 
             // lblRequriemtsn
             // 
@@ -690,6 +673,24 @@ namespace SU21_Final_Project
             this.btnCompleteEdit.UseVisualStyleBackColor = true;
             this.btnCompleteEdit.Click += new System.EventHandler(this.btnCompleteEdit_Click);
             // 
+            // mnsHelp
+            // 
+            this.mnsHelp.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
+            this.mnsHelp.Name = "mnsHelp";
+            this.mnsHelp.Size = new System.Drawing.Size(44, 20);
+            this.mnsHelp.Text = "Help";
+            this.mnsHelp.Click += new System.EventHandler(this.mnsHelp_Click);
+            // 
+            // menuStrip1
+            // 
+            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.mnsHelp});
+            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
+            this.menuStrip1.Name = "menuStrip1";
+            this.menuStrip1.Size = new System.Drawing.Size(889, 24);
+            this.menuStrip1.TabIndex = 16;
+            this.menuStrip1.Text = "menuStrip1";
+            // 
             // frmEmployee_Edit_Self
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -759,8 +760,6 @@ namespace SU21_Final_Project
 
         private System.Windows.Forms.Label lblMainText;
         private System.Windows.Forms.Label lblBlackLine;
-        private System.Windows.Forms.MenuStrip menuStrip1;
-        private System.Windows.Forms.ToolStripMenuItem mnsHelp;
         private System.Windows.Forms.Label lblRequriemtsn;
         private System.Windows.Forms.ComboBox cbxState;
         private System.Windows.Forms.Label lblErrorPhoneSecondary;
@@ -806,5 +805,7 @@ namespace SU21_Final_Project
         private System.Windows.Forms.TextBox tbxTitle;
         private System.Windows.Forms.Button btnExit;
         private System.Windows.Forms.Button btnCompleteEdit;
+        private System.Windows.Forms.ToolStripMenuItem mnsHelp;
+        private System.Windows.Forms.MenuStrip menuStrip1;
     }
 }

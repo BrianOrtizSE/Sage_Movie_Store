@@ -143,5 +143,9 @@ namespace SU21_Final_Project
             }
         }
 
+        private void helpToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Print Report button will create a Report of the Reciept Details", "Help File", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
     }
 }

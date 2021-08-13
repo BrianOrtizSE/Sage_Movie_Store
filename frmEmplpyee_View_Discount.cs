@@ -65,5 +65,10 @@ namespace SU21_Final_Project
         {
             this.Close();
         }
+
+        private void mnsHelp_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Displays All Active Store Discounts, also displays the type of discount.", "Help File", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
     }
 }

@@ -52,8 +52,11 @@ namespace SU21_Final_Project
             this.cbxShowInvoice = new System.Windows.Forms.CheckBox();
             this.cbxCompleted = new System.Windows.Forms.CheckBox();
             this.btnExit = new System.Windows.Forms.Button();
+            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.mnsHelp = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProduct)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvInvoice)).BeginInit();
+            this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // dgvProduct
@@ -64,7 +67,7 @@ namespace SU21_Final_Project
             this.dgvProduct.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedCells;
             this.dgvProduct.BackgroundColor = System.Drawing.Color.White;
             this.dgvProduct.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvProduct.Location = new System.Drawing.Point(448, 21);
+            this.dgvProduct.Location = new System.Drawing.Point(453, 51);
             this.dgvProduct.MultiSelect = false;
             this.dgvProduct.Name = "dgvProduct";
             this.dgvProduct.ReadOnly = true;
@@ -76,7 +79,7 @@ namespace SU21_Final_Project
             // 
             this.lblPriceValid.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblPriceValid.ForeColor = System.Drawing.Color.Red;
-            this.lblPriceValid.Location = new System.Drawing.Point(204, 285);
+            this.lblPriceValid.Location = new System.Drawing.Point(209, 315);
             this.lblPriceValid.Name = "lblPriceValid";
             this.lblPriceValid.Size = new System.Drawing.Size(20, 21);
             this.lblPriceValid.TabIndex = 108;
@@ -86,7 +89,7 @@ namespace SU21_Final_Project
             // 
             this.lblQuantityValid.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblQuantityValid.ForeColor = System.Drawing.Color.Red;
-            this.lblQuantityValid.Location = new System.Drawing.Point(204, 207);
+            this.lblQuantityValid.Location = new System.Drawing.Point(209, 237);
             this.lblQuantityValid.Name = "lblQuantityValid";
             this.lblQuantityValid.Size = new System.Drawing.Size(20, 21);
             this.lblQuantityValid.TabIndex = 107;
@@ -96,7 +99,7 @@ namespace SU21_Final_Project
             // 
             this.lblSourceValid.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblSourceValid.ForeColor = System.Drawing.Color.Red;
-            this.lblSourceValid.Location = new System.Drawing.Point(204, 125);
+            this.lblSourceValid.Location = new System.Drawing.Point(209, 155);
             this.lblSourceValid.Name = "lblSourceValid";
             this.lblSourceValid.Size = new System.Drawing.Size(20, 21);
             this.lblSourceValid.TabIndex = 106;
@@ -107,7 +110,7 @@ namespace SU21_Final_Project
             this.tbxProductOrderPrice.BackColor = System.Drawing.SystemColors.Window;
             this.tbxProductOrderPrice.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.tbxProductOrderPrice.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbxProductOrderPrice.Location = new System.Drawing.Point(12, 283);
+            this.tbxProductOrderPrice.Location = new System.Drawing.Point(17, 313);
             this.tbxProductOrderPrice.MaxLength = 12;
             this.tbxProductOrderPrice.Name = "tbxProductOrderPrice";
             this.tbxProductOrderPrice.ShortcutsEnabled = false;
@@ -120,7 +123,7 @@ namespace SU21_Final_Project
             // 
             this.lblProductOrderPrice.AutoSize = true;
             this.lblProductOrderPrice.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblProductOrderPrice.Location = new System.Drawing.Point(10, 264);
+            this.lblProductOrderPrice.Location = new System.Drawing.Point(15, 294);
             this.lblProductOrderPrice.Name = "lblProductOrderPrice";
             this.lblProductOrderPrice.Size = new System.Drawing.Size(86, 16);
             this.lblProductOrderPrice.TabIndex = 104;
@@ -138,7 +141,7 @@ namespace SU21_Final_Project
             "James Gun Co.",
             "Gary Page Book Corp",
             "David Clue Co."});
-            this.cbxSource.Location = new System.Drawing.Point(12, 122);
+            this.cbxSource.Location = new System.Drawing.Point(17, 152);
             this.cbxSource.Name = "cbxSource";
             this.cbxSource.Size = new System.Drawing.Size(185, 24);
             this.cbxSource.TabIndex = 1;
@@ -149,7 +152,7 @@ namespace SU21_Final_Project
             this.tbxQuantityToOrder.BackColor = System.Drawing.SystemColors.Window;
             this.tbxQuantityToOrder.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.tbxQuantityToOrder.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbxQuantityToOrder.Location = new System.Drawing.Point(12, 205);
+            this.tbxQuantityToOrder.Location = new System.Drawing.Point(17, 235);
             this.tbxQuantityToOrder.MaxLength = 12;
             this.tbxQuantityToOrder.Name = "tbxQuantityToOrder";
             this.tbxQuantityToOrder.ShortcutsEnabled = false;
@@ -162,7 +165,7 @@ namespace SU21_Final_Project
             // 
             this.lblQuanittyToOrder.AutoSize = true;
             this.lblQuanittyToOrder.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblQuanittyToOrder.Location = new System.Drawing.Point(9, 186);
+            this.lblQuanittyToOrder.Location = new System.Drawing.Point(14, 216);
             this.lblQuanittyToOrder.Name = "lblQuanittyToOrder";
             this.lblQuanittyToOrder.Size = new System.Drawing.Size(116, 16);
             this.lblQuanittyToOrder.TabIndex = 98;
@@ -172,7 +175,7 @@ namespace SU21_Final_Project
             // 
             this.lblSource.AutoSize = true;
             this.lblSource.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSource.Location = new System.Drawing.Point(10, 103);
+            this.lblSource.Location = new System.Drawing.Point(15, 133);
             this.lblSource.Name = "lblSource";
             this.lblSource.Size = new System.Drawing.Size(121, 16);
             this.lblSource.TabIndex = 97;
@@ -182,7 +185,7 @@ namespace SU21_Final_Project
             // 
             this.lblProductID.AutoSize = true;
             this.lblProductID.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblProductID.Location = new System.Drawing.Point(9, 21);
+            this.lblProductID.Location = new System.Drawing.Point(14, 51);
             this.lblProductID.Name = "lblProductID";
             this.lblProductID.Size = new System.Drawing.Size(76, 16);
             this.lblProductID.TabIndex = 95;
@@ -193,7 +196,7 @@ namespace SU21_Final_Project
             this.tbxProductID.BackColor = System.Drawing.SystemColors.Window;
             this.tbxProductID.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.tbxProductID.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbxProductID.Location = new System.Drawing.Point(12, 40);
+            this.tbxProductID.Location = new System.Drawing.Point(17, 70);
             this.tbxProductID.MaxLength = 12;
             this.tbxProductID.Name = "tbxProductID";
             this.tbxProductID.ShortcutsEnabled = false;
@@ -205,7 +208,7 @@ namespace SU21_Final_Project
             // btnCreateInvoice
             // 
             this.btnCreateInvoice.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCreateInvoice.Location = new System.Drawing.Point(12, 390);
+            this.btnCreateInvoice.Location = new System.Drawing.Point(17, 420);
             this.btnCreateInvoice.Name = "btnCreateInvoice";
             this.btnCreateInvoice.Size = new System.Drawing.Size(113, 39);
             this.btnCreateInvoice.TabIndex = 5;
@@ -217,7 +220,7 @@ namespace SU21_Final_Project
             // 
             this.lblProductValid.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblProductValid.ForeColor = System.Drawing.Color.Red;
-            this.lblProductValid.Location = new System.Drawing.Point(204, 42);
+            this.lblProductValid.Location = new System.Drawing.Point(209, 72);
             this.lblProductValid.Name = "lblProductValid";
             this.lblProductValid.Size = new System.Drawing.Size(20, 21);
             this.lblProductValid.TabIndex = 111;
@@ -227,7 +230,7 @@ namespace SU21_Final_Project
             // 
             this.lblSubTotal.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.lblSubTotal.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSubTotal.Location = new System.Drawing.Point(255, 115);
+            this.lblSubTotal.Location = new System.Drawing.Point(260, 145);
             this.lblSubTotal.Name = "lblSubTotal";
             this.lblSubTotal.Size = new System.Drawing.Size(162, 46);
             this.lblSubTotal.TabIndex = 112;
@@ -238,7 +241,7 @@ namespace SU21_Final_Project
             // 
             this.lblTax.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.lblTax.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTax.Location = new System.Drawing.Point(255, 161);
+            this.lblTax.Location = new System.Drawing.Point(260, 191);
             this.lblTax.Name = "lblTax";
             this.lblTax.Size = new System.Drawing.Size(162, 46);
             this.lblTax.TabIndex = 113;
@@ -249,7 +252,7 @@ namespace SU21_Final_Project
             // 
             this.lblTotal.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.lblTotal.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTotal.Location = new System.Drawing.Point(255, 207);
+            this.lblTotal.Location = new System.Drawing.Point(260, 237);
             this.lblTotal.Name = "lblTotal";
             this.lblTotal.Size = new System.Drawing.Size(162, 46);
             this.lblTotal.TabIndex = 114;
@@ -260,7 +263,7 @@ namespace SU21_Final_Project
             // 
             this.btnPayInvoice.Enabled = false;
             this.btnPayInvoice.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnPayInvoice.Location = new System.Drawing.Point(131, 390);
+            this.btnPayInvoice.Location = new System.Drawing.Point(136, 420);
             this.btnPayInvoice.Name = "btnPayInvoice";
             this.btnPayInvoice.Size = new System.Drawing.Size(113, 39);
             this.btnPayInvoice.TabIndex = 6;
@@ -276,7 +279,7 @@ namespace SU21_Final_Project
             this.dgvInvoice.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedCells;
             this.dgvInvoice.BackgroundColor = System.Drawing.Color.White;
             this.dgvInvoice.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvInvoice.Location = new System.Drawing.Point(448, 12);
+            this.dgvInvoice.Location = new System.Drawing.Point(453, 42);
             this.dgvInvoice.MultiSelect = false;
             this.dgvInvoice.Name = "dgvInvoice";
             this.dgvInvoice.ReadOnly = true;
@@ -290,7 +293,7 @@ namespace SU21_Final_Project
             // 
             this.cbxShowInvoice.AutoSize = true;
             this.cbxShowInvoice.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.cbxShowInvoice.Location = new System.Drawing.Point(317, 367);
+            this.cbxShowInvoice.Location = new System.Drawing.Point(322, 397);
             this.cbxShowInvoice.Name = "cbxShowInvoice";
             this.cbxShowInvoice.Size = new System.Drawing.Size(128, 17);
             this.cbxShowInvoice.TabIndex = 7;
@@ -302,7 +305,7 @@ namespace SU21_Final_Project
             // 
             this.cbxCompleted.AutoSize = true;
             this.cbxCompleted.Enabled = false;
-            this.cbxCompleted.Location = new System.Drawing.Point(13, 332);
+            this.cbxCompleted.Location = new System.Drawing.Point(18, 362);
             this.cbxCompleted.Name = "cbxCompleted";
             this.cbxCompleted.Size = new System.Drawing.Size(62, 17);
             this.cbxCompleted.TabIndex = 4;
@@ -312,7 +315,7 @@ namespace SU21_Final_Project
             // btnExit
             // 
             this.btnExit.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnExit.Location = new System.Drawing.Point(353, 390);
+            this.btnExit.Location = new System.Drawing.Point(358, 420);
             this.btnExit.Name = "btnExit";
             this.btnExit.Size = new System.Drawing.Size(92, 39);
             this.btnExit.TabIndex = 8;
@@ -320,11 +323,30 @@ namespace SU21_Final_Project
             this.btnExit.UseVisualStyleBackColor = true;
             this.btnExit.Click += new System.EventHandler(this.button1_Click);
             // 
+            // menuStrip1
+            // 
+            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.mnsHelp});
+            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
+            this.menuStrip1.Name = "menuStrip1";
+            this.menuStrip1.Size = new System.Drawing.Size(1017, 24);
+            this.menuStrip1.TabIndex = 117;
+            this.menuStrip1.Text = "menuStrip1";
+            // 
+            // mnsHelp
+            // 
+            this.mnsHelp.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
+            this.mnsHelp.Name = "mnsHelp";
+            this.mnsHelp.Size = new System.Drawing.Size(44, 20);
+            this.mnsHelp.Text = "Help";
+            this.mnsHelp.Click += new System.EventHandler(this.mnsHelp_Click);
+            // 
             // frmManager_Create_Invoice
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1017, 446);
+            this.ClientSize = new System.Drawing.Size(1017, 482);
+            this.Controls.Add(this.menuStrip1);
             this.Controls.Add(this.btnExit);
             this.Controls.Add(this.cbxCompleted);
             this.Controls.Add(this.cbxShowInvoice);
@@ -355,6 +377,8 @@ namespace SU21_Final_Project
             this.Load += new System.EventHandler(this.frmManager_Create_Invoice_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvProduct)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvInvoice)).EndInit();
+            this.menuStrip1.ResumeLayout(false);
+            this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -384,5 +408,7 @@ namespace SU21_Final_Project
         private System.Windows.Forms.CheckBox cbxShowInvoice;
         private System.Windows.Forms.CheckBox cbxCompleted;
         private System.Windows.Forms.Button btnExit;
+        private System.Windows.Forms.MenuStrip menuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem mnsHelp;
     }
 }

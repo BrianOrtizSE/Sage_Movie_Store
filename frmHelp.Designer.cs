@@ -30,25 +30,16 @@ namespace SU21_Final_Project
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmHelp));
-            this.pbxHelp = new System.Windows.Forms.PictureBox();
             this.btnClose = new System.Windows.Forms.Button();
+            this.pbxHelp = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.pbxHelp)).BeginInit();
             this.SuspendLayout();
-            // 
-            // pbxHelp
-            // 
-            this.pbxHelp.Location = new System.Drawing.Point(74, 12);
-            this.pbxHelp.Name = "pbxHelp";
-            this.pbxHelp.Size = new System.Drawing.Size(651, 307);
-            this.pbxHelp.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pbxHelp.TabIndex = 0;
-            this.pbxHelp.TabStop = false;
             // 
             // btnClose
             // 
             this.btnClose.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnClose.ForeColor = System.Drawing.Color.Red;
-            this.btnClose.Location = new System.Drawing.Point(335, 367);
+            this.btnClose.Location = new System.Drawing.Point(442, 621);
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(103, 36);
             this.btnClose.TabIndex = 1;
@@ -56,11 +47,20 @@ namespace SU21_Final_Project
             this.btnClose.UseVisualStyleBackColor = true;
             this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
+            // pbxHelp
+            // 
+            this.pbxHelp.Location = new System.Drawing.Point(61, 12);
+            this.pbxHelp.Name = "pbxHelp";
+            this.pbxHelp.Size = new System.Drawing.Size(899, 603);
+            this.pbxHelp.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pbxHelp.TabIndex = 0;
+            this.pbxHelp.TabStop = false;
+            // 
             // frmHelp
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(1018, 669);
             this.Controls.Add(this.btnClose);
             this.Controls.Add(this.pbxHelp);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));

@@ -330,8 +330,12 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="favicon %281%29.ico" />
+    <None Include="Resources\FindUser.JPG" />
+    <None Include="Resources\EditCustomer.JPG" />
     <Content Include="Resources\favicon %281%29.ico" />
     <Content Include="Resources\favicon %282%29.ico" />
+    <None Include="Resources\POSREAL.jpg" />
+    <None Include="Resources\frmPasswordRecovery.JPG" />
     <None Include="Resources\Sages_Movie_Store_Shop.JPG" />
     <None Include="Resources\Sages_Movie_Store_MerchandiseView.JPG" />
     <None Include="Resources\Sages_Movie_Store_CustomerMainScreen.JPG" />

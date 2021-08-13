@@ -45,6 +45,19 @@ namespace SU21_Final_Project
                 case 8:
                     pbxHelp.Image = Properties.Resources.Sages_Movie_Store_MerchandiseView;
                     break;
+                case 9:
+                    pbxHelp.Image = Properties.Resources.Sages_Movie_Store_PasswordRecovery;
+                    break;
+                case 10:
+                    pbxHelp.Image = Properties.Resources.Sages_Movie_Store_POS;
+                    break;
+                case 11:
+                    pbxHelp.Image = Properties.Resources.Sages_Movie_Store_EditCustomer;
+                    break;
+                case 12:
+                    pbxHelp.Image = Properties.Resources.FindUser;
+                    break;
+
                 default:
                     break;
             }

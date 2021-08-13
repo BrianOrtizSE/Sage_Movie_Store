@@ -39,23 +39,26 @@ namespace SU21_Final_Project
             this.lblDate = new System.Windows.Forms.Label();
             this.lblWelcomeUserText = new System.Windows.Forms.Label();
             this.lblBlackLine = new System.Windows.Forms.Label();
+            this.mnsHelp = new System.Windows.Forms.MenuStrip();
+            this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnsHelp.SuspendLayout();
             this.SuspendLayout();
             // 
             // btnMerchandiseAdd
             // 
             this.btnMerchandiseAdd.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnMerchandiseAdd.Location = new System.Drawing.Point(82, 270);
+            this.btnMerchandiseAdd.Location = new System.Drawing.Point(193, 222);
             this.btnMerchandiseAdd.Name = "btnMerchandiseAdd";
             this.btnMerchandiseAdd.Size = new System.Drawing.Size(105, 45);
             this.btnMerchandiseAdd.TabIndex = 5;
-            this.btnMerchandiseAdd.Text = "Add Merchandise";
+            this.btnMerchandiseAdd.Text = "Edit/Add Merchandise";
             this.btnMerchandiseAdd.UseVisualStyleBackColor = true;
             this.btnMerchandiseAdd.Click += new System.EventHandler(this.btnMerchandiseAdd_Click);
             // 
             // btnViewSales
             // 
             this.btnViewSales.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnViewSales.Location = new System.Drawing.Point(82, 205);
+            this.btnViewSales.Location = new System.Drawing.Point(82, 287);
             this.btnViewSales.Name = "btnViewSales";
             this.btnViewSales.Size = new System.Drawing.Size(105, 45);
             this.btnViewSales.TabIndex = 3;
@@ -66,7 +69,7 @@ namespace SU21_Final_Project
             // btnAddDiscount
             // 
             this.btnAddDiscount.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAddDiscount.Location = new System.Drawing.Point(82, 130);
+            this.btnAddDiscount.Location = new System.Drawing.Point(82, 222);
             this.btnAddDiscount.Name = "btnAddDiscount";
             this.btnAddDiscount.Size = new System.Drawing.Size(105, 45);
             this.btnAddDiscount.TabIndex = 1;
@@ -77,7 +80,7 @@ namespace SU21_Final_Project
             // btnEditCustomer
             // 
             this.btnEditCustomer.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEditCustomer.Location = new System.Drawing.Point(193, 130);
+            this.btnEditCustomer.Location = new System.Drawing.Point(193, 147);
             this.btnEditCustomer.Name = "btnEditCustomer";
             this.btnEditCustomer.Size = new System.Drawing.Size(105, 45);
             this.btnEditCustomer.TabIndex = 2;
@@ -88,7 +91,7 @@ namespace SU21_Final_Project
             // btnEditEmployee
             // 
             this.btnEditEmployee.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEditEmployee.Location = new System.Drawing.Point(193, 205);
+            this.btnEditEmployee.Location = new System.Drawing.Point(82, 147);
             this.btnEditEmployee.Name = "btnEditEmployee";
             this.btnEditEmployee.Size = new System.Drawing.Size(105, 45);
             this.btnEditEmployee.TabIndex = 4;
@@ -99,7 +102,7 @@ namespace SU21_Final_Project
             // btnClose
             // 
             this.btnClose.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnClose.Location = new System.Drawing.Point(193, 270);
+            this.btnClose.Location = new System.Drawing.Point(193, 287);
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(105, 45);
             this.btnClose.TabIndex = 6;
@@ -110,7 +113,7 @@ namespace SU21_Final_Project
             // lblDate
             // 
             this.lblDate.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDate.Location = new System.Drawing.Point(283, 21);
+            this.lblDate.Location = new System.Drawing.Point(283, 38);
             this.lblDate.Name = "lblDate";
             this.lblDate.Size = new System.Drawing.Size(100, 23);
             this.lblDate.TabIndex = 7;
@@ -120,7 +123,7 @@ namespace SU21_Final_Project
             // lblWelcomeUserText
             // 
             this.lblWelcomeUserText.Font = new System.Drawing.Font("Tahoma", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblWelcomeUserText.Location = new System.Drawing.Point(106, 21);
+            this.lblWelcomeUserText.Location = new System.Drawing.Point(106, 38);
             this.lblWelcomeUserText.Name = "lblWelcomeUserText";
             this.lblWelcomeUserText.Size = new System.Drawing.Size(173, 34);
             this.lblWelcomeUserText.TabIndex = 0;
@@ -132,18 +135,37 @@ namespace SU21_Final_Project
             this.lblBlackLine.BackColor = System.Drawing.Color.Black;
             this.lblBlackLine.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblBlackLine.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.lblBlackLine.Location = new System.Drawing.Point(-50, 59);
+            this.lblBlackLine.Location = new System.Drawing.Point(-50, 76);
             this.lblBlackLine.Name = "lblBlackLine";
             this.lblBlackLine.Size = new System.Drawing.Size(476, 3);
             this.lblBlackLine.TabIndex = 35;
             this.lblBlackLine.Text = "lblBlackLine";
             this.lblBlackLine.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
+            // mnsHelp
+            // 
+            this.mnsHelp.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.helpToolStripMenuItem});
+            this.mnsHelp.Location = new System.Drawing.Point(0, 0);
+            this.mnsHelp.Name = "mnsHelp";
+            this.mnsHelp.Size = new System.Drawing.Size(395, 24);
+            this.mnsHelp.TabIndex = 91;
+            this.mnsHelp.Text = "menuStrip1";
+            // 
+            // helpToolStripMenuItem
+            // 
+            this.helpToolStripMenuItem.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
+            this.helpToolStripMenuItem.Name = "helpToolStripMenuItem";
+            this.helpToolStripMenuItem.Size = new System.Drawing.Size(44, 20);
+            this.helpToolStripMenuItem.Text = "Help";
+            this.helpToolStripMenuItem.Click += new System.EventHandler(this.helpToolStripMenuItem_Click);
+            // 
             // frmManager_Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(395, 414);
+            this.Controls.Add(this.mnsHelp);
             this.Controls.Add(this.lblDate);
             this.Controls.Add(this.lblWelcomeUserText);
             this.Controls.Add(this.lblBlackLine);
@@ -159,7 +181,10 @@ namespace SU21_Final_Project
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Manager MaIn Menu";
             this.Load += new System.EventHandler(this.frmManager_Main_Load);
+            this.mnsHelp.ResumeLayout(false);
+            this.mnsHelp.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -174,5 +199,7 @@ namespace SU21_Final_Project
         private System.Windows.Forms.Label lblDate;
         private System.Windows.Forms.Label lblWelcomeUserText;
         private System.Windows.Forms.Label lblBlackLine;
+        private System.Windows.Forms.MenuStrip mnsHelp;
+        private System.Windows.Forms.ToolStripMenuItem helpToolStripMenuItem;
     }
 }

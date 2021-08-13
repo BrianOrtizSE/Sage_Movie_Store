@@ -55,14 +55,17 @@ namespace SU21_Final_Project
             this.btnDisableCustomer = new System.Windows.Forms.Button();
             this.btnShowActive = new System.Windows.Forms.Button();
             this.btnEnable = new System.Windows.Forms.Button();
+            this.mnsHelp = new System.Windows.Forms.MenuStrip();
+            this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPerson)).BeginInit();
+            this.mnsHelp.SuspendLayout();
             this.SuspendLayout();
             // 
             // tbxPersonID
             // 
             this.tbxPersonID.BackColor = System.Drawing.SystemColors.Control;
             this.tbxPersonID.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbxPersonID.Location = new System.Drawing.Point(16, 38);
+            this.tbxPersonID.Location = new System.Drawing.Point(16, 63);
             this.tbxPersonID.MaxLength = 9;
             this.tbxPersonID.Name = "tbxPersonID";
             this.tbxPersonID.ReadOnly = true;
@@ -73,7 +76,7 @@ namespace SU21_Final_Project
             // btnReturn
             // 
             this.btnReturn.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnReturn.Location = new System.Drawing.Point(100, 468);
+            this.btnReturn.Location = new System.Drawing.Point(100, 493);
             this.btnReturn.Name = "btnReturn";
             this.btnReturn.Size = new System.Drawing.Size(75, 50);
             this.btnReturn.TabIndex = 10;
@@ -84,7 +87,7 @@ namespace SU21_Final_Project
             // btnEditUser
             // 
             this.btnEditUser.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEditUser.Location = new System.Drawing.Point(7, 468);
+            this.btnEditUser.Location = new System.Drawing.Point(7, 493);
             this.btnEditUser.Name = "btnEditUser";
             this.btnEditUser.Size = new System.Drawing.Size(87, 50);
             this.btnEditUser.TabIndex = 9;
@@ -96,7 +99,7 @@ namespace SU21_Final_Project
             // 
             this.lblPersonID.AutoSize = true;
             this.lblPersonID.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPersonID.Location = new System.Drawing.Point(19, 20);
+            this.lblPersonID.Location = new System.Drawing.Point(19, 45);
             this.lblPersonID.Name = "lblPersonID";
             this.lblPersonID.Size = new System.Drawing.Size(72, 16);
             this.lblPersonID.TabIndex = 56;
@@ -111,7 +114,7 @@ namespace SU21_Final_Project
             this.dgvPerson.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedCells;
             this.dgvPerson.BackgroundColor = System.Drawing.Color.White;
             this.dgvPerson.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvPerson.Location = new System.Drawing.Point(478, 12);
+            this.dgvPerson.Location = new System.Drawing.Point(478, 37);
             this.dgvPerson.MultiSelect = false;
             this.dgvPerson.Name = "dgvPerson";
             this.dgvPerson.ReadOnly = true;
@@ -124,7 +127,7 @@ namespace SU21_Final_Project
             // 
             this.tbxNameFirst.BackColor = System.Drawing.SystemColors.Control;
             this.tbxNameFirst.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbxNameFirst.Location = new System.Drawing.Point(16, 108);
+            this.tbxNameFirst.Location = new System.Drawing.Point(16, 133);
             this.tbxNameFirst.MaxLength = 9;
             this.tbxNameFirst.Name = "tbxNameFirst";
             this.tbxNameFirst.ReadOnly = true;
@@ -136,7 +139,7 @@ namespace SU21_Final_Project
             // 
             this.lblNameFirst.AutoSize = true;
             this.lblNameFirst.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNameFirst.Location = new System.Drawing.Point(19, 90);
+            this.lblNameFirst.Location = new System.Drawing.Point(19, 115);
             this.lblNameFirst.Name = "lblNameFirst";
             this.lblNameFirst.Size = new System.Drawing.Size(79, 16);
             this.lblNameFirst.TabIndex = 73;
@@ -146,7 +149,7 @@ namespace SU21_Final_Project
             // 
             this.tbxNameLast.BackColor = System.Drawing.SystemColors.Control;
             this.tbxNameLast.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbxNameLast.Location = new System.Drawing.Point(16, 178);
+            this.tbxNameLast.Location = new System.Drawing.Point(16, 203);
             this.tbxNameLast.MaxLength = 9;
             this.tbxNameLast.Name = "tbxNameLast";
             this.tbxNameLast.ReadOnly = true;
@@ -158,7 +161,7 @@ namespace SU21_Final_Project
             // 
             this.lblNameLast.AutoSize = true;
             this.lblNameLast.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNameLast.Location = new System.Drawing.Point(19, 160);
+            this.lblNameLast.Location = new System.Drawing.Point(19, 185);
             this.lblNameLast.Name = "lblNameLast";
             this.lblNameLast.Size = new System.Drawing.Size(77, 16);
             this.lblNameLast.TabIndex = 75;
@@ -168,7 +171,7 @@ namespace SU21_Final_Project
             // 
             this.tbxAddress1.BackColor = System.Drawing.SystemColors.Control;
             this.tbxAddress1.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbxAddress1.Location = new System.Drawing.Point(16, 248);
+            this.tbxAddress1.Location = new System.Drawing.Point(16, 273);
             this.tbxAddress1.MaxLength = 9;
             this.tbxAddress1.Name = "tbxAddress1";
             this.tbxAddress1.ReadOnly = true;
@@ -180,7 +183,7 @@ namespace SU21_Final_Project
             // 
             this.lblAddress1.AutoSize = true;
             this.lblAddress1.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblAddress1.Location = new System.Drawing.Point(19, 229);
+            this.lblAddress1.Location = new System.Drawing.Point(19, 254);
             this.lblAddress1.Name = "lblAddress1";
             this.lblAddress1.Size = new System.Drawing.Size(67, 16);
             this.lblAddress1.TabIndex = 77;
@@ -190,7 +193,7 @@ namespace SU21_Final_Project
             // 
             this.tbxCity.BackColor = System.Drawing.SystemColors.Control;
             this.tbxCity.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbxCity.Location = new System.Drawing.Point(16, 316);
+            this.tbxCity.Location = new System.Drawing.Point(16, 341);
             this.tbxCity.MaxLength = 9;
             this.tbxCity.Name = "tbxCity";
             this.tbxCity.ReadOnly = true;
@@ -202,7 +205,7 @@ namespace SU21_Final_Project
             // 
             this.lblCity.AutoSize = true;
             this.lblCity.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCity.Location = new System.Drawing.Point(20, 297);
+            this.lblCity.Location = new System.Drawing.Point(20, 322);
             this.lblCity.Name = "lblCity";
             this.lblCity.Size = new System.Drawing.Size(42, 16);
             this.lblCity.TabIndex = 79;
@@ -212,7 +215,7 @@ namespace SU21_Final_Project
             // 
             this.tbxEmail.BackColor = System.Drawing.SystemColors.Control;
             this.tbxEmail.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbxEmail.Location = new System.Drawing.Point(269, 179);
+            this.tbxEmail.Location = new System.Drawing.Point(269, 204);
             this.tbxEmail.MaxLength = 9;
             this.tbxEmail.Name = "tbxEmail";
             this.tbxEmail.ReadOnly = true;
@@ -224,7 +227,7 @@ namespace SU21_Final_Project
             // 
             this.lblEmail.AutoSize = true;
             this.lblEmail.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblEmail.Location = new System.Drawing.Point(268, 160);
+            this.lblEmail.Location = new System.Drawing.Point(268, 185);
             this.lblEmail.Name = "lblEmail";
             this.lblEmail.Size = new System.Drawing.Size(52, 16);
             this.lblEmail.TabIndex = 83;
@@ -234,7 +237,7 @@ namespace SU21_Final_Project
             // 
             this.tbxState.BackColor = System.Drawing.SystemColors.Control;
             this.tbxState.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbxState.Location = new System.Drawing.Point(269, 109);
+            this.tbxState.Location = new System.Drawing.Point(269, 134);
             this.tbxState.MaxLength = 9;
             this.tbxState.Name = "tbxState";
             this.tbxState.ReadOnly = true;
@@ -246,7 +249,7 @@ namespace SU21_Final_Project
             // 
             this.lblState.AutoSize = true;
             this.lblState.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblState.Location = new System.Drawing.Point(268, 90);
+            this.lblState.Location = new System.Drawing.Point(268, 115);
             this.lblState.Name = "lblState";
             this.lblState.Size = new System.Drawing.Size(51, 16);
             this.lblState.TabIndex = 81;
@@ -256,7 +259,7 @@ namespace SU21_Final_Project
             // 
             this.tbxPhone.BackColor = System.Drawing.SystemColors.Control;
             this.tbxPhone.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbxPhone.Location = new System.Drawing.Point(269, 249);
+            this.tbxPhone.Location = new System.Drawing.Point(269, 274);
             this.tbxPhone.MaxLength = 9;
             this.tbxPhone.Name = "tbxPhone";
             this.tbxPhone.ReadOnly = true;
@@ -268,7 +271,7 @@ namespace SU21_Final_Project
             // 
             this.lblPhonePrimary.AutoSize = true;
             this.lblPhonePrimary.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPhonePrimary.Location = new System.Drawing.Point(266, 230);
+            this.lblPhonePrimary.Location = new System.Drawing.Point(266, 255);
             this.lblPhonePrimary.Name = "lblPhonePrimary";
             this.lblPhonePrimary.Size = new System.Drawing.Size(56, 16);
             this.lblPhonePrimary.TabIndex = 85;
@@ -278,7 +281,7 @@ namespace SU21_Final_Project
             // 
             this.tbxZipcode.BackColor = System.Drawing.SystemColors.Control;
             this.tbxZipcode.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbxZipcode.Location = new System.Drawing.Point(269, 39);
+            this.tbxZipcode.Location = new System.Drawing.Point(269, 64);
             this.tbxZipcode.MaxLength = 9;
             this.tbxZipcode.Name = "tbxZipcode";
             this.tbxZipcode.ReadOnly = true;
@@ -290,7 +293,7 @@ namespace SU21_Final_Project
             // 
             this.lblZipCode.AutoSize = true;
             this.lblZipCode.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblZipCode.Location = new System.Drawing.Point(268, 20);
+            this.lblZipCode.Location = new System.Drawing.Point(268, 45);
             this.lblZipCode.Name = "lblZipCode";
             this.lblZipCode.Size = new System.Drawing.Size(65, 16);
             this.lblZipCode.TabIndex = 87;
@@ -299,7 +302,7 @@ namespace SU21_Final_Project
             // btnShowDIsabled
             // 
             this.btnShowDIsabled.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnShowDIsabled.Location = new System.Drawing.Point(365, 475);
+            this.btnShowDIsabled.Location = new System.Drawing.Point(365, 500);
             this.btnShowDIsabled.Name = "btnShowDIsabled";
             this.btnShowDIsabled.Size = new System.Drawing.Size(107, 50);
             this.btnShowDIsabled.TabIndex = 13;
@@ -310,7 +313,7 @@ namespace SU21_Final_Project
             // btnDisableCustomer
             // 
             this.btnDisableCustomer.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDisableCustomer.Location = new System.Drawing.Point(365, 419);
+            this.btnDisableCustomer.Location = new System.Drawing.Point(365, 444);
             this.btnDisableCustomer.Name = "btnDisableCustomer";
             this.btnDisableCustomer.Size = new System.Drawing.Size(107, 50);
             this.btnDisableCustomer.TabIndex = 14;
@@ -321,7 +324,7 @@ namespace SU21_Final_Project
             // btnShowActive
             // 
             this.btnShowActive.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnShowActive.Location = new System.Drawing.Point(252, 475);
+            this.btnShowActive.Location = new System.Drawing.Point(252, 500);
             this.btnShowActive.Name = "btnShowActive";
             this.btnShowActive.Size = new System.Drawing.Size(107, 50);
             this.btnShowActive.TabIndex = 12;
@@ -333,7 +336,7 @@ namespace SU21_Final_Project
             // btnEnable
             // 
             this.btnEnable.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEnable.Location = new System.Drawing.Point(252, 419);
+            this.btnEnable.Location = new System.Drawing.Point(252, 444);
             this.btnEnable.Name = "btnEnable";
             this.btnEnable.Size = new System.Drawing.Size(107, 50);
             this.btnEnable.TabIndex = 11;
@@ -342,11 +345,30 @@ namespace SU21_Final_Project
             this.btnEnable.Visible = false;
             this.btnEnable.Click += new System.EventHandler(this.btnEnable_Click);
             // 
+            // mnsHelp
+            // 
+            this.mnsHelp.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.helpToolStripMenuItem});
+            this.mnsHelp.Location = new System.Drawing.Point(0, 0);
+            this.mnsHelp.Name = "mnsHelp";
+            this.mnsHelp.Size = new System.Drawing.Size(1254, 24);
+            this.mnsHelp.TabIndex = 88;
+            this.mnsHelp.Text = "menuStrip1";
+            // 
+            // helpToolStripMenuItem
+            // 
+            this.helpToolStripMenuItem.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
+            this.helpToolStripMenuItem.Name = "helpToolStripMenuItem";
+            this.helpToolStripMenuItem.Size = new System.Drawing.Size(44, 20);
+            this.helpToolStripMenuItem.Text = "Help";
+            this.helpToolStripMenuItem.Click += new System.EventHandler(this.helpToolStripMenuItem_Click);
+            // 
             // frmManager_Edit_Customer
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1254, 537);
+            this.ClientSize = new System.Drawing.Size(1254, 562);
+            this.Controls.Add(this.mnsHelp);
             this.Controls.Add(this.btnEnable);
             this.Controls.Add(this.btnShowActive);
             this.Controls.Add(this.btnDisableCustomer);
@@ -379,6 +401,8 @@ namespace SU21_Final_Project
             this.Text = "Edit Customer";
             this.Load += new System.EventHandler(this.frmManager_Edit_Customer_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvPerson)).EndInit();
+            this.mnsHelp.ResumeLayout(false);
+            this.mnsHelp.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -410,5 +434,7 @@ namespace SU21_Final_Project
         private System.Windows.Forms.Button btnDisableCustomer;
         private System.Windows.Forms.Button btnShowActive;
         private System.Windows.Forms.Button btnEnable;
+        private System.Windows.Forms.MenuStrip mnsHelp;
+        private System.Windows.Forms.ToolStripMenuItem helpToolStripMenuItem;
     }
 }

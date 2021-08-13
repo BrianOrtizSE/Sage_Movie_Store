@@ -532,5 +532,11 @@ namespace SU21_Final_Project
                 e.Handled = true;
             }
         }
+
+        private void helpToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Add Employee : \n Use Find Person Button \nChoose Position \nSet Wage and if it Salary or not \n Get Date \n Set If they are manager or not \n Add Employee" + 
+                "Edit Employee: \nClick Edit Employee \nClick DataGrid \nEdit information \nComplete or Cancel Edit" , "Help File", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
     }
 }

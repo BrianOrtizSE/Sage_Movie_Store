@@ -55,8 +55,11 @@ namespace SU21_Final_Project
             this.dgvProduct = new System.Windows.Forms.DataGridView();
             this.btnReturn = new System.Windows.Forms.Button();
             this.btnShowInactive = new System.Windows.Forms.Button();
+            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.mnsHelp = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDiscount)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProduct)).BeginInit();
+            this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // dgvDiscount
@@ -68,7 +71,7 @@ namespace SU21_Final_Project
             this.dgvDiscount.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedCells;
             this.dgvDiscount.BackgroundColor = System.Drawing.Color.White;
             this.dgvDiscount.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvDiscount.Location = new System.Drawing.Point(486, 11);
+            this.dgvDiscount.Location = new System.Drawing.Point(486, 44);
             this.dgvDiscount.MultiSelect = false;
             this.dgvDiscount.Name = "dgvDiscount";
             this.dgvDiscount.ReadOnly = true;
@@ -80,7 +83,7 @@ namespace SU21_Final_Project
             // 
             // tbxDiscount
             // 
-            this.tbxDiscount.Location = new System.Drawing.Point(17, 57);
+            this.tbxDiscount.Location = new System.Drawing.Point(17, 90);
             this.tbxDiscount.MaxLength = 9;
             this.tbxDiscount.Name = "tbxDiscount";
             this.tbxDiscount.ShortcutsEnabled = false;
@@ -92,7 +95,7 @@ namespace SU21_Final_Project
             // lblDiscountID
             // 
             this.lblDiscountID.AutoSize = true;
-            this.lblDiscountID.Location = new System.Drawing.Point(14, 38);
+            this.lblDiscountID.Location = new System.Drawing.Point(14, 71);
             this.lblDiscountID.Name = "lblDiscountID";
             this.lblDiscountID.Size = new System.Drawing.Size(76, 15);
             this.lblDiscountID.TabIndex = 2;
@@ -105,7 +108,7 @@ namespace SU21_Final_Project
             this.cmxDiscountType.Items.AddRange(new object[] {
             "1",
             "2"});
-            this.cmxDiscountType.Location = new System.Drawing.Point(17, 138);
+            this.cmxDiscountType.Location = new System.Drawing.Point(17, 171);
             this.cmxDiscountType.Name = "cmxDiscountType";
             this.cmxDiscountType.Size = new System.Drawing.Size(197, 23);
             this.cmxDiscountType.TabIndex = 1;
@@ -114,7 +117,7 @@ namespace SU21_Final_Project
             // lblDiscountType
             // 
             this.lblDiscountType.AutoSize = true;
-            this.lblDiscountType.Location = new System.Drawing.Point(14, 119);
+            this.lblDiscountType.Location = new System.Drawing.Point(14, 152);
             this.lblDiscountType.Name = "lblDiscountType";
             this.lblDiscountType.Size = new System.Drawing.Size(90, 15);
             this.lblDiscountType.TabIndex = 4;
@@ -123,7 +126,7 @@ namespace SU21_Final_Project
             // lblProductID
             // 
             this.lblProductID.AutoSize = true;
-            this.lblProductID.Location = new System.Drawing.Point(14, 200);
+            this.lblProductID.Location = new System.Drawing.Point(14, 233);
             this.lblProductID.Name = "lblProductID";
             this.lblProductID.Size = new System.Drawing.Size(61, 15);
             this.lblProductID.TabIndex = 6;
@@ -132,7 +135,7 @@ namespace SU21_Final_Project
             // tbxProductID
             // 
             this.tbxProductID.Enabled = false;
-            this.tbxProductID.Location = new System.Drawing.Point(17, 222);
+            this.tbxProductID.Location = new System.Drawing.Point(17, 255);
             this.tbxProductID.MaxLength = 5;
             this.tbxProductID.Name = "tbxProductID";
             this.tbxProductID.ShortcutsEnabled = false;
@@ -143,7 +146,7 @@ namespace SU21_Final_Project
             // 
             // tbxDiscountPercent
             // 
-            this.tbxDiscountPercent.Location = new System.Drawing.Point(17, 302);
+            this.tbxDiscountPercent.Location = new System.Drawing.Point(17, 335);
             this.tbxDiscountPercent.MaxLength = 2;
             this.tbxDiscountPercent.Name = "tbxDiscountPercent";
             this.tbxDiscountPercent.ShortcutsEnabled = false;
@@ -155,7 +158,7 @@ namespace SU21_Final_Project
             // lblDiscountPercent
             // 
             this.lblDiscountPercent.AutoSize = true;
-            this.lblDiscountPercent.Location = new System.Drawing.Point(14, 282);
+            this.lblDiscountPercent.Location = new System.Drawing.Point(14, 315);
             this.lblDiscountPercent.Name = "lblDiscountPercent";
             this.lblDiscountPercent.Size = new System.Drawing.Size(109, 15);
             this.lblDiscountPercent.TabIndex = 8;
@@ -164,7 +167,7 @@ namespace SU21_Final_Project
             // lblIsValid
             // 
             this.lblIsValid.AutoSize = true;
-            this.lblIsValid.Location = new System.Drawing.Point(14, 351);
+            this.lblIsValid.Location = new System.Drawing.Point(14, 384);
             this.lblIsValid.Name = "lblIsValid";
             this.lblIsValid.Size = new System.Drawing.Size(46, 15);
             this.lblIsValid.TabIndex = 4;
@@ -181,7 +184,7 @@ namespace SU21_Final_Project
             // 
             // btnProduct
             // 
-            this.btnProduct.Location = new System.Drawing.Point(390, 121);
+            this.btnProduct.Location = new System.Drawing.Point(390, 154);
             this.btnProduct.Name = "btnProduct";
             this.btnProduct.Size = new System.Drawing.Size(90, 49);
             this.btnProduct.TabIndex = 12;
@@ -191,7 +194,7 @@ namespace SU21_Final_Project
             // 
             // btnShowDiscount
             // 
-            this.btnShowDiscount.Location = new System.Drawing.Point(390, 11);
+            this.btnShowDiscount.Location = new System.Drawing.Point(390, 44);
             this.btnShowDiscount.Name = "btnShowDiscount";
             this.btnShowDiscount.Size = new System.Drawing.Size(90, 49);
             this.btnShowDiscount.TabIndex = 10;
@@ -201,7 +204,7 @@ namespace SU21_Final_Project
             // 
             // btnAdd
             // 
-            this.btnAdd.Location = new System.Drawing.Point(16, 398);
+            this.btnAdd.Location = new System.Drawing.Point(16, 431);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(87, 50);
             this.btnAdd.TabIndex = 5;
@@ -213,7 +216,7 @@ namespace SU21_Final_Project
             // 
             this.lblDiscountIDTextValid.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblDiscountIDTextValid.ForeColor = System.Drawing.Color.Red;
-            this.lblDiscountIDTextValid.Location = new System.Drawing.Point(222, 57);
+            this.lblDiscountIDTextValid.Location = new System.Drawing.Point(222, 90);
             this.lblDiscountIDTextValid.Name = "lblDiscountIDTextValid";
             this.lblDiscountIDTextValid.Size = new System.Drawing.Size(18, 21);
             this.lblDiscountIDTextValid.TabIndex = 15;
@@ -224,7 +227,7 @@ namespace SU21_Final_Project
             // 
             this.lblDiscountPercentValid.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblDiscountPercentValid.ForeColor = System.Drawing.Color.Red;
-            this.lblDiscountPercentValid.Location = new System.Drawing.Point(220, 302);
+            this.lblDiscountPercentValid.Location = new System.Drawing.Point(220, 335);
             this.lblDiscountPercentValid.Name = "lblDiscountPercentValid";
             this.lblDiscountPercentValid.Size = new System.Drawing.Size(20, 21);
             this.lblDiscountPercentValid.TabIndex = 16;
@@ -235,17 +238,17 @@ namespace SU21_Final_Project
             // 
             this.lblProductIDValid.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblProductIDValid.ForeColor = System.Drawing.Color.Red;
-            this.lblProductIDValid.Location = new System.Drawing.Point(220, 222);
+            this.lblProductIDValid.Location = new System.Drawing.Point(220, 255);
             this.lblProductIDValid.Name = "lblProductIDValid";
             this.lblProductIDValid.Size = new System.Drawing.Size(20, 21);
             this.lblProductIDValid.TabIndex = 17;
             this.lblProductIDValid.Text = "X";
-            this.ttValid.SetToolTip(this.lblProductIDValid, "Discount Percent Can Be A Number Between 0-95");
+            this.ttValid.SetToolTip(this.lblProductIDValid, "ProductID must be a valid product");
             this.lblProductIDValid.Visible = false;
             // 
             // btnEditDiscount
             // 
-            this.btnEditDiscount.Location = new System.Drawing.Point(109, 398);
+            this.btnEditDiscount.Location = new System.Drawing.Point(109, 431);
             this.btnEditDiscount.Name = "btnEditDiscount";
             this.btnEditDiscount.Size = new System.Drawing.Size(74, 50);
             this.btnEditDiscount.TabIndex = 6;
@@ -255,7 +258,7 @@ namespace SU21_Final_Project
             // 
             // btnCompleteEdit
             // 
-            this.btnCompleteEdit.Location = new System.Drawing.Point(109, 454);
+            this.btnCompleteEdit.Location = new System.Drawing.Point(109, 487);
             this.btnCompleteEdit.Name = "btnCompleteEdit";
             this.btnCompleteEdit.Size = new System.Drawing.Size(75, 50);
             this.btnCompleteEdit.TabIndex = 7;
@@ -265,7 +268,7 @@ namespace SU21_Final_Project
             // 
             // btnCancelEdit
             // 
-            this.btnCancelEdit.Location = new System.Drawing.Point(189, 398);
+            this.btnCancelEdit.Location = new System.Drawing.Point(189, 431);
             this.btnCancelEdit.Name = "btnCancelEdit";
             this.btnCancelEdit.Size = new System.Drawing.Size(75, 50);
             this.btnCancelEdit.TabIndex = 8;
@@ -282,7 +285,7 @@ namespace SU21_Final_Project
             this.dgvProduct.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedCells;
             this.dgvProduct.BackgroundColor = System.Drawing.Color.White;
             this.dgvProduct.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvProduct.Location = new System.Drawing.Point(486, 11);
+            this.dgvProduct.Location = new System.Drawing.Point(486, 44);
             this.dgvProduct.MultiSelect = false;
             this.dgvProduct.Name = "dgvProduct";
             this.dgvProduct.ReadOnly = true;
@@ -292,7 +295,7 @@ namespace SU21_Final_Project
             // 
             // btnReturn
             // 
-            this.btnReturn.Location = new System.Drawing.Point(270, 451);
+            this.btnReturn.Location = new System.Drawing.Point(270, 484);
             this.btnReturn.Name = "btnReturn";
             this.btnReturn.Size = new System.Drawing.Size(75, 50);
             this.btnReturn.TabIndex = 9;
@@ -302,7 +305,7 @@ namespace SU21_Final_Project
             // 
             // btnShowInactive
             // 
-            this.btnShowInactive.Location = new System.Drawing.Point(390, 66);
+            this.btnShowInactive.Location = new System.Drawing.Point(390, 99);
             this.btnShowInactive.Name = "btnShowInactive";
             this.btnShowInactive.Size = new System.Drawing.Size(90, 49);
             this.btnShowInactive.TabIndex = 11;
@@ -310,11 +313,30 @@ namespace SU21_Final_Project
             this.btnShowInactive.UseVisualStyleBackColor = true;
             this.btnShowInactive.Click += new System.EventHandler(this.btnShowInactive_Click);
             // 
+            // menuStrip1
+            // 
+            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.mnsHelp});
+            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
+            this.menuStrip1.Name = "menuStrip1";
+            this.menuStrip1.Size = new System.Drawing.Size(968, 24);
+            this.menuStrip1.TabIndex = 118;
+            this.menuStrip1.Text = "menuStrip1";
+            // 
+            // mnsHelp
+            // 
+            this.mnsHelp.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
+            this.mnsHelp.Name = "mnsHelp";
+            this.mnsHelp.Size = new System.Drawing.Size(44, 20);
+            this.mnsHelp.Text = "Help";
+            this.mnsHelp.Click += new System.EventHandler(this.mnsHelp_Click);
+            // 
             // frmManager_Discount_Add
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(968, 514);
+            this.ClientSize = new System.Drawing.Size(968, 549);
+            this.Controls.Add(this.menuStrip1);
             this.Controls.Add(this.btnShowInactive);
             this.Controls.Add(this.btnReturn);
             this.Controls.Add(this.dgvProduct);
@@ -347,6 +369,8 @@ namespace SU21_Final_Project
             this.Load += new System.EventHandler(this.frmManager_Discount_Add_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvDiscount)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProduct)).EndInit();
+            this.menuStrip1.ResumeLayout(false);
+            this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -378,5 +402,7 @@ namespace SU21_Final_Project
         private System.Windows.Forms.DataGridView dgvProduct;
         private System.Windows.Forms.Button btnReturn;
         private System.Windows.Forms.Button btnShowInactive;
+        private System.Windows.Forms.MenuStrip menuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem mnsHelp;
     }
 }

@@ -189,5 +189,12 @@ namespace SU21_Final_Project
             tbxCity.Clear();
             tbxEmail.Clear();
         }
+
+        private void helpToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ProgOps._PICTURE = 11;
+            frmHelp frmhelp = new frmHelp();
+            frmhelp.ShowDialog();
+        }
     }
 }

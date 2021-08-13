@@ -33,7 +33,10 @@ namespace SU21_Final_Project
             this.dgvReciept = new System.Windows.Forms.DataGridView();
             this.btnPrintReport = new System.Windows.Forms.Button();
             this.btnClose = new System.Windows.Forms.Button();
+            this.mnsHelp = new System.Windows.Forms.MenuStrip();
+            this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.dgvReciept)).BeginInit();
+            this.mnsHelp.SuspendLayout();
             this.SuspendLayout();
             // 
             // dgvReciept
@@ -45,7 +48,7 @@ namespace SU21_Final_Project
             this.dgvReciept.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedCells;
             this.dgvReciept.BackgroundColor = System.Drawing.Color.White;
             this.dgvReciept.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvReciept.Location = new System.Drawing.Point(12, 12);
+            this.dgvReciept.Location = new System.Drawing.Point(12, 35);
             this.dgvReciept.MultiSelect = false;
             this.dgvReciept.Name = "dgvReciept";
             this.dgvReciept.ReadOnly = true;
@@ -56,7 +59,7 @@ namespace SU21_Final_Project
             // btnPrintReport
             // 
             this.btnPrintReport.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnPrintReport.Location = new System.Drawing.Point(251, 300);
+            this.btnPrintReport.Location = new System.Drawing.Point(251, 319);
             this.btnPrintReport.Name = "btnPrintReport";
             this.btnPrintReport.Size = new System.Drawing.Size(100, 34);
             this.btnPrintReport.TabIndex = 1;
@@ -67,7 +70,7 @@ namespace SU21_Final_Project
             // btnClose
             // 
             this.btnClose.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnClose.Location = new System.Drawing.Point(431, 300);
+            this.btnClose.Location = new System.Drawing.Point(431, 319);
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(100, 34);
             this.btnClose.TabIndex = 2;
@@ -75,11 +78,30 @@ namespace SU21_Final_Project
             this.btnClose.UseVisualStyleBackColor = true;
             this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
+            // mnsHelp
+            // 
+            this.mnsHelp.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.helpToolStripMenuItem});
+            this.mnsHelp.Location = new System.Drawing.Point(0, 0);
+            this.mnsHelp.Name = "mnsHelp";
+            this.mnsHelp.Size = new System.Drawing.Size(800, 24);
+            this.mnsHelp.TabIndex = 92;
+            this.mnsHelp.Text = "menuStrip1";
+            // 
+            // helpToolStripMenuItem
+            // 
+            this.helpToolStripMenuItem.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
+            this.helpToolStripMenuItem.Name = "helpToolStripMenuItem";
+            this.helpToolStripMenuItem.Size = new System.Drawing.Size(44, 20);
+            this.helpToolStripMenuItem.Text = "Help";
+            this.helpToolStripMenuItem.Click += new System.EventHandler(this.helpToolStripMenuItem_Click);
+            // 
             // frmVIewRecieptReport
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 376);
+            this.Controls.Add(this.mnsHelp);
             this.Controls.Add(this.btnClose);
             this.Controls.Add(this.btnPrintReport);
             this.Controls.Add(this.dgvReciept);
@@ -90,7 +112,10 @@ namespace SU21_Final_Project
             this.Text = "View Reciept Report";
             this.Load += new System.EventHandler(this.frmVIewRecieptReport_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvReciept)).EndInit();
+            this.mnsHelp.ResumeLayout(false);
+            this.mnsHelp.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -99,5 +124,7 @@ namespace SU21_Final_Project
         private System.Windows.Forms.DataGridView dgvReciept;
         private System.Windows.Forms.Button btnPrintReport;
         private System.Windows.Forms.Button btnClose;
+        private System.Windows.Forms.MenuStrip mnsHelp;
+        private System.Windows.Forms.ToolStripMenuItem helpToolStripMenuItem;
     }
 }

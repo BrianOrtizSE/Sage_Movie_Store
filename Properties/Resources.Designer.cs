@@ -63,6 +63,16 @@ namespace SU21_Final_Project.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap FindUser {
+            get {
+                object obj = ResourceManager.GetObject("FindUser", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Logo_SMS {
             get {
                 object obj = ResourceManager.GetObject("Logo_SMS", resourceCulture);
@@ -103,6 +113,16 @@ namespace SU21_Final_Project.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Sages_Movie_Store_EditCustomer {
+            get {
+                object obj = ResourceManager.GetObject("Sages_Movie_Store_EditCustomer", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Sages_Movie_Store_LogIn {
             get {
                 object obj = ResourceManager.GetObject("Sages_Movie_Store_LogIn", resourceCulture);
@@ -126,6 +146,26 @@ namespace SU21_Final_Project.Properties {
         internal static System.Drawing.Bitmap Sages_Movie_Store_MerchandiseView {
             get {
                 object obj = ResourceManager.GetObject("Sages_Movie_Store_MerchandiseView", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Sages_Movie_Store_PasswordRecovery {
+            get {
+                object obj = ResourceManager.GetObject("Sages_Movie_Store_PasswordRecovery", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Sages_Movie_Store_POS {
+            get {
+                object obj = ResourceManager.GetObject("Sages_Movie_Store_POS", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

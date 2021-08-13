@@ -650,5 +650,11 @@ namespace SU21_Final_Project
                 e.Handled = true;
             }
         }
+
+        private void helpToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Add New Product : \n 1.Press Add Merchandise \n 2.Add Product Name \n3.Choose The Type Of Genre \n4.Insert Quantity In Stock \n5. Choose if it is active by the In Stock checkbox \n6.Insert Product Price \n7.Insert Product Description \n8 Add Image \n9.Press Complete Merchandise." +
+               "\nEdit Merchandise: \n1 Press Edit Merchandise \n Click On Grid To Grab Merchandise Information \n3. Edit Merchandise Information \n4.Complete Edit", "Help File", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
     }
 }

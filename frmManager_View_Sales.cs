@@ -498,5 +498,10 @@ namespace SU21_Final_Project
         {
 
         }
+
+        private void helpToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Buttons will display Data for the pressed button while the Print Report button will grab the information and create a new Report File \nDouble Clicking On A Sale Will Open the Reciept Data for that Sale.", "Help File", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
     }
 }
