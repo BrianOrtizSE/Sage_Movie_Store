@@ -29,7 +29,6 @@ namespace SU21_Final_Project
         private void btnEditSelfInformation_Click(object sender, EventArgs e)
         {
             this.Hide();
-            MessageBox.Show(ProgOps._intEmployeeID.ToString());
             frmEmployee_Edit_Self frmEditSelf = new frmEmployee_Edit_Self();
             frmEditSelf.ShowDialog();
             this.Show();

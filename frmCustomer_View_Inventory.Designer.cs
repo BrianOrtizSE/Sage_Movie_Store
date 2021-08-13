@@ -236,6 +236,7 @@ namespace SU21_Final_Project
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "frmCustomer_View_Inventory";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Product View";
             this.Load += new System.EventHandler(this.frmProductView_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pbxImage)).EndInit();
