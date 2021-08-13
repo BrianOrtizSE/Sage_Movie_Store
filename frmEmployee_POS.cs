@@ -39,10 +39,10 @@ namespace SU21_Final_Project
         }
 
         public string strQuery;
-        public decimal decTotal = 0;
-        public decimal decTaxTotal = 0;
-        public decimal decSubTotal = 0;
-        public decimal decDiscountPercent = 0;
+        public decimal decTotal = 0.00m;
+        public decimal decTaxTotal = 0.00m;
+        public decimal decSubTotal = 0.00m;
+        public decimal decDiscountPercent = 0.00m;
 
         bool blnDiscountDupe = false;
         bool blnDiscountUsed = false;
@@ -130,7 +130,7 @@ namespace SU21_Final_Project
                         for (int i = 0; i < prodlist.Count(); i++)
                         {
                             strQuery = "Insert into OrtizB21Su2332.RecieptDetail(RecieptID , ProductID , Quantity , PriceOfProduct , Discount) " +
-                                "Values( " + ProgOps._intRecieptID + "," + prodlist[i].intProductID + "," + prodlist[i].intProdQuan + "," + prodlist[i].dblProdPrice + "," + intDiscount + ")";
+                                "Values( " + ProgOps._intRecieptID + "," + prodlist[i].intProductID + "," + prodlist[i].intProdQuan + "," + prodlist[i].dblProdPrice + "," + decDiscountPercent + ")";
                             ProgOps.CreateInvoice(strQuery);
                         }
 
@@ -319,7 +319,7 @@ namespace SU21_Final_Project
                 pnlCheckout.Visible = true;
 
 
-                WriteToListBox(decSubTotal, decDiscountPercent, ref decTaxTotal, ref decTotal);
+                WriteToListBox(decSubTotal, ref decDiscountPercent, ref decTaxTotal, ref decTotal);
                 this.Size = new Size(760, 630);
             }
 
@@ -329,8 +329,7 @@ namespace SU21_Final_Project
         private void btnCloseShop_Click(object sender, EventArgs e)
         {
             this.Close();
-        }
-        
+        }      
         private void btnDiscountEnter_Click(object sender, EventArgs e)
         {
 
@@ -404,7 +403,7 @@ namespace SU21_Final_Project
                             tbxDiscount.Text = "";
                             tbxDiscount.Focus();
 
-                            WriteToListBox(decSubTotal, decDiscountPercent, ref decTaxTotal, ref decTotal);
+                            WriteToListBox(decSubTotal, ref decDiscountPercent, ref decTaxTotal, ref decTotal);
                         }
                         else
                         {
@@ -572,7 +571,7 @@ namespace SU21_Final_Project
             pbxImage.Image = Properties.Resources.Logo_SMS;
         }
 
-        public void WriteToListBox(decimal decSubTotal, decimal decDiscountPercent, ref decimal decTaxTotal,ref decimal decTotal)
+        public void WriteToListBox(decimal decSubTotal,ref decimal decDiscountPercent, ref decimal decTaxTotal,ref decimal decTotal)
         {
             decimal decTotalHold = decSubTotal;
 
@@ -602,6 +601,7 @@ namespace SU21_Final_Project
             lbxCheckOutCart.Items.Add("Total : " + (decTotalHold).ToString("c2"));
 
             decTotal = decTotalHold;
+            MessageBox.Show(decDiscountPercent.ToString());
         }
 
         public void WriteToCart()

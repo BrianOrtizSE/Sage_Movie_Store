@@ -70,12 +70,6 @@
     <Compile Include="frmCustomer_Create_Sale.Designer.cs">
       <DependentUpon>frmCustomer_Create_Sale.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmCustomer_POS.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frmCustomer_POS.Designer.cs">
-      <DependentUpon>frmCustomer_POS.cs</DependentUpon>
-    </Compile>
     <Compile Include="frmCustomer_Main.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -208,15 +202,18 @@
     <Compile Include="frmSignUp.Designer.cs">
       <DependentUpon>frmSignUp.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmVIewRecieptReport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmVIewRecieptReport.Designer.cs">
+      <DependentUpon>frmVIewRecieptReport.cs</DependentUpon>
+    </Compile>
     <Compile Include="ProgOps.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ToDo.cs" />
     <EmbeddedResource Include="frmCustomer_Create_Sale.resx">
       <DependentUpon>frmCustomer_Create_Sale.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="frmCustomer_POS.resx">
-      <DependentUpon>frmCustomer_POS.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmCustomer_Main.resx">
       <DependentUpon>frmCustomer_Main.cs</DependentUpon>
@@ -283,6 +280,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmSignUp.resx">
       <DependentUpon>frmSignUp.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmVIewRecieptReport.resx">
+      <DependentUpon>frmVIewRecieptReport.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

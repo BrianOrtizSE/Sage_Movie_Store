@@ -19,7 +19,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
+using System.IO;
 
 namespace SU21_Final_Project
 {
@@ -62,5 +62,12 @@ namespace SU21_Final_Project
             frmlogin.ShowDialog();
             this.Show();
         }
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            frmManager_View_Sales frmSales = new frmManager_View_Sales();
+            frmSales.ShowDialog();
+        }
+
     }
 }

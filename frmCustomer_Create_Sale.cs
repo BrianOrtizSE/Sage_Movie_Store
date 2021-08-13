@@ -269,7 +269,7 @@ namespace SU21_Final_Project
             lblProductDescription.Text = String.Empty;
             pbxImage.Image = Properties.Resources.Logo_SMS;
         }
-        public void WriteToListBox(decimal decSubTotal, decimal decDiscountPercent, ref decimal decTaxTotal, ref decimal decTotal)
+        public void WriteToListBox(decimal decSubTotal,ref decimal decDiscountPercent, ref decimal decTaxTotal, ref decimal decTotal)
         {
             decimal decTotalHold = decSubTotal;
 
@@ -394,7 +394,7 @@ namespace SU21_Final_Project
                 pnlCheckout.Visible = true;
 
 
-                WriteToListBox(decSubTotal, decDiscountPercent, ref decTaxTotal, ref decTotal);
+                WriteToListBox(decSubTotal, ref decDiscountPercent, ref decTaxTotal, ref decTotal);
                 this.Size = new Size(760, 630);
             }
 
@@ -473,7 +473,7 @@ namespace SU21_Final_Project
                             tbxDiscount.Text = "";
                             tbxDiscount.Focus();
 
-                            WriteToListBox(decSubTotal, decDiscountPercent, ref decTaxTotal, ref decTotal);
+                            WriteToListBox(decSubTotal, ref decDiscountPercent, ref decTaxTotal, ref decTotal);
                         }
                         else
                         {

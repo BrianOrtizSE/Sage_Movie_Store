@@ -31,14 +31,19 @@ namespace SU21_Final_Project
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmManager_View_Sales));
             this.dgvSales = new System.Windows.Forms.DataGridView();
-            this.lblOrderBy = new System.Windows.Forms.Label();
             this.btnToday = new System.Windows.Forms.Button();
             this.btnWeekSales = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.lblDate = new System.Windows.Forms.Label();
+            this.btnMonthlySales = new System.Windows.Forms.Button();
             this.btnExit = new System.Windows.Forms.Button();
             this.btnPrintReport = new System.Windows.Forms.Button();
+            this.btnViewInvoice = new System.Windows.Forms.Button();
+            this.btnViewProduct = new System.Windows.Forms.Button();
+            this.dgvProduct = new System.Windows.Forms.DataGridView();
+            this.dgvInvoices = new System.Windows.Forms.DataGridView();
+            this.btnViewSales = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSales)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvProduct)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvInvoices)).BeginInit();
             this.SuspendLayout();
             // 
             // dgvSales
@@ -48,27 +53,19 @@ namespace SU21_Final_Project
             this.dgvSales.AllowUserToOrderColumns = true;
             this.dgvSales.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvSales.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvSales.Location = new System.Drawing.Point(12, 12);
+            this.dgvSales.Location = new System.Drawing.Point(12, 23);
+            this.dgvSales.MultiSelect = false;
             this.dgvSales.Name = "dgvSales";
             this.dgvSales.ReadOnly = true;
             this.dgvSales.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvSales.Size = new System.Drawing.Size(263, 412);
+            this.dgvSales.Size = new System.Drawing.Size(1100, 275);
             this.dgvSales.TabIndex = 0;
             this.dgvSales.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvSales_CellContentClick);
-            // 
-            // lblOrderBy
-            // 
-            this.lblOrderBy.AutoSize = true;
-            this.lblOrderBy.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblOrderBy.Location = new System.Drawing.Point(482, 345);
-            this.lblOrderBy.Name = "lblOrderBy";
-            this.lblOrderBy.Size = new System.Drawing.Size(57, 16);
-            this.lblOrderBy.TabIndex = 1;
-            this.lblOrderBy.Text = "Display ";
+            this.dgvSales.DoubleClick += new System.EventHandler(this.dgvSales_DoubleClick);
             // 
             // btnToday
             // 
-            this.btnToday.Location = new System.Drawing.Point(339, 384);
+            this.btnToday.Location = new System.Drawing.Point(12, 321);
             this.btnToday.Name = "btnToday";
             this.btnToday.Size = new System.Drawing.Size(92, 40);
             this.btnToday.TabIndex = 2;
@@ -78,38 +75,27 @@ namespace SU21_Final_Project
             // 
             // btnWeekSales
             // 
-            this.btnWeekSales.Location = new System.Drawing.Point(463, 384);
+            this.btnWeekSales.Location = new System.Drawing.Point(110, 321);
             this.btnWeekSales.Name = "btnWeekSales";
             this.btnWeekSales.Size = new System.Drawing.Size(92, 40);
             this.btnWeekSales.TabIndex = 3;
             this.btnWeekSales.Text = "Week Sales";
             this.btnWeekSales.UseVisualStyleBackColor = true;
-            this.btnWeekSales.Click += new System.EventHandler(this.button2_Click);
+            this.btnWeekSales.Click += new System.EventHandler(this.btnWeekSales_Click);
             // 
-            // button3
+            // btnMonthlySales
             // 
-            this.button3.Location = new System.Drawing.Point(582, 384);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(92, 40);
-            this.button3.TabIndex = 4;
-            this.button3.Text = "Monthly Sales";
-            this.button3.UseVisualStyleBackColor = true;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
-            // 
-            // lblDate
-            // 
-            this.lblDate.AutoSize = true;
-            this.lblDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDate.Location = new System.Drawing.Point(12, 427);
-            this.lblDate.Name = "lblDate";
-            this.lblDate.Size = new System.Drawing.Size(52, 20);
-            this.lblDate.TabIndex = 5;
-            this.lblDate.Text = "Date :";
-            this.lblDate.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.btnMonthlySales.Location = new System.Drawing.Point(208, 321);
+            this.btnMonthlySales.Name = "btnMonthlySales";
+            this.btnMonthlySales.Size = new System.Drawing.Size(92, 40);
+            this.btnMonthlySales.TabIndex = 4;
+            this.btnMonthlySales.Text = "Monthly Sales";
+            this.btnMonthlySales.UseVisualStyleBackColor = true;
+            this.btnMonthlySales.Click += new System.EventHandler(this.btnMonthlySales_Click);
             // 
             // btnExit
             // 
-            this.btnExit.Location = new System.Drawing.Point(696, 384);
+            this.btnExit.Location = new System.Drawing.Point(1020, 321);
             this.btnExit.Name = "btnExit";
             this.btnExit.Size = new System.Drawing.Size(92, 40);
             this.btnExit.TabIndex = 6;
@@ -119,25 +105,91 @@ namespace SU21_Final_Project
             // 
             // btnPrintReport
             // 
-            this.btnPrintReport.Location = new System.Drawing.Point(696, 321);
+            this.btnPrintReport.Location = new System.Drawing.Point(922, 321);
             this.btnPrintReport.Name = "btnPrintReport";
             this.btnPrintReport.Size = new System.Drawing.Size(92, 40);
             this.btnPrintReport.TabIndex = 7;
             this.btnPrintReport.Text = "Print Report";
             this.btnPrintReport.UseVisualStyleBackColor = true;
+            this.btnPrintReport.Click += new System.EventHandler(this.btnPrintReport_Click);
+            // 
+            // btnViewInvoice
+            // 
+            this.btnViewInvoice.Location = new System.Drawing.Point(506, 321);
+            this.btnViewInvoice.Name = "btnViewInvoice";
+            this.btnViewInvoice.Size = new System.Drawing.Size(92, 40);
+            this.btnViewInvoice.TabIndex = 8;
+            this.btnViewInvoice.Text = "View Invoices";
+            this.btnViewInvoice.UseVisualStyleBackColor = true;
+            this.btnViewInvoice.Click += new System.EventHandler(this.btnViewInvoice_Click);
+            // 
+            // btnViewProduct
+            // 
+            this.btnViewProduct.Location = new System.Drawing.Point(604, 321);
+            this.btnViewProduct.Name = "btnViewProduct";
+            this.btnViewProduct.Size = new System.Drawing.Size(92, 40);
+            this.btnViewProduct.TabIndex = 9;
+            this.btnViewProduct.Text = "View Product";
+            this.btnViewProduct.UseVisualStyleBackColor = true;
+            this.btnViewProduct.Click += new System.EventHandler(this.btnViewProduct_Click);
+            // 
+            // dgvProduct
+            // 
+            this.dgvProduct.AllowUserToAddRows = false;
+            this.dgvProduct.AllowUserToDeleteRows = false;
+            this.dgvProduct.AllowUserToOrderColumns = true;
+            this.dgvProduct.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvProduct.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvProduct.Location = new System.Drawing.Point(12, 23);
+            this.dgvProduct.MultiSelect = false;
+            this.dgvProduct.Name = "dgvProduct";
+            this.dgvProduct.ReadOnly = true;
+            this.dgvProduct.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvProduct.Size = new System.Drawing.Size(1100, 275);
+            this.dgvProduct.TabIndex = 10;
+            // 
+            // dgvInvoices
+            // 
+            this.dgvInvoices.AllowUserToAddRows = false;
+            this.dgvInvoices.AllowUserToDeleteRows = false;
+            this.dgvInvoices.AllowUserToOrderColumns = true;
+            this.dgvInvoices.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvInvoices.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvInvoices.Location = new System.Drawing.Point(12, 23);
+            this.dgvInvoices.MultiSelect = false;
+            this.dgvInvoices.Name = "dgvInvoices";
+            this.dgvInvoices.ReadOnly = true;
+            this.dgvInvoices.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvInvoices.Size = new System.Drawing.Size(1100, 275);
+            this.dgvInvoices.TabIndex = 11;
+            this.dgvInvoices.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvInvoices_CellContentClick);
+            this.dgvInvoices.DoubleClick += new System.EventHandler(this.dgvInvoices_DoubleClick);
+            // 
+            // btnViewSales
+            // 
+            this.btnViewSales.Location = new System.Drawing.Point(408, 321);
+            this.btnViewSales.Name = "btnViewSales";
+            this.btnViewSales.Size = new System.Drawing.Size(92, 40);
+            this.btnViewSales.TabIndex = 12;
+            this.btnViewSales.Text = "View Sales";
+            this.btnViewSales.UseVisualStyleBackColor = true;
+            this.btnViewSales.Click += new System.EventHandler(this.btnViewSales_Click);
             // 
             // frmManager_View_Sales
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(1124, 373);
+            this.Controls.Add(this.btnViewSales);
+            this.Controls.Add(this.dgvInvoices);
+            this.Controls.Add(this.dgvProduct);
+            this.Controls.Add(this.btnViewProduct);
+            this.Controls.Add(this.btnViewInvoice);
             this.Controls.Add(this.btnPrintReport);
             this.Controls.Add(this.btnExit);
-            this.Controls.Add(this.lblDate);
-            this.Controls.Add(this.button3);
+            this.Controls.Add(this.btnMonthlySales);
             this.Controls.Add(this.btnWeekSales);
             this.Controls.Add(this.btnToday);
-            this.Controls.Add(this.lblOrderBy);
             this.Controls.Add(this.dgvSales);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
@@ -146,20 +198,24 @@ namespace SU21_Final_Project
             this.Text = "Sales View";
             this.Load += new System.EventHandler(this.frmManager_View_Sales_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvSales)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvProduct)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvInvoices)).EndInit();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
         #endregion
 
         private System.Windows.Forms.DataGridView dgvSales;
-        private System.Windows.Forms.Label lblOrderBy;
         private System.Windows.Forms.Button btnToday;
         private System.Windows.Forms.Button btnWeekSales;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Label lblDate;
+        private System.Windows.Forms.Button btnMonthlySales;
         private System.Windows.Forms.Button btnExit;
         private System.Windows.Forms.Button btnPrintReport;
+        private System.Windows.Forms.Button btnViewInvoice;
+        private System.Windows.Forms.Button btnViewProduct;
+        private System.Windows.Forms.DataGridView dgvProduct;
+        private System.Windows.Forms.DataGridView dgvInvoices;
+        private System.Windows.Forms.Button btnViewSales;
     }
 }
